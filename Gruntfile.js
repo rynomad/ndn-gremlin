@@ -13,10 +13,23 @@ module.exports = function(grunt){
         }
       }
     },
+    plato: {
+      options:{
+        jshint: {
+          curly: true,
+          eqeqeq: true,
+          laxcomma: true,
+          laxbreak: true
+        }
+      },
+      shadows: {
+        files: {
+          'plato': ['src/**/*.js', 'src/**/*.js']
+        }
+      }
+    },
     browserify: {
       options:{
-       //alias: ["./src/browser/readFile.js:./src/node/readFile.js", "./src/browser/assembleFile.js:./src/node/assembleFile.js"]
-
       },
       test: {
         src: "test/browser/suite.js",
@@ -61,7 +74,11 @@ module.exports = function(grunt){
     watch: {
       all: {
         files: ["src/*.js", "src/**/*.js"],
-        tasks: ["jshint", "browserify:test", "uglify:test", "mochaTest" ]
+        tasks: ["jshint", "browserify:test", "uglify:test", "mochaTest", "plato" ]
+      },
+      nodeTest: {
+        files: ["test/node/*.js", "test/*.js"],
+        tasks: ["mochaTest"]
       },
       livereload: {
         options: { livereload: true },
@@ -77,6 +94,8 @@ module.exports = function(grunt){
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-plato');
 
   grunt.registerTask('suite', ['jshint', 'browserify:test', "mochaTest"])
   grunt.registerTask('build', [ "browserify:build", "uglify:build"])
+};
