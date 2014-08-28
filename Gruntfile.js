@@ -4,7 +4,7 @@ module.exports = function(grunt){
     uglify: {
       test: {
         files: {
-          'test/browser/compiledSuite.js': ['test/browser/assembled.js']
+          'test/browser/compiledSuite.js': ['test/browser/tmp/assembled.js']
         }
       },
       build: {
@@ -32,8 +32,8 @@ module.exports = function(grunt){
       options:{
       },
       test: {
-        src: "test/browser/suite.js",
-        dest: "test/browser/assembled.js"
+        src: "test/browser/src/suite.js",
+        dest: "test/browser/tmp/assembled.js"
       },
       build: {
         src: "index.js",
@@ -79,6 +79,10 @@ module.exports = function(grunt){
       nodeTest: {
         files: ["test/node/*.js", "test/*.js"],
         tasks: ["mochaTest"]
+      },
+      browserTest: {
+        files: ["test/browser/src/*.js", "test/*.js"],
+        tasks: ["browserify:test", "uglify:test"]
       },
       livereload: {
         options: { livereload: true },
