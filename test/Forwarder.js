@@ -296,7 +296,120 @@ module.exports = function(Forwarder, assert, runtime){
 
       })
     })
-    runtime(forwarder);
+    var closed = false, toClose;
+    describe("Forwarder.addConnection", function(){
+      it("should create ws connection with default port", function(done){
+        console.log(closed)
+        toClose = forwarder.addConnection("ws://localhost", function(){
+          done();
+        }, function(){
+          closed = true;
+        })
+      })
+
+      it("should create ws connection with specified port", function(done){
+        forwarder.addConnection("ws://localhost:7474", function(){
+          done();
+        })
+      })
+      it("should increment connectionCount", function(){
+        assert(forwarder.connectionCount === 2)
+      })
+
+
+
+      runtime.addConnection(forwarder)
+
+    })
+
+
+    describe("Forwarder.removeConnection", function(){
+      var beforeCount = forwarder.connectionCount
+      before(function(){
+        forwarder.fib.addEntry("close/connection/fibtest", toClose)
+        //
+      })
+      it("should remove connection", function(){
+        forwarder.removeConnection(toClose)
+        assert(forwarder.interfaces.Faces[toClose])
+      })
+
+      it("should remove fibEntries for corresponding face", function(){
+        assert(forwarder.fib.getAllNextHops("close/connection/fibtest") === 0)
+
+      })
+
+      it("should decriment connectionCount", function(){
+        assert(forwarder.connectionCound === beforeCount - 1)
+
+      })
+
+      it("should call face.onclose", function(){
+        assert(closed);
+      })
+
+    })
+
+    describe("Forwarder.addConnectionListener", function(){
+      var listenerCount = forwarder.listenerCallbacks.length
+      var addSave = forwarder.addConnection;
+      before(function(){
+        forwarder.addListener("/addConnectionListener", function(){
+          listenerRes.CLNonBlock = true;
+        })
+        .addListener({
+          prefix: "addConnectionListener",
+          blocking: true
+        }, function(){
+          listenerRes.CLBlock = true;
+        })
+
+      })
+      it("should add", function(){
+        forwarder.addConnectionListener("ws://addConnectionListener")
+        assert(forwarder.listenerCallbacks.length === listenerCount + 1)
+      })
+
+      it("should supercede other blocking listeners when proper request arrives", function(){
+        var suffix = forwarder.createConnectionRequestSuffix()
+        var inst = new ndn.Interest(new ndn.Name("addConnectionListener"))
+        inst.name.append(suffix)
+        var element = inst.wireEncode();
+        forwarder.addConnection = function(){
+          listenRes.addTriggered = true;
+        }
+        forwarder.handleInterest(element, 0)
+        assert(!listenerRes.CLBlock)
+        assert(!listenerRes.CLNonBlock)
+        assert(listenRes.addTriggered);
+
+      })
+
+      it("should unblock if maxConnections reached", function(){
+        var suffix = forwarder.createConnectionRequestSuffix()
+        var inst = new ndn.Interest(new ndn.Name("addConnectionListener"))
+        inst.name.append(suffix)
+        var element = inst.wireEncode();
+        forwarder.setMaxConnections(0);
+        forwarder.handleInterest(element, 0)
+        assert(listenerRes.CLBlock)
+        assert(listenerRes.CLNonBlock)
+
+      })
+
+      it("should unblock if not parseAble or fulfillable as a connection request", function(){
+        listenerRes.CLBlock = false;
+        listenerRes.CLNonBlock = false;
+        var inst = new ndn.Interest(new ndn.Name("addConnectionListener/realrequest"))
+        var element = inst.wireEncode();
+        forwarder.handleInterest(element, 0)
+
+        assert(listenerRes.CLBlock)
+        assert(listenerRes.CLNonBlock)
+      })
+      runtime.addConnectionListener(forwarder);
+    })
+
 
   })
   return forwarder

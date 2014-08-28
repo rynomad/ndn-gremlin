@@ -100,6 +100,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-plato');
 
-  grunt.registerTask('suite', ['jshint', 'browserify:test', "mochaTest"])
+  grunt.registerTask('suite', ['jshint', 'browserify:test', "uglify:test", "mochaTest"])
   grunt.registerTask('build', [ "browserify:build", "uglify:build"])
 };
