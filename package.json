@@ -19,6 +19,9 @@
   },
   "author": "Ryan Bennett, Colorado State University",
   "license": "LGPLv3",
+  "dependencies": {
+    "ndn-contrib": "^0.1.13"
+  },
   "devDependencies": {
     "grunt-mocha-test": "^0.11.0",
     "grunt-contrib-uglify": "^0.5.1",
