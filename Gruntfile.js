@@ -69,26 +69,34 @@ module.exports = function(grunt){
         laxcomma: true,
         laxbreak: true
       },
-      All: ["src/*.js", "src/**/*.js"]
+      All: ["src/*.js", "src/browser/*.js", "src/node/*.js"]
     },
     watch: {
       all: {
         files: ["src/*.js", "src/**/*.js"],
-        tasks: ["jshint", "browserify:test", "uglify:test", "mochaTest", "plato" ]
+        tasks: ["forever:testServ:restart", "browserify:test", "uglify:test", "mochaTest","jshint", "plato" ]
       },
       nodeTest: {
         files: ["test/node/*.js", "test/*.js"],
-        tasks: ["mochaTest"]
+        tasks: ["forever:testServ:restart", "mochaTest"]
       },
       browserTest: {
         files: ["test/browser/src/*.js", "test/*.js"],
-        tasks: ["browserify:test", "uglify:test"]
+        tasks: ["forever:testServ:restart", "browserify:test", "uglify:test"]
       },
       livereload: {
         options: { livereload: true },
         files: ['test/browser/compiledSuite.js'],
       }
 
+    },
+    forever: {
+      testServ: {
+        options: {
+          index: 'test/daemon.js',
+          logDir: 'test/logs'
+        }
+      }
     }
   })
 
@@ -99,6 +107,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-plato');
+  grunt.loadNpmTasks('grunt-forever');
 
   grunt.registerTask('suite', ['jshint', 'browserify:test', "uglify:test", "mochaTest"])
   grunt.registerTask('build', [ "browserify:build", "uglify:build"])

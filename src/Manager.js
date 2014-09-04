@@ -1,27 +1,26 @@
-runtimeManager = require("./node/Manager.js");
+
 
 module.exports = function(Forwarder){
-
-  runtimeManager(Forwarder)
+  Forwarder
   .addListener(
     "marx/fib/add-nexthop"
-    , {blocking: true}
     , function(interest, faceID){
-      var prefix = interest.name.get(-1).getValueAsBuffer().toString();
+      console.log("got add-nexthop");
+      var prefix = interest.name.getSubName(3).toUri();
       Forwarder
       .fib
       .lookup(prefix)
       .addNextHop({
         faceID: faceID
       });
+
       Forwarder.interfaces.Faces[faceID].prefixes = Forwarder.interfaces.Faces[faceID].prefixes || [];
       Forwarder.interfaces.Faces[faceID].prefixes.push(prefix);
     })
   .addListener(
     "marx/fib/remove-nexthop"
-    , {blocking: true}
     , function(interest, faceID){
-      var prefix = interest.name.get(-1).getValueAsBuffer().toString();
+      var prefix = interest.name.getSubName(3).toUri();
       Forwarder
       .fib
       .lookup(prefix)
@@ -31,7 +30,6 @@ module.exports = function(Forwarder){
     })
   .addListener(
     "marx"
-    , {blocking: true}
     , function(interest, faceID){
       console.log("logging blocked Interest on /marx namespace, ", interest.toUri());
     }
