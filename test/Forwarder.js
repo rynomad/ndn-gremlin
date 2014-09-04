@@ -1,9 +1,12 @@
 var ndn = require("ndn-contrib").ndn
-module.exports = function(Forwarder, assert, runtime){
+module.exports = function(forwarder, assert, runtime){
   var forwarder, listenerRes = {};
 
   describe("Forwarder", function(){
-    forwarder = new Forwarder();
+    before(function(){
+      forwarder.addConnectionListener("connection/request", 3)
+    })
+
     it("should construct", function(){
       assert(forwarder.nameTree.lookup)
       assert(forwarder.nameTree)
@@ -11,6 +14,9 @@ module.exports = function(Forwarder, assert, runtime){
 
     })
     describe("Forwarder.addListener", function(){
+      before(function(){
+        forwarder.listenerCallbacks = [];
+      })
       it("should accept string", function(){
         forwarder.addListener("crossPlatform/test/string", function(){
           return "crossPlatform/test/string";
@@ -68,6 +74,18 @@ module.exports = function(Forwarder, assert, runtime){
         })
         assert(forwarder.listeners.nameTree["/crossPlatform"].fibEntry.nextHops.length === 1)
 
+      })
+      it("should trigger only once per nonced interest", function(done){
+        var n = new forwarder.ndn.Name("test/duplicate/interest")
+        var i = new forwarder.ndn.Interest(n)
+        var e = i.wireEncode()
+        forwarder.addListener("test/duplicate/interest", function(){
+          done();
+        })
+        .handleInterest(e, 0)
+        .handleInterest(e, 0)
+        .handleInterest(e, 0)
+        .handleInterest(e, 0)
       })
     });
 
@@ -177,9 +195,10 @@ module.exports = function(Forwarder, assert, runtime){
 
       */
       describe("forward interests correctly", function(){
-        var saveDispatch = forwarder.interfaces.dispatch
+        var saveDispatch;
 
         before(function(){
+          saveDispatch = forwarder.interfaces.dispatch
           forwarder.fib
           .addEntry("test/forwarding/long", 5)
           .addEntry("test/forwarding/long", 4)
@@ -220,9 +239,10 @@ module.exports = function(Forwarder, assert, runtime){
       })
 
       describe("return cacheHits correctly", function(){
-        var saveDispatch = forwarder.interfaces.dispatch
-
+        var saveDispatch
         before(function(){
+          saveDispatch = forwarder.interfaces.dispatch
+
           var data = new ndn.Data(new ndn.Name("/cache/hit/test"), new ndn.SignedInfo(), "correct")
           data.signedInfo.setFreshnessPeriod(1000)
           data.signedInfo.setFields();
@@ -251,7 +271,7 @@ module.exports = function(Forwarder, assert, runtime){
 
 
     describe("Forwarder.handleData", function(){
-      var saveDispatch = forwarder.interfaces.dispatch;
+      var saveDispatch
 
       var inst = new ndn.Interest(new ndn.Name("forward/test"))
 
@@ -263,6 +283,7 @@ module.exports = function(Forwarder, assert, runtime){
       var dataElement = data.wireEncode();
 
       before(function(){
+        saveDispatch = forwarder.interfaces.dispatch;
         forwarder.pit.insertPitEntry(inst.wireEncode(), inst, 9)
       })
 
@@ -298,17 +319,18 @@ module.exports = function(Forwarder, assert, runtime){
     })
     var closed = false, toClose;
     describe("Forwarder.addConnection", function(){
-      it("should create ws connection with default port", function(done){
+      it("should create ws connection with specified port", function(done){
         console.log(closed)
-        toClose = forwarder.addConnection("ws://localhost", function(){
+        forwarder.addConnection("ws://localhost:1338", function(id){
+          toClose = id;
           done();
         }, function(){
           closed = true;
         })
       })
 
-      it("should create ws connection with specified port", function(done){
-        forwarder.addConnection("ws://localhost:7474", function(){
+      it("should create ws connection with default", function(done){
+        forwarder.addConnection("ws://localhost", function(){
           done();
         })
       })
@@ -317,30 +339,36 @@ module.exports = function(Forwarder, assert, runtime){
       })
 
 
-
       runtime.addConnection(forwarder)
+
 
     })
 
 
     describe("Forwarder.removeConnection", function(){
-      var beforeCount = forwarder.connectionCount
+      var beforeCount
       before(function(){
-        forwarder.fib.addEntry("close/connection/fibtest", toClose)
-        //
+        beforeCount = forwarder.connectionCount
+
+        console.log("the face to close",toClose)
+
+        forwarder.addRegisteredPrefix("close/connection/fibtest", toClose)
+        console.log(forwarder.fib.findAllNextHops("close/connection/fibtest"));
       })
       it("should remove connection", function(){
+        console.log(forwarder.fib.findAllNextHops("close/connection/fibtest"));
         forwarder.removeConnection(toClose)
-        assert(forwarder.interfaces.Faces[toClose])
+        console.log(forwarder.interfaces.Faces[toClose].readyStatus, forwarder.ndn.Face.CLOSED)
+        assert(forwarder.interfaces.Faces[toClose].readyStatus === forwarder.ndn.Face.CLOSED);
       })
 
       it("should remove fibEntries for corresponding face", function(){
-        assert(forwarder.fib.getAllNextHops("close/connection/fibtest") === 0)
+        assert(forwarder.fib.findAllNextHops("close/connection/fibtest") === 0)
 
       })
 
       it("should decriment connectionCount", function(){
-        assert(forwarder.connectionCound === beforeCount - 1)
+        assert(forwarder.connectionCount === beforeCount - 1)
 
       })
 
@@ -350,53 +378,53 @@ module.exports = function(Forwarder, assert, runtime){
 
     })
 
+    var suffix;
+    describe("Forwarder.createConnectionRequestSuffix", function(){
+      this.timeout(60000)
+      it("should generate suffix and pass to callback", function(done){
+        forwarder.createConnectionRequestSuffix(function(suf){
+          console.log(suf)
+          suffix = suf;
+          assert(suf instanceof forwarder.ndn.Name.Component)
+          done();
+        })
+      })
+      it("should be parse back into JSON", function(){
+        var d = new forwarder.ndn.Data();
+        d.wireDecode(suffix.getValueAsBuffer());
+        var json = JSON.parse(d.content.toString());
+        assert(d.name.toUri() === "/connectionRequest")
+      })
+
+    })
+    var listenerCount, addSave, dispatchSave;
+
     describe("Forwarder.addConnectionListener", function(){
-      var listenerCount = forwarder.listenerCallbacks.length
-      var addSave = forwarder.addConnection;
-      before(function(){
+
+      var connectionCount = 5
+        before(function(){
+        dispatchSave = forwarder.interfaces.dispatch;
+        console.log("dispatchSave", dispatchSave)
+        addSave = forwarder.addConnection
         forwarder.addListener("/addConnectionListener", function(){
           listenerRes.CLNonBlock = true;
         })
         .addListener({
           prefix: "addConnectionListener",
           blocking: true
-        }, function(){
+        }, function(interest, faceID, unblock){
           listenerRes.CLBlock = true;
+          unblock();
         })
 
-      })
+        listenerCount = forwarder.listenerCallbacks.length
+
+        })
+
       it("should add", function(){
-        forwarder.addConnectionListener("ws://addConnectionListener")
+        forwarder.addConnectionListener("/addConnectionListener", 1)
         assert(forwarder.listenerCallbacks.length === listenerCount + 1)
       })
-
-      it("should supercede other blocking listeners when proper request arrives", function(){
-        var suffix = forwarder.createConnectionRequestSuffix()
-        var inst = new ndn.Interest(new ndn.Name("addConnectionListener"))
-        inst.name.append(suffix)
-        var element = inst.wireEncode();
-        forwarder.addConnection = function(){
-          listenRes.addTriggered = true;
-        }
-        forwarder.handleInterest(element, 0)
-        assert(!listenerRes.CLBlock)
-        assert(!listenerRes.CLNonBlock)
-        assert(listenRes.addTriggered);
-
-      })
-
-      it("should unblock if maxConnections reached", function(){
-        var suffix = forwarder.createConnectionRequestSuffix()
-        var inst = new ndn.Interest(new ndn.Name("addConnectionListener"))
-        inst.name.append(suffix)
-        var element = inst.wireEncode();
-        forwarder.setMaxConnections(0);
-        forwarder.handleInterest(element, 0)
-        assert(listenerRes.CLBlock)
-        assert(listenerRes.CLNonBlock)
-
-      })
-
       it("should unblock if not parseAble or fulfillable as a connection request", function(){
         listenerRes.CLBlock = false;
         listenerRes.CLNonBlock = false;
@@ -406,10 +434,104 @@ module.exports = function(Forwarder, assert, runtime){
 
         assert(listenerRes.CLBlock)
         assert(listenerRes.CLNonBlock)
+
       })
-      runtime.addConnectionListener(forwarder);
+
+      it("should supercede other blocking listeners when proper request arrives", function(done){
+        listenerRes.CLBlock = false;
+        listenerRes.CLNonBlock = false;
+
+
+        forwarder.createConnectionRequestSuffix(function(suffix){
+          if (forwarder.remoteInfo.tcp){
+            var s = forwarder.remoteInfo.tcp.port
+            forwarder.remoteInfo.tcp.port   = 999;
+            forwarder.addConnection = function(){
+              listenerRes.addTriggered = true;
+              connectionCount++
+              done();
+            }
+          } else {
+            forwarder.interfaces.dispatch = function(element, faceFlag){
+              console.log("dispatch triggered in ")
+              connectionCount++
+
+              done();
+            }
+          }
+
+          var inst = new ndn.Interest(new ndn.Name("addConnectionListener"))
+          inst.name.append(suffix)
+          var element = inst.wireEncode();
+
+          forwarder.handleInterest(element, 0)
+          assert(!listenerRes.CLBlock)
+          assert(!listenerRes.CLNonBlock)
+          if (forwarder.remoteInfo.tcp){
+            forwarder.remoteInfo.tcp.port = s;
+          }
+        })
+
+      })
+
+      it("should unblock if listener maxConnections reached", function(done){
+        forwarder.createConnectionRequestSuffix(function(suffix){
+          if (forwarder.remoteInfo.tcp){
+            var s = forwarder.remoteInfo.tcp.port
+            forwarder.remoteInfo.tcp.port   = 888
+
+            forwarder.addConnection = function(){
+              assert(false, "should not trigger addConnections after 1");
+            }
+          } else {
+            forwarder.interfaces.dispatch = function(element, faceFlag){
+              assert(false, "should not trigger addConnections after 1");
+              connectionCount++;
+            }
+          }
+          var inst = new ndn.Interest(new ndn.Name("addConnectionListener"))
+          inst.name.append(suffix)
+          var element = inst.wireEncode();
+          forwarder.setMaxConnections(10);
+          forwarder.handleInterest(element, 0)
+          assert(listenerRes.CLBlock)
+          assert(listenerRes.CLNonBlock)
+          if (forwarder.remoteInfo.tcp){
+            forwarder.remoteInfo.tcp.port = s;
+          }else {
+
+          }
+
+          done();
+        })
+      })
+
+      it("should unblock if maxConnections reached", function(done){
+        listenerRes.CLBlock = false;
+        listenerRes.CLNonBlock = false;
+        forwarder.createConnectionRequestSuffix(function(suffix){
+
+          var inst = new ndn.Interest(new ndn.Name("addConnectionListener"))
+          inst.name.append(suffix)
+          var element = inst.wireEncode();
+          forwarder.setMaxConnections(6);
+          forwarder.handleInterest(element, 0)
+          assert(listenerRes.CLBlock)
+          assert(listenerRes.CLNonBlock)
+          done();
+
+        })
+
+      })
+
+
     })
 
+    after(function(){
+      forwarder.interfaces.dispatch = dispatchSave;
+    })
+
+    runtime.requestConnection()
 
   })
   return forwarder

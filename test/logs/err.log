@@ -1,0 +1,180 @@
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:65:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:42:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:50:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
