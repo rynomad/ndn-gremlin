@@ -3,7 +3,7 @@ var RTCPeerConnection = require("./adapter/adapter.js");
 module.exports = function(Forwarder){
   var ndn = Forwarder.ndn;
   //console.log("running?", Forwarder.ndn);
-  Forwarder.prototype.addConnectionListener = function(prefix, max, onNewFace){
+  Forwarder.prototype.addConnectionListener = function(prefix, max, onNewFace, onFaceClose){
     var Self = this;
     var current = 0;
     Self.connectionLabels = Self.connectionLabels || [];
@@ -30,8 +30,9 @@ module.exports = function(Forwarder){
                 Self.addRegisteredPrefix(prefix, faceID);
 
                 onNewFace(null, faceID);
-              }, function(){
+              }, function(id){
                 current--;
+                if (onFaceClose){onFaceClose(id)}
               });
 
               current++;
@@ -70,7 +71,8 @@ module.exports = function(Forwarder){
 
                     onNewFace(null, id);
                     current ++;
-                  }, function(){
+                  }, function(id){
+                    if (onFaceClose){onFaceClose(id)}
                     current --;
                   });
 

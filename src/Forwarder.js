@@ -74,9 +74,9 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
     , Self = this
     , interest = new ndn.Interest();
 
-  console.log("problem/?");
+  //console.log("problem/?");
   interest.wireDecode(element);
-  console.log("decode", interest.toUri());
+  //console.log("decode", interest.toUri());
 
   if(this.pit.checkDuplicate(interest)){
     return this;
@@ -100,11 +100,11 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
     function iterateListeners(){
       if (listeners.hasNext){
         var listener = listeners.next();
-        //console.log("iterate listeners, current =", listener.nextHops);
+        console.log("iterate listeners, current =", listener.nextHops);
         var blockingCallback, connectionCallback, nonBlockingCallbacks = [];
 
         for (var i = 0; i < listener.nextHops.length; i++){
-          //console.log(listener.nextHops[i]);
+          console.log(listener.nextHops[i]);
           if (Self.listenerCallbacks[listener.nextHops[i].faceID].blocking){
 
             blockingCallback = Self.listenerCallbacks[listener.nextHops[i].faceID].callback;
@@ -164,14 +164,14 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
     }
 
     function forward(){
-      //console.log("not skipping forward");
+      console.log("not skipping forward");
       var cacheHit = Self.cache.check(interest);
 
       if (cacheHit){
         Self.interfaces.dispatch(cacheHit, 0 | (1<<faceID));
       } else if (!override.skipForward){
         var nextHopFlag = Self.fib.findAllNextHops(interest.name, faceID);
-        //console.log("nextHopFLag", nextHopFlag);
+        console.log("nextHopFLag", nextHopFlag);
         if (nextHopFlag){
           Self.interfaces.dispatch(element, nextHopFlag);
         }
@@ -379,23 +379,25 @@ require("./node/addConnection.js")(Forwarder);
  *@returns {this} Forwarder for chaining
  */
 Forwarder.prototype.removeConnection = function(faceID) {
-  console.log("begin loop")
-  while ( this.interfaces.Faces[faceID].prefixes.length > 0){
-    this.fib
-    .lookup(this.interfaces.Faces[faceID].prefixes.pop())
-    .removeNextHop({
-      faceID: faceID
-    });
+  console.log("begin loop", faceID)
+  if(this.interfaces.Faces[faceID]){
+    while ( this.interfaces.Faces[faceID].prefixes.length > 0){
+      this.fib
+      .lookup(this.interfaces.Faces[faceID].prefixes.pop())
+      .removeNextHop({
+        faceID: faceID
+      });
+    }
+    console.log("loop complete")
+    this.interfaces.Faces[faceID].close();
+    this.interfaces.Faces[faceID].closeByTransport();
+    this.interfaces.Faces[faceID].onclose();
+    this.connectionCount--;
+    return this;
   }
-  console.log("loop complete")
-  this.interfaces.Faces[faceID].close();
-  this.interfaces.Faces[faceID].closeByTransport();
-  this.interfaces.Faces[faceID].onclose();
-  this.connectionCount--;
-  return this;
 };
 
-Forwarder.prototype.requestConnection = function(prefix, onFace){
+Forwarder.prototype.requestConnection = function(prefix, onFace, onFaceClosed){
   var Self = this;
   Self.createConnectionRequestSuffix(function(suffix, responseCB){
     var name = new ndn.Name(prefix);
@@ -437,8 +439,9 @@ Forwarder.prototype.requestConnection = function(prefix, onFace){
       //console.log("connection added in connectioninfoCallback")
       Self.addRegisteredPrefix(prefix, id);
       onFace(null, id);
-    }, function(){
+    }, function(id){
       Self.removeConnection(id);
+      onFaceClosed(id)
     } );
 
   });
