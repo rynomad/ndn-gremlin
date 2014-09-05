@@ -29,7 +29,7 @@ module.exports = function(Forwarder){
               Self.addConnection("ws://" + json.domain + ":" + json.ws.port, function(faceID){
                 Self.addRegisteredPrefix(prefix, faceID);
 
-                onNewFace(faceID);
+                onNewFace(null, faceID);
               }, function(){
                 current--;
               });
@@ -68,7 +68,7 @@ module.exports = function(Forwarder){
                     console.log("new rtc face in connection listener", prefix, id)
                     Self.addRegisteredPrefix(prefix, id);
 
-                    onNewFace(id);
+                    onNewFace(null, id);
                     current ++;
                   }, function(){
                     current --;

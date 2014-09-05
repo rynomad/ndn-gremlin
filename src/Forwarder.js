@@ -57,6 +57,8 @@ var Forwarder = function Forwarder (options){
 
 Forwarder.ndn = contrib.ndn;
 
+Forwarder.contrib = contrib;
+
 require("./node/ConnectionListeners.js")(Forwarder);
 
 require("./node/createSuffix.js")(Forwarder);
@@ -393,7 +395,7 @@ Forwarder.prototype.removeConnection = function(faceID) {
   return this;
 };
 
-Forwarder.prototype.requestConnection = function(prefix, onFace, onRequestTimeout){
+Forwarder.prototype.requestConnection = function(prefix, onFace){
   var Self = this;
   Self.createConnectionRequestSuffix(function(suffix, responseCB){
     var name = new ndn.Name(prefix);
@@ -417,7 +419,7 @@ Forwarder.prototype.requestConnection = function(prefix, onFace, onRequestTimeou
         }
       } else {
         //console.log("reuest connection timeout")
-        onRequestTimeout();
+        onFace(new Error("connection request timeout"));
       }
     });
     var faceFlag = Self.fib.findAllNextHops(prefix);
@@ -434,7 +436,7 @@ Forwarder.prototype.requestConnection = function(prefix, onFace, onRequestTimeou
     Self.addConnection(connectionInfo, function(id){
       //console.log("connection added in connectioninfoCallback")
       Self.addRegisteredPrefix(prefix, id);
-      onFace(id);
+      onFace(null, id);
     }, function(){
       Self.removeConnection(id);
     } );
