@@ -1,6 +1,6 @@
 {
   "name": "ndn-gremlin",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "ndn forwarder for node and browser",
   "main": "index.js",
   "directories": {
@@ -15,23 +15,30 @@
   "browser": {
     "./src/node/ConnectionListeners.js": "./src/browser/ConnectionListeners.js",
     "./src/node/createSuffix.js": "./src/browser/createSuffix.js",
-    "./src/node/addConnection.js": "./src/browser/addConnection.js"
+    "./src/node/addConnection.js": "./src/browser/addConnection.js",
+    "./dist/src/node/ConnectionListeners.js": "./dist/src/browser/ConnectionListeners.js",
+    "./dist/src/node/createSuffix.js": "./dist/src/browser/createSuffix.js",
+    "./dist/src/node/addConnection.js": "./dist/src/browser/addConnection.js"
   },
   "author": "Ryan Bennett, Colorado State University",
   "license": "LGPLv3",
   "dependencies": {
-    "ndn-contrib": "^0.1.13"
+    "ndn-js-contrib": "*"
   },
   "devDependencies": {
-    "grunt-mocha-test": "^0.11.0",
-    "grunt-contrib-uglify": "^0.5.1",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsdoc": "^0.5.7",
-    "grunt": "^0.4.5",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-browserify": "^2.1.4",
-    "mocha": "^1.21.4",
-    "grunt-forever": "^0.4.4",
-    "dropkick": "^0.1.1"
+    "debug": "*",
+    "grunt-mocha-test": "0.11.0",
+    "grunt-contrib-uglify": "0.5.1",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-jsdoc": "0.5.7",
+    "grunt": "0.4.5",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-browserify": "2.1.4",
+    "mocha": "1.21.4",
+    "grunt-forever": "0.4.4",
+    "dropkick": "0.1.1",
+    "grunt-remove-logging": "^0.2.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-connect": "^0.9.0"
   }
 }
