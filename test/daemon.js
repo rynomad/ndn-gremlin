@@ -1,8 +1,7 @@
 var Forwarder = require("../index.js");
 
 var marx = new Forwarder({
-  tcp: 1337
-  , ws : 1338
+   mem : 1000000
 });
 
 var Manager = require("../src/Manager.js")

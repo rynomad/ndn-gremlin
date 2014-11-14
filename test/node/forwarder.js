@@ -1,23 +1,44 @@
 module.exports = function(){
-  var Forwarder = require("../../src/Forwarder.js")
-    , forwarder = new Forwarder()
+  var Forwarder = require("../../dist/src/Forwarder.js")
+    , forwarder = new Forwarder({})
     , assert = require('assert')
-    , requestConnection = function(forwarder, dispatch){
-      describe("Forwarder.requestConnection", function(){
-        before(function(){
-          forwarder = new Forwarder();
-          console.log("ds",dispatch)
-        })
-        it("should negotiate ws Connection", function(done){
+    , requestConnection = function(Oldforwarder, dispatch){
 
-          forwarder.requestConnection("/connection/request/", function(){
-            done()
+
+      describe("Forwarder node connections", function(){
+        before(function(){
+          forwarder = new Forwarder({
+            tcp:8889,
+            ws:9999
+          });
+          //console.log("ds",dispatch)
+        })
+        it("should create tcp connection with default port", function(done){
+          forwarder.setMaxConnections(10)
+          forwarder.addConnection("tcp://localhost", function(faceID){
+            forwarder.addRegisteredPrefix("/connection/request/", faceID)
+            done();
+          })
+
+        })
+
+        it("should create ws connection with default port", function(done){
+          forwarder.addConnection("ws://localhost", function(){
+            done();
           })
         })
+        it("should negotiate Connection", function(done){
+          Oldforwarder.addConnection = Forwarder.prototype.addConnection
 
-        it("should negotiate tcp Connection", function(done){
-          forwarder.requestConnection("/connection/request/", function(){
+          Oldforwarder.addConnectionListener("/connection/request/", 10, function(id){
+            console.log("got connectionListenerFace")
+
+          })
+          forwarder.requestConnection("/connection/request/", function(err, id){
+            console.log("requestConnection returned face", id)
+            //forwarder.addRegisteredPrefix("connection/request", id)
             done()
+
           })
         })
 
@@ -27,29 +48,12 @@ module.exports = function(){
 
 
       })
-
     }
-    , addConnection = function(forwarder){
-      it("should create tcp connection with default port", function(done){
-        forwarder.addConnection("tcp://localhost", function(){
-          done();
-        })
-
-      })
-
-      it("should create tcp connection with specified port", function(done){
-        forwarder.addConnection("tcp://localhost:1337", function(){
-          done();
-        })
-      })
-
-    };
 
   require("../Forwarder.js")(forwarder, assert
     ,
     {
         requestConnection: requestConnection
-      , addConnection: addConnection
     })
 
 }

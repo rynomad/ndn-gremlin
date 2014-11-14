@@ -178,3 +178,881 @@ Error: listen EADDRINUSE
     at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
     at Module._compile (module.js:456:26)
     at Object.Module._extensions..js (module.js:474:10)
+
+/home/ryan/git/ndn-modules/Marx/test/daemon.js:5
+   mem : 1000000
+   ^^^
+SyntaxError: Unexpected identifier
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+
+/home/ryan/git/ndn-modules/Marx/test/daemon.js:5
+   mem : 1000000
+   ^^^
+SyntaxError: Unexpected identifier
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:56:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/dist/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/dist/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/dist/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '../index.js'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:1:79)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '../index.js'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:1:79)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '../index.js'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:1:79)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '../index.js'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:1:79)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '../index.js'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:1:79)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+Mon, 27 Oct 2014 04:41:27 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:41:27 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:41:27 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:41:27 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:41:27 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:27 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:41:27 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:27 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:27 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:41:27 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:41:27 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:41:27 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 04:41:36 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:41:36 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:41:36 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:41:36 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:41:36 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:36 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:41:36 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:36 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:36 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:41:36 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:41:36 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:41:36 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 04:41:38 GMT WebSocketServerTransport got incoming connection, constructing face
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces newFace called
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces protocol: WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces connectionParameters: [object Object]
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces onopen: undefined
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces onclose: undefined
+Mon, 27 Oct 2014 04:41:38 GMT WebSocketServerTransport constructor called with websocket
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces transport and face constructed
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces WebSocketServerTransport face connectionInfo: [object Object]
+Mon, 27 Oct 2014 04:41:38 GMT Interfaces TOFIX: calling connect manually, onopen triggered for face 0 over transport WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport got incoming connection, constructing face
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces newFace called
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces protocol: WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces connectionParameters: [object Object]
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces onopen: undefined
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces onclose: undefined
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport constructor called with websocket
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces transport and face constructed
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces WebSocketServerTransport face connectionInfo: [object Object]
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces TOFIX: calling connect manually, onopen triggered for face 1 over transport WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport got message
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces onReceivedElement called on face 1
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces detected Interest
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder handleInterest /marx/fib/add-nexthop/connection/request?ndn.Nonce=%C1%FA%1E%E5 from 1
+Mon, 27 Oct 2014 04:41:39 GMT PIT checking interest /marx/fib/add-nexthop/connection/request?ndn.Nonce=%C1%FA%1E%E5 for duplicate
+Mon, 27 Oct 2014 04:41:39 GMT PIT /marx/fib/add-nexthop/connection/request?ndn.Nonce=%C1%FA%1E%E5 is not duplicate
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder interest is not duplicate, insert into PIT
+Mon, 27 Oct 2014 04:41:39 GMT PIT constructing entry for /marx/fib/add-nexthop/connection/request?ndn.Nonce=%C1%FA%1E%E5
+Mon, 27 Oct 2014 04:41:39 GMT PIT inserting pit entry /marx/fib/add-nexthop/connection/request?ndn.Nonce=%C1%FA%1E%E5 with lifetime milliseconds null
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder handleInterest closure
+Mon, 27 Oct 2014 04:41:39 GMT FIB findAllFibEntries: constructing iterator for entries matching  /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:41:39 GMT FIB returning fibEntry at prefix /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:41:39 GMT FIB more fib entries exist for /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder handleInterest iterate listeners, current = [ { faceID: 0 } ]
+Mon, 27 Oct 2014 04:41:39 GMT FIB lookup /connection/request
+Mon, 27 Oct 2014 04:41:39 GMT FIB no entry found at that node, creating empty
+Mon, 27 Oct 2014 04:41:39 GMT FIB returning fibEntry at prefix /marx
+Mon, 27 Oct 2014 04:41:39 GMT FIB no more fib entries exist for /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder handleInterest iterate listeners, current = [ { faceID: 2 } ]
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore checking for data matching interest : /marx/fib/add-nexthop/connection/request?ndn.Nonce=%C1%FA%1E%E5
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore checker at node /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore checking if node false has more siblings : 
+Mon, 27 Oct 2014 04:41:39 GMT FIB findAllFibEntries: constructing iterator for entries matching  /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder nextHopFLag for /marx/fib/add-nexthop/connection/request is 0
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport got incoming connection, constructing face
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces newFace called
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces protocol: WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces connectionParameters: [object Object]
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces onopen: undefined
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces onclose: undefined
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport constructor called with websocket
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces transport and face constructed
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces WebSocketServerTransport face connectionInfo: [object Object]
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces TOFIX: calling connect manually, onopen triggered for face 2 over transport WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:39 GMT PIT entry /marx/fib/add-nexthop/connection/request expired after null ms
+Mon, 27 Oct 2014 04:41:39 GMT PIT consuming entry /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport got message
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces onReceivedElement called on face 2
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces detected Interest
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder handleInterest /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18?ndn.InterestLifetime=16000&ndn.Nonce=%03%E8%40%9D from 2
+Mon, 27 Oct 2014 04:41:39 GMT PIT checking interest /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18?ndn.InterestLifetime=16000&ndn.Nonce=%03%E8%40%9D for duplicate
+Mon, 27 Oct 2014 04:41:39 GMT PIT /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18?ndn.InterestLifetime=16000&ndn.Nonce=%03%E8%40%9D is not duplicate
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder interest is not duplicate, insert into PIT
+Mon, 27 Oct 2014 04:41:39 GMT PIT constructing entry for /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18?ndn.InterestLifetime=16000&ndn.Nonce=%03%E8%40%9D
+Mon, 27 Oct 2014 04:41:39 GMT PIT inserting pit entry /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18?ndn.InterestLifetime=16000&ndn.Nonce=%03%E8%40%9D with lifetime milliseconds 16000
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder handleInterest closure
+Mon, 27 Oct 2014 04:41:39 GMT FIB findAllFibEntries: constructing iterator for entries matching  /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore checking for data matching interest : /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18?ndn.InterestLifetime=16000&ndn.Nonce=%03%E8%40%9D
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore checker at node /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore checking if node false has more siblings : 
+Mon, 27 Oct 2014 04:41:39 GMT FIB findAllFibEntries: constructing iterator for entries matching  /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT FIB returning fibEntry at prefix /connection/request
+Mon, 27 Oct 2014 04:41:39 GMT FIB no more fib entries exist for /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT FIB Entry getting next hops excluding: 2
+Mon, 27 Oct 2014 04:41:39 GMT FIB returning array of 1 nextHops
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder nextHopFLag for /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18 is 2
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces dispatch to flag: 2
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces send on face 1
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport sending data <Buffer 05 fd 04 cf 07 fd 04 bd 08 0a 63 6f 6e 6e 65 63 74 69 6f 6e 08 07 72 65 71 75 65 73 74 08 fd 04 a4 06 fd 04 a0 07 13 08 11 63 6f 6e 6e 65 63 74 69 6f 6e ...>
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport got message
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces onReceivedElement called on face 1
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces detected Data
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder handle data % from face ID /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18 1
+Mon, 27 Oct 2014 04:41:39 GMT PIT lookup entries for /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT PIT checking if /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18 matches /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT PIT entry matches
+Mon, 27 Oct 2014 04:41:39 GMT PIT found match /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT PIT lookup entries for /connection/request
+Mon, 27 Oct 2014 04:41:39 GMT PIT lookup entries for /connection
+Mon, 27 Oct 2014 04:41:39 GMT PIT lookup entries for /
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder found matching pitEntries for faceFlag 4
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces dispatch to flag: 4
+Mon, 27 Oct 2014 04:41:39 GMT Interfaces send on face 2
+Mon, 27 Oct 2014 04:41:39 GMT WebSocketServerTransport sending data <Buffer 06 fd 08 4a 07 fd 04 bd 08 0a 63 6f 6e 6e 65 63 74 69 6f 6e 08 07 72 65 71 75 65 73 74 08 fd 04 a4 06 fd 04 a0 07 13 08 11 63 6f 6e 6e 65 63 74 69 6f 6e ...>
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore inserting /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT ContentStore inserting /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18 with freshness value of null
+Mon, 27 Oct 2014 04:41:39 GMT Forwarder consuming pitEntry for /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18?ndn.InterestLifetime=16000&ndn.Nonce=%03%E8%40%9D
+Mon, 27 Oct 2014 04:41:39 GMT PIT consuming entry /connection/request/%06%FD%04%A0%07%13%08%11connectionRequest%14%00%15%FD%03X%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2039131%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%2020733%20typ%20srflx%20raddr%20192.168.0.54%20rport%2039131%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%202899240182627108746%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3ASqER9A+4yaW0ihVd%5Cr%5Cna%3Dice-pwd%3AfGhDMdNxtLeFAnsweCbHnq6W%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00f%5D2%CC%08%BAW%83%F2%FC-%C7q%24%25E%EB%03%F1%40%7Cx%5E%D2%CBM%12%EB%97%EA%FE%03%5D%5B%96%D5%B6%19%D0%B8%96%1F%2Ay%7D0q%E2J%40%07%A9%02a%A5%EC%B2%E7N%1C27%8D%DEg%B8+%AAW%01%B7%3A%CA%7C%3C%DF%02%90%24B%E8T%06G%07%AEl%DB%EA%0F%00o%C4%C8%F9%E7%0D%7E%20x%F3d%87ngDo3%87%3F%80%AF%CB%3A%2F%C9%F1RR%80%D9%2A%1Ed%13y%13%02B%20%D8Z%CER%CE%AAd%F0%9ED%A7Q%7F%89%04%FA.%D3%A2M%F3%7E%96n%26%8E7%0A%01%F5w%1Eb%14%11%C6r%8D%1B%89%8A%3D%97%85%25z%E6%7B%17%86%B8%22%C1%B4C%B3%06%F1VsZZw%06%94%82%94%13%ACs%E5%40%88%7D%D2%BC%E8AP%03%60%3B%CD%BC%FDIW%E7k%0D%CD%EC%B1%EDb%3D2%F5e%9C%BB%A3%97%FD%99Y%B0%F1%B6a%9E%8E2T%D3%E4%A0%C6X%B5%F4%84%9B%0C%FD%18
+Mon, 27 Oct 2014 04:41:39 GMT lru evicting
+Mon, 27 Oct 2014 04:41:53 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:41:53 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:53 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:53 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:41:53 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:41:53 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:41:53 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:41:53 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:53 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:53 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:53 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:41:53 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:41:53 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:41:54 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:41:54 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:41:54 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:41:54 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:41:54 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:54 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:41:54 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:41:54 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:41:54 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:41:54 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:41:54 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:44:19 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:44:19 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:44:19 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:44:19 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:44:19 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:19 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:44:19 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:44:19 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:19 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:44:19 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:44:19 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:44:20 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:44:20 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:20 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:20 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:44:20 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:44:20 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:44:20 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:44:20 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:20 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:44:20 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:20 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:44:20 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:44:20 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:44:59 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:44:59 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:44:59 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:44:59 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:44:59 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:59 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:44:59 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:44:59 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:44:59 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:44:59 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:44:59 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:44:59 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 04:45:14 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:45:14 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:45:14 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:45:14 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:45:14 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:14 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:45:14 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:45:14 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:14 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:45:14 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:45:14 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:45:14 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 04:45:29 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:45:29 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:29 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:45:29 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:45:29 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:29 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:45:29 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:45:29 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:29 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:45:29 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:45:29 GMT Forwarder addListener at /marx
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:904:11)
+    at Server._listen2 (net.js:1042:14)
+    at listen (net.js:1064:10)
+    at Server.listen (net.js:1138:5)
+    at Function.Listener (/home/ryan/git/ndn-modules/ndn-js-contrib/src/Transports/node/TCPServer.js:75:17)
+    at Interfaces.installTransport (/home/ryan/git/ndn-modules/ndn-js-contrib/src/DataStructures/Interfaces.js:45:15)
+    at new Forwarder (/home/ryan/git/ndn-modules/Marx/src/Forwarder.js:55:21)
+    at Object.<anonymous> (/home/ryan/git/ndn-modules/Marx/test/daemon.js:3:12)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+Mon, 27 Oct 2014 04:46:30 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:46:30 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:46:30 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:46:30 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:46:30 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:46:30 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:46:30 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:46:30 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:46:30 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:46:30 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:46:30 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:46:30 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 04:46:45 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:46:45 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:46:45 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:46:45 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:46:45 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:46:45 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:46:45 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:46:45 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:46:45 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:46:45 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:46:45 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:46:45 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 04:47:00 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:47:00 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:47:00 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:47:00 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:47:00 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:47:00 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:47:00 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:47:00 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:47:00 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:47:00 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:47:00 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:47:00 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 04:47:28 GMT WebSocketServerTransport got incoming connection, constructing face
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces newFace called
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces protocol: WebSocketServerTransport
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces connectionParameters: [object Object]
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces onopen: undefined
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces onclose: undefined
+Mon, 27 Oct 2014 04:47:28 GMT WebSocketServerTransport constructor called with websocket
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces transport and face constructed
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces WebSocketServerTransport face connectionInfo: [object Object]
+Mon, 27 Oct 2014 04:47:28 GMT Interfaces TOFIX: calling connect manually, onopen triggered for face 0 over transport WebSocketServerTransport
+Mon, 27 Oct 2014 04:47:29 GMT WebSocketServerTransport got incoming connection, constructing face
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces newFace called
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces protocol: WebSocketServerTransport
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces connectionParameters: [object Object]
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces onopen: undefined
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces onclose: undefined
+Mon, 27 Oct 2014 04:47:29 GMT WebSocketServerTransport constructor called with websocket
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces transport and face constructed
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces WebSocketServerTransport face connectionInfo: [object Object]
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces TOFIX: calling connect manually, onopen triggered for face 1 over transport WebSocketServerTransport
+Mon, 27 Oct 2014 04:47:29 GMT WebSocketServerTransport got message
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces onReceivedElement called on face 1
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces detected Interest
+Mon, 27 Oct 2014 04:47:29 GMT Forwarder handleInterest /marx/fib/add-nexthop/connection/request?ndn.Nonce=%A5%EC%17%13 from 1
+Mon, 27 Oct 2014 04:47:29 GMT PIT checking interest /marx/fib/add-nexthop/connection/request?ndn.Nonce=%A5%EC%17%13 for duplicate
+Mon, 27 Oct 2014 04:47:29 GMT PIT /marx/fib/add-nexthop/connection/request?ndn.Nonce=%A5%EC%17%13 is not duplicate
+Mon, 27 Oct 2014 04:47:29 GMT Forwarder interest is not duplicate, insert into PIT
+Mon, 27 Oct 2014 04:47:29 GMT PIT constructing entry for /marx/fib/add-nexthop/connection/request?ndn.Nonce=%A5%EC%17%13
+Mon, 27 Oct 2014 04:47:29 GMT PIT inserting pit entry /marx/fib/add-nexthop/connection/request?ndn.Nonce=%A5%EC%17%13 with lifetime milliseconds null
+Mon, 27 Oct 2014 04:47:29 GMT Forwarder handleInterest closure
+Mon, 27 Oct 2014 04:47:29 GMT FIB findAllFibEntries: constructing iterator for entries matching  /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:47:29 GMT FIB returning fibEntry at prefix /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:47:29 GMT FIB more fib entries exist for /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:47:29 GMT Forwarder handleInterest iterate listeners, current = [ { faceID: 0 } ]
+Mon, 27 Oct 2014 04:47:29 GMT FIB lookup /connection/request
+Mon, 27 Oct 2014 04:47:29 GMT FIB no entry found at that node, creating empty
+Mon, 27 Oct 2014 04:47:29 GMT FIB returning fibEntry at prefix /marx
+Mon, 27 Oct 2014 04:47:29 GMT FIB no more fib entries exist for /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:47:29 GMT Forwarder handleInterest iterate listeners, current = [ { faceID: 2 } ]
+Mon, 27 Oct 2014 04:47:29 GMT ContentStore checking for data matching interest : /marx/fib/add-nexthop/connection/request?ndn.Nonce=%A5%EC%17%13
+Mon, 27 Oct 2014 04:47:29 GMT ContentStore checker at node /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:47:29 GMT ContentStore checking if node false has more siblings : 
+Mon, 27 Oct 2014 04:47:29 GMT FIB findAllFibEntries: constructing iterator for entries matching  /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:47:29 GMT Forwarder nextHopFLag for /marx/fib/add-nexthop/connection/request is 0
+Mon, 27 Oct 2014 04:47:29 GMT WebSocketServerTransport got incoming connection, constructing face
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces newFace called
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces protocol: WebSocketServerTransport
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces connectionParameters: [object Object]
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces onopen: undefined
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces onclose: undefined
+Mon, 27 Oct 2014 04:47:29 GMT WebSocketServerTransport constructor called with websocket
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces transport and face constructed
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces WebSocketServerTransport face connectionInfo: [object Object]
+Mon, 27 Oct 2014 04:47:29 GMT Interfaces TOFIX: calling connect manually, onopen triggered for face 2 over transport WebSocketServerTransport
+Mon, 27 Oct 2014 04:47:29 GMT PIT entry /marx/fib/add-nexthop/connection/request expired after null ms
+Mon, 27 Oct 2014 04:47:29 GMT PIT consuming entry /marx/fib/add-nexthop/connection/request
+Mon, 27 Oct 2014 04:47:30 GMT WebSocketServerTransport got message
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces onReceivedElement called on face 2
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces detected Interest
+Mon, 27 Oct 2014 04:47:30 GMT Forwarder handleInterest /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A?ndn.InterestLifetime=16000&ndn.Nonce=%F2h%3B%40 from 2
+Mon, 27 Oct 2014 04:47:30 GMT PIT checking interest /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A?ndn.InterestLifetime=16000&ndn.Nonce=%F2h%3B%40 for duplicate
+Mon, 27 Oct 2014 04:47:30 GMT PIT /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A?ndn.InterestLifetime=16000&ndn.Nonce=%F2h%3B%40 is not duplicate
+Mon, 27 Oct 2014 04:47:30 GMT Forwarder interest is not duplicate, insert into PIT
+Mon, 27 Oct 2014 04:47:30 GMT PIT constructing entry for /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A?ndn.InterestLifetime=16000&ndn.Nonce=%F2h%3B%40
+Mon, 27 Oct 2014 04:47:30 GMT PIT inserting pit entry /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A?ndn.InterestLifetime=16000&ndn.Nonce=%F2h%3B%40 with lifetime milliseconds 16000
+Mon, 27 Oct 2014 04:47:30 GMT Forwarder handleInterest closure
+Mon, 27 Oct 2014 04:47:30 GMT FIB findAllFibEntries: constructing iterator for entries matching  /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT ContentStore checking for data matching interest : /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A?ndn.InterestLifetime=16000&ndn.Nonce=%F2h%3B%40
+Mon, 27 Oct 2014 04:47:30 GMT ContentStore checker at node /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT ContentStore checking if node false has more siblings : 
+Mon, 27 Oct 2014 04:47:30 GMT FIB findAllFibEntries: constructing iterator for entries matching  /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT FIB returning fibEntry at prefix /connection/request
+Mon, 27 Oct 2014 04:47:30 GMT FIB no more fib entries exist for /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT FIB Entry getting next hops excluding: 2
+Mon, 27 Oct 2014 04:47:30 GMT FIB returning array of 1 nextHops
+Mon, 27 Oct 2014 04:47:30 GMT Forwarder nextHopFLag for /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A is 2
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces dispatch to flag: 2
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces send on face 1
+Mon, 27 Oct 2014 04:47:30 GMT WebSocketServerTransport sending data <Buffer 05 fd 04 ce 07 fd 04 bc 08 0a 63 6f 6e 6e 65 63 74 69 6f 6e 08 07 72 65 71 75 65 73 74 08 fd 04 a3 06 fd 04 9f 07 13 08 11 63 6f 6e 6e 65 63 74 69 6f 6e ...>
+Mon, 27 Oct 2014 04:47:30 GMT WebSocketServerTransport got message
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces onReceivedElement called on face 1
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces detected Data
+Mon, 27 Oct 2014 04:47:30 GMT Forwarder handle data % from face ID /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A 1
+Mon, 27 Oct 2014 04:47:30 GMT PIT lookup entries for /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT PIT checking if /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A matches /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT PIT entry matches
+Mon, 27 Oct 2014 04:47:30 GMT PIT found match /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT PIT lookup entries for /connection/request
+Mon, 27 Oct 2014 04:47:30 GMT PIT lookup entries for /connection
+Mon, 27 Oct 2014 04:47:30 GMT PIT lookup entries for /
+Mon, 27 Oct 2014 04:47:30 GMT Forwarder found matching pitEntries for faceFlag 4
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces dispatch to flag: 4
+Mon, 27 Oct 2014 04:47:30 GMT Interfaces send on face 2
+Mon, 27 Oct 2014 04:47:30 GMT WebSocketServerTransport sending data <Buffer 06 fd 08 4b 07 fd 04 bc 08 0a 63 6f 6e 6e 65 63 74 69 6f 6e 08 07 72 65 71 75 65 73 74 08 fd 04 a3 06 fd 04 9f 07 13 08 11 63 6f 6e 6e 65 63 74 69 6f 6e ...>
+Mon, 27 Oct 2014 04:47:30 GMT ContentStore inserting /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT ContentStore inserting /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A with freshness value of null
+Mon, 27 Oct 2014 04:47:30 GMT Forwarder consuming pitEntry for /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A?ndn.InterestLifetime=16000&ndn.Nonce=%F2h%3B%40
+Mon, 27 Oct 2014 04:47:30 GMT PIT consuming entry /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:47:30 GMT lru evicting
+Mon, 27 Oct 2014 04:47:46 GMT PIT entry /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A expired after 16000 ms
+Mon, 27 Oct 2014 04:47:46 GMT PIT consuming entry /connection/request/%06%FD%04%9F%07%13%08%11connectionRequest%14%00%15%FD%03W%7B%22candidates%22%3A%5B%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A798983371%201%20udp%202122260223%20192.168.0.54%2046256%20typ%20host%20generation%200%22%7D%2C%7B%22sdpMLineIndex%22%3A0%2C%22sdpMid%22%3A%22data%22%2C%22candidate%22%3A%22candidate%3A3650092319%201%20udp%201686052607%2065.183.65.201%207012%20typ%20srflx%20raddr%20192.168.0.54%20rport%2046256%20generation%200%22%7D%5D%2C%22labels%22%3A%5B%5D%2C%22sdp%22%3A%7B%22sdp%22%3A%22v%3D0%5Cr%5Cno%3D-%207875701094684372190%202%20IN%20IP4%20127.0.0.1%5Cr%5Cns%3D-%5Cr%5Cnt%3D0%200%5Cr%5Cna%3Dmsid-semantic%3A%20WMS%5Cr%5Cnm%3Dapplication%201%20DTLS%2FSCTP%205000%5Cr%5Cnc%3DIN%20IP4%200.0.0.0%5Cr%5Cna%3Dice-ufrag%3AovYk47hiB1x%2FmiPj%5Cr%5Cna%3Dice-pwd%3Ao9X1%2FfEmKKwF3WnJjjPFfHvR%5Cr%5Cna%3Dice-options%3Agoogle-ice%5Cr%5Cna%3Dfingerprint%3Asha-256%202C%3A3C%3A20%3AE0%3AA6%3A87%3A74%3AAE%3AFF%3AD3%3AF9%3AA9%3ABD%3AB1%3A7B%3A6F%3A3A%3AE0%3A25%3A5F%3A30%3A8E%3AEB%3A23%3AA4%3A6D%3A5C%3A71%3A92%3A4E%3A82%3AFC%5Cr%5Cna%3Dsetup%3Aactpass%5Cr%5Cna%3Dmid%3Adata%5Cr%5Cna%3Dsctpmap%3A5000%20webrtc-datachannel%201024%5Cr%5Cn%22%2C%22type%22%3A%22offer%22%7D%2C%22config%22%3A%7B%22iceServers%22%3A%5B%7B%22url%22%3A%22stun%3Astun.l.google.com%3A19302%22%7D%5D%7D%7D%16%27%1B%01%01%1C%22%1D%20%AA%1C%3C%AD%A4%A6%F6%B1s%FFh%FC%85%A8%C0rK%FF%8BT%3E%E5%B8%1A%0E%821%25%80Bv%F6%17%FD%01%00y%B3%F5%93%B3%11%1D%B7%9C%A8Sa%20%D3%98%B0%B2%25%9Cou%9D6%3F%A5%3Cx%5B%BF%D63h%5B%3F%D2%81%97%13%21%09O%9F%90%F2%93%E6%FB%11%D1%84h%B7%06%C5%B3Q%E1%7B%C2%83%08%E0%27%B1w%F9%D3Mqz%B1%04%F3%84%B8P%18%08%60%DB%13%FF%B4%14%B9%16Or%60%40%0EO%D3O%9B%7C%0323%2A%04%05J%DC%27OYc%E6%BC%D7%3C%40%8Eq%5E%91C%EE%9A%04%B0%EA%F0%03%CE%29%F4%F3%9C%B7%F4%E5%B7g%D2%2Fj%FE%B6f%AC%80%23%89z%20%1D%A1%0D%C1N2%81%1B%E2.%AA%1F%D5%09F%8D%24%3Dsc%3B%B91%82%A3%2C%B4Xz%CB%F4%AC%D6%D2k%81%91%BF0%3D%D3%B22+%B0l%A1%27h%DA%7B%0F%C0%C0J%92qD%C2g5w%D8%D9kB%AE%1C%96%27%D8%CB%8A%18%01%5Bg%92%B7%E3j%0A%D2%25%80e%E8%FF%92%29%01%C5-%BC%C2%91%28%92%AB8%F5%C2%A6VR%AE%8D%02%0A
+Mon, 27 Oct 2014 04:53:28 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 04:53:28 GMT Interfaces constructed
+Mon, 27 Oct 2014 04:53:28 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 04:53:28 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 04:53:28 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:53:28 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 04:53:28 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 04:53:28 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 04:53:28 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 04:53:28 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 04:53:28 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 04:53:28 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 05:01:31 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 05:01:31 GMT Interfaces constructed
+Mon, 27 Oct 2014 05:01:31 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 05:01:31 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 05:01:31 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 05:01:31 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 05:01:31 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 05:01:31 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 05:01:31 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 05:01:31 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 05:01:31 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 05:01:31 GMT TCPServerTransport server awaiting connections
+Mon, 27 Oct 2014 05:03:06 GMT ContentStore ContentStore constructed with csEntry entry class
+Mon, 27 Oct 2014 05:03:06 GMT Interfaces constructed
+Mon, 27 Oct 2014 05:03:06 GMT TCPServerTransport defining listener on port: 8484
+Mon, 27 Oct 2014 05:03:06 GMT Interfaces installing TCPServerTransport
+Mon, 27 Oct 2014 05:03:06 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 05:03:06 GMT WebSocketServerTransport begin listening on port 8585
+Mon, 27 Oct 2014 05:03:06 GMT Interfaces installing WebSocketServerTransport
+Mon, 27 Oct 2014 05:03:06 GMT Interfaces calling listener method
+Mon, 27 Oct 2014 05:03:06 GMT Forwarder addListener at /marx/fib/add-nexthop
+Mon, 27 Oct 2014 05:03:06 GMT Forwarder addListener at /marx/fib/remove-nexthop
+Mon, 27 Oct 2014 05:03:06 GMT Forwarder addListener at /marx
+Mon, 27 Oct 2014 05:03:06 GMT TCPServerTransport server awaiting connections
