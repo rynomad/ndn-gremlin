@@ -499,13 +499,20 @@ Forwarder.prototype.addRegisteredPrefix = function(prefix, faceID){
   return this;
 };
 
+Forwarder.prototype.registrationPrefix = "marx/fib/add-nexthop";
+
+Forwarder.prototype.setRegistrationPrefix = function(prefix){
+  this.registrationPrefix = new ndn.Name(prefix);
+  return this;
+}
+
 /** request a remote forwarder to add a registered prefix for this forwarder
  *@param {String} prefix - the uri encoded prefix for the forwarding entry
  *@param {Number} faceID - the numerical faceID of the face to make the request
  *@returns {this} for chaining
  */
 Forwarder.prototype.registerPrefix = function(prefix, faceID){
-  var name = new ndn.Name("marx/fib/add-nexthop");
+  var name = new ndn.Name(this.registrationPrefix);
   name.append(new ndn.Name(prefix));
   var interest = new ndn.Interest(name);
   this.interfaces.Faces[faceID].send(interest.wireEncode().buffer);
