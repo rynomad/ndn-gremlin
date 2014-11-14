@@ -1,3 +1,6 @@
+var debug = {};
+debug.debug = require("debug")("ConnectionListener");
+
 module.exports = function (Forwarder){
   Forwarder.prototype.addConnectionListener = addConnectionListener;
 };
@@ -12,18 +15,32 @@ function addConnectionListener(prefix, max, onNewFace){
     , prefix : prefix
   }
   , function(interest, faceID, unblock){
-    console.log("connection listener callback, max;current ", max, current);
+    debug.debug("connection listener callback,  Interest: %s", interest.toUri());
     if (current < max){
       var json, d = new Self.ndn.Data();
       try{
         d.wireDecode(interest.name.get(-1).getValueAsBuffer());
-        console.log("decoded");
+        debug.debug("decoded");
         if (d.name.toUri() === "/connectionRequest"){
-          console.log("is connection request");
+          debug.debug("is connection request");
           json = JSON.parse(d.content.toString());
-          console.log("parsed", json, Self.remoteInfo);
+          debug.debug("parsed connection request", json);
           if (json.tcp && !(json.domain === "localhost" && json.tcp.port === Self.remoteInfo.tcp.port)){
-            Self.addConnection("tcp://" + json.domain + ":" + json.tcp.port, onNewFace, function(){
+            Self.addConnection("tcp://" + json.domain + ":" + json.tcp.port, function(id){
+              debug.debug("got callback from Self.addConnection with faceID %s", id);
+
+              Self.addRegisteredPrefix(prefix, id);
+
+              var a = new Self.ndn.Data(interest.name, new Self.ndn.SignedInfo(), JSON.stringify({success:true}));
+              a.signedInfo.setFields();
+              a.sign();
+              debug.debug("made response");
+              setTimeout(function(){
+                debug.debug("sending response");
+                Self.interfaces.Faces[id].send(a.wireEncode().buffer);
+              },500);
+              onNewFace();
+            }, function(){
               current--;
             } );
             current++;
@@ -35,8 +52,8 @@ function addConnectionListener(prefix, max, onNewFace){
           unblock();
         }
       } catch (e){
-        console.log(interest, interest.name.get(-1).getValueAsBuffer().toString());
-        console.log("err" + e.toString());
+        debug.debug(interest, interest.name.get(-1).getValueAsBuffer().toString());
+        debug.debug("err " + e.toString());
         console.log("unblocking", unblock.toString());
         unblock();
       }

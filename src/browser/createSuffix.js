@@ -1,4 +1,6 @@
-var RTCPeerConnection = require("./adapter/adapter.js");
+var RTCPeerConnection = require("./adapter/adapter.js")
+  , debug = {};
+    debug.debug = require("debug")("RTCConnectionListener");
 
 module.exports = function(Forwarder){
   Forwarder.prototype.createConnectionRequestSuffix = createXSuffix;
@@ -25,7 +27,6 @@ function createXSuffix(suffixCallback, connectionInfoCallback){
     var d = new ndn.Data(new ndn.Name("connectionRequest"), new ndn.SignedInfo(), string);
     d.signedInfo.setFields();
     d.sign();
-
     var enc = d.wireEncode();
     var suffix = new ndn.Name.Component(enc.buffer);
     return suffix;
@@ -35,13 +36,13 @@ function createXSuffix(suffixCallback, connectionInfoCallback){
   var datachannel = pc.createDataChannel(Math.random(), {reliable: false});
 
   datachannel.onopen = function(ev){
-    console.log("data channel onopen fired ", datachannel, ev)
-    forwarder.connectionLabels.push(datachannel.label)
+    debug.debug("data channel onopen fired ", datachannel, ev);
+    forwarder.connectionLabels.push(datachannel.label);
     connectionInfoCallback(datachannel);
   };
 
   var onAnswer = function(answer){
-    console.log("got answer from remote", answer)
+    debug.debug("got answer from remote", answer);
     var sdp = new RTCSessionDescription(answer.sdp);
     pc.setRemoteDescription(sdp);
     for (var i = 0; i < answer.candidates.length; i++){
@@ -49,7 +50,7 @@ function createXSuffix(suffixCallback, connectionInfoCallback){
       var candidate = new RTCIceCandidate(answer.candidates[i]);
       pc.addIceCandidate(candidate);
     }
-  }
+  };
 
 
   pc.onicecandidate = function (evt) {
@@ -57,7 +58,7 @@ function createXSuffix(suffixCallback, connectionInfoCallback){
     if (offer.candidates.length > 1 && suffixMade === false ){
       suffixMade = true;
       var suffix = createSuffix();
-      console.log("executing suffix callback")
+      console.log("executing suffix callback");
       suffixCallback(suffix, onAnswer);
     } else if (evt.candidate && evt.candidate.sdpMid === "data" && suffixMade === false){
       offer.candidates.push(evt.candidate);

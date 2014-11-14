@@ -17,7 +17,7 @@ function addConnection(objectOrURL, onOpen, onClosed){
           id = this.interfaces.newFace("WebSocketTransport",
              {
                host: url.split("://")[1].split(":")[0],
-               port: url.split("://")[1].split(":")[1] || 7575
+               port: url.split("://")[1].split(":")[1] || 8585
              }, onOpen, onClosed
            );
       }
@@ -27,8 +27,8 @@ function addConnection(objectOrURL, onOpen, onClosed){
       id = this.interfaces.newFace("MessageChannelTransport", objectOrURL, onOpen, onClosed);
     } else if (objectOrURL.binaryType && objectOrURL.readyState && objectOrURL.label) {
       this.connectionCount++;
-      console.log("dataChanneltransport ducktype")
-      
+      console.log("dataChanneltransport ducktype");
+
 
 
       id = this.interfaces.newFace("DataChannelTransport",  objectOrURL, onOpen, onClosed);

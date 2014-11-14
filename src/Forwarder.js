@@ -1,7 +1,12 @@
-var contrib = require("ndn-contrib"), ndn = contrib.ndn;
+var contrib = require("ndn-js-contrib")
+  , ndn = contrib.ndn, os = require("os")
+  , debug = {}
+  , Manager = require("./Manager.js");
+debug.debug = require("debug")("Forwarder");
 
-/**Main forwarder for Blanc
+/**Forwarder constructor
  *@constructor
+ *@param {Object} options - an object with options
  *@returns {forwarder} an NDN Subject
  *
  */
@@ -14,7 +19,8 @@ var Forwarder = function Forwarder (options){
   this.listeners = new contrib.FIB(new contrib.NameTree());
   this.listenerCallbacks = [];
   this.pit = new contrib.PIT(this.nameTree);
-  this.cache = new contrib.ContentStore(this.nameTree);
+  this.maxMemory = options.mem || os.freemem() * 0.5;
+  this.cache = new contrib.ContentStore(this.nameTree,null,this.maxMemory);
   this.interfaces = new contrib.Interfaces(this);
 
   var transports = Object.keys(contrib.Transports);
@@ -32,12 +38,12 @@ var Forwarder = function Forwarder (options){
     if (contrib.Transports[transports[i]].defineListener){
       if (contrib.Transports[transports[i]].prototype.name === "TCPServerTransport"){
         this.remoteInfo.tcp = {
-          port: options.tcp || 7474
+          port: options.tcp || 8484
           , name : "TCPServerTransport"
         };
       } else if (contrib.Transports[transports[i]].prototype.name === "WebSocketServerTransport"){
         this.remoteInfo.ws = {
-          port: options.ws || 7575
+          port: options.ws || 8585
           , name :  "WebSocketServerTransport"
         };
       } else if (contrib.Transports[transports[i]].prototype.name === "WebSocketTransport"){
@@ -50,7 +56,7 @@ var Forwarder = function Forwarder (options){
     }
     this.interfaces.installTransport(contrib.Transports[transports[i]]);
   }
-
+  Manager(this);
   return this;
 };
 
@@ -58,6 +64,14 @@ var Forwarder = function Forwarder (options){
 Forwarder.ndn = contrib.ndn;
 
 Forwarder.contrib = contrib;
+
+/** add a connection listener along a given prefix.
+ *@param {String} prefix - the prefix to listen along
+ *@param {Number} maxConnections - maximum number of simultaneous connections for this prefix
+ *@param {Function} onNewFace - a function called for each new face, containing the numerical faceID
+ *@param {Function} onFaceClosed - a function called every time a face on this prefix is closed
+ */
+Forwarder.prototype.addConnectionListener = function(){};
 
 require("./node/ConnectionListeners.js")(Forwarder);
 
@@ -74,25 +88,25 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
     , Self = this
     , interest = new ndn.Interest();
 
-  //console.log("problem/?");
+
   interest.wireDecode(element);
-  //console.log("decode", interest.toUri());
+  debug.debug("handleInterest %s from %s", interest.toUri(), faceID);
 
   if(this.pit.checkDuplicate(interest)){
+    debug.debug("interest is duplicate, discontinue forwarding");
     return this;
   } else {
+    debug.debug("interest is not duplicate, insert into PIT");
     Self.pit.insertPitEntry(element, interest, faceID);
   }
 
   function Closure(skipListen, skipForward, listeners){
-    //console.log("closure start", listeners, interest.name.toUri());
+    debug.debug("handleInterest closure");
     listeners = listeners || Self.listeners.findAllFibEntries(interest.name);
-    //console.log("listeners: ", listeners);
 
     function unblock(){
       var Self = this;
       return function unblock(skipListen){
-        //console.log(Self);
         Closure(skipListen, false, listeners);
       };
     }
@@ -100,11 +114,10 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
     function iterateListeners(){
       if (listeners.hasNext){
         var listener = listeners.next();
-        console.log("iterate listeners, current =", listener.nextHops);
+        debug.debug("handleInterest iterate listeners, current =", listener.nextHops);
         var blockingCallback, connectionCallback, nonBlockingCallbacks = [];
 
         for (var i = 0; i < listener.nextHops.length; i++){
-          console.log(listener.nextHops[i]);
           if (Self.listenerCallbacks[listener.nextHops[i].faceID].blocking){
 
             blockingCallback = Self.listenerCallbacks[listener.nextHops[i].faceID].callback;
@@ -112,26 +125,27 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
           } else if (Self.listenerCallbacks[listener.nextHops[i].faceID].connection){
             connectionCallback = Self.listenerCallbacks[listener.nextHops[i].faceID].callback;
           } else{
+            debug.debug("inserting nonBlockingCallback into queue: %o",Self.listenerCallbacks[listener.nextHops[i].faceID].toString());
             nonBlockingCallbacks.push(Self.listenerCallbacks[listener.nextHops[i].faceID]);
           }
         }
         //console.log("blocking", blockingCallback);
         if (connectionCallback){
-          //console.log("connection Listener found", interest.name.toUri());
+          debug.debug("connection Listener triggering at %s", interest.name.toUri());
           connectionCallback(interest, faceID, function(skip){
-            //console.log("connection listener unblocked");
+            debug.debug("connection listener unblocked");
             if (!skip && nonBlockingCallbacks.length > 0){
-              //console.log("progressing to nonBlocks");
+              debug.debug("progressing to nonBlocks");
               for (var p = 0; p < nonBlockingCallbacks.length; p++){
-                //console.log(nonBlockingCallbacks[p]);
+                debug.debug("calling non blocker: %s", nonBlockingCallbacks[p].callback.toString());
                 nonBlockingCallbacks[p].callback(interest, faceID);
               }
             }
             if (blockingCallback){
-              //console.log("executing non connection blocking callback");
+              debug.debug("executing non connection, yet blocking callback");
               blockingCallback(interest, faceID, new unblock());
             } else {
-              //console.log("unblocking completely");
+              debug.debug("unblocking completely");
               var un = new unblock();
               un(skip);
             }
@@ -160,24 +174,22 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
     if (!skipListen){
       iterateListeners();
     } else {
-      forward;
+      forward();
     }
 
     function forward(){
-      console.log("not skipping forward");
       var cacheHit = Self.cache.check(interest);
 
       if (cacheHit){
         Self.interfaces.dispatch(cacheHit, 0 | (1<<faceID));
       } else if (!override.skipForward){
         var nextHopFlag = Self.fib.findAllNextHops(interest.name, faceID);
-        console.log("nextHopFLag", nextHopFlag);
+        debug.debug("nextHopFLag for %s is %s", interest.name.toUri(),nextHopFlag);
         if (nextHopFlag){
           Self.interfaces.dispatch(element, nextHopFlag);
         }
       }
     }
-    //console.log("returning from CLosure");
     return Self;
   }
 
@@ -210,30 +222,32 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
   }*/
 };
 
-/** main algorithm for incoming data packets
+/** main algorithm for incoming data packets. In order; check and dispatch matching PitEntries, insert into cache, return.
  *@param {Buffer} element the raw data packet
  *@param {faceID} the numerical faceID that the packet arrived on
  *@returns {Forwarder} for chaining
  */
 Forwarder.prototype.handleData = function(element, faceID){
-  //console.log("handle data", element, faceID)
+
   var data = new ndn.Data();
   data.wireDecode(element);
 
+  debug.debug("handle data % from face ID %s", data.name.toUri(), faceID);
   var pitMatch = this.pit.lookup(data);
-
-  //console.log("pit matches for ", data.name.toUri(), pitMatch);
-  if (pitMatch.faces  ){
+  if (pitMatch.faces){
+    debug.debug("found matching pitEntries for faceFlag %s", pitMatch.faces);
     this.interfaces.dispatch(element, pitMatch.faces);
-
   }
   if (pitMatch.pitEntries.length > 0) {
     this.cache.insert(element, data);
     for (var i = 0; i < pitMatch.pitEntries.length; i++){
       if (pitMatch.pitEntries[i].callback){
+        debug.debug("excecuting pitEntry callback for %s", pitMatch.pitEntries[i].interest.toUri());
+        debug.debug("with data %s", data.name.toUri());
         pitMatch.pitEntries[i].callback(data, pitMatch.pitEntries[i].interest);
       }
-      pitMatch.pitEntries[i].consume();
+      debug.debug("consuming pitEntry for %s", pitMatch.pitEntries[i].interest.toUri());
+      pitMatch.pitEntries[i].consume(true);
     }
   }
   return this;
@@ -262,6 +276,8 @@ Forwarder.prototype.addListener = function(nameSpace, callback) {
   prefix = new ndn.Name(prefix);
   prefix = prefix.toUri();
 
+  debug.debug("addListener at %s", prefix);
+
   var listenerID = this.listenerCallbacks.length
     , isNew = true;
 
@@ -275,6 +291,7 @@ Forwarder.prototype.addListener = function(nameSpace, callback) {
           this.listenerCallbacks[i].callback = callback;
           connectionReplaced = true;
           isNew = false;
+          debug.debug("replaced existing connection listener");
           //console.log("found");
           break;
         }
@@ -289,14 +306,16 @@ Forwarder.prototype.addListener = function(nameSpace, callback) {
         , listenerID : listenerID
         , prefix : prefix
       });
+      debug.debug("added new connectionListener");
       //console.log("pushed");
     }
   } else if(options.blocking){
+    debug.debug("listener is blocking");
     var blockingReplaced = false;
 
     if (this.listenerCallbacks.length > 0){
       for (var j = 0; j < this.listenerCallbacks.length; j++){
-        //console.log("loop", i, prefix, this.listenerCallbacks[i]);
+        //console.log("loop", j, prefix, this.listenerCallbacks[j]);
         if (this.listenerCallbacks[j].prefix === prefix && this.listenerCallbacks[j].blocking){
           this.listenerCallbacks[j].callback = callback;
           blockingReplaced = true;
@@ -367,10 +386,12 @@ Forwarder.prototype.setMaxConnections = function(maximum){
 };
 
 /** add a connection
- *@param {String} protocol the .name property of the underlying protocol
- *@param {Object} parameters the necessary parameters for the connection
- *@param {function} callback function recieves the numerical faceID of the new face
+ *@param {String | Object} urlOrObject - Either a url string representing the endpoint protocol, ip/domain, and port (e.g "ws://localhost:8585"), or an object (e.g messageChannel port or RTC datachannel)
+ *@param {Function} onFace - callback function which receives the faceID of the newly constructed Face
+ *@param {Function} onFaceClosed - callback function
  */
+Forwarder.prototype.addConnection = function(){};
+
 require("./node/addConnection.js")(Forwarder);
 
 
@@ -379,7 +400,8 @@ require("./node/addConnection.js")(Forwarder);
  *@returns {this} Forwarder for chaining
  */
 Forwarder.prototype.removeConnection = function(faceID) {
-  console.log("begin loop", faceID)
+  debug.debug("removeConnection begin loop", faceID);
+
   if(this.interfaces.Faces[faceID]){
     while ( this.interfaces.Faces[faceID].prefixes.length > 0){
       this.fib
@@ -388,7 +410,7 @@ Forwarder.prototype.removeConnection = function(faceID) {
         faceID: faceID
       });
     }
-    console.log("loop complete")
+    debug.debug("removeConnection loop complete");
     this.interfaces.Faces[faceID].close();
     this.interfaces.Faces[faceID].closeByTransport();
     this.interfaces.Faces[faceID].onclose();
@@ -397,57 +419,79 @@ Forwarder.prototype.removeConnection = function(faceID) {
   }
 };
 
+/** request a connection 'In-band' over NDN; rather than provide an IP/DNS endpoint,
+ * provide a NDN prefix, and be connected with any other forwarder that is listening for connections along that prefix
+ *@param {String} prefix - the uri encoded prefix to register the connection along
+ *@param {Function} onFace - a callback function called upon face construction, which gets the numerical faceID as the only argument
+ *@param {Function} onFaceClosed - a callback function once the face is closed
+ */
 Forwarder.prototype.requestConnection = function(prefix, onFace, onFaceClosed){
   var Self = this;
   Self.createConnectionRequestSuffix(function(suffix, responseCB){
     var name = new ndn.Name(prefix);
-    name.append(suffix);
+    name.append(suffix.value);
     var interest = new ndn.Interest(name);
     interest.setInterestLifetimeMilliseconds(16000);
     var element = interest.wireEncode().buffer;
     var inst = new ndn.Interest();
-    inst.wireDecode(element);
-
+    try{
+      inst.wireDecode(element);
+    } catch(e){
+      debug.debug("wire decode error:", e.message);
+    }
     Self.pit.insertPitEntry(element, inst, function(data, interest){
-
+      debug.debug("triggered PitEntry callback for", interest.name.toUri());
+      debug.debug("with data: %s", data);
       if(data){
         try{
-          //console.log("PitEntry callback for .requestConnection");
-          var json = JSON.parse(data.content.toString());
-          responseCB(json);
-          //console.log("no error?");
+          debug.debug("PitEntry callback for .requestConnection");
+          if (responseCB){
+
+            var json = JSON.parse(data.content.toString());
+            responseCB(json);
+          }
+
+          Self.addRegisteredPrefix(prefix, Self.interfaces.Faces.length -1  );
+          onFace(null, Self.interfaces.Faces.length -1);
+
         } catch(e){
-          //console.log(e);
+          debug.debug(e.message);
         }
       } else {
-        //console.log("reuest connection timeout")
+
+        debug.debug("triggered PitEntry callback after %s ms timeout", interest.getInterestLifetimeMilliseconds());
         onFace(new Error("connection request timeout"));
       }
     });
     var faceFlag = Self.fib.findAllNextHops(prefix);
-    //console.log("faceFlag from requestConnection", faceFlag);
     try{
-      //console.log(Self);
       Self.interfaces.dispatch(element, faceFlag);
 
     } catch(e){
-      //console.log(e);
+      debug.debug(e.message);
     }
   }, function(connectionInfo){
-    //console.log("connectionInfo callback")
+    debug.debug("connectionInfo callback in connection request");
+
     Self.addConnection(connectionInfo, function(id){
-      //console.log("connection added in connectioninfoCallback")
+      debug.debug("connection added in connectioninfoCallback, got faceID %s", id);
       Self.addRegisteredPrefix(prefix, id);
       onFace(null, id);
+      debug.debug("completed onOpen");
     }, function(id){
       Self.removeConnection(id);
-      onFaceClosed(id)
-    } );
+      onFaceClosed(id);
+    });
 
   });
   return this;
 };
 
+/** add a registered prefix for interest forwarding into the fib
+ *@param {String} prefix - the uri encoded prefix for the forwarding entry
+ *@param {Number} faceID - the numerical faceID of the face to add the prefix to
+ *@returns {this} for chaining
+ */
 Forwarder.prototype.addRegisteredPrefix = function(prefix, faceID){
   this.fib.addEntry(prefix, faceID);
   this.interfaces.Faces[faceID].prefixes = this.interfaces.Faces[faceID].prefixes || [];
@@ -455,6 +499,11 @@ Forwarder.prototype.addRegisteredPrefix = function(prefix, faceID){
   return this;
 };
 
+/** request a remote forwarder to add a registered prefix for this forwarder
+ *@param {String} prefix - the uri encoded prefix for the forwarding entry
+ *@param {Number} faceID - the numerical faceID of the face to make the request
+ *@returns {this} for chaining
+ */
 Forwarder.prototype.registerPrefix = function(prefix, faceID){
   var name = new ndn.Name("marx/fib/add-nexthop");
   name.append(new ndn.Name(prefix));
@@ -463,9 +512,15 @@ Forwarder.prototype.registerPrefix = function(prefix, faceID){
   return this;
 };
 
+/** remove a registered prefix for a remote face
+ *@param {String} prefix - the uri encoded prefix for the forwarding entry
+ *@param {Number} faceID - the numerical faceID of the face remove the prefix from
+ *@returns {this} for chaining
+ */
 Forwarder.prototype.unregisterPrefix = function(prefix, faceID){
   var name = new ndn.Name("marx/fib/remove-nexthop");
   name.append(new ndn.Name(prefix));
+
   var interest = new ndn.Interest(name);
 
   this.interfaces.Faces[faceID].send(interest.wireEncode().buffer);

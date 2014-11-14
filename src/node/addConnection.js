@@ -8,11 +8,11 @@ function addConnection(url, callback, onClosed){
   this.connectionCount = this.connectionCount || 0;
   if (typeof url === "string"){
     var protocol = url.split("://")[0];
-    console.log(protocol,"111111111111111");
     if (this.remoteInfo[protocol]){
       if (!this.maxConnections || this.interfaces.Faces.length < this.maxConnections){
+        console.log("ADDCONNECTION:", url);
         this.connectionCount++;
-        callback(this.interfaces.newFace(this.remoteInfo[protocol].name, url, function(){}, onClosed));
+        var id = this.interfaces.newFace(this.remoteInfo[protocol].name, url, callback, onClosed);
       } else {
         console.log("maximum connections reached");
       }

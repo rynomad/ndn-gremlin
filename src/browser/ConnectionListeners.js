@@ -1,8 +1,10 @@
-var RTCPeerConnection = require("./adapter/adapter.js");
+var RTCPeerConnection = require("./adapter/adapter.js")
+  , debug = {};
+debug.debug = require("debug")("ConnectionListeners");
 
 module.exports = function(Forwarder){
   var ndn = Forwarder.ndn;
-  //console.log("running?", Forwarder.ndn);
+
   Forwarder.prototype.addConnectionListener = function(prefix, max, onNewFace, onFaceClose){
     var Self = this;
     var current = 0;
@@ -14,33 +16,32 @@ module.exports = function(Forwarder){
       , prefix : prefix
     }
     , function(interest, faceID, unblock){
-      console.log("connection listener callback, max;current ", max, current);
+      debug.debug("connection listener callback on prefix %s ", prefix);
       if (current < max){
+        current++;
         var json, d = new Self.ndn.Data();
         try{
           d.wireDecode(interest.name.get(-1).getValueAsBuffer());
-          console.log("decoded");
           if (d.name.toUri() === "/connectionRequest"){
-            console.log("is connection request");
+            debug.debug("decoded connection request");
             json = JSON.parse(d.content.toString());
-            //console.log("parsed", json, Self.remoteInfo);
 
             if (json.ws){
               Self.addConnection("ws://" + json.domain + ":" + json.ws.port, function(faceID){
                 Self.addRegisteredPrefix(prefix, faceID);
-
                 onNewFace(null, faceID);
               }, function(id){
                 current--;
-                if (onFaceClose){onFaceClose(id)}
+                if (onFaceClose){
+                  onFaceClose(id);
+                }
               });
 
-              current++;
             } else if (json.candidates && json.config) {
               var alreadyConnected = false;
               for(var i = 0 ; i < json.labels.length; i++){
-                for (var j = 0 ; j < Self.connectionLabels.length; j++){
-                  if (json.labels[i] === Self.connectionLabels.length){
+                for (var j = 0 ; j < Self.connectionLabels.length; j++) {
+                  if (json.labels[i] === Self.connectionLabels.length) {
                     alreadyConnected = true;
                     break;
                   }
@@ -51,7 +52,7 @@ module.exports = function(Forwarder){
               }
 
               if(alreadyConnected){
-                ublock();
+                unblock();
               } else {
 
                 var answer = {};
@@ -63,17 +64,18 @@ module.exports = function(Forwarder){
 
                 pc.ondatachannel = function(evt){
                   //pc.ondatachannel = function(){};
-                  console.log("got data channel in connection listener", evt.channel);
+                  debug.debug("got data channel in connection listener", evt.channel);
                   Self.connectionLabels.push(evt.channel.label);
                   Self.addConnection(evt.channel, function(id){
-                    console.log("new rtc face in connection listener", prefix, id)
+                    debug.debug("new rtc face in connection listener", prefix, id);
                     Self.addRegisteredPrefix(prefix, id);
 
                     onNewFace(null, id);
-                    current ++;
                   }, function(id){
-                    if (onFaceClose){onFaceClose(id)}
-                    current --;
+                    if (onFaceClose){
+                      onFaceClose(id);
+                    }
+                    current--;
                   });
 
                 };
@@ -104,8 +106,8 @@ module.exports = function(Forwarder){
 
                 pc.setRemoteDescription(new RTCSessionDescription(json.sdp));
 
-                for (var i = 0; i < json.candidates.length ; i++){
-                  pc.addIceCandidate(new RTCIceCandidate(json.candidates[i]))
+                for (var k = 0; k < json.candidates.length ; k++) {
+                  pc.addIceCandidate(new RTCIceCandidate(json.candidates[k]));
                 }
 
                 pc.createAnswer(function(description){
