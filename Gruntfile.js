@@ -13,21 +13,6 @@ module.exports = function(grunt){
         }
       }
     },
-    plato: {
-      options:{
-        jshint: {
-          curly: true,
-          eqeqeq: true,
-          laxcomma: true,
-          laxbreak: true
-        }
-      },
-      shadows: {
-        files: {
-          'plato': ['src/**/*.js', 'src/**/*.js']
-        }
-      }
-    },
     browserify: {
       options:{
       },
@@ -73,22 +58,21 @@ module.exports = function(grunt){
     },
     watch: {
       all: {
-        files: ["src/*.js", "src/**/*.js"],
-        tasks: ["forever:testServ:restart", "browserify:test", "uglify:test", "mochaTest","jshint", "plato" ]
+        files: ["src/*.js"],
+        tasks: [ "forever:testServ:stop","mochaTest","forever:testServ:start","browserify:test","uglify:test" ]
       },
       nodeTest: {
-        files: ["test/node/*.js", "test/*.js"],
-        tasks: ["forever:testServ:restart", "mochaTest"]
+        files: ["src/node/*.js", "test/*.js"],
+        tasks: [ "forever:testServ:stop","mochaTest", "forever:testServ:restart"]
       },
       browserTest: {
-        files: ["test/browser/src/*.js", "test/*.js"],
-        tasks: ["forever:testServ:restart", "browserify:test", "uglify:test"]
+        files: ["src/browser/*.js", "test/*.js"],
+        tasks: [ "browserify:test", "uglify:test", ]
       },
       livereload: {
         options: { livereload: true },
         files: ['test/browser/compiledSuite.js'],
       }
-
     },
     forever: {
       testServ: {
@@ -96,6 +80,26 @@ module.exports = function(grunt){
           index: 'test/daemon.js',
           logDir: 'test/logs'
         }
+      }
+    },
+    removelogging : {
+      dist:{
+        src : 'dist/src/**/*.js',
+        options:{
+          namespace: ["debug", "debug.debug"],
+          methods: ["debug"]
+
+        }
+      }
+    },
+    connect: {
+      base: "test/browser/"
+    },
+    copy:{
+      toDist:{
+        files:[
+          {expand: true, src: ['src/**'], dest: 'dist/'}
+        ]
       }
     }
   })
@@ -106,9 +110,13 @@ module.exports = function(grunt){
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-plato');
   grunt.loadNpmTasks('grunt-forever');
+  grunt.loadNpmTasks('grunt-remove-logging');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('suite', ['jshint', 'browserify:test', "uglify:test", "mochaTest"])
+  grunt.registerTask('startDev', ["forever:testServ:start","connect", "watch"])
+  grunt.registerTask("dist",  [ "copy:toDist", "removelogging:dist"])
+  grunt.registerTask('suite', [ "mochaTest", "jshint"])
   grunt.registerTask('build', [ "browserify:build", "uglify:build"])
 };
