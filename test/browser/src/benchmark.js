@@ -72,7 +72,7 @@ function onConnectionsMade(){
   for (var i = 0; i < interests.length; i++){
     f2.handleInterest(interests[i],1)
   }
-  return throughput;
+  return;
   }
   window.cache = function(){
   t1 = Date.now();
@@ -80,7 +80,7 @@ function onConnectionsMade(){
   for (var i = 0; i < interests.length; i++){
     f2.handleInterest(interests[i],1)
   }
-  return throughput
+  return;
 }
 }
 

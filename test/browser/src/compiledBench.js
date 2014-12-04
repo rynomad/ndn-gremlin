@@ -1,6 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 },{}],2:[function(require,module,exports){
+module.exports=require(1)
+},{}],3:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -1171,7 +1173,7 @@ function assert (test, message) {
   if (!test) throw new Error(message || 'Failed assertion')
 }
 
-},{"base64-js":3,"ieee754":4}],3:[function(require,module,exports){
+},{"base64-js":4,"ieee754":5}],4:[function(require,module,exports){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
@@ -1293,7 +1295,7 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 	exports.fromByteArray = uint8ToBase64
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 exports.read = function(buffer, offset, isLE, mLen, nBytes) {
   var e, m,
       eLen = nBytes * 8 - mLen - 1,
@@ -1379,7 +1381,7 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128;
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (Buffer){
 var createHash = require('sha.js')
 
@@ -1413,7 +1415,7 @@ module.exports = function (alg) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./md5":9,"buffer":2,"ripemd160":10,"sha.js":12}],6:[function(require,module,exports){
+},{"./md5":10,"buffer":3,"ripemd160":11,"sha.js":13}],7:[function(require,module,exports){
 (function (Buffer){
 var createHash = require('./create-hash')
 
@@ -1458,7 +1460,7 @@ Hmac.prototype.digest = function (enc) {
 
 
 }).call(this,require("buffer").Buffer)
-},{"./create-hash":5,"buffer":2}],7:[function(require,module,exports){
+},{"./create-hash":6,"buffer":3}],8:[function(require,module,exports){
 (function (Buffer){
 var intSize = 4;
 var zeroBuffer = new Buffer(intSize); zeroBuffer.fill(0);
@@ -1496,7 +1498,7 @@ function hash(buf, fn, hashSize, bigEndian) {
 module.exports = { hash: hash };
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":2}],8:[function(require,module,exports){
+},{"buffer":3}],9:[function(require,module,exports){
 (function (Buffer){
 var rng = require('./rng')
 
@@ -1554,7 +1556,7 @@ each(['createCredentials'
 })
 
 }).call(this,require("buffer").Buffer)
-},{"./create-hash":5,"./create-hmac":6,"./pbkdf2":16,"./rng":17,"buffer":2}],9:[function(require,module,exports){
+},{"./create-hash":6,"./create-hmac":7,"./pbkdf2":17,"./rng":18,"buffer":3}],10:[function(require,module,exports){
 /*
  * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
  * Digest Algorithm, as defined in RFC 1321.
@@ -1711,7 +1713,7 @@ module.exports = function md5(buf) {
   return helpers.hash(buf, core_md5, 16);
 };
 
-},{"./helpers":7}],10:[function(require,module,exports){
+},{"./helpers":8}],11:[function(require,module,exports){
 (function (Buffer){
 
 module.exports = ripemd160
@@ -1920,7 +1922,7 @@ function ripemd160(message) {
 
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":2}],11:[function(require,module,exports){
+},{"buffer":3}],12:[function(require,module,exports){
 var u = require('./util')
 var write = u.write
 var fill = u.zeroFill
@@ -2020,7 +2022,7 @@ module.exports = function (Buffer) {
   return Hash
 }
 
-},{"./util":15}],12:[function(require,module,exports){
+},{"./util":16}],13:[function(require,module,exports){
 var exports = module.exports = function (alg) {
   var Alg = exports[alg]
   if(!Alg) throw new Error(alg + ' is not supported (we accept pull requests)')
@@ -2034,7 +2036,7 @@ exports.sha =
 exports.sha1 = require('./sha1')(Buffer, Hash)
 exports.sha256 = require('./sha256')(Buffer, Hash)
 
-},{"./hash":11,"./sha1":13,"./sha256":14,"buffer":2}],13:[function(require,module,exports){
+},{"./hash":12,"./sha1":14,"./sha256":15,"buffer":3}],14:[function(require,module,exports){
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
  * in FIPS PUB 180-1
@@ -2195,7 +2197,7 @@ module.exports = function (Buffer, Hash) {
   return Sha1
 }
 
-},{"util":22}],14:[function(require,module,exports){
+},{"util":39}],15:[function(require,module,exports){
 
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
@@ -2360,7 +2362,7 @@ module.exports = function (Buffer, Hash) {
 
 }
 
-},{"./util":15,"util":22}],15:[function(require,module,exports){
+},{"./util":16,"util":39}],16:[function(require,module,exports){
 exports.write = write
 exports.zeroFill = zeroFill
 
@@ -2398,7 +2400,7 @@ function zeroFill(buf, from) {
 }
 
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 (function (Buffer){
 // JavaScript PBKDF2 Implementation
 // Based on http://git.io/qsv2zw
@@ -2484,7 +2486,7 @@ module.exports = function (createHmac, exports) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":2}],17:[function(require,module,exports){
+},{"buffer":3}],18:[function(require,module,exports){
 (function (Buffer){
 (function() {
   module.exports = function(size) {
@@ -2498,7 +2500,312 @@ module.exports = function (createHmac, exports) {
 }())
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":2}],18:[function(require,module,exports){
+},{"buffer":3}],19:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+function EventEmitter() {
+  this._events = this._events || {};
+  this._maxListeners = this._maxListeners || undefined;
+}
+module.exports = EventEmitter;
+
+// Backwards-compat with node 0.10.x
+EventEmitter.EventEmitter = EventEmitter;
+
+EventEmitter.prototype._events = undefined;
+EventEmitter.prototype._maxListeners = undefined;
+
+// By default EventEmitters will print a warning if more than 10 listeners are
+// added to it. This is a useful default which helps finding memory leaks.
+EventEmitter.defaultMaxListeners = 10;
+
+// Obviously not all Emitters should be limited to 10. This function allows
+// that to be increased. Set to zero for unlimited.
+EventEmitter.prototype.setMaxListeners = function(n) {
+  if (!isNumber(n) || n < 0 || isNaN(n))
+    throw TypeError('n must be a positive number');
+  this._maxListeners = n;
+  return this;
+};
+
+EventEmitter.prototype.emit = function(type) {
+  var er, handler, len, args, i, listeners;
+
+  if (!this._events)
+    this._events = {};
+
+  // If there is no 'error' event listener then throw.
+  if (type === 'error') {
+    if (!this._events.error ||
+        (isObject(this._events.error) && !this._events.error.length)) {
+      er = arguments[1];
+      if (er instanceof Error) {
+        throw er; // Unhandled 'error' event
+      } else {
+        throw TypeError('Uncaught, unspecified "error" event.');
+      }
+      return false;
+    }
+  }
+
+  handler = this._events[type];
+
+  if (isUndefined(handler))
+    return false;
+
+  if (isFunction(handler)) {
+    switch (arguments.length) {
+      // fast cases
+      case 1:
+        handler.call(this);
+        break;
+      case 2:
+        handler.call(this, arguments[1]);
+        break;
+      case 3:
+        handler.call(this, arguments[1], arguments[2]);
+        break;
+      // slower
+      default:
+        len = arguments.length;
+        args = new Array(len - 1);
+        for (i = 1; i < len; i++)
+          args[i - 1] = arguments[i];
+        handler.apply(this, args);
+    }
+  } else if (isObject(handler)) {
+    len = arguments.length;
+    args = new Array(len - 1);
+    for (i = 1; i < len; i++)
+      args[i - 1] = arguments[i];
+
+    listeners = handler.slice();
+    len = listeners.length;
+    for (i = 0; i < len; i++)
+      listeners[i].apply(this, args);
+  }
+
+  return true;
+};
+
+EventEmitter.prototype.addListener = function(type, listener) {
+  var m;
+
+  if (!isFunction(listener))
+    throw TypeError('listener must be a function');
+
+  if (!this._events)
+    this._events = {};
+
+  // To avoid recursion in the case that type === "newListener"! Before
+  // adding it to the listeners, first emit "newListener".
+  if (this._events.newListener)
+    this.emit('newListener', type,
+              isFunction(listener.listener) ?
+              listener.listener : listener);
+
+  if (!this._events[type])
+    // Optimize the case of one listener. Don't need the extra array object.
+    this._events[type] = listener;
+  else if (isObject(this._events[type]))
+    // If we've already got an array, just append.
+    this._events[type].push(listener);
+  else
+    // Adding the second element, need to change to array.
+    this._events[type] = [this._events[type], listener];
+
+  // Check for listener leak
+  if (isObject(this._events[type]) && !this._events[type].warned) {
+    var m;
+    if (!isUndefined(this._maxListeners)) {
+      m = this._maxListeners;
+    } else {
+      m = EventEmitter.defaultMaxListeners;
+    }
+
+    if (m && m > 0 && this._events[type].length > m) {
+      this._events[type].warned = true;
+      console.error('(node) warning: possible EventEmitter memory ' +
+                    'leak detected. %d listeners added. ' +
+                    'Use emitter.setMaxListeners() to increase limit.',
+                    this._events[type].length);
+      if (typeof console.trace === 'function') {
+        // not supported in IE 10
+        console.trace();
+      }
+    }
+  }
+
+  return this;
+};
+
+EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+
+EventEmitter.prototype.once = function(type, listener) {
+  if (!isFunction(listener))
+    throw TypeError('listener must be a function');
+
+  var fired = false;
+
+  function g() {
+    this.removeListener(type, g);
+
+    if (!fired) {
+      fired = true;
+      listener.apply(this, arguments);
+    }
+  }
+
+  g.listener = listener;
+  this.on(type, g);
+
+  return this;
+};
+
+// emits a 'removeListener' event iff the listener was removed
+EventEmitter.prototype.removeListener = function(type, listener) {
+  var list, position, length, i;
+
+  if (!isFunction(listener))
+    throw TypeError('listener must be a function');
+
+  if (!this._events || !this._events[type])
+    return this;
+
+  list = this._events[type];
+  length = list.length;
+  position = -1;
+
+  if (list === listener ||
+      (isFunction(list.listener) && list.listener === listener)) {
+    delete this._events[type];
+    if (this._events.removeListener)
+      this.emit('removeListener', type, listener);
+
+  } else if (isObject(list)) {
+    for (i = length; i-- > 0;) {
+      if (list[i] === listener ||
+          (list[i].listener && list[i].listener === listener)) {
+        position = i;
+        break;
+      }
+    }
+
+    if (position < 0)
+      return this;
+
+    if (list.length === 1) {
+      list.length = 0;
+      delete this._events[type];
+    } else {
+      list.splice(position, 1);
+    }
+
+    if (this._events.removeListener)
+      this.emit('removeListener', type, listener);
+  }
+
+  return this;
+};
+
+EventEmitter.prototype.removeAllListeners = function(type) {
+  var key, listeners;
+
+  if (!this._events)
+    return this;
+
+  // not listening for removeListener, no need to emit
+  if (!this._events.removeListener) {
+    if (arguments.length === 0)
+      this._events = {};
+    else if (this._events[type])
+      delete this._events[type];
+    return this;
+  }
+
+  // emit removeListener for all listeners on all events
+  if (arguments.length === 0) {
+    for (key in this._events) {
+      if (key === 'removeListener') continue;
+      this.removeAllListeners(key);
+    }
+    this.removeAllListeners('removeListener');
+    this._events = {};
+    return this;
+  }
+
+  listeners = this._events[type];
+
+  if (isFunction(listeners)) {
+    this.removeListener(type, listeners);
+  } else {
+    // LIFO order
+    while (listeners.length)
+      this.removeListener(type, listeners[listeners.length - 1]);
+  }
+  delete this._events[type];
+
+  return this;
+};
+
+EventEmitter.prototype.listeners = function(type) {
+  var ret;
+  if (!this._events || !this._events[type])
+    ret = [];
+  else if (isFunction(this._events[type]))
+    ret = [this._events[type]];
+  else
+    ret = this._events[type].slice();
+  return ret;
+};
+
+EventEmitter.listenerCount = function(emitter, type) {
+  var ret;
+  if (!emitter._events || !emitter._events[type])
+    ret = 0;
+  else if (isFunction(emitter._events[type]))
+    ret = 1;
+  else
+    ret = emitter._events[type].length;
+  return ret;
+};
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+
+},{}],20:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -2523,7 +2830,59 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],19:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+},{}],22:[function(require,module,exports){
+exports.endianness = function () { return 'LE' };
+
+exports.hostname = function () {
+    if (typeof location !== 'undefined') {
+        return location.hostname
+    }
+    else return '';
+};
+
+exports.loadavg = function () { return [] };
+
+exports.uptime = function () { return 0 };
+
+exports.freemem = function () {
+    return Number.MAX_VALUE;
+};
+
+exports.totalmem = function () {
+    return Number.MAX_VALUE;
+};
+
+exports.cpus = function () { return [] };
+
+exports.type = function () { return 'Browser' };
+
+exports.release = function () {
+    if (typeof navigator !== 'undefined') {
+        return navigator.appVersion;
+    }
+    return '';
+};
+
+exports.networkInterfaces
+= exports.getNetworkInterfaces
+= function () { return {} };
+
+exports.arch = function () { return 'javascript' };
+
+exports.platform = function () { return 'browser' };
+
+exports.tmpdir = exports.tmpDir = function () {
+    return '/tmp';
+};
+
+exports.EOL = '\n';
+
+},{}],23:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -2751,7 +3110,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":20}],20:[function(require,module,exports){
+},{"_process":24}],24:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -2816,14 +3175,2225 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
-},{}],21:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
+module.exports = require("./lib/_stream_duplex.js")
+
+},{"./lib/_stream_duplex.js":26}],26:[function(require,module,exports){
+(function (process){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// a duplex stream is just a stream that is both readable and writable.
+// Since JS doesn't have multiple prototypal inheritance, this class
+// prototypally inherits from Readable, and then parasitically from
+// Writable.
+
+module.exports = Duplex;
+
+/*<replacement>*/
+var objectKeys = Object.keys || function (obj) {
+  var keys = [];
+  for (var key in obj) keys.push(key);
+  return keys;
+}
+/*</replacement>*/
+
+
+/*<replacement>*/
+var util = require('core-util-is');
+util.inherits = require('inherits');
+/*</replacement>*/
+
+var Readable = require('./_stream_readable');
+var Writable = require('./_stream_writable');
+
+util.inherits(Duplex, Readable);
+
+forEach(objectKeys(Writable.prototype), function(method) {
+  if (!Duplex.prototype[method])
+    Duplex.prototype[method] = Writable.prototype[method];
+});
+
+function Duplex(options) {
+  if (!(this instanceof Duplex))
+    return new Duplex(options);
+
+  Readable.call(this, options);
+  Writable.call(this, options);
+
+  if (options && options.readable === false)
+    this.readable = false;
+
+  if (options && options.writable === false)
+    this.writable = false;
+
+  this.allowHalfOpen = true;
+  if (options && options.allowHalfOpen === false)
+    this.allowHalfOpen = false;
+
+  this.once('end', onend);
+}
+
+// the no-half-open enforcer
+function onend() {
+  // if we allow half-open state, or if the writable side ended,
+  // then we're ok.
+  if (this.allowHalfOpen || this._writableState.ended)
+    return;
+
+  // no more data can be written.
+  // But allow more writes to happen in this tick.
+  process.nextTick(this.end.bind(this));
+}
+
+function forEach (xs, f) {
+  for (var i = 0, l = xs.length; i < l; i++) {
+    f(xs[i], i);
+  }
+}
+
+}).call(this,require('_process'))
+},{"./_stream_readable":28,"./_stream_writable":30,"_process":24,"core-util-is":31,"inherits":20}],27:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// a passthrough stream.
+// basically just the most minimal sort of Transform stream.
+// Every written chunk gets output as-is.
+
+module.exports = PassThrough;
+
+var Transform = require('./_stream_transform');
+
+/*<replacement>*/
+var util = require('core-util-is');
+util.inherits = require('inherits');
+/*</replacement>*/
+
+util.inherits(PassThrough, Transform);
+
+function PassThrough(options) {
+  if (!(this instanceof PassThrough))
+    return new PassThrough(options);
+
+  Transform.call(this, options);
+}
+
+PassThrough.prototype._transform = function(chunk, encoding, cb) {
+  cb(null, chunk);
+};
+
+},{"./_stream_transform":29,"core-util-is":31,"inherits":20}],28:[function(require,module,exports){
+(function (process){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+module.exports = Readable;
+
+/*<replacement>*/
+var isArray = require('isarray');
+/*</replacement>*/
+
+
+/*<replacement>*/
+var Buffer = require('buffer').Buffer;
+/*</replacement>*/
+
+Readable.ReadableState = ReadableState;
+
+var EE = require('events').EventEmitter;
+
+/*<replacement>*/
+if (!EE.listenerCount) EE.listenerCount = function(emitter, type) {
+  return emitter.listeners(type).length;
+};
+/*</replacement>*/
+
+var Stream = require('stream');
+
+/*<replacement>*/
+var util = require('core-util-is');
+util.inherits = require('inherits');
+/*</replacement>*/
+
+var StringDecoder;
+
+util.inherits(Readable, Stream);
+
+function ReadableState(options, stream) {
+  options = options || {};
+
+  // the point at which it stops calling _read() to fill the buffer
+  // Note: 0 is a valid value, means "don't call _read preemptively ever"
+  var hwm = options.highWaterMark;
+  this.highWaterMark = (hwm || hwm === 0) ? hwm : 16 * 1024;
+
+  // cast to ints.
+  this.highWaterMark = ~~this.highWaterMark;
+
+  this.buffer = [];
+  this.length = 0;
+  this.pipes = null;
+  this.pipesCount = 0;
+  this.flowing = false;
+  this.ended = false;
+  this.endEmitted = false;
+  this.reading = false;
+
+  // In streams that never have any data, and do push(null) right away,
+  // the consumer can miss the 'end' event if they do some I/O before
+  // consuming the stream.  So, we don't emit('end') until some reading
+  // happens.
+  this.calledRead = false;
+
+  // a flag to be able to tell if the onwrite cb is called immediately,
+  // or on a later tick.  We set this to true at first, becuase any
+  // actions that shouldn't happen until "later" should generally also
+  // not happen before the first write call.
+  this.sync = true;
+
+  // whenever we return null, then we set a flag to say
+  // that we're awaiting a 'readable' event emission.
+  this.needReadable = false;
+  this.emittedReadable = false;
+  this.readableListening = false;
+
+
+  // object stream flag. Used to make read(n) ignore n and to
+  // make all the buffer merging and length checks go away
+  this.objectMode = !!options.objectMode;
+
+  // Crypto is kind of old and crusty.  Historically, its default string
+  // encoding is 'binary' so we have to make this configurable.
+  // Everything else in the universe uses 'utf8', though.
+  this.defaultEncoding = options.defaultEncoding || 'utf8';
+
+  // when piping, we only care about 'readable' events that happen
+  // after read()ing all the bytes and not getting any pushback.
+  this.ranOut = false;
+
+  // the number of writers that are awaiting a drain event in .pipe()s
+  this.awaitDrain = 0;
+
+  // if true, a maybeReadMore has been scheduled
+  this.readingMore = false;
+
+  this.decoder = null;
+  this.encoding = null;
+  if (options.encoding) {
+    if (!StringDecoder)
+      StringDecoder = require('string_decoder/').StringDecoder;
+    this.decoder = new StringDecoder(options.encoding);
+    this.encoding = options.encoding;
+  }
+}
+
+function Readable(options) {
+  if (!(this instanceof Readable))
+    return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  Stream.call(this);
+}
+
+// Manually shove something into the read() buffer.
+// This returns true if the highWaterMark has not been hit yet,
+// similar to how Writable.write() returns true if you should
+// write() some more.
+Readable.prototype.push = function(chunk, encoding) {
+  var state = this._readableState;
+
+  if (typeof chunk === 'string' && !state.objectMode) {
+    encoding = encoding || state.defaultEncoding;
+    if (encoding !== state.encoding) {
+      chunk = new Buffer(chunk, encoding);
+      encoding = '';
+    }
+  }
+
+  return readableAddChunk(this, state, chunk, encoding, false);
+};
+
+// Unshift should *always* be something directly out of read()
+Readable.prototype.unshift = function(chunk) {
+  var state = this._readableState;
+  return readableAddChunk(this, state, chunk, '', true);
+};
+
+function readableAddChunk(stream, state, chunk, encoding, addToFront) {
+  var er = chunkInvalid(state, chunk);
+  if (er) {
+    stream.emit('error', er);
+  } else if (chunk === null || chunk === undefined) {
+    state.reading = false;
+    if (!state.ended)
+      onEofChunk(stream, state);
+  } else if (state.objectMode || chunk && chunk.length > 0) {
+    if (state.ended && !addToFront) {
+      var e = new Error('stream.push() after EOF');
+      stream.emit('error', e);
+    } else if (state.endEmitted && addToFront) {
+      var e = new Error('stream.unshift() after end event');
+      stream.emit('error', e);
+    } else {
+      if (state.decoder && !addToFront && !encoding)
+        chunk = state.decoder.write(chunk);
+
+      // update the buffer info.
+      state.length += state.objectMode ? 1 : chunk.length;
+      if (addToFront) {
+        state.buffer.unshift(chunk);
+      } else {
+        state.reading = false;
+        state.buffer.push(chunk);
+      }
+
+      if (state.needReadable)
+        emitReadable(stream);
+
+      maybeReadMore(stream, state);
+    }
+  } else if (!addToFront) {
+    state.reading = false;
+  }
+
+  return needMoreData(state);
+}
+
+
+
+// if it's past the high water mark, we can push in some more.
+// Also, if we have no data yet, we can stand some
+// more bytes.  This is to work around cases where hwm=0,
+// such as the repl.  Also, if the push() triggered a
+// readable event, and the user called read(largeNumber) such that
+// needReadable was set, then we ought to push more, so that another
+// 'readable' event will be triggered.
+function needMoreData(state) {
+  return !state.ended &&
+         (state.needReadable ||
+          state.length < state.highWaterMark ||
+          state.length === 0);
+}
+
+// backwards compatibility.
+Readable.prototype.setEncoding = function(enc) {
+  if (!StringDecoder)
+    StringDecoder = require('string_decoder/').StringDecoder;
+  this._readableState.decoder = new StringDecoder(enc);
+  this._readableState.encoding = enc;
+};
+
+// Don't raise the hwm > 128MB
+var MAX_HWM = 0x800000;
+function roundUpToNextPowerOf2(n) {
+  if (n >= MAX_HWM) {
+    n = MAX_HWM;
+  } else {
+    // Get the next highest power of 2
+    n--;
+    for (var p = 1; p < 32; p <<= 1) n |= n >> p;
+    n++;
+  }
+  return n;
+}
+
+function howMuchToRead(n, state) {
+  if (state.length === 0 && state.ended)
+    return 0;
+
+  if (state.objectMode)
+    return n === 0 ? 0 : 1;
+
+  if (n === null || isNaN(n)) {
+    // only flow one buffer at a time
+    if (state.flowing && state.buffer.length)
+      return state.buffer[0].length;
+    else
+      return state.length;
+  }
+
+  if (n <= 0)
+    return 0;
+
+  // If we're asking for more than the target buffer level,
+  // then raise the water mark.  Bump up to the next highest
+  // power of 2, to prevent increasing it excessively in tiny
+  // amounts.
+  if (n > state.highWaterMark)
+    state.highWaterMark = roundUpToNextPowerOf2(n);
+
+  // don't have that much.  return null, unless we've ended.
+  if (n > state.length) {
+    if (!state.ended) {
+      state.needReadable = true;
+      return 0;
+    } else
+      return state.length;
+  }
+
+  return n;
+}
+
+// you can override either this method, or the async _read(n) below.
+Readable.prototype.read = function(n) {
+  var state = this._readableState;
+  state.calledRead = true;
+  var nOrig = n;
+  var ret;
+
+  if (typeof n !== 'number' || n > 0)
+    state.emittedReadable = false;
+
+  // if we're doing read(0) to trigger a readable event, but we
+  // already have a bunch of data in the buffer, then just trigger
+  // the 'readable' event and move on.
+  if (n === 0 &&
+      state.needReadable &&
+      (state.length >= state.highWaterMark || state.ended)) {
+    emitReadable(this);
+    return null;
+  }
+
+  n = howMuchToRead(n, state);
+
+  // if we've ended, and we're now clear, then finish it up.
+  if (n === 0 && state.ended) {
+    ret = null;
+
+    // In cases where the decoder did not receive enough data
+    // to produce a full chunk, then immediately received an
+    // EOF, state.buffer will contain [<Buffer >, <Buffer 00 ...>].
+    // howMuchToRead will see this and coerce the amount to
+    // read to zero (because it's looking at the length of the
+    // first <Buffer > in state.buffer), and we'll end up here.
+    //
+    // This can only happen via state.decoder -- no other venue
+    // exists for pushing a zero-length chunk into state.buffer
+    // and triggering this behavior. In this case, we return our
+    // remaining data and end the stream, if appropriate.
+    if (state.length > 0 && state.decoder) {
+      ret = fromList(n, state);
+      state.length -= ret.length;
+    }
+
+    if (state.length === 0)
+      endReadable(this);
+
+    return ret;
+  }
+
+  // All the actual chunk generation logic needs to be
+  // *below* the call to _read.  The reason is that in certain
+  // synthetic stream cases, such as passthrough streams, _read
+  // may be a completely synchronous operation which may change
+  // the state of the read buffer, providing enough data when
+  // before there was *not* enough.
+  //
+  // So, the steps are:
+  // 1. Figure out what the state of things will be after we do
+  // a read from the buffer.
+  //
+  // 2. If that resulting state will trigger a _read, then call _read.
+  // Note that this may be asynchronous, or synchronous.  Yes, it is
+  // deeply ugly to write APIs this way, but that still doesn't mean
+  // that the Readable class should behave improperly, as streams are
+  // designed to be sync/async agnostic.
+  // Take note if the _read call is sync or async (ie, if the read call
+  // has returned yet), so that we know whether or not it's safe to emit
+  // 'readable' etc.
+  //
+  // 3. Actually pull the requested chunks out of the buffer and return.
+
+  // if we need a readable event, then we need to do some reading.
+  var doRead = state.needReadable;
+
+  // if we currently have less than the highWaterMark, then also read some
+  if (state.length - n <= state.highWaterMark)
+    doRead = true;
+
+  // however, if we've ended, then there's no point, and if we're already
+  // reading, then it's unnecessary.
+  if (state.ended || state.reading)
+    doRead = false;
+
+  if (doRead) {
+    state.reading = true;
+    state.sync = true;
+    // if the length is currently zero, then we *need* a readable event.
+    if (state.length === 0)
+      state.needReadable = true;
+    // call internal read method
+    this._read(state.highWaterMark);
+    state.sync = false;
+  }
+
+  // If _read called its callback synchronously, then `reading`
+  // will be false, and we need to re-evaluate how much data we
+  // can return to the user.
+  if (doRead && !state.reading)
+    n = howMuchToRead(nOrig, state);
+
+  if (n > 0)
+    ret = fromList(n, state);
+  else
+    ret = null;
+
+  if (ret === null) {
+    state.needReadable = true;
+    n = 0;
+  }
+
+  state.length -= n;
+
+  // If we have nothing in the buffer, then we want to know
+  // as soon as we *do* get something into the buffer.
+  if (state.length === 0 && !state.ended)
+    state.needReadable = true;
+
+  // If we happened to read() exactly the remaining amount in the
+  // buffer, and the EOF has been seen at this point, then make sure
+  // that we emit 'end' on the very next tick.
+  if (state.ended && !state.endEmitted && state.length === 0)
+    endReadable(this);
+
+  return ret;
+};
+
+function chunkInvalid(state, chunk) {
+  var er = null;
+  if (!Buffer.isBuffer(chunk) &&
+      'string' !== typeof chunk &&
+      chunk !== null &&
+      chunk !== undefined &&
+      !state.objectMode) {
+    er = new TypeError('Invalid non-string/buffer chunk');
+  }
+  return er;
+}
+
+
+function onEofChunk(stream, state) {
+  if (state.decoder && !state.ended) {
+    var chunk = state.decoder.end();
+    if (chunk && chunk.length) {
+      state.buffer.push(chunk);
+      state.length += state.objectMode ? 1 : chunk.length;
+    }
+  }
+  state.ended = true;
+
+  // if we've ended and we have some data left, then emit
+  // 'readable' now to make sure it gets picked up.
+  if (state.length > 0)
+    emitReadable(stream);
+  else
+    endReadable(stream);
+}
+
+// Don't emit readable right away in sync mode, because this can trigger
+// another read() call => stack overflow.  This way, it might trigger
+// a nextTick recursion warning, but that's not so bad.
+function emitReadable(stream) {
+  var state = stream._readableState;
+  state.needReadable = false;
+  if (state.emittedReadable)
+    return;
+
+  state.emittedReadable = true;
+  if (state.sync)
+    process.nextTick(function() {
+      emitReadable_(stream);
+    });
+  else
+    emitReadable_(stream);
+}
+
+function emitReadable_(stream) {
+  stream.emit('readable');
+}
+
+
+// at this point, the user has presumably seen the 'readable' event,
+// and called read() to consume some data.  that may have triggered
+// in turn another _read(n) call, in which case reading = true if
+// it's in progress.
+// However, if we're not ended, or reading, and the length < hwm,
+// then go ahead and try to read some more preemptively.
+function maybeReadMore(stream, state) {
+  if (!state.readingMore) {
+    state.readingMore = true;
+    process.nextTick(function() {
+      maybeReadMore_(stream, state);
+    });
+  }
+}
+
+function maybeReadMore_(stream, state) {
+  var len = state.length;
+  while (!state.reading && !state.flowing && !state.ended &&
+         state.length < state.highWaterMark) {
+    stream.read(0);
+    if (len === state.length)
+      // didn't get any data, stop spinning.
+      break;
+    else
+      len = state.length;
+  }
+  state.readingMore = false;
+}
+
+// abstract method.  to be overridden in specific implementation classes.
+// call cb(er, data) where data is <= n in length.
+// for virtual (non-string, non-buffer) streams, "length" is somewhat
+// arbitrary, and perhaps not very meaningful.
+Readable.prototype._read = function(n) {
+  this.emit('error', new Error('not implemented'));
+};
+
+Readable.prototype.pipe = function(dest, pipeOpts) {
+  var src = this;
+  var state = this._readableState;
+
+  switch (state.pipesCount) {
+    case 0:
+      state.pipes = dest;
+      break;
+    case 1:
+      state.pipes = [state.pipes, dest];
+      break;
+    default:
+      state.pipes.push(dest);
+      break;
+  }
+  state.pipesCount += 1;
+
+  var doEnd = (!pipeOpts || pipeOpts.end !== false) &&
+              dest !== process.stdout &&
+              dest !== process.stderr;
+
+  var endFn = doEnd ? onend : cleanup;
+  if (state.endEmitted)
+    process.nextTick(endFn);
+  else
+    src.once('end', endFn);
+
+  dest.on('unpipe', onunpipe);
+  function onunpipe(readable) {
+    if (readable !== src) return;
+    cleanup();
+  }
+
+  function onend() {
+    dest.end();
+  }
+
+  // when the dest drains, it reduces the awaitDrain counter
+  // on the source.  This would be more elegant with a .once()
+  // handler in flow(), but adding and removing repeatedly is
+  // too slow.
+  var ondrain = pipeOnDrain(src);
+  dest.on('drain', ondrain);
+
+  function cleanup() {
+    // cleanup event handlers once the pipe is broken
+    dest.removeListener('close', onclose);
+    dest.removeListener('finish', onfinish);
+    dest.removeListener('drain', ondrain);
+    dest.removeListener('error', onerror);
+    dest.removeListener('unpipe', onunpipe);
+    src.removeListener('end', onend);
+    src.removeListener('end', cleanup);
+
+    // if the reader is waiting for a drain event from this
+    // specific writer, then it would cause it to never start
+    // flowing again.
+    // So, if this is awaiting a drain, then we just call it now.
+    // If we don't know, then assume that we are waiting for one.
+    if (!dest._writableState || dest._writableState.needDrain)
+      ondrain();
+  }
+
+  // if the dest has an error, then stop piping into it.
+  // however, don't suppress the throwing behavior for this.
+  function onerror(er) {
+    unpipe();
+    dest.removeListener('error', onerror);
+    if (EE.listenerCount(dest, 'error') === 0)
+      dest.emit('error', er);
+  }
+  // This is a brutally ugly hack to make sure that our error handler
+  // is attached before any userland ones.  NEVER DO THIS.
+  if (!dest._events || !dest._events.error)
+    dest.on('error', onerror);
+  else if (isArray(dest._events.error))
+    dest._events.error.unshift(onerror);
+  else
+    dest._events.error = [onerror, dest._events.error];
+
+
+
+  // Both close and finish should trigger unpipe, but only once.
+  function onclose() {
+    dest.removeListener('finish', onfinish);
+    unpipe();
+  }
+  dest.once('close', onclose);
+  function onfinish() {
+    dest.removeListener('close', onclose);
+    unpipe();
+  }
+  dest.once('finish', onfinish);
+
+  function unpipe() {
+    src.unpipe(dest);
+  }
+
+  // tell the dest that it's being piped to
+  dest.emit('pipe', src);
+
+  // start the flow if it hasn't been started already.
+  if (!state.flowing) {
+    // the handler that waits for readable events after all
+    // the data gets sucked out in flow.
+    // This would be easier to follow with a .once() handler
+    // in flow(), but that is too slow.
+    this.on('readable', pipeOnReadable);
+
+    state.flowing = true;
+    process.nextTick(function() {
+      flow(src);
+    });
+  }
+
+  return dest;
+};
+
+function pipeOnDrain(src) {
+  return function() {
+    var dest = this;
+    var state = src._readableState;
+    state.awaitDrain--;
+    if (state.awaitDrain === 0)
+      flow(src);
+  };
+}
+
+function flow(src) {
+  var state = src._readableState;
+  var chunk;
+  state.awaitDrain = 0;
+
+  function write(dest, i, list) {
+    var written = dest.write(chunk);
+    if (false === written) {
+      state.awaitDrain++;
+    }
+  }
+
+  while (state.pipesCount && null !== (chunk = src.read())) {
+
+    if (state.pipesCount === 1)
+      write(state.pipes, 0, null);
+    else
+      forEach(state.pipes, write);
+
+    src.emit('data', chunk);
+
+    // if anyone needs a drain, then we have to wait for that.
+    if (state.awaitDrain > 0)
+      return;
+  }
+
+  // if every destination was unpiped, either before entering this
+  // function, or in the while loop, then stop flowing.
+  //
+  // NB: This is a pretty rare edge case.
+  if (state.pipesCount === 0) {
+    state.flowing = false;
+
+    // if there were data event listeners added, then switch to old mode.
+    if (EE.listenerCount(src, 'data') > 0)
+      emitDataEvents(src);
+    return;
+  }
+
+  // at this point, no one needed a drain, so we just ran out of data
+  // on the next readable event, start it over again.
+  state.ranOut = true;
+}
+
+function pipeOnReadable() {
+  if (this._readableState.ranOut) {
+    this._readableState.ranOut = false;
+    flow(this);
+  }
+}
+
+
+Readable.prototype.unpipe = function(dest) {
+  var state = this._readableState;
+
+  // if we're not piping anywhere, then do nothing.
+  if (state.pipesCount === 0)
+    return this;
+
+  // just one destination.  most common case.
+  if (state.pipesCount === 1) {
+    // passed in one, but it's not the right one.
+    if (dest && dest !== state.pipes)
+      return this;
+
+    if (!dest)
+      dest = state.pipes;
+
+    // got a match.
+    state.pipes = null;
+    state.pipesCount = 0;
+    this.removeListener('readable', pipeOnReadable);
+    state.flowing = false;
+    if (dest)
+      dest.emit('unpipe', this);
+    return this;
+  }
+
+  // slow case. multiple pipe destinations.
+
+  if (!dest) {
+    // remove all.
+    var dests = state.pipes;
+    var len = state.pipesCount;
+    state.pipes = null;
+    state.pipesCount = 0;
+    this.removeListener('readable', pipeOnReadable);
+    state.flowing = false;
+
+    for (var i = 0; i < len; i++)
+      dests[i].emit('unpipe', this);
+    return this;
+  }
+
+  // try to find the right one.
+  var i = indexOf(state.pipes, dest);
+  if (i === -1)
+    return this;
+
+  state.pipes.splice(i, 1);
+  state.pipesCount -= 1;
+  if (state.pipesCount === 1)
+    state.pipes = state.pipes[0];
+
+  dest.emit('unpipe', this);
+
+  return this;
+};
+
+// set up data events if they are asked for
+// Ensure readable listeners eventually get something
+Readable.prototype.on = function(ev, fn) {
+  var res = Stream.prototype.on.call(this, ev, fn);
+
+  if (ev === 'data' && !this._readableState.flowing)
+    emitDataEvents(this);
+
+  if (ev === 'readable' && this.readable) {
+    var state = this._readableState;
+    if (!state.readableListening) {
+      state.readableListening = true;
+      state.emittedReadable = false;
+      state.needReadable = true;
+      if (!state.reading) {
+        this.read(0);
+      } else if (state.length) {
+        emitReadable(this, state);
+      }
+    }
+  }
+
+  return res;
+};
+Readable.prototype.addListener = Readable.prototype.on;
+
+// pause() and resume() are remnants of the legacy readable stream API
+// If the user uses them, then switch into old mode.
+Readable.prototype.resume = function() {
+  emitDataEvents(this);
+  this.read(0);
+  this.emit('resume');
+};
+
+Readable.prototype.pause = function() {
+  emitDataEvents(this, true);
+  this.emit('pause');
+};
+
+function emitDataEvents(stream, startPaused) {
+  var state = stream._readableState;
+
+  if (state.flowing) {
+    // https://github.com/isaacs/readable-stream/issues/16
+    throw new Error('Cannot switch to old mode now.');
+  }
+
+  var paused = startPaused || false;
+  var readable = false;
+
+  // convert to an old-style stream.
+  stream.readable = true;
+  stream.pipe = Stream.prototype.pipe;
+  stream.on = stream.addListener = Stream.prototype.on;
+
+  stream.on('readable', function() {
+    readable = true;
+
+    var c;
+    while (!paused && (null !== (c = stream.read())))
+      stream.emit('data', c);
+
+    if (c === null) {
+      readable = false;
+      stream._readableState.needReadable = true;
+    }
+  });
+
+  stream.pause = function() {
+    paused = true;
+    this.emit('pause');
+  };
+
+  stream.resume = function() {
+    paused = false;
+    if (readable)
+      process.nextTick(function() {
+        stream.emit('readable');
+      });
+    else
+      this.read(0);
+    this.emit('resume');
+  };
+
+  // now make it start, just in case it hadn't already.
+  stream.emit('readable');
+}
+
+// wrap an old-style stream as the async data source.
+// This is *not* part of the readable stream interface.
+// It is an ugly unfortunate mess of history.
+Readable.prototype.wrap = function(stream) {
+  var state = this._readableState;
+  var paused = false;
+
+  var self = this;
+  stream.on('end', function() {
+    if (state.decoder && !state.ended) {
+      var chunk = state.decoder.end();
+      if (chunk && chunk.length)
+        self.push(chunk);
+    }
+
+    self.push(null);
+  });
+
+  stream.on('data', function(chunk) {
+    if (state.decoder)
+      chunk = state.decoder.write(chunk);
+
+    // don't skip over falsy values in objectMode
+    //if (state.objectMode && util.isNullOrUndefined(chunk))
+    if (state.objectMode && (chunk === null || chunk === undefined))
+      return;
+    else if (!state.objectMode && (!chunk || !chunk.length))
+      return;
+
+    var ret = self.push(chunk);
+    if (!ret) {
+      paused = true;
+      stream.pause();
+    }
+  });
+
+  // proxy all the other methods.
+  // important when wrapping filters and duplexes.
+  for (var i in stream) {
+    if (typeof stream[i] === 'function' &&
+        typeof this[i] === 'undefined') {
+      this[i] = function(method) { return function() {
+        return stream[method].apply(stream, arguments);
+      }}(i);
+    }
+  }
+
+  // proxy certain important events.
+  var events = ['error', 'close', 'destroy', 'pause', 'resume'];
+  forEach(events, function(ev) {
+    stream.on(ev, self.emit.bind(self, ev));
+  });
+
+  // when we try to consume some more bytes, simply unpause the
+  // underlying stream.
+  self._read = function(n) {
+    if (paused) {
+      paused = false;
+      stream.resume();
+    }
+  };
+
+  return self;
+};
+
+
+
+// exposed for testing purposes only.
+Readable._fromList = fromList;
+
+// Pluck off n bytes from an array of buffers.
+// Length is the combined lengths of all the buffers in the list.
+function fromList(n, state) {
+  var list = state.buffer;
+  var length = state.length;
+  var stringMode = !!state.decoder;
+  var objectMode = !!state.objectMode;
+  var ret;
+
+  // nothing in the list, definitely empty.
+  if (list.length === 0)
+    return null;
+
+  if (length === 0)
+    ret = null;
+  else if (objectMode)
+    ret = list.shift();
+  else if (!n || n >= length) {
+    // read it all, truncate the array.
+    if (stringMode)
+      ret = list.join('');
+    else
+      ret = Buffer.concat(list, length);
+    list.length = 0;
+  } else {
+    // read just some of it.
+    if (n < list[0].length) {
+      // just take a part of the first list item.
+      // slice is the same for buffers and strings.
+      var buf = list[0];
+      ret = buf.slice(0, n);
+      list[0] = buf.slice(n);
+    } else if (n === list[0].length) {
+      // first list is a perfect match
+      ret = list.shift();
+    } else {
+      // complex case.
+      // we have enough to cover it, but it spans past the first buffer.
+      if (stringMode)
+        ret = '';
+      else
+        ret = new Buffer(n);
+
+      var c = 0;
+      for (var i = 0, l = list.length; i < l && c < n; i++) {
+        var buf = list[0];
+        var cpy = Math.min(n - c, buf.length);
+
+        if (stringMode)
+          ret += buf.slice(0, cpy);
+        else
+          buf.copy(ret, c, 0, cpy);
+
+        if (cpy < buf.length)
+          list[0] = buf.slice(cpy);
+        else
+          list.shift();
+
+        c += cpy;
+      }
+    }
+  }
+
+  return ret;
+}
+
+function endReadable(stream) {
+  var state = stream._readableState;
+
+  // If we get here before consuming all the bytes, then that is a
+  // bug in node.  Should never happen.
+  if (state.length > 0)
+    throw new Error('endReadable called on non-empty stream');
+
+  if (!state.endEmitted && state.calledRead) {
+    state.ended = true;
+    process.nextTick(function() {
+      // Check that we didn't get one last unshift.
+      if (!state.endEmitted && state.length === 0) {
+        state.endEmitted = true;
+        stream.readable = false;
+        stream.emit('end');
+      }
+    });
+  }
+}
+
+function forEach (xs, f) {
+  for (var i = 0, l = xs.length; i < l; i++) {
+    f(xs[i], i);
+  }
+}
+
+function indexOf (xs, x) {
+  for (var i = 0, l = xs.length; i < l; i++) {
+    if (xs[i] === x) return i;
+  }
+  return -1;
+}
+
+}).call(this,require('_process'))
+},{"_process":24,"buffer":3,"core-util-is":31,"events":19,"inherits":20,"isarray":21,"stream":37,"string_decoder/":32}],29:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+// a transform stream is a readable/writable stream where you do
+// something with the data.  Sometimes it's called a "filter",
+// but that's not a great name for it, since that implies a thing where
+// some bits pass through, and others are simply ignored.  (That would
+// be a valid example of a transform, of course.)
+//
+// While the output is causally related to the input, it's not a
+// necessarily symmetric or synchronous transformation.  For example,
+// a zlib stream might take multiple plain-text writes(), and then
+// emit a single compressed chunk some time in the future.
+//
+// Here's how this works:
+//
+// The Transform stream has all the aspects of the readable and writable
+// stream classes.  When you write(chunk), that calls _write(chunk,cb)
+// internally, and returns false if there's a lot of pending writes
+// buffered up.  When you call read(), that calls _read(n) until
+// there's enough pending readable data buffered up.
+//
+// In a transform stream, the written data is placed in a buffer.  When
+// _read(n) is called, it transforms the queued up data, calling the
+// buffered _write cb's as it consumes chunks.  If consuming a single
+// written chunk would result in multiple output chunks, then the first
+// outputted bit calls the readcb, and subsequent chunks just go into
+// the read buffer, and will cause it to emit 'readable' if necessary.
+//
+// This way, back-pressure is actually determined by the reading side,
+// since _read has to be called to start processing a new chunk.  However,
+// a pathological inflate type of transform can cause excessive buffering
+// here.  For example, imagine a stream where every byte of input is
+// interpreted as an integer from 0-255, and then results in that many
+// bytes of output.  Writing the 4 bytes {ff,ff,ff,ff} would result in
+// 1kb of data being output.  In this case, you could write a very small
+// amount of input, and end up with a very large amount of output.  In
+// such a pathological inflating mechanism, there'd be no way to tell
+// the system to stop doing the transform.  A single 4MB write could
+// cause the system to run out of memory.
+//
+// However, even in such a pathological case, only a single written chunk
+// would be consumed, and then the rest would wait (un-transformed) until
+// the results of the previous transformed chunk were consumed.
+
+module.exports = Transform;
+
+var Duplex = require('./_stream_duplex');
+
+/*<replacement>*/
+var util = require('core-util-is');
+util.inherits = require('inherits');
+/*</replacement>*/
+
+util.inherits(Transform, Duplex);
+
+
+function TransformState(options, stream) {
+  this.afterTransform = function(er, data) {
+    return afterTransform(stream, er, data);
+  };
+
+  this.needTransform = false;
+  this.transforming = false;
+  this.writecb = null;
+  this.writechunk = null;
+}
+
+function afterTransform(stream, er, data) {
+  var ts = stream._transformState;
+  ts.transforming = false;
+
+  var cb = ts.writecb;
+
+  if (!cb)
+    return stream.emit('error', new Error('no writecb in Transform class'));
+
+  ts.writechunk = null;
+  ts.writecb = null;
+
+  if (data !== null && data !== undefined)
+    stream.push(data);
+
+  if (cb)
+    cb(er);
+
+  var rs = stream._readableState;
+  rs.reading = false;
+  if (rs.needReadable || rs.length < rs.highWaterMark) {
+    stream._read(rs.highWaterMark);
+  }
+}
+
+
+function Transform(options) {
+  if (!(this instanceof Transform))
+    return new Transform(options);
+
+  Duplex.call(this, options);
+
+  var ts = this._transformState = new TransformState(options, this);
+
+  // when the writable side finishes, then flush out anything remaining.
+  var stream = this;
+
+  // start out asking for a readable event once data is transformed.
+  this._readableState.needReadable = true;
+
+  // we have implemented the _read method, and done the other things
+  // that Readable wants before the first _read call, so unset the
+  // sync guard flag.
+  this._readableState.sync = false;
+
+  this.once('finish', function() {
+    if ('function' === typeof this._flush)
+      this._flush(function(er) {
+        done(stream, er);
+      });
+    else
+      done(stream);
+  });
+}
+
+Transform.prototype.push = function(chunk, encoding) {
+  this._transformState.needTransform = false;
+  return Duplex.prototype.push.call(this, chunk, encoding);
+};
+
+// This is the part where you do stuff!
+// override this function in implementation classes.
+// 'chunk' is an input chunk.
+//
+// Call `push(newChunk)` to pass along transformed output
+// to the readable side.  You may call 'push' zero or more times.
+//
+// Call `cb(err)` when you are done with this chunk.  If you pass
+// an error, then that'll put the hurt on the whole operation.  If you
+// never call cb(), then you'll never get another chunk.
+Transform.prototype._transform = function(chunk, encoding, cb) {
+  throw new Error('not implemented');
+};
+
+Transform.prototype._write = function(chunk, encoding, cb) {
+  var ts = this._transformState;
+  ts.writecb = cb;
+  ts.writechunk = chunk;
+  ts.writeencoding = encoding;
+  if (!ts.transforming) {
+    var rs = this._readableState;
+    if (ts.needTransform ||
+        rs.needReadable ||
+        rs.length < rs.highWaterMark)
+      this._read(rs.highWaterMark);
+  }
+};
+
+// Doesn't matter what the args are here.
+// _transform does all the work.
+// That we got here means that the readable side wants more data.
+Transform.prototype._read = function(n) {
+  var ts = this._transformState;
+
+  if (ts.writechunk !== null && ts.writecb && !ts.transforming) {
+    ts.transforming = true;
+    this._transform(ts.writechunk, ts.writeencoding, ts.afterTransform);
+  } else {
+    // mark that we need a transform, so that any data that comes in
+    // will get processed, now that we've asked for it.
+    ts.needTransform = true;
+  }
+};
+
+
+function done(stream, er) {
+  if (er)
+    return stream.emit('error', er);
+
+  // if there's nothing in the write buffer, then that means
+  // that nothing more will ever be provided
+  var ws = stream._writableState;
+  var rs = stream._readableState;
+  var ts = stream._transformState;
+
+  if (ws.length)
+    throw new Error('calling transform done when ws.length != 0');
+
+  if (ts.transforming)
+    throw new Error('calling transform done when still transforming');
+
+  return stream.push(null);
+}
+
+},{"./_stream_duplex":26,"core-util-is":31,"inherits":20}],30:[function(require,module,exports){
+(function (process){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// A bit simpler than readable streams.
+// Implement an async ._write(chunk, cb), and it'll handle all
+// the drain event emission and buffering.
+
+module.exports = Writable;
+
+/*<replacement>*/
+var Buffer = require('buffer').Buffer;
+/*</replacement>*/
+
+Writable.WritableState = WritableState;
+
+
+/*<replacement>*/
+var util = require('core-util-is');
+util.inherits = require('inherits');
+/*</replacement>*/
+
+var Stream = require('stream');
+
+util.inherits(Writable, Stream);
+
+function WriteReq(chunk, encoding, cb) {
+  this.chunk = chunk;
+  this.encoding = encoding;
+  this.callback = cb;
+}
+
+function WritableState(options, stream) {
+  options = options || {};
+
+  // the point at which write() starts returning false
+  // Note: 0 is a valid value, means that we always return false if
+  // the entire buffer is not flushed immediately on write()
+  var hwm = options.highWaterMark;
+  this.highWaterMark = (hwm || hwm === 0) ? hwm : 16 * 1024;
+
+  // object stream flag to indicate whether or not this stream
+  // contains buffers or objects.
+  this.objectMode = !!options.objectMode;
+
+  // cast to ints.
+  this.highWaterMark = ~~this.highWaterMark;
+
+  this.needDrain = false;
+  // at the start of calling end()
+  this.ending = false;
+  // when end() has been called, and returned
+  this.ended = false;
+  // when 'finish' is emitted
+  this.finished = false;
+
+  // should we decode strings into buffers before passing to _write?
+  // this is here so that some node-core streams can optimize string
+  // handling at a lower level.
+  var noDecode = options.decodeStrings === false;
+  this.decodeStrings = !noDecode;
+
+  // Crypto is kind of old and crusty.  Historically, its default string
+  // encoding is 'binary' so we have to make this configurable.
+  // Everything else in the universe uses 'utf8', though.
+  this.defaultEncoding = options.defaultEncoding || 'utf8';
+
+  // not an actual buffer we keep track of, but a measurement
+  // of how much we're waiting to get pushed to some underlying
+  // socket or file.
+  this.length = 0;
+
+  // a flag to see when we're in the middle of a write.
+  this.writing = false;
+
+  // a flag to be able to tell if the onwrite cb is called immediately,
+  // or on a later tick.  We set this to true at first, becuase any
+  // actions that shouldn't happen until "later" should generally also
+  // not happen before the first write call.
+  this.sync = true;
+
+  // a flag to know if we're processing previously buffered items, which
+  // may call the _write() callback in the same tick, so that we don't
+  // end up in an overlapped onwrite situation.
+  this.bufferProcessing = false;
+
+  // the callback that's passed to _write(chunk,cb)
+  this.onwrite = function(er) {
+    onwrite(stream, er);
+  };
+
+  // the callback that the user supplies to write(chunk,encoding,cb)
+  this.writecb = null;
+
+  // the amount that is being written when _write is called.
+  this.writelen = 0;
+
+  this.buffer = [];
+
+  // True if the error was already emitted and should not be thrown again
+  this.errorEmitted = false;
+}
+
+function Writable(options) {
+  var Duplex = require('./_stream_duplex');
+
+  // Writable ctor is applied to Duplexes, though they're not
+  // instanceof Writable, they're instanceof Readable.
+  if (!(this instanceof Writable) && !(this instanceof Duplex))
+    return new Writable(options);
+
+  this._writableState = new WritableState(options, this);
+
+  // legacy.
+  this.writable = true;
+
+  Stream.call(this);
+}
+
+// Otherwise people can pipe Writable streams, which is just wrong.
+Writable.prototype.pipe = function() {
+  this.emit('error', new Error('Cannot pipe. Not readable.'));
+};
+
+
+function writeAfterEnd(stream, state, cb) {
+  var er = new Error('write after end');
+  // TODO: defer error events consistently everywhere, not just the cb
+  stream.emit('error', er);
+  process.nextTick(function() {
+    cb(er);
+  });
+}
+
+// If we get something that is not a buffer, string, null, or undefined,
+// and we're not in objectMode, then that's an error.
+// Otherwise stream chunks are all considered to be of length=1, and the
+// watermarks determine how many objects to keep in the buffer, rather than
+// how many bytes or characters.
+function validChunk(stream, state, chunk, cb) {
+  var valid = true;
+  if (!Buffer.isBuffer(chunk) &&
+      'string' !== typeof chunk &&
+      chunk !== null &&
+      chunk !== undefined &&
+      !state.objectMode) {
+    var er = new TypeError('Invalid non-string/buffer chunk');
+    stream.emit('error', er);
+    process.nextTick(function() {
+      cb(er);
+    });
+    valid = false;
+  }
+  return valid;
+}
+
+Writable.prototype.write = function(chunk, encoding, cb) {
+  var state = this._writableState;
+  var ret = false;
+
+  if (typeof encoding === 'function') {
+    cb = encoding;
+    encoding = null;
+  }
+
+  if (Buffer.isBuffer(chunk))
+    encoding = 'buffer';
+  else if (!encoding)
+    encoding = state.defaultEncoding;
+
+  if (typeof cb !== 'function')
+    cb = function() {};
+
+  if (state.ended)
+    writeAfterEnd(this, state, cb);
+  else if (validChunk(this, state, chunk, cb))
+    ret = writeOrBuffer(this, state, chunk, encoding, cb);
+
+  return ret;
+};
+
+function decodeChunk(state, chunk, encoding) {
+  if (!state.objectMode &&
+      state.decodeStrings !== false &&
+      typeof chunk === 'string') {
+    chunk = new Buffer(chunk, encoding);
+  }
+  return chunk;
+}
+
+// if we're already writing something, then just put this
+// in the queue, and wait our turn.  Otherwise, call _write
+// If we return false, then we need a drain event, so set that flag.
+function writeOrBuffer(stream, state, chunk, encoding, cb) {
+  chunk = decodeChunk(state, chunk, encoding);
+  if (Buffer.isBuffer(chunk))
+    encoding = 'buffer';
+  var len = state.objectMode ? 1 : chunk.length;
+
+  state.length += len;
+
+  var ret = state.length < state.highWaterMark;
+  // we must ensure that previous needDrain will not be reset to false.
+  if (!ret)
+    state.needDrain = true;
+
+  if (state.writing)
+    state.buffer.push(new WriteReq(chunk, encoding, cb));
+  else
+    doWrite(stream, state, len, chunk, encoding, cb);
+
+  return ret;
+}
+
+function doWrite(stream, state, len, chunk, encoding, cb) {
+  state.writelen = len;
+  state.writecb = cb;
+  state.writing = true;
+  state.sync = true;
+  stream._write(chunk, encoding, state.onwrite);
+  state.sync = false;
+}
+
+function onwriteError(stream, state, sync, er, cb) {
+  if (sync)
+    process.nextTick(function() {
+      cb(er);
+    });
+  else
+    cb(er);
+
+  stream._writableState.errorEmitted = true;
+  stream.emit('error', er);
+}
+
+function onwriteStateUpdate(state) {
+  state.writing = false;
+  state.writecb = null;
+  state.length -= state.writelen;
+  state.writelen = 0;
+}
+
+function onwrite(stream, er) {
+  var state = stream._writableState;
+  var sync = state.sync;
+  var cb = state.writecb;
+
+  onwriteStateUpdate(state);
+
+  if (er)
+    onwriteError(stream, state, sync, er, cb);
+  else {
+    // Check if we're actually ready to finish, but don't emit yet
+    var finished = needFinish(stream, state);
+
+    if (!finished && !state.bufferProcessing && state.buffer.length)
+      clearBuffer(stream, state);
+
+    if (sync) {
+      process.nextTick(function() {
+        afterWrite(stream, state, finished, cb);
+      });
+    } else {
+      afterWrite(stream, state, finished, cb);
+    }
+  }
+}
+
+function afterWrite(stream, state, finished, cb) {
+  if (!finished)
+    onwriteDrain(stream, state);
+  cb();
+  if (finished)
+    finishMaybe(stream, state);
+}
+
+// Must force callback to be called on nextTick, so that we don't
+// emit 'drain' before the write() consumer gets the 'false' return
+// value, and has a chance to attach a 'drain' listener.
+function onwriteDrain(stream, state) {
+  if (state.length === 0 && state.needDrain) {
+    state.needDrain = false;
+    stream.emit('drain');
+  }
+}
+
+
+// if there's something in the buffer waiting, then process it
+function clearBuffer(stream, state) {
+  state.bufferProcessing = true;
+
+  for (var c = 0; c < state.buffer.length; c++) {
+    var entry = state.buffer[c];
+    var chunk = entry.chunk;
+    var encoding = entry.encoding;
+    var cb = entry.callback;
+    var len = state.objectMode ? 1 : chunk.length;
+
+    doWrite(stream, state, len, chunk, encoding, cb);
+
+    // if we didn't call the onwrite immediately, then
+    // it means that we need to wait until it does.
+    // also, that means that the chunk and cb are currently
+    // being processed, so move the buffer counter past them.
+    if (state.writing) {
+      c++;
+      break;
+    }
+  }
+
+  state.bufferProcessing = false;
+  if (c < state.buffer.length)
+    state.buffer = state.buffer.slice(c);
+  else
+    state.buffer.length = 0;
+}
+
+Writable.prototype._write = function(chunk, encoding, cb) {
+  cb(new Error('not implemented'));
+};
+
+Writable.prototype.end = function(chunk, encoding, cb) {
+  var state = this._writableState;
+
+  if (typeof chunk === 'function') {
+    cb = chunk;
+    chunk = null;
+    encoding = null;
+  } else if (typeof encoding === 'function') {
+    cb = encoding;
+    encoding = null;
+  }
+
+  if (typeof chunk !== 'undefined' && chunk !== null)
+    this.write(chunk, encoding);
+
+  // ignore unnecessary end() calls.
+  if (!state.ending && !state.finished)
+    endWritable(this, state, cb);
+};
+
+
+function needFinish(stream, state) {
+  return (state.ending &&
+          state.length === 0 &&
+          !state.finished &&
+          !state.writing);
+}
+
+function finishMaybe(stream, state) {
+  var need = needFinish(stream, state);
+  if (need) {
+    state.finished = true;
+    stream.emit('finish');
+  }
+  return need;
+}
+
+function endWritable(stream, state, cb) {
+  state.ending = true;
+  finishMaybe(stream, state);
+  if (cb) {
+    if (state.finished)
+      process.nextTick(cb);
+    else
+      stream.once('finish', cb);
+  }
+  state.ended = true;
+}
+
+}).call(this,require('_process'))
+},{"./_stream_duplex":26,"_process":24,"buffer":3,"core-util-is":31,"inherits":20,"stream":37}],31:[function(require,module,exports){
+(function (Buffer){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// NOTE: These type checking functions intentionally don't use `instanceof`
+// because it is fragile and can be easily faked with `Object.create()`.
+function isArray(ar) {
+  return Array.isArray(ar);
+}
+exports.isArray = isArray;
+
+function isBoolean(arg) {
+  return typeof arg === 'boolean';
+}
+exports.isBoolean = isBoolean;
+
+function isNull(arg) {
+  return arg === null;
+}
+exports.isNull = isNull;
+
+function isNullOrUndefined(arg) {
+  return arg == null;
+}
+exports.isNullOrUndefined = isNullOrUndefined;
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+exports.isNumber = isNumber;
+
+function isString(arg) {
+  return typeof arg === 'string';
+}
+exports.isString = isString;
+
+function isSymbol(arg) {
+  return typeof arg === 'symbol';
+}
+exports.isSymbol = isSymbol;
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+exports.isUndefined = isUndefined;
+
+function isRegExp(re) {
+  return isObject(re) && objectToString(re) === '[object RegExp]';
+}
+exports.isRegExp = isRegExp;
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+exports.isObject = isObject;
+
+function isDate(d) {
+  return isObject(d) && objectToString(d) === '[object Date]';
+}
+exports.isDate = isDate;
+
+function isError(e) {
+  return isObject(e) &&
+      (objectToString(e) === '[object Error]' || e instanceof Error);
+}
+exports.isError = isError;
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+exports.isFunction = isFunction;
+
+function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === 'boolean' ||
+         typeof arg === 'number' ||
+         typeof arg === 'string' ||
+         typeof arg === 'symbol' ||  // ES6 symbol
+         typeof arg === 'undefined';
+}
+exports.isPrimitive = isPrimitive;
+
+function isBuffer(arg) {
+  return Buffer.isBuffer(arg);
+}
+exports.isBuffer = isBuffer;
+
+function objectToString(o) {
+  return Object.prototype.toString.call(o);
+}
+}).call(this,require("buffer").Buffer)
+},{"buffer":3}],32:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+var Buffer = require('buffer').Buffer;
+
+var isBufferEncoding = Buffer.isEncoding
+  || function(encoding) {
+       switch (encoding && encoding.toLowerCase()) {
+         case 'hex': case 'utf8': case 'utf-8': case 'ascii': case 'binary': case 'base64': case 'ucs2': case 'ucs-2': case 'utf16le': case 'utf-16le': case 'raw': return true;
+         default: return false;
+       }
+     }
+
+
+function assertEncoding(encoding) {
+  if (encoding && !isBufferEncoding(encoding)) {
+    throw new Error('Unknown encoding: ' + encoding);
+  }
+}
+
+// StringDecoder provides an interface for efficiently splitting a series of
+// buffers into a series of JS strings without breaking apart multi-byte
+// characters. CESU-8 is handled as part of the UTF-8 encoding.
+//
+// @TODO Handling all encodings inside a single object makes it very difficult
+// to reason about this code, so it should be split up in the future.
+// @TODO There should be a utf8-strict encoding that rejects invalid UTF-8 code
+// points as used by CESU-8.
+var StringDecoder = exports.StringDecoder = function(encoding) {
+  this.encoding = (encoding || 'utf8').toLowerCase().replace(/[-_]/, '');
+  assertEncoding(encoding);
+  switch (this.encoding) {
+    case 'utf8':
+      // CESU-8 represents each of Surrogate Pair by 3-bytes
+      this.surrogateSize = 3;
+      break;
+    case 'ucs2':
+    case 'utf16le':
+      // UTF-16 represents each of Surrogate Pair by 2-bytes
+      this.surrogateSize = 2;
+      this.detectIncompleteChar = utf16DetectIncompleteChar;
+      break;
+    case 'base64':
+      // Base-64 stores 3 bytes in 4 chars, and pads the remainder.
+      this.surrogateSize = 3;
+      this.detectIncompleteChar = base64DetectIncompleteChar;
+      break;
+    default:
+      this.write = passThroughWrite;
+      return;
+  }
+
+  // Enough space to store all bytes of a single character. UTF-8 needs 4
+  // bytes, but CESU-8 may require up to 6 (3 bytes per surrogate).
+  this.charBuffer = new Buffer(6);
+  // Number of bytes received for the current incomplete multi-byte character.
+  this.charReceived = 0;
+  // Number of bytes expected for the current incomplete multi-byte character.
+  this.charLength = 0;
+};
+
+
+// write decodes the given buffer and returns it as JS string that is
+// guaranteed to not contain any partial multi-byte characters. Any partial
+// character found at the end of the buffer is buffered up, and will be
+// returned when calling write again with the remaining bytes.
+//
+// Note: Converting a Buffer containing an orphan surrogate to a String
+// currently works, but converting a String to a Buffer (via `new Buffer`, or
+// Buffer#write) will replace incomplete surrogates with the unicode
+// replacement character. See https://codereview.chromium.org/121173009/ .
+StringDecoder.prototype.write = function(buffer) {
+  var charStr = '';
+  // if our last write ended with an incomplete multibyte character
+  while (this.charLength) {
+    // determine how many remaining bytes this buffer has to offer for this char
+    var available = (buffer.length >= this.charLength - this.charReceived) ?
+        this.charLength - this.charReceived :
+        buffer.length;
+
+    // add the new bytes to the char buffer
+    buffer.copy(this.charBuffer, this.charReceived, 0, available);
+    this.charReceived += available;
+
+    if (this.charReceived < this.charLength) {
+      // still not enough chars in this buffer? wait for more ...
+      return '';
+    }
+
+    // remove bytes belonging to the current character from the buffer
+    buffer = buffer.slice(available, buffer.length);
+
+    // get the character that was split
+    charStr = this.charBuffer.slice(0, this.charLength).toString(this.encoding);
+
+    // CESU-8: lead surrogate (D800-DBFF) is also the incomplete character
+    var charCode = charStr.charCodeAt(charStr.length - 1);
+    if (charCode >= 0xD800 && charCode <= 0xDBFF) {
+      this.charLength += this.surrogateSize;
+      charStr = '';
+      continue;
+    }
+    this.charReceived = this.charLength = 0;
+
+    // if there are no more bytes in this buffer, just emit our char
+    if (buffer.length === 0) {
+      return charStr;
+    }
+    break;
+  }
+
+  // determine and set charLength / charReceived
+  this.detectIncompleteChar(buffer);
+
+  var end = buffer.length;
+  if (this.charLength) {
+    // buffer the incomplete character bytes we got
+    buffer.copy(this.charBuffer, 0, buffer.length - this.charReceived, end);
+    end -= this.charReceived;
+  }
+
+  charStr += buffer.toString(this.encoding, 0, end);
+
+  var end = charStr.length - 1;
+  var charCode = charStr.charCodeAt(end);
+  // CESU-8: lead surrogate (D800-DBFF) is also the incomplete character
+  if (charCode >= 0xD800 && charCode <= 0xDBFF) {
+    var size = this.surrogateSize;
+    this.charLength += size;
+    this.charReceived += size;
+    this.charBuffer.copy(this.charBuffer, size, 0, size);
+    buffer.copy(this.charBuffer, 0, 0, size);
+    return charStr.substring(0, end);
+  }
+
+  // or just emit the charStr
+  return charStr;
+};
+
+// detectIncompleteChar determines if there is an incomplete UTF-8 character at
+// the end of the given buffer. If so, it sets this.charLength to the byte
+// length that character, and sets this.charReceived to the number of bytes
+// that are available for this character.
+StringDecoder.prototype.detectIncompleteChar = function(buffer) {
+  // determine how many bytes we have to check at the end of this buffer
+  var i = (buffer.length >= 3) ? 3 : buffer.length;
+
+  // Figure out if one of the last i bytes of our buffer announces an
+  // incomplete char.
+  for (; i > 0; i--) {
+    var c = buffer[buffer.length - i];
+
+    // See http://en.wikipedia.org/wiki/UTF-8#Description
+
+    // 110XXXXX
+    if (i == 1 && c >> 5 == 0x06) {
+      this.charLength = 2;
+      break;
+    }
+
+    // 1110XXXX
+    if (i <= 2 && c >> 4 == 0x0E) {
+      this.charLength = 3;
+      break;
+    }
+
+    // 11110XXX
+    if (i <= 3 && c >> 3 == 0x1E) {
+      this.charLength = 4;
+      break;
+    }
+  }
+  this.charReceived = i;
+};
+
+StringDecoder.prototype.end = function(buffer) {
+  var res = '';
+  if (buffer && buffer.length)
+    res = this.write(buffer);
+
+  if (this.charReceived) {
+    var cr = this.charReceived;
+    var buf = this.charBuffer;
+    var enc = this.encoding;
+    res += buf.slice(0, cr).toString(enc);
+  }
+
+  return res;
+};
+
+function passThroughWrite(buffer) {
+  return buffer.toString(this.encoding);
+}
+
+function utf16DetectIncompleteChar(buffer) {
+  this.charReceived = buffer.length % 2;
+  this.charLength = this.charReceived ? 2 : 0;
+}
+
+function base64DetectIncompleteChar(buffer) {
+  this.charReceived = buffer.length % 3;
+  this.charLength = this.charReceived ? 3 : 0;
+}
+
+},{"buffer":3}],33:[function(require,module,exports){
+module.exports = require("./lib/_stream_passthrough.js")
+
+},{"./lib/_stream_passthrough.js":27}],34:[function(require,module,exports){
+exports = module.exports = require('./lib/_stream_readable.js');
+exports.Readable = exports;
+exports.Writable = require('./lib/_stream_writable.js');
+exports.Duplex = require('./lib/_stream_duplex.js');
+exports.Transform = require('./lib/_stream_transform.js');
+exports.PassThrough = require('./lib/_stream_passthrough.js');
+
+},{"./lib/_stream_duplex.js":26,"./lib/_stream_passthrough.js":27,"./lib/_stream_readable.js":28,"./lib/_stream_transform.js":29,"./lib/_stream_writable.js":30}],35:[function(require,module,exports){
+module.exports = require("./lib/_stream_transform.js")
+
+},{"./lib/_stream_transform.js":29}],36:[function(require,module,exports){
+module.exports = require("./lib/_stream_writable.js")
+
+},{"./lib/_stream_writable.js":30}],37:[function(require,module,exports){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+module.exports = Stream;
+
+var EE = require('events').EventEmitter;
+var inherits = require('inherits');
+
+inherits(Stream, EE);
+Stream.Readable = require('readable-stream/readable.js');
+Stream.Writable = require('readable-stream/writable.js');
+Stream.Duplex = require('readable-stream/duplex.js');
+Stream.Transform = require('readable-stream/transform.js');
+Stream.PassThrough = require('readable-stream/passthrough.js');
+
+// Backwards-compat with node 0.4.x
+Stream.Stream = Stream;
+
+
+
+// old-style streams.  Note that the pipe method (the only relevant
+// part of this class) is overridden in the Readable class.
+
+function Stream() {
+  EE.call(this);
+}
+
+Stream.prototype.pipe = function(dest, options) {
+  var source = this;
+
+  function ondata(chunk) {
+    if (dest.writable) {
+      if (false === dest.write(chunk) && source.pause) {
+        source.pause();
+      }
+    }
+  }
+
+  source.on('data', ondata);
+
+  function ondrain() {
+    if (source.readable && source.resume) {
+      source.resume();
+    }
+  }
+
+  dest.on('drain', ondrain);
+
+  // If the 'end' option is not supplied, dest.end() will be called when
+  // source gets the 'end' or 'close' events.  Only dest.end() once.
+  if (!dest._isStdio && (!options || options.end !== false)) {
+    source.on('end', onend);
+    source.on('close', onclose);
+  }
+
+  var didOnEnd = false;
+  function onend() {
+    if (didOnEnd) return;
+    didOnEnd = true;
+
+    dest.end();
+  }
+
+
+  function onclose() {
+    if (didOnEnd) return;
+    didOnEnd = true;
+
+    if (typeof dest.destroy === 'function') dest.destroy();
+  }
+
+  // don't leave dangling pipes when there are errors.
+  function onerror(er) {
+    cleanup();
+    if (EE.listenerCount(this, 'error') === 0) {
+      throw er; // Unhandled stream error in pipe.
+    }
+  }
+
+  source.on('error', onerror);
+  dest.on('error', onerror);
+
+  // remove all the event listeners that were added.
+  function cleanup() {
+    source.removeListener('data', ondata);
+    dest.removeListener('drain', ondrain);
+
+    source.removeListener('end', onend);
+    source.removeListener('close', onclose);
+
+    source.removeListener('error', onerror);
+    dest.removeListener('error', onerror);
+
+    source.removeListener('end', cleanup);
+    source.removeListener('close', cleanup);
+
+    dest.removeListener('close', cleanup);
+  }
+
+  source.on('end', cleanup);
+  source.on('close', cleanup);
+
+  dest.on('close', cleanup);
+
+  dest.emit('pipe', source);
+
+  // Allow for unix-like usage: A.pipe(B).pipe(C)
+  return dest;
+};
+
+},{"events":19,"inherits":20,"readable-stream/duplex.js":25,"readable-stream/passthrough.js":33,"readable-stream/readable.js":34,"readable-stream/transform.js":35,"readable-stream/writable.js":36}],38:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],22:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -3413,21 +5983,7687 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":21,"_process":20,"inherits":18}],23:[function(require,module,exports){
-module.exports = require("./src/Forwarder.js");
+},{"./support/isBuffer":38,"_process":24,"inherits":20}],40:[function(require,module,exports){
+var contrib = require("ndn-js-contrib")
+  , ndn = contrib.ndn, os = require("os")
+  , debug = {}
+  , Manager = require("./Manager.js");
+debug.debug = require("debug")("Forwarder");
 
-},{"./src/Forwarder.js":112}],24:[function(require,module,exports){
-exports.ndn = require("ndn-lib");
-exports.NameTree = require("./src/DataStructures/NameTree.js").installNDN(exports.ndn);
-exports.PIT = require("./src/DataStructures/PIT.js").installNDN(exports.ndn);
-exports.FIB = require("./src/DataStructures/FIB.js").installNDN(exports.ndn);
-exports.ContentStore = require("./src/DataStructures/ContentStore.js");
-exports.Interfaces = require("./src/DataStructures/Interfaces.js").installNDN(exports.ndn);
-exports.Transports = require("./src/Transports/node/export.js");
+/**Forwarder constructor
+ *@constructor
+ *@param {Object} options - an object with options
+ *@returns {forwarder} an NDN Subject
+ *
+ */
+var Forwarder = function Forwarder (options){
+  options = options || {};
+  this.ndn = contrib.ndn;
+  this.contrib = contrib;
+  this.nameTree = new contrib.NameTree();
+  this.fib = new contrib.FIB(this.nameTree);
+  this.listeners = new contrib.FIB(new contrib.NameTree());
+  this.listenerCallbacks = [];
+  this.pit = new contrib.PIT(this.nameTree);
+  this.maxMemory = options.mem || os.freemem() * 0.5;
+  this.cache = new contrib.ContentStore(this.nameTree,null,this.maxMemory);
+  this.interfaces = new contrib.Interfaces(this);
 
+  var transports = Object.keys(contrib.Transports);
+
+  options.TCPServerTransport = options.tcp;
+  options.WebSocketServerTransport = options.ws;
+
+  this.remoteInfo = {
+    ipv4: options.ipv4 || "0.0.0.0",
+    domain : options.domain || "localhost",
+    iceServers : options.iceServers || []
+  };
+
+  for (var i = 0; i < transports.length; i++){
+    if (contrib.Transports[transports[i]].defineListener){
+      if (contrib.Transports[transports[i]].prototype.name === "TCPServerTransport"){
+        this.remoteInfo.tcp = {
+          port: options.tcp || 8484
+          , name : "TCPServerTransport"
+        };
+      } else if (contrib.Transports[transports[i]].prototype.name === "WebSocketServerTransport"){
+        this.remoteInfo.ws = {
+          port: options.ws || 8585
+          , name :  "WebSocketServerTransport"
+        };
+      } else if (contrib.Transports[transports[i]].prototype.name === "WebSocketTransport"){
+        this.remoteInfo.ws = {
+          name: "WebSocketTransport"
+        };
+      }
+      //console.log(options[contrib.Transports[transports[i]].prototype.name], contrib.Transports[transports[i]].prototype.name);
+      contrib.Transports[transports[i]].defineListener(this, options[contrib.Transports[transports[i]].prototype.name]);
+    }
+    this.interfaces.installTransport(contrib.Transports[transports[i]]);
+  }
+  Manager(this);
+  return this;
+};
+
+
+Forwarder.ndn = contrib.ndn;
+
+Forwarder.contrib = contrib;
+
+/** add a connection listener along a given prefix.
+ *@param {String} prefix - the prefix to listen along
+ *@param {Number} maxConnections - maximum number of simultaneous connections for this prefix
+ *@param {Function} onNewFace - a function called for each new face, containing the numerical faceID
+ *@param {Function} onFaceClosed - a function called every time a face on this prefix is closed
+ */
+Forwarder.prototype.addConnectionListener = function(){};
+
+require("./node/ConnectionListeners.js")(Forwarder);
+
+require("./node/createSuffix.js")(Forwarder);
+
+
+/**handle an incoming interest from the interfaces module
+ *@param {Buffer} element the raw interest packet
+ *@param {Number} faceID the Integer faceID of the face which recieved the Interest
+ *@returns {this} for chaining
+ */
+Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
+  var override = {}
+    , Self = this
+    , interest = new ndn.Interest();
+
+
+  interest.wireDecode(element);
+  
+
+  if(this.pit.checkDuplicate(interest)){
+    
+    return this;
+  } else {
+    
+    Self.pit.insertPitEntry(element, interest, faceID);
+  }
+
+  function Closure(skipListen, skipForward, listeners){
+    
+    listeners = listeners || Self.listeners.findAllFibEntries(interest.name);
+
+    function unblock(){
+      var Self = this;
+      return function unblock(skipListen){
+        Closure(skipListen, false, listeners);
+      };
+    }
+
+    function iterateListeners(){
+      if (listeners.hasNext){
+        var listener = listeners.next();
+        
+        var blockingCallback, connectionCallback, nonBlockingCallbacks = [];
+
+        for (var i = 0; i < listener.nextHops.length; i++){
+          if (Self.listenerCallbacks[listener.nextHops[i].faceID].blocking){
+
+            blockingCallback = Self.listenerCallbacks[listener.nextHops[i].faceID].callback;
+            block = true;
+          } else if (Self.listenerCallbacks[listener.nextHops[i].faceID].connection){
+            connectionCallback = Self.listenerCallbacks[listener.nextHops[i].faceID].callback;
+          } else{
+            
+            nonBlockingCallbacks.push(Self.listenerCallbacks[listener.nextHops[i].faceID]);
+          }
+        }
+        //console.log("blocking", blockingCallback);
+        if (connectionCallback){
+          
+          connectionCallback(interest, faceID, function(skip){
+            
+            if (!skip && nonBlockingCallbacks.length > 0){
+              
+              for (var p = 0; p < nonBlockingCallbacks.length; p++){
+                
+                nonBlockingCallbacks[p].callback(interest, faceID);
+              }
+            }
+            if (blockingCallback){
+              
+              blockingCallback(interest, faceID, new unblock());
+            } else {
+              
+              var un = new unblock();
+              un(skip);
+            }
+          });
+          return;
+
+        } else if (nonBlockingCallbacks.length > 0){
+          for (var j = 0; j < nonBlockingCallbacks.length; j++){
+            //console.log("nonBlocking", nonBlockingCallbacks[j]);
+            nonBlockingCallbacks[j].callback(interest, faceID);
+          }
+        }
+
+        if (blockingCallback){
+          blockingCallback(interest, faceID, new unblock());
+        } else if (listeners.hasNext) {
+          iterateListeners();
+        } else {
+          forward();
+        }
+      } else {
+        forward();
+      }
+    }
+
+    if (!skipListen){
+      iterateListeners();
+    } else {
+      forward();
+    }
+
+    function forward(){
+      var cacheHit = Self.cache.check(interest);
+
+      if (cacheHit){
+        Self.interfaces.dispatch(cacheHit, 0 | (1<<faceID));
+      } else if (!override.skipForward){
+        var nextHopFlag = Self.fib.findAllNextHops(interest.name, faceID);
+        
+        if (nextHopFlag){
+          Self.interfaces.dispatch(element, nextHopFlag);
+        }
+      }
+    }
+    return Self;
+  }
+
+
+
+  return Closure(skipListen);
+   /*else {
+    var inFace = this.interfaces.Faces[faceID], toCheck, matched;
+    console.log("cleanup")
+    for (var i = 0; i < inFace.prefixes.length; i++){
+      console.log("createName toCheck")
+      toCheck = new ndn.Name(inFace.prefixes[i]);
+      console.log(toCheck)
+      if (toCheck.match(interest.name)){
+        matched = inFace.prefixes[i]
+        this.unregisterPrefix(matched, faceID);
+        break;
+      }
+    }
+    console.log("first loop completed")
+    for (var j = 0; j < inFace.prefixes.length; j++){
+      if ( matched === inFace.prefixes[j]){
+        inFace.prefixes.splice(i, 1);
+      }
+    }
+    if(inFace.prefixes.length === 0){
+      console.log("remove idle connection")
+      this.removeConnection(faceID);
+    }
+  }*/
+};
+
+/** main algorithm for incoming data packets. In order; check and dispatch matching PitEntries, insert into cache, return.
+ *@param {Buffer} element the raw data packet
+ *@param {faceID} the numerical faceID that the packet arrived on
+ *@returns {Forwarder} for chaining
+ */
+Forwarder.prototype.handleData = function(element, faceID){
+
+  var data = new ndn.Data();
+  data.wireDecode(element);
+
+  
+  var pitMatch = this.pit.lookup(data);
+  if (pitMatch.faces){
+    
+    this.interfaces.dispatch(element, pitMatch.faces);
+  }
+  if (pitMatch.pitEntries.length > 0) {
+    this.cache.insert(element, data);
+    for (var i = 0; i < pitMatch.pitEntries.length; i++){
+      if (pitMatch.pitEntries[i].callback){
+        
+        
+        pitMatch.pitEntries[i].callback(data, pitMatch.pitEntries[i].interest);
+      }
+      
+      pitMatch.pitEntries[i].consume(true);
+    }
+  }
+  return this;
+};
+
+
+/** add a nameSpace Listener to the Forwarder. the listener will be triggered via the same semantics as forwarding entries
+ *@param {String | option} nameSpace the uri of the namespace to listen on, or an options object containing that uri under the .prefix property
+ *so far only a boolean '.blocking' property, to tell whether to interupt normal forwarding
+ *@param {function} callback
+ */
+Forwarder.prototype.addListener = function(nameSpace, callback) {
+  this.listenerCallbacks = this.listenerCallbacks || [];
+  var prefix
+    , options
+    , Self = this;
+
+  if (typeof nameSpace === "string"){
+    prefix = nameSpace;
+    options = {};
+  } else {
+    prefix = nameSpace.prefix;
+    options = nameSpace;
+  }
+
+  prefix = new ndn.Name(prefix);
+  prefix = prefix.toUri();
+
+  
+
+  var listenerID = this.listenerCallbacks.length
+    , isNew = true;
+
+  if(options.connection){
+    var connectionReplaced = false;
+
+    if (this.listenerCallbacks.length > 0){
+      for (var i = 0; i < this.listenerCallbacks.length; i++){
+        //console.log("loop", i, prefix, this.listenerCallbacks[i]);
+        if (this.listenerCallbacks[i].prefix === prefix && this.listenerCallbacks[i].connection){
+          this.listenerCallbacks[i].callback = callback;
+          connectionReplaced = true;
+          isNew = false;
+          
+          //console.log("found");
+          break;
+        }
+      }
+    }
+
+    if (!connectionReplaced){
+      //console.log("not found");
+      this.listenerCallbacks.push({
+        connection : true
+        , callback : callback
+        , listenerID : listenerID
+        , prefix : prefix
+      });
+      
+      //console.log("pushed");
+    }
+  } else if(options.blocking){
+    
+    var blockingReplaced = false;
+
+    if (this.listenerCallbacks.length > 0){
+      for (var j = 0; j < this.listenerCallbacks.length; j++){
+        //console.log("loop", j, prefix, this.listenerCallbacks[j]);
+        if (this.listenerCallbacks[j].prefix === prefix && this.listenerCallbacks[j].blocking){
+          this.listenerCallbacks[j].callback = callback;
+          blockingReplaced = true;
+          isNew = false;
+          //console.log("found");
+          break;
+        }
+      }
+    }
+
+    if (!blockingReplaced){
+      //console.log("not found");
+      this.listenerCallbacks.push({
+        blocking : true
+        , callback : callback
+        , listenerID : listenerID
+        , prefix : prefix
+      });
+      console.log("pushed");
+    }
+  } else {
+    this.listenerCallbacks.push({
+      blocking: false
+      , callback: callback
+      , listenerID: listenerID
+      , prefix : prefix
+    });
+  }
+
+  if (isNew){
+    this.listeners.addEntry(prefix, listenerID);
+  }
+
+  return this;
+};
+
+/** Remove ALL listeners on a given namespace (but NOT all prefixes) ie, two listeners on /a/b and one on /a: .removeListeners("/a/b") will remove both on /a/b and leave the one on /a
+ *@param {String} prefix the nameSpace uri to remove listeners on
+ *@returns {this} for chaining
+ */
+Forwarder.prototype.removeListeners = function(prefix){
+  prefix = new ndn.Name(prefix);
+
+  this.listenerCallbacks = this.listenerCallbacks || [];
+  if (this.listenerCallbacks.length === 0){
+    return this;
+  }
+
+  var listenerEntry = this.listeners.lookup(prefix);
+
+  while(listenerEntry.nextHops.length){
+    var hopEntry = listenerEntry.nextHops.pop();
+
+    this.listenerCallbacks[hopEntry.faceID].callback = null;
+  }
+
+  return this;
+};
+
+
+/** set maximum number of connections for the forwarder (default unset)
+ *@param {Number} maximum the maximum number of simultaneous connections
+ *@returns {this} for chaining
+ */
+Forwarder.prototype.setMaxConnections = function(maximum){
+  this.maxConnections = maximum;
+  return this;
+};
+
+/** add a connection
+ *@param {String | Object} urlOrObject - Either a url string representing the endpoint protocol, ip/domain, and port (e.g "ws://localhost:8585"), or an object (e.g messageChannel port or RTC datachannel)
+ *@param {Function} onFace - callback function which receives the faceID of the newly constructed Face
+ *@param {Function} onFaceClosed - callback function
+ */
+Forwarder.prototype.addConnection = function(){};
+
+require("./node/addConnection.js")(Forwarder);
+
+
+/** remove a connection, and purge any registered Prefixes from the FIB
+ *@param {Number} faceID Numerical faceID of the connection to remove
+ *@returns {this} Forwarder for chaining
+ */
+Forwarder.prototype.removeConnection = function(faceID) {
+  
+
+  if(this.interfaces.Faces[faceID]){
+    while ( this.interfaces.Faces[faceID].prefixes.length > 0){
+      this.fib
+      .lookup(this.interfaces.Faces[faceID].prefixes.pop())
+      .removeNextHop({
+        faceID: faceID
+      });
+    }
+    
+    this.interfaces.Faces[faceID].close();
+    this.interfaces.Faces[faceID].closeByTransport();
+    this.interfaces.Faces[faceID].onclose();
+    this.connectionCount--;
+    return this;
+  }
+};
+
+/** request a connection 'In-band' over NDN; rather than provide an IP/DNS endpoint,
+ * provide a NDN prefix, and be connected with any other forwarder that is listening for connections along that prefix
+ *@param {String} prefix - the uri encoded prefix to register the connection along
+ *@param {Function} onFace - a callback function called upon face construction, which gets the numerical faceID as the only argument
+ *@param {Function} onFaceClosed - a callback function once the face is closed
+ */
+Forwarder.prototype.requestConnection = function(prefix, onFace, onFaceClosed){
+  var Self = this;
+  Self.createConnectionRequestSuffix(function(suffix, responseCB){
+    var name = new ndn.Name(prefix);
+    name.append(suffix.value);
+    var interest = new ndn.Interest(name);
+    interest.setInterestLifetimeMilliseconds(16000);
+    var element = interest.wireEncode().buffer;
+    var inst = new ndn.Interest();
+    try{
+      inst.wireDecode(element);
+    } catch(e){
+      
+    }
+    Self.pit.insertPitEntry(element, inst, function(data, interest){
+      
+      
+      if(data){
+        try{
+          
+          if (responseCB){
+
+            var json = JSON.parse(data.content.toString());
+            responseCB(json);
+          }
+
+          Self.addRegisteredPrefix(prefix, Self.interfaces.Faces.length -1  );
+          onFace(null, Self.interfaces.Faces.length -1);
+
+        } catch(e){
+          
+        }
+      } else {
+
+        
+        onFace(new Error("connection request timeout"));
+      }
+    });
+    var faceFlag = Self.fib.findAllNextHops(prefix);
+    try{
+      Self.interfaces.dispatch(element, faceFlag);
+
+    } catch(e){
+      
+    }
+  }, function(connectionInfo){
+    
+
+    Self.addConnection(connectionInfo, function(id){
+      
+      Self.addRegisteredPrefix(prefix, id);
+      onFace(null, id);
+      
+    }, function(id){
+      Self.removeConnection(id);
+      onFaceClosed(id);
+    });
+
+  });
+  return this;
+};
+
+/** add a registered prefix for interest forwarding into the fib
+ *@param {String} prefix - the uri encoded prefix for the forwarding entry
+ *@param {Number} faceID - the numerical faceID of the face to add the prefix to
+ *@returns {this} for chaining
+ */
+Forwarder.prototype.addRegisteredPrefix = function(prefix, faceID){
+  this.fib.addEntry(prefix, faceID);
+  this.interfaces.Faces[faceID].prefixes = this.interfaces.Faces[faceID].prefixes || [];
+  this.interfaces.Faces[faceID].prefixes.push(prefix);
+  return this;
+};
+
+Forwarder.prototype.registrationPrefix = "marx/fib/add-nexthop";
+
+Forwarder.prototype.setRegistrationPrefix = function(prefix){
+  this.registrationPrefix = new ndn.Name(prefix);
+  return this;
+}
+
+/** request a remote forwarder to add a registered prefix for this forwarder
+ *@param {String} prefix - the uri encoded prefix for the forwarding entry
+ *@param {Number} faceID - the numerical faceID of the face to make the request
+ *@returns {this} for chaining
+ */
+Forwarder.prototype.registerPrefix = function(prefix, faceID){
+  var name = new ndn.Name(this.registrationPrefix);
+  name.append(new ndn.Name(prefix));
+  var interest = new ndn.Interest(name);
+  this.interfaces.Faces[faceID].send(interest.wireEncode().buffer);
+  return this;
+};
+
+/** remove a registered prefix for a remote face
+ *@param {String} prefix - the uri encoded prefix for the forwarding entry
+ *@param {Number} faceID - the numerical faceID of the face remove the prefix from
+ *@returns {this} for chaining
+ */
+Forwarder.prototype.unregisterPrefix = function(prefix, faceID){
+  var name = new ndn.Name("marx/fib/remove-nexthop");
+  name.append(new ndn.Name(prefix));
+
+  var interest = new ndn.Interest(name);
+
+  this.interfaces.Faces[faceID].send(interest.wireEncode().buffer);
+  return this;
+};
+
+
+module.exports = Forwarder;
+
+},{"./Manager.js":41,"./node/ConnectionListeners.js":42,"./node/addConnection.js":44,"./node/createSuffix.js":45,"debug":47,"ndn-js-contrib":62,"os":22}],41:[function(require,module,exports){
+
+
+module.exports = function(Forwarder){
+  Forwarder
+  .addListener(
+    "marx/fib/add-nexthop"
+    , function(interest, faceID){
+      console.log("got add-nexthop");
+      var prefix = interest.name.getSubName(3).toUri();
+      Forwarder
+      .fib
+      .lookup(prefix)
+      .addNextHop({
+        faceID: faceID
+      });
+
+      Forwarder.interfaces.Faces[faceID].prefixes = Forwarder.interfaces.Faces[faceID].prefixes || [];
+      Forwarder.interfaces.Faces[faceID].prefixes.push(prefix);
+    })
+  .addListener(
+    "marx/fib/remove-nexthop"
+    , function(interest, faceID){
+      var prefix = interest.name.getSubName(3).toUri();
+      Forwarder
+      .fib
+      .lookup(prefix)
+      .removeNextHop({
+        faceID: faceID
+      });
+    })
+  .addListener(
+    "marx"
+    , function(interest, faceID){
+      console.log("logging blocked Interest on /marx namespace, ", interest.toUri());
+    }
+  );
+};
+
+},{}],42:[function(require,module,exports){
+var RTCPeerConnection = require("./adapter/adapter.js")
+  , debug = {};
+debug.debug = require("debug")("ConnectionListeners");
+
+module.exports = function(Forwarder){
+  var ndn = Forwarder.ndn;
+
+  Forwarder.prototype.addConnectionListener = function(prefix, max, onNewFace, onFaceClose){
+    var Self = this;
+    var current = 0;
+    Self.connectionLabels = Self.connectionLabels || [];
+
+
+    return Self.addListener({
+      connection: true
+      , prefix : prefix
+    }
+    , function(interest, faceID, unblock){
+      
+      if (current < max){
+        current++;
+        var json, d = new Self.ndn.Data();
+        try{
+          d.wireDecode(interest.name.get(-1).getValueAsBuffer());
+          if (d.name.toUri() === "/connectionRequest"){
+            
+            json = JSON.parse(d.content.toString());
+
+            if (json.ws){
+              Self.addConnection("ws://" + json.domain + ":" + json.ws.port, function(faceID){
+                Self.addRegisteredPrefix(prefix, faceID);
+                onNewFace(null, faceID);
+              }, function(id){
+                current--;
+                if (onFaceClose){
+                  onFaceClose(id);
+                }
+              });
+
+            } else if (json.candidates && json.config) {
+              var alreadyConnected = false;
+              for(var i = 0 ; i < json.labels.length; i++){
+                for (var j = 0 ; j < Self.connectionLabels.length; j++) {
+                  if (json.labels[i] === Self.connectionLabels.length) {
+                    alreadyConnected = true;
+                    break;
+                  }
+                }
+                if (alreadyConnected){
+                  break;
+                }
+              }
+
+              if(alreadyConnected){
+                unblock();
+              } else {
+
+                var answer = {};
+                answer.candidates = [];
+                var answerMade = false;
+                var channel;
+
+                var pc = new RTCPeerConnection(json.config, {optional: [{RTPDataChannels: true}]});
+
+                pc.ondatachannel = function(evt){
+                  //pc.ondatachannel = function(){};
+                  
+                  Self.connectionLabels.push(evt.channel.label);
+                  Self.addConnection(evt.channel, function(id){
+                    
+                    Self.addRegisteredPrefix(prefix, id);
+
+                    onNewFace(null, id);
+                  }, function(id){
+                    if (onFaceClose){
+                      onFaceClose(id);
+                    }
+                    current--;
+                  });
+
+                };
+
+                var createResponse = function(){
+                  //console.log("create response", interest.name instanceof ndn.Name);
+                  var d = new ndn.Data(new ndn.Name(interest.name), new ndn.SignedInfo(), JSON.stringify(answer));
+                  console.log("made data");
+                  d.signedInfo.setFields();
+                  d.sign();
+                  console.log("signed data");
+                  var element = d.wireEncode().buffer;
+                  //console.log("response created");
+                  return element;
+                };
+
+                pc.onicecandidate = function(evt){
+                  //console.log("ICECAndidate in listener");
+                  if (answer.candidates.length > 0 && answerMade === false ){
+                    answerMade = true;
+                    var response = createResponse();
+                    Self.interfaces.dispatch(response, 0 | (1 << faceID));
+                  } else if (evt.candidate && evt.candidate.sdpMid === "data"){
+                    answer.candidates.push(evt.candidate);
+                  }
+
+                };
+
+                pc.setRemoteDescription(new RTCSessionDescription(json.sdp));
+
+                for (var k = 0; k < json.candidates.length ; k++) {
+                  pc.addIceCandidate(new RTCIceCandidate(json.candidates[k]));
+                }
+
+                pc.createAnswer(function(description){
+                  answer.sdp = description;
+                  pc.setLocalDescription(description);
+                });
+
+
+              }
+
+
+            } else {
+              unblock();
+            }
+          } else {
+            //console.log("not a connection request");
+            unblock();
+          }
+        } catch (e){
+          //console.log(interest, interest.name.get(-1).getValueAsBuffer().toString());
+          //c/onsole.log("err" + e.toString());
+          //console.log("unblocking", unblock.toString());
+          unblock();
+        }
+        return;
+
+      } else {
+        console.log("max connections for this listener");
+        unblock();
+      }
+    });
+  };
+};
+
+},{"./adapter/adapter.js":43,"debug":47}],43:[function(require,module,exports){
+/*
+ *  Copyright (c) 2014 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the Adapter_LICENSE file in this folder.
+ *
+ *  THIS FILE HAS BEEN MODIFIED FROM IT'S ORIGINAL VERSION TO SUPPORT COMMON
+ *
+ */
+
+/* More information about these options at jshint.com/docs/options */
+
+/* jshint browser: true, camelcase: true, curly: true, devel: true,
+eqeqeq: true, forin: false, globalstrict: true, quotmark: single,
+undef: true, unused: strict */
+
+/* global mozRTCIceCandidate, mozRTCPeerConnection,
+mozRTCSessionDescription, webkitRTCPeerConnection */
+
+/* exported trace */
+
+'use strict';
+
+var RTCPeerConnection = null;
+var getUserMedia = null;
+var attachMediaStream = null;
+var reattachMediaStream = null;
+var webrtcDetectedBrowser = null;
+var webrtcDetectedVersion = null;
+
+function trace(text) {
+  // This function is used for logging.
+  if (text[text.length - 1] === '\n') {
+    text = text.substring(0, text.length - 1);
+  }
+  console.log((window.performance.now() / 1000).toFixed(3) + ': ' + text);
+}
+
+function maybeFixConfiguration(pcConfig) {
+  if (!pcConfig) {
+    return;
+  }
+  for (var i = 0; i < pcConfig.iceServers.length; i++) {
+    if (pcConfig.iceServers[i].hasOwnProperty('urls')) {
+      pcConfig.iceServers[i].url = pcConfig.iceServers[i].urls;
+      delete pcConfig.iceServers[i].urls;
+    }
+  }
+}
+
+if (navigator.mozGetUserMedia) {
+  console.log('This appears to be Firefox');
+
+  webrtcDetectedBrowser = 'firefox';
+
+  webrtcDetectedVersion =
+    parseInt(navigator.userAgent.match(/Firefox\/([0-9]+)\./)[1], 10);
+
+  // The RTCPeerConnection object.
+  RTCPeerConnection = function(pcConfig, pcConstraints) {
+    // .urls is not supported in FF yet.
+    maybeFixConfiguration(pcConfig);
+    return new mozRTCPeerConnection(pcConfig, pcConstraints);
+  };
+
+  // The RTCSessionDescription object.
+  window.RTCSessionDescription = mozRTCSessionDescription;
+
+  // The RTCIceCandidate object.
+  window.RTCIceCandidate = mozRTCIceCandidate;
+
+  // getUserMedia shim (only difference is the prefix).
+  // Code from Adam Barth.
+  getUserMedia = navigator.mozGetUserMedia.bind(navigator);
+  navigator.getUserMedia = getUserMedia;
+
+  // Creates ICE server from the URL for FF.
+  window.createIceServer = function(url, username, password) {
+    var iceServer = null;
+    var urlParts = url.split(':');
+    if (urlParts[0].indexOf('stun') === 0) {
+      // Create ICE server with STUN URL.
+      iceServer = {
+        'url': url
+      };
+    } else if (urlParts[0].indexOf('turn') === 0) {
+      if (webrtcDetectedVersion < 27) {
+        // Create iceServer with turn url.
+        // Ignore the transport parameter from TURN url for FF version <=27.
+        var turnUrlParts = url.split('?');
+        // Return null for createIceServer if transport=tcp.
+        if (turnUrlParts.length === 1 ||
+          turnUrlParts[1].indexOf('transport=udp') === 0) {
+          iceServer = {
+            'url': turnUrlParts[0],
+            'credential': password,
+            'username': username
+          };
+        }
+      } else {
+        // FF 27 and above supports transport parameters in TURN url,
+        // So passing in the full url to create iceServer.
+        iceServer = {
+          'url': url,
+          'credential': password,
+          'username': username
+        };
+      }
+    }
+    return iceServer;
+  };
+
+  window.createIceServers = function(urls, username, password) {
+    var iceServers = [];
+    // Use .url for FireFox.
+    for (var i = 0; i < urls.length; i++) {
+      var iceServer =
+        window.createIceServer(urls[i], username, password);
+      if (iceServer !== null) {
+        iceServers.push(iceServer);
+      }
+    }
+    return iceServers;
+  };
+
+  // Attach a media stream to an element.
+  attachMediaStream = function(element, stream) {
+    console.log('Attaching media stream');
+    element.mozSrcObject = stream;
+  };
+
+  reattachMediaStream = function(to, from) {
+    console.log('Reattaching media stream');
+    to.mozSrcObject = from.mozSrcObject;
+  };
+
+} else if (navigator.webkitGetUserMedia) {
+  console.log('This appears to be Chrome');
+
+  webrtcDetectedBrowser = 'chrome';
+  // Temporary fix until crbug/374263 is fixed.
+  // Setting Chrome version to 999, if version is unavailable.
+  var result = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+  if (result !== null) {
+    webrtcDetectedVersion = parseInt(result[2], 10);
+  } else {
+    webrtcDetectedVersion = 999;
+  }
+
+  // Creates iceServer from the url for Chrome M33 and earlier.
+  window.createIceServer = function(url, username, password) {
+    var iceServer = null;
+    var urlParts = url.split(':');
+    if (urlParts[0].indexOf('stun') === 0) {
+      // Create iceServer with stun url.
+      iceServer = {
+        'url': url
+      };
+    } else if (urlParts[0].indexOf('turn') === 0) {
+      // Chrome M28 & above uses below TURN format.
+      iceServer = {
+        'url': url,
+        'credential': password,
+        'username': username
+      };
+    }
+    return iceServer;
+  };
+
+  // Creates iceServers from the urls for Chrome M34 and above.
+  window.createIceServers = function(urls, username, password) {
+    var iceServers = [];
+    if (webrtcDetectedVersion >= 34) {
+      // .urls is supported since Chrome M34.
+      iceServers = {
+        'urls': urls,
+        'credential': password,
+        'username': username
+      };
+    } else {
+      for (var i = 0; i < urls.length; i++) {
+        var iceServer =
+          window.createIceServer(urls[i], username, password);
+        if (iceServer !== null) {
+          iceServers.push(iceServer);
+        }
+      }
+    }
+    return iceServers;
+  };
+
+  // The RTCPeerConnection object.
+  RTCPeerConnection = function(pcConfig, pcConstraints) {
+    // .urls is supported since Chrome M34.
+    if (webrtcDetectedVersion < 34) {
+      maybeFixConfiguration(pcConfig);
+    }
+    return new webkitRTCPeerConnection(pcConfig, pcConstraints);
+  };
+
+  // Get UserMedia (only difference is the prefix).
+  // Code from Adam Barth.
+  getUserMedia = navigator.webkitGetUserMedia.bind(navigator);
+  navigator.getUserMedia = getUserMedia;
+
+  // Attach a media stream to an element.
+  attachMediaStream = function(element, stream) {
+    if (typeof element.srcObject !== 'undefined') {
+      element.srcObject = stream;
+    } else if (typeof element.mozSrcObject !== 'undefined') {
+      element.mozSrcObject = stream;
+    } else if (typeof element.src !== 'undefined') {
+      element.src = URL.createObjectURL(stream);
+    } else {
+      console.log('Error attaching stream to element.');
+    }
+  };
+
+  reattachMediaStream = function(to, from) {
+    to.src = from.src;
+  };
+} else {
+  console.log('Browser does not appear to be WebRTC-capable');
+}
+
+module.exports = RTCPeerConnection;
+
+},{}],44:[function(require,module,exports){
+module.exports = function(Forwarder){
+  Forwarder.prototype.addConnection = addConnection;
+};
+
+function addConnection(objectOrURL, onOpen, onClosed){
+  var id;
+  console.log("addConnection ", objectOrURL);
+  this.connectionCount = this.connectionCount || 0;
+  if (!this.maxConnections || this.interfaces.Faces.length < this.maxConnections){
+    if (typeof objectOrURL === "string"){
+      var url = objectOrURL;
+      var protocol = url.split("://")[0];
+      console.log(this);
+      if (protocol === "ws"){
+
+          this.connectionCount++;
+          id = this.interfaces.newFace("WebSocketTransport",
+             {
+               host: url.split("://")[1].split(":")[0],
+               port: url.split("://")[1].split(":")[1] || 8585
+             }, onOpen, onClosed
+           );
+      }
+    } else if (objectOrURL instanceof MessagePort) {
+      this.connectionCount++;
+
+      id = this.interfaces.newFace("MessageChannelTransport", objectOrURL, onOpen, onClosed);
+    } else if (objectOrURL.binaryType && objectOrURL.readyState && objectOrURL.label) {
+      this.connectionCount++;
+      console.log("dataChanneltransport ducktype");
+
+
+
+      id = this.interfaces.newFace("DataChannelTransport",  objectOrURL, onOpen, onClosed);
+    }
+
+  } else {
+    console.log("maximum connections reached");
+  }
+
+  return this;
+}
+
+},{}],45:[function(require,module,exports){
+var RTCPeerConnection = require("./adapter/adapter.js")
+  , debug = {};
+    debug.debug = require("debug")("RTCConnectionListener");
+
+module.exports = function(Forwarder){
+  Forwarder.prototype.createConnectionRequestSuffix = createXSuffix;
+};
+
+function createXSuffix(suffixCallback, connectionInfoCallback){
+  var forwarder = this, suffixMade = false;
+  var ndn = forwarder.ndn;
+  forwarder.connectionLabels = forwarder.connectionLabels || [];
+
+  var config = {
+    "iceServers" : this.remoteInfo.iceServers
+  };
+
+  var pc = new RTCPeerConnection( config, {optional: [{RTPDataChannels: true}]} );
+
+  var offer = {};
+  offer.candidates = [];
+  offer.labels = forwarder.connectionLabels;
+
+  function createSuffix(){
+    offer.config = config;
+    var string = JSON.stringify(offer);
+    var d = new ndn.Data(new ndn.Name("connectionRequest"), new ndn.SignedInfo(), string);
+    d.signedInfo.setFields();
+    d.sign();
+    var enc = d.wireEncode();
+    var suffix = new ndn.Name.Component(enc.buffer);
+    return suffix;
+  }
+
+
+  var datachannel = pc.createDataChannel(Math.random(), {reliable: false});
+
+  datachannel.onopen = function(ev){
+    
+    forwarder.connectionLabels.push(datachannel.label);
+    connectionInfoCallback(datachannel);
+  };
+
+  var onAnswer = function(answer){
+    
+    var sdp = new RTCSessionDescription(answer.sdp);
+    pc.setRemoteDescription(sdp);
+    for (var i = 0; i < answer.candidates.length; i++){
+      //console.log(answer.candidates[i]);
+      var candidate = new RTCIceCandidate(answer.candidates[i]);
+      pc.addIceCandidate(candidate);
+    }
+  };
+
+
+  pc.onicecandidate = function (evt) {
+    console.log("ICECAndidate",evt, offer, suffixMade);
+    if (offer.candidates.length > 1 && suffixMade === false ){
+      suffixMade = true;
+      var suffix = createSuffix();
+      console.log("executing suffix callback");
+      suffixCallback(suffix, onAnswer);
+    } else if (evt.candidate && evt.candidate.sdpMid === "data" && suffixMade === false){
+      offer.candidates.push(evt.candidate);
+    }
+  };
+
+  var constraints = {
+      optional: [],
+      mandatory: {
+          OfferToReceiveVideo: false
+      }
+  };
+
+  pc.createOffer(function (description) {
+    //console.log(JSON.stringify(description));
+    pc.setLocalDescription(description, function(){
+      console.log("description set");
+    },function(er){console.log(er);});
+    offer.sdp = description;
+
+  }, null, constraints);
+
+}
+
+},{"./adapter/adapter.js":43,"debug":47}],46:[function(require,module,exports){
+module.exports = require("./dist/src/Forwarder.js");
+
+},{"./dist/src/Forwarder.js":40}],47:[function(require,module,exports){
+
+/**
+ * This is the web browser implementation of `debug()`.
+ *
+ * Expose `debug()` as the module.
+ */
+
+exports = module.exports = require('./debug');
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+
+/**
+ * Colors.
+ */
+
+exports.colors = [
+  'lightseagreen',
+  'forestgreen',
+  'goldenrod',
+  'dodgerblue',
+  'darkorchid',
+  'crimson'
+];
+
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */
+
+function useColors() {
+  // is webkit? http://stackoverflow.com/a/16459606/376773
+  return ('WebkitAppearance' in document.documentElement.style) ||
+    // is firebug? http://stackoverflow.com/a/398120/376773
+    (window.console && (console.firebug || (console.exception && console.table))) ||
+    // is firefox >= v31?
+    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+    (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+}
+
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */
+
+exports.formatters.j = function(v) {
+  return JSON.stringify(v);
+};
+
+
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */
+
+function formatArgs() {
+  var args = arguments;
+  var useColors = this.useColors;
+
+  args[0] = (useColors ? '%c' : '')
+    + this.namespace
+    + (useColors ? ' %c' : ' ')
+    + args[0]
+    + (useColors ? '%c ' : ' ')
+    + '+' + exports.humanize(this.diff);
+
+  if (!useColors) return args;
+
+  var c = 'color: ' + this.color;
+  args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+
+  // the final "%c" is somewhat tricky, because there could be other
+  // arguments passed either before or after the %c, so we need to
+  // figure out the correct index to insert the CSS into
+  var index = 0;
+  var lastC = 0;
+  args[0].replace(/%[a-z%]/g, function(match) {
+    if ('%%' === match) return;
+    index++;
+    if ('%c' === match) {
+      // we only are interested in the *last* %c
+      // (the user may have provided their own)
+      lastC = index;
+    }
+  });
+
+  args.splice(lastC, 0, c);
+  return args;
+}
+
+/**
+ * Invokes `console.log()` when available.
+ * No-op when `console.log` is not a "function".
+ *
+ * @api public
+ */
+
+function log() {
+  // This hackery is required for IE8,
+  // where the `console.log` function doesn't have 'apply'
+  return 'object' == typeof console
+    && 'function' == typeof console.log
+    && Function.prototype.apply.call(console.log, console, arguments);
+}
+
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */
+
+function save(namespaces) {
+  try {
+    if (null == namespaces) {
+      localStorage.removeItem('debug');
+    } else {
+      localStorage.debug = namespaces;
+    }
+  } catch(e) {}
+}
+
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */
+
+function load() {
+  var r;
+  try {
+    r = localStorage.debug;
+  } catch(e) {}
+  return r;
+}
+
+/**
+ * Enable namespaces listed in `localStorage.debug` initially.
+ */
+
+exports.enable(load());
+
+},{"./debug":48}],48:[function(require,module,exports){
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ *
+ * Expose `debug()` as the module.
+ */
+
+exports = module.exports = debug;
+exports.coerce = coerce;
+exports.disable = disable;
+exports.enable = enable;
+exports.enabled = enabled;
+exports.humanize = require('ms');
+
+/**
+ * The currently active debug mode names, and names to skip.
+ */
+
+exports.names = [];
+exports.skips = [];
+
+/**
+ * Map of special "%n" handling functions, for the debug "format" argument.
+ *
+ * Valid key names are a single, lowercased letter, i.e. "n".
+ */
+
+exports.formatters = {};
+
+/**
+ * Previously assigned color.
+ */
+
+var prevColor = 0;
+
+/**
+ * Previous log timestamp.
+ */
+
+var prevTime;
+
+/**
+ * Select a color.
+ *
+ * @return {Number}
+ * @api private
+ */
+
+function selectColor() {
+  return exports.colors[prevColor++ % exports.colors.length];
+}
+
+/**
+ * Create a debugger with the given `namespace`.
+ *
+ * @param {String} namespace
+ * @return {Function}
+ * @api public
+ */
+
+function debug(namespace) {
+
+  // define the `disabled` version
+  function disabled() {
+  }
+  disabled.enabled = false;
+
+  // define the `enabled` version
+  function enabled() {
+
+    var self = enabled;
+
+    // set `diff` timestamp
+    var curr = +new Date();
+    var ms = curr - (prevTime || curr);
+    self.diff = ms;
+    self.prev = prevTime;
+    self.curr = curr;
+    prevTime = curr;
+
+    // add the `color` if not set
+    if (null == self.useColors) self.useColors = exports.useColors();
+    if (null == self.color && self.useColors) self.color = selectColor();
+
+    var args = Array.prototype.slice.call(arguments);
+
+    args[0] = exports.coerce(args[0]);
+
+    if ('string' !== typeof args[0]) {
+      // anything else let's inspect with %o
+      args = ['%o'].concat(args);
+    }
+
+    // apply any `formatters` transformations
+    var index = 0;
+    args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+      // if we encounter an escaped % then don't increase the array index
+      if (match === '%%') return match;
+      index++;
+      var formatter = exports.formatters[format];
+      if ('function' === typeof formatter) {
+        var val = args[index];
+        match = formatter.call(self, val);
+
+        // now we need to remove `args[index]` since it's inlined in the `format`
+        args.splice(index, 1);
+        index--;
+      }
+      return match;
+    });
+
+    if ('function' === typeof exports.formatArgs) {
+      args = exports.formatArgs.apply(self, args);
+    }
+    var logFn = enabled.log || exports.log || console.log.bind(console);
+    logFn.apply(self, args);
+  }
+  enabled.enabled = true;
+
+  var fn = exports.enabled(namespace) ? enabled : disabled;
+
+  fn.namespace = namespace;
+
+  return fn;
+}
+
+/**
+ * Enables a debug mode by namespaces. This can include modes
+ * separated by a colon and wildcards.
+ *
+ * @param {String} namespaces
+ * @api public
+ */
+
+function enable(namespaces) {
+  exports.save(namespaces);
+
+  var split = (namespaces || '').split(/[\s,]+/);
+  var len = split.length;
+
+  for (var i = 0; i < len; i++) {
+    if (!split[i]) continue; // ignore empty strings
+    namespaces = split[i].replace(/\*/g, '.*?');
+    if (namespaces[0] === '-') {
+      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+    } else {
+      exports.names.push(new RegExp('^' + namespaces + '$'));
+    }
+  }
+}
+
+/**
+ * Disable debug output.
+ *
+ * @api public
+ */
+
+function disable() {
+  exports.enable('');
+}
+
+/**
+ * Returns true if the given mode name is enabled, false otherwise.
+ *
+ * @param {String} name
+ * @return {Boolean}
+ * @api public
+ */
+
+function enabled(name) {
+  var i, len;
+  for (i = 0, len = exports.skips.length; i < len; i++) {
+    if (exports.skips[i].test(name)) {
+      return false;
+    }
+  }
+  for (i = 0, len = exports.names.length; i < len; i++) {
+    if (exports.names[i].test(name)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Coerce `val`.
+ *
+ * @param {Mixed} val
+ * @return {Mixed}
+ * @api private
+ */
+
+function coerce(val) {
+  if (val instanceof Error) return val.stack || val.message;
+  return val;
+}
+
+},{"ms":49}],49:[function(require,module,exports){
+/**
+ * Helpers.
+ */
+
+var s = 1000;
+var m = s * 60;
+var h = m * 60;
+var d = h * 24;
+var y = d * 365.25;
+
+/**
+ * Parse or format the given `val`.
+ *
+ * Options:
+ *
+ *  - `long` verbose formatting [false]
+ *
+ * @param {String|Number} val
+ * @param {Object} options
+ * @return {String|Number}
+ * @api public
+ */
+
+module.exports = function(val, options){
+  options = options || {};
+  if ('string' == typeof val) return parse(val);
+  return options.long
+    ? long(val)
+    : short(val);
+};
+
+/**
+ * Parse the given `str` and return milliseconds.
+ *
+ * @param {String} str
+ * @return {Number}
+ * @api private
+ */
+
+function parse(str) {
+  var match = /^((?:\d+)?\.?\d+) *(ms|seconds?|s|minutes?|m|hours?|h|days?|d|years?|y)?$/i.exec(str);
+  if (!match) return;
+  var n = parseFloat(match[1]);
+  var type = (match[2] || 'ms').toLowerCase();
+  switch (type) {
+    case 'years':
+    case 'year':
+    case 'y':
+      return n * y;
+    case 'days':
+    case 'day':
+    case 'd':
+      return n * d;
+    case 'hours':
+    case 'hour':
+    case 'h':
+      return n * h;
+    case 'minutes':
+    case 'minute':
+    case 'm':
+      return n * m;
+    case 'seconds':
+    case 'second':
+    case 's':
+      return n * s;
+    case 'ms':
+      return n;
+  }
+}
+
+/**
+ * Short format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function short(ms) {
+  if (ms >= d) return Math.round(ms / d) + 'd';
+  if (ms >= h) return Math.round(ms / h) + 'h';
+  if (ms >= m) return Math.round(ms / m) + 'm';
+  if (ms >= s) return Math.round(ms / s) + 's';
+  return ms + 'ms';
+}
+
+/**
+ * Long format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function long(ms) {
+  return plural(ms, d, 'day')
+    || plural(ms, h, 'hour')
+    || plural(ms, m, 'minute')
+    || plural(ms, s, 'second')
+    || ms + ' ms';
+}
+
+/**
+ * Pluralization helper.
+ */
+
+function plural(ms, n, name) {
+  if (ms < n) return;
+  if (ms < n * 1.5) return Math.floor(ms / n) + ' ' + name;
+  return Math.ceil(ms / n) + ' ' + name + 's';
+}
+
+},{}],50:[function(require,module,exports){
+(function (Buffer){
+var debug = {}; debug.debug= require("debug")("ContentStore");
+var lru = require("lru-cache");
+var lruDebug = require("debug")("lru");
+
+var Cache;
+
+Buffer.prototype.checkMonkey = function(){};
+
+function pubKeyMatch (ar1, ar2){
+  if (!ar1){
+    return true;
+  }
+  for(var i = 0; i < ar1.length; i++ ){
+    if (ar1[i] !== ar2[i]){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+/** Default EntryClass for ContentStore
+ *@constructor
+ *@private
+ *@param {Buffer} element the raw data packet.
+ *@param {Data} data the ndn.Data object
+ */
+function csEntry (element, data){
+  var freshnessPeriod = data.getMetaInfo().getFreshnessPeriod();
+  this.name = data.name;
+  this.freshnessPeriod = freshnessPeriod;
+  this.uri = data.name.toUri();
+  this.publisherPublicKeyDigest = data.signedInfo.publisher.publisherPublicKeyDigest;
+  Cache.set(data.name.toUri(), {
+    entry: this,
+    element: element
+  });
+  return this;
+}
+
+/**
+ *@property {String} type a type string describing the type of entry
+ */
+csEntry.type = "csEntry";
+
+/** sync/async getter for the element
+ *@private
+ *@param {function} callback Recieves element as only argument
+ *@returns {Buffer} element the raw data packet
+ */
+csEntry.prototype.getElement = function(callback){
+  callback = callback || function(e){return e;};
+  return callback(Cache.get(this.uri).element);
+};
+
+/**
+ *@private
+ *@param {NameTreeNode} node the node to remove this entry from
+ *@returns {csEntry} entry the csEntry in case you want to do something other than throw it away
+ */
+csEntry.prototype.stale = function(node){
+  node.csEntry = null;
+  if (Cache.has(this.uri)){
+    Cache.del(this.uri);
+  }
+  return this;
+};
+
+/**A ContentStore constructor for building cache's and database indexes
+ *@constructor
+ *@param {NameTree} nameTree the nameTree to build upon
+ *@param {constructor} entryClass a constructor class conforming to the same API as {@link csEntry}.
+ *@returns {ContentStore} - a new store
+ */
+var ContentStore = function ContentStore(nameTree, entryClass, maxMem){
+  entryClass = entryClass || csEntry;
+  
+  if (entryClass.type === "csEntry"){
+    Cache = lru({
+      max: maxMem || 10000000
+      , length: function(n){return n.element.length;}
+      , dispose: function(key, value){
+        lruDebug("evicting");
+        delete value.entry.nameTreeNode.csEntry;
+      }
+    });
+  }
+  this.nameTree = nameTree;
+  this.EntryClass = entryClass;
+  return this;
+};
+
+/**check the ContentStore for data matching a given interest (including min/max suffix, exclude, publisherKey)
+ *@param {ndn.Interest} interest the interest to match against
+ *@param {function=} callback for asynchronous cases (like levelDB). recieves return value as only argument
+ *@returns {Buffer | null}
+ */
+ContentStore.prototype.check = function(interest, callback, node, suffixCount, childTracker, stack){
+
+
+  callback = callback || function(element){return element;};
+  node = node || this.nameTree.lookup(interest.name);
+  stack = stack || 1;
+  stack++;
+
+  if (stack++ > Object.keys(this.nameTree).length * 2){
+  
+    return callback(null);
+  }
+
+  var self = this;
+
+  if (node[this.EntryClass.type]
+      && interest.matchesName(node[this.EntryClass.type].name)
+      && pubKeyMatch(interest.publisherPublicKeyDigest, node[this.EntryClass.type].publisherPublicKeyDigest)
+     )
+     {
+  
+    return node[this.EntryClass.type].getElement(callback);
+  }
+
+
+
+  suffixCount = suffixCount || 0;
+  childTracker = childTracker || [];
+
+  var maxSuffix = interest.getMaxSuffixComponents()
+    , minSuffix = interest.getMinSuffixComponents()
+    , childSelector = interest.getChildSelector()
+    , atMaxSuffix = (maxSuffix && (suffixCount === maxSuffix))
+    , hasChildren = (node.children.length > 0);
+
+  function hasMoreSiblings (node){
+    var bool = (!!childTracker.length && !!node.parent && (node.parent.children.length > childTracker[childTracker.length - 1] + 1));
+  
+
+    return bool;
+  }
+
+
+
+  function toChild(node){
+  
+    suffixCount++;
+    childTracker.push(0);
+    if (!childSelector){ //leftmost == 0 == falsey
+      return self.check(interest, callback, node.children[0], suffixCount, childTracker , stack++);
+    } else {
+
+      return self.check(interest, callback, node.children[node.children.length - 1], suffixCount, childTracker, stack++);
+    }
+  }
+
+  function toSibling(node){
+  
+    childTracker[childTracker.length - 1]++;
+
+    if (!childSelector){
+
+      return self.check(interest, callback, node.parent.children[childTracker[childTracker.length - 1]], suffixCount, childTracker, stack++);
+    } else {
+
+      return self.check(interest, callback, node.parent.children[node.parent.children.length  + ~childTracker[childTracker.length - 1]], suffixCount, childTracker, stack++);
+    }
+  }
+
+  function toAncestorSibling(node, stack){
+  
+    suffixCount--;
+    childTracker.pop();
+    if (stack++ > 10000){
+    
+      return callback(null);
+    }
+
+    var hasParentSibling = (node.parent && node.parent.parent && node.parent.parent.children.length > childTracker[childTracker.length - 1] + 1);
+
+    if (hasParentSibling){
+      return toSibling(node.parent);
+    } else if (childTracker.length >0) {
+      return toAncestorSibling(node.parent, stack++);
+    } else {
+      return callback(null);
+    }
+  }
+
+  if (childTracker.length === 1){
+    if (interest.exclude.matches(node.prefix.get(-1))){
+      if (hasMoreSiblings(node)){
+        return toSibling(node);
+      } else {
+        return callback(null);
+      }
+    }
+  }
+
+
+
+  if (!node.prefix.size() ||(!atMaxSuffix && hasChildren)){
+    return toChild(node);
+  } else if (hasMoreSiblings(node)){
+    return toSibling(node);
+  } else if (childTracker.length > 1){
+    return toAncestorSibling(node);
+  } else{
+    return callback(null);
+  }
+};
+
+/**Insert a new entry into the contentStore
+ *@constructor
+ *@param {Buffer} element the raw data packet
+ *@param {ndn.Data} data the ndn.Data object
+ *@returns {ContentStore} - for chaining
+ */
+ContentStore.prototype.insert = function(element, data){
+
+  var Entry = this.EntryClass;
+  var freshness = data.getMetaInfo().getFreshnessPeriod();
+  var node = this.nameTree.lookup(data.name)
+  , entry = new Entry(element, data);
+  node[Entry.type] = entry;
+  node[Entry.type].nameTreeNode = node;
+
+  setTimeout(function(){
+    if (node[Entry.type]) {node[Entry.type].stale(node);}
+  }, freshness || 20 );
+
+  return this;
+};
+
+
+module.exports = ContentStore;
+
+}).call(this,require("buffer").Buffer)
+},{"buffer":3,"debug":63,"lru-cache":110}],51:[function(require,module,exports){
+var binarySearch = require("./../Utility/binarySearch.js")
+  , ndn
+  ,debug = {}; debug.debug= require("debug")("FIB");
+
+/**A Forwarding Entry
+ *@constructor
+ *@param {Object|string} prefix - the ndn.Name object representing the prefix for this forwarding entry
+ *@param {Array} - an array of nextHop objects, each with a "faceID" integer property, or just an array of the faceIDs
+ *@returns {FibEntry}
+ */
+function FibEntry(prefix, nextHops){
+  this.prefix = (typeof prefix === "string") ? new ndn.Name(prefix) : prefix ;
+
+  this.nextHops = (function(){
+    var hops = [];
+    function recurse(){
+      if (nextHops && nextHops.length > 0){
+        var hop;
+        if (typeof nextHops[0].faceID !== "undefined" ){
+          hop = nextHops.shift();
+        } else {
+          hop = {
+            faceID: nextHops.shift()
+          };
+        }
+
+        var i = binarySearch(hops, hop, "faceID");
+        if (i < 0){
+          hops.splice(~i, 0, hop);
+        }
+        return recurse();
+      } else{
+        return hops;
+      }
+    }
+    return recurse();
+  })();
+  return this;
+}
+
+FibEntry.type = "FibEntry";
+
+/**get all nextHops, excluding a given faceID
+ *@param {Number=} excludingFaceID the faceID to exclude
+ *@returns {Array} an array of nextHops
+ */
+FibEntry.prototype.getNextHops = function(excludingFaceID){
+ 
+  var returns;
+  if(excludingFaceID !== undefined){
+    var q = {faceID: excludingFaceID }
+      , i = binarySearch(this.nextHops, q, "faceID");
+    if (i >= 0){
+      returns = this.nextHops.slice(0,i).concat(this.nextHops.slice(i + 1));
+    } else {
+      returns = this.nextHops;
+    }
+  } else {
+
+    returns = this.nextHops;
+  }
+ 
+  return returns;
+};
+
+/**Remove a nextHop (will do nothing if a nextHop with the given faceID does not exist)
+ *@param {Object} nextHop an object with faceID Number property
+ *@returns {FIBEntry} for chaining
+ */
+FibEntry.prototype.removeNextHop = function(nextHop){
+  var i = binarySearch(this.nextHops, nextHop, "faceID");
+
+  if (i < 0){
+    return this;
+  } else{
+    this.nextHops.splice(i,1);
+    return this;
+  }
+};
+
+/**Add a nextHop (will replace if a nextHop with the same faceID exists)
+ *@param {Object} nextHop an object with faceID Number property
+ *@returns {FIBEntry}
+ */
+FibEntry.prototype.addNextHop = function(nextHop){
+  var i = binarySearch(this.nextHops, nextHop, "faceID");
+
+  if (i < 0){
+    this.nextHops.splice(~i, 0, nextHop);
+    return this;
+  } else{
+    this.nextHops.splice(i,1,nextHop);
+    return this;
+  }
+};
+
+/**Forwarding Interest Base
+ *@constructor
+ *@param {@link NameTree} nameTree the nameTree to build the FIB on.
+ */
+function FIB (nameTree){
+  this.nameTree = nameTree; return this;
+}
+
+/**Install ndn-lib into the FIB scope. only necessary if you require("ndn-Classes/src/DataStructures/FIB.js"), done for you if require("ndn-Classes").FIB
+ *@private
+ *@param {Object} NDN ndn-js library as exported by npm
+ */
+FIB.installNDN = function(NDN){
+  ndn = NDN;
+  return this;
+};
+
+/**find the exact match fibEntry for a given prefix, creating it if not found
+ *@param {Object} prefix the ndn.Name object representing the prefix
+ *@returns {FIBEntry}
+ */
+FIB.prototype.lookup = function(prefix){
+  prefix = (typeof prefix === "string") ? new ndn.Name(prefix) : prefix;
+ 
+  var ent = this.nameTree.lookup(prefix)
+    , entry = ent.fibEntry;
+
+
+  if (entry){
+   
+    return entry;
+  }else{
+   
+    return (ent.fibEntry = new FibEntry({prefix: prefix, nextHops: []}));
+  }
+};
+
+/**Return an Iterator that progressively returns longest prefix FIBEntries with 1 or more nextHops
+ *@param {Object} prefix the ndn.Name object representing the prefix
+ *@returns {Object} Iterator object with .next() and .hasNext = Boolean
+ */
+FIB.prototype.findAllFibEntries = function(prefix){
+ 
+  var inner =  this.nameTree.findAllMatches(prefix, function(match){
+    if (match.fibEntry && (match.fibEntry.nextHops.length > 0)){
+      return true;
+    }  else {
+      return false;
+    }
+  })
+  , iterouter = {
+    hasNext : inner.hasNext
+    , next : function(){
+      if (inner.hasNext){
+        var next = inner.next();
+       
+        if (inner.hasNext){
+         
+          this.hasNext = true;
+        } else {
+         
+          this.hasNext = false;
+        }
+        return next.fibEntry;
+      } else {
+        return null;
+      }
+    }
+  };
+
+  return iterouter;
+};
+
+/**Convenience method to get a faceFlag representing all nextHop faces for all prefixes of a given prefix
+ *@param {Object|String} prefix ndn.Name Object or NDN URI string to lookup
+ *@param {Number=} excludingFaceID faceID to exclude from results
+ *@returns {Number} - a faceFlag for use with {@link Interfaces.dispatch}
+ */
+FIB.prototype.findAllNextHops = function(prefix, excludingFaceID){
+  prefix = (typeof prefix === "string") ? new ndn.Name(prefix) : prefix;
+  var faceFlag = 0
+    , iterator = this.findAllFibEntries(prefix);
+
+  while (iterator.hasNext){
+    var entry = iterator.next()
+      , nextHops = entry.getNextHops(excludingFaceID);
+    for (var i =0; i < nextHops.length; i ++){
+      faceFlag = faceFlag | (1 << nextHops[i].faceID);
+    }
+  }
+  return faceFlag;
+};
+
+/**Add a FIBEntry
+ *@param {String} prefix the nameSpace for the fibEntry
+ *@param {Number| Number_Array | nextHop | nextHop_Array} nextHops the nextHop info for the fibEntry
+ *@returns {this} FIB for chaining
+ */
+
+FIB.prototype.addEntry = function(prefix, nextHops){
+  var fibEntry;
+
+  if (
+    (typeof nextHops === "number")
+    || (
+      (typeof nextHops === "object")
+      && (nextHops.faceID)
+    )
+  ) {
+    fibEntry = new FibEntry(prefix, [nextHops]);
+  } else {
+    fibEntry = new FibEntry(prefix, nextHops);
+  }
+  var node = this.nameTree.lookup(fibEntry.prefix);
+  if (!node.fibEntry){
+    node.fibEntry = fibEntry;
+    return this;
+  } else {
+    for (var i = 0 ; i < fibEntry.nextHops.length; i++ ){
+      var j = binarySearch(node.fibEntry.nextHops, fibEntry.nextHops[i], "faceID");
+      if (j < 0){
+        node.fibEntry.nextHops.splice(~j, 0, fibEntry.nextHops[i]);
+      }
+    }
+    return this;
+  }
+};
+
+FIB.Entry = FibEntry;
+
+module.exports = FIB;
+
+},{"./../Utility/binarySearch.js":61,"debug":63}],52:[function(require,module,exports){
+var ndn
+  , Face
+  , debug = {}
+  , ndn = require("ndn-js")
+  , TlvDecoder = require("ndn-lib/js/encoding/tlv/tlv-decoder.js").TlvDecoder
+  , Tlv = require("ndn-js/js/encoding/tlv/tlv.js").Tlv;
+debug.debug= require("debug")("Interfaces");
+
+/**Interface manager
+ *@constructor
+ *@param {Subject} Subject - a {@link Subject} instance
+ *@returns {Interfaces} - a new Interface manager
+ */
+var Interfaces = function Interfaces(Subject){
+ 
+  this.subject = Subject;
+  this.transports = {};
+  Face = ndn.Face;
+  this.Faces = [];
+
+  return this;
+};
+
+/**Class method to install ndn-lib. Only necessary if you require("ndn-classes/src/DataStructures/Interfaces.js"), done for you if require('ndn-classes').Interfaces
+ *@private
+ *@param {Object} - NDN the ndn-lib object
+ */
+Interfaces.installNDN = function(NDN){
+  ndn = NDN;
+  return this;
+};
+
+Interfaces.prototype.transports = {};
+
+
+/**Install a transport Class to the Interfaces manager. If the Class has a Listener function, the Listener will be invoked
+ *@param {Transport} Transport a Transport Class matching the Abstract Transport API
+ *@returns {Interfaces} for chaining
+ */
+Interfaces.prototype.installTransport = function(Transport){
+  this.transports[Transport.prototype.name] = Transport;
+ 
+  if (Transport.Listener){
+   
+    Transport.Listener(this);
+  }
+
+  return this;
+};
+
+/**Create a new Face
+ *@param {String} protocol a string matching the .protocolKey property of a previously installed {@link Transport}
+ *@param {Object} connectionParameters the object expected by the transport class
+ *@returns {Number} id the numerical faceID of the created Face.
+ */
+Interfaces.prototype.newFace = function(protocol, connectionParameters, onopen, onclose) {
+  var Self = this;
+ 
+ 
+ 
+ 
+ 
+
+  if (!this.transports[protocol]){
+   
+    return -1;
+  } else {
+    var Transport = new this.transports[protocol](connectionParameters)
+      , newFace =  new ndn.Face(Transport, Transport.connectionInfo);
+
+   
+
+    this.Faces.push(newFace);
+    newFace.faceID = this.Faces.length - 1;
+    var connectionInfo;
+
+    if (protocol === "WebSocketTransport"){
+     
+      connectionInfo = new this.transports[protocol].ConnectionInfo(connectionParameters.host, connectionParameters.port);
+    } else {
+      connectionInfo = newFace.connectionInfo || Transport.connectionInfo ||new this.transports[protocol].ConnectionInfo(Transport.socket);
+    }
+
+    
+    if (onclose){
+      newFace.onclose = onclose;
+    }
+
+    newFace.transport.connect(connectionInfo, newFace, function(){
+     
+
+      newFace.onReceivedElement = function(element){
+       
+
+        var decoder = new TlvDecoder(element);
+        if (decoder.peekType(Tlv.Interest, element.length)) {
+         
+          Self.subject.handleInterest(element, this.faceID);
+        }
+        else if (decoder.peekType(Tlv.Data, element.length)) {
+         
+          Self.subject.handleData(element, this.faceID);
+        }
+      };
+
+      newFace.send = function(element){
+
+        this.transport.send(element);
+      };
+
+      if (onopen) {
+       
+        onopen(newFace.faceID);
+      }
+    }, function(){
+      //onclose event TODO
+      if (onclose) {
+       
+        onclose(newFace.faceID);
+      }
+    });
+    return newFace.faceID;
+  }
+};
+
+Interfaces.prototype.closeFace = function(){};
+
+/** Dispatch an element to one or more Faces
+ *@param {Buffer} element the raw packet to dispatch
+ *@param {Number} faceFlag an Integer representing the faces to send one
+ *@param {Function} callback called per face sent, used for testing
+ *@returns {Interfaces} for chaining
+ */
+Interfaces.prototype.dispatch = function(element, faceFlag, callback){
+ 
+  if (faceFlag){
+    for (var i = 0; i < faceFlag.toString(2).length; i++){
+      if (faceFlag & (1<<i) ){
+        if (this.Faces[i]){
+         
+          this.Faces[i].transport.send(element);
+        }
+        if (callback){
+          callback(i);
+        }
+      }
+    }
+  }
+  return this;
+};
+
+module.exports = Interfaces;
+
+},{"debug":63,"ndn-js":120,"ndn-js/js/encoding/tlv/tlv.js":145,"ndn-lib/js/encoding/tlv/tlv-decoder.js":204}],53:[function(require,module,exports){
+var NameTreeNode = require("./NameTreeNode.js")
+  , binaryIndexOf = require("./../Utility/binarySearch.js")
+  , ndn;
+
+/**Creates an empty NameTree.
+ *@constructor
+ */
+var NameTree = function NameTree (){
+  this.addNode('/');
+  return this;
+};
+
+NameTree.Node = NameTreeNode;
+
+
+/**Install ndn-lib. Only necessary if you're using require("ndn-Classes/src/DataStructures/NameTree.js"), done for you if require("ndn-Classes").NameTree
+ *@private
+ *@param {Object} NDN ndn-lib object
+ */
+NameTree.installNDN = function(NDN){
+  NameTree.Node.installNDN(NDN);
+  ndn = NDN;
+  return this;
+};
+
+/**
+ * Add a node to the NameTree, recursively populating all parents
+ * @param  {Name|String} prefix - the prefix for the new node.
+ * @returns {NameTreeNode} node - the NameTree node created.
+ */
+NameTree.prototype.addNode = function(prefix){
+  if (typeof prefix === "string"){
+    prefix = new ndn.Name(prefix);
+  }
+  var self = this[prefix.toUri()];
+  if(self){
+    return self;
+  } else {
+    self = this[prefix.toUri()] = new NameTree.Node(prefix);
+    while(prefix.size() > 0){
+      var parentPrefix = prefix.getPrefix(-1);
+
+      if(!this[parentPrefix.toUri()]){
+        this[parentPrefix.toUri()] = new NameTree.Node(parentPrefix);
+      }
+      this[prefix.toUri()].parent = this[parentPrefix.toUri()];
+      this[parentPrefix.toUri()].addChild(this[prefix.toUri()]);
+      prefix = parentPrefix;
+    }
+  }
+  return self;
+};
+
+/**
+ * Delete a node (and all it's children, grandchildren, etc.).
+ * @param   {Name|URI} prefix - the name of the node to delete.
+ * @returns {NameTree} the nameTree.
+ */
+NameTree.prototype.removeNode = function(prefix, cycleFinish){
+  if (typeof prefix === "string"){
+    prefix = new ndn.Name(prefix);
+  }
+  cycleFinish = cycleFinish || prefix;
+  var self = this[prefix.toUri()];
+
+  if (!self){
+    return this;
+  } else{
+    var child = self.children.shift();
+
+    if (child !== undefined){
+      return this.removeNode(child.prefix, cycleFinish);
+    } else {
+      delete this[self.prefix.toUri()];
+      if (cycleFinish.equals(prefix)){
+        self.parent.removeChild(self);
+        return this;
+      }
+      else{
+        return this.removeNode(prefix.getPrefix(-1), cycleFinish);
+      }
+    }
+  }
+};
+
+/**
+ * Perform a lookup on the NameTree and return the proper node, creating it if necessary.
+ * @param  {Name|URI} prefix the name of the node to lookup.
+ * @returns {NameTreeNode} the resulting node.
+ */
+NameTree.prototype.lookup = function (prefix) {
+  if (typeof prefix === "string"){
+    prefix = new ndn.Name(prefix);
+  }
+  var node = this[prefix.toUri()];
+
+  if (node){
+    return node;
+  } else{
+    return (this.addNode(prefix));
+  }
+};
+
+/**
+ * Find the Longest Prefix Match in the NameTree that matches the selector
+ * @param    {Name|URI} prefix the name to lookup
+ * @param    {function} selector predicate function
+ * @returns  {NameTreeNode} the longest prefix match.
+ */
+NameTree.prototype.findLongestPrefixMatch = function(prefix, selector) {
+  if (typeof prefix === "string"){
+    prefix = new ndn.Name(prefix);
+  }
+  selector = selector || function(){return true;};
+
+  var match = this[prefix.toUri()];
+  if ( match && selector(match)){
+    return match;
+  } else if (prefix.size() > 0){
+    return this.findLongestPrefixMatch(prefix.getPrefix(-1), selector);
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Return an Iterator that provides a .next() method which returns the next longest Prefix matching the selector, returning null when depleted.
+ * @param {Name} prefix - the prefix to begin iteration
+ * @param {Function} selector - a selector function that returns a boolean when called with selector(node)
+ * @returns {Object} Iterator - the .depleted property of the iterator will be true when there are no more matches.
+ */
+NameTree.prototype.findAllMatches = function(prefix, selector){
+  if (typeof prefix === "string"){
+    prefix = new ndn.Name(prefix);
+  }
+  selector = selector || function(){return true;};
+
+  var self = this
+    , nextReturn = self[prefix.toUri()]
+    , thisReturn
+    , iterator = {
+      next: function(){
+        if (!this.hasNext){
+          return null;
+        }
+        prefix = nextReturn.prefix;
+        thisReturn = nextReturn;
+        nextReturn = (thisReturn && thisReturn.parent && selector(thisReturn.parent)) ?
+          thisReturn.parent
+        : (prefix.size() > 0) ?
+          self.findLongestPrefixMatch(prefix.getPrefix(-1), selector)
+        : null ;
+        if (!nextReturn){
+          this.hasNext = false;
+        } else {
+          this.hasNext = true;
+        }
+        return thisReturn;
+      }
+    };
+
+  if (nextReturn && selector(nextReturn)){
+    iterator.hasNext = true;
+    return iterator;
+  } else if (prefix.size() > 0){
+    return this.findAllMatches(prefix.getPrefix(-1), selector);
+  } else{
+    iterator.hasNext = false;
+    return iterator;
+  }
+};
+
+module.exports = NameTree;
+
+},{"./../Utility/binarySearch.js":61,"./NameTreeNode.js":54}],54:[function(require,module,exports){
+var binarySearch = require("./../Utility/binarySearch.js")
+  , ndn;
+
+/**NameTreeNode constructor, NOTE: (typeof URI == "string") && (Name instanceof <a href="https://github.com/named-data/ndn-js/blob/master/js/name.js">ndn.Name</a> )
+ *@constructor
+ *@private
+ *@param {Name|URI} prefix of the node
+ *@returns {NameTreeNode}
+ */
+var NameTreeNode = function NameTreeNode (prefix) {
+  this.prefix     = (typeof prefix === "string") ? new ndn.Name(prefix) : (prefix || null);
+  this.parent     = null;
+  this.children   = [];
+  this.fibEntry   = null;
+  this.pitEntries = [];
+  this.measurements  = null;
+  this.strategy = null;
+  return this;
+};
+
+/**Install ndn-lib. Only necessary if you're using require("ndn-Classes/src/DataStructures/NameTreeNode.js"), done for you if require("ndn-Classes").NameTree.Node
+ *@private
+ *@param {Object} NDN ndn-lib object
+ */
+NameTreeNode.installNDN = function(NDN){
+  ndn = NDN;
+  return this;
+};
+
+/**Add a child node to this one, inserting at the properly sorted index according to canonical namespace rules
+ *@private
+ *@param {NameTreeNode | String} child - the node to insert, or the suffix for a new node.
+ *@returns {NameTreeNode} the original node
+ */
+NameTreeNode.prototype.addChild = function addChild(child){
+  var self  = this
+    , index = binarySearch(this.children, child.prefix.get(-1), "prefix");
+
+  child = (child.prefix) ? child : new NameTreeNode(new ndn.Name(self.prefix).append(child));
+  if ( index < 0){
+    this.children.splice(~index, 0, child);
+  }
+  return this;
+};
+
+/**Remove a child from this node. This won't derefrence the child node, just remove it from the index
+ *@private
+ *@param {NameTreeNode | String} child - the node to remove, or the suffix of that node.
+ *@returns {NameTreeNode} the original node
+ */
+NameTreeNode.prototype.removeChild = function(child){
+  child = (typeof child === "string") ? {prefix:  new ndn.Name(child)} : child;
+
+  var index = binarySearch(this.children, child.prefix.get(-1), "prefix");
+  if (index < 0){
+    return this;
+  } else {
+    this.children.splice(index, 1);
+    return this;
+  }
+};
+
+
+module.exports = NameTreeNode;
+
+},{"./../Utility/binarySearch.js":61}],55:[function(require,module,exports){
+var binarySearch = require("./../Utility/binarySearch.js")
+  , ndn
+  , debug = {};
+debug.debug = require("debug")("PIT");
+
+
+function pubKeyMatch (ar1, ar2){
+  if (!ar1){
+    return true;
+  }
+
+  for(var i = 0; i < ar1.length; i++ ){
+    if (ar1[i] !== ar2[i]){
+      return false;
+    }
+  }
+  return true;
+}
+
+/**PIT Entry
+ *@constructor
+ *@param {Buffer} element The raw interest data packet
+ *@param {Object=} interest the ndn.Interest Object
+ *@param {number|function} faceIDorCallback Either the faceID of the face this interest was received on, or a callback function to receive any matching data
+ *@returns {PitEntry} - the entry
+ */
+function PitEntry (element, interest, faceIDorCallback){
+  if (typeof interest !== "object"){
+    faceIDorCallback = interest;
+    interest = new ndn.Interest();
+    interest.wireDecode(element);
+  }
+  if (!interest.nonce){
+    interest.wireDecode(element);
+  }
+  
+  this.nonce = interest.nonce;
+  this.uri = interest.name.toUri();
+  this.interest = interest;
+  this.element = element;
+  if (typeof faceIDorCallback === "function" ){
+    this.callback = faceIDorCallback;
+  } else {
+    this.faceID = faceIDorCallback;
+  }
+  return this;
+}
+
+/**Test whether the PitEntry is fulfilled by a data object
+ *@param {Object} data the ndn.Data object
+ *@returns {Boolean}
+ */
+PitEntry.prototype.matches = function(data){
+  
+  if (this.interest.matchesName(data.name)
+     && pubKeyMatch(this.interest.publisherPublicKeyDigest, data.signedInfo.publisher.publisherPublicKeyDigest)
+     ){
+    
+    return true;
+  } else {
+    
+    return false;
+  }
+};
+
+/**Consume the PitEntry (assuming it is attached to a the nameTree)
+ *@returns {PitEntry} in case you want to do anything with it afterward
+ */
+PitEntry.prototype.consume = function(callbackCalled) {
+  
+  if (this.nameTreeNode){
+    var i = binarySearch(this.nameTreeNode.pitEntries, this, "nonce");
+    if (i >= 0){
+      var removed = this.nameTreeNode.pitEntries.splice(~i, 1)[0];
+      if (removed.callback && !callbackCalled){
+        
+        removed.callback(null, removed.interest);
+      }
+    }
+  }
+  return this;
+};
+
+
+
+
+/**Pending Interest Table
+ *@constructor
+ *@param {NameTree} nameTree the nameTree to build the table on top of
+ *@returns {PIT} a new PIT
+ */
+var PIT = function PIT(nameTree){
+  this.nameTree = nameTree;
+  return this;
+};
+
+/**Import ndn-lib into the PIT scope
+ *@param {Object} NDN the NDN-js library in object form
+ */
+PIT.installNDN = function(NDN){
+  ndn = NDN;
+  return this;
+};
+
+PIT.Entry = PitEntry;
+
+PIT.prototype.useNameTree = function(nameTree){
+  this.nameTree = nameTree;
+  return this;
+};
+
+/**Create and insert a new {@link PITEntry}
+ *@param {Buffer} element The raw interest data packet
+ *@param {Object=} interest the ndn.Interest object
+ *@param {Number|function} faceIDorCallback either a numerical faceID or a callbackFunction
+ *@returns {PIT} the PIT (for chaining)
+ */
+PIT.prototype.insertPitEntry = function(element, interest, faceIDorCallback){
+  var pitEntry = new PIT.Entry(element, interest, faceIDorCallback);
+  
+  setTimeout(function(){
+    
+    pitEntry.consume();
+  }, pitEntry.interest.getInterestLifetimeMilliseconds() || 10);
+  var node = this.nameTree.lookup(pitEntry.interest.name);
+
+  var i = binarySearch(node.pitEntries, pitEntry, "nonce");
+  if (i < 0){
+    pitEntry.nameTreeNode = node;
+    node.pitEntries.splice(~i, 0 ,pitEntry);
+  }
+  return this;
+};
+
+PIT.prototype.checkDuplicate = function(interest){
+  
+  var node = this.nameTree.lookup(interest.name);
+
+  var i = binarySearch(node.pitEntries, interest, "nonce");
+
+  if (i < 0){
+    
+    return false;
+  } else {
+    
+    return true;
+  }
+
+};
+
+/**Lookup the PIT for Entries matching a given data object
+ *@param {Object} data The ndn.Data object
+ *@returns {Object} results: an object with two properties, pitEntries and faces, which are
+ * an array of matching {@link PITEntry}s and
+ * an integer faceFlag for use with {@link Interfaces.dispatch}, respectively.
+ */
+PIT.prototype.lookup = function(data, name, matches, faceFlag){
+  name = name || data.name;
+  matches = matches || [];
+  faceFlag = faceFlag || 0;
+  
+
+  var pitEntries = this.nameTree.lookup(name).pitEntries;
+
+  for (var i = 0; i < pitEntries.length; i++){
+    if (pitEntries[i].matches(data)){
+      
+      matches.push(pitEntries[i]);
+      if (pitEntries[i].faceID){
+        faceFlag = faceFlag | (1 << pitEntries[i].faceID);
+      }
+    }
+  }
+
+  if (name.size() > 0){
+    return this.lookup(data, name.getPrefix(-1), matches, faceFlag);
+  } else{
+    return {pitEntries : matches, faces : faceFlag};
+  }
+};
+
+module.exports = PIT;
+
+},{"./../Utility/binarySearch.js":61,"debug":63}],56:[function(require,module,exports){
+(function (process,Buffer){
+/**
+ *
+ *@external ContentStore
+ *@see http://rynomad.github.io/ndn-js-contrib/doc/ContentStore.html
+ *
+ */
+
+var leveldown = require("leveldown"),
+    levelup = require("levelup"),
+    path = (process.env.HOME || process.env.USERPROFILE || process.env.HOMEPATH || "") + "/.NDN-Repo",
+    ndn;
+var debug = true;
+
+/**NDN Repository
+ *@constructor
+ *@param {ContentStore} index - the in-memory {@link http://rynomad.github.io/ndn-javascript-data-structures/doc/ContentStore.html|ContentStore} to do lookups on the underlying key-value store
+ *@param {Object} - policy an parameter option for deciding on policies for accepting/rejecting storage requests
+ *@returns {Repository}
+ */
+function Repository (index, policy, onopen){
+  var self = this;
+  this.index = index;
+  this.nameTree = index.nameTree;
+  this.ndn = index.ndn;
+  this.db = levelup(policy.path || path, {db: leveldown,
+                                          valueEncoding: "json"
+                                         }, function(){
+    self.populateNameTree(onopen);
+  });
+  return this;
+}
+
+/** Install the NDN-lib Object
+ *@param {Object} NDN NDN-lib as object
+ */
+Repository.installNDN = function(NDN){
+  ndn = NDN;
+  return this;
+};
+
+/**get an element from a {RepoEntry}
+ *@param {RepoEntry} repoEntry the entry for the desired element
+ *@param {function} callback function receiving (err, element) as arguments, asyncronously
+ *@returns {this} for chaining
+ */
+Repository.prototype.getElement = function(repoEntry, callback){
+  this.db.get(repoEntry.uri, function(err, data){
+   if (!Buffer.isBuffer(data)){
+     data = new Buffer(data);
+   }
+   callback(err, data);
+  });
+  return this;
+};
+
+/**Insert an element into the DB and a corresponding RepoEntry into the index
+ *@param {Buffer} element - raw data packet
+ *@param {Object=} data - the NDN.Data object of the packet
+ *@param {function=} callback - called with no arguments on success, with err if fail
+ *@returns {this} for chaining
+ */
+Repository.prototype.insert = function(element, data, callback){
+  var db = this.db,
+      self = this;
+  callback = callback || function(){};
+
+  if (typeof data == "function"){
+    callback = data
+    data = new ndn.Data()
+    data.wireDecode(element);
+  }
+
+  db.put(data.name.toUri(), element, function(err){
+    self.index.insert(element,data);
+    callback(err);
+  });
+
+  return this;
+};
+
+/**Populate the index with keys from the db, called once on startup
+ *@private
+ *@param {function} callback called with err if one occurs
+ */
+Repository.prototype.populateNameTree = function(callback){
+  var self = this
+    , db = self.db;
+  callback = callback || function(){return;};
+
+  db.createKeyStream()
+    .on("data",function(key){
+      self.index.insert(null, new ndn.Data(new ndn.Name(key)));
+    })
+    .on("error", function(err){
+      callback(err);
+    })
+    .on("close", function(){
+      self.spun = true;
+      callback();
+    });
+};
+
+/**Check the Repository for data matching an interest
+ *@param {Object} interest and NDN.Interest object
+ *@param {function} callback recieves (err, element) err is null if everything is OK, element is a Buffer with the raw data packet
+ *@returns {this} for chaining
+ */
+Repository.prototype.check = function(interest, callback, db) {
+  db = db || this;
+  if (!db.spun){
+    setTimeout(db.check, 200, interest, callback, db);
+  } else {
+    db.index.check(interest, callback);
+  }
+  return this;
+};
+
+module.exports = Repository;
+
+}).call(this,require('_process'),require("buffer").Buffer)
+},{"_process":24,"buffer":3,"leveldown":66,"levelup":86}],57:[function(require,module,exports){
+
+function repoEntry (element, data){
+  var self = this;
+  var freshnessPeriod = (data.getMetaInfo) ? data.getMetaInfo().getFreshnessPeriod() : null;
+  this.name = data.name;
+  this.uri = data.name.toUri();
+  this.freshnessPeriod = freshnessPeriod;
+  this.publisherPublicKeyDigest = (data.signedInfo) ?
+    data.signedInfo.publisher.publisherPublicKeyDigest
+  : undefined;
+
+  if (freshnessPeriod){
+    this.element = element;
+    setTimeout(function(){
+      delete self.element;
+    }, freshnessPeriod);
+  }
+
+  return this;
+}
+
+repoEntry.installDatabase = function(db){
+  repoEntry.database = db;
+};
+
+
+repoEntry.type = "repoEntry";
+
+repoEntry.prototype.getElement = function(callback){
+  if (this.element){
+    callback(this.element);
+  } else{
+    repoEntry.database.getElement(this, callback);
+  }
+};
+
+repoEntry.prototype.setElement = function(element){
+  if (this.freshnessPeriod){
+    this.element = element;
+    setTimeout(function(){
+      delete this.element;
+    }, this.freshnessPeriod);
+  }
+
+  return this;
+};
+
+repoEntry.prototype.stale = function(node){
+  if ((node.repoEntry === this) && node.repoEntry.element){
+    delete node.repoEntry.element;
+  }
+  return this;
+};
+
+module.exports = repoEntry;
+
+},{}],58:[function(require,module,exports){
+(function (Buffer){
+var ElementReader = require("ndn-lib/js/encoding/element-reader.js").ElementReader;
+var Transport = require("ndn-lib/js/transport/transport.js").Transport;
+var debug = {};
+debug.debug = require("debug")("MessageChannelTransport");
+
+
+/**Transport Class for HTML5 MessageChannels
+ *@constructor
+ *@param {MessageChannel_Port} port one end of an HTML MessageChannel
+ *@returns {MessageChannelTransport}
+ */
+function MessageChannelTransport (port) {
+  
+  Transport.call(this);
+  this.connectionInfo = new MessageChannelTransport.ConnectionInfo(port);
+  return this;
+}
+
+
+MessageChannelTransport.prototype = new Transport();
+MessageChannelTransport.prototype.name = "MessageChannelTransport";
+
+MessageChannelTransport.ConnectionInfo = function MessageChannelTransportConnectionInfo(port){
+  Transport.ConnectionInfo.call(this);
+  this.port = port;
+};
+
+MessageChannelTransport.ConnectionInfo.prototype = new Transport.ConnectionInfo();
+MessageChannelTransport.ConnectionInfo.prototype.name = "MessageChannelTransport.ConnectionInfo";
+
+MessageChannelTransport.ConnectionInfo.prototype.getPort = function()
+{
+  return this.port;
+};
+
+MessageChannelTransport.ConnectionInfo.prototype.equals = function(other)
+{
+  if (other === null || other.port === undefined){
+    return false;
+  }
+  return (this.port === other.port);
+};
+
+/**Set the event listener for incoming elements
+ *@param {Object} face the ndn.Face object that this transport is attached to
+ *@param {function} onopenCallback a callback to be performed once the transport is open
+ */
+MessageChannelTransport.prototype.connect = function(connectionInfo, elementListener, onopenCallback, onclosedCallback)
+{
+  
+  this.elementReader = new ElementReader(elementListener);
+  var self = this;
+  connectionInfo.getPort().onmessage = function(ev) {
+    
+    if (ev.data.buffer instanceof ArrayBuffer) {
+      try {
+        self.elementReader.onReceivedData(new Buffer(ev.data));
+      } catch (ex) {
+        
+        return;
+      }
+    }
+  };
+  //elementListener.readyStatus = 2
+  onopenCallback();
+};
+
+/**Send the Uint8Array data.
+ *@param {Buffer} element the data packet
+ */
+MessageChannelTransport.prototype.send = function(element)
+{
+  
+  this.connectionInfo.getPort().postMessage(element);
+};
+
+module.exports = MessageChannelTransport;
+
+}).call(this,require("buffer").Buffer)
+},{"buffer":3,"debug":63,"ndn-lib/js/encoding/element-reader.js":203,"ndn-lib/js/transport/transport.js":208}],59:[function(require,module,exports){
+(function (Buffer){
+var ElementReader = require("ndn-lib/js/encoding/element-reader.js").ElementReader;
+var Transport = require("ndn-lib/js/transport/transport.js").Transport;
+var debug = {};
+debug.debug = require("debug")("DataChannelTransport");
+
+
+/**Transport Class for HTML5 DataChannels
+ *@constructor
+ *@param {DataChannel_Port} port one end of an HTML DataChannel
+ *@returns {DataChannelTransport}
+ */
+function DataChannelTransport (channel) {
+ 
+  Transport.call(this);
+  this.connectionInfo = new DataChannelTransport.ConnectionInfo(channel);
+  return this;
+}
+
+
+DataChannelTransport.prototype = new Transport();
+DataChannelTransport.prototype.name = "DataChannelTransport";
+
+DataChannelTransport.ConnectionInfo = function DataChannelTransportConnectionInfo(channel){
+  Transport.ConnectionInfo.call(this);
+
+  channel.binaryType = "arraybuffer";
+  this.channel = channel;
+};
+
+DataChannelTransport.ConnectionInfo.prototype = new Transport.ConnectionInfo();
+DataChannelTransport.ConnectionInfo.prototype.name = "DataChannelTransport.ConnectionInfo";
+
+DataChannelTransport.ConnectionInfo.prototype.getChannel = function()
+{
+  return this.channel;
+};
+
+DataChannelTransport.ConnectionInfo.prototype.equals = function(other)
+{
+  if (other === null || other.port === undefined){
+    return false;
+  }
+  return (this.port === other.port);
+};
+
+/**Set the event listener for incoming elements
+ *@param {Object} face the ndn.Face object that this transport is attached to
+ *@param {function} onopenCallback a callback to be performed once the transport is open
+ */
+DataChannelTransport.prototype.connect = function(connectionInfo, elementListener, onopenCallback, onclosedCallback)
+{
+ 
+  this.elementReader = new ElementReader(elementListener);
+  var self = this;
+
+  connectionInfo.getChannel().onmessage = function(ev) {
+   
+    if (ev.data instanceof ArrayBuffer) {
+
+      var result = ev.data;
+      var bytearray = new Buffer(new Uint8Array(result));
+
+      try {
+        // Find the end of the binary XML element and call face.onReceivedElement.
+        self.elementReader.onReceivedData(bytearray);
+      } catch (ex) {
+        cdebug("onmessage exception: ",   ex);
+        return;
+      }
+    }
+  };
+
+
+  connectionInfo.getChannel().onopen = function(ev) {
+   
+        // Face.registerPrefix will fetch the ndndid when needed.
+
+    onopenCallback();
+  };
+
+  connectionInfo.getChannel().onerror = function(ev) {
+   
+   
+  };
+
+  connectionInfo.getChannel().onclose = function(ev) {
+   
+    self.dc = null;
+
+    // Close Face when WebSocket is closed
+    self.face.readyStatus = 3;
+    self.face.closeByTransport();
+    onclosedCallback();
+  };
+
+  if (connectionInfo.getChannel().readyState === "open"){
+    
+    onopenCallback();
+  }
+};
+
+/**Send the Uint8Array data.
+ *@param {Buffer} element the data packet
+ */
+DataChannelTransport.prototype.send = function(element)
+{
+  
+  if(this.connectionInfo.getChannel().readyState === "open"){
+    this.connectionInfo.getChannel().send(element.toArrayBuffer());
+  } else {
+   
+  }
+};
+
+
+/**Define a connection listener for the {@link Interfaces} module. This Class method must be called before installing the class into Interfaces (if you want a Listener)
+ *@param {Number=} - port the port for the listener to listen on, default 7575
+ *//**))
+DataChannelTransport.defineListener = function(subject, namespace){
+
+  subject.contentStore.insert()
+
+  this.Listener = function (newFace) {
+    this.server = net.createServer(function(socket){
+      socket.on('end', function() {
+        console.log('server disconnected');
+      });
+      newFace("tcpServer", socket);
+    });
+    this.server.listen(port, function(){
+      //console.log('server awaiting connections');
+    });
+  };
+};
+*/
+module.exports = DataChannelTransport;
+
+}).call(this,require("buffer").Buffer)
+},{"buffer":3,"debug":63,"ndn-lib/js/encoding/element-reader.js":203,"ndn-lib/js/transport/transport.js":208}],60:[function(require,module,exports){
+exports.MessageChannel = require("./MessageChannel.js");
+exports.WebRTCDataChannel = require("./WebRTCDataChannel.js");
+exports.WebSocketTransport = require("ndn-js").TcpTransport;
 module.exports = exports;
 
-},{"./src/DataStructures/ContentStore.js":101,"./src/DataStructures/FIB.js":102,"./src/DataStructures/Interfaces.js":103,"./src/DataStructures/NameTree.js":104,"./src/DataStructures/PIT.js":106,"./src/Transports/node/export.js":109,"ndn-lib":34}],25:[function(require,module,exports){
+},{"./MessageChannel.js":58,"./WebRTCDataChannel.js":59,"ndn-js":120}],61:[function(require,module,exports){
+  /**
+ * Modified from https://gist.github.com/Wolfy87/5734530
+ *
+ *
+ * Performs a binary search on the host array. This method can either be
+ * injected into Array.prototype or called with a specified scope like this:
+ * binaryIndexOf.call(someArray, searchElement);
+ *
+ * @param {*} searchElement The item to search for within the array.
+ * @return {Number} The index of the element which defaults to -1 when not found.
+ */
+
+
+function compareArrays(query, comparator, i){
+  if (!(i >= 0))
+    i = -1
+
+  if (i >= 0 || (query.length == comparator.length)){
+    i++
+    if (comparator[i] > query[i]){
+      return 1;
+    } else if (comparator[i] < query[i]) {
+      return -1;
+    } else if (query[i] == comparator[i]){
+      if (i < query.length - 1)
+        return compareArrays(query, comparator, i);
+      else
+        return 0;
+    }
+  } else if (comparator.length > query.length){
+    return 1;
+  } else if (comparator.length < query.length){
+    return -1;
+  }
+
+}
+
+
+var binaryIndexOfPrefix = function(array, searchElement, prop) {
+	'use strict';
+  if (array.length == 0){
+    return -1;}
+
+	var minIndex = 0;
+	var maxIndex = array.length - 1;
+	var currentIndex;
+	var currentElement;
+	var resultIndex;
+  var res;
+
+  searchElement = (prop == "prefix") ?
+    searchElement.getValue().buffer
+  : (prop == "nonce") ?
+    searchElement.nonce
+  : (prop == "faceID") ?
+    searchElement.faceID
+  : searchElement
+
+	while (minIndex <= maxIndex) {
+		resultIndex = currentIndex = (minIndex + maxIndex) / 2 | 0;
+    currentElement = (prop == "prefix") ? array[currentIndex].prefix.get(-1).getValue().buffer : (prop == "nonce") ? array[currentIndex].nonce : (prop == "faceID") ? array[currentIndex].faceID : array[currentIndex]
+
+    res = (typeof searchElement !== "number") ? compareArrays(searchElement, currentElement) : (function(){
+      if (searchElement > currentElement)
+        return -1;
+      if (searchElement < currentElement)
+        return 1;
+      else
+        return 0
+    })()
+
+
+		if (res == 1) {
+			maxIndex = currentIndex - 1;
+		}
+		else if (res == -1) {
+      minIndex = currentIndex + 1;
+		}
+		else {
+			return currentIndex;
+		}
+	}
+  return ~(maxIndex + 1);
+}
+
+module.exports = binaryIndexOfPrefix
+
+},{}],62:[function(require,module,exports){
+(function (Buffer){
+exports.ndn = require("ndn-js");
+exports.NameTree = require("./dist/src/DataStructures/NameTree.js").installNDN(exports.ndn);
+exports.PIT = require("./dist/src/DataStructures/PIT.js").installNDN(exports.ndn);
+exports.FIB = require("./dist/src/DataStructures/FIB.js").installNDN(exports.ndn);
+exports.ContentStore = require("./dist/src/DataStructures/ContentStore.js");
+exports.Interfaces = require("./dist/src/DataStructures/Interfaces.js").installNDN(exports.ndn);
+exports.Transports = require("./dist/src/Transports/node/export.js")
+exports.Repository = require("./dist/src/DataStructures/Repository.js");
+exports.Repository.RepoEntry = require("./dist/src/DataStructures/repoEntry.js");
+exports.Buffer = Buffer;
+module.exports = exports;
+
+}).call(this,require("buffer").Buffer)
+},{"./dist/src/DataStructures/ContentStore.js":50,"./dist/src/DataStructures/FIB.js":51,"./dist/src/DataStructures/Interfaces.js":52,"./dist/src/DataStructures/NameTree.js":53,"./dist/src/DataStructures/PIT.js":55,"./dist/src/DataStructures/Repository.js":56,"./dist/src/DataStructures/repoEntry.js":57,"./dist/src/Transports/node/export.js":60,"buffer":3,"ndn-js":120}],63:[function(require,module,exports){
+module.exports=require(47)
+},{"./debug":64}],64:[function(require,module,exports){
+module.exports=require(48)
+},{"ms":65}],65:[function(require,module,exports){
+module.exports=require(49)
+},{}],66:[function(require,module,exports){
+(function (Buffer){
+module.exports = Level
+
+var IDB = require('idb-wrapper')
+var AbstractLevelDOWN = require('abstract-leveldown').AbstractLevelDOWN
+var util = require('util')
+var Iterator = require('./iterator')
+var isBuffer = require('isbuffer')
+var xtend = require('xtend')
+var toBuffer = require('typedarray-to-buffer')
+
+function Level(location) {
+  if (!(this instanceof Level)) return new Level(location)
+  if (!location) throw new Error("constructor requires at least a location argument")
+  this.IDBOptions = {}
+  this.location = location
+}
+
+util.inherits(Level, AbstractLevelDOWN)
+
+Level.prototype._open = function(options, callback) {
+  var self = this
+    
+  var idbOpts = {
+    storeName: this.location,
+    autoIncrement: false,
+    keyPath: null,
+    onStoreReady: function () {
+      callback && callback(null, self.idb)
+    }, 
+    onError: function(err) {
+      callback && callback(err)
+    }
+  }
+  
+  xtend(idbOpts, options)
+  this.IDBOptions = idbOpts
+  this.idb = new IDB(idbOpts)
+}
+
+Level.prototype._get = function (key, options, callback) {
+  this.idb.get(key, function (value) {
+    if (value === undefined) {
+      // 'NotFound' error, consistent with LevelDOWN API
+      return callback(new Error('NotFound'))
+    }
+    // by default return buffers, unless explicitly told not to
+    var asBuffer = true
+    if (options.asBuffer === false) asBuffer = false
+    if (options.raw) asBuffer = false
+    if (asBuffer) {
+      if (value instanceof Uint8Array) value = toBuffer(value)
+      else value = new Buffer(String(value))
+    }
+    return callback(null, value, key)
+  }, callback)
+}
+
+Level.prototype._del = function(id, options, callback) {
+  this.idb.remove(id, callback, callback)
+}
+
+Level.prototype._put = function (key, value, options, callback) {
+  if (value instanceof ArrayBuffer) {
+    value = toBuffer(new Uint8Array(value))
+  }
+  var obj = this.convertEncoding(key, value, options)
+  if (Buffer.isBuffer(obj.value)) {
+    obj.value = new Uint8Array(value.toArrayBuffer())
+  }
+  this.idb.put(obj.key, obj.value, function() { callback() }, callback)
+}
+
+Level.prototype.convertEncoding = function(key, value, options) {
+  if (options.raw) return {key: key, value: value}
+  if (value) {
+    var stringed = value.toString()
+    if (stringed === 'NaN') value = 'NaN'
+  }
+  var valEnc = options.valueEncoding
+  var obj = {key: key, value: value}
+  if (value && (!valEnc || valEnc !== 'binary')) {
+    if (typeof obj.value !== 'object') {
+      obj.value = stringed
+    }
+  }
+  return obj
+}
+
+Level.prototype.iterator = function (options) {
+  if (typeof options !== 'object') options = {}
+  return new Iterator(this.idb, options)
+}
+
+Level.prototype._batch = function (array, options, callback) {
+  var op
+  var i
+  var k
+  var copiedOp
+  var currentOp
+  var modified = []
+  
+  if (array.length === 0) return setTimeout(callback, 0)
+  
+  for (i = 0; i < array.length; i++) {
+    copiedOp = {}
+    currentOp = array[i]
+    modified[i] = copiedOp
+    
+    var converted = this.convertEncoding(currentOp.key, currentOp.value, options)
+    currentOp.key = converted.key
+    currentOp.value = converted.value
+
+    for (k in currentOp) {
+      if (k === 'type' && currentOp[k] == 'del') {
+        copiedOp[k] = 'remove'
+      } else {
+        copiedOp[k] = currentOp[k]
+      }
+    }
+  }
+
+  return this.idb.batch(modified, function(){ callback() }, callback)
+}
+
+Level.prototype._close = function (callback) {
+  this.idb.db.close()
+  callback()
+}
+
+Level.prototype._approximateSize = function (start, end, callback) {
+  var err = new Error('Not implemented')
+  if (callback)
+    return callback(err)
+
+  throw err
+}
+
+Level.prototype._isBuffer = function (obj) {
+  return Buffer.isBuffer(obj)
+}
+
+Level.destroy = function (db, callback) {
+  if (typeof db === 'object') {
+    var prefix = db.IDBOptions.storePrefix || 'IDBWrapper-'
+    var dbname = db.location
+  } else {
+    var prefix = 'IDBWrapper-'
+    var dbname = db
+  }
+  var request = indexedDB.deleteDatabase(prefix + dbname)
+  request.onsuccess = function() {
+    callback()
+  }
+  request.onerror = function(err) {
+    callback(err)
+  }
+}
+
+var checkKeyValue = Level.prototype._checkKeyValue = function (obj, type) {
+  if (obj === null || obj === undefined)
+    return new Error(type + ' cannot be `null` or `undefined`')
+  if (obj === null || obj === undefined)
+    return new Error(type + ' cannot be `null` or `undefined`')
+  if (isBuffer(obj) && obj.byteLength === 0)
+    return new Error(type + ' cannot be an empty ArrayBuffer')
+  if (String(obj) === '')
+    return new Error(type + ' cannot be an empty String')
+  if (obj.length === 0)
+    return new Error(type + ' cannot be an empty Array')
+}
+
+}).call(this,require("buffer").Buffer)
+},{"./iterator":67,"abstract-leveldown":70,"buffer":3,"idb-wrapper":72,"isbuffer":73,"typedarray-to-buffer":75,"util":39,"xtend":77}],67:[function(require,module,exports){
+var util = require('util')
+var AbstractIterator  = require('abstract-leveldown').AbstractIterator
+var ltgt = require('ltgt')
+
+module.exports = Iterator
+
+function Iterator (db, options) {
+  if (!options) options = {}
+  this.options = options
+  AbstractIterator.call(this, db)
+  this._order = options.reverse ? 'DESC': 'ASC'
+  this._limit = options.limit
+  this._count = 0
+  this._done  = false
+  var lower = ltgt.lowerBound(options)
+  var upper = ltgt.upperBound(options)
+  this._keyRange = lower || upper ? this.db.makeKeyRange({
+    lower: lower,
+    upper: upper,
+    excludeLower: ltgt.lowerBoundExclusive(options),
+    excludeUpper: ltgt.upperBoundExclusive(options)
+  }) : null
+  this.callback = null
+}
+
+util.inherits(Iterator, AbstractIterator)
+
+Iterator.prototype.createIterator = function() {
+  var self = this
+
+  self.iterator = self.db.iterate(function () {
+    self.onItem.apply(self, arguments)
+  }, {
+    keyRange: self._keyRange,
+    autoContinue: false,
+    order: self._order,
+    onError: function(err) { console.log('horrible error', err) },
+  })
+}
+
+// TODO the limit implementation here just ignores all reads after limit has been reached
+// it should cancel the iterator instead but I don't know how
+Iterator.prototype.onItem = function (value, cursor, cursorTransaction) {
+  if (!cursor && this.callback) {
+    this.callback()
+    this.callback = false
+    return
+  }
+  var shouldCall = true
+
+  if (!!this._limit && this._limit > 0 && this._count++ >= this._limit)
+    shouldCall = false
+
+  if (shouldCall) this.callback(false, cursor.key, cursor.value)
+  if (cursor) cursor['continue']()
+}
+
+Iterator.prototype._next = function (callback) {
+  if (!callback) return new Error('next() requires a callback argument')
+  if (!this._started) {
+    this.createIterator()
+    this._started = true
+  }
+  this.callback = callback
+}
+
+},{"abstract-leveldown":70,"ltgt":74,"util":39}],68:[function(require,module,exports){
+(function (process){
+/* Copyright (c) 2013 Rod Vagg, MIT License */
+
+function AbstractChainedBatch (db) {
+  this._db         = db
+  this._operations = []
+  this._written    = false
+}
+
+AbstractChainedBatch.prototype._checkWritten = function () {
+  if (this._written)
+    throw new Error('write() already called on this batch')
+}
+
+AbstractChainedBatch.prototype.put = function (key, value) {
+  this._checkWritten()
+
+  var err = this._db._checkKeyValue(key, 'key', this._db._isBuffer)
+  if (err) throw err
+  err = this._db._checkKeyValue(value, 'value', this._db._isBuffer)
+  if (err) throw err
+
+  if (!this._db._isBuffer(key)) key = String(key)
+  if (!this._db._isBuffer(value)) value = String(value)
+
+  if (typeof this._put == 'function' )
+    this._put(key, value)
+  else
+    this._operations.push({ type: 'put', key: key, value: value })
+
+  return this
+}
+
+AbstractChainedBatch.prototype.del = function (key) {
+  this._checkWritten()
+
+  var err = this._db._checkKeyValue(key, 'key', this._db._isBuffer)
+  if (err) throw err
+
+  if (!this._db._isBuffer(key)) key = String(key)
+
+  if (typeof this._del == 'function' )
+    this._del(key)
+  else
+    this._operations.push({ type: 'del', key: key })
+
+  return this
+}
+
+AbstractChainedBatch.prototype.clear = function () {
+  this._checkWritten()
+
+  this._operations = []
+
+  if (typeof this._clear == 'function' )
+    this._clear()
+
+  return this
+}
+
+AbstractChainedBatch.prototype.write = function (options, callback) {
+  this._checkWritten()
+
+  if (typeof options == 'function')
+    callback = options
+  if (typeof callback != 'function')
+    throw new Error('write() requires a callback argument')
+  if (typeof options != 'object')
+    options = {}
+
+  this._written = true
+
+  if (typeof this._write == 'function' )
+    return this._write(callback)
+
+  if (typeof this._db._batch == 'function')
+    return this._db._batch(this._operations, options, callback)
+
+  process.nextTick(callback)
+}
+
+module.exports = AbstractChainedBatch
+}).call(this,require('_process'))
+},{"_process":24}],69:[function(require,module,exports){
+(function (process){
+/* Copyright (c) 2013 Rod Vagg, MIT License */
+
+function AbstractIterator (db) {
+  this.db = db
+  this._ended = false
+  this._nexting = false
+}
+
+AbstractIterator.prototype.next = function (callback) {
+  var self = this
+
+  if (typeof callback != 'function')
+    throw new Error('next() requires a callback argument')
+
+  if (self._ended)
+    return callback(new Error('cannot call next() after end()'))
+  if (self._nexting)
+    return callback(new Error('cannot call next() before previous next() has completed'))
+
+  self._nexting = true
+  if (typeof self._next == 'function') {
+    return self._next(function () {
+      self._nexting = false
+      callback.apply(null, arguments)
+    })
+  }
+
+  process.nextTick(function () {
+    self._nexting = false
+    callback()
+  })
+}
+
+AbstractIterator.prototype.end = function (callback) {
+  if (typeof callback != 'function')
+    throw new Error('end() requires a callback argument')
+
+  if (this._ended)
+    return callback(new Error('end() already called on iterator'))
+
+  this._ended = true
+
+  if (typeof this._end == 'function')
+    return this._end(callback)
+
+  process.nextTick(callback)
+}
+
+module.exports = AbstractIterator
+
+}).call(this,require('_process'))
+},{"_process":24}],70:[function(require,module,exports){
+(function (process,Buffer){
+/* Copyright (c) 2013 Rod Vagg, MIT License */
+
+var xtend                = require('xtend')
+  , AbstractIterator     = require('./abstract-iterator')
+  , AbstractChainedBatch = require('./abstract-chained-batch')
+
+function AbstractLevelDOWN (location) {
+  if (!arguments.length || location === undefined)
+    throw new Error('constructor requires at least a location argument')
+
+  if (typeof location != 'string')
+    throw new Error('constructor requires a location string argument')
+
+  this.location = location
+}
+
+AbstractLevelDOWN.prototype.open = function (options, callback) {
+  if (typeof options == 'function')
+    callback = options
+
+  if (typeof callback != 'function')
+    throw new Error('open() requires a callback argument')
+
+  if (typeof options != 'object')
+    options = {}
+
+  if (typeof this._open == 'function')
+    return this._open(options, callback)
+
+  process.nextTick(callback)
+}
+
+AbstractLevelDOWN.prototype.close = function (callback) {
+  if (typeof callback != 'function')
+    throw new Error('close() requires a callback argument')
+
+  if (typeof this._close == 'function')
+    return this._close(callback)
+
+  process.nextTick(callback)
+}
+
+AbstractLevelDOWN.prototype.get = function (key, options, callback) {
+  var err
+
+  if (typeof options == 'function')
+    callback = options
+
+  if (typeof callback != 'function')
+    throw new Error('get() requires a callback argument')
+
+  if (err = this._checkKeyValue(key, 'key', this._isBuffer))
+    return callback(err)
+
+  if (!this._isBuffer(key))
+    key = String(key)
+
+  if (typeof options != 'object')
+    options = {}
+
+  if (typeof this._get == 'function')
+    return this._get(key, options, callback)
+
+  process.nextTick(function () { callback(new Error('NotFound')) })
+}
+
+AbstractLevelDOWN.prototype.put = function (key, value, options, callback) {
+  var err
+
+  if (typeof options == 'function')
+    callback = options
+
+  if (typeof callback != 'function')
+    throw new Error('put() requires a callback argument')
+
+  if (err = this._checkKeyValue(key, 'key', this._isBuffer))
+    return callback(err)
+
+  if (err = this._checkKeyValue(value, 'value', this._isBuffer))
+    return callback(err)
+
+  if (!this._isBuffer(key))
+    key = String(key)
+
+  // coerce value to string in node, don't touch it in browser
+  // (indexeddb can store any JS type)
+  if (!this._isBuffer(value) && !process.browser)
+    value = String(value)
+
+  if (typeof options != 'object')
+    options = {}
+
+  if (typeof this._put == 'function')
+    return this._put(key, value, options, callback)
+
+  process.nextTick(callback)
+}
+
+AbstractLevelDOWN.prototype.del = function (key, options, callback) {
+  var err
+
+  if (typeof options == 'function')
+    callback = options
+
+  if (typeof callback != 'function')
+    throw new Error('del() requires a callback argument')
+
+  if (err = this._checkKeyValue(key, 'key', this._isBuffer))
+    return callback(err)
+
+  if (!this._isBuffer(key))
+    key = String(key)
+
+  if (typeof options != 'object')
+    options = {}
+
+  if (typeof this._del == 'function')
+    return this._del(key, options, callback)
+
+  process.nextTick(callback)
+}
+
+AbstractLevelDOWN.prototype.batch = function (array, options, callback) {
+  if (!arguments.length)
+    return this._chainedBatch()
+
+  if (typeof options == 'function')
+    callback = options
+
+  if (typeof callback != 'function')
+    throw new Error('batch(array) requires a callback argument')
+
+  if (!Array.isArray(array))
+    return callback(new Error('batch(array) requires an array argument'))
+
+  if (typeof options != 'object')
+    options = {}
+
+  var i = 0
+    , l = array.length
+    , e
+    , err
+
+  for (; i < l; i++) {
+    e = array[i]
+    if (typeof e != 'object')
+      continue
+
+    if (err = this._checkKeyValue(e.type, 'type', this._isBuffer))
+      return callback(err)
+
+    if (err = this._checkKeyValue(e.key, 'key', this._isBuffer))
+      return callback(err)
+
+    if (e.type == 'put') {
+      if (err = this._checkKeyValue(e.value, 'value', this._isBuffer))
+        return callback(err)
+    }
+  }
+
+  if (typeof this._batch == 'function')
+    return this._batch(array, options, callback)
+
+  process.nextTick(callback)
+}
+
+//TODO: remove from here, not a necessary primitive
+AbstractLevelDOWN.prototype.approximateSize = function (start, end, callback) {
+  if (   start == null
+      || end == null
+      || typeof start == 'function'
+      || typeof end == 'function') {
+    throw new Error('approximateSize() requires valid `start`, `end` and `callback` arguments')
+  }
+
+  if (typeof callback != 'function')
+    throw new Error('approximateSize() requires a callback argument')
+
+  if (!this._isBuffer(start))
+    start = String(start)
+
+  if (!this._isBuffer(end))
+    end = String(end)
+
+  if (typeof this._approximateSize == 'function')
+    return this._approximateSize(start, end, callback)
+
+  process.nextTick(function () {
+    callback(null, 0)
+  })
+}
+
+AbstractLevelDOWN.prototype._setupIteratorOptions = function (options) {
+  var self = this
+
+  options = xtend(options)
+
+  ;[ 'start', 'end', 'gt', 'gte', 'lt', 'lte' ].forEach(function (o) {
+    if (options[o] && self._isBuffer(options[o]) && options[o].length === 0)
+      delete options[o]
+  })
+
+  options.reverse = !!options.reverse
+
+  // fix `start` so it takes into account gt, gte, lt, lte as appropriate
+  if (options.reverse && options.lt)
+    options.start = options.lt
+  if (options.reverse && options.lte)
+    options.start = options.lte
+  if (!options.reverse && options.gt)
+    options.start = options.gt
+  if (!options.reverse && options.gte)
+    options.start = options.gte
+
+  if ((options.reverse && options.lt && !options.lte)
+    || (!options.reverse && options.gt && !options.gte))
+    options.exclusiveStart = true // start should *not* include matching key
+
+  return options
+}
+
+AbstractLevelDOWN.prototype.iterator = function (options) {
+  if (typeof options != 'object')
+    options = {}
+
+  options = this._setupIteratorOptions(options)
+
+  if (typeof this._iterator == 'function')
+    return this._iterator(options)
+
+  return new AbstractIterator(this)
+}
+
+AbstractLevelDOWN.prototype._chainedBatch = function () {
+  return new AbstractChainedBatch(this)
+}
+
+AbstractLevelDOWN.prototype._isBuffer = function (obj) {
+  return Buffer.isBuffer(obj)
+}
+
+AbstractLevelDOWN.prototype._checkKeyValue = function (obj, type) {
+
+  if (obj === null || obj === undefined)
+    return new Error(type + ' cannot be `null` or `undefined`')
+
+  if (this._isBuffer(obj)) {
+    if (obj.length === 0)
+      return new Error(type + ' cannot be an empty Buffer')
+  } else if (String(obj) === '')
+    return new Error(type + ' cannot be an empty String')
+}
+
+module.exports.AbstractLevelDOWN    = AbstractLevelDOWN
+module.exports.AbstractIterator     = AbstractIterator
+module.exports.AbstractChainedBatch = AbstractChainedBatch
+
+}).call(this,require('_process'),require("buffer").Buffer)
+},{"./abstract-chained-batch":68,"./abstract-iterator":69,"_process":24,"buffer":3,"xtend":71}],71:[function(require,module,exports){
+module.exports = extend
+
+function extend() {
+    var target = {}
+
+    for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i]
+
+        for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+                target[key] = source[key]
+            }
+        }
+    }
+
+    return target
+}
+
+},{}],72:[function(require,module,exports){
+/*global window:false, self:false, define:false, module:false */
+
+/**
+ * @license IDBWrapper - A cross-browser wrapper for IndexedDB
+ * Copyright (c) 2011 - 2013 Jens Arps
+ * http://jensarps.de/
+ *
+ * Licensed under the MIT (X11) license
+ */
+
+(function (name, definition, global) {
+  if (typeof define === 'function') {
+    define(definition);
+  } else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = definition();
+  } else {
+    global[name] = definition();
+  }
+})('IDBStore', function () {
+
+  'use strict';
+
+  var defaultErrorHandler = function (error) {
+    throw error;
+  };
+
+  var defaults = {
+    storeName: 'Store',
+    storePrefix: 'IDBWrapper-',
+    dbVersion: 1,
+    keyPath: 'id',
+    autoIncrement: true,
+    onStoreReady: function () {
+    },
+    onError: defaultErrorHandler,
+    indexes: []
+  };
+
+  /**
+   *
+   * The IDBStore constructor
+   *
+   * @constructor
+   * @name IDBStore
+   * @version 1.4.1
+   *
+   * @param {Object} [kwArgs] An options object used to configure the store and
+   *  set callbacks
+   * @param {String} [kwArgs.storeName='Store'] The name of the store
+   * @param {String} [kwArgs.storePrefix='IDBWrapper-'] A prefix that is
+   *  internally used to construct the name of the database, which will be
+   *  kwArgs.storePrefix + kwArgs.storeName
+   * @param {Number} [kwArgs.dbVersion=1] The version of the store
+   * @param {String} [kwArgs.keyPath='id'] The key path to use. If you want to
+   *  setup IDBWrapper to work with out-of-line keys, you need to set this to
+   *  `null`
+   * @param {Boolean} [kwArgs.autoIncrement=true] If set to true, IDBStore will
+   *  automatically make sure a unique keyPath value is present on each object
+   *  that is stored.
+   * @param {Function} [kwArgs.onStoreReady] A callback to be called when the
+   *  store is ready to be used.
+   * @param {Function} [kwArgs.onError=throw] A callback to be called when an
+   *  error occurred during instantiation of the store.
+   * @param {Array} [kwArgs.indexes=[]] An array of indexData objects
+   *  defining the indexes to use with the store. For every index to be used
+   *  one indexData object needs to be passed in the array.
+   *  An indexData object is defined as follows:
+   * @param {Object} [kwArgs.indexes.indexData] An object defining the index to
+   *  use
+   * @param {String} kwArgs.indexes.indexData.name The name of the index
+   * @param {String} [kwArgs.indexes.indexData.keyPath] The key path of the index
+   * @param {Boolean} [kwArgs.indexes.indexData.unique] Whether the index is unique
+   * @param {Boolean} [kwArgs.indexes.indexData.multiEntry] Whether the index is multi entry
+   * @param {Function} [onStoreReady] A callback to be called when the store
+   * is ready to be used.
+   * @example
+      // create a store for customers with an additional index over the
+      // `lastname` property.
+      var myCustomerStore = new IDBStore({
+        dbVersion: 1,
+        storeName: 'customer-index',
+        keyPath: 'customerid',
+        autoIncrement: true,
+        onStoreReady: populateTable,
+        indexes: [
+          { name: 'lastname', keyPath: 'lastname', unique: false, multiEntry: false }
+        ]
+      });
+   * @example
+      // create a generic store
+      var myCustomerStore = new IDBStore({
+        storeName: 'my-data-store',
+        onStoreReady: function(){
+          // start working with the store.
+        }
+      });
+   */
+  var IDBStore = function (kwArgs, onStoreReady) {
+
+    if (typeof onStoreReady == 'undefined' && typeof kwArgs == 'function') {
+      onStoreReady = kwArgs;
+    }
+    if (Object.prototype.toString.call(kwArgs) != '[object Object]') {
+      kwArgs = {};
+    }
+
+    for (var key in defaults) {
+      this[key] = typeof kwArgs[key] != 'undefined' ? kwArgs[key] : defaults[key];
+    }
+
+    this.dbName = this.storePrefix + this.storeName;
+    this.dbVersion = parseInt(this.dbVersion, 10) || 1;
+
+    onStoreReady && (this.onStoreReady = onStoreReady);
+
+    var env = typeof window == 'object' ? window : self;
+    this.idb = env.indexedDB || env.webkitIndexedDB || env.mozIndexedDB;
+    this.keyRange = env.IDBKeyRange || env.webkitIDBKeyRange || env.mozIDBKeyRange;
+
+    this.features = {
+      hasAutoIncrement: !env.mozIndexedDB
+    };
+
+    this.consts = {
+      'READ_ONLY':         'readonly',
+      'READ_WRITE':        'readwrite',
+      'VERSION_CHANGE':    'versionchange',
+      'NEXT':              'next',
+      'NEXT_NO_DUPLICATE': 'nextunique',
+      'PREV':              'prev',
+      'PREV_NO_DUPLICATE': 'prevunique'
+    };
+
+    this.openDB();
+  };
+
+  IDBStore.prototype = /** @lends IDBStore */ {
+
+    /**
+     * A pointer to the IDBStore ctor
+     *
+     * @type IDBStore
+     */
+    constructor: IDBStore,
+
+    /**
+     * The version of IDBStore
+     *
+     * @type String
+     */
+    version: '1.4.1',
+
+    /**
+     * A reference to the IndexedDB object
+     *
+     * @type Object
+     */
+    db: null,
+
+    /**
+     * The full name of the IndexedDB used by IDBStore, composed of
+     * this.storePrefix + this.storeName
+     *
+     * @type String
+     */
+    dbName: null,
+
+    /**
+     * The version of the IndexedDB used by IDBStore
+     *
+     * @type Number
+     */
+    dbVersion: null,
+
+    /**
+     * A reference to the objectStore used by IDBStore
+     *
+     * @type Object
+     */
+    store: null,
+
+    /**
+     * The store name
+     *
+     * @type String
+     */
+    storeName: null,
+
+    /**
+     * The key path
+     *
+     * @type String
+     */
+    keyPath: null,
+
+    /**
+     * Whether IDBStore uses autoIncrement
+     *
+     * @type Boolean
+     */
+    autoIncrement: null,
+
+    /**
+     * The indexes used by IDBStore
+     *
+     * @type Array
+     */
+    indexes: null,
+
+    /**
+     * A hashmap of features of the used IDB implementation
+     *
+     * @type Object
+     * @proprty {Boolean} autoIncrement If the implementation supports
+     *  native auto increment
+     */
+    features: null,
+
+    /**
+     * The callback to be called when the store is ready to be used
+     *
+     * @type Function
+     */
+    onStoreReady: null,
+
+    /**
+     * The callback to be called if an error occurred during instantiation
+     * of the store
+     *
+     * @type Function
+     */
+    onError: null,
+
+    /**
+     * The internal insertID counter
+     *
+     * @type Number
+     * @private
+     */
+    _insertIdCount: 0,
+
+    /**
+     * Opens an IndexedDB; called by the constructor.
+     *
+     * Will check if versions match and compare provided index configuration
+     * with existing ones, and update indexes if necessary.
+     *
+     * Will call this.onStoreReady() if everything went well and the store
+     * is ready to use, and this.onError() is something went wrong.
+     *
+     * @private
+     *
+     */
+    openDB: function () {
+
+      var openRequest = this.idb.open(this.dbName, this.dbVersion);
+      var preventSuccessCallback = false;
+
+      openRequest.onerror = function (error) {
+
+        var gotVersionErr = false;
+        if ('error' in error.target) {
+          gotVersionErr = error.target.error.name == 'VersionError';
+        } else if ('errorCode' in error.target) {
+          gotVersionErr = error.target.errorCode == 12;
+        }
+
+        if (gotVersionErr) {
+          this.onError(new Error('The version number provided is lower than the existing one.'));
+        } else {
+          this.onError(error);
+        }
+      }.bind(this);
+
+      openRequest.onsuccess = function (event) {
+
+        if (preventSuccessCallback) {
+          return;
+        }
+
+        if(this.db){
+          this.onStoreReady();
+          return;
+        }
+
+        this.db = event.target.result;
+
+        if(typeof this.db.version == 'string'){
+          this.onError(new Error('The IndexedDB implementation in this browser is outdated. Please upgrade your browser.'));
+          return;
+        }
+
+        if(!this.db.objectStoreNames.contains(this.storeName)){
+          // We should never ever get here.
+          // Lets notify the user anyway.
+          this.onError(new Error('Something is wrong with the IndexedDB implementation in this browser. Please upgrade your browser.'));
+          return;
+        }
+
+        var emptyTransaction = this.db.transaction([this.storeName], this.consts.READ_ONLY);
+        this.store = emptyTransaction.objectStore(this.storeName);
+
+        // check indexes
+        var existingIndexes = Array.prototype.slice.call(this.getIndexList());
+        this.indexes.forEach(function(indexData){
+          var indexName = indexData.name;
+
+          if(!indexName){
+            preventSuccessCallback = true;
+            this.onError(new Error('Cannot create index: No index name given.'));
+            return;
+          }
+
+          this.normalizeIndexData(indexData);
+
+          if(this.hasIndex(indexName)){
+            // check if it complies
+            var actualIndex = this.store.index(indexName);
+            var complies = this.indexComplies(actualIndex, indexData);
+            if(!complies){
+              preventSuccessCallback = true;
+              this.onError(new Error('Cannot modify index "' + indexName + '" for current version. Please bump version number to ' + ( this.dbVersion + 1 ) + '.'));
+            }
+
+            existingIndexes.splice(existingIndexes.indexOf(indexName), 1);
+          } else {
+            preventSuccessCallback = true;
+            this.onError(new Error('Cannot create new index "' + indexName + '" for current version. Please bump version number to ' + ( this.dbVersion + 1 ) + '.'));
+          }
+
+        }, this);
+
+        if (existingIndexes.length) {
+          preventSuccessCallback = true;
+          this.onError(new Error('Cannot delete index(es) "' + existingIndexes.toString() + '" for current version. Please bump version number to ' + ( this.dbVersion + 1 ) + '.'));
+        }
+
+        preventSuccessCallback || this.onStoreReady();
+      }.bind(this);
+
+      openRequest.onupgradeneeded = function(/* IDBVersionChangeEvent */ event){
+
+        this.db = event.target.result;
+
+        if(this.db.objectStoreNames.contains(this.storeName)){
+          this.store = event.target.transaction.objectStore(this.storeName);
+        } else {
+          var optionalParameters = { autoIncrement: this.autoIncrement };
+          if (this.keyPath !== null) {
+            optionalParameters.keyPath = this.keyPath;
+          }
+          this.store = this.db.createObjectStore(this.storeName, optionalParameters);
+        }
+
+        var existingIndexes = Array.prototype.slice.call(this.getIndexList());
+        this.indexes.forEach(function(indexData){
+          var indexName = indexData.name;
+
+          if(!indexName){
+            preventSuccessCallback = true;
+            this.onError(new Error('Cannot create index: No index name given.'));
+          }
+
+          this.normalizeIndexData(indexData);
+
+          if(this.hasIndex(indexName)){
+            // check if it complies
+            var actualIndex = this.store.index(indexName);
+            var complies = this.indexComplies(actualIndex, indexData);
+            if(!complies){
+              // index differs, need to delete and re-create
+              this.store.deleteIndex(indexName);
+              this.store.createIndex(indexName, indexData.keyPath, { unique: indexData.unique, multiEntry: indexData.multiEntry });
+            }
+
+            existingIndexes.splice(existingIndexes.indexOf(indexName), 1);
+          } else {
+            this.store.createIndex(indexName, indexData.keyPath, { unique: indexData.unique, multiEntry: indexData.multiEntry });
+          }
+
+        }, this);
+
+        if (existingIndexes.length) {
+          existingIndexes.forEach(function(_indexName){
+            this.store.deleteIndex(_indexName);
+          }, this);
+        }
+
+      }.bind(this);
+    },
+
+    /**
+     * Deletes the database used for this store if the IDB implementations
+     * provides that functionality.
+     */
+    deleteDatabase: function () {
+      if (this.idb.deleteDatabase) {
+        this.idb.deleteDatabase(this.dbName);
+      }
+    },
+
+    /*********************
+     * data manipulation *
+     *********************/
+
+    /**
+     * Puts an object into the store. If an entry with the given id exists,
+     * it will be overwritten. This method has a different signature for inline
+     * keys and out-of-line keys; please see the examples below.
+     *
+     * @param {*} [key] The key to store. This is only needed if IDBWrapper
+     *  is set to use out-of-line keys. For inline keys - the default scenario -
+     *  this can be omitted.
+     * @param {Object} value The data object to store.
+     * @param {Function} [onSuccess] A callback that is called if insertion
+     *  was successful.
+     * @param {Function} [onError] A callback that is called if insertion
+     *  failed.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     * @example
+        // Storing an object, using inline keys (the default scenario):
+        var myCustomer = {
+          customerid: 2346223,
+          lastname: 'Doe',
+          firstname: 'John'
+        };
+        myCustomerStore.put(myCustomer, mySuccessHandler, myErrorHandler);
+        // Note that passing success- and error-handlers is optional.
+     * @example
+        // Storing an object, using out-of-line keys:
+       var myCustomer = {
+         lastname: 'Doe',
+         firstname: 'John'
+       };
+       myCustomerStore.put(2346223, myCustomer, mySuccessHandler, myErrorHandler);
+      // Note that passing success- and error-handlers is optional.
+     */
+    put: function (key, value, onSuccess, onError) {
+      if (this.keyPath !== null) {
+        onError = onSuccess;
+        onSuccess = value;
+        value = key;
+      }
+      onError || (onError = defaultErrorHandler);
+      onSuccess || (onSuccess = noop);
+
+      var hasSuccess = false,
+          result = null,
+          putRequest;
+
+      var putTransaction = this.db.transaction([this.storeName], this.consts.READ_WRITE);
+      putTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      putTransaction.onabort = onError;
+      putTransaction.onerror = onError;
+
+      if (this.keyPath !== null) { // in-line keys
+        this._addIdPropertyIfNeeded(value);
+        putRequest = putTransaction.objectStore(this.storeName).put(value);
+      } else { // out-of-line keys
+        putRequest = putTransaction.objectStore(this.storeName).put(value, key);
+      }
+      putRequest.onsuccess = function (event) {
+        hasSuccess = true;
+        result = event.target.result;
+      };
+      putRequest.onerror = onError;
+
+      return putTransaction;
+    },
+
+    /**
+     * Retrieves an object from the store. If no entry exists with the given id,
+     * the success handler will be called with null as first and only argument.
+     *
+     * @param {*} key The id of the object to fetch.
+     * @param {Function} [onSuccess] A callback that is called if fetching
+     *  was successful. Will receive the object as only argument.
+     * @param {Function} [onError] A callback that will be called if an error
+     *  occurred during the operation.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    get: function (key, onSuccess, onError) {
+      onError || (onError = defaultErrorHandler);
+      onSuccess || (onSuccess = noop);
+
+      var hasSuccess = false,
+          result = null;
+      
+      var getTransaction = this.db.transaction([this.storeName], this.consts.READ_ONLY);
+      getTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      getTransaction.onabort = onError;
+      getTransaction.onerror = onError;
+      var getRequest = getTransaction.objectStore(this.storeName).get(key);
+      getRequest.onsuccess = function (event) {
+        hasSuccess = true;
+        result = event.target.result;
+      };
+      getRequest.onerror = onError;
+
+      return getTransaction;
+    },
+
+    /**
+     * Removes an object from the store.
+     *
+     * @param {*} key The id of the object to remove.
+     * @param {Function} [onSuccess] A callback that is called if the removal
+     *  was successful.
+     * @param {Function} [onError] A callback that will be called if an error
+     *  occurred during the operation.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    remove: function (key, onSuccess, onError) {
+      onError || (onError = defaultErrorHandler);
+      onSuccess || (onSuccess = noop);
+
+      var hasSuccess = false,
+          result = null;
+
+      var removeTransaction = this.db.transaction([this.storeName], this.consts.READ_WRITE);
+      removeTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      removeTransaction.onabort = onError;
+      removeTransaction.onerror = onError;
+
+      var deleteRequest = removeTransaction.objectStore(this.storeName)['delete'](key);
+      deleteRequest.onsuccess = function (event) {
+        hasSuccess = true;
+        result = event.target.result;
+      };
+      deleteRequest.onerror = onError;
+
+      return removeTransaction;
+    },
+
+    /**
+     * Runs a batch of put and/or remove operations on the store.
+     *
+     * @param {Array} dataArray An array of objects containing the operation to run
+     *  and the data object (for put operations).
+     * @param {Function} [onSuccess] A callback that is called if all operations
+     *  were successful.
+     * @param {Function} [onError] A callback that is called if an error
+     *  occurred during one of the operations.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    batch: function (dataArray, onSuccess, onError) {
+      onError || (onError = defaultErrorHandler);
+      onSuccess || (onSuccess = noop);
+
+      if(Object.prototype.toString.call(dataArray) != '[object Array]'){
+        onError(new Error('dataArray argument must be of type Array.'));
+      }
+      var batchTransaction = this.db.transaction([this.storeName] , this.consts.READ_WRITE);
+      batchTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(hasSuccess);
+      };
+      batchTransaction.onabort = onError;
+      batchTransaction.onerror = onError;
+      
+      var count = dataArray.length;
+      var called = false;
+      var hasSuccess = false;
+
+      var onItemSuccess = function () {
+        count--;
+        if (count === 0 && !called) {
+          called = true;
+          hasSuccess = true;
+        }
+      };
+
+      dataArray.forEach(function (operation) {
+        var type = operation.type;
+        var key = operation.key;
+        var value = operation.value;
+
+        var onItemError = function (err) {
+          batchTransaction.abort();
+          if (!called) {
+            called = true;
+            onError(err, type, key);
+          }
+        };
+
+        if (type == 'remove') {
+          var deleteRequest = batchTransaction.objectStore(this.storeName)['delete'](key);
+          deleteRequest.onsuccess = onItemSuccess;
+          deleteRequest.onerror = onItemError;
+        } else if (type == 'put') {
+          var putRequest;
+          if (this.keyPath !== null) { // in-line keys
+            this._addIdPropertyIfNeeded(value);
+            putRequest = batchTransaction.objectStore(this.storeName).put(value);
+          } else { // out-of-line keys
+            putRequest = batchTransaction.objectStore(this.storeName).put(value, key);
+          }
+          putRequest.onsuccess = onItemSuccess;
+          putRequest.onerror = onItemError;
+        }
+      }, this);
+
+      return batchTransaction;
+    },
+
+    /**
+     * Takes an array of objects and stores them in a single transaction.
+     *
+     * @param {Array} dataArray An array of objects to store
+     * @param {Function} [onSuccess] A callback that is called if all operations
+     *  were successful.
+     * @param {Function} [onError] A callback that is called if an error
+     *  occurred during one of the operations.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    putBatch: function (dataArray, onSuccess, onError) {
+      var batchData = dataArray.map(function(item){
+        return { type: 'put', value: item };
+      });
+
+      return this.batch(batchData, onSuccess, onError);
+    },
+
+    /**
+     * Takes an array of keys and removes matching objects in a single
+     * transaction.
+     *
+     * @param {Array} keyArray An array of keys to remove
+     * @param {Function} [onSuccess] A callback that is called if all operations
+     *  were successful.
+     * @param {Function} [onError] A callback that is called if an error
+     *  occurred during one of the operations.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    removeBatch: function (keyArray, onSuccess, onError) {
+      var batchData = keyArray.map(function(key){
+        return { type: 'remove', key: key };
+      });
+
+      return this.batch(batchData, onSuccess, onError);
+    },
+
+    /**
+     * Takes an array of keys and fetches matching objects
+     *
+     * @param {Array} keyArray An array of keys identifying the objects to fetch
+     * @param {Function} [onSuccess] A callback that is called if all operations
+     *  were successful.
+     * @param {Function} [onError] A callback that is called if an error
+     *  occurred during one of the operations.
+     * @param {String} [arrayType='sparse'] The type of array to pass to the
+     *  success handler. May be one of 'sparse', 'dense' or 'skip'. Defaults to
+     *  'sparse'. This parameter specifies how to handle the situation if a get
+     *  operation did not throw an error, but there was no matching object in
+     *  the database. In most cases, 'sparse' provides the most desired
+     *  behavior. See the examples for details.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     * @example
+     // given that there are two objects in the database with the keypath
+     // values 1 and 2, and the call looks like this:
+     myStore.getBatch([1, 5, 2], onError, function (data) { … }, arrayType);
+
+     // this is what the `data` array will be like:
+
+     // arrayType == 'sparse':
+     // data is a sparse array containing two entries and having a length of 3:
+       [Object, 2: Object]
+         0: Object
+         2: Object
+         length: 3
+         __proto__: Array[0]
+     // calling forEach on data will result in the callback being called two
+     // times, with the index parameter matching the index of the key in the
+     // keyArray.
+
+     // arrayType == 'dense':
+     // data is a dense array containing three entries and having a length of 3,
+     // where data[1] is of type undefined:
+       [Object, undefined, Object]
+         0: Object
+         1: undefined
+         2: Object
+         length: 3
+         __proto__: Array[0]
+     // calling forEach on data will result in the callback being called three
+     // times, with the index parameter matching the index of the key in the
+     // keyArray, but the second call will have undefined as first argument.
+
+     // arrayType == 'skip':
+     // data is a dense array containing two entries and having a length of 2:
+       [Object, Object]
+         0: Object
+         1: Object
+         length: 2
+         __proto__: Array[0]
+     // calling forEach on data will result in the callback being called two
+     // times, with the index parameter not matching the index of the key in the
+     // keyArray.
+     */
+    getBatch: function (keyArray, onSuccess, onError, arrayType) {
+      onError || (onError = defaultErrorHandler);
+      onSuccess || (onSuccess = noop);
+      arrayType || (arrayType = 'sparse');
+
+      if(Object.prototype.toString.call(keyArray) != '[object Array]'){
+        onError(new Error('keyArray argument must be of type Array.'));
+      }
+      var batchTransaction = this.db.transaction([this.storeName] , this.consts.READ_ONLY);
+      batchTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      batchTransaction.onabort = onError;
+      batchTransaction.onerror = onError;
+
+      var data = [];
+      var count = keyArray.length;
+      var called = false;
+      var hasSuccess = false;
+      var result = null;
+
+      var onItemSuccess = function (event) {
+        if (event.target.result || arrayType == 'dense') {
+          data.push(event.target.result);
+        } else if (arrayType == 'sparse') {
+          data.length++;
+        }
+        count--;
+        if (count === 0) {
+          called = true;
+          hasSuccess = true;
+          result = data;
+        }
+      };
+
+      keyArray.forEach(function (key) {
+
+        var onItemError = function (err) {
+          called = true;
+          result = err;
+          onError(err);
+          batchTransaction.abort();
+        };
+
+        var getRequest = batchTransaction.objectStore(this.storeName).get(key);
+        getRequest.onsuccess = onItemSuccess;
+        getRequest.onerror = onItemError;
+
+      }, this);
+
+      return batchTransaction;
+    },
+
+    /**
+     * Fetches all entries in the store.
+     *
+     * @param {Function} [onSuccess] A callback that is called if the operation
+     *  was successful. Will receive an array of objects.
+     * @param {Function} [onError] A callback that will be called if an error
+     *  occurred during the operation.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    getAll: function (onSuccess, onError) {
+      onError || (onError = defaultErrorHandler);
+      onSuccess || (onSuccess = noop);
+      var getAllTransaction = this.db.transaction([this.storeName], this.consts.READ_ONLY);
+      var store = getAllTransaction.objectStore(this.storeName);
+      if (store.getAll) {
+        this._getAllNative(getAllTransaction, store, onSuccess, onError);
+      } else {
+        this._getAllCursor(getAllTransaction, store, onSuccess, onError);
+      }
+
+      return getAllTransaction;
+    },
+
+    /**
+     * Implements getAll for IDB implementations that have a non-standard
+     * getAll() method.
+     *
+     * @param {Object} getAllTransaction An open READ transaction.
+     * @param {Object} store A reference to the store.
+     * @param {Function} onSuccess A callback that will be called if the
+     *  operation was successful.
+     * @param {Function} onError A callback that will be called if an
+     *  error occurred during the operation.
+     * @private
+     */
+    _getAllNative: function (getAllTransaction, store, onSuccess, onError) {
+      var hasSuccess = false,
+          result = null;
+
+      getAllTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      getAllTransaction.onabort = onError;
+      getAllTransaction.onerror = onError;
+
+      var getAllRequest = store.getAll();
+      getAllRequest.onsuccess = function (event) {
+        hasSuccess = true;
+        result = event.target.result;
+      };
+      getAllRequest.onerror = onError;
+    },
+
+    /**
+     * Implements getAll for IDB implementations that do not have a getAll()
+     * method.
+     *
+     * @param {Object} getAllTransaction An open READ transaction.
+     * @param {Object} store A reference to the store.
+     * @param {Function} onSuccess A callback that will be called if the
+     *  operation was successful.
+     * @param {Function} onError A callback that will be called if an
+     *  error occurred during the operation.
+     * @private
+     */
+    _getAllCursor: function (getAllTransaction, store, onSuccess, onError) {
+      var all = [],
+          hasSuccess = false,
+          result = null;
+
+      getAllTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      getAllTransaction.onabort = onError;
+      getAllTransaction.onerror = onError;
+
+      var cursorRequest = store.openCursor();
+      cursorRequest.onsuccess = function (event) {
+        var cursor = event.target.result;
+        if (cursor) {
+          all.push(cursor.value);
+          cursor['continue']();
+        }
+        else {
+          hasSuccess = true;
+          result = all;
+        }
+      };
+      cursorRequest.onError = onError;
+    },
+
+    /**
+     * Clears the store, i.e. deletes all entries in the store.
+     *
+     * @param {Function} [onSuccess] A callback that will be called if the
+     *  operation was successful.
+     * @param {Function} [onError] A callback that will be called if an
+     *  error occurred during the operation.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    clear: function (onSuccess, onError) {
+      onError || (onError = defaultErrorHandler);
+      onSuccess || (onSuccess = noop);
+
+      var hasSuccess = false,
+          result = null;
+
+      var clearTransaction = this.db.transaction([this.storeName], this.consts.READ_WRITE);
+      clearTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      clearTransaction.onabort = onError;
+      clearTransaction.onerror = onError;
+
+      var clearRequest = clearTransaction.objectStore(this.storeName).clear();
+      clearRequest.onsuccess = function (event) {
+        hasSuccess = true;
+        result = event.target.result;
+      };
+      clearRequest.onerror = onError;
+
+      return clearTransaction;
+    },
+
+    /**
+     * Checks if an id property needs to present on a object and adds one if
+     * necessary.
+     *
+     * @param {Object} dataObj The data object that is about to be stored
+     * @private
+     */
+    _addIdPropertyIfNeeded: function (dataObj) {
+      if (!this.features.hasAutoIncrement && typeof dataObj[this.keyPath] == 'undefined') {
+        dataObj[this.keyPath] = this._insertIdCount++ + Date.now();
+      }
+    },
+
+    /************
+     * indexing *
+     ************/
+
+    /**
+     * Returns a DOMStringList of index names of the store.
+     *
+     * @return {DOMStringList} The list of index names
+     */
+    getIndexList: function () {
+      return this.store.indexNames;
+    },
+
+    /**
+     * Checks if an index with the given name exists in the store.
+     *
+     * @param {String} indexName The name of the index to look for
+     * @return {Boolean} Whether the store contains an index with the given name
+     */
+    hasIndex: function (indexName) {
+      return this.store.indexNames.contains(indexName);
+    },
+
+    /**
+     * Normalizes an object containing index data and assures that all
+     * properties are set.
+     *
+     * @param {Object} indexData The index data object to normalize
+     * @param {String} indexData.name The name of the index
+     * @param {String} [indexData.keyPath] The key path of the index
+     * @param {Boolean} [indexData.unique] Whether the index is unique
+     * @param {Boolean} [indexData.multiEntry] Whether the index is multi entry
+     */
+    normalizeIndexData: function (indexData) {
+      indexData.keyPath = indexData.keyPath || indexData.name;
+      indexData.unique = !!indexData.unique;
+      indexData.multiEntry = !!indexData.multiEntry;
+    },
+
+    /**
+     * Checks if an actual index complies with an expected index.
+     *
+     * @param {Object} actual The actual index found in the store
+     * @param {Object} expected An Object describing an expected index
+     * @return {Boolean} Whether both index definitions are identical
+     */
+    indexComplies: function (actual, expected) {
+      var complies = ['keyPath', 'unique', 'multiEntry'].every(function (key) {
+        // IE10 returns undefined for no multiEntry
+        if (key == 'multiEntry' && actual[key] === undefined && expected[key] === false) {
+          return true;
+        }
+        // Compound keys
+        if (key == 'keyPath' && Object.prototype.toString.call(expected[key]) == '[object Array]') {
+          var exp = expected.keyPath;
+          var act = actual.keyPath;
+
+          // IE10 can't handle keyPath sequences and stores them as a string.
+          // The index will be unusable there, but let's still return true if
+          // the keyPath sequence matches.
+          if (typeof act == 'string') {
+            return exp.toString() == act;
+          }
+
+          // Chrome/Opera stores keyPath squences as DOMStringList, Firefox
+          // as Array
+          if ( ! (typeof act.contains == 'function' || typeof act.indexOf == 'function') ) {
+            return false;
+          }
+
+          if (act.length !== exp.length) {
+            return false;
+          }
+
+          for (var i = 0, m = exp.length; i<m; i++) {
+            if ( ! ( (act.contains && act.contains(exp[i])) || act.indexOf(exp[i] !== -1) )) {
+              return false;
+            }
+          }
+          return true;
+        }
+        return expected[key] == actual[key];
+      });
+      return complies;
+    },
+
+    /**********
+     * cursor *
+     **********/
+
+    /**
+     * Iterates over the store using the given options and calling onItem
+     * for each entry matching the options.
+     *
+     * @param {Function} onItem A callback to be called for each match
+     * @param {Object} [options] An object defining specific options
+     * @param {Object} [options.index=null] An IDBIndex to operate on
+     * @param {String} [options.order=ASC] The order in which to provide the
+     *  results, can be 'DESC' or 'ASC'
+     * @param {Boolean} [options.autoContinue=true] Whether to automatically
+     *  iterate the cursor to the next result
+     * @param {Boolean} [options.filterDuplicates=false] Whether to exclude
+     *  duplicate matches
+     * @param {Object} [options.keyRange=null] An IDBKeyRange to use
+     * @param {Boolean} [options.writeAccess=false] Whether grant write access
+     *  to the store in the onItem callback
+     * @param {Function} [options.onEnd=null] A callback to be called after
+     *  iteration has ended
+     * @param {Function} [options.onError=throw] A callback to be called
+     *  if an error occurred during the operation.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    iterate: function (onItem, options) {
+      options = mixin({
+        index: null,
+        order: 'ASC',
+        autoContinue: true,
+        filterDuplicates: false,
+        keyRange: null,
+        writeAccess: false,
+        onEnd: null,
+        onError: defaultErrorHandler
+      }, options || {});
+
+      var directionType = options.order.toLowerCase() == 'desc' ? 'PREV' : 'NEXT';
+      if (options.filterDuplicates) {
+        directionType += '_NO_DUPLICATE';
+      }
+
+      var hasSuccess = false;
+      var cursorTransaction = this.db.transaction([this.storeName], this.consts[options.writeAccess ? 'READ_WRITE' : 'READ_ONLY']);
+      var cursorTarget = cursorTransaction.objectStore(this.storeName);
+      if (options.index) {
+        cursorTarget = cursorTarget.index(options.index);
+      }
+
+      cursorTransaction.oncomplete = function () {
+        if (!hasSuccess) {
+          options.onError(null);
+          return;
+        }
+        if (options.onEnd) {
+          options.onEnd();
+        } else {
+          onItem(null);
+        }
+      };
+      cursorTransaction.onabort = options.onError;
+      cursorTransaction.onerror = options.onError;
+
+      var cursorRequest = cursorTarget.openCursor(options.keyRange, this.consts[directionType]);
+      cursorRequest.onerror = options.onError;
+      cursorRequest.onsuccess = function (event) {
+        var cursor = event.target.result;
+        if (cursor) {
+          onItem(cursor.value, cursor, cursorTransaction);
+          if (options.autoContinue) {
+            cursor['continue']();
+          }
+        } else {
+          hasSuccess = true;
+        }
+      };
+
+      return cursorTransaction;
+    },
+
+    /**
+     * Runs a query against the store and passes an array containing matched
+     * objects to the success handler.
+     *
+     * @param {Function} onSuccess A callback to be called when the operation
+     *  was successful.
+     * @param {Object} [options] An object defining specific query options
+     * @param {Object} [options.index=null] An IDBIndex to operate on
+     * @param {String} [options.order=ASC] The order in which to provide the
+     *  results, can be 'DESC' or 'ASC'
+     * @param {Boolean} [options.filterDuplicates=false] Whether to exclude
+     *  duplicate matches
+     * @param {Object} [options.keyRange=null] An IDBKeyRange to use
+     * @param {Function} [options.onError=throw] A callback to be called if an error
+     *  occurred during the operation.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    query: function (onSuccess, options) {
+      var result = [];
+      options = options || {};
+      options.onEnd = function () {
+        onSuccess(result);
+      };
+      return this.iterate(function (item) {
+        result.push(item);
+      }, options);
+    },
+
+    /**
+     *
+     * Runs a query against the store, but only returns the number of matches
+     * instead of the matches itself.
+     *
+     * @param {Function} onSuccess A callback to be called if the opration
+     *  was successful.
+     * @param {Object} [options] An object defining specific options
+     * @param {Object} [options.index=null] An IDBIndex to operate on
+     * @param {Object} [options.keyRange=null] An IDBKeyRange to use
+     * @param {Function} [options.onError=throw] A callback to be called if an error
+     *  occurred during the operation.
+     * @returns {IDBTransaction} The transaction used for this operation.
+     */
+    count: function (onSuccess, options) {
+
+      options = mixin({
+        index: null,
+        keyRange: null
+      }, options || {});
+
+      var onError = options.onError || defaultErrorHandler;
+
+      var hasSuccess = false,
+          result = null;
+
+      var cursorTransaction = this.db.transaction([this.storeName], this.consts.READ_ONLY);
+      cursorTransaction.oncomplete = function () {
+        var callback = hasSuccess ? onSuccess : onError;
+        callback(result);
+      };
+      cursorTransaction.onabort = onError;
+      cursorTransaction.onerror = onError;
+
+      var cursorTarget = cursorTransaction.objectStore(this.storeName);
+      if (options.index) {
+        cursorTarget = cursorTarget.index(options.index);
+      }
+      var countRequest = cursorTarget.count(options.keyRange);
+      countRequest.onsuccess = function (evt) {
+        hasSuccess = true;
+        result = evt.target.result;
+      };
+      countRequest.onError = onError;
+
+      return cursorTransaction;
+    },
+
+    /**************/
+    /* key ranges */
+    /**************/
+
+    /**
+     * Creates a key range using specified options. This key range can be
+     * handed over to the count() and iterate() methods.
+     *
+     * Note: You must provide at least one or both of "lower" or "upper" value.
+     *
+     * @param {Object} options The options for the key range to create
+     * @param {*} [options.lower] The lower bound
+     * @param {Boolean} [options.excludeLower] Whether to exclude the lower
+     *  bound passed in options.lower from the key range
+     * @param {*} [options.upper] The upper bound
+     * @param {Boolean} [options.excludeUpper] Whether to exclude the upper
+     *  bound passed in options.upper from the key range
+     * @param {*} [options.only] A single key value. Use this if you need a key
+     *  range that only includes one value for a key. Providing this
+     *  property invalidates all other properties.
+     * @return {Object} The IDBKeyRange representing the specified options
+     */
+    makeKeyRange: function(options){
+      /*jshint onecase:true */
+      var keyRange,
+          hasLower = typeof options.lower != 'undefined',
+          hasUpper = typeof options.upper != 'undefined',
+          isOnly = typeof options.only != 'undefined';
+
+      switch(true){
+        case isOnly:
+          keyRange = this.keyRange.only(options.only);
+          break;
+        case hasLower && hasUpper:
+          keyRange = this.keyRange.bound(options.lower, options.upper, options.excludeLower, options.excludeUpper);
+          break;
+        case hasLower:
+          keyRange = this.keyRange.lowerBound(options.lower, options.excludeLower);
+          break;
+        case hasUpper:
+          keyRange = this.keyRange.upperBound(options.upper, options.excludeUpper);
+          break;
+        default:
+          throw new Error('Cannot create KeyRange. Provide one or both of "lower" or "upper" value, or an "only" value.');
+      }
+
+      return keyRange;
+
+    }
+
+  };
+
+  /** helpers **/
+
+  var noop = function () {
+  };
+  var empty = {};
+  var mixin = function (target, source) {
+    var name, s;
+    for (name in source) {
+      s = source[name];
+      if (s !== empty[name] && s !== target[name]) {
+        target[name] = s;
+      }
+    }
+    return target;
+  };
+
+  IDBStore.version = IDBStore.prototype.version;
+
+  return IDBStore;
+
+}, this);
+
+},{}],73:[function(require,module,exports){
+var Buffer = require('buffer').Buffer;
+
+module.exports = isBuffer;
+
+function isBuffer (o) {
+  return Buffer.isBuffer(o)
+    || /\[object (.+Array|Array.+)\]/.test(Object.prototype.toString.call(o));
+}
+
+},{"buffer":3}],74:[function(require,module,exports){
+(function (Buffer){
+
+exports.compare = function (a, b) {
+
+  if(Buffer.isBuffer(a)) {
+    var l = Math.min(a.length, b.length)
+    for(var i = 0; i < l; i++) {
+      var cmp = a[i] - b[i]
+      if(cmp) return cmp
+    }
+    return a.length - b.length
+  }
+
+  return a < b ? -1 : a > b ? 1 : 0
+}
+
+function has(obj, key) {
+  return Object.hasOwnProperty.call(obj, key)
+}
+
+// to be compatible with the current abstract-leveldown tests
+// nullish or empty strings.
+// I could use !!val but I want to permit numbers and booleans,
+// if possible.
+
+function isDef (val) {
+  return val !== undefined && val !== ''
+}
+
+function has (range, name) {
+  return Object.hasOwnProperty.call(range, name)
+}
+
+function hasKey(range, name) {
+  return Object.hasOwnProperty.call(range, name) && name
+}
+
+var lowerBoundKey = exports.lowerBoundKey = function (range) {
+    return (
+       hasKey(range, 'gt')
+    || hasKey(range, 'gte')
+    || hasKey(range, 'min')
+    || (range.reverse ? hasKey(range, 'end') : hasKey(range, 'start'))
+    || undefined
+    )
+}
+
+var lowerBound = exports.lowerBound = function (range) {
+  var k = lowerBoundKey(range)
+  return k && range[k]
+  return (
+      has(range, 'gt')                      ? range.gt
+    : has(range, 'gte')                     ? range.gte
+    : has(range, 'min')                     ? range.min
+    : has(range, 'start') && !range.reverse ? range.start
+    : has(range, 'end')   && range.reverse  ? range.end
+    :                                         undefined
+  )
+}
+
+exports.lowerBoundInclusive = function (range) {
+  return has(range, 'gt') ? false : true
+}
+
+exports.upperBoundInclusive =
+  function (range) {
+    return has(range, 'lt') || !range.minEx ? false : true
+  }
+
+var lowerBoundExclusive = exports.lowerBoundExclusive =
+  function (range) {
+    return has(range, 'gt') || range.minEx ? true : false
+  }
+
+var upperBoundExclusive = exports.upperBoundExclusive =
+  function (range) {
+    return has(range, 'lt') ? true : false
+  }
+
+var upperBoundKey = exports.upperBoundKey = function (range) {
+    return (
+       hasKey(range, 'lt')
+    || hasKey(range, 'lte')
+    || hasKey(range, 'max')
+    || (range.reverse ? hasKey(range, 'start') : hasKey(range, 'end'))
+    || undefined
+    )
+}
+
+var upperBound = exports.upperBound = function (range) {
+  var k = upperBoundKey(range)
+  return k && range[k]
+}
+
+function id (e) { return e }
+
+exports.toLtgt = function (range, _range, map, lower, upper) {
+  _range = _range || {}
+  map = map || id
+  var defaults = arguments.length > 3
+  var lb = exports.lowerBoundKey(range)
+  var ub = exports.upperBoundKey(range)
+  if(lb) {
+    if(lb === 'gt') _range.gt = map(range.gt)
+    else            _range.gte = map(range[lb])
+  }
+  else if(defaults)
+    _range.gte = lower
+
+  if(ub) {
+    if(ub === 'lt') _range.lt = map(range.lt)
+    else            _range.lte = map(range[ub])
+  }
+  else if(defaults)
+    _range.lte = upper
+
+  _range.reverse = !!range.reverse
+
+  return _range
+}
+
+exports.contains = function (range, key, compare) {
+  compare = compare || exports.compare
+
+  var lb = lowerBound(range)
+  if(isDef(lb)) {
+    var cmp = compare(key, lb)
+    if(cmp < 0 || (cmp === 0 && lowerBoundExclusive(range)))
+      return false
+  }
+
+  var ub = upperBound(range)
+  if(isDef(ub)) {
+    var cmp = compare(key, ub)
+    if(cmp > 0 || (cmp === 0) && upperBoundExclusive(range))
+      return false
+  }
+
+  return true
+}
+
+exports.filter = function (range, compare) {
+  return function (key) {
+    return exports.contains(range, key, compare)
+  }
+}
+
+}).call(this,require("buffer").Buffer)
+},{"buffer":3}],75:[function(require,module,exports){
+(function (Buffer){
+/**
+ * Convert a typed array to a Buffer without a copy
+ *
+ * Author:   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * License:  MIT
+ *
+ * `npm install typedarray-to-buffer`
+ */
+
+module.exports = function (arr) {
+  if (typeof Buffer._augment === 'function' && Buffer.TYPED_ARRAY_SUPPORT) {
+    // If `Buffer` is from the `buffer` module and this browser supports typed arrays,
+    // then augment it with all the `Buffer` methods.
+    return Buffer._augment(arr)
+  } else {
+    // Otherwise, fallback to creating a `Buffer` with a copy.
+    return new Buffer(arr)
+  }
+}
+
+}).call(this,require("buffer").Buffer)
+},{"buffer":3}],76:[function(require,module,exports){
+module.exports = hasKeys
+
+function hasKeys(source) {
+    return source !== null &&
+        (typeof source === "object" ||
+        typeof source === "function")
+}
+
+},{}],77:[function(require,module,exports){
+var Keys = require("object-keys")
+var hasKeys = require("./has-keys")
+
+module.exports = extend
+
+function extend() {
+    var target = {}
+
+    for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i]
+
+        if (!hasKeys(source)) {
+            continue
+        }
+
+        var keys = Keys(source)
+
+        for (var j = 0; j < keys.length; j++) {
+            var name = keys[j]
+            target[name] = source[name]
+        }
+    }
+
+    return target
+}
+
+},{"./has-keys":76,"object-keys":79}],78:[function(require,module,exports){
+var hasOwn = Object.prototype.hasOwnProperty;
+var toString = Object.prototype.toString;
+
+var isFunction = function (fn) {
+	var isFunc = (typeof fn === 'function' && !(fn instanceof RegExp)) || toString.call(fn) === '[object Function]';
+	if (!isFunc && typeof window !== 'undefined') {
+		isFunc = fn === window.setTimeout || fn === window.alert || fn === window.confirm || fn === window.prompt;
+	}
+	return isFunc;
+};
+
+module.exports = function forEach(obj, fn) {
+	if (!isFunction(fn)) {
+		throw new TypeError('iterator must be a function');
+	}
+	var i, k,
+		isString = typeof obj === 'string',
+		l = obj.length,
+		context = arguments.length > 2 ? arguments[2] : null;
+	if (l === +l) {
+		for (i = 0; i < l; i++) {
+			if (context === null) {
+				fn(isString ? obj.charAt(i) : obj[i], i, obj);
+			} else {
+				fn.call(context, isString ? obj.charAt(i) : obj[i], i, obj);
+			}
+		}
+	} else {
+		for (k in obj) {
+			if (hasOwn.call(obj, k)) {
+				if (context === null) {
+					fn(obj[k], k, obj);
+				} else {
+					fn.call(context, obj[k], k, obj);
+				}
+			}
+		}
+	}
+};
+
+
+},{}],79:[function(require,module,exports){
+module.exports = Object.keys || require('./shim');
+
+
+},{"./shim":81}],80:[function(require,module,exports){
+var toString = Object.prototype.toString;
+
+module.exports = function isArguments(value) {
+	var str = toString.call(value);
+	var isArguments = str === '[object Arguments]';
+	if (!isArguments) {
+		isArguments = str !== '[object Array]'
+			&& value !== null
+			&& typeof value === 'object'
+			&& typeof value.length === 'number'
+			&& value.length >= 0
+			&& toString.call(value.callee) === '[object Function]';
+	}
+	return isArguments;
+};
+
+
+},{}],81:[function(require,module,exports){
+(function () {
+	"use strict";
+
+	// modified from https://github.com/kriskowal/es5-shim
+	var has = Object.prototype.hasOwnProperty,
+		toString = Object.prototype.toString,
+		forEach = require('./foreach'),
+		isArgs = require('./isArguments'),
+		hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString'),
+		hasProtoEnumBug = (function () {}).propertyIsEnumerable('prototype'),
+		dontEnums = [
+			"toString",
+			"toLocaleString",
+			"valueOf",
+			"hasOwnProperty",
+			"isPrototypeOf",
+			"propertyIsEnumerable",
+			"constructor"
+		],
+		keysShim;
+
+	keysShim = function keys(object) {
+		var isObject = object !== null && typeof object === 'object',
+			isFunction = toString.call(object) === '[object Function]',
+			isArguments = isArgs(object),
+			theKeys = [];
+
+		if (!isObject && !isFunction && !isArguments) {
+			throw new TypeError("Object.keys called on a non-object");
+		}
+
+		if (isArguments) {
+			forEach(object, function (value) {
+				theKeys.push(value);
+			});
+		} else {
+			var name,
+				skipProto = hasProtoEnumBug && isFunction;
+
+			for (name in object) {
+				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+					theKeys.push(name);
+				}
+			}
+		}
+
+		if (hasDontEnumBug) {
+			var ctor = object.constructor,
+				skipConstructor = ctor && ctor.prototype === object;
+
+			forEach(dontEnums, function (dontEnum) {
+				if (!(skipConstructor && dontEnum === 'constructor') && has.call(object, dontEnum)) {
+					theKeys.push(dontEnum);
+				}
+			});
+		}
+		return theKeys;
+	};
+
+	module.exports = keysShim;
+}());
+
+
+},{"./foreach":78,"./isArguments":80}],82:[function(require,module,exports){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License
+ * <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+var util          = require('./util')
+  , WriteError    = require('./errors').WriteError
+
+  , getOptions    = util.getOptions
+  , dispatchError = util.dispatchError
+
+function Batch (levelup, codec) {
+  this._levelup = levelup
+  this._codec = codec
+  this.batch = levelup.db.batch()
+  this.ops = []
+}
+
+Batch.prototype.put = function (key_, value_, options) {
+  options = getOptions(this._levelup, options)
+
+  var key   = this._codec.encodeKey(key_, options)
+    , value = this._codec.encodeValue(value_, options)
+
+  try {
+    this.batch.put(key, value)
+  } catch (e) {
+    throw new WriteError(e)
+  }
+  this.ops.push({ type : 'put', key : key, value : value })
+
+  return this
+}
+
+Batch.prototype.del = function (key_, options) {
+  options = getOptions(this._levelup, options)
+
+  var key = this._codec.encodeKey(key_, options)
+
+  try {
+    this.batch.del(key)
+  } catch (err) {
+    throw new WriteError(err)
+  }
+  this.ops.push({ type : 'del', key : key })
+
+  return this
+}
+
+Batch.prototype.clear = function () {
+  try {
+    this.batch.clear()
+  } catch (err) {
+    throw new WriteError(err)
+  }
+
+  this.ops = []
+  return this
+}
+
+Batch.prototype.write = function (callback) {
+  var levelup = this._levelup
+    , ops     = this.ops
+
+  try {
+    this.batch.write(function (err) {
+      if (err)
+        return dispatchError(levelup, new WriteError(err), callback)
+      levelup.emit('batch', ops)
+      if (callback)
+        callback()
+    })
+  } catch (err) {
+    throw new WriteError(err)
+  }
+}
+
+module.exports = Batch
+
+},{"./errors":85,"./util":88}],83:[function(require,module,exports){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License
+ * <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+var encodings = require('./encodings')
+
+function getKeyEncoder (options, op) {
+  var type = ((op && op.keyEncoding) || options.keyEncoding) || 'utf8'
+  return encodings[type] || type
+}
+
+function getValueEncoder (options, op) {
+  var type = (((op && (op.valueEncoding || op.encoding))
+      || options.valueEncoding || options.encoding)) || 'utf8'
+  return encodings[type] || type
+}
+
+/*
+  Encode a key.
+  This method takes two options, because the leveldb instance
+  has options, and this operation (a put, del, or batch)
+  also has options that may override the leveldb's options.
+*/
+
+function encodeKey (key, options, op) {
+  return getKeyEncoder(options, op).encode(key)
+}
+
+/*
+  Encode a value.
+  Takes 2 options, for the same reason as encodeKey
+*/
+
+function encodeValue (value, options, op) {
+  return getValueEncoder(options, op).encode(value)
+}
+
+/*
+  Decode an encoded key
+*/
+
+function decodeKey (key, options) {
+  return getKeyEncoder(options).decode(key)
+}
+
+/*
+  Decode an encoded value
+*/
+
+function decodeValue (value, options) {
+  return getValueEncoder(options).decode(value)
+}
+
+/*
+  check whether this value should be requested as a buffer
+  (if false, then it will be a string)
+  this allows an optimization in leveldown where leveldown
+  retrives a string directly, and thus avoids a memory copy.
+*/
+
+function isValueAsBuffer (options, op) {
+  return getValueEncoder(options, op).buffer
+}
+
+/*
+  check whether a given key should be requested as a buffer.
+*/
+
+function isKeyAsBuffer (options, op) {
+  return getKeyEncoder(options, op).buffer
+}
+
+
+module.exports = {
+    encodeKey       : encodeKey
+  , encodeValue     : encodeValue
+  , isValueAsBuffer : isValueAsBuffer
+  , isKeyAsBuffer   : isKeyAsBuffer
+  , decodeValue     : decodeValue
+  , decodeKey       : decodeKey
+}
+
+},{"./encodings":84}],84:[function(require,module,exports){
+(function (Buffer){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License
+ * <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+var encodingNames = [
+        'hex'
+      , 'utf8'
+      , 'utf-8'
+      , 'ascii'
+      , 'binary'
+      , 'base64'
+      , 'ucs2'
+      , 'ucs-2'
+      , 'utf16le'
+      , 'utf-16le'
+    ]
+
+module.exports = (function () {
+  function isBinary (data) {
+    return data === undefined || data === null || Buffer.isBuffer(data)
+  }
+
+  var encodings = {}
+
+  encodings.utf8 = encodings['utf-8'] = {
+      encode : function (data) {
+        return isBinary(data) ? data : String(data)
+      }
+    , decode : function (data) { return data }
+    , buffer : false
+    , type   : 'utf8'
+  }
+
+  encodings.json = {
+      encode : JSON.stringify
+    , decode : JSON.parse
+    , buffer : false
+    , type   : 'json'
+  }
+
+  encodings.binary = {
+      encode : function (data) {
+        return isBinary(data) ? data : new Buffer(data)
+      }
+    , decode : function (data) {
+        return data
+      }
+    , buffer : true
+    , type   : 'binary'
+  }
+
+  encodingNames.forEach(function (type) {
+    if (encodings[type])
+      return
+
+    encodings[type] = {
+        encode : function (data) {
+          return isBinary(data) ? data : new Buffer(data, type)
+        }
+      , decode : function (buffer) {
+          return buffer.toString(type)
+        }
+      , buffer : true
+      , type   : type // useful for debugging purposes
+    }
+  })
+
+  return encodings
+})()
+
+
+}).call(this,require("buffer").Buffer)
+},{"buffer":3}],85:[function(require,module,exports){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License
+ * <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+var createError   = require('errno').create
+  , LevelUPError  = createError('LevelUPError')
+  , NotFoundError = createError('NotFoundError', LevelUPError)
+
+NotFoundError.prototype.notFound = true
+NotFoundError.prototype.status   = 404
+
+module.exports = {
+    LevelUPError        : LevelUPError
+  , InitializationError : createError('InitializationError', LevelUPError)
+  , OpenError           : createError('OpenError', LevelUPError)
+  , ReadError           : createError('ReadError', LevelUPError)
+  , WriteError          : createError('WriteError', LevelUPError)
+  , NotFoundError       : NotFoundError
+  , EncodingError       : createError('EncodingError', LevelUPError)
+}
+
+},{"errno":96}],86:[function(require,module,exports){
+(function (process){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License
+ * <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+var EventEmitter   = require('events').EventEmitter
+  , inherits       = require('util').inherits
+  , extend         = require('xtend')
+  , prr            = require('prr')
+  , DeferredLevelDOWN = require('deferred-leveldown')
+
+  , WriteError     = require('./errors').WriteError
+  , ReadError      = require('./errors').ReadError
+  , NotFoundError  = require('./errors').NotFoundError
+  , OpenError      = require('./errors').OpenError
+  , EncodingError  = require('./errors').EncodingError
+  , InitializationError = require('./errors').InitializationError
+
+  , ReadStream     = require('./read-stream')
+  , WriteStream    = require('./write-stream')
+  , util           = require('./util')
+  , Batch          = require('./batch')
+  , codec          = require('./codec')
+
+  , getOptions     = util.getOptions
+  , defaultOptions = util.defaultOptions
+  , getLevelDOWN   = util.getLevelDOWN
+  , dispatchError  = util.dispatchError
+  , isDefined      = util.isDefined
+
+function getCallback (options, callback) {
+  return typeof options == 'function' ? options : callback
+}
+
+// Possible LevelUP#_status values:
+//  - 'new'     - newly created, not opened or closed
+//  - 'opening' - waiting for the database to be opened, post open()
+//  - 'open'    - successfully opened the database, available for use
+//  - 'closing' - waiting for the database to be closed, post close()
+//  - 'closed'  - database has been successfully closed, should not be
+//                 used except for another open() operation
+
+function LevelUP (location, options, callback) {
+  if (!(this instanceof LevelUP))
+    return new LevelUP(location, options, callback)
+
+  var error
+
+  EventEmitter.call(this)
+  this.setMaxListeners(Infinity)
+
+  if (typeof location == 'function') {
+    options = typeof options == 'object' ? options : {}
+    options.db = location
+    location = null
+  } else if (typeof location == 'object' && typeof location.db == 'function') {
+    options = location
+    location = null
+  }
+
+
+  if (typeof options == 'function') {
+    callback = options
+    options  = {}
+  }
+
+  if ((!options || typeof options.db != 'function') && typeof location != 'string') {
+    error = new InitializationError(
+        'Must provide a location for the database')
+    if (callback) {
+      return process.nextTick(function () {
+        callback(error)
+      })
+    }
+    throw error
+  }
+
+  options      = getOptions(this, options)
+  this.options = extend(defaultOptions, options)
+  this._codec = options.codec || codec
+  this._status = 'new'
+  // set this.location as enumerable but not configurable or writable
+  prr(this, 'location', location, 'e')
+
+  this.open(callback)
+}
+
+inherits(LevelUP, EventEmitter)
+
+LevelUP.prototype.open = function (callback) {
+  var self = this
+    , dbFactory
+    , db
+
+  if (this.isOpen()) {
+    if (callback)
+      process.nextTick(function () { callback(null, self) })
+    return this
+  }
+
+  if (this._isOpening()) {
+    return callback && this.once(
+        'open'
+      , function () { callback(null, self) }
+    )
+  }
+
+  this.emit('opening')
+
+  this._status = 'opening'
+  this.db      = new DeferredLevelDOWN(this.location)
+  dbFactory    = this.options.db || getLevelDOWN()
+  db           = dbFactory(this.location)
+
+  db.open(this.options, function (err) {
+    if (err) {
+      return dispatchError(self, new OpenError(err), callback)
+    } else {
+      self.db.setDb(db)
+      self.db = db
+      self._status = 'open'
+      if (callback)
+        callback(null, self)
+      self.emit('open')
+      self.emit('ready')
+    }
+  })
+}
+
+LevelUP.prototype.close = function (callback) {
+  var self = this
+
+  if (this.isOpen()) {
+    this._status = 'closing'
+    this.db.close(function () {
+      self._status = 'closed'
+      self.emit('closed')
+      if (callback)
+        callback.apply(null, arguments)
+    })
+    this.emit('closing')
+    this.db = null
+  } else if (this._status == 'closed' && callback) {
+    return process.nextTick(callback)
+  } else if (this._status == 'closing' && callback) {
+    this.once('closed', callback)
+  } else if (this._isOpening()) {
+    this.once('open', function () {
+      self.close(callback)
+    })
+  }
+}
+
+LevelUP.prototype.isOpen = function () {
+  return this._status == 'open'
+}
+
+LevelUP.prototype._isOpening = function () {
+  return this._status == 'opening'
+}
+
+LevelUP.prototype.isClosed = function () {
+  return (/^clos/).test(this._status)
+}
+
+function maybeError(db, options, callback) {
+  if (!db._isOpening() && !db.isOpen()) {
+    dispatchError(
+        db
+      , new ReadError('Database is not open')
+      , callback
+    )
+    return true
+  }
+}
+
+function writeError (db, message, callback) {
+  dispatchError(
+      db
+     , new WriteError(message)
+     , callback
+  )
+}
+
+function readError (db, message, callback) {
+  dispatchError(
+      db
+     , new ReadError(message)
+     , callback
+  )
+  return true
+}
+
+
+LevelUP.prototype.get = function (key_, options, callback) {
+  var self = this
+    , key
+
+  callback = getCallback(options, callback)
+
+  if (maybeError(this, options, callback))
+    return
+
+  if (key_ === null || key_ === undefined || 'function' !== typeof callback)
+    return readError(this
+      , 'get() requires key and callback arguments', callback)
+
+  options = util.getOptions(this, options)
+  key = this._codec.encodeKey(key_, options)
+
+  options.asBuffer = this._codec.isValueAsBuffer(options)
+
+  this.db.get(key, options, function (err, value) {
+    if (err) {
+      if ((/notfound/i).test(err)) {
+        err = new NotFoundError(
+            'Key not found in database [' + key_ + ']', err)
+      } else {
+        err = new ReadError(err)
+      }
+      return dispatchError(self, err, callback)
+    }
+    if (callback) {
+      try {
+        value = self._codec.decodeValue(value, options)
+      } catch (e) {
+        return callback(new EncodingError(e))
+      }
+      callback(null, value)
+    }
+  })
+}
+
+LevelUP.prototype.put = function (key_, value_, options, callback) {
+  var self = this
+    , key
+    , value
+
+  callback = getCallback(options, callback)
+
+  if (key_ === null || key_ === undefined
+        || value_ === null || value_ === undefined)
+    return writeError(this, 'put() requires key and value arguments', callback)
+
+  if (maybeError(this, options, callback))
+    return
+
+  options = getOptions(this, options)
+  key     = this._codec.encodeKey(key_, options)
+  value   = this._codec.encodeValue(value_, options)
+
+  this.db.put(key, value, options, function (err) {
+    if (err) {
+      return dispatchError(self, new WriteError(err), callback)
+    } else {
+      self.emit('put', key_, value_)
+      if (callback)
+        callback()
+    }
+  })
+}
+
+LevelUP.prototype.del = function (key_, options, callback) {
+  var self = this
+    , key
+
+  callback = getCallback(options, callback)
+
+  if (key_ === null || key_ === undefined)
+    return writeError(this, 'del() requires a key argument', callback)
+
+  if (maybeError(this, options, callback))
+    return
+
+  options = getOptions(this, options)
+  key     = this._codec.encodeKey(key_, options)
+
+  this.db.del(key, options, function (err) {
+    if (err) {
+      return dispatchError(self, new WriteError(err), callback)
+    } else {
+      self.emit('del', key_)
+      if (callback)
+        callback()
+    }
+  })
+}
+
+LevelUP.prototype.batch = function (arr_, options, callback) {
+  var self = this
+    , keyEnc
+    , valueEnc
+    , arr
+
+  if (!arguments.length)
+    return new Batch(this, codec)
+
+  callback = getCallback(options, callback)
+
+  if (!Array.isArray(arr_))
+    return writeError(this, 'batch() requires an array argument', callback)
+
+  if (maybeError(this, options, callback))
+    return
+
+  options  = getOptions(this, options)
+  keyEnc   = options.keyEncoding
+  valueEnc = options.valueEncoding
+
+  arr = arr_.map(function (e) {
+    if (e.type === undefined || e.key === undefined)
+      return {}
+
+    // inherit encoding
+    var kEnc = e.keyEncoding || keyEnc
+      , vEnc = e.valueEncoding || e.encoding || valueEnc
+      , o
+
+    // If we're not dealing with plain utf8 strings or plain
+    // Buffers then we have to do some work on the array to
+    // encode the keys and/or values. This includes JSON types.
+
+    if (kEnc != 'utf8' && kEnc != 'binary'
+        || vEnc != 'utf8' && vEnc != 'binary') {
+      o = {
+          type: e.type
+        , key: self._codec.encodeKey(e.key, options, e)
+      }
+
+      if (e.value !== undefined)
+        o.value = self._codec.encodeValue(e.value, options, e)
+
+      return o
+    } else {
+      return e
+    }
+  })
+
+  this.db.batch(arr, options, function (err) {
+    if (err) {
+      return dispatchError(self, new WriteError(err), callback)
+    } else {
+      self.emit('batch', arr_)
+      if (callback)
+        callback()
+    }
+  })
+}
+
+// DEPRECATED: prefer accessing LevelDOWN for this: db.db.approximateSize()
+LevelUP.prototype.approximateSize = function (start_, end_, options, callback) {
+  var self = this
+    , start
+    , end
+
+  callback = getCallback(options, callback)
+
+  options = getOptions(options, callback)
+
+  if (start_ === null || start_ === undefined
+        || end_ === null || end_ === undefined || 'function' !== typeof callback)
+    return readError(this, 'approximateSize() requires start, end and callback arguments', callback)
+
+  start = this._codec.encodeKey(start_, this.options)
+  end   = this._codec.encodeKey(end_, this.options)
+
+  this.db.approximateSize(start, end, function (err, size) {
+    if (err) {
+      return dispatchError(self, new OpenError(err), callback)
+    } else if (callback) {
+      callback(null, size)
+    }
+  })
+}
+
+LevelUP.prototype.readStream =
+LevelUP.prototype.createReadStream = function (options) {
+  var self = this
+  options = extend( {keys: true, values: true}, this.options, options)
+
+  options.keyEncoding   = options.keyEncoding   || options.encoding
+  options.valueEncoding = options.valueEncoding || options.encoding
+
+  if (isDefined(options.start))
+    options.start = this._codec.encodeKey(options.start, options)
+  if (isDefined(options.end))
+    options.end = this._codec.encodeKey(options.end, options)
+  if (isDefined(options.gte))
+    options.gte = this._codec.encodeKey(options.gte, options)
+  if (isDefined(options.gt))
+    options.gt = this._codec.encodeKey(options.gt, options)
+  if (isDefined(options.lte))
+    options.lte = this._codec.encodeKey(options.lte, options)
+  if (isDefined(options.lt))
+    options.lt = this._codec.encodeKey(options.lt, options)
+  if ('number' !== typeof options.limit)
+    options.limit = -1
+
+  options.keyAsBuffer   = this._codec.isKeyAsBuffer(options)
+  options.valueAsBuffer = this._codec.isValueAsBuffer(options)
+
+  var makeData = options.keys && options.values
+    ? function (key, value) {
+        return {
+            key: self._codec.decodeKey(key, options)
+          , value: self._codec.decodeValue(value, options)
+        }
+      }
+    : options.keys
+    ? function (key) {
+        return self._codec.decodeKey(key, options)
+      }
+    : options.values
+    ? function (_, value) {
+        return self._codec.decodeValue(value, options)
+      }
+    : function () {}
+
+  var stream = new ReadStream(options, makeData)
+
+  if (this.isOpen()) {
+    stream.setIterator(self.db.iterator(options))
+  } else {
+    this.once('ready', function () {
+      stream.setIterator(self.db.iterator(options))
+    })
+  }
+
+  return stream
+}
+
+LevelUP.prototype.keyStream =
+LevelUP.prototype.createKeyStream = function (options) {
+  return this.createReadStream(extend(options, { keys: true, values: false }))
+}
+
+LevelUP.prototype.valueStream =
+LevelUP.prototype.createValueStream = function (options) {
+  return this.createReadStream(extend(options, { keys: false, values: true }))
+}
+
+LevelUP.prototype.writeStream =
+LevelUP.prototype.createWriteStream = function (options) {
+  //XXX is extend needed here?
+  return new WriteStream(extend(options), this)
+}
+
+LevelUP.prototype.toString = function () {
+  return 'LevelUP'
+}
+
+function utilStatic (name) {
+  return function (location, callback) {
+    getLevelDOWN()[name](location, callback || function () {})
+  }
+}
+
+module.exports         = LevelUP
+module.exports.copy    = util.copy
+// DEPRECATED: prefer accessing LevelDOWN for this: require('leveldown').destroy()
+module.exports.destroy = utilStatic('destroy')
+// DEPRECATED: prefer accessing LevelDOWN for this: require('leveldown').repair()
+module.exports.repair  = utilStatic('repair')
+
+
+}).call(this,require('_process'))
+},{"./batch":82,"./codec":83,"./errors":85,"./read-stream":87,"./util":88,"./write-stream":89,"_process":24,"deferred-leveldown":91,"events":19,"prr":97,"util":39,"xtend":108}],87:[function(require,module,exports){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+// NOTE: we are fixed to readable-stream@1.0.x for now
+// for pure Streams2 across Node versions
+var Readable      = require('readable-stream').Readable
+  , inherits      = require('util').inherits
+  , extend        = require('xtend')
+  , EncodingError = require('./errors').EncodingError
+  , util          = require('./util')
+
+
+
+function ReadStream (options, makeData) {
+  if (!(this instanceof ReadStream))
+    return new ReadStream(options, makeData)
+
+  Readable.call(this, { objectMode: true, highWaterMark: options.highWaterMark })
+
+  // purely to keep `db` around until we're done so it's not GCed if the user doesn't keep a ref
+
+  this._waiting = false
+  this._options = options
+  this._makeData = makeData
+}
+
+inherits(ReadStream, Readable)
+
+ReadStream.prototype.setIterator = function (it) {
+  var self = this
+  this._iterator = it
+  if(this._destroyed) return it.end(function () {})
+  if(this._waiting) {
+    this._waiting = false
+    return this._read()
+  }
+  return this
+}
+
+ReadStream.prototype._read = function read () {
+  var self = this
+  if (self._destroyed)
+    return
+  if(!self._iterator)
+    return this._waiting = true
+
+  self._iterator.next(function(err, key, value) {
+    if (err || (key === undefined && value === undefined)) {
+      if (!err && !self._destroyed)
+        self.push(null)
+      return self._cleanup(err)
+    }
+
+
+    try {
+      value = self._makeData(key, value)
+    } catch (e) {
+      return self._cleanup(new EncodingError(e))
+    }
+    if (!self._destroyed)
+      self.push(value)
+  })
+}
+
+ReadStream.prototype._cleanup = function (err) {
+  if (this._destroyed)
+    return
+
+  this._destroyed = true
+
+  var self = this
+  if (err)
+    self.emit('error', err)
+
+  if (self._iterator) {
+    self._iterator.end(function () {
+      self._iterator = null
+      self.emit('close')
+    })
+  } else {
+    self.emit('close')
+  }
+}
+
+ReadStream.prototype.destroy = function () {
+  this._cleanup()
+}
+
+ReadStream.prototype.toString = function () {
+  return 'LevelUP.ReadStream'
+}
+
+
+module.exports = ReadStream
+
+
+},{"./errors":85,"./util":88,"readable-stream":107,"util":39,"xtend":108}],88:[function(require,module,exports){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License
+ * <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+var extend        = require('xtend')
+  , LevelUPError  = require('./errors').LevelUPError
+  , encodings     = require('./encodings')
+  , defaultOptions = {
+        createIfMissing : true
+      , errorIfExists   : false
+      , keyEncoding     : 'utf8'
+      , valueEncoding   : 'utf8'
+      , compression     : true
+    }
+
+  , leveldown
+  , encodingOpts = (function () {
+      var eo = {}
+      for(var e in encodings)
+        eo[e] = {valueEncoding: encodings[e]}
+      return eo
+    }())
+
+function copy (srcdb, dstdb, callback) {
+  srcdb.readStream()
+    .pipe(dstdb.writeStream())
+    .on('close', callback ? callback : function () {})
+    .on('error', callback ? callback : function (err) { throw err })
+}
+
+function getOptions (levelup, options) {
+  var s = typeof options == 'string' // just an encoding
+  if (!s && options && options.encoding && !options.valueEncoding)
+    options.valueEncoding = options.encoding
+  return extend(
+      (levelup && levelup.options) || {}
+    , s ? encodingOpts[options] || encodingOpts[defaultOptions.valueEncoding]
+        : options
+  )
+}
+
+function getLevelDOWN () {
+  if (leveldown)
+    return leveldown
+
+  var requiredVersion       = require('../package.json').devDependencies.leveldown
+    , missingLevelDOWNError = 'Could not locate LevelDOWN, try `npm install leveldown`'
+    , leveldownVersion
+
+  try {
+    leveldownVersion = require('leveldown/package').version
+  } catch (e) {
+    throw new LevelUPError(missingLevelDOWNError)
+  }
+
+  if (!require('semver').satisfies(leveldownVersion, requiredVersion)) {
+    throw new LevelUPError(
+        'Installed version of LevelDOWN ('
+      + leveldownVersion
+      + ') does not match required version ('
+      + requiredVersion
+      + ')'
+    )
+  }
+
+  try {
+    return leveldown = require('leveldown')
+  } catch (e) {
+    throw new LevelUPError(missingLevelDOWNError)
+  }
+}
+
+function dispatchError (levelup, error, callback) {
+  return typeof callback == 'function'
+    ? callback(error)
+    : levelup.emit('error', error)
+}
+
+function isDefined (v) {
+  return typeof v !== 'undefined'
+}
+
+module.exports = {
+    defaultOptions  : defaultOptions
+  , copy            : copy
+  , getOptions      : getOptions
+  , getLevelDOWN    : getLevelDOWN
+  , dispatchError   : dispatchError
+  , isDefined       : isDefined
+}
+
+},{"../package.json":109,"./encodings":84,"./errors":85,"leveldown":2,"leveldown/package":2,"semver":2,"xtend":108}],89:[function(require,module,exports){
+(function (process,global){
+/* Copyright (c) 2012-2014 LevelUP contributors
+ * See list at <https://github.com/rvagg/node-levelup#contributing>
+ * MIT License
+ * <https://github.com/rvagg/node-levelup/blob/master/LICENSE.md>
+ */
+
+var Stream       = require('stream').Stream
+  , inherits     = require('util').inherits
+  , extend       = require('xtend')
+  , bl           = require('bl')
+
+  , setImmediate = global.setImmediate || process.nextTick
+
+  , getOptions   = require('./util').getOptions
+
+  , defaultOptions = { type: 'put' }
+
+function WriteStream (options, db) {
+  if (!(this instanceof WriteStream))
+    return new WriteStream(options, db)
+
+  Stream.call(this)
+  this._options = extend(defaultOptions, getOptions(db, options))
+  this._db      = db
+  this._buffer  = []
+  this._status  = 'init'
+  this._end     = false
+  this.writable = true
+  this.readable = false
+
+  var self = this
+    , ready = function () {
+        if (!self.writable)
+          return
+        self._status = 'ready'
+        self.emit('ready')
+        self._process()
+      }
+
+  if (db.isOpen())
+    setImmediate(ready)
+  else
+    db.once('ready', ready)
+}
+
+inherits(WriteStream, Stream)
+
+WriteStream.prototype.write = function (data) {
+  if (!this.writable)
+    return false
+  this._buffer.push(data)
+  if (this._status != 'init')
+    this._processDelayed()
+  if (this._options.maxBufferLength &&
+      this._buffer.length > this._options.maxBufferLength) {
+    this._writeBlock = true
+    return false
+  }
+  return true
+}
+
+WriteStream.prototype.end = function (data) {
+  var self = this
+  if (data)
+    this.write(data)
+  setImmediate(function () {
+    self._end = true
+    self._process()
+  })
+}
+
+WriteStream.prototype.destroy = function () {
+  this.writable = false
+  this.end()
+}
+
+WriteStream.prototype.destroySoon = function () {
+  this.end()
+}
+
+WriteStream.prototype.add = function (entry) {
+  if (!entry.props)
+    return
+  if (entry.props.Directory)
+    entry.pipe(this._db.writeStream(this._options))
+  else if (entry.props.File || entry.File || entry.type == 'File')
+    this._write(entry)
+  return true
+}
+
+WriteStream.prototype._processDelayed = function () {
+  var self = this
+  setImmediate(function () {
+    self._process()
+  })
+}
+
+WriteStream.prototype._process = function () {
+  var buffer
+    , self = this
+
+    , cb = function (err) {
+        if (!self.writable)
+          return
+        if (self._status != 'closed')
+          self._status = 'ready'
+        if (err) {
+          self.writable = false
+          return self.emit('error', err)
+        }
+        self._process()
+      }
+
+  if (self._status != 'ready' && self.writable) {
+    if (self._buffer.length && self._status != 'closed')
+      self._processDelayed()
+    return
+  }
+
+  if (self._buffer.length && self.writable) {
+    self._status = 'writing'
+    buffer       = self._buffer
+    self._buffer = []
+
+    self._db.batch(buffer.map(function (d) {
+      return {
+          type          : d.type || self._options.type
+        , key           : d.key
+        , value         : d.value
+        , keyEncoding   : d.keyEncoding || self._options.keyEncoding
+        , valueEncoding : d.valueEncoding
+            || d.encoding
+            || self._options.valueEncoding
+      }
+    }), cb)
+
+    if (self._writeBlock) {
+      self._writeBlock = false
+      self.emit('drain')
+    }
+
+    // don't allow close until callback has returned
+    return
+  }
+
+  if (self._end && self._status != 'closed') {
+    self._status  = 'closed'
+    self.writable = false
+    self.emit('close')
+  }
+}
+
+WriteStream.prototype._write = function (entry) {
+  var key = entry.path || entry.props.path
+    , self = this
+
+  if (!key)
+    return
+
+  entry.pipe(bl(function (err, data) {
+    if (err) {
+      self.writable = false
+      return self.emit('error', err)
+    }
+
+    if (self._options.fstreamRoot &&
+        key.indexOf(self._options.fstreamRoot) > -1)
+      key = key.substr(self._options.fstreamRoot.length + 1)
+
+    self.write({ key: key, value: data.slice(0) })
+  }))
+}
+
+WriteStream.prototype.toString = function () {
+  return 'LevelUP.WriteStream'
+}
+
+module.exports = WriteStream
+
+}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./util":88,"_process":24,"bl":90,"stream":37,"util":39,"xtend":108}],90:[function(require,module,exports){
+(function (Buffer){
+var DuplexStream = require('readable-stream').Duplex
+  , util         = require('util')
+
+function BufferList (callback) {
+  if (!(this instanceof BufferList))
+    return new BufferList(callback)
+
+  this._bufs  = []
+  this.length = 0
+
+  if (typeof callback == 'function') {
+    this._callback = callback
+
+    var piper = function (err) {
+      if (this._callback) {
+        this._callback(err)
+        this._callback = null
+      }
+    }.bind(this)
+
+    this.on('pipe', function (src) {
+      src.on('error', piper)
+    })
+    this.on('unpipe', function (src) {
+      src.removeListener('error', piper)
+    })
+  }
+  else if (Buffer.isBuffer(callback))
+    this.append(callback)
+  else if (Array.isArray(callback)) {
+    callback.forEach(function (b) {
+      Buffer.isBuffer(b) && this.append(b)
+    }.bind(this))
+  }
+
+  DuplexStream.call(this)
+}
+
+util.inherits(BufferList, DuplexStream)
+
+BufferList.prototype._offset = function (offset) {
+  var tot = 0, i = 0, _t
+  for (; i < this._bufs.length; i++) {
+    _t = tot + this._bufs[i].length
+    if (offset < _t)
+      return [ i, offset - tot ]
+    tot = _t
+  }
+}
+
+BufferList.prototype.append = function (buf) {
+  this._bufs.push(Buffer.isBuffer(buf) ? buf : new Buffer(buf))
+  this.length += buf.length
+  return this
+}
+
+BufferList.prototype._write = function (buf, encoding, callback) {
+  this.append(buf)
+  if (callback)
+    callback()
+}
+
+BufferList.prototype._read = function (size) {
+  if (!this.length)
+    return this.push(null)
+  size = Math.min(size, this.length)
+  this.push(this.slice(0, size))
+  this.consume(size)
+}
+
+BufferList.prototype.end = function (chunk) {
+  DuplexStream.prototype.end.call(this, chunk)
+
+  if (this._callback) {
+    this._callback(null, this.slice())
+    this._callback = null
+  }
+}
+
+BufferList.prototype.get = function (index) {
+  return this.slice(index, index + 1)[0]
+}
+
+BufferList.prototype.slice = function (start, end) {
+  return this.copy(null, 0, start, end)
+}
+
+BufferList.prototype.copy = function (dst, dstStart, srcStart, srcEnd) {
+  if (typeof srcStart != 'number' || srcStart < 0)
+    srcStart = 0
+  if (typeof srcEnd != 'number' || srcEnd > this.length)
+    srcEnd = this.length
+  if (srcStart >= this.length)
+    return dst || new Buffer(0)
+  if (srcEnd <= 0)
+    return dst || new Buffer(0)
+
+  var copy   = !!dst
+    , off    = this._offset(srcStart)
+    , len    = srcEnd - srcStart
+    , bytes  = len
+    , bufoff = (copy && dstStart) || 0
+    , start  = off[1]
+    , l
+    , i
+
+  // copy/slice everything
+  if (srcStart === 0 && srcEnd == this.length) {
+    if (!copy) // slice, just return a full concat
+      return Buffer.concat(this._bufs)
+
+    // copy, need to copy individual buffers
+    for (i = 0; i < this._bufs.length; i++) {
+      this._bufs[i].copy(dst, bufoff)
+      bufoff += this._bufs[i].length
+    }
+
+    return dst
+  }
+
+  // easy, cheap case where it's a subset of one of the buffers
+  if (bytes <= this._bufs[off[0]].length - start) {
+    return copy
+      ? this._bufs[off[0]].copy(dst, dstStart, start, start + bytes)
+      : this._bufs[off[0]].slice(start, start + bytes)
+  }
+
+  if (!copy) // a slice, we need something to copy in to
+    dst = new Buffer(len)
+
+  for (i = off[0]; i < this._bufs.length; i++) {
+    l = this._bufs[i].length - start
+
+    if (bytes > l) {
+      this._bufs[i].copy(dst, bufoff, start)
+    } else {
+      this._bufs[i].copy(dst, bufoff, start, start + bytes)
+      break
+    }
+
+    bufoff += l
+    bytes -= l
+
+    if (start)
+      start = 0
+  }
+
+  return dst
+}
+
+BufferList.prototype.toString = function (encoding, start, end) {
+  return this.slice(start, end).toString(encoding)
+}
+
+BufferList.prototype.consume = function (bytes) {
+  while (this._bufs.length) {
+    if (bytes > this._bufs[0].length) {
+      bytes -= this._bufs[0].length
+      this.length -= this._bufs[0].length
+      this._bufs.shift()
+    } else {
+      this._bufs[0] = this._bufs[0].slice(bytes)
+      this.length -= bytes
+      break
+    }
+  }
+  return this
+}
+
+BufferList.prototype.duplicate = function () {
+  var i = 0
+    , copy = new BufferList()
+
+  for (; i < this._bufs.length; i++)
+    copy.append(this._bufs[i])
+
+  return copy
+}
+
+BufferList.prototype.destroy = function () {
+  this._bufs.length = 0;
+  this.length = 0;
+  this.push(null);
+}
+
+;(function () {
+  var methods = {
+      'readDoubleBE' : 8
+    , 'readDoubleLE' : 8
+    , 'readFloatBE'  : 4
+    , 'readFloatLE'  : 4
+    , 'readInt32BE'  : 4
+    , 'readInt32LE'  : 4
+    , 'readUInt32BE' : 4
+    , 'readUInt32LE' : 4
+    , 'readInt16BE'  : 2
+    , 'readInt16LE'  : 2
+    , 'readUInt16BE' : 2
+    , 'readUInt16LE' : 2
+    , 'readInt8'     : 1
+    , 'readUInt8'    : 1
+  }
+
+  for (var m in methods) {
+    (function (m) {
+      BufferList.prototype[m] = function (offset) {
+        return this.slice(offset, offset + methods[m])[m](0)
+      }
+    }(m))
+  }
+}())
+
+module.exports = BufferList
+
+}).call(this,require("buffer").Buffer)
+},{"buffer":3,"readable-stream":107,"util":39}],91:[function(require,module,exports){
+(function (process,Buffer){
+var util              = require('util')
+  , AbstractLevelDOWN = require('abstract-leveldown').AbstractLevelDOWN
+
+function DeferredLevelDOWN (location) {
+  AbstractLevelDOWN.call(this, typeof location == 'string' ? location : '') // optional location, who cares?
+  this._db         = undefined
+  this._operations = []
+}
+
+util.inherits(DeferredLevelDOWN, AbstractLevelDOWN)
+
+// called by LevelUP when we have a real DB to take its place
+DeferredLevelDOWN.prototype.setDb = function (db) {
+  this._db = db
+  this._operations.forEach(function (op) {
+    db[op.method].apply(db, op.args)
+  })
+}
+
+DeferredLevelDOWN.prototype._open = function (options, callback) {
+  return process.nextTick(callback)
+}
+
+// queue a new deferred operation
+DeferredLevelDOWN.prototype._operation = function (method, args) {
+  if (this._db)
+    return this._db[method].apply(this._db, args)
+  this._operations.push({ method: method, args: args })
+}
+
+// deferrables
+'put get del batch approximateSize'.split(' ').forEach(function (m) {
+  DeferredLevelDOWN.prototype['_' + m] = function () {
+    this._operation(m, arguments)
+  }
+})
+
+DeferredLevelDOWN.prototype._isBuffer = function (obj) {
+  return Buffer.isBuffer(obj)
+}
+
+// don't need to implement this as LevelUP's ReadStream checks for 'ready' state
+DeferredLevelDOWN.prototype._iterator = function () {
+  throw new TypeError('not implemented')
+}
+
+module.exports = DeferredLevelDOWN
+
+}).call(this,require('_process'),require("buffer").Buffer)
+},{"_process":24,"abstract-leveldown":94,"buffer":3,"util":39}],92:[function(require,module,exports){
+module.exports=require(68)
+},{"_process":24}],93:[function(require,module,exports){
+module.exports=require(69)
+},{"_process":24}],94:[function(require,module,exports){
+module.exports=require(70)
+},{"./abstract-chained-batch":92,"./abstract-iterator":93,"_process":24,"buffer":3,"xtend":108}],95:[function(require,module,exports){
+var prr = require('prr')
+
+function init (type, message, cause) {
+  prr(this, {
+      type    : type
+    , name    : type
+      // can be passed just a 'cause'
+    , cause   : typeof message != 'string' ? message : cause
+    , message : !!message && typeof message != 'string' ? message.message : message
+
+  }, 'ewr')
+}
+
+// generic prototype, not intended to be actually used - helpful for `instanceof`
+function CustomError (message, cause) {
+  Error.call(this)
+  if (Error.captureStackTrace)
+    Error.captureStackTrace(this, arguments.callee)
+  init.call(this, 'CustomError', message, cause)
+}
+
+CustomError.prototype = new Error()
+
+function createError (errno, type, proto) {
+  var err = function (message, cause) {
+    init.call(this, type, message, cause)
+    //TODO: the specificity here is stupid, errno should be available everywhere
+    if (type == 'FilesystemError') {
+      this.code    = this.cause.code
+      this.path    = this.cause.path
+      this.errno   = this.cause.errno
+      this.message =
+        (errno.errno[this.cause.errno]
+          ? errno.errno[this.cause.errno].description
+          : this.cause.message)
+        + (this.cause.path ? ' [' + this.cause.path + ']' : '')
+    }
+    Error.call(this)
+    if (Error.captureStackTrace)
+      Error.captureStackTrace(this, arguments.callee)
+  }
+  err.prototype = !!proto ? new proto() : new CustomError()
+  return err
+}
+
+module.exports = function (errno) {
+  var ce = function (type, proto) {
+    return createError(errno, type, proto)
+  }
+  return {
+      CustomError     : CustomError
+    , FilesystemError : ce('FilesystemError')
+    , createError     : ce
+  }
+}
+
+},{"prr":97}],96:[function(require,module,exports){
+var all = module.exports.all = [
+ {
+  "errno": -1,
+  "code": "UNKNOWN",
+  "description": "unknown error"
+ },
+ {
+  "errno": 0,
+  "code": "OK",
+  "description": "success"
+ },
+ {
+  "errno": 1,
+  "code": "EOF",
+  "description": "end of file"
+ },
+ {
+  "errno": 2,
+  "code": "EADDRINFO",
+  "description": "getaddrinfo error"
+ },
+ {
+  "errno": 3,
+  "code": "EACCES",
+  "description": "permission denied"
+ },
+ {
+  "errno": 4,
+  "code": "EAGAIN",
+  "description": "resource temporarily unavailable"
+ },
+ {
+  "errno": 5,
+  "code": "EADDRINUSE",
+  "description": "address already in use"
+ },
+ {
+  "errno": 6,
+  "code": "EADDRNOTAVAIL",
+  "description": "address not available"
+ },
+ {
+  "errno": 7,
+  "code": "EAFNOSUPPORT",
+  "description": "address family not supported"
+ },
+ {
+  "errno": 8,
+  "code": "EALREADY",
+  "description": "connection already in progress"
+ },
+ {
+  "errno": 9,
+  "code": "EBADF",
+  "description": "bad file descriptor"
+ },
+ {
+  "errno": 10,
+  "code": "EBUSY",
+  "description": "resource busy or locked"
+ },
+ {
+  "errno": 11,
+  "code": "ECONNABORTED",
+  "description": "software caused connection abort"
+ },
+ {
+  "errno": 12,
+  "code": "ECONNREFUSED",
+  "description": "connection refused"
+ },
+ {
+  "errno": 13,
+  "code": "ECONNRESET",
+  "description": "connection reset by peer"
+ },
+ {
+  "errno": 14,
+  "code": "EDESTADDRREQ",
+  "description": "destination address required"
+ },
+ {
+  "errno": 15,
+  "code": "EFAULT",
+  "description": "bad address in system call argument"
+ },
+ {
+  "errno": 16,
+  "code": "EHOSTUNREACH",
+  "description": "host is unreachable"
+ },
+ {
+  "errno": 17,
+  "code": "EINTR",
+  "description": "interrupted system call"
+ },
+ {
+  "errno": 18,
+  "code": "EINVAL",
+  "description": "invalid argument"
+ },
+ {
+  "errno": 19,
+  "code": "EISCONN",
+  "description": "socket is already connected"
+ },
+ {
+  "errno": 20,
+  "code": "EMFILE",
+  "description": "too many open files"
+ },
+ {
+  "errno": 21,
+  "code": "EMSGSIZE",
+  "description": "message too long"
+ },
+ {
+  "errno": 22,
+  "code": "ENETDOWN",
+  "description": "network is down"
+ },
+ {
+  "errno": 23,
+  "code": "ENETUNREACH",
+  "description": "network is unreachable"
+ },
+ {
+  "errno": 24,
+  "code": "ENFILE",
+  "description": "file table overflow"
+ },
+ {
+  "errno": 25,
+  "code": "ENOBUFS",
+  "description": "no buffer space available"
+ },
+ {
+  "errno": 26,
+  "code": "ENOMEM",
+  "description": "not enough memory"
+ },
+ {
+  "errno": 27,
+  "code": "ENOTDIR",
+  "description": "not a directory"
+ },
+ {
+  "errno": 28,
+  "code": "EISDIR",
+  "description": "illegal operation on a directory"
+ },
+ {
+  "errno": 29,
+  "code": "ENONET",
+  "description": "machine is not on the network"
+ },
+ {
+  "errno": 31,
+  "code": "ENOTCONN",
+  "description": "socket is not connected"
+ },
+ {
+  "errno": 32,
+  "code": "ENOTSOCK",
+  "description": "socket operation on non-socket"
+ },
+ {
+  "errno": 33,
+  "code": "ENOTSUP",
+  "description": "operation not supported on socket"
+ },
+ {
+  "errno": 34,
+  "code": "ENOENT",
+  "description": "no such file or directory"
+ },
+ {
+  "errno": 35,
+  "code": "ENOSYS",
+  "description": "function not implemented"
+ },
+ {
+  "errno": 36,
+  "code": "EPIPE",
+  "description": "broken pipe"
+ },
+ {
+  "errno": 37,
+  "code": "EPROTO",
+  "description": "protocol error"
+ },
+ {
+  "errno": 38,
+  "code": "EPROTONOSUPPORT",
+  "description": "protocol not supported"
+ },
+ {
+  "errno": 39,
+  "code": "EPROTOTYPE",
+  "description": "protocol wrong type for socket"
+ },
+ {
+  "errno": 40,
+  "code": "ETIMEDOUT",
+  "description": "connection timed out"
+ },
+ {
+  "errno": 41,
+  "code": "ECHARSET",
+  "description": "invalid Unicode character"
+ },
+ {
+  "errno": 42,
+  "code": "EAIFAMNOSUPPORT",
+  "description": "address family for hostname not supported"
+ },
+ {
+  "errno": 44,
+  "code": "EAISERVICE",
+  "description": "servname not supported for ai_socktype"
+ },
+ {
+  "errno": 45,
+  "code": "EAISOCKTYPE",
+  "description": "ai_socktype not supported"
+ },
+ {
+  "errno": 46,
+  "code": "ESHUTDOWN",
+  "description": "cannot send after transport endpoint shutdown"
+ },
+ {
+  "errno": 47,
+  "code": "EEXIST",
+  "description": "file already exists"
+ },
+ {
+  "errno": 48,
+  "code": "ESRCH",
+  "description": "no such process"
+ },
+ {
+  "errno": 49,
+  "code": "ENAMETOOLONG",
+  "description": "name too long"
+ },
+ {
+  "errno": 50,
+  "code": "EPERM",
+  "description": "operation not permitted"
+ },
+ {
+  "errno": 51,
+  "code": "ELOOP",
+  "description": "too many symbolic links encountered"
+ },
+ {
+  "errno": 52,
+  "code": "EXDEV",
+  "description": "cross-device link not permitted"
+ },
+ {
+  "errno": 53,
+  "code": "ENOTEMPTY",
+  "description": "directory not empty"
+ },
+ {
+  "errno": 54,
+  "code": "ENOSPC",
+  "description": "no space left on device"
+ },
+ {
+  "errno": 55,
+  "code": "EIO",
+  "description": "i/o error"
+ },
+ {
+  "errno": 56,
+  "code": "EROFS",
+  "description": "read-only file system"
+ },
+ {
+  "errno": 57,
+  "code": "ENODEV",
+  "description": "no such device"
+ },
+ {
+  "errno": 58,
+  "code": "ESPIPE",
+  "description": "invalid seek"
+ },
+ {
+  "errno": 59,
+  "code": "ECANCELED",
+  "description": "operation canceled"
+ }
+]
+
+
+module.exports.errno = {
+    '-1': all[0]
+  , '0': all[1]
+  , '1': all[2]
+  , '2': all[3]
+  , '3': all[4]
+  , '4': all[5]
+  , '5': all[6]
+  , '6': all[7]
+  , '7': all[8]
+  , '8': all[9]
+  , '9': all[10]
+  , '10': all[11]
+  , '11': all[12]
+  , '12': all[13]
+  , '13': all[14]
+  , '14': all[15]
+  , '15': all[16]
+  , '16': all[17]
+  , '17': all[18]
+  , '18': all[19]
+  , '19': all[20]
+  , '20': all[21]
+  , '21': all[22]
+  , '22': all[23]
+  , '23': all[24]
+  , '24': all[25]
+  , '25': all[26]
+  , '26': all[27]
+  , '27': all[28]
+  , '28': all[29]
+  , '29': all[30]
+  , '31': all[31]
+  , '32': all[32]
+  , '33': all[33]
+  , '34': all[34]
+  , '35': all[35]
+  , '36': all[36]
+  , '37': all[37]
+  , '38': all[38]
+  , '39': all[39]
+  , '40': all[40]
+  , '41': all[41]
+  , '42': all[42]
+  , '44': all[43]
+  , '45': all[44]
+  , '46': all[45]
+  , '47': all[46]
+  , '48': all[47]
+  , '49': all[48]
+  , '50': all[49]
+  , '51': all[50]
+  , '52': all[51]
+  , '53': all[52]
+  , '54': all[53]
+  , '55': all[54]
+  , '56': all[55]
+  , '57': all[56]
+  , '58': all[57]
+  , '59': all[58]
+}
+
+
+module.exports.code = {
+    'UNKNOWN': all[0]
+  , 'OK': all[1]
+  , 'EOF': all[2]
+  , 'EADDRINFO': all[3]
+  , 'EACCES': all[4]
+  , 'EAGAIN': all[5]
+  , 'EADDRINUSE': all[6]
+  , 'EADDRNOTAVAIL': all[7]
+  , 'EAFNOSUPPORT': all[8]
+  , 'EALREADY': all[9]
+  , 'EBADF': all[10]
+  , 'EBUSY': all[11]
+  , 'ECONNABORTED': all[12]
+  , 'ECONNREFUSED': all[13]
+  , 'ECONNRESET': all[14]
+  , 'EDESTADDRREQ': all[15]
+  , 'EFAULT': all[16]
+  , 'EHOSTUNREACH': all[17]
+  , 'EINTR': all[18]
+  , 'EINVAL': all[19]
+  , 'EISCONN': all[20]
+  , 'EMFILE': all[21]
+  , 'EMSGSIZE': all[22]
+  , 'ENETDOWN': all[23]
+  , 'ENETUNREACH': all[24]
+  , 'ENFILE': all[25]
+  , 'ENOBUFS': all[26]
+  , 'ENOMEM': all[27]
+  , 'ENOTDIR': all[28]
+  , 'EISDIR': all[29]
+  , 'ENONET': all[30]
+  , 'ENOTCONN': all[31]
+  , 'ENOTSOCK': all[32]
+  , 'ENOTSUP': all[33]
+  , 'ENOENT': all[34]
+  , 'ENOSYS': all[35]
+  , 'EPIPE': all[36]
+  , 'EPROTO': all[37]
+  , 'EPROTONOSUPPORT': all[38]
+  , 'EPROTOTYPE': all[39]
+  , 'ETIMEDOUT': all[40]
+  , 'ECHARSET': all[41]
+  , 'EAIFAMNOSUPPORT': all[42]
+  , 'EAISERVICE': all[43]
+  , 'EAISOCKTYPE': all[44]
+  , 'ESHUTDOWN': all[45]
+  , 'EEXIST': all[46]
+  , 'ESRCH': all[47]
+  , 'ENAMETOOLONG': all[48]
+  , 'EPERM': all[49]
+  , 'ELOOP': all[50]
+  , 'EXDEV': all[51]
+  , 'ENOTEMPTY': all[52]
+  , 'ENOSPC': all[53]
+  , 'EIO': all[54]
+  , 'EROFS': all[55]
+  , 'ENODEV': all[56]
+  , 'ESPIPE': all[57]
+  , 'ECANCELED': all[58]
+}
+
+
+module.exports.custom = require("./custom")(module.exports)
+module.exports.create = module.exports.custom.createError
+},{"./custom":95}],97:[function(require,module,exports){
+/*!
+  * prr
+  * (c) 2013 Rod Vagg <rod@vagg.org>
+  * https://github.com/rvagg/prr
+  * License: MIT
+  */
+
+(function (name, context, definition) {
+  if (typeof module != 'undefined' && module.exports)
+    module.exports = definition()
+  else
+    context[name] = definition()
+})('prr', this, function() {
+
+  var setProperty = typeof Object.defineProperty == 'function'
+      ? function (obj, key, options) {
+          Object.defineProperty(obj, key, options)
+          return obj
+        }
+      : function (obj, key, options) { // < es5
+          obj[key] = options.value
+          return obj
+        }
+
+    , makeOptions = function (value, options) {
+        var oo = typeof options == 'object'
+          , os = !oo && typeof options == 'string'
+          , op = function (p) {
+              return oo
+                ? !!options[p]
+                : os
+                  ? options.indexOf(p[0]) > -1
+                  : false
+            }
+
+        return {
+            enumerable   : op('enumerable')
+          , configurable : op('configurable')
+          , writable     : op('writable')
+          , value        : value
+        }
+      }
+
+    , prr = function (obj, key, value, options) {
+        var k
+
+        options = makeOptions(value, options)
+
+        if (typeof key == 'object') {
+          for (k in key) {
+            if (Object.hasOwnProperty.call(key, k)) {
+              options.value = key[k]
+              setProperty(obj, k, options)
+            }
+          }
+          return obj
+        }
+
+        return setProperty(obj, key, options)
+      }
+
+  return prr
+})
+},{}],98:[function(require,module,exports){
+module.exports=require(26)
+},{"./_stream_readable":100,"./_stream_writable":102,"_process":24,"core-util-is":103,"inherits":104}],99:[function(require,module,exports){
+module.exports=require(27)
+},{"./_stream_transform":101,"core-util-is":103,"inherits":104}],100:[function(require,module,exports){
+module.exports=require(28)
+},{"_process":24,"buffer":3,"core-util-is":103,"events":19,"inherits":104,"isarray":105,"stream":37,"string_decoder/":106}],101:[function(require,module,exports){
+module.exports=require(29)
+},{"./_stream_duplex":98,"core-util-is":103,"inherits":104}],102:[function(require,module,exports){
+module.exports=require(30)
+},{"./_stream_duplex":98,"_process":24,"buffer":3,"core-util-is":103,"inherits":104,"stream":37}],103:[function(require,module,exports){
+module.exports=require(31)
+},{"buffer":3}],104:[function(require,module,exports){
+module.exports=require(20)
+},{}],105:[function(require,module,exports){
+module.exports=require(21)
+},{}],106:[function(require,module,exports){
+module.exports=require(32)
+},{"buffer":3}],107:[function(require,module,exports){
+var Stream = require('stream'); // hack to fix a circular dependency issue when used with browserify
+exports = module.exports = require('./lib/_stream_readable.js');
+exports.Stream = Stream;
+exports.Readable = exports;
+exports.Writable = require('./lib/_stream_writable.js');
+exports.Duplex = require('./lib/_stream_duplex.js');
+exports.Transform = require('./lib/_stream_transform.js');
+exports.PassThrough = require('./lib/_stream_passthrough.js');
+
+},{"./lib/_stream_duplex.js":98,"./lib/_stream_passthrough.js":99,"./lib/_stream_readable.js":100,"./lib/_stream_transform.js":101,"./lib/_stream_writable.js":102,"stream":37}],108:[function(require,module,exports){
+module.exports=require(71)
+},{}],109:[function(require,module,exports){
+module.exports={
+  "name": "levelup",
+  "description": "Fast & simple storage - a Node.js-style LevelDB wrapper",
+  "version": "0.19.0",
+  "contributors": [
+    {
+      "name": "Rod Vagg",
+      "email": "r@va.gg",
+      "url": "https://github.com/rvagg"
+    },
+    {
+      "name": "John Chesley",
+      "email": "john@chesl.es",
+      "url": "https://github.com/chesles/"
+    },
+    {
+      "name": "Jake Verbaten",
+      "email": "raynos2@gmail.com",
+      "url": "https://github.com/raynos"
+    },
+    {
+      "name": "Dominic Tarr",
+      "email": "dominic.tarr@gmail.com",
+      "url": "https://github.com/dominictarr"
+    },
+    {
+      "name": "Max Ogden",
+      "email": "max@maxogden.com",
+      "url": "https://github.com/maxogden"
+    },
+    {
+      "name": "Lars-Magnus Skog",
+      "email": "lars.magnus.skog@gmail.com",
+      "url": "https://github.com/ralphtheninja"
+    },
+    {
+      "name": "David Björklund",
+      "email": "david.bjorklund@gmail.com",
+      "url": "https://github.com/kesla"
+    },
+    {
+      "name": "Julian Gruber",
+      "email": "julian@juliangruber.com",
+      "url": "https://github.com/juliangruber"
+    },
+    {
+      "name": "Paolo Fragomeni",
+      "email": "paolo@async.ly",
+      "url": "https://github.com/hij1nx"
+    },
+    {
+      "name": "Anton Whalley",
+      "email": "anton.whalley@nearform.com",
+      "url": "https://github.com/No9"
+    },
+    {
+      "name": "Matteo Collina",
+      "email": "matteo.collina@gmail.com",
+      "url": "https://github.com/mcollina"
+    },
+    {
+      "name": "Pedro Teixeira",
+      "email": "pedro.teixeira@gmail.com",
+      "url": "https://github.com/pgte"
+    },
+    {
+      "name": "James Halliday",
+      "email": "mail@substack.net",
+      "url": "https://github.com/substack"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rvagg/node-levelup.git"
+  },
+  "homepage": "https://github.com/rvagg/node-levelup",
+  "keywords": [
+    "leveldb",
+    "stream",
+    "database",
+    "db",
+    "store",
+    "storage",
+    "json"
+  ],
+  "main": "lib/levelup.js",
+  "dependencies": {
+    "bl": "~0.8.1",
+    "deferred-leveldown": "~0.2.0",
+    "errno": "~0.1.1",
+    "prr": "~0.0.0",
+    "readable-stream": "~1.0.26",
+    "semver": "~2.3.1",
+    "xtend": "~3.0.0"
+  },
+  "devDependencies": {
+    "leveldown": "~0.10.0",
+    "bustermove": "*",
+    "tap": "*",
+    "referee": "*",
+    "rimraf": "*",
+    "async": "*",
+    "fstream": "*",
+    "tar": "*",
+    "mkfiletree": "*",
+    "readfiletree": "*",
+    "slow-stream": ">=0.0.4",
+    "delayed": "*",
+    "boganipsum": "*",
+    "du": "*",
+    "memdown": "*",
+    "msgpack-js": "*"
+  },
+  "browser": {
+    "leveldown": false,
+    "leveldown/package": false,
+    "semver": false
+  },
+  "scripts": {
+    "test": "tap test/*-test.js --stderr",
+    "functionaltests": "node ./test/functional/fstream-test.js && node ./test/functional/binary-data-test.js && node ./test/functional/compat-test.js",
+    "alltests": "npm test && npm run-script functionaltests"
+  },
+  "license": "MIT",
+  "readme": "LevelUP\n=======\n\n![LevelDB Logo](https://0.gravatar.com/avatar/a498b122aecb7678490a38bb593cc12d)\n\n**Fast & simple storage - a Node.js-style LevelDB wrapper**\n\n[![Build Status](https://secure.travis-ci.org/rvagg/node-levelup.png)](http://travis-ci.org/rvagg/node-levelup)\n\n[![NPM](https://nodei.co/npm/levelup.png?stars&downloads&downloadRank)](https://nodei.co/npm/levelup/) [![NPM](https://nodei.co/npm-dl/levelup.png?months=6&height=3)](https://nodei.co/npm/levelup/)\n\n\n  * <a href=\"#intro\">Introduction</a>\n  * <a href=\"#leveldown\">Relationship to LevelDOWN</a>\n  * <a href=\"#platforms\">Tested &amp; supported platforms</a>\n  * <a href=\"#basic\">Basic usage</a>\n  * <a href=\"#api\">API</a>\n  * <a href=\"#events\">Events</a>\n  * <a href=\"#json\">JSON data</a>\n  * <a href=\"#custom_encodings\">Custom encodings</a>\n  * <a href=\"#extending\">Extending LevelUP</a>\n  * <a href=\"#multiproc\">Multi-process access</a>\n  * <a href=\"#support\">Getting support</a>\n  * <a href=\"#contributing\">Contributing</a>\n  * <a href=\"#licence\">Licence &amp; copyright</a>\n\n<a name=\"intro\"></a>\nIntroduction\n------------\n\n**[LevelDB](http://code.google.com/p/leveldb/)** is a simple key/value data store built by Google, inspired by BigTable. It's used in Google Chrome and many other products. LevelDB supports arbitrary byte arrays as both keys and values, singular *get*, *put* and *delete* operations, *batched put and delete*, bi-directional iterators and simple compression using the very fast [Snappy](http://code.google.com/p/snappy/) algorithm.\n\n**LevelUP** aims to expose the features of LevelDB in a **Node.js-friendly way**. All standard `Buffer` encoding types are supported, as is a special JSON encoding. LevelDB's iterators are exposed as a Node.js-style **readable stream** a matching **writeable stream** converts writes to *batch* operations.\n\nLevelDB stores entries **sorted lexicographically by keys**. This makes LevelUP's <a href=\"#createReadStream\"><code>ReadStream</code></a> interface a very powerful query mechanism.\n\n**LevelUP** is an **OPEN Open Source Project**, see the <a href=\"#contributing\">Contributing</a> section to find out what this means.\n\n<a name=\"leveldown\"></a>\nRelationship to LevelDOWN\n-------------------------\n\nLevelUP is designed to be backed by **[LevelDOWN](https://github.com/rvagg/node-leveldown/)** which provides a pure C++ binding to LevelDB and can be used as a stand-alone package if required.\n\n**As of version 0.9, LevelUP no longer requires LevelDOWN as a dependency so you must `npm install leveldown` when you install LevelUP.**\n\nLevelDOWN is now optional because LevelUP can be used with alternative backends, such as **[level.js](https://github.com/maxogden/level.js)** in the browser or [MemDOWN](https://github.com/rvagg/node-memdown) for a pure in-memory store.\n\nLevelUP will look for LevelDOWN and throw an error if it can't find it in its Node `require()` path. It will also tell you if the installed version of LevelDOWN is incompatible.\n\n**The [level](https://github.com/level/level) package is available as an alternative installation mechanism.** Install it instead to automatically get both LevelUP & LevelDOWN. It exposes LevelUP on its export (i.e. you can `var leveldb = require('level')`).\n\n\n<a name=\"platforms\"></a>\nTested & supported platforms\n----------------------------\n\n  * **Linux**: including ARM platforms such as Raspberry Pi *and Kindle!*\n  * **Mac OS**\n  * **Solaris**: including Joyent's SmartOS & Nodejitsu\n  * **Windows**: Node 0.10 and above only. See installation instructions for *node-gyp's* dependencies [here](https://github.com/TooTallNate/node-gyp#installation), you'll need these (free) components from Microsoft to compile and run any native Node add-on in Windows.\n\n<a name=\"basic\"></a>\nBasic usage\n-----------\n\nFirst you need to install LevelUP!\n\n```sh\n$ npm install levelup leveldown\n```\n\nOr\n\n```sh\n$ npm install level\n```\n\n*(this second option requires you to use LevelUP by calling `var levelup = require('level')`)*\n\n\nAll operations are asynchronous although they don't necessarily require a callback if you don't need to know when the operation was performed.\n\n```js\nvar levelup = require('levelup')\n\n// 1) Create our database, supply location and options.\n//    This will create or open the underlying LevelDB store.\nvar db = levelup('./mydb')\n\n// 2) put a key & value\ndb.put('name', 'LevelUP', function (err) {\n  if (err) return console.log('Ooops!', err) // some kind of I/O error\n\n  // 3) fetch by key\n  db.get('name', function (err, value) {\n    if (err) return console.log('Ooops!', err) // likely the key was not found\n\n    // ta da!\n    console.log('name=' + value)\n  })\n})\n```\n\n<a name=\"api\"></a>\n## API\n\n  * <a href=\"#ctor\"><code><b>levelup()</b></code></a>\n  * <a href=\"#open\"><code>db.<b>open()</b></code></a>\n  * <a href=\"#close\"><code>db.<b>close()</b></code></a>\n  * <a href=\"#put\"><code>db.<b>put()</b></code></a>\n  * <a href=\"#get\"><code>db.<b>get()</b></code></a>\n  * <a href=\"#del\"><code>db.<b>del()</b></code></a>\n  * <a href=\"#batch\"><code>db.<b>batch()</b></code> *(array form)*</a>\n  * <a href=\"#batch_chained\"><code>db.<b>batch()</b></code> *(chained form)*</a>\n  * <a href=\"#isOpen\"><code>db.<b>isOpen()</b></code></a>\n  * <a href=\"#isClosed\"><code>db.<b>isClosed()</b></code></a>\n  * <a href=\"#createReadStream\"><code>db.<b>createReadStream()</b></code></a>\n  * <a href=\"#createKeyStream\"><code>db.<b>createKeyStream()</b></code></a>\n  * <a href=\"#createValueStream\"><code>db.<b>createValueStream()</b></code></a>\n  * <a href=\"#createWriteStream\"><code>db.<b>createWriteStream()</b></code></a>\n\n### Special operations exposed by LevelDOWN\n\n  * <a href=\"#approximateSize\"><code>db.db.<b>approximateSize()</b></code></a>\n  * <a href=\"#getProperty\"><code>db.db.<b>getProperty()</b></code></a>\n  * <a href=\"#destroy\"><code><b>leveldown.destroy()</b></code></a>\n  * <a href=\"#repair\"><code><b>leveldown.repair()</b></code></a>\n\n\n--------------------------------------------------------\n<a name=\"ctor\"></a>\n### levelup(location[, options[, callback]])\n### levelup(options[, callback ])\n### levelup(db[, callback ])\n<code>levelup()</code> is the main entry point for creating a new LevelUP instance and opening the underlying store with LevelDB.\n\nThis function returns a new instance of LevelUP and will also initiate an <a href=\"#open\"><code>open()</code></a> operation. Opening the database is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form: `function (err, db) {}` where the `db` is the LevelUP instance. If you don't provide a callback, any read & write operations are simply queued internally until the database is fully opened.\n\nThis leads to two alternative ways of managing a new LevelUP instance:\n\n```js\nlevelup(location, options, function (err, db) {\n  if (err) throw err\n  db.get('foo', function (err, value) {\n    if (err) return console.log('foo does not exist')\n    console.log('got foo =', value)\n  })\n})\n\n// vs the equivalent:\n\nvar db = levelup(location, options) // will throw if an error occurs\ndb.get('foo', function (err, value) {\n  if (err) return console.log('foo does not exist')\n  console.log('got foo =', value)\n})\n```\n\nThe `location` argument is available as a read-only property on the returned LevelUP instance.\n\nThe `levelup(options, callback)` form (with optional `callback`) is only available where you provide a valid `'db'` property on the options object (see below). Only for back-ends that don't require a `location` argument, such as [MemDOWN](https://github.com/rvagg/memdown).\n\nFor example:\n\n```js\nvar levelup = require('levelup')\nvar memdown = require('memdown')\nvar db = levelup({ db: memdown })\n```\n\nThe `levelup(db, callback)` form (with optional `callback`) is only available where `db` is a factory function, as would be provided as a `'db'` property on an `options` object (see below). Only for back-ends that don't require a `location` argument, such as [MemDOWN](https://github.com/rvagg/memdown).\n\nFor example:\n\n```js\nvar levelup = require('levelup')\nvar memdown = require('memdown')\nvar db = levelup(memdown)\n```\n\n#### `options`\n\n`levelup()` takes an optional options object as its second argument; the following properties are accepted:\n\n* `'createIfMissing'` *(boolean, default: `true`)*: If `true`, will initialise an empty database at the specified location if one doesn't already exist. If `false` and a database doesn't exist you will receive an error in your `open()` callback and your database won't open.\n\n* `'errorIfExists'` *(boolean, default: `false`)*: If `true`, you will receive an error in your `open()` callback if the database exists at the specified location.\n\n* `'compression'` *(boolean, default: `true`)*: If `true`, all *compressible* data will be run through the Snappy compression algorithm before being stored. Snappy is very fast and shouldn't gain much speed by disabling so leave this on unless you have good reason to turn it off.\n\n* `'cacheSize'` *(number, default: `8 * 1024 * 1024`)*: The size (in bytes) of the in-memory [LRU](http://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) cache with frequently used uncompressed block contents. \n\n* `'keyEncoding'` and `'valueEncoding'` *(string, default: `'utf8'`)*: The encoding of the keys and values passed through Node.js' `Buffer` implementation (see [Buffer#toString()](http://nodejs.org/docs/latest/api/buffer.html#buffer_buf_tostring_encoding_start_end)).\n  <p><code>'utf8'</code> is the default encoding for both keys and values so you can simply pass in strings and expect strings from your <code>get()</code> operations. You can also pass <code>Buffer</code> objects as keys and/or values and conversion will be performed.</p>\n  <p>Supported encodings are: hex, utf8, ascii, binary, base64, ucs2, utf16le.</p>\n  <p><code>'json'</code> encoding is also supported, see below.</p>\n\n* `'db'` *(object, default: LevelDOWN)*: LevelUP is backed by [LevelDOWN](https://github.com/rvagg/node-leveldown/) to provide an interface to LevelDB. You can completely replace the use of LevelDOWN by providing a \"factory\" function that will return a LevelDOWN API compatible object given a `location` argument. For further information, see [MemDOWN](https://github.com/rvagg/node-memdown/), a fully LevelDOWN API compatible replacement that uses a memory store rather than LevelDB. Also see [Abstract LevelDOWN](http://github.com/rvagg/node-abstract-leveldown), a partial implementation of the LevelDOWN API that can be used as a base prototype for a LevelDOWN substitute.\n\nAdditionally, each of the main interface methods accept an optional options object that can be used to override `'keyEncoding'` and `'valueEncoding'`.\n\n--------------------------------------------------------\n<a name=\"open\"></a>\n### db.open([callback])\n<code>open()</code> opens the underlying LevelDB store. In general **you should never need to call this method directly** as it's automatically called by <a href=\"#ctor\"><code>levelup()</code></a>.\n\nHowever, it is possible to *reopen* a database after it has been closed with <a href=\"#close\"><code>close()</code></a>, although this is not generally advised.\n\n--------------------------------------------------------\n<a name=\"close\"></a>\n### db.close([callback])\n<code>close()</code> closes the underlying LevelDB store. The callback will receive any error encountered during closing as the first argument.\n\nYou should always clean up your LevelUP instance by calling `close()` when you no longer need it to free up resources. A LevelDB store cannot be opened by multiple instances of LevelDB/LevelUP simultaneously.\n\n--------------------------------------------------------\n<a name=\"put\"></a>\n### db.put(key, value[, options][, callback])\n<code>put()</code> is the primary method for inserting data into the store. Both the `key` and `value` can be arbitrary data objects.\n\nThe callback argument is optional but if you don't provide one and an error occurs then expect the error to be thrown.\n\n#### `options`\n\nEncoding of the `key` and `value` objects will adhere to `'keyEncoding'` and `'valueEncoding'` options provided to <a href=\"#ctor\"><code>levelup()</code></a>, although you can provide alternative encoding settings in the options for `put()` (it's recommended that you stay consistent in your encoding of keys and values in a single store).\n\nIf you provide a `'sync'` value of `true` in your `options` object, LevelDB will perform a synchronous write of the data; although the operation will be asynchronous as far as Node is concerned. Normally, LevelDB passes the data to the operating system for writing and returns immediately, however a synchronous write will use `fsync()` or equivalent so your callback won't be triggered until the data is actually on disk. Synchronous filesystem writes are **significantly** slower than asynchronous writes but if you want to be absolutely sure that the data is flushed then you can use `'sync': true`.\n\n--------------------------------------------------------\n<a name=\"get\"></a>\n### db.get(key[, options][, callback])\n<code>get()</code> is the primary method for fetching data from the store. The `key` can be an arbitrary data object. If it doesn't exist in the store then the callback will receive an error as its first argument. A not-found err object will be of type `'NotFoundError'` so you can `err.type == 'NotFoundError'` or you can perform a truthy test on the property `err.notFound`.\n\n```js\ndb.get('foo', function (err, value) {\n  if (err) {\n    if (err.notFound) {\n      // handle a 'NotFoundError' here\n      return\n    }\n    // I/O or other error, pass it up the callback chain\n    return callback(err)\n  }\n\n  // .. handle `value` here\n})\n```\n\n#### `options`\n\nEncoding of the `key` object will adhere to the `'keyEncoding'` option provided to <a href=\"#ctor\"><code>levelup()</code></a>, although you can provide alternative encoding settings in the options for `get()` (it's recommended that you stay consistent in your encoding of keys and values in a single store).\n\nLevelDB will by default fill the in-memory LRU Cache with data from a call to get. Disabling this is done by setting `fillCache` to `false`. \n\n--------------------------------------------------------\n<a name=\"del\"></a>\n### db.del(key[, options][, callback])\n<code>del()</code> is the primary method for removing data from the store.\n\n#### `options`\n\nEncoding of the `key` object will adhere to the `'keyEncoding'` option provided to <a href=\"#ctor\"><code>levelup()</code></a>, although you can provide alternative encoding settings in the options for `del()` (it's recommended that you stay consistent in your encoding of keys and values in a single store).\n\nA `'sync'` option can also be passed, see <a href=\"#put\"><code>put()</code></a> for details on how this works.\n\n--------------------------------------------------------\n<a name=\"batch\"></a>\n### db.batch(array[, options][, callback]) *(array form)*\n<code>batch()</code> can be used for very fast bulk-write operations (both *put* and *delete*). The `array` argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation inside LevelDB. Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `'put'` or `'del'`. In the case of `'del'` the `'value'` property is ignored. Any entries with a `'key'` of `null` or `undefined` will cause an error to be returned on the `callback` and any `'type': 'put'` entry with a `'value'` of `null` or `undefined` will return an error.\n\n```js\nvar ops = [\n    { type: 'del', key: 'father' }\n  , { type: 'put', key: 'name', value: 'Yuri Irsenovich Kim' }\n  , { type: 'put', key: 'dob', value: '16 February 1941' }\n  , { type: 'put', key: 'spouse', value: 'Kim Young-sook' }\n  , { type: 'put', key: 'occupation', value: 'Clown' }\n]\n\ndb.batch(ops, function (err) {\n  if (err) return console.log('Ooops!', err)\n  console.log('Great success dear leader!')\n})\n```\n\n#### `options`\n\nSee <a href=\"#put\"><code>put()</code></a> for a discussion on the `options` object. You can overwrite default `'keyEncoding'` and `'valueEncoding'` and also specify the use of `sync` filesystem operations.\n\nIn addition to encoding options for the whole batch you can also overwrite the encoding per operation, like:\n\n```js\nvar ops = [{\n    type          : 'put'\n  , key           : new Buffer([1, 2, 3])\n  , value         : { some: 'json' }\n  , keyEncoding   : 'binary'\n  , valueEncoding : 'json'\n}]\n```\n\n--------------------------------------------------------\n<a name=\"batch_chained\"></a>\n### db.batch() *(chained form)*\n<code>batch()</code>, when called with no arguments will return a `Batch` object which can be used to build, and eventually commit, an atomic LevelDB batch operation. Depending on how it's used, it is possible to obtain greater performance when using the chained form of `batch()` over the array form.\n\n```js\ndb.batch()\n  .del('father')\n  .put('name', 'Yuri Irsenovich Kim')\n  .put('dob', '16 February 1941')\n  .put('spouse', 'Kim Young-sook')\n  .put('occupation', 'Clown')\n  .write(function () { console.log('Done!') })\n```\n\n<b><code>batch.put(key, value[, options])</code></b>\n\nQueue a *put* operation on the current batch, not committed until a `write()` is called on the batch.\n\nThe optional `options` argument can be used to override the default `'keyEncoding'` and/or `'valueEncoding'`.\n\nThis method may `throw` a `WriteError` if there is a problem with your put (such as the `value` being `null` or `undefined`).\n\n<b><code>batch.del(key[, options])</code></b>\n\nQueue a *del* operation on the current batch, not committed until a `write()` is called on the batch.\n\nThe optional `options` argument can be used to override the default `'keyEncoding'`.\n\nThis method may `throw` a `WriteError` if there is a problem with your delete.\n\n<b><code>batch.clear()</code></b>\n\nClear all queued operations on the current batch, any previous operations will be discarded.\n\n<b><code>batch.write([callback])</code></b>\n\nCommit the queued operations for this batch. All operations not *cleared* will be written to the database atomically, that is, they will either all succeed or fail with no partial commits. The optional `callback` will be called when the operation has completed with an *error* argument if an error has occurred; if no `callback` is supplied and an error occurs then this method will `throw` a `WriteError`.\n\n\n--------------------------------------------------------\n<a name=\"isOpen\"></a>\n### db.isOpen()\n\nA LevelUP object can be in one of the following states:\n\n  * *\"new\"*     - newly created, not opened or closed\n  * *\"opening\"* - waiting for the database to be opened\n  * *\"open\"*    - successfully opened the database, available for use\n  * *\"closing\"* - waiting for the database to be closed\n  * *\"closed\"*  - database has been successfully closed, should not be used\n\n`isOpen()` will return `true` only when the state is \"open\".\n\n--------------------------------------------------------\n<a name=\"isClosed\"></a>\n### db.isClosed()\n\n*See <a href=\"#put\"><code>isOpen()</code></a>*\n\n`isClosed()` will return `true` only when the state is \"closing\" *or* \"closed\", it can be useful for determining if read and write operations are permissible.\n\n--------------------------------------------------------\n<a name=\"createReadStream\"></a>\n### db.createReadStream([options])\n\nYou can obtain a **ReadStream** of the full database by calling the `createReadStream()` method. The resulting stream is a complete Node.js-style [Readable Stream](http://nodejs.org/docs/latest/api/stream.html#stream_readable_stream) where `'data'` events emit objects with `'key'` and `'value'` pairs. You can also use the `gt`, `lt` and `limit` options to control the range of keys that are streamed.\n\n```js\ndb.createReadStream()\n  .on('data', function (data) {\n    console.log(data.key, '=', data.value)\n  })\n  .on('error', function (err) {\n    console.log('Oh my!', err)\n  })\n  .on('close', function () {\n    console.log('Stream closed')\n  })\n  .on('end', function () {\n    console.log('Stream closed')\n  })\n```\n\nThe standard `pause()`, `resume()` and `destroy()` methods are implemented on the ReadStream, as is `pipe()` (see below). `'data'`, '`error'`, `'end'` and `'close'` events are emitted.\n\nAdditionally, you can supply an options object as the first parameter to `createReadStream()` with the following options:\n\n* `'gt'` (greater than), `'gte'` (greater than or equal) define the lower bound of the range to be streamed. Only records where the key is greater than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the records streamed will be the same.\n\n* `'lt'` (less than), `'lte'` (less than or equal) define the higher bound of the range to be streamed. Only key/value pairs where the key is less than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the records streamed will be the same.\n\n* `'start', 'end'` legacy ranges - instead use `'gte', 'lte'`\n\n* `'reverse'` *(boolean, default: `false`)*: a boolean, set true and the stream output will be reversed. Beware that due to the way LevelDB works, a reverse seek will be slower than a forward seek.\n\n* `'keys'` *(boolean, default: `true`)*: whether the `'data'` event should contain keys. If set to `true` and `'values'` set to `false` then `'data'` events will simply be keys, rather than objects with a `'key'` property. Used internally by the `createKeyStream()` method.\n\n* `'values'` *(boolean, default: `true`)*: whether the `'data'` event should contain values. If set to `true` and `'keys'` set to `false` then `'data'` events will simply be values, rather than objects with a `'value'` property. Used internally by the `createValueStream()` method.\n\n* `'limit'` *(number, default: `-1`)*: limit the number of results collected by this stream. This number represents a *maximum* number of results and may not be reached if you get to the end of the data first. A value of `-1` means there is no limit. When `reverse=true` the highest keys will be returned instead of the lowest keys.\n\n* `'fillCache'` *(boolean, default: `false`)*: wheather LevelDB's LRU-cache should be filled with data read.\n\n* `'keyEncoding'` / `'valueEncoding'` *(string)*: the encoding applied to each read piece of data.\n\n--------------------------------------------------------\n<a name=\"createKeyStream\"></a>\n### db.createKeyStream([options])\n\nA **KeyStream** is a **ReadStream** where the `'data'` events are simply the keys from the database so it can be used like a traditional stream rather than an object stream.\n\nYou can obtain a KeyStream either by calling the `createKeyStream()` method on a LevelUP object or by passing passing an options object to `createReadStream()` with `keys` set to `true` and `values` set to `false`.\n\n```js\ndb.createKeyStream()\n  .on('data', function (data) {\n    console.log('key=', data)\n  })\n\n// same as:\ndb.createReadStream({ keys: true, values: false })\n  .on('data', function (data) {\n    console.log('key=', data)\n  })\n```\n\n--------------------------------------------------------\n<a name=\"createValueStream\"></a>\n### db.createValueStream([options])\n\nA **ValueStream** is a **ReadStream** where the `'data'` events are simply the values from the database so it can be used like a traditional stream rather than an object stream.\n\nYou can obtain a ValueStream either by calling the `createValueStream()` method on a LevelUP object or by passing passing an options object to `createReadStream()` with `values` set to `true` and `keys` set to `false`.\n\n```js\ndb.createValueStream()\n  .on('data', function (data) {\n    console.log('value=', data)\n  })\n\n// same as:\ndb.createReadStream({ keys: false, values: true })\n  .on('data', function (data) {\n    console.log('value=', data)\n  })\n```\n\n--------------------------------------------------------\n<a name=\"createWriteStream\"></a>\n### db.createWriteStream([options])\n\nA **WriteStream** can be obtained by calling the `createWriteStream()` method. The resulting stream is a complete Node.js-style [Writable Stream](http://nodejs.org/docs/latest/api/stream.html#stream_writable_stream) which accepts objects with `'key'` and `'value'` pairs on its `write()` method.\n\nThe WriteStream will buffer writes and submit them as a `batch()` operations where writes occur *within the same tick*.\n\n```js\nvar ws = db.createWriteStream()\n\nws.on('error', function (err) {\n  console.log('Oh my!', err)\n})\nws.on('close', function () {\n  console.log('Stream closed')\n})\n\nws.write({ key: 'name', value: 'Yuri Irsenovich Kim' })\nws.write({ key: 'dob', value: '16 February 1941' })\nws.write({ key: 'spouse', value: 'Kim Young-sook' })\nws.write({ key: 'occupation', value: 'Clown' })\nws.end()\n```\n\nThe standard `write()`, `end()`, `destroy()` and `destroySoon()` methods are implemented on the WriteStream. `'drain'`, `'error'`, `'close'` and `'pipe'` events are emitted.\n\nYou can specify encodings both for the whole stream and individual entries:\n\nTo set the encoding for the whole stream, provide an options object as the first parameter to `createWriteStream()` with `'keyEncoding'` and/or `'valueEncoding'`.\n\nTo set the encoding for an individual entry:\n\n```js\nwriteStream.write({\n    key           : new Buffer([1, 2, 3])\n  , value         : { some: 'json' }\n  , keyEncoding   : 'binary'\n  , valueEncoding : 'json'\n})\n```\n\n#### write({ type: 'put' })\n\nIf individual `write()` operations are performed with a `'type'` property of `'del'`, they will be passed on as `'del'` operations to the batch.\n\n```js\nvar ws = db.createWriteStream()\n\nws.on('error', function (err) {\n  console.log('Oh my!', err)\n})\nws.on('close', function () {\n  console.log('Stream closed')\n})\n\nws.write({ type: 'del', key: 'name' })\nws.write({ type: 'del', key: 'dob' })\nws.write({ type: 'put', key: 'spouse' })\nws.write({ type: 'del', key: 'occupation' })\nws.end()\n```\n\n#### db.createWriteStream({ type: 'del' })\n\nIf the *WriteStream* is created with a `'type'` option of `'del'`, all `write()` operations will be interpreted as `'del'`, unless explicitly specified as `'put'`.\n\n```js\nvar ws = db.createWriteStream({ type: 'del' })\n\nws.on('error', function (err) {\n  console.log('Oh my!', err)\n})\nws.on('close', function () {\n  console.log('Stream closed')\n})\n\nws.write({ key: 'name' })\nws.write({ key: 'dob' })\n// but it can be overridden\nws.write({ type: 'put', key: 'spouse', value: 'Ri Sol-ju' })\nws.write({ key: 'occupation' })\nws.end()\n```\n\n#### Pipes and Node Stream compatibility\n\nA ReadStream can be piped directly to a WriteStream, allowing for easy copying of an entire database. A simple `copy()` operation is included in LevelUP that performs exactly this on two open databases:\n\n```js\nfunction copy (srcdb, dstdb, callback) {\n  srcdb.createReadStream().pipe(dstdb.createWriteStream()).on('close', callback)\n}\n```\n\nThe ReadStream is also [fstream](https://github.com/isaacs/fstream)-compatible which means you should be able to pipe to and from fstreams. So you can serialize and deserialize an entire database to a directory where keys are filenames and values are their contents, or even into a *tar* file using [node-tar](https://github.com/isaacs/node-tar). See the [fstream functional test](https://github.com/rvagg/node-levelup/blob/master/test/functional/fstream-test.js) for an example. *(Note: I'm not really sure there's a great use-case for this but it's a fun example and it helps to harden the stream implementations.)*\n\nKeyStreams and ValueStreams can be treated like standard streams of raw data. If `'keyEncoding'` or `'valueEncoding'` is set to `'binary'` the `'data'` events will simply be standard Node `Buffer` objects straight out of the data store.\n\n\n--------------------------------------------------------\n<a name='approximateSize'></a>\n### db.db.approximateSize(start, end, callback)\n<code>approximateSize()</code> can used to get the approximate number of bytes of file system space used by the range `[start..end)`. The result may not include recently written data.\n\n```js\nvar db = require('level')('./huge.db')\n\ndb.db.approximateSize('a', 'c', function (err, size) {\n  if (err) return console.error('Ooops!', err)\n  console.log('Approximate size of range is %d', size)\n})\n```\n\n**Note:** `approximateSize()` is available via [LevelDOWN](https://github.com/rvagg/node-leveldown/), which by default is accessible as the `db` property of your LevelUP instance. This is a specific LevelDB operation and is not likely to be available where you replace LevelDOWN with an alternative back-end via the `'db'` option.\n\n\n--------------------------------------------------------\n<a name='getProperty'></a>\n### db.db.getProperty(property)\n<code>getProperty</code> can be used to get internal details from LevelDB. When issued with a valid property string, a readable string will be returned (this method is synchronous).\n\nCurrently, the only valid properties are:\n\n* <b><code>'leveldb.num-files-at-levelN'</code></b>: returns the number of files at level *N*, where N is an integer representing a valid level (e.g. \"0\").\n\n* <b><code>'leveldb.stats'</code></b>: returns a multi-line string describing statistics about LevelDB's internal operation.\n\n* <b><code>'leveldb.sstables'</code></b>: returns a multi-line string describing all of the *sstables* that make up contents of the current database.\n\n\n```js\nvar db = require('level')('./huge.db')\nconsole.log(db.db.getProperty('leveldb.num-files-at-level3'))\n// → '243'\n```\n\n**Note:** `getProperty()` is available via [LevelDOWN](https://github.com/rvagg/node-leveldown/), which by default is accessible as the `db` property of your LevelUP instance. This is a specific LevelDB operation and is not likely to be available where you replace LevelDOWN with an alternative back-end via the `'db'` option.\n\n\n--------------------------------------------------------\n<a name=\"destroy\"></a>\n### leveldown.destroy(location, callback)\n<code>destroy()</code> is used to completely remove an existing LevelDB database directory. You can use this function in place of a full directory *rm* if you want to be sure to only remove LevelDB-related files. If the directory only contains LevelDB files, the directory itself will be removed as well. If there are additional, non-LevelDB files in the directory, those files, and the directory, will be left alone.\n\nThe callback will be called when the destroy operation is complete, with a possible `error` argument.\n\n**Note:** `destroy()` is available via [LevelDOWN](https://github.com/rvagg/node-leveldown/) which you will have to install seperately, e.g.:\n\n```js\nrequire('leveldown').destroy('./huge.db', function (err) { console.log('done!') })\n```\n\n--------------------------------------------------------\n<a name=\"repair\"></a>\n### leveldown.repair(location, callback)\n<code>repair()</code> can be used to attempt a restoration of a damaged LevelDB store. From the LevelDB documentation:\n\n> If a DB cannot be opened, you may attempt to call this method to resurrect as much of the contents of the database as possible. Some data may be lost, so be careful when calling this function on a database that contains important information.\n\nYou will find information on the *repair* operation in the *LOG* file inside the store directory. \n\nA `repair()` can also be used to perform a compaction of the LevelDB log into table files.\n\nThe callback will be called when the repair operation is complete, with a possible `error` argument.\n\n**Note:** `repair()` is available via [LevelDOWN](https://github.com/rvagg/node-leveldown/) which you will have to install seperately, e.g.:\n\n```js\nrequire('leveldown').repair('./huge.db', function (err) { console.log('done!') })\n```\n\n--------------------------------------------------------\n\n<a name=\"events\"></a>\nEvents\n------\n\nLevelUP emits events when the callbacks to the corresponding methods are called.\n\n* `db.emit('put', key, value)` emitted when a new value is `'put'`\n* `db.emit('del', key)` emitted when a value is deleted\n* `db.emit('batch', ary)` emitted when a batch operation has executed\n* `db.emit('ready')` emitted when the database has opened (`'open'` is synonym)\n* `db.emit('closed')` emitted when the database has closed\n* `db.emit('opening')` emitted when the database is opening\n* `db.emit('closing')` emitted when the database is closing\n\nIf you do not pass a callback to an async function, and there is an error, LevelUP will `emit('error', err)` instead.\n\n<a name=\"json\"></a>\nJSON data\n---------\n\nYou specify `'json'` encoding for both keys and/or values, you can then supply JavaScript objects to LevelUP and receive them from all fetch operations, including ReadStreams. LevelUP will automatically *stringify* your objects and store them as *utf8* and parse the strings back into objects before passing them back to you.\n\n<a name=\"custom_encodings\"></a>\nCustom encodings\n----------------\n\nA custom encoding may be provided by passing in an object as an value for `keyEncoding` or `valueEncoding` (wherever accepted), it must have the following properties:\n\n```js\n{\n    encode : function (val) { ... }\n  , decode : function (val) { ... }\n  , buffer : boolean // encode returns a buffer and decode accepts a buffer\n  , type   : String  // name of this encoding type.\n}\n```\n\n<a name=\"extending\"></a>\nExtending LevelUP\n-----------------\n\nA list of <a href=\"https://github.com/rvagg/node-levelup/wiki/Modules\"><b>Node.js LevelDB modules and projects</b></a> can be found in the wiki.\n\nWhen attempting to extend the functionality of LevelUP, it is recommended that you consider using [level-hooks](https://github.com/dominictarr/level-hooks) and/or [level-sublevel](https://github.com/dominictarr/level-sublevel). **level-sublevel** is particularly helpful for keeping additional, extension-specific, data in a LevelDB store. It allows you to partition a LevelUP instance into multiple sub-instances that each correspond to discrete namespaced key ranges.\n\n<a name=\"multiproc\"></a>\nMulti-process access\n--------------------\n\nLevelDB is thread-safe but is **not** suitable for accessing with multiple processes. You should only ever have a LevelDB database open from a single Node.js process. Node.js clusters are made up of multiple processes so a LevelUP instance cannot be shared between them either.\n\nSee the <a href=\"https://github.com/rvagg/node-levelup/wiki/Modules\"><b>wiki</b></a> for some LevelUP extensions, including [multilevel](https://github.com/juliangruber/multilevel), that may help if you require a single data store to be shared across processes.\n\n<a name=\"support\"></a>\nGetting support\n---------------\n\nThere are multiple ways you can find help in using LevelDB in Node.js:\n\n * **IRC:** you'll find an active group of LevelUP users in the **##leveldb** channel on Freenode, including most of the contributors to this project.\n * **Mailing list:** there is an active [Node.js LevelDB](https://groups.google.com/forum/#!forum/node-levelup) Google Group.\n * **GitHub:** you're welcome to open an issue here on this GitHub repository if you have a question.\n\n<a name=\"contributing\"></a>\nContributing\n------------\n\nLevelUP is an **OPEN Open Source Project**. This means that:\n\n> Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.\n\nSee the [CONTRIBUTING.md](https://github.com/rvagg/node-levelup/blob/master/CONTRIBUTING.md) file for more details.\n\n### Contributors\n\nLevelUP is only possible due to the excellent work of the following contributors:\n\n<table><tbody>\n<tr><th align=\"left\">Rod Vagg</th><td><a href=\"https://github.com/rvagg\">GitHub/rvagg</a></td><td><a href=\"http://twitter.com/rvagg\">Twitter/@rvagg</a></td></tr>\n<tr><th align=\"left\">John Chesley</th><td><a href=\"https://github.com/chesles/\">GitHub/chesles</a></td><td><a href=\"http://twitter.com/chesles\">Twitter/@chesles</a></td></tr>\n<tr><th align=\"left\">Jake Verbaten</th><td><a href=\"https://github.com/raynos\">GitHub/raynos</a></td><td><a href=\"http://twitter.com/raynos2\">Twitter/@raynos2</a></td></tr>\n<tr><th align=\"left\">Dominic Tarr</th><td><a href=\"https://github.com/dominictarr\">GitHub/dominictarr</a></td><td><a href=\"http://twitter.com/dominictarr\">Twitter/@dominictarr</a></td></tr>\n<tr><th align=\"left\">Max Ogden</th><td><a href=\"https://github.com/maxogden\">GitHub/maxogden</a></td><td><a href=\"http://twitter.com/maxogden\">Twitter/@maxogden</a></td></tr>\n<tr><th align=\"left\">Lars-Magnus Skog</th><td><a href=\"https://github.com/ralphtheninja\">GitHub/ralphtheninja</a></td><td><a href=\"http://twitter.com/ralphtheninja\">Twitter/@ralphtheninja</a></td></tr>\n<tr><th align=\"left\">David Björklund</th><td><a href=\"https://github.com/kesla\">GitHub/kesla</a></td><td><a href=\"http://twitter.com/david_bjorklund\">Twitter/@david_bjorklund</a></td></tr>\n<tr><th align=\"left\">Julian Gruber</th><td><a href=\"https://github.com/juliangruber\">GitHub/juliangruber</a></td><td><a href=\"http://twitter.com/juliangruber\">Twitter/@juliangruber</a></td></tr>\n<tr><th align=\"left\">Paolo Fragomeni</th><td><a href=\"https://github.com/hij1nx\">GitHub/hij1nx</a></td><td><a href=\"http://twitter.com/hij1nx\">Twitter/@hij1nx</a></td></tr>\n<tr><th align=\"left\">Anton Whalley</th><td><a href=\"https://github.com/No9\">GitHub/No9</a></td><td><a href=\"https://twitter.com/antonwhalley\">Twitter/@antonwhalley</a></td></tr>\n<tr><th align=\"left\">Matteo Collina</th><td><a href=\"https://github.com/mcollina\">GitHub/mcollina</a></td><td><a href=\"https://twitter.com/matteocollina\">Twitter/@matteocollina</a></td></tr>\n<tr><th align=\"left\">Pedro Teixeira</th><td><a href=\"https://github.com/pgte\">GitHub/pgte</a></td><td><a href=\"https://twitter.com/pgte\">Twitter/@pgte</a></td></tr>\n<tr><th align=\"left\">James Halliday</th><td><a href=\"https://github.com/substack\">GitHub/substack</a></td><td><a href=\"https://twitter.com/substack\">Twitter/@substack</a></td></tr>\n</tbody></table>\n\n### Windows\n\nA large portion of the Windows support comes from code by [Krzysztof Kowalczyk](http://blog.kowalczyk.info/) [@kjk](https://twitter.com/kjk), see his Windows LevelDB port [here](http://code.google.com/r/kkowalczyk-leveldb/). If you're using LevelUP on Windows, you should give him your thanks!\n\n\n<a name=\"license\"></a>\nLicense &amp; copyright\n-------------------\n\nCopyright (c) 2012-2014 LevelUP contributors (listed above).\n\nLevelUP is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.\n\n=======\n*LevelUP builds on the excellent work of the LevelDB and Snappy teams from Google and additional contributors. LevelDB and Snappy are both issued under the [New BSD Licence](http://opensource.org/licenses/BSD-3-Clause).*\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/rvagg/node-levelup/issues"
+  },
+  "_id": "levelup@0.19.0",
+  "_from": "levelup@*"
+}
+
+},{}],110:[function(require,module,exports){
+;(function () { // closure for web browsers
+
+if (typeof module === 'object' && module.exports) {
+  module.exports = LRUCache
+} else {
+  // just set the global for non-node platforms.
+  this.LRUCache = LRUCache
+}
+
+function hOP (obj, key) {
+  return Object.prototype.hasOwnProperty.call(obj, key)
+}
+
+function naiveLength () { return 1 }
+
+function LRUCache (options) {
+  if (!(this instanceof LRUCache))
+    return new LRUCache(options)
+
+  if (typeof options === 'number')
+    options = { max: options }
+
+  if (!options)
+    options = {}
+
+  this._max = options.max
+  // Kind of weird to have a default max of Infinity, but oh well.
+  if (!this._max || !(typeof this._max === "number") || this._max <= 0 )
+    this._max = Infinity
+
+  this._lengthCalculator = options.length || naiveLength
+  if (typeof this._lengthCalculator !== "function")
+    this._lengthCalculator = naiveLength
+
+  this._allowStale = options.stale || false
+  this._maxAge = options.maxAge || null
+  this._dispose = options.dispose
+  this.reset()
+}
+
+// resize the cache when the max changes.
+Object.defineProperty(LRUCache.prototype, "max",
+  { set : function (mL) {
+      if (!mL || !(typeof mL === "number") || mL <= 0 ) mL = Infinity
+      this._max = mL
+      if (this._length > this._max) trim(this)
+    }
+  , get : function () { return this._max }
+  , enumerable : true
+  })
+
+// resize the cache when the lengthCalculator changes.
+Object.defineProperty(LRUCache.prototype, "lengthCalculator",
+  { set : function (lC) {
+      if (typeof lC !== "function") {
+        this._lengthCalculator = naiveLength
+        this._length = this._itemCount
+        for (var key in this._cache) {
+          this._cache[key].length = 1
+        }
+      } else {
+        this._lengthCalculator = lC
+        this._length = 0
+        for (var key in this._cache) {
+          this._cache[key].length = this._lengthCalculator(this._cache[key].value)
+          this._length += this._cache[key].length
+        }
+      }
+
+      if (this._length > this._max) trim(this)
+    }
+  , get : function () { return this._lengthCalculator }
+  , enumerable : true
+  })
+
+Object.defineProperty(LRUCache.prototype, "length",
+  { get : function () { return this._length }
+  , enumerable : true
+  })
+
+
+Object.defineProperty(LRUCache.prototype, "itemCount",
+  { get : function () { return this._itemCount }
+  , enumerable : true
+  })
+
+LRUCache.prototype.forEach = function (fn, thisp) {
+  thisp = thisp || this
+  var i = 0;
+  for (var k = this._mru - 1; k >= 0 && i < this._itemCount; k--) if (this._lruList[k]) {
+    i++
+    var hit = this._lruList[k]
+    if (this._maxAge && (Date.now() - hit.now > this._maxAge)) {
+      del(this, hit)
+      if (!this._allowStale) hit = undefined
+    }
+    if (hit) {
+      fn.call(thisp, hit.value, hit.key, this)
+    }
+  }
+}
+
+LRUCache.prototype.keys = function () {
+  var keys = new Array(this._itemCount)
+  var i = 0
+  for (var k = this._mru - 1; k >= 0 && i < this._itemCount; k--) if (this._lruList[k]) {
+    var hit = this._lruList[k]
+    keys[i++] = hit.key
+  }
+  return keys
+}
+
+LRUCache.prototype.values = function () {
+  var values = new Array(this._itemCount)
+  var i = 0
+  for (var k = this._mru - 1; k >= 0 && i < this._itemCount; k--) if (this._lruList[k]) {
+    var hit = this._lruList[k]
+    values[i++] = hit.value
+  }
+  return values
+}
+
+LRUCache.prototype.reset = function () {
+  if (this._dispose && this._cache) {
+    for (var k in this._cache) {
+      this._dispose(k, this._cache[k].value)
+    }
+  }
+
+  this._cache = Object.create(null) // hash of items by key
+  this._lruList = Object.create(null) // list of items in order of use recency
+  this._mru = 0 // most recently used
+  this._lru = 0 // least recently used
+  this._length = 0 // number of items in the list
+  this._itemCount = 0
+}
+
+// Provided for debugging/dev purposes only. No promises whatsoever that
+// this API stays stable.
+LRUCache.prototype.dump = function () {
+  return this._cache
+}
+
+LRUCache.prototype.dumpLru = function () {
+  return this._lruList
+}
+
+LRUCache.prototype.set = function (key, value) {
+  if (hOP(this._cache, key)) {
+    // dispose of the old one before overwriting
+    if (this._dispose) this._dispose(key, this._cache[key].value)
+    if (this._maxAge) this._cache[key].now = Date.now()
+    this._cache[key].value = value
+    this.get(key)
+    return true
+  }
+
+  var len = this._lengthCalculator(value)
+  var age = this._maxAge ? Date.now() : 0
+  var hit = new Entry(key, value, this._mru++, len, age)
+
+  // oversized objects fall out of cache automatically.
+  if (hit.length > this._max) {
+    if (this._dispose) this._dispose(key, value)
+    return false
+  }
+
+  this._length += hit.length
+  this._lruList[hit.lu] = this._cache[key] = hit
+  this._itemCount ++
+
+  if (this._length > this._max) trim(this)
+  return true
+}
+
+LRUCache.prototype.has = function (key) {
+  if (!hOP(this._cache, key)) return false
+  var hit = this._cache[key]
+  if (this._maxAge && (Date.now() - hit.now > this._maxAge)) {
+    return false
+  }
+  return true
+}
+
+LRUCache.prototype.get = function (key) {
+  return get(this, key, true)
+}
+
+LRUCache.prototype.peek = function (key) {
+  return get(this, key, false)
+}
+
+LRUCache.prototype.pop = function () {
+  var hit = this._lruList[this._lru]
+  del(this, hit)
+  return hit || null
+}
+
+LRUCache.prototype.del = function (key) {
+  del(this, this._cache[key])
+}
+
+function get (self, key, doUse) {
+  var hit = self._cache[key]
+  if (hit) {
+    if (self._maxAge && (Date.now() - hit.now > self._maxAge)) {
+      del(self, hit)
+      if (!self._allowStale) hit = undefined
+    } else {
+      if (doUse) use(self, hit)
+    }
+    if (hit) hit = hit.value
+  }
+  return hit
+}
+
+function use (self, hit) {
+  shiftLU(self, hit)
+  hit.lu = self._mru ++
+  self._lruList[hit.lu] = hit
+}
+
+function trim (self) {
+  while (self._lru < self._mru && self._length > self._max)
+    del(self, self._lruList[self._lru])
+}
+
+function shiftLU (self, hit) {
+  delete self._lruList[ hit.lu ]
+  while (self._lru < self._mru && !self._lruList[self._lru]) self._lru ++
+}
+
+function del (self, hit) {
+  if (hit) {
+    if (self._dispose) self._dispose(hit.key, hit.value)
+    self._length -= hit.length
+    self._itemCount --
+    delete self._cache[ hit.key ]
+    shiftLU(self, hit)
+  }
+}
+
+// classy, since V8 prefers predictable objects.
+function Entry (key, value, lu, length, now) {
+  this.key = key
+  this.value = value
+  this.lu = lu
+  this.length = length
+  this.now = now
+}
+
+})()
+
+},{}],111:[function(require,module,exports){
 /*! asn1hex-1.1.js (c) 2012 Kenji Urushima | kjur.github.com/jsrsasign/license
  */
 //
@@ -3732,7 +13968,7 @@ ASN1HEX.getDecendantHexTLVByNthList = _asnhex_getDecendantHexTLVByNthList;
 exports.ASN1HEX = ASN1HEX;
 module.exports = exports;
 
-},{"jsbn":96}],26:[function(require,module,exports){
+},{"jsbn":193}],112:[function(require,module,exports){
 // Copyright (c) 2003-2009  Tom Wu
 // All Rights Reserved.
 // 
@@ -3832,7 +14068,7 @@ exports.hex2b64  = hex2b64;
 
 module.exports = exports;
 
-},{}],27:[function(require,module,exports){
+},{}],113:[function(require,module,exports){
 /*
 CryptoJS v3.1.2
 code.google.com/p/crypto-js
@@ -4558,7 +14794,7 @@ var CryptoJS = CryptoJS || (function (Math, undefined) {
 exports.CryptoJS = CryptoJS;
 module.exports = exports;
 
-},{}],28:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 /*! crypto-1.0.4.js (c) 2013 Kenji Urushima | kjur.github.com/jsrsasign/license
  */
 /*
@@ -5265,7 +15501,7 @@ KJUR.crypto.Signature = function(params) {
 exports.KJUR = KJUR;
 module.exports = exports;
 
-},{"./sha256.js":33,"jsbn":96}],29:[function(require,module,exports){
+},{"./sha256.js":119,"jsbn":193}],115:[function(require,module,exports){
 // Copyright (c) 2003-2009  Tom Wu
 // All Rights Reserved.
 // 
@@ -5475,7 +15711,7 @@ RSAKey.prototype.encryptOAEP = RSAEncryptOAEP;
 exports.RSAKey = RSAKey;
 module.exports = exports;
 
-},{"jsbn":96}],30:[function(require,module,exports){
+},{"jsbn":193}],116:[function(require,module,exports){
 // Copyright (c) 2003-2009  Tom Wu
 // All Rights Reserved.
 // 
@@ -5747,7 +15983,7 @@ RSAKey.prototype.decryptOAEP = RSADecryptOAEP;
 exports.RSAKey = RSAKey;
 module.exports = exports;
 
-},{"./rsa.js":29,"jsbn":96}],31:[function(require,module,exports){
+},{"./rsa.js":115,"jsbn":193}],117:[function(require,module,exports){
 /*! rsapem-1.1.js (c) 2012 Kenji Urushima | kjur.github.com/jsrsasign/license
  */
 //
@@ -5864,7 +16100,7 @@ RSAKey.prototype.readPrivateKeyFromASN1HexString = _rsapem_readPrivateKeyFromASN
 exports.RSAKey = RSAKey;
 module.exports = exports;
 
-},{"./asn1hex-1.1.js":25,"./base64.js":26,"./rsa2.js":30}],32:[function(require,module,exports){
+},{"./asn1hex-1.1.js":111,"./base64.js":112,"./rsa2.js":116}],118:[function(require,module,exports){
 /*! rsasign-1.2.2.js (c) 2012 Kenji Urushima | kjur.github.com/jsrsasign/license
  */
 //
@@ -6275,7 +16511,7 @@ RSAKey.SALT_LEN_RECOVER = -2;
 exports.RSAKey = RSAKey;
 module.exports = exports;
 
-},{"./rsapem-1.1.js":31,"jsbn":96}],33:[function(require,module,exports){
+},{"./rsapem-1.1.js":117,"jsbn":193}],119:[function(require,module,exports){
 /*
 CryptoJS v3.1.2
 code.google.com/p/crypto-js
@@ -6475,7 +16711,7 @@ var C = require('./core.js').CryptoJS;
 exports.CryptoJS = C;
 module.exports = exports;
 
-},{"./core.js":27}],34:[function(require,module,exports){
+},{"./core.js":113}],120:[function(require,module,exports){
 exports.Face = require('./js/face.js').Face;
 exports.NDN = require('./js/face.js').NDN; // deprecated
 exports.Closure = require('./js/closure.js').Closure;
@@ -6523,7 +16759,9 @@ exports.NoVerifyPolicyManager = require('./js/security/policy/no-verify-policy-m
 exports.SelfVerifyPolicyManager = require('./js/security/policy/self-verify-policy-manager.js').SelfVerifyPolicyManager;
 exports.KeyChain = require('./js/security/key-chain.js').KeyChain;
 
-},{"./js/closure.js":37,"./js/data.js":39,"./js/encoding/binary-xml-wire-format.js":43,"./js/encoding/data-utils.js":44,"./js/encoding/encoding-utils.js":47,"./js/encoding/protobuf-tlv.js":48,"./js/encoding/tlv-wire-format.js":50,"./js/encoding/wire-format.js":55,"./js/exclude.js":56,"./js/face.js":58,"./js/forwarding-flags.js":60,"./js/interest.js":61,"./js/key-locator.js":62,"./js/key.js":63,"./js/meta-info.js":65,"./js/name.js":66,"./js/publisher-public-key-digest.js":68,"./js/security/identity/identity-manager.js":71,"./js/security/identity/identity-storage.js":72,"./js/security/identity/memory-identity-storage.js":73,"./js/security/identity/memory-private-key-storage.js":74,"./js/security/key-chain.js":76,"./js/security/key-manager.js":77,"./js/security/policy/no-verify-policy-manager.js":78,"./js/security/policy/policy-manager.js":79,"./js/security/policy/self-verify-policy-manager.js":80,"./js/security/policy/validation-request.js":81,"./js/security/security-exception.js":82,"./js/security/security-types.js":83,"./js/sha256-with-rsa-signature.js":84,"./js/transport/tcp-transport.js":35,"./js/transport/unix-transport.js":86,"./js/util/blob.js":88,"./js/util/memory-content-cache.js":91,"./js/util/name-enumeration.js":92,"./js/util/ndn-time.js":94}],35:[function(require,module,exports){
+exports.ChronoSync2013 = require('./js/sync/chrono-sync2013.js').ChronoSync2013;
+
+},{"./js/closure.js":123,"./js/data.js":125,"./js/encoding/binary-xml-wire-format.js":129,"./js/encoding/data-utils.js":130,"./js/encoding/encoding-utils.js":137,"./js/encoding/protobuf-tlv.js":139,"./js/encoding/tlv-wire-format.js":141,"./js/encoding/wire-format.js":146,"./js/exclude.js":147,"./js/face.js":149,"./js/forwarding-flags.js":151,"./js/interest.js":152,"./js/key-locator.js":153,"./js/key.js":154,"./js/meta-info.js":156,"./js/name.js":157,"./js/publisher-public-key-digest.js":159,"./js/security/identity/identity-manager.js":165,"./js/security/identity/identity-storage.js":166,"./js/security/identity/memory-identity-storage.js":167,"./js/security/identity/memory-private-key-storage.js":168,"./js/security/key-chain.js":170,"./js/security/key-manager.js":171,"./js/security/policy/no-verify-policy-manager.js":172,"./js/security/policy/policy-manager.js":173,"./js/security/policy/self-verify-policy-manager.js":174,"./js/security/policy/validation-request.js":175,"./js/security/security-exception.js":176,"./js/security/security-types.js":177,"./js/sha256-with-rsa-signature.js":178,"./js/sync/chrono-sync2013.js":179,"./js/transport/tcp-transport.js":121,"./js/transport/unix-transport.js":183,"./js/util/blob.js":185,"./js/util/memory-content-cache.js":188,"./js/util/name-enumeration.js":189,"./js/util/ndn-time.js":191}],121:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -6536,17 +16774,17 @@ exports.KeyChain = require('./js/security/key-chain.js').KeyChain;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 // The Face constructor uses TcpTransport by default which is not available in the browser, so override to WebSocketTransport.
 exports.TcpTransport = require("./transport/web-socket-transport").WebSocketTransport;
 
-},{"./transport/web-socket-transport":87}],36:[function(require,module,exports){
+},{"./transport/web-socket-transport":184}],122:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -6560,11 +16798,11 @@ exports.TcpTransport = require("./transport/web-socket-transport").WebSocketTran
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var ASN1HEX = require('../contrib/securityLib/asn1hex-1.1.js').ASN1HEX
@@ -6708,7 +16946,7 @@ module.exports = exports
 // After this we include contrib/feross/buffer.js to define the Buffer class.
 
 }).call(this,require("buffer").Buffer)
-},{"../contrib/securityLib/asn1hex-1.1.js":25,"../contrib/securityLib/base64.js":26,"../contrib/securityLib/crypto-1.0.js":28,"../contrib/securityLib/rsasign-1.2.js":32,"./key.js":63,"buffer":2}],37:[function(require,module,exports){
+},{"../contrib/securityLib/asn1hex-1.1.js":111,"../contrib/securityLib/base64.js":112,"../contrib/securityLib/crypto-1.0.js":114,"../contrib/securityLib/rsasign-1.2.js":118,"./key.js":154,"buffer":3}],123:[function(require,module,exports){
 /**
  * Provide the callback closure for the async communication methods in the Face class.
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -6725,11 +16963,11 @@ module.exports = exports
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -6804,7 +17042,7 @@ UpcallInfo.prototype.toString = function()
 
 exports.UpcallInfo = UpcallInfo;
 
-},{}],38:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -6817,11 +17055,11 @@ exports.UpcallInfo = UpcallInfo;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var ForwardingFlags = require('./forwarding-flags.js').ForwardingFlags;
@@ -7008,7 +17246,7 @@ ControlParameters.prototype.setExpirationPeriod = function(expirationPeriod)
   this.expirationPeriod = expirationPeriod;
 };
 
-},{"./encoding/wire-format.js":55,"./forwarding-flags.js":60,"./name.js":66}],39:[function(require,module,exports){
+},{"./encoding/wire-format.js":146,"./forwarding-flags.js":151,"./name.js":157}],125:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents an NDN Data object.
@@ -7024,11 +17262,11 @@ ControlParameters.prototype.setExpirationPeriod = function(expirationPeriod)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Crypto = require("./crypto.js");
@@ -7054,40 +17292,54 @@ var WireFormat = require('./encoding/wire-format.js').WireFormat;
  * @param {MetaInfo} metaInfo
  * @param {Buffer} content
  */
-var Data = function Data(name, metaInfoOrContent, arg3)
+var Data = function Data(nameOrData, metaInfoOrContent, arg3)
 {
-  if (typeof name === 'string')
-    this.name = new Name(name);
-  else
-    this.name = typeof name === 'object' && name instanceof Name ?
-       new Name(name) : new Name();
+  if (nameOrData instanceof Data) {
+    // The copy constructor.
+    var data = nameOrData;
 
-  var metaInfo;
-  var content;
-  if (typeof metaInfoOrContent === 'object' &&
-      metaInfoOrContent instanceof MetaInfo) {
-    metaInfo = metaInfoOrContent;
-    content = arg3;
+    this.name = new Name(data.getName());
+    // Use signedInfo instead of metaInfo for backward compatibility.
+    this.signedInfo = new MetaInfo(data.signedInfo);
+    this.signature = data.signature.clone();
+    // TODO: When content is store as Blob, we don't need to copy.
+    this.content = new Buffer(data.content);
+    this.wireEncoding = data.wireEncoding;
   }
   else {
-    metaInfo = null;
-    content = metaInfoOrContent;
+    var name = nameOrData;
+    if (typeof name === 'string')
+      this.name = new Name(name);
+    else
+      this.name = typeof name === 'object' && name instanceof Name ?
+         new Name(name) : new Name();
+
+    var metaInfo;
+    var content;
+    if (typeof metaInfoOrContent === 'object' &&
+        metaInfoOrContent instanceof MetaInfo) {
+      metaInfo = metaInfoOrContent;
+      content = arg3;
+    }
+    else {
+      metaInfo = null;
+      content = metaInfoOrContent;
+    }
+
+    // Use signedInfo instead of metaInfo for backward compatibility.
+    this.signedInfo = typeof metaInfo === 'object' && metaInfo instanceof MetaInfo ?
+         new MetaInfo(metaInfo) : new MetaInfo();
+
+    if (typeof content === 'string')
+      this.content = DataUtils.toNumbersFromString(content);
+    else if (typeof content === 'object' && content instanceof Blob)
+      this.content = content.buf();
+    else
+      this.content = content;
+
+    this.signature = new Sha256WithRsaSignature();
+    this.wireEncoding = new SignedBlob();
   }
-
-  // Use signedInfo instead of metaInfo for backward compatibility.
-  this.signedInfo = typeof metaInfo === 'object' && metaInfo instanceof MetaInfo ?
-       new MetaInfo(metaInfo) : new MetaInfo();
-
-  if (typeof content === 'string')
-    this.content = DataUtils.toNumbersFromString(content);
-  else if (typeof content === 'object' && content instanceof Blob)
-    this.content = content.buf();
-  else
-    this.content = content;
-
-  this.signature = new Sha256WithRsaSignature();
-
-  this.wireEncoding = SignedBlob();
 };
 
 exports.Data = Data;
@@ -7149,7 +17401,7 @@ Data.prototype.setName = function(name)
     new Name(name) : new Name();
 
   // The object has changed, so the wireEncoding is invalid.
-  this.wireEncoding = SignedBlob();
+  this.wireEncoding = new SignedBlob();
   return this;
 };
 
@@ -7164,7 +17416,7 @@ Data.prototype.setMetaInfo = function(metaInfo)
     new MetaInfo(metaInfo) : new MetaInfo();
 
   // The object has changed, so the wireEncoding is invalid.
-  this.wireEncoding = SignedBlob();
+  this.wireEncoding = new SignedBlob();
   return this;
 };
 
@@ -7179,7 +17431,7 @@ Data.prototype.setSignature = function(signature)
     signature.clone() : new Sha256WithRsaSignature();
 
   // The object has changed, so the wireEncoding is invalid.
-  this.wireEncoding = SignedBlob();
+  this.wireEncoding = new SignedBlob();
   return this;
 };
 
@@ -7192,13 +17444,16 @@ Data.prototype.setContent = function(content)
 {
   if (typeof content === 'string')
     this.content = DataUtils.toNumbersFromString(content);
-  else if (typeof content === 'object' && content instanceof Blob)
+  else if (typeof content === 'object' && content instanceof Blob){
+    console.log("setting content to Blob.buf()", content)
     this.content = content.buf();
-  else
+  }
+  else{
+    console.log("Allocating new Buffer for : ", content.length)
     this.content = new Buffer(content);
-
+  }
   // The object has changed, so the wireEncoding is invalid.
-  this.wireEncoding = SignedBlob();
+  this.wireEncoding = new SignedBlob();
   return this;
 };
 
@@ -7374,7 +17629,7 @@ ContentObject.prototype = new Data();
 exports.ContentObject = ContentObject;
 
 }).call(this,require("buffer").Buffer)
-},{"./crypto.js":36,"./encoding/binary-xml-encoder.js":41,"./encoding/binary-xml-wire-format.js":43,"./encoding/data-utils.js":44,"./encoding/wire-format.js":55,"./key-locator.js":62,"./meta-info.js":65,"./name.js":66,"./security/key-manager.js":77,"./sha256-with-rsa-signature.js":84,"./util/blob.js":88,"./util/ndn-protoco-id-tags.js":93,"./util/signed-blob.js":95,"buffer":2}],40:[function(require,module,exports){
+},{"./crypto.js":122,"./encoding/binary-xml-encoder.js":127,"./encoding/binary-xml-wire-format.js":129,"./encoding/data-utils.js":130,"./encoding/wire-format.js":146,"./key-locator.js":153,"./meta-info.js":156,"./name.js":157,"./security/key-manager.js":171,"./sha256-with-rsa-signature.js":178,"./util/blob.js":185,"./util/ndn-protoco-id-tags.js":190,"./util/signed-blob.js":192,"buffer":3}],126:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class is used to decode ndnb binary elements (blob, type/value pairs).
@@ -7390,11 +17645,11 @@ exports.ContentObject = ContentObject;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var NDNProtocolDTags = require('../util/ndn-protoco-id-tags.js').NDNProtocolDTags;
@@ -8102,7 +18357,7 @@ BinaryXMLDecoder.prototype.seek = function(offset)
 };
 
 }).call(this,require("buffer").Buffer)
-},{"../log.js":64,"../util/ndn-protoco-id-tags.js":93,"../util/ndn-time.js":94,"./data-utils.js":44,"./decoding-exception.js":45,"buffer":2}],41:[function(require,module,exports){
+},{"../log.js":155,"../util/ndn-protoco-id-tags.js":190,"../util/ndn-time.js":191,"./data-utils.js":130,"./decoding-exception.js":131,"buffer":3}],127:[function(require,module,exports){
 /**
  * This class is used to encode ndnb binary elements (blob, type/value pairs).
  *
@@ -8117,11 +18372,11 @@ BinaryXMLDecoder.prototype.seek = function(offset)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var LOG = require('../log.js').Log.LOG;
@@ -8550,7 +18805,7 @@ BinaryXMLEncoder.prototype.getReducedOstream = function()
   return this.ostream.slice(0, this.offset);
 };
 
-},{"../log.js":64,"../util/dynamic-buffer.js":90,"../util/ndn-protoco-id-tags.js":93,"./data-utils.js":44}],42:[function(require,module,exports){
+},{"../log.js":155,"../util/dynamic-buffer.js":187,"../util/ndn-protoco-id-tags.js":190,"./data-utils.js":130}],128:[function(require,module,exports){
 /**
  * This class uses BinaryXMLDecoder to follow the structure of a ndnb binary element to
  * determine its end.
@@ -8566,11 +18821,11 @@ BinaryXMLEncoder.prototype.getReducedOstream = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var BinaryXMLDecoder = require('./binary-xml-decoder.js').BinaryXMLDecoder;
@@ -8758,7 +19013,7 @@ BinaryXMLStructureDecoder.prototype.seek = function(offset)
   this.offset = offset;
 };
 
-},{"../util/dynamic-buffer.js":90,"./binary-xml-decoder.js":40}],43:[function(require,module,exports){
+},{"../util/dynamic-buffer.js":187,"./binary-xml-decoder.js":126}],129:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -8771,11 +19026,11 @@ BinaryXMLStructureDecoder.prototype.seek = function(offset)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Blob = require('../util/blob.js').Blob;
@@ -8808,6 +19063,29 @@ BinaryXmlWireFormat.instance = null;
 
 /**
  * Encode interest as Binary XML and return the encoding.
+ * @param {Name} interest The Name to encode.
+ * @returns {Blobl} A Blob containing the encoding.
+ */
+BinaryXmlWireFormat.prototype.encodeName = function(name)
+{
+  var encoder = new BinaryXMLEncoder();
+  name.to_ndnb(encoder);
+  return new Blob(encoder.getReducedOstream(), false);
+};
+
+/**
+ * Decode input as a Binary XML name and set the fields of the Name object.
+ * @param {Name} name The Name object whose fields are updated.
+ * @param {Buffer} input The buffer with the bytes to decode.
+ */
+BinaryXmlWireFormat.prototype.decodeName = function(name, input)
+{
+  var decoder = new BinaryXMLDecoder(input);
+  name.from_ndnb(decoder);
+};
+
+/**
+ * Encode interest as Binary XML and return the encoding.
  * @param {Interest} interest The Interest to encode.
  * @returns {object} An associative array with fields
  * (encoding, signedPortionBeginOffset, signedPortionEndOffset) where encoding
@@ -8831,11 +19109,18 @@ BinaryXmlWireFormat.prototype.encodeInterest = function(interest)
  * Decode input as a Binary XML interest and set the fields of the interest object.
  * @param {Interest} interest The Interest object whose fields are updated.
  * @param {Buffer} input The buffer with the bytes to decode.
+ * @returns {object} An associative array with fields
+ * (signedPortionBeginOffset, signedPortionEndOffset) where
+ * signedPortionBeginOffset is the offset in the encoding of the beginning of
+ * the signed portion, and signedPortionEndOffset is the offset in the encoding
+ * of the end of the signed portion. The signed portion starts from the first
+ * name component and ends just before the final name component (which is
+ * assumed to be a signature for a signed interest).
  */
 BinaryXmlWireFormat.prototype.decodeInterest = function(interest, input)
 {
   var decoder = new BinaryXMLDecoder(input);
-  BinaryXmlWireFormat.decodeInterest(interest, decoder);
+  return BinaryXmlWireFormat.decodeInterest(interest, decoder);
 };
 
 /**
@@ -8967,13 +19252,20 @@ BinaryXmlWireFormat.encodeInterest = function(interest, encoder)
  * Use the decoder to place the result in interest.
  * @param {Interest} interest
  * @param {BinaryXMLDecoder} decoder
+ * @returns {object} An associative array with fields
+ * (signedPortionBeginOffset, signedPortionEndOffset) where
+ * signedPortionBeginOffset is the offset in the encoding of the beginning of
+ * the signed portion, and signedPortionEndOffset is the offset in the encoding
+ * of the end of the signed portion. The signed portion starts from the first
+ * name component and ends just before the final name component (which is
+ * assumed to be a signature for a signed interest).
  */
 BinaryXmlWireFormat.decodeInterest = function(interest, decoder)
 {
   decoder.readElementStartDTag(NDNProtocolDTags.Interest);
 
   interest.setName(new Name());
-  interest.getName().from_ndnb(decoder);
+  var offsets = interest.getName().from_ndnb(decoder);
 
   if (decoder.peekDTag(NDNProtocolDTags.MinSuffixComponents))
     interest.setMinSuffixComponents(decoder.readIntegerDTagElement(NDNProtocolDTags.MinSuffixComponents));
@@ -9037,6 +19329,7 @@ BinaryXmlWireFormat.decodeInterest = function(interest, decoder)
     interest.setNonce(null);
 
   decoder.readElementClose();
+  return offsets;
 };
 
 /**
@@ -9125,7 +19418,7 @@ BinaryXmlWireFormat.decodeData = function(data, decoder)
            signedPortionEndOffset: signedPortionEndOffset };
 };
 
-},{"../exclude.js":56,"../key-locator.js":62,"../meta-info.js":65,"../name.js":66,"../publisher-public-key-digest.js":68,"../sha256-with-rsa-signature.js":84,"../util/blob.js":88,"../util/ndn-protoco-id-tags.js":93,"./binary-xml-decoder.js":40,"./binary-xml-encoder.js":41,"./data-utils.js":44,"./wire-format.js":55}],44:[function(require,module,exports){
+},{"../exclude.js":147,"../key-locator.js":153,"../meta-info.js":156,"../name.js":157,"../publisher-public-key-digest.js":159,"../sha256-with-rsa-signature.js":178,"../util/blob.js":185,"../util/ndn-protoco-id-tags.js":190,"./binary-xml-decoder.js":126,"./binary-xml-encoder.js":127,"./data-utils.js":130,"./wire-format.js":146}],130:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class contains utilities to help parse the data
@@ -9142,20 +19435,18 @@ BinaryXmlWireFormat.decodeData = function(data, decoder)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
  * A DataUtils has static methods for converting data.
  * @constructor
  */
-var DataUtils = function DataUtils()
-{
-};
+var DataUtils = {};
 
 exports.DataUtils = DataUtils;
 
@@ -9405,7 +19696,8 @@ DataUtils.bigEndianToUnsignedInt = function(bytes)
 {
   var result = 0;
   for (var i = 0; i < bytes.length; ++i) {
-    result <<= 8;
+    // Multiply by 0x100 instead of shift by 8 because << is restricted to 32 bits.
+    result *= 0x100;
     result += bytes[i];
   }
   return result;
@@ -9428,7 +19720,8 @@ DataUtils.nonNegativeIntToBigEndian = function(value)
   while (value != 0) {
     ++i;
     result[size - i] = value & 0xff;
-    value >>= 8;
+    // Divide by 0x100 and floor instead of shift by 8 because >> is restricted to 32 bits.
+    value = Math.floor(value / 0x100);
   }
   return result.slice(size - i, size);
 };
@@ -9448,7 +19741,7 @@ DataUtils.shuffle = function(array)
 };
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":2}],45:[function(require,module,exports){
+},{"buffer":3}],131:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -9461,11 +19754,11 @@ DataUtils.shuffle = function(array)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -9486,7 +19779,883 @@ DecodingException.prototype.name = "DecodingException";
 
 exports.DecodingException = DecodingException;
 
-},{}],46:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+/**
+ * Create a new DerDecodingException wrapping the given error object.
+ * Call with: throw new DerDecodingException(new Error("message")).
+ * @constructor
+ * @param {Error} error The exception created with new Error.
+ */
+function DerDecodingException(error)
+{
+  this.message = error.message;
+  // Copy lineNumber, etc. from where new Error was called.
+  for (var prop in error)
+      this[prop] = error[prop];
+}
+DerDecodingException.prototype = new Error();
+DerDecodingException.prototype.name = "DerDecodingException";
+
+exports.DerDecodingException = DerDecodingException;
+
+},{}],133:[function(require,module,exports){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+/**
+ * Create a new DerEncodingException wrapping the given error object.
+ * Call with: throw new DerEncodingException(new Error("message")).
+ * @constructor
+ * @param {Error} error The exception created with new Error.
+ */
+function DerEncodingException(error)
+{
+  this.message = error.message;
+  // Copy lineNumber, etc. from where new Error was called.
+  for (var prop in error)
+      this[prop] = error[prop];
+}
+DerEncodingException.prototype = new Error();
+DerEncodingException.prototype.name = "DerEncodingException";
+
+exports.DerEncodingException = DerEncodingException;
+
+},{}],134:[function(require,module,exports){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ * @author: From PyNDN der.py by Adeola Bannis <thecodemaiden@gmail.com>.
+ * @author: Originally from code in ndn-cxx by Yingdi Yu <yingdi@cs.ucla.edu>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+/**
+ * The DerNodeType enum defines the known DER node types.
+ */
+var DerNodeType = function DerNodeType()
+{
+}
+
+exports.DerNodeType = DerNodeType;
+
+DerNodeType.Eoc = 0;
+DerNodeType.Boolean = 1;
+DerNodeType.Integer = 2;
+DerNodeType.BitString = 3;
+DerNodeType.OctetString = 4;
+DerNodeType.Null = 5;
+DerNodeType.ObjectIdentifier = 6;
+DerNodeType.ObjectDescriptor = 7;
+DerNodeType.External = 40;
+DerNodeType.Real = 9;
+DerNodeType.Enumerated = 10;
+DerNodeType.EmbeddedPdv = 43;
+DerNodeType.Utf8String = 12;
+DerNodeType.RelativeOid = 13;
+DerNodeType.Sequence = 48;
+DerNodeType.Set = 49;
+DerNodeType.NumericString = 18;
+DerNodeType.PrintableString = 19;
+DerNodeType.T61String = 20;
+DerNodeType.VideoTexString = 21;
+DerNodeType.Ia5String = 22;
+DerNodeType.UtcTime = 23;
+DerNodeType.GeneralizedTime = 24;
+DerNodeType.GraphicString = 25;
+DerNodeType.VisibleString = 26;
+DerNodeType.GeneralString = 27;
+DerNodeType.UniversalString = 28;
+DerNodeType.CharacterString = 29;
+DerNodeType.BmpString = 30;
+
+},{}],135:[function(require,module,exports){
+(function (Buffer){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ * @author: From PyNDN der_node.py by Adeola Bannis <thecodemaiden@gmail.com>.
+ * @author: Originally from code in ndn-cxx by Yingdi Yu <yingdi@cs.ucla.edu>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+var DynamicBuffer = require('../../util/dynamic-buffer.js').DynamicBuffer;
+var Blob = require('../../util/blob.js').Blob;
+var DerDecodingException = require('./der-decoding-exception.js').DerDecodingException;
+var DerEncodingException = require('./der-encoding-exception.js').DerEncodingException;
+var DerNodeType = require('./der-node-type.js').DerNodeType;
+
+/**
+ * DerNode implements the DER node types used in encoding/decoding DER-formatted
+ * data.
+ *
+ * Create a generic DER node with the given nodeType. This is a private
+ * constructor used by one of the public DerNode subclasses defined below.
+ * @param {number} nodeType One of the defined DER DerNodeType constants.
+ */
+var DerNode = function DerNode(nodeType)
+{
+  this.nodeType = nodeType;
+
+  this.parent = null;
+  this.header = new Buffer(0);
+  this.payload = new DynamicBuffer(0);
+  this.payloadPosition = 0;
+};
+
+exports.DerNode = DerNode;
+
+DerNode.prototype.getSize = function()
+{
+  return this.header.length + this.payloadPosition;
+};
+
+/**
+ * Encode the given size and update the header.
+ * @param {number} size
+ */
+DerNode.prototype.encodeHeader = function(size)
+{
+  var buffer = new DynamicBuffer(10);
+  var bufferPosition = 0;
+  buffer.array[bufferPosition++] = this.nodeType;
+  if (size < 0)
+    // We don't expect this to happen since this is an internal method and
+    // always called with the non-negative size() of some buffer.
+    throw new Error("encodeHeader: DER object has negative length");
+  else if (size <= 127)
+    buffer.array[bufferPosition++] = size & 0xff;
+  else {
+    var tempBuf = new DynamicBuffer(10);
+    // We encode backwards from the back.
+
+    var val = size;
+    var n = 0;
+    while (val != 0) {
+      ++n;
+      tempBuf.ensureLengthFromBack(n);
+      tempBuf.array[tempBuf.array.length - n] = val & 0xff;
+      val >>= 8;
+    }
+    var nTempBufBytes = n + 1;
+    tempBuf.ensureLengthFromBack(nTempBufBytes);
+    tempBuf.array[tempBuf.array.length - nTempBufBytes] = ((1<<7) | n) & 0xff;
+
+    buffer.copy(tempBuf.slice(tempBuf.array.length - nTempBufBytes), bufferPosition);
+    bufferPosition += nTempBufBytes;
+  }
+
+  this.header = buffer.slice(0, bufferPosition);
+};
+
+/**
+ * Extract the header from an input buffer and return the size.
+ * @param {Buffer} inputBuf The input buffer to read from.
+ * @param {number} startIdx The offset into the buffer.
+ * @returns {number} The parsed size in the header.
+ */
+DerNode.prototype.decodeHeader = function(inputBuf, startIdx)
+{
+  var idx = startIdx;
+
+  var nodeType = inputBuf[idx] & 0xff;
+  idx += 1;
+
+  this.nodeType = nodeType;
+
+  var sizeLen = inputBuf[idx] & 0xff;
+  idx += 1;
+
+  var header = new DynamicBuffer(10);
+  var headerPosition = 0;
+  header.array[headerPosition++] = nodeType;
+  header.array[headerPosition++] = sizeLen;
+
+  var size = sizeLen;
+  var isLongFormat = (sizeLen & (1 << 7)) != 0;
+  if (isLongFormat) {
+    var lenCount = sizeLen & ((1<<7) - 1);
+    size = 0;
+    while (lenCount > 0) {
+      var b = inputBuf[idx];
+      idx += 1;
+      header.ensureLength(headerPosition + 1);
+      header.array[headerPosition++] = b;
+      size = 256 * size + (b & 0xff);
+      lenCount -= 1;
+    }
+  }
+
+  this.header = header.slice(0, headerPosition);
+  return size;
+};
+
+/**
+ * Get the raw data encoding for this node.
+ * @returns {Blob} The raw data encoding.
+ */
+DerNode.prototype.encode = function()
+{
+  var buffer = new Buffer(this.getSize());
+
+  this.header.copy(buffer);
+  this.payload.slice(0, this.payloadPosition).copy(buffer, this.header.length);
+
+  return new Blob(buffer, false);
+};
+
+/**
+ * Decode and store the data from an input buffer.
+ * @param {Buffer} inputBuf The input buffer to read from. This reads from
+ * startIdx (regardless of the buffer's position) and does not change the
+ * position.
+ * @param {number} startIdx The offset into the buffer.
+ */
+DerNode.prototype.decode = function(inputBuf, startIdx)
+{
+  var idx = startIdx;
+  var payloadSize = this.decodeHeader(inputBuf, idx);
+  var skipBytes = this.header.length;
+  if (payloadSize > 0) {
+    idx += skipBytes;
+    this.payloadAppend(inputBuf.slice(idx, idx + payloadSize));
+  }
+};
+
+/**
+ * Copy buffer to this.payload at this.payloadPosition and update
+ * this.payloadPosition.
+ * @param {Buffer} buffer The buffer to copy.
+ */
+DerNode.prototype.payloadAppend = function(buffer)
+{
+  this.payloadPosition = this.payload.copy(buffer, this.payloadPosition);
+}
+
+/**
+ * Parse the data from the input buffer recursively and return the root as an
+ * object of a subclass of DerNode.
+ * @param {type} inputBuf The input buffer to read from.
+ * @param {type} startIdx (optional) The offset into the buffer. If omitted, use 0.
+ * @returns {DerNode} An object of a subclass of DerNode.
+ */
+DerNode.parse = function(inputBuf, startIdx)
+{
+  if (startIdx == undefined)
+    startIdx = 0;
+  
+  var nodeType = inputBuf[startIdx] & 0xff;
+  // Don't increment idx. We're just peeking.
+
+  var newNode;
+  if (nodeType === DerNodeType.Boolean)
+    newNode = new DerNode.DerBoolean();
+  else if (nodeType === DerNodeType.Integer)
+    newNode = new DerNode.DerInteger();
+  else if (nodeType === DerNodeType.BitString)
+    newNode = new DerNode.DerBitString();
+  else if (nodeType === DerNodeType.OctetString)
+    newNode = new DerNode.DerOctetString();
+  else if (nodeType === DerNodeType.Null)
+    newNode = new DerNode.DerNull();
+  else if (nodeType === DerNodeType.ObjectIdentifier)
+    newNode = new DerNode.DerOid();
+  else if (nodeType === DerNodeType.Sequence)
+    newNode = new DerNode.DerSequence();
+  else if (nodeType === DerNodeType.PrintableString)
+    newNode = new DerNode.DerPrintableString();
+  else if (nodeType === DerNodeType.GeneralizedTime)
+    newNode = new DerNode.DerGeneralizedTime();
+  else
+    throw new DerDecodingException(new Error("Unimplemented DER type " + nodeType));
+
+  newNode.decode(inputBuf, startIdx);
+  return newNode;
+};
+
+/**
+ * Convert the encoded data to a standard representation. Overridden by some
+ * subclasses (e.g. DerBoolean).
+ * @returns {Blob} The encoded data as a Blob.
+ */
+DerNode.prototype.toVal = function()
+{
+  return this.encode();
+};
+
+/**
+ * A DerStructure extends DerNode to hold other DerNodes.
+ * Create a DerStructure with the given nodeType. This is a private
+ * constructor. To create an object, use DerSequence.
+ * @param {number} nodeType One of the defined DER DerNodeType constants.
+ */
+DerNode.DerStructure = function DerStructure(nodeType)
+{
+  // Call the base constructor.
+  DerNode.call(this, nodeType);
+
+  this.childChanged = false;
+  this.nodeList = []; // Of DerNode.
+  this.size = 0;
+};
+DerNode.DerStructure.prototype = new DerNode();
+DerNode.DerStructure.prototype.name = "DerStructure";
+
+/**
+ * Get the total length of the encoding, including children.
+ * @returns {number} The total (header + payload) length.
+ */
+DerNode.DerStructure.prototype.getSize = function()
+{
+  if (this.childChanged) {
+    this.updateSize();
+    this.childChanged = false;
+  }
+
+  this.encodeHeader(this.size);
+  return this.size + this.header.length;
+};
+
+/**
+ * Get the children of this node.
+ * @returns {Array<DerNode>} The children as an array of DerNode.
+ */
+DerNode.DerStructure.prototype.getChildren = function()
+{
+  return this.nodeList;
+};
+
+DerNode.DerStructure.prototype.updateSize = function()
+{
+  var newSize = 0;
+
+  for (var i = 0; i < this.nodeList.length; ++i) {
+    var n = this.nodeList[i];
+    newSize += n.getSize();
+  }
+
+  this.size = newSize;
+  this.childChanged = false;
+};
+
+/**
+ * Add a child to this node.
+ * @param {DerNode} node The child node to add.
+ * @param {boolean} (optional) notifyParent Set to true to cause any containing
+ * nodes to update their size.  If omitted, use false.
+ */
+DerNode.DerStructure.prototype.addChild = function(node, notifyParent)
+{
+  node.parent = this;
+  this.nodeList.push(node);
+
+  if (notifyParent) {
+    if (this.parent != null)
+      this.parent.setChildChanged();
+  }
+
+  this.childChanged = true;
+};
+
+/**
+ * Mark the child list as dirty, so that we update size when necessary.
+ */
+DerNode.DerStructure.prototype.setChildChanged = function()
+{
+  if (this.parent != null)
+    this.parent.setChildChanged();
+  this.childChanged = true;
+};
+
+/**
+ * Override the base encode to return raw data encoding for this node and its 
+ * children.
+ * @returns {Blob} The raw data encoding.
+ */
+DerNode.DerStructure.prototype.encode = function()
+{
+  var buffer = new DynamicBuffer(10);
+  var bufferPosition = 0;
+  this.updateSize();
+  this.encodeHeader(this.size);
+  bufferPosition = buffer.copy(this.header, bufferPosition);
+
+  for (var i = 0; i < this.nodeList.length; ++i) {
+    var n = this.nodeList[i];
+    var encodedChild = n.encode();
+    bufferPosition = buffer.copy(encodedChild.buf(), bufferPosition);
+  }
+
+  return new Blob(buffer.slice(0, bufferPosition), false);
+};
+
+/**
+ * Override the base decode to decode and store the data from an input
+ * buffer. Recursively populates child nodes.
+ * @param {Buffer} inputBuf The input buffer to read from.
+ * @param {number} startIdx The offset into the buffer.
+ */
+DerNode.DerStructure.prototype.decode = function(inputBuf, startIdx)
+{
+  var idx = startIdx;
+  this.size = this.decodeHeader(inputBuf, idx);
+  idx += this.header.length;
+
+  var accSize = 0;
+  while (accSize < this.size) {
+    var node = DerNode.parse(inputBuf, idx);
+    idx += node.getSize();
+    accSize += node.getSize();
+    this.addChild(node, false);
+  }
+};
+
+////////
+// Now for all the node types...
+////////
+
+/**
+ * A DerByteString extends DerNode to handle byte strings.
+ * Create a DerByteString with the given inputData and nodeType. This is a
+ * private constructor used by one of the public subclasses such as
+ * DerOctetString or DerPrintableString.
+ * @param {Buffer} inputData An input buffer containing the string to encode.
+ * @param {number} nodeType One of the defined DER DerNodeType constants.
+ */
+DerNode.DerByteString = function DerByteString(inputData, nodeType)
+{
+  // Call the base constructor.
+  DerNode.call(this, nodeType);
+
+  if (inputData != null) {
+    this.payloadAppend(inputData);
+    this.encodeHeader(inputData.length);
+  }
+};
+DerNode.DerByteString.prototype = new DerNode();
+DerNode.DerByteString.prototype.name = "DerByteString";
+
+/**
+ * Override to return just the byte string.
+ * @returns {Blob} The byte string as a copy of the payload buffer.
+ */
+DerNode.DerByteString.prototype.toVal = function()
+{
+  // Make a copy since this.payload can change.
+  return new Blob(this.payload.slice(0, this.payloadPosition), true);
+};
+
+/**
+ * DerBoolean extends DerNode to encode a boolean value.
+ * Create a new DerBoolean for the value.
+ * @param {boolean} value The value to encode.
+ */
+DerNode.DerBoolean = function DerBoolean(value)
+{
+  // Call the base constructor.
+  DerNode.call(this, DerNodeType.Boolean);
+
+  if (value != undefined) {
+    var val = value ? 0xff : 0x00;
+    this.payload.ensureLength(this.payloadPosition + 1);
+    this.payload.array[this.payloadPosition++] = val;
+    this.encodeHeader(1);
+  }
+};
+DerNode.DerBoolean.prototype = new DerNode();
+DerNode.DerBoolean.prototype.name = "DerBoolean";
+
+DerNode.DerBoolean.prototype.toVal = function()
+{
+  var val = this.payload.array[0];
+  return val != 0x00;
+};
+
+/**
+ * DerInteger extends DerNode to encode an integer value.
+ * Create a new DerInteger for the value.
+ * @param {number} integer The value to encode.
+ */
+DerNode.DerInteger = function DerInteger(integer)
+{
+  // Call the base constructor.
+  DerNode.call(this, DerNodeType.Integer);
+
+  if (integer != undefined) {
+    // JavaScript doesn't distinguish int from float, so round.
+    integer = Math.round(integer);
+
+    // Convert the integer to bytes the easy/slow way.
+    var temp = new DynamicBuffer(10);
+    // We encode backwards from the back.
+    var length = 0;
+    while (integer > 0) {
+      ++length;
+      temp.ensureLengthFromBack(length);
+      temp.array[temp.array.length - length] = integer & 0xff;
+      integer >>= 8;
+    }
+
+    this.payloadAppend(temp.slice(temp.array.length - length));
+    this.encodeHeader(this.payloadPosition);
+  }
+};
+DerNode.DerInteger.prototype = new DerNode();
+DerNode.DerInteger.prototype.name = "DerInteger";
+
+/**
+ * A DerBitString extends DerNode to handle a bit string.
+ * Create a DerBitString with the given padding and inputBuf.
+ * @param {Buffer} inputBuf An input buffer containing the bit octets to encode.
+ * @param {number} paddingLen The number of bits of padding at the end of the bit
+ * string.  Should be less than 8.
+ */
+DerNode.DerBitString = function DerBitString(inputBuf, paddingLen)
+{
+  // Call the base constructor.
+  DerNode.call(this, DerNodeType.BitString);
+
+  if (inputBuf != undefined) {
+    this.payload.ensureLength(this.payloadPosition + 1);
+    this.payload.array[this.payloadPosition++] = paddingLen & 0xff;
+    this.payloadAppend(inputBuf);
+    this.encodeHeader(this.payloadPosition);
+  }
+};
+DerNode.DerBitString.prototype = new DerNode();
+DerNode.DerBitString.prototype.name = "DerBitString";
+
+/**
+ * DerOctetString extends DerByteString to encode a string of bytes.
+ * Create a new DerOctetString for the inputData.
+ * @param {type} inputData An input buffer containing the string to encode.
+ */
+DerNode.DerOctetString = function DerOctetString(inputData)
+{
+  // Call the base constructor.
+  DerNode.DerByteString.call(this, inputData, DerNodeType.OctetString);
+};
+DerNode.DerOctetString.prototype = new DerNode.DerByteString();
+DerNode.DerOctetString.prototype.name = "DerOctetString";
+
+/**
+ * A DerNull extends DerNode to encode a null value.
+ * Create a DerNull.
+ */
+DerNode.DerNull = function DerNull()
+{
+  // Call the base constructor.
+  DerNode.call(this, DerNodeType.Null);
+  this.encodeHeader(0);
+};
+DerNode.DerNull.prototype = new DerNode();
+DerNode.DerNull.prototype.name = "DerNull";
+
+/**
+ * A DerOid extends DerNode to represent an object identifier.
+ * Create a DerOid with the given object identifier. The object identifier
+ * string must begin with 0,1, or 2 and must contain at least 2 digits.
+ * @param {string|OID} oid The OID string or OID object to encode.
+ */
+DerNode.DerOid = function DerOid(oid)
+{
+  // Call the base constructor.
+  DerNode.call(this, DerNodeType.ObjectIdentifier);
+
+  if (oid != undefined) {
+    if (typeof oid === 'string') {
+      var splitString = oid.split(".");
+      var parts = [];
+      for (var i = 0; i < splitString.length; ++i)
+        parts.push(parseInt(splitString[i]));
+
+      this.prepareEncoding(parts);
+    }
+    else
+      // Assume oid is of type OID.
+      this.prepareEncoding(oid.getIntegerList());
+  }
+};
+DerNode.DerOid.prototype = new DerNode();
+DerNode.DerOid.prototype.name = "DerOid";
+
+/**
+ * Encode a sequence of integers into an OID object and set the payload.
+ * @param {Array<number>} value The array of integers.
+ */
+DerNode.DerOid.prototype.prepareEncoding = function(value)
+{
+  var firstNumber;
+  if (value.length == 0)
+    throw new DerEncodingException(new Error("No integer in OID"));
+  else {
+    if (value[0] >= 0 && value[0] <= 2)
+      firstNumber = value[0] * 40;
+    else
+      throw new DerEncodingException(new Error("First integer in OID is out of range"));
+  }
+
+  if (value.length >= 2) {
+    if (value[1] >= 0 && value[1] <= 39)
+      firstNumber += value[1];
+    else
+      throw new DerEncodingException(new Error("Second integer in OID is out of range"));
+  }
+
+  var encodedBuffer = new DynamicBuffer(10);
+  var encodedBufferPosition = 0;
+  encodedBufferPosition = encodedBuffer.copy
+    (DerNode.DerOid.encode128(firstNumber), encodedBufferPosition);
+
+  if (value.length > 2) {
+    for (var i = 2; i < value.length; ++i)
+      encodedBufferPosition = encodedBuffer.copy
+        (DerNode.DerOid.encode128(value[i]), encodedBufferPosition);
+  }
+
+  this.encodeHeader(encodedBufferPosition);
+  this.payloadAppend(encodedBuffer.slice(0, encodedBufferPosition));
+};
+
+/**
+ * Compute the encoding for one part of an OID, where values greater than 128
+ * must be encoded as multiple bytes.
+ * @param {number} value A component of an OID.
+ * @returns {Buffer} The encoded buffer.
+ */
+DerNode.DerOid.encode128 = function(value)
+{
+  var mask = (1 << 7) - 1;
+  var outBytes = new DynamicBuffer(10);
+  var outBytesLength = 0;
+  // We encode backwards from the back.
+
+  if (value < 128) {
+    ++outBytesLength;
+    outBytes.array[outBytes.array.length - outBytesLength] = value & mask;
+  }
+  else {
+    ++outBytesLength;
+    outBytes.array[outBytes.array.length - outBytesLength] = value & mask;
+    value >>= 7;
+
+    while (value != 0) {
+      ++outBytesLength;
+      outBytes.ensureLengthFromBack(outBytesLength);
+      outBytes.array[outBytes.array.length - outBytesLength] =
+        (value & mask) | (1 << 7);
+      value >>= 7;
+    }
+  }
+
+  return outBytes.slice(outBytes.array.length - outBytesLength);
+};
+
+/**
+ * Convert an encoded component of the encoded OID to the original integer.
+ * @param {number} offset The offset into this node's payload.
+ * @param {Array<number>} skip Set skip[0] to the number of payload bytes to skip.
+ * @returns {number} The original integer.
+ */
+DerNode.DerOid.prototype.decode128 = function(offset, skip)
+{
+  var flagMask = 0x80;
+  var result = 0;
+  var oldOffset = offset;
+
+  while ((this.payload.array[offset] & flagMask) != 0) {
+    result = 128 * result + (this.payload.array[offset] & 0xff) - 128;
+    offset += 1;
+  }
+
+  result = result * 128 + (this.payload.array[offset] & 0xff);
+
+  skip[0] = offset - oldOffset + 1;
+  return result;
+};
+
+/**
+ * Override to return the string representation of the OID.
+ * @returns {string} The string representation of the OID.
+ */
+DerNode.DerOid.prototype.toVal = function()
+{
+  var offset = 0;
+  var components = []; // of number.
+
+  while (offset < this.payloadPosition) {
+    var skip = [0];
+    var nextVal = this.decode128(offset, skip);
+    offset += skip[0];
+    components.push(nextVal);
+  }
+
+  // For some odd reason, the first digits are represented in one byte.
+  var firstByte = components[0];
+  var firstDigit = Math.floor(firstByte / 40);
+  var secondDigit = firstByte % 40;
+
+  var result = firstDigit + "." + secondDigit;
+  for (var i = 1; i < components.length; ++i)
+    result += "." + components[i];
+
+  return result;
+};
+
+/**
+ * A DerSequence extends DerStructure to contains an ordered sequence of other
+ * nodes.
+ * Create a DerSequence.
+ */
+DerNode.DerSequence = function DerSequence()
+{
+  // Call the base constructor.
+  DerNode.DerStructure.call(this, DerNodeType.Sequence);
+};
+DerNode.DerSequence.prototype = new DerNode.DerStructure();
+DerNode.DerSequence.prototype.name = "DerSequence";
+
+/**
+ * A DerPrintableString extends DerByteString to handle a a printable string. No
+ * escaping or other modification is done to the string.
+ * Create a DerPrintableString with the given inputData.
+ * @param {Buffer} inputData An input buffer containing the string to encode.
+ */
+DerNode.DerPrintableString = function DerPrintableString(inputData)
+{
+  // Call the base constructor.
+  DerNode.DerByteString.call(this, inputData, DerNodeType.PrintableString);
+};
+DerNode.DerPrintableString.prototype = new DerNode.DerByteString();
+DerNode.DerPrintableString.prototype.name = "DerPrintableString";
+
+/**
+ * A DerGeneralizedTime extends DerNode to represent a date and time, with
+ * millisecond accuracy.
+ * Create a DerGeneralizedTime with the given milliseconds since 1970.
+ * @param {number} msSince1970 The timestamp as milliseconds since Jan 1, 1970.
+ */
+DerNode.DerGeneralizedTime = function DerGeneralizedTime(msSince1970)
+{
+  // Call the base constructor.
+  DerNode.call(this, DerNodeType.GeneralizedTime);
+
+  if (msSince1970 != undefined) {
+    var derTime = DerNode.DerGeneralizedTime.toDerTimeString(msSince1970);
+    // Use Blob to convert to a Buffer.
+    this.payloadAppend(new Blob(derTime).buf());
+    this.encodeHeader(this.payloadPosition);
+  }
+};
+DerNode.DerGeneralizedTime.prototype = new DerNode();
+DerNode.DerGeneralizedTime.prototype.name = "DerGeneralizedTime";
+
+/**
+ * Convert a UNIX timestamp to the internal string representation.
+ * @param {type} msSince1970 Timestamp as milliseconds since Jan 1, 1970.
+ * @returns {string} The string representation.
+ */
+DerNode.DerGeneralizedTime.toDerTimeString = function(msSince1970)
+{
+  var utcTime = new Date(Math.round(msSince1970));
+  return utcTime.getUTCFullYear() +
+         DerNode.DerGeneralizedTime.to2DigitString(utcTime.getUTCMonth() + 1) +
+         DerNode.DerGeneralizedTime.to2DigitString(utcTime.getUTCDate()) +
+         DerNode.DerGeneralizedTime.to2DigitString(utcTime.getUTCHours()) +
+         DerNode.DerGeneralizedTime.to2DigitString(utcTime.getUTCMinutes()) +
+         DerNode.DerGeneralizedTime.to2DigitString(utcTime.getUTCSeconds()) +
+         "Z";
+};
+
+/**
+ * A private method to zero pad an integer to 2 digits.
+ * @param {number} x The number to pad.  Assume it is a non-negative integer.
+ * @returns {string} The padded string.
+ */
+DerNode.DerGeneralizedTime.to2DigitString = function(x)
+{
+  var result = x.toString();
+  return result.length === 1 ? "0" + result : result;
+};
+
+/**
+ * Override to return the milliseconds since 1970.
+ * @returns {number} The timestamp value as milliseconds since 1970.
+ */
+DerNode.DerGeneralizedTime.prototype.toVal = function()
+{
+  var timeStr = this.payload.slice(0, this.payloadPosition).toString();
+  return Date.UTC
+    (parseInt(timeStr.substr(0, 4)),
+     parseInt(timeStr.substr(4, 2) - 1),
+     parseInt(timeStr.substr(6, 2)),
+     parseInt(timeStr.substr(8, 2)),
+     parseInt(timeStr.substr(10, 2)),
+     parseInt(timeStr.substr(12, 2)));
+};
+
+}).call(this,require("buffer").Buffer)
+},{"../../util/blob.js":185,"../../util/dynamic-buffer.js":187,"./der-decoding-exception.js":132,"./der-encoding-exception.js":133,"./der-node-type.js":134,"buffer":3}],136:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -9499,11 +20668,11 @@ exports.DecodingException = DecodingException;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var DataUtils = require('./data-utils.js').DataUtils;
@@ -9597,7 +20766,7 @@ ElementReader.prototype.onReceivedData = function(/* Buffer */ data)
   }
 };
 
-},{"../log.js":64,"./binary-xml-structure-decoder.js":42,"./data-utils.js":44,"./tlv/tlv-structure-decoder.js":53,"./tlv/tlv.js":54}],47:[function(require,module,exports){
+},{"../log.js":155,"./binary-xml-structure-decoder.js":128,"./data-utils.js":130,"./tlv/tlv-structure-decoder.js":144,"./tlv/tlv.js":145}],137:[function(require,module,exports){
 /**
  * This file contains utilities to help encode and decode NDN objects.
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -9611,11 +20780,11 @@ ElementReader.prototype.onReceivedData = function(/* Buffer */ data)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var DataUtils = require('./data-utils.js').DataUtils;
@@ -9797,8 +20966,8 @@ EncodingUtils.dataToHtml = function(/* Data */ data)
 
       output+= "<br />";
     }
-    if (data.getMetaInfo() != null && data.getMetaInfo().getFinalBlockID().getValue().size() > 0) {
-      output += "FinalBlockID: "+ data.getMetaInfo().getFinalBlockID().getValue().toHex();
+    if (data.getMetaInfo() != null && data.getMetaInfo().getFinalBlockId().getValue().size() > 0) {
+      output += "FinalBlockId: "+ data.getMetaInfo().getFinalBlockId().getValue().toHex();
       output+= "<br />";
     }
     if (data.getMetaInfo() != null && data.getMetaInfo().locator != null && data.getMetaInfo().locator.getType()) {
@@ -9850,7 +21019,80 @@ function encodeToBinaryInterest(interest) { return interest.wireEncode().buf(); 
  */
 function encodeToBinaryContentObject(data) { return data.wireEncode().buf(); }
 
-},{"../data.js":39,"../face-instance.js":57,"../forwarding-entry.js":59,"../interest.js":61,"../key-locator.js":62,"../key.js":63,"../log.js":64,"./binary-xml-decoder.js":40,"./binary-xml-encoder.js":41,"./data-utils.js":44,"./wire-format.js":55}],48:[function(require,module,exports){
+},{"../data.js":125,"../face-instance.js":148,"../forwarding-entry.js":150,"../interest.js":152,"../key-locator.js":153,"../key.js":154,"../log.js":155,"./binary-xml-decoder.js":126,"./binary-xml-encoder.js":127,"./data-utils.js":130,"./wire-format.js":146}],138:[function(require,module,exports){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ * @author: From code in ndn-cxx by Yingdi Yu <yingdi@cs.ucla.edu>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+var OID = function OID(oid)
+{
+  if (typeof oid === 'string') {
+    var splitString = oid.split(".");
+    this.oid = [];
+    for (var i = 0; i < splitString.length; ++i)
+      this.oid.push(parseInt(splitString[i]));
+  }
+  else
+    // Assume oid is an array of int.  Make a copy.
+    this.oid = oid.slice(0, oid.length);
+};
+
+exports.OID = OID;
+
+OID.prototype.getIntegerList = function()
+{
+  return this.oid;
+};
+
+OID.prototype.setIntegerList = function(oid)
+{
+  // Make a copy.
+  this.oid = oid.slice(0, oid.length);
+};
+
+OID.prototype.toString = function()
+{
+  var result = "";
+  for (var i = 0; i < this.oid.length; ++i) {
+    if (i !== 0)
+      result += ".";
+    result += this.oid[i];
+  }
+
+  return result;
+};
+
+OID.prototype.equals = function(other)
+{
+  if (!(other instanceof OID))
+    return false;
+  if (this.oid.length !== other.oid.length)
+    return false;
+
+  for (var i = 0; i < this.oid.length; ++i) {
+    if (this.oid[i] != other.oid[i])
+      return false;
+  }
+  return true;
+};
+
+},{}],139:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -9863,11 +21105,11 @@ function encodeToBinaryContentObject(data) { return data.wireEncode().buf(); }
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var TlvEncoder = require('./tlv/tlv-encoder.js').TlvEncoder;
@@ -10075,7 +21317,7 @@ ProtobufTlv._decodeFieldValue = function(field, tlvType, decoder, endOffset)
     throw new Error("ProtobufTlv.decode: Unknown field type");
 };
 
-},{"../util/blob.js":88,"./tlv/tlv-decoder.js":51,"./tlv/tlv-encoder.js":52,"protobufjs/dist/ProtoBuf.js":97}],49:[function(require,module,exports){
+},{"../util/blob.js":185,"./tlv/tlv-decoder.js":142,"./tlv/tlv-encoder.js":143,"protobufjs/dist/ProtoBuf.js":194}],140:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -10089,11 +21331,11 @@ ProtobufTlv._decodeFieldValue = function(field, tlvType, decoder, endOffset)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Crypto = require('../crypto.js');
@@ -10128,6 +21370,29 @@ exports.Tlv0_1WireFormat = Tlv0_1WireFormat;
 
 // Default object.
 Tlv0_1WireFormat.instance = null;
+
+/**
+ * Encode interest as NDN-TLV and return the encoding.
+ * @param {Name} interest The Name to encode.
+ * @returns {Blobl} A Blob containing the encoding.
+ */
+Tlv0_1WireFormat.prototype.encodeName = function(name)
+{
+  var encoder = new TlvEncoder();
+  Tlv0_1WireFormat.encodeName(name, encoder);
+  return new Blob(encoder.getOutput(), false);
+};
+
+/**
+ * Decode input as a NDN-TLV name and set the fields of the Name object.
+ * @param {Name} name The Name object whose fields are updated.
+ * @param {Buffer} input The buffer with the bytes to decode.
+ */
+Tlv0_1WireFormat.prototype.decodeName = function(name, input)
+{
+  var decoder = new TlvDecoder(input);
+  Tlv0_1WireFormat.decodeName(name, decoder);
+};
 
 /**
  * Encode the interest using NDN-TLV and return a Buffer.
@@ -10196,13 +21461,20 @@ Tlv0_1WireFormat.prototype.encodeInterest = function(interest)
  * object.
  * @param {Interest} interest The Interest object whose fields are updated.
  * @param {Buffer} input The buffer with the bytes to decode.
+ * @returns {object} An associative array with fields
+ * (signedPortionBeginOffset, signedPortionEndOffset) where
+ * signedPortionBeginOffset is the offset in the encoding of the beginning of
+ * the signed portion, and signedPortionEndOffset is the offset in the encoding
+ * of the end of the signed portion. The signed portion starts from the first
+ * name component and ends just before the final name component (which is
+ * assumed to be a signature for a signed interest).
  */
 Tlv0_1WireFormat.prototype.decodeInterest = function(interest, input)
 {
   var decoder = new TlvDecoder(input);
 
   var endOffset = decoder.readNestedTlvsStart(Tlv.Interest);
-  Tlv0_1WireFormat.decodeName(interest.getName(), decoder);
+  var offsets = Tlv0_1WireFormat.decodeName(interest.getName(), decoder);
   if (decoder.peekType(Tlv.Selectors, endOffset))
     Tlv0_1WireFormat.decodeSelectors(interest, decoder);
   // Require a Nonce, but don't force it to be 4 bytes.
@@ -10216,6 +21488,7 @@ Tlv0_1WireFormat.prototype.decodeInterest = function(interest, input)
   interest.setNonce(nonce);
 
   decoder.finishNestedTlvs(endOffset);
+  return offsets;
 };
 
 /**
@@ -10388,7 +21661,7 @@ Tlv0_1WireFormat.prototype.decodeSignatureInfoAndValue = function
   var decoder = new TlvDecoder(signatureInfo);
   Tlv0_1WireFormat.decodeSignatureInfo(signatureHolder, decoder);
 
-  decoder = TlvDecoder(signatureValue);
+  decoder = new TlvDecoder(signatureValue);
   // TODO: The library needs to handle other signature types than
   //   SignatureSha256WithRsa.
   signatureHolder.getSignature().setSignature
@@ -10465,15 +21738,37 @@ Tlv0_1WireFormat.encodeName = function(name, encoder)
            signedPortionEndOffset: signedPortionEndOffset };
 };
 
+/**
+ * Clear the name, decode a Name from the decoder and set the fields of the name
+ * object.
+ * @param {Name} name The name object whose fields are updated.
+ * @param {TlvDecoder} decoder The decoder with the input.
+ * @returns {object} An associative array with fields
+ * (signedPortionBeginOffset, signedPortionEndOffset) where
+ * signedPortionBeginOffset is the offset in the encoding of the beginning of
+ * the signed portion, and signedPortionEndOffset is the offset in the encoding
+ * of the end of the signed portion. The signed portion starts from the first
+ * name component and ends just before the final name component (which is
+ * assumed to be a signature for a signed interest).
+ */
 Tlv0_1WireFormat.decodeName = function(name, decoder)
 {
   name.clear();
 
   var endOffset = decoder.readNestedTlvsStart(Tlv.Name);
-  while (decoder.getOffset() < endOffset)
-      name.append(decoder.readBlobTlv(Tlv.NameComponent));
+  var signedPortionBeginOffset = decoder.getOffset();
+  // In case there are no components, set signedPortionEndOffset arbitrarily.
+  var signedPortionEndOffset = signedPortionBeginOffset;
+
+  while (decoder.getOffset() < endOffset) {
+    signedPortionEndOffset = decoder.getOffset();
+    name.append(decoder.readBlobTlv(Tlv.NameComponent));
+  }
 
   decoder.finishNestedTlvs(endOffset);
+
+  return { signedPortionBeginOffset: signedPortionBeginOffset,
+           signedPortionEndOffset: signedPortionEndOffset };
 };
 
 /**
@@ -10686,7 +21981,7 @@ Tlv0_1WireFormat.encodeMetaInfo = function(metaInfo, encoder)
   var saveLength = encoder.getLength();
 
   // Encode backwards.
-  var finalBlockIdBuf = metaInfo.getFinalBlockID().getValue().buf();
+  var finalBlockIdBuf = metaInfo.getFinalBlockId().getValue().buf();
   if (finalBlockIdBuf != null && finalBlockIdBuf.length > 0) {
     // FinalBlockId has an inner NameComponent.
     var finalBlockIdSaveLength = encoder.getLength();
@@ -10724,17 +22019,17 @@ Tlv0_1WireFormat.decodeMetaInfo = function(metaInfo, decoder)
     (decoder.readOptionalNonNegativeIntegerTlv(Tlv.FreshnessPeriod, endOffset));
   if (decoder.peekType(Tlv.FinalBlockId, endOffset)) {
     var finalBlockIdEndOffset = decoder.readNestedTlvsStart(Tlv.FinalBlockId);
-    metaInfo.setFinalBlockID(decoder.readBlobTlv(Tlv.NameComponent));
+    metaInfo.setFinalBlockId(decoder.readBlobTlv(Tlv.NameComponent));
     decoder.finishNestedTlvs(finalBlockIdEndOffset);
   }
   else
-    metaInfo.setFinalBlockID(null);
+    metaInfo.setFinalBlockId(null);
 
   decoder.finishNestedTlvs(endOffset);
 };
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto.js":36,"../exclude.js":56,"../forwarding-flags.js":60,"../key-locator.js":62,"../meta-info.js":65,"../publisher-public-key-digest.js":68,"../sha256-with-rsa-signature.js":84,"../util/blob.js":88,"./decoding-exception.js":45,"./tlv/tlv-decoder.js":51,"./tlv/tlv-encoder.js":52,"./tlv/tlv.js":54,"./wire-format.js":55,"buffer":2}],50:[function(require,module,exports){
+},{"../crypto.js":122,"../exclude.js":147,"../forwarding-flags.js":151,"../key-locator.js":153,"../meta-info.js":156,"../publisher-public-key-digest.js":159,"../sha256-with-rsa-signature.js":178,"../util/blob.js":185,"./decoding-exception.js":131,"./tlv/tlv-decoder.js":142,"./tlv/tlv-encoder.js":143,"./tlv/tlv.js":145,"./wire-format.js":146,"buffer":3}],141:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -10747,11 +22042,11 @@ Tlv0_1WireFormat.decodeMetaInfo = function(metaInfo, decoder)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var WireFormat = require('./wire-format.js').WireFormat;
@@ -10794,7 +22089,7 @@ TlvWireFormat.get = function()
 // This module will be loaded because WireFormat loads it.
 WireFormat.setDefaultWireFormat(TlvWireFormat.get());
 
-},{"./tlv-0_1-wire-format.js":49,"./wire-format.js":55}],51:[function(require,module,exports){
+},{"./tlv-0_1-wire-format.js":140,"./wire-format.js":146}],142:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -10807,11 +22102,11 @@ WireFormat.setDefaultWireFormat(TlvWireFormat.get());
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var DecodingException = require('../decoding-exception.js').DecodingException;
@@ -10861,17 +22156,21 @@ TlvDecoder.prototype.readExtendedVarNumber = function(firstOctet)
     this.offset += 2;
   }
   else if (firstOctet == 254) {
-    result = ((this.input[this.offset] << 24) +
+    // Use abs because << 24 can set the high bit of the 32-bit int making it negative.
+    result = (Math.abs(this.input[this.offset] << 24) +
           (this.input[this.offset + 1] << 16) +
           (this.input[this.offset + 2] << 8) +
            this.input[this.offset + 3]);
     this.offset += 4;
   }
   else {
-    result = ((this.input[this.offset] << 56) +
-          (this.input[this.offset + 1] << 48) +
-          (this.input[this.offset + 2] << 40) +
-          (this.input[this.offset + 3] << 32) +
+    // Get the high byte first because JavaScript << is restricted to 32 bits.
+    // Use abs because << 24 can set the high bit of the 32-bit int making it negative.
+    var highByte = Math.abs(this.input[this.offset] << 24) +
+                           (this.input[this.offset + 1] << 16) +
+                           (this.input[this.offset + 2] << 8) +
+                            this.input[this.offset + 3];
+    result = (highByte * 0x100000000 +
           (this.input[this.offset + 4] << 24) +
           (this.input[this.offset + 5] << 16) +
           (this.input[this.offset + 6] << 8) +
@@ -10996,19 +22295,23 @@ TlvDecoder.prototype.readNonNegativeInteger = function(length)
     result = ((this.input[this.offset] << 8) +
            this.input[this.offset + 1]);
   else if (length == 4)
-    result = ((this.input[this.offset] << 24) +
+    // Use abs because << 24 can set the high bit of the 32-bit int making it negative.
+    result = (Math.abs(this.input[this.offset] << 24) +
           (this.input[this.offset + 1] << 16) +
           (this.input[this.offset + 2] << 8) +
            this.input[this.offset + 3]);
-  else if (length == 8)
-    result = ((this.input[this.offset] << 56) +
-          (this.input[this.offset + 1] << 48) +
-          (this.input[this.offset + 2] << 40) +
-          (this.input[this.offset + 3] << 32) +
-          (this.input[this.offset + 4] << 24) +
+  else if (length == 8) {
+    // Use abs because << 24 can set the high bit of the 32-bit int making it negative.
+    var highByte = Math.abs(this.input[this.offset] << 24) +
+                       (this.input[this.offset + 1] << 16) +
+                       (this.input[this.offset + 2] << 8) +
+                        this.input[this.offset + 3];
+    result = (highByte * 0x100000000 +
+          Math.abs(this.input[this.offset + 4] << 24) +
           (this.input[this.offset + 5] << 16) +
           (this.input[this.offset + 6] << 8) +
            this.input[this.offset + 7]);
+  }
   else
     throw new DecodingException("Invalid length for a TLV nonNegativeInteger");
 
@@ -11133,7 +22436,7 @@ TlvDecoder.prototype.seek = function(offset)
   this.offset = offset;
 };
 
-},{"../decoding-exception.js":45}],52:[function(require,module,exports){
+},{"../decoding-exception.js":131}],143:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -11146,14 +22449,15 @@ TlvDecoder.prototype.seek = function(offset)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var DynamicBuffer = require('../../util/dynamic-buffer.js').DynamicBuffer;
+var Tlv = require('./tlv.js').Tlv;
 
 /**
  * Create a new TlvEncoder with an initialCapacity for the encoding buffer.
@@ -11218,10 +22522,11 @@ TlvEncoder.prototype.writeVarNumber = function(varNumber)
     this.output.ensureLengthFromBack(this.length);
     var offset = this.output.array.length - this.length;
     this.output.array[offset] = 255;
-    this.output.array[offset + 1] = (varNumber >> 56) & 0xff;
-    this.output.array[offset + 2] = (varNumber >> 48) & 0xff;
-    this.output.array[offset + 3] = (varNumber >> 40) & 0xff;
-    this.output.array[offset + 4] = (varNumber >> 32) & 0xff;
+    var highBytes = Tlv.getHighBytes(varNumber);
+    this.output.array[offset + 1] = (highBytes >> 24) & 0xff;
+    this.output.array[offset + 2] = (highBytes >> 16) & 0xff;
+    this.output.array[offset + 3] = (highBytes >> 8)  & 0xff;
+    this.output.array[offset + 4] = (highBytes)       & 0xff;
     this.output.array[offset + 5] = (varNumber >> 24) & 0xff;
     this.output.array[offset + 6] = (varNumber >> 16) & 0xff;
     this.output.array[offset + 7] = (varNumber >> 8) & 0xff;
@@ -11255,7 +22560,7 @@ TlvEncoder.prototype.writeNonNegativeInteger = function(value)
   // JavaScript doesn't distinguish int from float, so round.
   value = Math.round(value);
 
-  if (value < 253) {
+  if (value <= 0xff) {
     this.length += 1;
     this.output.ensureLengthFromBack(this.length);
     this.output.array[this.output.array.length - this.length] = value & 0xff;
@@ -11280,10 +22585,11 @@ TlvEncoder.prototype.writeNonNegativeInteger = function(value)
     this.length += 8;
     this.output.ensureLengthFromBack(this.length);
     var offset = this.output.array.length - this.length;
-    this.output.array[offset]     = (value >> 56) & 0xff;
-    this.output.array[offset + 1] = (value >> 48) & 0xff;
-    this.output.array[offset + 2] = (value >> 40) & 0xff;
-    this.output.array[offset + 3] = (value >> 32) & 0xff;
+    var highBytes = Tlv.getHighBytes(value);
+    this.output.array[offset]     = (highBytes >> 24) & 0xff;
+    this.output.array[offset + 1] = (highBytes >> 16) & 0xff;
+    this.output.array[offset + 2] = (highBytes >> 8)  & 0xff;
+    this.output.array[offset + 3] = (highBytes)       & 0xff;
     this.output.array[offset + 4] = (value >> 24) & 0xff;
     this.output.array[offset + 5] = (value >> 16) & 0xff;
     this.output.array[offset + 6] = (value >> 8) & 0xff;
@@ -11362,7 +22668,7 @@ TlvEncoder.prototype.getOutput = function()
   return this.output.array.slice(this.output.array.length - this.length);
 };
 
-},{"../../util/dynamic-buffer.js":90}],53:[function(require,module,exports){
+},{"../../util/dynamic-buffer.js":187,"./tlv.js":145}],144:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2014 Regents of the University of California.
@@ -11376,11 +22682,11 @@ TlvEncoder.prototype.getOutput = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var TlvDecoder = require('./tlv-decoder.js').TlvDecoder;
@@ -11587,7 +22893,7 @@ TlvStructureDecoder.prototype.seek = function(offset)
 };
 
 }).call(this,require("buffer").Buffer)
-},{"./tlv-decoder.js":51,"buffer":2}],54:[function(require,module,exports){
+},{"./tlv-decoder.js":142,"buffer":3}],145:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -11600,11 +22906,11 @@ TlvStructureDecoder.prototype.seek = function(offset)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -11677,7 +22983,23 @@ Tlv.ControlParameters_Flags =               108;
 Tlv.ControlParameters_Strategy =            107;
 Tlv.ControlParameters_ExpirationPeriod =    109;
 
-},{}],55:[function(require,module,exports){
+/**
+ * Strip off the lower 32 bits of x and divide by 2^32, returning the "high
+ * bytes" above 32 bits.  This is necessary because JavaScript << and >> are
+ * restricted to 32 bits.
+ * (This could be a general function, but we define it here so that the
+ * Tlv encoder/decoder is self-contained.)
+ * @param {number} x
+ * @returns {number}
+ */
+Tlv.getHighBytes = function(x)
+{
+  // Don't use floor because we expect the caller to use & and >> on the result
+  // which already strip off the fraction.
+  return (x - (x % 0x100000000)) / 0x100000000;
+};
+
+},{}],146:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -11690,11 +23012,11 @@ Tlv.ControlParameters_ExpirationPeriod =    109;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -11705,6 +23027,29 @@ var WireFormat = function WireFormat() {
 };
 
 exports.WireFormat = WireFormat;
+
+/**
+ * Encode name and return the encoding.  Your derived class should override.
+ * @param {Name} name The Name to encode.
+ * @returns {Blob} A Blob containing the encoding.
+ * @throws Error This always throws an "unimplemented" error. The derived class should override.
+ */
+WireFormat.prototype.encodeName = function(name)
+{
+  throw new Error("encodeName is unimplemented in the base WireFormat class.  You should use a derived class.");
+};
+
+/**
+ * Decode input as a name and set the fields of the Name object.
+ * Your derived class should override.
+ * @param {Name} name The Name object whose fields are updated.
+ * @param {Buffer} input The buffer with the bytes to decode.
+ * @throws Error This always throws an "unimplemented" error. The derived class should override.
+ */
+WireFormat.prototype.decodeName = function(name, input)
+{
+  throw new Error("decodeName is unimplemented in the base WireFormat class.  You should use a derived class.");
+};
 
 /**
  * Encode interest and return the encoding.  Your derived class should override.
@@ -11729,6 +23074,13 @@ WireFormat.prototype.encodeInterest = function(interest)
  * Your derived class should override.
  * @param {Interest} interest The Interest object whose fields are updated.
  * @param {Buffer} input The buffer with the bytes to decode.
+ * @returns {object} An associative array with fields
+ * (signedPortionBeginOffset, signedPortionEndOffset) where
+ * signedPortionBeginOffset is the offset in the encoding of the beginning of
+ * the signed portion, and signedPortionEndOffset is the offset in the encoding
+ * of the end of the signed portion. The signed portion starts from the first
+ * name component and ends just before the final name component (which is
+ * assumed to be a signature for a signed interest).
  * @throws Error This always throws an "unimplemented" error. The derived class should override.
  */
 WireFormat.prototype.decodeInterest = function(interest, input)
@@ -11862,7 +23214,7 @@ WireFormat.getDefaultWireFormat = function()
 // to avoid problems with cycles of require.
 var TlvWireFormat = require('./tlv-wire-format.js').TlvWireFormat;
 
-},{"./tlv-wire-format.js":50}],56:[function(require,module,exports){
+},{"./tlv-wire-format.js":141}],147:[function(require,module,exports){
 /**
  * This class represents an Interest Exclude.
  * Copyright (C) 2014 Regents of the University of California.
@@ -11877,11 +23229,11 @@ var TlvWireFormat = require('./tlv-wire-format.js').TlvWireFormat;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Name = require('./name.js').Name;
@@ -12115,7 +23467,7 @@ Exclude.prototype.getChangeCount = function()
   return this.changeCount;
 };
 
-},{"./encoding/binary-xml-decoder.js":40,"./encoding/binary-xml-encoder.js":41,"./encoding/data-utils.js":44,"./name.js":66,"./util/blob.js":88,"./util/ndn-protoco-id-tags.js":93}],57:[function(require,module,exports){
+},{"./encoding/binary-xml-decoder.js":126,"./encoding/binary-xml-encoder.js":127,"./encoding/data-utils.js":130,"./name.js":157,"./util/blob.js":185,"./util/ndn-protoco-id-tags.js":190}],148:[function(require,module,exports){
 /**
  * This class represents Face Instances
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -12129,11 +23481,11 @@ Exclude.prototype.getChangeCount = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var NDNProtocolDTags = require('./util/ndn-protoco-id-tags.js').NDNProtocolDTags;
@@ -12242,7 +23594,7 @@ FaceInstance.prototype.getElementLabel = function()
 };
 
 
-},{"./publisher-public-key-digest.js":68,"./util/ndn-protoco-id-tags.js":93}],58:[function(require,module,exports){
+},{"./publisher-public-key-digest.js":159,"./util/ndn-protoco-id-tags.js":190}],149:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents the top-level object for communicating with an NDN host.
@@ -12257,11 +23609,11 @@ FaceInstance.prototype.getElementLabel = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var crypto = require('crypto');
@@ -12272,6 +23624,7 @@ var Data = require('./data.js').Data;
 var MetaInfo = require('./meta-info.js').MetaInfo;
 var ForwardingEntry = require('./forwarding-entry.js').ForwardingEntry;
 var ControlParameters = require('./control-parameters.js').ControlParameters;
+var WireFormat = require('./encoding/wire-format.js').WireFormat;
 var TlvWireFormat = require('./encoding/tlv-wire-format.js').TlvWireFormat;
 var BinaryXmlWireFormat = require('./encoding/binary-xml-wire-format.js').BinaryXmlWireFormat;
 var Tlv = require('./encoding/tlv/tlv.js').Tlv;
@@ -12415,13 +23768,17 @@ var Face = function Face(transportOrSettings, connectionInfo)
   this.commandKeyChain = null;
   this.commandCertificateName = new Name();
   this.commandInterestGenerator = new CommandInterestGenerator();
+  this.timeoutPrefix = new Name("/local/timeout");
 };
 
+exports.Face = Face;
 
 Face.UNOPEN = 0;  // the Face is created but not opened yet
 Face.OPEN_REQUESTED = 1;  // requested to connect but onopen is not called.
 Face.OPENED = 2;  // connection to the forwarder opened
 Face.CLOSED = 3;  // connection to the forwarder closed
+
+TcpTransport.importFace(Face);
 
 /**
  * If the forwarder's Unix socket file path exists, then return the file path.
@@ -12677,6 +24034,7 @@ Face.prototype.expressInterest = function(interestOrName, arg2, arg3, arg4)
 {
   // There are several overloaded versions of expressInterest, each shown inline below.
 
+  var interest;
   // expressInterest(Name name, Closure closure);                      // deprecated
   // expressInterest(Name name, Closure closure,   Interest template); // deprecated
   if (arg2 && arg2.upcall && typeof arg2.upcall == 'function') {
@@ -12700,7 +24058,6 @@ Face.prototype.expressInterest = function(interestOrName, arg2, arg3, arg4)
     return this.expressInterestWithClosure(interest, arg2);
   }
 
-  var interest;
   var onData;
   var onTimeout;
   // expressInterest(Interest interest, function onData);
@@ -12785,7 +24142,7 @@ Face.prototype.expressInterestWithClosure = function(interest, closure)
       console.log('ERROR: connectionInfo is NOT SET');
     else {
       var thisFace = this;
-      this.connectAndExecute(function() {
+      this.connectAndExecute(function() { 
         thisFace.reconnectAndExpressInterest(pendingInterestId, interest, closure);
       });
     }
@@ -12890,7 +24247,9 @@ Face.prototype.expressInterestHelper = function(pendingInterestId, interest, clo
     }
   }
 
-  this.transport.send(binaryInterest.buf());
+  // Special case: For timeoutPrefix we don't actually send the interest.
+  if (!this.timeoutPrefix.match(interest.getName()))
+    this.transport.send(binaryInterest.buf());
 };
 
 /**
@@ -12904,7 +24263,7 @@ Face.prototype.removePendingInterest = function(pendingInterestId)
 {
   if (pendingInterestId == null)
     return;
-
+  
   // Go backwards through the list so we can erase entries.
   // Remove all entries even though pendingInterestId should be unique.
   var count = 0;
@@ -12930,11 +24289,11 @@ Face.prototype.removePendingInterest = function(pendingInterestId)
 };
 
 /**
- * Set the KeyChain and certificate name used to sign command interests (e.g.
+ * Set the KeyChain and certificate name used to sign command interests (e.g. 
  * for registerPrefix).
- * @param {KeyChain} keyChain The KeyChain object for signing interests, which
- * must remain valid for the life of this Face. You must create the KeyChain
- * object and pass it in. You can create a default KeyChain for your system with
+ * @param {KeyChain} keyChain The KeyChain object for signing interests, which 
+ * must remain valid for the life of this Face. You must create the KeyChain 
+ * object and pass it in. You can create a default KeyChain for your system with 
  * the default KeyChain constructor.
  * @param {Name} certificateName The certificate name for signing interests.
  * This makes a copy of the Name. You can get the default certificate name with
@@ -12949,7 +24308,7 @@ Face.prototype.setCommandSigningInfo = function(keyChain, certificateName)
 /**
  * Set the certificate name used to sign command interest (e.g. for
  * registerPrefix), using the KeyChain that was set with setCommandSigningInfo.
- * @param {Name} certificateName The certificate name for signing interest. This
+ * @param {Name} certificateName The certificate name for signing interest. This 
  * makes a copy of the Name.
  */
 Face.prototype.setCommandCertificateName = function(certificateName)
@@ -12958,8 +24317,8 @@ Face.prototype.setCommandCertificateName = function(certificateName)
 };
 
 /**
- * Append a timestamp component and a random value component to interest's name.
- * Then use the keyChain and certificateName from setCommandSigningInfo to sign
+ * Append a timestamp component and a random value component to interest's name. 
+ * Then use the keyChain and certificateName from setCommandSigningInfo to sign 
  * the interest. If the interest lifetime is not set, this sets it.
  * @note This method is an experimental feature. See the API docs for more
  * detail at
@@ -13203,7 +24562,7 @@ Face.RegisterResponseClosure.prototype.upcall = function(kind, upcallInfo)
       if (this.onRegisterFailed)
         this.onRegisterFailed(this.prefix);
     }
-
+    
     return Closure.RESULT_OK;
   }
   if (!(kind == Closure.UPCALL_CONTENT ||
@@ -13318,9 +24677,9 @@ Face.prototype.registerPrefixHelper = function
 
 /**
  * Do the work of registerPrefix to register with NFD.
- * @param {number} registeredPrefixId The
- * RegisteredPrefix.getNextRegisteredPrefixId() which registerPrefix got so it
- * could return it to the caller. If this is 0, then don't add to
+ * @param {number} registeredPrefixId The 
+ * RegisteredPrefix.getNextRegisteredPrefixId() which registerPrefix got so it 
+ * could return it to the caller. If this is 0, then don't add to 
  * registeredPrefixTable (assuming it has already been done).
  * @param {Name} prefix
  * @param {Closure} closure
@@ -13671,6 +25030,7 @@ var NDN = function NDN(settings)
 // Use dummy functions so that the Face constructor will not try to set its own defaults.
 NDN.prototype = new Face({ getTransport: function(){}, getConnectionInfo: function(){} });
 
+exports.NDN = NDN;
 
 NDN.supported = Face.supported;
 NDN.UNOPEN = Face.UNOPEN;
@@ -13678,15 +25038,8 @@ NDN.OPEN_REQUESTED = Face.OPEN_REQUESTED;
 NDN.OPENED = Face.OPENED;
 NDN.CLOSED = Face.CLOSED;
 
-
-exports.NDN = NDN;
-
-exports.Face = Face;
-
-module.exports = exports;
-
 }).call(this,require("buffer").Buffer)
-},{"./closure.js":37,"./control-parameters.js":38,"./data.js":39,"./encoding/binary-xml-decoder.js":40,"./encoding/binary-xml-encoder.js":41,"./encoding/binary-xml-wire-format.js":43,"./encoding/data-utils.js":44,"./encoding/tlv-wire-format.js":50,"./encoding/tlv/tlv-decoder.js":51,"./encoding/tlv/tlv.js":54,"./forwarding-entry.js":59,"./forwarding-flags.js":60,"./interest.js":61,"./key-locator.js":62,"./key.js":63,"./log.js":64,"./meta-info.js":65,"./name.js":66,"./security/key-manager.js":77,"./transport/tcp-transport.js":35,"./transport/transport.js":85,"./transport/unix-transport.js":86,"./util/command-interest-generator.js":89,"./util/ndn-protoco-id-tags.js":93,"buffer":2,"crypto":8,"fs":1}],59:[function(require,module,exports){
+},{"./closure.js":123,"./control-parameters.js":124,"./data.js":125,"./encoding/binary-xml-decoder.js":126,"./encoding/binary-xml-encoder.js":127,"./encoding/binary-xml-wire-format.js":129,"./encoding/data-utils.js":130,"./encoding/tlv-wire-format.js":141,"./encoding/tlv/tlv-decoder.js":142,"./encoding/tlv/tlv.js":145,"./encoding/wire-format.js":146,"./forwarding-entry.js":150,"./forwarding-flags.js":151,"./interest.js":152,"./key-locator.js":153,"./key.js":154,"./log.js":155,"./meta-info.js":156,"./name.js":157,"./security/key-manager.js":171,"./transport/tcp-transport.js":121,"./transport/transport.js":182,"./transport/unix-transport.js":183,"./util/command-interest-generator.js":186,"./util/ndn-protoco-id-tags.js":190,"buffer":3,"crypto":9,"fs":1}],150:[function(require,module,exports){
 /**
  * This class represents Forwarding Entries
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -13700,11 +25053,11 @@ module.exports = exports;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var ForwardingFlags = require('./forwarding-flags.js').ForwardingFlags;
@@ -13783,7 +25136,7 @@ ForwardingEntry.prototype.to_ndnb = function(
 
 ForwardingEntry.prototype.getElementLabel = function() { return NDNProtocolDTags.ForwardingEntry; }
 
-},{"./forwarding-flags.js":60,"./name.js":66,"./publisher-public-key-digest.js":68,"./util/ndn-protoco-id-tags.js":93}],60:[function(require,module,exports){
+},{"./forwarding-flags.js":151,"./name.js":157,"./publisher-public-key-digest.js":159,"./util/ndn-protoco-id-tags.js":190}],151:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -13796,11 +25149,11 @@ ForwardingEntry.prototype.getElementLabel = function() { return NDNProtocolDTags
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -14005,7 +25358,7 @@ ForwardingFlags.prototype.setTap = function(value) { this.tap = value; };
  */
 ForwardingFlags.prototype.setCaptureOk = function(value) { this.captureOk = value; };
 
-},{}],61:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents Interest Objects
@@ -14021,14 +25374,15 @@ ForwardingFlags.prototype.setCaptureOk = function(value) { this.captureOk = valu
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Blob = require('./util/blob.js').Blob;
+var SignedBlob = require('./util/signed-blob.js').SignedBlob;
 var Name = require('./name.js').Name;
 var Exclude = require('./exclude.js').Exclude;
 var PublisherPublicKeyDigest = require('./publisher-public-key-digest.js').PublisherPublicKeyDigest;
@@ -14093,6 +25447,8 @@ var Interest = function Interest
       // Copy and make sure it is a Buffer.
       this.nonce = new Buffer(nonce);
   }
+
+  this.wireEncoding = new SignedBlob();
 };
 
 exports.Interest = Interest;
@@ -14267,8 +25623,9 @@ Interest.prototype.getInterestLifetimeMilliseconds = function()
 
 Interest.prototype.setName = function(name)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.name = typeof name === 'object' && name instanceof Name ?
               new Name(name) : new Name();
@@ -14276,16 +25633,18 @@ Interest.prototype.setName = function(name)
 
 Interest.prototype.setMinSuffixComponents = function(minSuffixComponents)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.minSuffixComponents = minSuffixComponents;
 };
 
 Interest.prototype.setMaxSuffixComponents = function(maxSuffixComponents)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.maxSuffixComponents = maxSuffixComponents;
 };
@@ -14298,8 +25657,9 @@ Interest.prototype.setMaxSuffixComponents = function(maxSuffixComponents)
  */
 Interest.prototype.setExclude = function(exclude)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.exclude = typeof exclude === 'object' && exclude instanceof Exclude ?
                  new Exclude(exclude) : new Exclude();
@@ -14307,8 +25667,9 @@ Interest.prototype.setExclude = function(exclude)
 
 Interest.prototype.setChildSelector = function(childSelector)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.childSelector = childSelector;
 };
@@ -14318,8 +25679,9 @@ Interest.prototype.setChildSelector = function(childSelector)
  */
 Interest.prototype.setAnswerOriginKind = function(answerOriginKind)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.answerOriginKind = answerOriginKind;
 };
@@ -14330,8 +25692,9 @@ Interest.prototype.setAnswerOriginKind = function(answerOriginKind)
  */
 Interest.prototype.setMustBeFresh = function(mustBeFresh)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   if (this.answerOriginKind == null || this.answerOriginKind < 0) {
     // It is is already the default where MustBeFresh is true.
@@ -14351,16 +25714,18 @@ Interest.prototype.setMustBeFresh = function(mustBeFresh)
 
 Interest.prototype.setScope = function(scope)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.scope = scope;
 };
 
 Interest.prototype.setInterestLifetimeMilliseconds = function(interestLifetimeMilliseconds)
 {
-  // The object has changed, so the nonce is invalid.
+  // The object has changed, so the nonce and wireEncoding are invalid.
   this.nonce = null;
+  this.wireEncoding = new SignedBlob();
 
   this.interestLifetime = interestLifetimeMilliseconds;
 };
@@ -14371,6 +25736,9 @@ Interest.prototype.setInterestLifetimeMilliseconds = function(interestLifetimeMi
  */
 Interest.prototype.setNonce = function(nonce)
 {
+  // The object has changed, so the wireEncoding is invalid.
+  this.wireEncoding = new SignedBlob();
+
   if (nonce) {
     if (typeof nonce === 'object' && nonce instanceof Blob)
       this.nonce = nonce.buf();
@@ -14424,13 +25792,17 @@ Interest.prototype.toUri = function()
  * Encode this Interest for a particular wire format.
  * @param {WireFormat} wireFormat (optional) A WireFormat object  used to encode
  * this object. If omitted, use WireFormat.getDefaultWireFormat().
- * @returns {Blob} The encoded buffer in a Blob object.
+ * @returns {SignedBlob} The encoded buffer in a SignedBlob object.
  */
 Interest.prototype.wireEncode = function(wireFormat)
 {
   wireFormat = (wireFormat || WireFormat.getDefaultWireFormat());
   var result = wireFormat.encodeInterest(this);
-  return result.encoding;
+  // TODO: Implement setDefaultWireEncoding with getChangeCount support.
+  this.wireEncoding = new SignedBlob
+    (result.encoding, result.signedPortionBeginOffset,
+     result.signedPortionEndOffset);
+  return this.wireEncoding;
 };
 
 /**
@@ -14445,7 +25817,13 @@ Interest.prototype.wireDecode = function(input, wireFormat)
   // If input is a blob, get its buf().
   var decodeBuffer = typeof input === 'object' && input instanceof Blob ?
                      input.buf() : input;
-  wireFormat.decodeInterest(this, decodeBuffer);
+  var result = wireFormat.decodeInterest(this, decodeBuffer);
+  // TODO: Implement setDefaultWireEncoding with getChangeCount support.
+  // In the Blob constructor, set copy true, but if input is already a Blob, it
+  //   won't copy.
+  this.wireEncoding = new SignedBlob
+    (new Blob(input, true), result.signedPortionBeginOffset,
+     result.signedPortionEndOffset);
 };
 
 // Since binary-xml-wire-format.js includes this file, put these at the bottom
@@ -14487,7 +25865,7 @@ Interest.prototype.decode = function(input, wireFormat)
 };
 
 }).call(this,require("buffer").Buffer)
-},{"./encoding/binary-xml-wire-format.js":43,"./encoding/wire-format.js":55,"./exclude.js":56,"./key-locator.js":62,"./name.js":66,"./publisher-public-key-digest.js":68,"./util/blob.js":88,"buffer":2}],62:[function(require,module,exports){
+},{"./encoding/binary-xml-wire-format.js":129,"./encoding/wire-format.js":146,"./exclude.js":147,"./key-locator.js":153,"./name.js":157,"./publisher-public-key-digest.js":159,"./util/blob.js":185,"./util/signed-blob.js":192,"buffer":3}],153:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents an NDN KeyLocator object.
@@ -14503,11 +25881,11 @@ Interest.prototype.decode = function(input, wireFormat)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Blob = require('./util/blob.js').Blob;
@@ -14803,7 +26181,7 @@ KeyName.prototype.getElementLabel = function() { return NDNProtocolDTags.KeyName
 
 
 }).call(this,require("buffer").Buffer)
-},{"./log.js":64,"./name.js":66,"./publisher-id.js":67,"./util/blob.js":88,"./util/ndn-protoco-id-tags.js":93,"buffer":2}],63:[function(require,module,exports){
+},{"./log.js":155,"./name.js":157,"./publisher-id.js":158,"./util/blob.js":185,"./util/ndn-protoco-id-tags.js":190,"buffer":3}],154:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents Key Objects
@@ -14818,11 +26196,11 @@ KeyName.prototype.getElementLabel = function() { return NDNProtocolDTags.KeyName
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var DataUtils = require('./encoding/data-utils.js').DataUtils;
@@ -14956,7 +26334,7 @@ Key.createFromPEM = function(obj)
 };
 
 }).call(this,require("buffer").Buffer)
-},{"./encoding/data-utils.js":44,"./log.js":64,"buffer":2,"crypto":8}],64:[function(require,module,exports){
+},{"./encoding/data-utils.js":130,"./log.js":155,"buffer":3,"crypto":9}],155:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -14969,11 +26347,11 @@ Key.createFromPEM = function(obj)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -14991,7 +26369,7 @@ exports.Log = Log;
  */
 Log.LOG = 0;
 
-},{}],65:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents an NDN Data MetaInfo object.
@@ -15007,11 +26385,11 @@ Log.LOG = 0;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var BinaryXMLEncoder = require('./encoding/binary-xml-encoder.js').BinaryXMLEncoder;
@@ -15044,7 +26422,7 @@ exports.ContentType = ContentType;
  * Create a new MetaInfo with the optional values.
  * @constructor
  */
-var MetaInfo = function MetaInfo(publisherOrMetaInfo, timestamp, type, locator, freshnessSeconds, finalBlockID, skipSetFields)
+var MetaInfo = function MetaInfo(publisherOrMetaInfo, timestamp, type, locator, freshnessSeconds, finalBlockId, skipSetFields)
 {
   if (typeof publisherOrMetaInfo === 'object' &&
       publisherOrMetaInfo instanceof MetaInfo) {
@@ -15064,7 +26442,7 @@ var MetaInfo = function MetaInfo(publisherOrMetaInfo, timestamp, type, locator, 
     this.type = type == null || type < 0 ? ContentType.BLOB : type; // ContentType
     this.locator = locator == null ? new KeyLocator() : new KeyLocator(locator);
     this.freshnessSeconds = freshnessSeconds; // Integer
-    this.finalBlockID = finalBlockID; //byte array
+    this.finalBlockID = finalBlockId; //byte array
 
     if (!skipSetFields)
       this.setFields();
@@ -15104,15 +26482,23 @@ MetaInfo.prototype.getFreshnessPeriod = function()
  * @returns {Name.Component} The final block ID as a Name.Component. If the
  * Name.Component getValue().size() is 0, then the final block ID is not specified.
  */
-MetaInfo.prototype.getFinalBlockID = function()
+MetaInfo.prototype.getFinalBlockId = function()
 {
   // For backwards-compatibility, leave this.finalBlockID as a Buffer but return a Name.Component.
   return new Name.Component(new Blob(this.finalBlockID, true));
 };
 
 /**
- * @deprecated Use getFinalBlockID. This method returns a Buffer which is the former
- * behavior of getFinalBlockID, and should only be used while updating your code.
+ * @deprecated Use getFinalBlockId.
+ */
+MetaInfo.prototype.getFinalBlockID = function()
+{
+  return this.getFinalBlockId();
+};
+
+/**
+ * @deprecated Use getFinalBlockId. This method returns a Buffer which is the former
+ * behavior of getFinalBlockId, and should only be used while updating your code.
  */
 MetaInfo.prototype.getFinalBlockIDAsBuffer = function()
 {
@@ -15146,18 +26532,26 @@ MetaInfo.prototype.setFreshnessPeriod = function(freshnessPeriod)
   ++this.changeCount;
 };
 
-MetaInfo.prototype.setFinalBlockID = function(finalBlockID)
+MetaInfo.prototype.setFinalBlockId = function(finalBlockId)
 {
   // TODO: finalBlockID should be a Name.Component, not Buffer.
-  if (finalBlockID == null)
+  if (finalBlockId == null)
     this.finalBlockID = null;
-  else if (typeof finalBlockID === 'object' && finalBlockID instanceof Blob)
-    this.finalBlockID = finalBlockID.buf();
-  else if (typeof finalBlockID === 'object' && finalBlockID instanceof Name.Component)
-    this.finalBlockID = finalBlockID.getValue().buf();
+  else if (typeof finalBlockId === 'object' && finalBlockId instanceof Blob)
+    this.finalBlockID = finalBlockId.buf();
+  else if (typeof finalBlockId === 'object' && finalBlockId instanceof Name.Component)
+    this.finalBlockID = finalBlockId.getValue().buf();
   else
-    this.finalBlockID = new Buffer(finalBlockID);
+    this.finalBlockID = new Buffer(finalBlockId);
   ++this.changeCount;
+};
+
+/**
+ * @deprecated Use setFinalBlockId.
+ */
+MetaInfo.prototype.setFinalBlockID = function(finalBlockId)
+{
+  this.setFinalBlockId(finalBlockId);
 };
 
 MetaInfo.prototype.setFields = function()
@@ -15311,10 +26705,10 @@ MetaInfo.prototype.getChangeCount = function()
 /**
  * @deprecated Use new MetaInfo.
  */
-var SignedInfo = function SignedInfo(publisherOrMetaInfo, timestamp, type, locator, freshnessSeconds, finalBlockID)
+var SignedInfo = function SignedInfo(publisherOrMetaInfo, timestamp, type, locator, freshnessSeconds, finalBlockId)
 {
   // Call the base constructor.
-  MetaInfo.call(this, publisherOrMetaInfo, timestamp, type, locator, freshnessSeconds, finalBlockID);
+  MetaInfo.call(this, publisherOrMetaInfo, timestamp, type, locator, freshnessSeconds, finalBlockId);
 }
 
 // Set skipSetFields true since we only need the prototype functions.
@@ -15323,7 +26717,7 @@ SignedInfo.prototype = new MetaInfo(null, null, null, null, null, null, true);
 exports.SignedInfo = SignedInfo;
 
 }).call(this,require("buffer").Buffer)
-},{"./encoding/binary-xml-decoder.js":40,"./encoding/binary-xml-encoder.js":41,"./key-locator.js":62,"./log.js":64,"./name.js":66,"./publisher-public-key-digest.js":68,"./security/key-manager.js":77,"./util/blob.js":88,"./util/ndn-protoco-id-tags.js":93,"./util/ndn-time.js":94,"buffer":2}],66:[function(require,module,exports){
+},{"./encoding/binary-xml-decoder.js":126,"./encoding/binary-xml-encoder.js":127,"./key-locator.js":153,"./log.js":155,"./name.js":157,"./publisher-public-key-digest.js":159,"./security/key-manager.js":171,"./util/blob.js":185,"./util/ndn-protoco-id-tags.js":190,"./util/ndn-time.js":191,"buffer":3}],157:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents a Name as an array of components where each is a byte array.
@@ -15338,11 +26732,11 @@ exports.SignedInfo = SignedInfo;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Blob = require('./util/blob.js').Blob;
@@ -15405,11 +26799,10 @@ Name.Component = function NameComponent(value)
   }
   else if (Buffer.isBuffer(value))
     this.value = new Buffer(value);
-  else if (typeof value === 'object' && typeof ArrayBuffer !== 'undefined' &&  value instanceof ArrayBuffer) {
-    // Make a copy.  Don't use ArrayBuffer.slice since it isn't always supported.
-    this.value = new Buffer(new ArrayBuffer(value.byteLength));
-    this.value.set(new Buffer(value));
-  }
+  else if (typeof value === 'object' && typeof ArrayBuffer !== 'undefined' &&  value instanceof ArrayBuffer)
+    // Make a copy.  Turn the value into a Uint8Array since the Buffer
+    //   constructor doesn't take an ArrayBuffer.
+    this.value = new Buffer(new Uint8Array(value));
   else if (typeof value === 'object')
     // Assume value is a byte array.  We can't check instanceof Array because
     //   this doesn't work in JavaScript if the array comes from a different module.
@@ -15474,8 +26867,9 @@ Name.Component.prototype.toNumberWithMarker = function(marker)
 };
 
 /**
- * Interpret this name component as a segment number according to NDN name
- * conventions (a network-ordered number where the first byte is the marker 0x00).
+ * Interpret this name component as a segment number according to NDN naming
+ * conventions for "Segment number" (marker 0x00).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
  * @returns {number} The integer segment number.
  * @throws Error If the first byte of the component is not the expected marker.
  */
@@ -15485,10 +26879,22 @@ Name.Component.prototype.toSegment = function()
 };
 
 /**
- * Interpret this name component as a version number according to NDN name 
- * conventions (a network-ordered number where the first byte is the marker 0xFD).  
- * Note that this returns the exact number from the component without converting 
- * it to a time representation.
+ * Interpret this name component as a segment byte offset according to NDN
+ * naming conventions for segment "Byte offset" (marker 0xFB).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
+ * @returns The integer segment byte offset.
+ * @throws Error If the first byte of the component is not the expected marker.
+ */
+Name.Component.prototype.toSegmentOffset = function()
+{
+  return this.toNumberWithMarker(0xFB);
+};
+
+/**
+ * Interpret this name component as a version number  according to NDN naming
+ * conventions for "Versioning" (marker 0xFD). Note that this returns
+ * the exact number from the component without converting it to a time
+ * representation.
  * @returns {number} The integer version number.
  * @throws Error If the first byte of the component is not the expected marker.
  */
@@ -15498,22 +26904,57 @@ Name.Component.prototype.toVersion = function()
 };
 
 /**
+ * Interpret this name component as a timestamp  according to NDN naming
+ * conventions for "Timestamp" (marker 0xFC).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
+ * @returns The number of microseconds since the UNIX epoch (Thursday,
+ * 1 January 1970) not counting leap seconds.
+ * @throws Error If the first byte of the component is not the expected marker.
+ */
+Name.Component.prototype.toTimestamp = function()
+{
+  return this.toNumberWithMarker(0xFC);
+};
+
+/**
+ * Interpret this name component as a sequence number according to NDN naming
+ * conventions for "Sequencing" (marker 0xFE).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
+ * @returns The integer sequence number.
+ * @throws Error If the first byte of the component is not the expected marker.
+ */
+Name.Component.prototype.toSequenceNumber = function()
+{
+  return this.toNumberWithMarker(0xFE);
+};
+
+/**
+ * Create a component whose value is the nonNegativeInteger encoding of the
+ * number.
+ * @param {number} number
+ * @returns {Name.Component}
+ */
+Name.Component.fromNumber = function(number)
+{
+  var encoder = new TlvEncoder(8);
+  encoder.writeNonNegativeInteger(number);
+  return new Name.Component(new Blob(encoder.getOutput(), false));
+};
+
+/**
  * Create a component whose value is the marker appended with the 
- * network-ordered encoding of the number. Note: if the number is zero, no bytes 
- * are used for the number - the result will have only the marker.
+ * nonNegativeInteger encoding of the number.
  * @param {number} number
  * @param {number} marker
  * @returns {Name.Component}
  */
 Name.Component.fromNumberWithMarker = function(number, marker)
 {
-  var bigEndian = DataUtils.nonNegativeIntToBigEndian(number);
-  // Put the marker byte in front.
-  var value = new Buffer(bigEndian.length + 1);
-  value[0] = marker;
-  bigEndian.copy(value, 1);
-
-  return new Name.Component(value);
+  var encoder = new TlvEncoder(9);
+  // Encode backwards.
+  encoder.writeNonNegativeInteger(number);
+  encoder.writeNonNegativeInteger(marker);
+  return new Name.Component(new Blob(encoder.getOutput(), false));
 };
 
 /**
@@ -15637,14 +27078,22 @@ Name.prototype.set = function(uri)
 Name.prototype.from_ndnb = function(/*XMLDecoder*/ decoder)
 {
   decoder.readElementStartDTag(this.getElementLabel());
+  var signedPortionBeginOffset = decoder.offset;
+  // In case there are no components, set signedPortionEndOffset arbitrarily.
+  var signedPortionEndOffset = signedPortionBeginOffset;
 
   this.components = [];
 
-  while (decoder.peekDTag(NDNProtocolDTags.Component))
+  while (decoder.peekDTag(NDNProtocolDTags.Component)) {
+    signedPortionEndOffset = decoder.offset;
     this.append(decoder.readBinaryDTagElement(NDNProtocolDTags.Component));
+  }
 
   decoder.readElementClose();
   ++this.changeCount;
+
+  return { signedPortionBeginOffset: signedPortionBeginOffset,
+           signedPortionEndOffset: signedPortionEndOffset };
 };
 
 /**
@@ -15763,7 +27212,9 @@ Name.prototype.to_uri = function()
 };
 
 /**
- * Append a component with the encoded segment number.
+ * Append a component with the encoded segment number according to NDN
+ * naming conventions for "Segment number" (marker 0x00).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
  * @param {number} segment The segment number.
  * @returns {Name} This name so that you can chain calls to append.
  */
@@ -15773,15 +27224,53 @@ Name.prototype.appendSegment = function(segment)
 };
 
 /**
- * Append a component with the encoded version number.
- * Note that this encodes the exact value of version without converting from a
- * time representation.
+ * Append a component with the encoded segment byte offset according to NDN
+ * naming conventions for segment "Byte offset" (marker 0xFB).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
+ * @param segmentOffset The segment byte offset.
+ * @returns This name so that you can chain calls to append.
+ */
+Name.prototype.appendSegmentOffset = function(segmentOffset)
+{
+  return this.append(Name.Component.fromNumberWithMarker(segmentOffset, 0xFB));
+};
+
+/**
+ * Append a component with the encoded version number according to NDN
+ * naming conventions for "Versioning" (marker 0xFD).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
+ * Note that this encodes the exact value of version without converting from a time representation.
  * @param {number} version The version number.
  * @returns {Name} This name so that you can chain calls to append.
  */
 Name.prototype.appendVersion = function(version)
 {
-  return this.append(Name.Component.fromNumberWithMarker(segment, 0xFD));
+  return this.append(Name.Component.fromNumberWithMarker(version, 0xFD));
+};
+
+/**
+ * Append a component with the encoded timestamp according to NDN naming
+ * conventions for "Timestamp" (marker 0xFC).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
+ * @param timestamp The number of microseconds since the UNIX epoch (Thursday,
+ * 1 January 1970) not counting leap seconds.
+ * @returns This name so that you can chain calls to append.
+ */
+Name.prototype.appendTimestamp = function(timestamp)
+{
+  return this.append(Name.Component.fromNumberWithMarker(timestamp, 0xFC));
+};
+
+/**
+ * Append a component with the encoded sequence number according to NDN naming
+ * conventions for "Sequencing" (marker 0xFE).
+ * http://named-data.net/doc/tech-memos/naming-conventions.pdf
+ * @param sequenceNumber The sequence number.
+ * @returns This name so that you can chain calls to append.
+ */
+Name.prototype.appendSequenceNumber = function(sequenceNumber)
+{
+  return this.append(Name.Component.fromNumberWithMarker(sequenceNumber, 0xFE));
 };
 
 /**
@@ -15794,13 +27283,18 @@ Name.prototype.addSegment = function(number)
 
 /**
  * Get a new name, constructed as a subset of components.
- * @param {number} iStartComponent The index if the first component to get.
+ * @param {number} iStartComponent The index if the first component to get. If
+ * iStartComponent is -N then return return components starting from
+ * name.size() - N.
  * @param {number} (optional) nComponents The number of components starting at iStartComponent.  If omitted,
  * return components starting at iStartComponent until the end of the name.
  * @returns {Name} A new name.
  */
 Name.prototype.getSubName = function(iStartComponent, nComponents)
 {
+  if (iStartComponent < 0)
+    iStartComponent = this.components.length - (-iStartComponent);
+
   if (nComponents == undefined)
     nComponents = this.components.length - iStartComponent;
 
@@ -15903,6 +27397,33 @@ Name.prototype.indexOfFileName = function()
   }
 
   return -1;
+};
+
+/**
+ * Encode this Name for a particular wire format.
+ * @param {WireFormat} wireFormat (optional) A WireFormat object  used to encode
+ * this object. If omitted, use WireFormat.getDefaultWireFormat().
+ * @returns {Blob} The encoded buffer in a Blob object.
+ */
+Name.prototype.wireEncode = function(wireFormat)
+{
+  wireFormat = (wireFormat || WireFormat.getDefaultWireFormat());
+  return wireFormat.encodeName(this);
+};
+
+/**
+ * Decode the input using a particular wire format and update this Name.
+ * @param {Blob|Buffer} input The buffer with the bytes to decode.
+ * @param {WireFormat} wireFormat (optional) A WireFormat object used to decode
+ * this object. If omitted, use WireFormat.getDefaultWireFormat().
+ */
+Name.prototype.wireDecode = function(input, wireFormat)
+{
+  wireFormat = (wireFormat || WireFormat.getDefaultWireFormat());
+  // If input is a blob, get its buf().
+  var decodeBuffer = typeof input === 'object' && input instanceof Blob ?
+                     input.buf() : input;
+  wireFormat.decodeName(this, decodeBuffer);
 };
 
 /**
@@ -16122,8 +27643,12 @@ Name.prototype.getChangeCount = function()
   return this.changeCount;
 };
 
+// Put these requires at the bottom to avoid circular references.
+var TlvEncoder = require('./encoding/tlv/tlv-encoder.js').TlvEncoder;
+var WireFormat = require('./encoding/wire-format.js').WireFormat;
+
 }).call(this,require("buffer").Buffer)
-},{"./encoding/binary-xml-decoder.js":40,"./encoding/binary-xml-encoder.js":41,"./encoding/data-utils.js":44,"./log.js":64,"./util/blob.js":88,"./util/ndn-protoco-id-tags.js":93,"buffer":2}],67:[function(require,module,exports){
+},{"./encoding/binary-xml-decoder.js":126,"./encoding/binary-xml-encoder.js":127,"./encoding/data-utils.js":130,"./encoding/tlv/tlv-encoder.js":143,"./encoding/wire-format.js":146,"./log.js":155,"./util/blob.js":185,"./util/ndn-protoco-id-tags.js":190,"buffer":3}],158:[function(require,module,exports){
 /**
  * This class represents Publisher and PublisherType Objects
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -16137,11 +27662,11 @@ Name.prototype.getChangeCount = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var NDNProtocolDTags = require('./util/ndn-protoco-id-tags.js').NDNProtocolDTags;
@@ -16250,7 +27775,7 @@ PublisherID.prototype.getChangeCount = function()
   return this.changeCount;
 };
 
-},{"./encoding/decoding-exception.js":45,"./util/ndn-protoco-id-tags.js":93}],68:[function(require,module,exports){
+},{"./encoding/decoding-exception.js":131,"./util/ndn-protoco-id-tags.js":190}],159:[function(require,module,exports){
 /**
  * This class represents PublisherPublicKeyDigest Objects
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -16264,11 +27789,11 @@ PublisherID.prototype.getChangeCount = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var NDNProtocolDTags = require('./util/ndn-protoco-id-tags.js').NDNProtocolDTags;
@@ -16333,7 +27858,7 @@ PublisherPublicKeyDigest.prototype.getChangeCount = function()
   return this.changeCount;
 };
 
-},{"./log.js":64,"./util/ndn-protoco-id-tags.js":93}],69:[function(require,module,exports){
+},{"./log.js":155,"./util/ndn-protoco-id-tags.js":190}],160:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -16347,18 +27872,531 @@ PublisherPublicKeyDigest.prototype.getChangeCount = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
-var IdentityCertificate = function IdentityCertificate()
+var DerNode = require('../../encoding/der/der-node.js').DerNode;
+
+/**
+ * A CertificateExtension represents the Extension entry in a certificate.
+ * Create a new CertificateExtension.
+ * @param {string|OID} oid The oid of subject description entry.
+ * @param {boolean} isCritical If true, the extension must be handled.
+ * @param {Blob} value The extension value.
+ */
+var CertificateExtension = function CertificateExtension(oid, isCritical, value)
 {
+  if (typeof oid === 'string')
+    this.extensionId = new OID(oid);
+  else
+    // Assume oid is already an OID.
+    this.extensionId = oid;
+
+  this.isCritical = isCritical;
+  this.extensionValue = value;
 };
 
+exports.CertificateExtension = CertificateExtension;
+
+/**
+ * Encode the object into a DER syntax tree.
+ * @returns {DerNode} The encoded DER syntax tree.
+ */
+CertificateExtension.prototype.toDer = function()
+{
+  var root = new DerNode.DerSequence();
+
+  var extensionId = new DerNode.DerOid(this.extensionId);
+  var isCritical = new DerNode.DerBoolean(this.isCritical);
+  var extensionValue = new DerNode.DerOctetString(this.extensionValue.buf());
+
+  root.addChild(extensionId);
+  root.addChild(isCritical);
+  root.addChild(extensionValue);
+
+  root.getSize();
+
+  return root;
+};
+
+CertificateExtension.prototype.toDerBlob = function()
+{
+  return this.toDer().encode();
+};
+
+CertificateExtension.prototype.getOid = function()
+{
+  return this.extensionId;
+};
+
+CertificateExtension.prototype.getIsCritical = function()
+{
+  return this.isCritical;
+};
+
+CertificateExtension.prototype.getValue = function()
+{
+  return this.extensionValue;
+};
+
+},{"../../encoding/der/der-node.js":135}],161:[function(require,module,exports){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ * From ndn-cxx security by Yingdi Yu <yingdi@cs.ucla.edu>.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+var Blob = require('../../util/blob.js').Blob;
+var OID = require('../../encoding/oid.js').OID;
+var DerNode = require('../../encoding/der/der-node.js').DerNode;
+
+/**
+ * A CertificateSubjectDescription represents the SubjectDescription entry in a
+ * Certificate.
+ * Create a new CertificateSubjectDescription.
+ * @param {string|OID} oid The oid of the subject description entry.
+ * @param {string} value The value of the subject description entry.
+ */
+var CertificateSubjectDescription = function CertificateSubjectDescription
+  (oid, value)
+{
+  if (typeof oid === 'string')
+    this.oid = new OID(oid);
+  else
+    // Assume oid is already an OID.
+    this.oid = oid;
+
+  this.value = value;
+};
+
+exports.CertificateSubjectDescription = CertificateSubjectDescription;
+
+/**
+ * Encode the object into a DER syntax tree.
+ * @returns {DerNode} The encoded DER syntax tree.
+ */
+CertificateSubjectDescription.prototype.toDer = function()
+{
+  var root = new DerNode.DerSequence();
+
+  var oid = new DerNode.DerOid(this.oid);
+  // Use Blob to convert the String to a ByteBuffer.
+  var value = new DerNode.DerPrintableString(new Blob(this.value).buf());
+
+  root.addChild(oid);
+  root.addChild(value);
+
+  return root;
+};
+
+CertificateSubjectDescription.prototype.getOidString = function()
+{
+  return this.oid.toString();
+};
+
+CertificateSubjectDescription.prototype.getValue = function()
+{
+  return this.value;
+};
+
+},{"../../encoding/der/der-node.js":135,"../../encoding/oid.js":138,"../../util/blob.js":185}],162:[function(require,module,exports){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ * From ndn-cxx security by Yingdi Yu <yingdi@cs.ucla.edu>.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+var Data = require('../../data.js').Data;
+var ContentType = require('../../meta-info.js').ContentType;
+var DerNode = require('../../encoding/der/der-node.js').DerNode;
+var KeyType = require('../../security/security-types.js').KeyType;
+var PublicKey = require('./public-key.js').PublicKey;
+var CertificateSubjectDescription = require('./certificate-subject-description.js').CertificateSubjectDescription;
+var CertificateExtension = require('./certificate-extension.js').CertificateExtension;
+
+/**
+ * Create a Certificate from the content in the data packet (if not omitted).
+ * @param {Data} data (optional) The data packet with the content to decode.
+ * If omitted, create a Certificate with default values and the Data content
+ * is empty.
+ */
+var Certificate = function Certificate(data)
+{
+  // Call the base constructor.
+  if (data != undefined)
+    Data.call(this, data);
+  else
+    Data.call(this);
+
+  this.subjectDescriptionList = [];  // of CertificateSubjectDescription
+  this.extensionList = [];           // of CertificateExtension
+  this.notBefore = Number.MAX_VALUE; // MillisecondsSince1970
+  this.notAfter = -Number.MAX_VALUE; // MillisecondsSince1970
+  this.key = new PublicKey();
+
+  if (data != undefined)
+    this.decode();
+};
+Certificate.prototype = new Data();
+Certificate.prototype.name = "Certificate";
+
+exports.Certificate = Certificate;
+
+/**
+ * Encode the contents of the certificate in DER format and set the Content
+ * and MetaInfo fields.
+ */
+Certificate.prototype.encode = function()
+{
+  var root = this.toDer();
+  this.setContent(root.encode());
+  this.getMetaInfo().setType(ContentType.KEY);
+};
+
+/**
+ * Add a subject description.
+ * @param {CertificateSubjectDescription} description The description to be added.
+ */
+Certificate.prototype.addSubjectDescription = function(description)
+{
+  this.subjectDescriptionList.push(description);
+};
+
+/**
+ * Get the subject description list.
+ * @returns {Array<CertificateSubjectDescription>} The subject description list.
+ */
+Certificate.prototype.getSubjectDescriptionList = function()
+{
+  return this.subjectDescriptionList;
+};
+
+/**
+ * Add a certificate extension.
+ * @param {CertificateSubjectDescription} extension The extension to be added.
+ */
+Certificate.prototype.addExtension = function(extension)
+{
+  this.extensionList.push(extension);
+};
+
+/**
+ * Get the certificate extension list.
+ * @returns {Array<CertificateExtension>} The extension list.
+ */
+Certificate.prototype.getExtensionList = function()
+{
+  return this.extensionList;
+};
+
+Certificate.prototype.setNotBefore = function(notBefore)
+{
+  this.notBefore = notBefore;
+};
+
+Certificate.prototype.getNotBefore = function()
+{
+  return this.notBefore;
+};
+
+Certificate.prototype.setNotAfter = function(notAfter)
+{
+  this.notAfter = notAfter;
+};
+
+Certificate.prototype.getNotAfter = function()
+{
+  return this.notAfter;
+};
+
+Certificate.prototype.setPublicKeyInfo = function(key)
+{
+  this.key = key;
+};
+
+Certificate.prototype.getPublicKeyInfo = function()
+{
+  return this.key;
+};
+
+/**
+ * Check if the certificate is valid.
+ * @returns {Boolean} True if the current time is earlier than notBefore.
+ */
+Certificate.prototype.isTooEarly = function()
+{
+  var now = new Date().getTime();
+  return now < this.notBefore;
+};
+
+/**
+ * Check if the certificate is valid.
+ * @returns {Boolean} True if the current time is later than notAfter.
+ */
+Certificate.prototype.isTooLate = function()
+{
+  var now = new Date().getTime();
+  return now > this.notAfter;
+};
+
+/**
+ * Encode the certificate fields in DER format.
+ * @returns {DerSequence} The DER encoded contents of the certificate.
+ */
+Certificate.prototype.toDer = function()
+{
+  var root = new DerNode.DerSequence();
+  var validity = new DerNode.DerSequence();
+  var notBefore = new DerNode.DerGeneralizedTime(this.notBefore);
+  var notAfter = new DerNode.DerGeneralizedTime(this.notAfter);
+
+  validity.addChild(notBefore);
+  validity.addChild(notAfter);
+
+  root.addChild(validity);
+
+  var subjectList = new DerNode.DerSequence();
+  for (var i = 0; i < this.subjectDescriptionList.length; ++i)
+    subjectList.addChild(this.subjectDescriptionList[i].toDer());
+
+  root.addChild(subjectList);
+  root.addChild(this.key.toDer());
+
+  if (this.extensionList.length > 0) {
+    var extensionList = new DerNode.DerSequence();
+    for (var i = 0; i < this.extensionList.length; ++i)
+      subjectList.addChild(this.extensionList[i].toDer());
+    root.addChild(extensionList);
+  }
+
+  return root;
+};
+
+/**
+ * Populate the fields by the decoding DER data from the Content.
+ */
+Certificate.prototype.decode = function()
+{
+  var root = DerNode.parse(this.getContent().buf());
+
+  // We need to ensure that there are:
+  //   validity (notBefore, notAfter)
+  //   subject list
+  //   public key
+  //   (optional) extension list
+
+  var rootChildren = root.getChildren();
+  // 1st: validity info
+  var validityChildren = rootChildren[0].getChildren();
+  this.notBefore = validityChildren[0].toVal();
+  this.notAfter = validityChildren[1].toVal();
+
+  // 2nd: subjectList
+  var subjectChildren = rootChildren[1].getChildren();
+  for (var i = 0; i < subjectChildren.length; ++i) {
+    var sd = subjectChildren[i];
+    var descriptionChildren = sd.getChildren();
+    var oidStr = descriptionChildren[0].toVal();
+    var value = descriptionChildren[1].toVal().buf().toString('binary');
+
+    this.addSubjectDescription(new CertificateSubjectDescription(oidStr, value));
+  }
+
+  // 3rd: public key
+  var publicKeyInfo = rootChildren[2].encode();
+  // TODO: Handle key types other than RSA.
+  this.key =  new PublicKey(KeyType.RSA, publicKeyInfo);
+
+  if (rootChildren.length > 3) {
+    var extensionChildren = rootChildren[3].getChildren();
+    for (var i = 0; i < extensionChildren.size(); ++i) {
+      var extInfo = extensionChildren[i];
+
+      var children = extInfo.getChildren();
+      var oidStr = children[0].toVal();
+      var isCritical = children[1].toVal();
+      var value = children[2].encode();
+      this.addExtension(new CertificateExtension(oidStr, isCritical, value));
+    }
+  }
+};
+
+Certificate.prototype.toString = function()
+{
+  var s = "Certificate name:\n";
+  s += "  " + this.getName().toUri() + "\n";
+  s += "Validity:\n";
+
+  var notBeforeStr = Certificate.toIsoString(Math.round(this.notBefore));
+  var notAfterStr = Certificate.toIsoString(Math.round(this.notAfter));
+
+  s += "  NotBefore: " + notBeforeStr + "\n";
+  s += "  NotAfter: " + notAfterStr + "\n";
+  for (var i = 0; i < this.subjectDescriptionList.length; ++i) {
+    var sd = this.subjectDescriptionList[i];
+    s += "Subject Description:\n";
+    s += "  " + sd.getOidString() + ": " + sd.getValue() + "\n";
+  }
+
+  s += "Public key bits:\n";
+  var keyDer = this.key.getKeyDer();
+  var encodedKey = keyDer.buf().toString('base64');
+  for (var i = 0; i < encodedKey.length; i += 64)
+    s += encodedKey.substring(i, Math.min(i + 64, encodedKey.length)) + "\n";
+
+  if (this.extensionList.length > 0) {
+    s += "Extensions:\n";
+    for (var i = 0; i < this.extensionList.length; ++i) {
+      var ext = this.extensionList[i];
+      s += "  OID: " + ext.getOid() + "\n";
+      s += "  Is critical: " + (ext.getIsCritical() ? 'Y' : 'N') + "\n";
+
+      s += "  Value: " + ext.getValue().toHex() + "\n" ;
+    }
+  }
+
+  return s;
+};
+
+/**
+ * Convert a UNIX timestamp to ISO time representation with the "T" in the middle.
+ * @param {type} msSince1970 Timestamp as milliseconds since Jan 1, 1970.
+ * @returns {string} The string representation.
+ */
+Certificate.toIsoString = function(msSince1970)
+{
+  var utcTime = new Date(Math.round(msSince1970));
+  return utcTime.getUTCFullYear() +
+         Certificate.to2DigitString(utcTime.getUTCMonth() + 1) +
+         Certificate.to2DigitString(utcTime.getUTCDate()) +
+         "T" +
+         Certificate.to2DigitString(utcTime.getUTCHours()) +
+         Certificate.to2DigitString(utcTime.getUTCMinutes()) +
+         Certificate.to2DigitString(utcTime.getUTCSeconds());
+};
+
+/**
+ * A private method to zero pad an integer to 2 digits.
+ * @param {number} x The number to pad.  Assume it is a non-negative integer.
+ * @returns {string} The padded string.
+ */
+Certificate.to2DigitString = function(x)
+{
+  var result = x.toString();
+  return result.length === 1 ? "0" + result : result;
+};
+
+},{"../../data.js":125,"../../encoding/der/der-node.js":135,"../../meta-info.js":156,"../../security/security-types.js":177,"./certificate-extension.js":160,"./certificate-subject-description.js":161,"./public-key.js":164}],163:[function(require,module,exports){
+/**
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
+ * From ndn-cxx security by Yingdi Yu <yingdi@cs.ucla.edu>.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+var Data = require('../../data.js').Data;
+var Name = require('../../name.js').Name;
+var SecurityException = require('../../security//security-exception.js').SecurityException;
+var Certificate = require('./certificate.js').Certificate;
+
+var IdentityCertificate = function IdentityCertificate(data)
+{
+  // Call the base constructor.
+  if (data != undefined)
+    // This works if data is Data or IdentityCertificate.
+    Certificate.call(this, data);
+  else
+    Certificate.call(this);
+
+  this.publicKeyName = new Name();
+
+  if (data instanceof IdentityCertificate) {
+    // The copy constructor.
+    this.publicKeyName = new Name(data.publicKeyName);
+  }
+  else if (data instanceof Data) {
+    if (!IdentityCertificate.isCorrectName(data.getName()))
+      throw new SecurityException(new Error("Wrong Identity Certificate Name!"));
+
+    this.setPublicKeyName();
+  }
+};
+IdentityCertificate.prototype = new Certificate();
+IdentityCertificate.prototype.name = "IdentityCertificate";
+
 exports.IdentityCertificate = IdentityCertificate;
+
+/**
+ * Override the base class method to check that the name is a valid identity 
+ * certificate name.
+ * @param {Name} name The identity certificate name which is copied.
+ * @returns {Data} This Data so that you can chain calls to update values.
+ */
+IdentityCertificate.prototype.setName = function(name)
+{
+  if (!IdentityCertificate.isCorrectName(name))
+    throw new SecurityException(new Error("Wrong Identity Certificate Name!"));
+
+  // Call the super class method.
+  Certificate.prototype.setName.call(this, name);
+  this.setPublicKeyName();
+  return this;
+};
+
+IdentityCertificate.prototype.getPublicKeyName = function()
+{
+  return this.publicKeyName;
+};
+
+IdentityCertificate.isIdentityCertificate = function(certificate)
+{
+  return IdentityCertificate.isCorrectName(certificate.getName());
+};
 
 /**
  * Get the public key name from the full certificate name.
@@ -16386,7 +28424,39 @@ IdentityCertificate.certificateNameToPublicKeyName = function(certificateName)
     (tmpName.getSubName(i + 1, tmpName.size() - i - 1));
 };
 
-},{}],70:[function(require,module,exports){
+IdentityCertificate.isCorrectName = function(name)
+{
+  var i = name.size() - 1;
+
+  var idString = "ID-CERT";
+  for (; i >= 0; i--) {
+    if (name.get(i).toEscapedString() == idString)
+      break;
+  }
+
+  if (i < 0)
+    return false;
+
+  var keyIdx = 0;
+  var keyString = "KEY";
+  for (; keyIdx < name.size(); keyIdx++) {
+    if(name.get(keyIdx).toEscapedString() == keyString)
+      break;
+  }
+
+  if (keyIdx >= name.size())
+    return false;
+
+  return true;
+};
+
+IdentityCertificate.prototype.setPublicKeyName = function()
+{
+  this.publicKeyName = IdentityCertificate.certificateNameToPublicKeyName
+    (this.getName());
+};
+
+},{"../../data.js":125,"../../name.js":157,"../../security//security-exception.js":176,"./certificate.js":162}],164:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -16400,15 +28470,17 @@ IdentityCertificate.certificateNameToPublicKeyName = function(certificateName)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
+var DerNode = require('../../encoding/der/der-node.js').DerNode;
 var SecurityException = require('../security-exception.js').SecurityException;
 var KeyType = require('../security-types.js').KeyType;
+var DigestAlgorithm = require('../security-types.js').DigestAlgorithm;
 
 /**
  * A PublicKey holds an encoded public key for use by the security library.
@@ -16430,7 +28502,7 @@ exports.PublicKey = PublicKey;
  */
 PublicKey.prototype.toDer = function()
 {
-  throw new Error("PublicKey.toDer is not implemented");
+  return DerNode.parse(this.keyDer.buf());
 };
 
 /**
@@ -16446,20 +28518,9 @@ PublicKey.fromDer = function(keyType, keyDer)
   }
   else
     throw new SecurityException(new Error
-      ("PublicKey::fromDer: Unrecognized keyType"));
+      ("PublicKey.fromDer: Unrecognized keyType"));
 
   return new PublicKey(keyType, keyDer);
-};
-
-/**
- * 
- * @param {number} digestAlgorithm (optional) The integer from DigestAlgorithm, 
- * such as DigestAlgorithm.SHA256. If omitted, use DigestAlgorithm.SHA256 .
- * @returns {Blob} The digest value.
- */
-PublicKey.prototype.getDigest = function(digestAlgorithm)
-{
-  throw new Error("PublicKey.getDigest is not implemented");
 };
 
 /**
@@ -16472,6 +28533,26 @@ PublicKey.prototype.getKeyType = function()
 };
 
 /**
+ * Get the digest of the public key.
+ * @param {number} digestAlgorithm (optional) The integer from DigestAlgorithm, 
+ * such as DigestAlgorithm.SHA256. If omitted, use DigestAlgorithm.SHA256 .
+ * @returns {Blob} The digest value.
+ */
+PublicKey.prototype.getDigest = function(digestAlgorithm)
+{
+  if (digestAlgorithm == undefined)
+    digestAlgorithm = DigestAlgorithm.SHA256;
+  
+  if (digestAlgorithm == DigestAlgorithm.SHA256) {
+    var hash = crypto.createHash('sha256');
+    hash.update(this.keyDer.buf());
+    return new Blob(hash.digest());
+  }
+  else
+    throw new SecurityException(new Error("Wrong format!"));
+};
+
+/**
  * Get the raw bytes of the public key in DER format.
  * @returns {Blob} The public key DER.
  */
@@ -16480,7 +28561,7 @@ PublicKey.prototype.getKeyDer = function()
   return this.keyDer;
 };
 
-},{"../security-exception.js":82,"../security-types.js":83}],71:[function(require,module,exports){
+},{"../../encoding/der/der-node.js":135,"../security-exception.js":176,"../security-types.js":177}],165:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2014 Regents of the University of California.
@@ -16495,11 +28576,11 @@ PublicKey.prototype.getKeyDer = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Name = require('../../name.js').Name;
@@ -16679,8 +28760,7 @@ IdentityManager.prototype.addCertificateAsDefault = function(certificate)
  */
 IdentityManager.prototype.getCertificate = function(certificateName)
 {
-  return new IdentityCertificate
-    (this.identityStorage.getCertificate(certificateName, false));
+  return this.identityStorage.getCertificate(certificateName, false);
 };
 
 /**
@@ -16690,8 +28770,7 @@ IdentityManager.prototype.getCertificate = function(certificateName)
  */
 IdentityManager.prototype.getAnyCertificate = function(certificateName)
 {
-  return new IdentityCertificate
-    (this.identityStorage.getCertificate(certificateName, true));
+  return this.identityStorage.getCertificate(certificateName, true);
 };
 
 /**
@@ -16814,8 +28893,9 @@ IdentityManager.certificateNameToPublicKeyName = function(certificateName)
   return tmpName.getSubName(0, i).append(tmpName.getSubName
     (i + 1, tmpName.size() - i - 1));
 };
+
 }).call(this,require("buffer").Buffer)
-},{"../../data.js":39,"../../encoding/wire-format.js":55,"../../key-locator.js":62,"../../name.js":66,"../../sha256-with-rsa-signature.js":84,"../security-exception.js":82,"buffer":2}],72:[function(require,module,exports){
+},{"../../data.js":125,"../../encoding/wire-format.js":146,"../../key-locator.js":153,"../../name.js":157,"../../sha256-with-rsa-signature.js":178,"../security-exception.js":176,"buffer":3}],166:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -16829,11 +28909,11 @@ IdentityManager.certificateNameToPublicKeyName = function(certificateName)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Name = require('../../name.js').Name;
@@ -16992,7 +29072,7 @@ IdentityStorage.prototype.addCertificate = function(certificate)
  * @param {Name} certificateName The name of the requested certificate.
  * @param {boolean} allowAny (optional) If false, only a valid certificate will
  * be returned, otherwise validity is disregarded. If omitted, allowAny is false.
- * @returns {Data} The requested certificate.  If not found, return a shared_ptr
+ * @returns {IdentityCertificate} The requested certificate.  If not found, return a shared_ptr
  * with a null pointer.
  */
 IdentityStorage.prototype.getCertificate = function(certificateName, allowAny)
@@ -17084,7 +29164,38 @@ IdentityStorage.prototype.setDefaultCertificateNameForKey = function
   throw new Error("IdentityStorage.setDefaultCertificateNameForKey is not implemented");
 };
 
-},{"../../name.js":66,"../security-exception.js":82}],73:[function(require,module,exports){
+/*****************************************
+ *            Delete Methods             *
+ *****************************************/
+
+/**
+ * Delete a certificate.
+ * @param {Name} certificateName The certificate name.
+ */
+IdentityStorage.prototype.deleteCertificateInfo = function(certificateName)
+{
+  throw new Error("IdentityStorage.deleteCertificateInfo is not implemented");
+};
+
+/**
+ * Delete a public key and related certificates.
+ * @param {Name} keyName The key name.
+ */
+IdentityStorage.prototype.deletePublicKeyInfo = function(keyName)
+{
+  throw new Error("IdentityStorage.deletePublicKeyInfo is not implemented");
+};
+
+/**
+ * Delete an identity and related public keys and certificates.
+ * @param {Name} identity The identity name.
+ */
+IdentityStorage.prototype.deleteIdentityInfo = function(identity)
+{
+  throw new Error("IdentityStorage.deleteIdentityInfo is not implemented");
+};
+
+},{"../../name.js":157,"../security-exception.js":176}],167:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -17098,11 +29209,11 @@ IdentityStorage.prototype.setDefaultCertificateNameForKey = function
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Data = require('../../data.js').Data;
@@ -17309,7 +29420,7 @@ MemoryIdentityStorage.prototype.addCertificate = function(certificate)
  * @param {Name} certificateName The name of the requested certificate.
  * @param {boolean} allowAny (optional) If false, only a valid certificate will
  * be returned, otherwise validity is disregarded. If omitted, allowAny is false.
- * @returns {Data} The requested certificate.  If not found, return null.
+ * @returns {IdentityCertificate} The requested certificate.  If not found, return null.
  */
 MemoryIdentityStorage.prototype.getCertificate = function(certificateName, allowAny)
 {
@@ -17318,9 +29429,9 @@ MemoryIdentityStorage.prototype.getCertificate = function(certificateName, allow
     // Not found.  Silently return null.
     return null;
 
-  var data = new Data();
-  data.wireDecode(this.certificateStore[certificateNameUri]);
-  return data;
+  var certificiate = new IdentityCertificate();
+  certificiate.wireDecode(this.certificateStore[certificateNameUri]);
+  return certificiate;
 };
 
 /*****************************************
@@ -17403,7 +29514,38 @@ MemoryIdentityStorage.prototype.setDefaultCertificateNameForKey = function
   throw new Error("MemoryIdentityStorage.setDefaultCertificateNameForKey is not implemented");
 };
 
-},{"../../data.js":39,"../../encoding/data-utils.js":44,"../../name.js":66,"../../util/blob.js":88,"../security-exception.js":82,"../security-types.js":83,"./identity-storage.js":72}],74:[function(require,module,exports){
+/*****************************************
+ *            Delete Methods             *
+ *****************************************/
+
+/**
+ * Delete a certificate.
+ * @param {Name} certificateName The certificate name.
+ */
+MemoryIdentityStorage.prototype.deleteCertificateInfo = function(certificateName)
+{
+  throw new Error("MemoryIdentityStorage.deleteCertificateInfo is not implemented");
+};
+
+/**
+ * Delete a public key and related certificates.
+ * @param {Name} keyName The key name.
+ */
+MemoryIdentityStorage.prototype.deletePublicKeyInfo = function(keyName)
+{
+  throw new Error("MemoryIdentityStorage.deletePublicKeyInfo is not implemented");
+};
+
+/**
+ * Delete an identity and related public keys and certificates.
+ * @param {Name} identity The identity name.
+ */
+MemoryIdentityStorage.prototype.deleteIdentityInfo = function(identity)
+{
+  throw new Error("MemoryIdentityStorage.deleteIdentityInfo is not implemented");
+};
+
+},{"../../data.js":125,"../../encoding/data-utils.js":130,"../../name.js":157,"../../util/blob.js":185,"../security-exception.js":176,"../security-types.js":177,"./identity-storage.js":166}],168:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2014 Regents of the University of California.
@@ -17418,11 +29560,11 @@ MemoryIdentityStorage.prototype.setDefaultCertificateNameForKey = function
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Blob = require('../../util/blob.js').Blob;
@@ -17572,7 +29714,7 @@ MemoryPrivateKeyStorage.prototype.doesKeyExist = function(keyName, keyClass)
 };
 
 }).call(this,require("buffer").Buffer)
-},{"../../encoding/data-utils.js":44,"../../util/blob.js":88,"../certificate/public-key.js":70,"../security-exception.js":82,"../security-types.js":83,"./private-key-storage.js":75,"buffer":2,"crypto":8}],75:[function(require,module,exports){
+},{"../../encoding/data-utils.js":130,"../../util/blob.js":185,"../certificate/public-key.js":164,"../security-exception.js":176,"../security-types.js":177,"./private-key-storage.js":169,"buffer":3,"crypto":9}],169:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -17586,11 +29728,11 @@ MemoryPrivateKeyStorage.prototype.doesKeyExist = function(keyName, keyClass)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -17693,7 +29835,7 @@ PrivateKeyStorage.prototype.doesKeyExist = function(keyName, keyClass)
   throw new Error("PrivateKeyStorage.doesKeyExist is not implemented");
 };
 
-},{}],76:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -17707,11 +29849,11 @@ PrivateKeyStorage.prototype.doesKeyExist = function(keyName, keyClass)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Name = require('../name.js').Name;
@@ -17860,7 +30002,7 @@ KeyChain.prototype.setDefaultCertificateForKey = function(certificate)
 /**
  * Get a certificate with the specified name.
  * @param {Name} certificateName The name of the requested certificate.
- * @returns {Certificate} The requested certificate which is valid.
+ * @returns {IdentityCertificate} The requested certificate which is valid.
  */
 KeyChain.prototype.getCertificate = function(certificateName)
 {
@@ -17870,7 +30012,7 @@ KeyChain.prototype.getCertificate = function(certificateName)
 /**
  * Get a certificate even if the certificate is not valid anymore.
  * @param {Name} certificateName The name of the requested certificate.
- * @returns {Certificate} The requested certificate.
+ * @returns {IdentityCertificate} The requested certificate.
  */
 KeyChain.prototype.getAnyCertificate = function(certificateName)
 {
@@ -17992,7 +30134,7 @@ KeyChain.prototype.signInterest = function(interest, certificateName, wireFormat
   interest.getName().append(new Name.Component());
   // Encode once to get the signed portion.
   var encoding = interest.wireEncode(wireFormat);
-  var signedSignature = this.sign(encoding.buf(), certificateName);
+  var signedSignature = this.sign(encoding.signedBuf(), certificateName);
 
   // Remove the empty signature and append the real one.
   var encoder = new TlvEncoder(256);
@@ -18100,14 +30242,35 @@ KeyChain.prototype.verifyData = function
  * information to check the signature.
  * @param {Interest} interest The interest with the signature to check.
  * @param {function} onVerified If the signature is verified, this calls
- * onVerified(data).
+ * onVerified(interest).
  * @param {function} onVerifyFailed If the signature check fails, this calls
- * onVerifyFailed(data).
+ * onVerifyFailed(interest).
  */
 KeyChain.prototype.verifyInterest = function
   (interest, onVerified, onVerifyFailed, stepCount, wireFormat)
 {
-  throw new Error("KeyChain.verifyInterest is not implemented");
+  wireFormat = (wireFormat || WireFormat.getDefaultWireFormat());
+
+  if (this.policyManager.requireVerify(interest)) {
+    var nextStep = this.policyManager.checkVerificationPolicy
+      (interest, stepCount, onVerified, onVerifyFailed, wireFormat);
+    if (nextStep != null) {
+      var thisKeyChain = this;
+      this.face.expressInterest
+        (nextStep.interest,
+         function(callbackInterest, callbackData) {
+           thisKeyChain.onCertificateData(callbackInterest, callbackData, nextStep);
+         },
+         function(callbackInterest) {
+           thisKeyChain.onCertificateInterestTimeout
+             (callbackInterest, nextStep.retry, onVerifyFailed, data, nextStep);
+         });
+    }
+  }
+  else if (this.policyManager.skipVerifyAndTrust(interest))
+    onVerified(interest);
+  else
+    onVerifyFailed(interest);
 };
 
 /*****************************************
@@ -18175,7 +30338,7 @@ KeyChain.prototype.onCertificateData = function(interest, data, nextStep)
 };
 
 KeyChain.prototype.onCertificateInterestTimeout = function
-  (interest, retry, onVerifyFailed, data, nextStep)
+  (interest, retry, onVerifyFailed, originalDataOrInterest, nextStep)
 {
   if (retry > 0) {
     // Issue the same expressInterest as in verifyData except decrement retry.
@@ -18187,14 +30350,14 @@ KeyChain.prototype.onCertificateInterestTimeout = function
        },
        function(callbackInterest) {
          thisKeyChain.onCertificateInterestTimeout
-           (callbackInterest, retry - 1, onVerifyFailed, data, nextStep);
+           (callbackInterest, retry - 1, onVerifyFailed, originalDataOrInterest, nextStep);
        });
   }
   else
-    onVerifyFailed(data);
+    onVerifyFailed(originalDataOrInterest);
 };
 
-},{"../data.js":39,"../encoding/tlv/tlv-encoder.js":52,"../encoding/tlv/tlv.js":54,"../encoding/wire-format.js":55,"../interest.js":61,"../key-locator.js":62,"../name.js":66,"../sha256-with-rsa-signature.js":84,"./security-exception.js":82}],77:[function(require,module,exports){
+},{"../data.js":125,"../encoding/tlv/tlv-encoder.js":143,"../encoding/tlv/tlv.js":145,"../encoding/wire-format.js":146,"../interest.js":152,"../key-locator.js":153,"../name.js":157,"../sha256-with-rsa-signature.js":178,"./security-exception.js":176}],171:[function(require,module,exports){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
  * @author: Meki Cheraoui
@@ -18207,11 +30370,11 @@ KeyChain.prototype.onCertificateInterestTimeout = function
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Key = require('../key.js').Key;
@@ -18283,7 +30446,7 @@ KeyManager.prototype.getKey = function()
 var globalKeyManager = globalKeyManager || new KeyManager();
 exports.globalKeyManager = globalKeyManager;
 
-},{"../key.js":63}],78:[function(require,module,exports){
+},{"../key.js":154}],172:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -18297,11 +30460,11 @@ exports.globalKeyManager = globalKeyManager;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Name = require('../../name.js').Name;
@@ -18392,7 +30555,7 @@ NoVerifyPolicyManager.prototype.inferSigningIdentity = function(dataName)
   return new Name();
 };
 
-},{"../../name.js":66,"./policy-manager.js":79}],79:[function(require,module,exports){
+},{"../../name.js":157,"./policy-manager.js":173}],173:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -18406,12 +30569,14 @@ NoVerifyPolicyManager.prototype.inferSigningIdentity = function(dataName)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
+
+var DataUtils = require('../../encoding/data-utils.js').DataUtils;
 
 /**
  * A PolicyManager is an abstract base class to represent the policy for
@@ -18503,7 +30668,47 @@ PolicyManager.prototype.inferSigningIdentity = function(dataName)
   throw new Error("PolicyManager.inferSigningIdentity is not implemented");
 };
 
-},{}],80:[function(require,module,exports){
+// The first time verifySha256WithRsaSignature is called, it sets this to
+// determine if a signature buffer needs to be converted to a string for the
+// crypto verifier.
+PolicyManager.verifyUsesString = null;
+
+/**
+ * Verify the RSA signature on the SignedBlob using the given public key.
+ * TODO: Move this general verification code to a more central location.
+ * @param signature {Sha256WithRsaSignature} The Sha256WithRsaSignature.
+ * @param signedBlob {SignedBlob} the SignedBlob with the signed portion to
+ * verify.
+ * @param publicKeyDer {Blob} The DER-encoded public key used to verify the
+ * signature.
+ * @returns true if the signature verifies, false if not.
+ */
+PolicyManager.verifySha256WithRsaSignature = function
+  (signature, signedBlob, publicKeyDer)
+{
+  if (PolicyManager.verifyUsesString === null) {
+    var hashResult = require("crypto").createHash('sha256').digest();
+    // If the hash result is a string, we assume that this is a version of
+    //   crypto where verify also uses a string signature.
+    PolicyManager.verifyUsesString = (typeof hashResult === 'string');
+  }
+
+  // The crypto verifier requires a PEM-encoded public key.
+  var keyBase64 = publicKeyDer.buf().toString('base64');
+  var keyPem = "-----BEGIN PUBLIC KEY-----\n";
+  for (var i = 0; i < keyBase64.length; i += 64)
+    keyPem += (keyBase64.substr(i, 64) + "\n");
+  keyPem += "-----END PUBLIC KEY-----";
+
+  var verifier = require('crypto').createVerify('RSA-SHA256');
+  verifier.update(signedBlob.signedBuf());
+  var signatureBytes = PolicyManager.verifyUsesString ?
+    DataUtils.toString(signature.getSignature().buf()) :
+    signature.getSignature().buf();
+  return verifier.verify(keyPem, signatureBytes);
+};
+
+},{"../../encoding/data-utils.js":130,"crypto":9}],174:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -18517,16 +30722,16 @@ PolicyManager.prototype.inferSigningIdentity = function(dataName)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Name = require('../../name.js').Name;
+var Interest = require('../../interest.js').Interest;
 var Data = require('../../data.js').Data;
-var DataUtils = require('../../encoding/data-utils.js').DataUtils;
 var IdentityCertificate = require('../certificate/identity-certificate.js').IdentityCertificate;
 var KeyLocatorType = require('../../key-locator.js').KeyLocatorType;
 var SecurityException = require('../security-exception.js').SecurityException;
@@ -18684,7 +30889,7 @@ SelfVerifyPolicyManager.prototype.verify = function(signatureInfo, signedBlob)
 
   if (signature.getKeyLocator().getType() == KeyLocatorType.KEY)
     // Use the public key DER directly.
-    return SelfVerifyPolicyManager.verifySha256WithRsaSignature
+    return PolicyManager.verifySha256WithRsaSignature
       (signature, signedBlob, signature.getKeyLocator().getKeyData());
   else if (signature.getKeyLocator().getType() == KeyLocatorType.KEYNAME &&
            this.identityStorage != null) {
@@ -18696,7 +30901,7 @@ SelfVerifyPolicyManager.prototype.verify = function(signatureInfo, signedBlob)
       // Can't find the public key with the name.
       return false;
 
-    return SelfVerifyPolicyManager.verifySha256WithRsaSignature
+    return PolicyManager.verifySha256WithRsaSignature
       (signature, signedBlob, publicKeyDer);
   }
   else
@@ -18704,46 +30909,7 @@ SelfVerifyPolicyManager.prototype.verify = function(signatureInfo, signedBlob)
     return false;
 };
 
-// The first time verify is called, it sets this to determine if a signature
-//   buffer needs to be converted to a string for the crypto verifier.
-SelfVerifyPolicyManager.verifyUsesString = null;
-
-/**
- * Verify the RSA signature on the SignedBlob using the given public key.
- * TODO: Move this general verification code to a more central location.
- * @param signature {Sha256WithRsaSignature} The Sha256WithRsaSignature.
- * @param signedBlob {SignedBlob} the SignedBlob with the signed portion to
- * verify.
- * @param publicKeyDer {Blob} The DER-encoded public key used to verify the
- * signature.
- * @returns true if the signature verifies, false if not.
- */
-SelfVerifyPolicyManager.verifySha256WithRsaSignature = function
-  (signature, signedBlob, publicKeyDer)
-{
-  if (SelfVerifyPolicyManager.verifyUsesString === null) {
-    var hashResult = require("crypto").createHash('sha256').digest();
-    // If the hash result is a string, we assume that this is a version of
-    //   crypto where verify also uses a string signature.
-    SelfVerifyPolicyManager.verifyUsesString = (typeof hashResult === 'string');
-  }
-
-  // The crypto verifier requires a PEM-encoded public key.
-  var keyBase64 = publicKeyDer.buf().toString('base64');
-  var keyPem = "-----BEGIN PUBLIC KEY-----\n";
-  for (var i = 0; i < keyBase64.length; i += 64)
-    keyPem += (keyBase64.substr(i, 64) + "\n");
-  keyPem += "-----END PUBLIC KEY-----";
-
-  var verifier = require('crypto').createVerify('RSA-SHA256');
-  verifier.update(signedBlob.signedBuf());
-  var signatureBytes = Data.verifyUsesString ?
-    DataUtils.toString(signature.getSignature().buf()) :
-    signature.getSignature().buf();
-  return verifier.verify(keyPem, signatureBytes);
-};
-
-},{"../../data.js":39,"../../encoding/data-utils.js":44,"../../encoding/wire-format.js":55,"../../key-locator.js":62,"../../name.js":66,"../certificate/identity-certificate.js":69,"../security-exception.js":82,"./policy-manager.js":79,"crypto":8}],81:[function(require,module,exports){
+},{"../../data.js":125,"../../encoding/wire-format.js":146,"../../interest.js":152,"../../key-locator.js":153,"../../name.js":157,"../certificate/identity-certificate.js":163,"../security-exception.js":176,"./policy-manager.js":173}],175:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -18757,11 +30923,11 @@ SelfVerifyPolicyManager.verifySha256WithRsaSignature = function
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -18791,7 +30957,7 @@ var ValidationRequest = function ValidationRequest
 
 exports.ValidationRequest = ValidationRequest;
 
-},{}],82:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -18804,11 +30970,11 @@ exports.ValidationRequest = ValidationRequest;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -18830,7 +30996,7 @@ SecurityException.prototype.name = "SecurityException";
 
 exports.SecurityException = SecurityException;
 
-},{}],83:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -18844,11 +31010,11 @@ exports.SecurityException = SecurityException;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -18905,7 +31071,7 @@ EncryptMode.DEFAULT = 1;
 EncryptMode.CFB_AES = 2;
 // EncryptMode.CBC_AES
 
-},{}],84:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 (function (Buffer){
 /**
  * This class represents an NDN Data Signature object.
@@ -18921,11 +31087,11 @@ EncryptMode.CFB_AES = 2;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Blob = require('./util/blob.js').Blob;
@@ -19112,7 +31278,1003 @@ Signature.prototype = new Sha256WithRsaSignature();
 exports.Signature = Signature;
 
 }).call(this,require("buffer").Buffer)
-},{"./encoding/binary-xml-decoder.js":40,"./encoding/binary-xml-encoder.js":41,"./key-locator.js":62,"./log.js":64,"./util/blob.js":88,"./util/ndn-protoco-id-tags.js":93,"buffer":2}],85:[function(require,module,exports){
+},{"./encoding/binary-xml-decoder.js":126,"./encoding/binary-xml-encoder.js":127,"./key-locator.js":153,"./log.js":155,"./util/blob.js":185,"./util/ndn-protoco-id-tags.js":190,"buffer":3}],179:[function(require,module,exports){
+/**
+ * This class represents the digest tree for chrono-sync2013.
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Zhehao Wang, based on Jeff T.'s implementation in ndn-cpp
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+var DigestTree = require('./digest-tree.js').DigestTree;
+var Interest = require('../interest.js').Interest;
+var Data = require('../data.js').Data;
+var Name = require('../name.js').Name;
+var Blob = require('../util/blob.js').Blob;
+var MemoryContentCache = require('../util/memory-content-cache.js').MemoryContentCache;
+
+/**
+ * ChronoSync2013 implements the NDN ChronoSync protocol as described in the
+ * 2013 paper "Let's ChronoSync: Decentralized Dataset State Synchronization in
+ * Named Data Networking". http://named-data.net/publications/chronosync .
+ * @note The support for ChronoSync is experimental and the API is not finalized.
+ * See the API docs for more detail at
+ * http://named-data.net/doc/ndn-ccl-api/chrono-sync2013.html .
+ * 
+ * Create a new ChronoSync2013 to communicate using the given face. Initialize
+ * the digest log with a digest of "00" and and empty content. Register the
+ * applicationBroadcastPrefix to receive interests for sync state messages and
+ * express an interest for the initial root digest "00".
+ * @param {function} onReceivedSyncState When ChronoSync receives a sync state message,
+ * this calls onReceivedSyncState(syncStates, isRecovery) where syncStates is the
+ * list of SyncState messages and isRecovery is true if this is the initial
+ * list of SyncState messages or from a recovery interest. (For example, if
+ * isRecovery is true, a chat application would not want to re-display all
+ * the associated chat messages.) The callback should send interests to fetch
+ * the application data for the sequence numbers in the sync state.
+ * @param {function} onInitialized This calls onInitialized() when the first sync data
+ * is received (or the interest times out because there are no other
+ * publishers yet).
+ * @param {Name} applicationDataPrefix The prefix used by this application instance
+ * for application data. For example, "/my/local/prefix/ndnchat4/0K4wChff2v".
+ * This is used when sending a sync message for a new sequence number.
+ * In the sync message, this uses applicationDataPrefix.toUri().
+ * @param {Name} applicationBroadcastPrefix The broadcast name prefix including the
+ * application name. For example, "/ndn/broadcast/ChronoChat-0.3/ndnchat1".
+ * This makes a copy of the name.
+ * @param {int} sessionNo The session number used with the applicationDataPrefix in
+ * sync state messages.
+ * @param {Face} face The Face for calling registerPrefix and expressInterest. The
+ * Face object must remain valid for the life of this ChronoSync2013 object.
+ * @param {KeyChain} keyChain To sign a data packet containing a sync state message, this
+ * calls keyChain.sign(data, certificateName).
+ * @param {Name} certificateName The certificate name of the key to use for signing a
+ * data packet containing a sync state message.
+ * @param {Milliseconds} syncLifetime The interest lifetime in milliseconds for sending
+ * sync interests.
+ * @param {function} onRegisterFailed If failed to register the prefix to receive
+ * interests for the applicationBroadcastPrefix, this calls
+ * onRegisterFailed(applicationBroadcastPrefix).
+ */
+var ChronoSync2013 = function ChronoSync2013(arg1, arg2, applicationDataPrefix, applicationBroadcastPrefix, sessionNo, face, keyChain, certificateName, syncLifetime, arg10)
+{
+  // assigning function pointers
+  this.onReceivedSyncState = arg1;
+  this.onInitialized = arg2;
+  this.applicationDataPrefixUri = applicationDataPrefix.toUri();
+  this.applicationBroadcastPrefix = applicationBroadcastPrefix;
+  this.session = sessionNo;
+  this.face = face;
+  this.keyChain = keyChain;
+  this.certificateName = certificateName;
+  this.sync_lifetime = syncLifetime;
+  this.usrseq = -1;
+  
+  this.digest_tree = new DigestTree();
+  this.contentCache = new MemoryContentCache(face);
+  
+  this.pendingInterestTable = [];
+  
+  this.digest_log = new Array();
+  this.digest_log.push(new ChronoSync2013.DigestLogEntry("00",[]));
+  
+  this.contentCache.registerPrefix(this.applicationBroadcastPrefix, arg10.bind(this), this.onInterest.bind(this));
+  this.enabled = true;
+  
+  var interest = new Interest(this.applicationBroadcastPrefix);
+  interest.getName().append("00");
+  
+  interest.setInterestLifetimeMilliseconds(1000);
+  interest.setAnswerOriginKind(Interest.ANSWER_NO_CONTENT_STORE);
+  
+  this.SyncStateMsg = require('./sync-state.js').SyncStateMsg;
+  this.SyncState = require('./sync-state.js').SyncState;
+  
+  this.face.expressInterest(interest, this.onData.bind(this), this.initialTimeOut.bind(this));
+};
+
+exports.ChronoSync2013 = ChronoSync2013;
+
+ChronoSync2013.prototype.getProducerSequenceNo = function(dataPrefix, sessionNo)
+{
+  var index = this.digest_tree.find(dataPrefix, sessionNo);
+  if (index < 0) 
+    return -1;
+  else
+    return this.digest_tree.get(index).getSequenceNo();
+};
+
+/**
+ * Increment the sequence number, create a sync message with the new sequence number, 
+ * and publish a data packet where the name is applicationBroadcastPrefix + root 
+ * digest of current digest tree. Then add the sync message to digest tree and digest
+ * log which creates a new root digest. Finally, express an interest for the next sync
+ * update with the name applicationBroadcastPrefix + the new root digest.
+ * After this, application should publish the content for the new sequence number.
+ * Get the new sequence number with getSequenceNo().
+ */
+ChronoSync2013.prototype.publishNextSequenceNo = function()
+{
+  this.usrseq ++;
+  var content = [new this.SyncState({ name:this.applicationDataPrefixUri, 
+                                 type:'UPDATE', 
+                                 seqno:{
+                                   seq:this.usrseq,
+                                   session:this.session
+                                  }
+                                })];
+  var content_t = new this.SyncStateMsg({ss:content});
+  this.broadcastSyncState(this.digest_tree.getRoot(), content_t);
+  
+  if (!this.update(content))
+    console.log("Warning: ChronoSync: update did not create a new digest log entry");
+    
+  var interest = new Interest(this.applicationBroadcastPrefix);
+  interest.getName().append(this.digest_tree.getRoot());
+  interest.setInterestLifetimeMilliseconds(this.sync_lifetime);
+  
+  this.face.expressInterest(interest, this.onData.bind(this), this.syncTimeout.bind(this));
+};
+
+/**
+ * Get the sequence number of the latest data published by this application instance.
+ * @return {int} the sequence number
+ */
+ChronoSync2013.prototype.getSequenceNo = function()
+{
+  return this.usrseq;
+};
+
+// DigestLogEntry class
+
+ChronoSync2013.DigestLogEntry = function ChronoSync2013DisgestLogEntry(digest, data)
+{
+  this.digest = digest;
+  this.data = data;
+};
+
+ChronoSync2013.DigestLogEntry.prototype.getDigest = function()
+{
+  return this.digest;
+};
+
+ChronoSync2013.DigestLogEntry.prototype.getData = function()
+{
+  return this.data;
+};
+
+/**
+ * Unregister callbacks so that this does not respond to interests anymore.
+ * If you will dispose this ChronoSync2013 object while your application is
+ * still running, you should call shutdown() first.  After calling this, you
+ * should not call publishNextSequenceNo() again since the behavior will be
+ * undefined.
+ */
+ChronoSync2013.prototype.shutdown = function()
+{
+  this.enabled = false;
+  this.contentCache.unregisterAll();
+};
+
+// PendingInterest class
+
+/**
+ * A PendingInterest holds an interest which onInterest received but could
+ * not satisfy. When we add a new data packet to this.contentCache, we will
+ * also check if it satisfies a pending interest.
+ */
+ChronoSync2013.PendingInterest = function ChronoSync2013PendingInterest(interest, transport)
+{
+  this.interest = interest;
+  this.transport = transport;
+  
+  if (this.interest.getInterestLifetimeMilliseconds() >= 0.0)
+    this.timeoutMilliseconds = (new Date()).getTime() + this.interest.getInterestLifetimeMilliseconds();
+  else
+    this.timeoutMilliseconds = -1.0;
+};
+
+ChronoSync2013.PendingInterest.prototype.getInterest = function()
+{
+  return this.interest;
+};
+
+ChronoSync2013.PendingInterest.prototype.getTransport = function()
+{
+  return this.transport;
+};
+
+ChronoSync2013.PendingInterest.prototype.isTimedOut = function(nowMilliseconds)
+{
+  return (this.timeoutTimeMilliseconds >= 0.0 && nowMilliseconds >= this.timeoutTimeMilliseconds);
+};
+
+// SyncState class
+/**
+ * A SyncState holds the values of a sync state message which is passed to the
+ * onReceivedSyncState callback which was given to the ChronoSyn2013
+ * constructor. Note: this has the same info as the Protobuf class
+ * Sync::SyncState, but we make a separate class so that we don't need the
+ * Protobuf definition in the ChronoSync API.
+ */
+ChronoSync2013.SyncState = function ChronoSync2013SyncState(dataPrefixUri, sessionNo, sequenceNo)
+{
+  this.dataPrefixUri_ = dataPrefixUri;
+  this.sessionNo_ = sessionNo;
+  this.sequenceNo_ = sequenceNo;
+};
+
+/**
+ * Get the application data prefix for this sync state message.
+ * @return The application data prefix as a Name URI string.
+ */
+ChronoSync2013.SyncState.prototype.getDataPrefix = function() 
+{
+  return this.dataPrefixUri_; 
+}
+
+/**
+ * Get the session number associated with the application data prefix for
+ * this sync state message.
+ * @return The session number.
+ */
+ChronoSync2013.SyncState.prototype.getSessionNo = function()
+{ 
+  return this.sessionNo_; 
+}
+
+/**
+ * Get the sequence number for this sync state message.
+ * @return The sequence number.
+ */
+ChronoSync2013.SyncState.prototype.getSequenceNo = function()
+{ 
+  return this.sequenceNo_; 
+}
+
+// Private methods for ChronoSync2013 class, 
+/**
+ * Make a data packet with the syncMessage and with name applicationBroadcastPrefix_ + digest.
+ * Sign and send.
+ * @param {string} The root digest as a hex string for the data packet name.
+ * @param {SyncStateMsg} The syncMessage updates the digest tree state with the given digest.
+ */
+ChronoSync2013.prototype.broadcastSyncState = function(digest, syncMessage)
+{
+  var array = new Uint8Array(syncMessage.toArrayBuffer());
+  var data = new Data(this.applicationBroadcastPrefix);
+  data.getName().append(digest);
+  data.setContent(new Blob(array, false));
+  this.keyChain.sign(data, this.certificateName);
+  this.contentCacheAdd(data);
+};
+
+/**
+ * Update the digest tree with the messages in content. If the digest tree root is not in
+ * the digest log, also add a log entry with the content.
+ * @param {SyncStates[]} The sync state messages
+ * @return {bool} True if added a digest log entry (because the updated digest tree root
+ * was not in the log), false if didn't add a log entry.
+ */
+ // Whatever's received by ondata, is pushed into digest log as its data directly
+ChronoSync2013.prototype.update = function(content)
+{
+  for (var i = 0; i < content.length; i++) {
+    if (content[i].type == 0) {
+      if (this.digest_tree.update(content[i].name, content[i].seqno.session, content[i].seqno.seq)) {
+        if (this.applicationDataPrefixUri == content[i].name)
+          this.usrseq = content[i].seqno.seq;
+      }
+    }
+  }
+  
+  if (this.logfind(this.digest_tree.getRoot()) == -1) {
+    var newlog = new ChronoSync2013.DigestLogEntry(this.digest_tree.getRoot(), content);
+    this.digest_log.push(newlog);
+    return true;
+  }
+  else
+    return false;
+};
+
+ChronoSync2013.prototype.logfind = function(digest)
+{
+  for (var i = 0; i < this.digest_log.length; i++) {
+    if(digest == this.digest_log[i].digest)
+      return i;
+  }
+  return -1;
+};
+
+/**
+ * Process the sync interest from the applicationBroadcastPrefix. If we can't
+ * satisfy the interest, add it to the pendingInterestTable so that a future
+ * call to contentCacheAdd may satisfy it.
+ */
+ChronoSync2013.prototype.onInterest = function(prefix, interest, transport, registerPrefixId)
+{
+  if (!this.enabled)
+    // Ignore callbacks after the application calls shutdown().
+    return;
+
+  //search if the digest is already exist in the digest log
+  
+  var syncdigest = interest.getName().get(this.applicationBroadcastPrefix.size()).toEscapedString();
+  if (interest.getName().size() == this.applicationBroadcastPrefix.size() + 2) {
+    syncdigest = interest.getName().get(this.applicationBroadcastPrefix.size() + 1).toEscapedString();
+  }
+  if (interest.getName().size() == this.applicationBroadcastPrefix.size() + 2 || syncdigest == "00") {
+    this.processRecoveryInst(interest, syncdigest, transport);
+  }
+  else {
+    this.pendingInterestTable.push(new ChronoSync2013.PendingInterest(interest, transport));
+    
+    if (syncdigest != this.digest_tree.getRoot()) {
+      var index = this.logfind(syncdigest);
+      var content = [];
+      if(index == -1) {
+        var self = this;
+        // Are we sure that using a "/timeout" interest is the best future call approach?
+        var timeout = new Interest(new Name("/timeout"));
+        timeout.setInterestLifetimeMilliseconds(2000);
+        this.face.expressInterest(timeout, this.dummyOnData, this.judgeRecovery.bind(this, timeout, syncdigest, transport));
+      }
+      else {
+        //common interest processing
+        this.processSyncInst(index, syncdigest, transport);
+      }
+    }
+  }
+};
+
+/**
+ * Process sync/recovery data.
+ * @param {Interest}
+ * @param {Data}
+ */
+ChronoSync2013.prototype.onData = function(interest, co)
+{
+  if (!this.enabled)
+    // Ignore callbacks after the application calls shutdown().
+    return;
+
+  var arr = new Uint8Array(co.getContent().size());
+  arr.set(co.getContent().buf());
+  var content_t = this.SyncStateMsg.decode(arr.buffer);
+  var content = content_t.ss;
+  
+  var isRecovery = false;
+  
+  if (this.digest_tree.getRoot() == "00") {
+    isRecovery = true;
+    this.initialOndata(content);
+  }
+  else {
+    // Note: if, for some reasons, this update did not update anything, 
+    // then the same message gets fetched again, and the same broadcast interest goes out again.
+    // It has the potential of creating loop, which existed in my tests.
+    if (interest.getName().size() == this.applicationBroadcastPrefix.size() + 2)
+      isRecovery = false;
+    else
+      isRecovery = true;
+  }
+  
+  var syncStates = [];
+
+  for (var i = 0; i < content.length; i++) {
+	if (content[i].type == 0) {
+	  syncStates.push(new ChronoSync2013.SyncState
+	    (content[i].name, content[i].seqno.session, content[i].seqno.seq));
+	}
+  }
+  
+  // Instead of using Protobuf, use our own definition of SyncStates to pass to onReceivedSyncState.
+  this.onReceivedSyncState(syncStates, isRecovery);
+  var updated = this.update(content);
+  
+  if (updated) {
+	var n = new Name(this.applicationBroadcastPrefix);
+	n.append(this.digest_tree.getRoot());
+  
+	var interest = new Interest(n);
+	interest.setInterestLifetimeMilliseconds(this.sync_lifetime);
+  
+	this.face.expressInterest(interest, this.onData.bind(this), this.syncTimeout.bind(this));
+  }
+};
+
+/**
+ * Interest variable not actually in use here
+ */
+ChronoSync2013.prototype.initialTimeOut = function(interest)
+{
+  if (!this.enabled)
+    // Ignore callbacks after the application calls shutdown().
+    return;
+
+  console.log("no other people");
+    
+  this.usrseq++;
+  this.onInitialized();
+  var content = [new this.SyncState({ name:this.applicationDataPrefixUri,
+                                 type:'UPDATE',
+                                 seqno: {
+                                   seq:this.usrseq,
+                                   session:this.session
+                                 }
+                               })];
+  this.update(content);
+  var n = new Name(this.applicationBroadcastPrefix);
+  n.append(this.digest_tree.getRoot());
+  var retryInterest = new Interest(n);
+  retryInterest.setInterestLifetimeMilliseconds(this.sync_lifetime);
+  
+  this.face.expressInterest(retryInterest, this.onData.bind(this), this.syncTimeout.bind(this));  
+};
+
+ChronoSync2013.prototype.processRecoveryInst = function(interest, syncdigest, transport)
+{
+  if (this.logfind(syncdigest) != -1) {
+    var content = [];
+    
+    for(var i = 0; i < this.digest_tree.digestnode.length; i++) {
+      content[i] = new this.SyncState({ name:this.digest_tree.digestnode[i].getDataPrefix(),
+                                   type:'UPDATE',
+                                   seqno:{
+                                     seq:this.digest_tree.digestnode[i].getSequenceNo(),
+                                     session:this.digest_tree.digestnode[i].getSessionNo()
+                                    }
+                                 });
+    }
+    
+    if (content.length != 0) {
+      var content_t = new this.SyncStateMsg({ss:content});
+      var str = new Uint8Array(content_t.toArrayBuffer());
+      var co = new Data(interest.getName());
+      co.setContent(new Blob(str, false));
+      this.keyChain.sign(co, this.certificateName);
+      try {
+        transport.send(co.wireEncode().buf());
+      } catch (e) {
+        console.log(e.toString());
+      }
+    }
+  }
+};
+
+/**
+ * Common interest processing, using digest log to find the difference after syncdigest_t
+ * @return True if sent a data packet to satisfy the interest.
+ */
+ChronoSync2013.prototype.processSyncInst = function(index, syncdigest_t, transport)
+{
+  var content = [];
+  var data_name = [];
+  var data_seq = [];
+  var data_ses = [];
+
+  for (var j = index + 1; j < this.digest_log.length; j++) {
+    var temp = this.digest_log[j].getData();
+    for (var i = 0 ; i < temp.length ; i++) {
+      if (temp[i].type != 0) {
+        continue;
+      }
+      if (this.digest_tree.find(temp[i].name, temp[i].seqno.session) != -1) {
+        var n = data_name.indexOf(temp[i].name);
+        if (n = -1) {
+          data_name.push(temp[i].name);
+          data_seq.push(temp[i].seqno.seq);
+          data_ses.push(temp[i].seqno.session);
+        }
+        else {
+          data_seq[n] = temp[i].seqno.seq;
+          data_ses[n] = temp[i].seqno.session;
+        }
+      }
+    }
+  }
+  
+  for(var i = 0; i < data_name.length; i++) {
+    content[i] = new this.SyncState({ name:data_name[i],
+                                 type:'UPDATE',
+                                 seqno: {
+                                   seq:data_seq[i],
+                                   session:data_ses[i]
+                                 }
+                               });
+  }
+  if (content.length != 0) {
+    var content_t = new this.SyncStateMsg({ss:content});
+    var str = new Uint8Array(content_t.toArrayBuffer());
+    var n = new Name(this.prefix)
+    n.append(this.chatroom).append(syncdigest_t);
+    
+    var co = new Data(n);
+    co.setContent(new Blob(str, false));
+    this.keyChain.sign(co, this.certificateName);
+    try {
+      transport.send(co.wireEncode().buf());
+    }
+    catch (e) {
+      console.log(e.toString());
+    }
+  }
+};
+
+/**
+ * Send recovery interset.
+ * @param {string} syncdigest_t
+ */
+ChronoSync2013.prototype.sendRecovery = function(syncdigest_t)
+{
+  var n = new Name(this.applicationBroadcastPrefix);
+  n.append("recovery").append(syncdigest_t);
+  
+  var interest = new Interest(n);
+
+  interest.setInterestLifetimeMilliseconds(this.sync_lifetime);
+  
+  this.face.expressInterest(interest, this.onData.bind(this), this.syncTimeout.bind(this));
+};
+
+/*
+ * This is called by onInterest after a timeout to check if a recovery is needed.
+ * This method has an interest argument because we use it as the onTimeout for
+ * Face.expressInterest.
+ * @param {Interest}
+ * @param {string}
+ * @param {Transport}
+ */
+ChronoSync2013.prototype.judgeRecovery = function(interest, syncdigest_t, transport)
+{
+  //console.log("*** judgeRecovery interest " + interest.getName().toUri() + " times out. Digest: " + syncdigest_t + " ***");
+  var index = this.logfind(syncdigest_t);
+  if (index != -1) {
+    if (syncdigest_t != this.digest_tree.root)
+      this.processSyncInst(index, syncdigest_t, transport);
+  }
+  else
+    this.sendRecovery(syncdigest_t);
+};
+
+ChronoSync2013.prototype.syncTimeout = function(interest)
+{
+  if (!this.enabled)
+    // Ignore callbacks after the application calls shutdown().
+    return;
+
+  var component = interest.getName().get(4).toEscapedString();
+  if (component == this.digest_tree.root) {
+    var n = new Name(interest.getName());
+    var newInterest = new Interest(n);
+    
+    interest.setInterestLifetimeMilliseconds(this.sync_lifetime);
+    this.face.expressInterest(newInterest, this.onData.bind(this), this.syncTimeout.bind(this));
+  }           
+};
+
+ChronoSync2013.prototype.initialOndata = function(content)
+{
+  this.update(content);
+    
+  var digest_t = this.digest_tree.getRoot();
+  for (var i = 0; i < content.length; i++) {
+    if (content[i].name == this.applicationDataPrefixUri && content[i].seqno.session == this.session) {
+      //if the user was an old comer, after add the static log he need to increase his seqno by 1
+      var content_t = [new this.SyncState({ name:this.applicationDataPrefixUri,
+                                       type:'UPDATE',
+                                       seqno: {
+                                         seq:content[i].seqno.seq + 1,
+                                         session:this.session
+                                       }
+                                     })];
+      if (this.update(content_t)) {
+        var newlog = new ChronoSync2013.DigestLogEntry(this.digest_tree.getRoot(), content_t);
+        this.digest_log.push(newlog);
+        this.onInitialized();
+      }
+    }
+  }
+  
+  var content_t;
+  if (this.usrseq >= 0) {
+    //send the data packet with new seqno back
+    content_t = new this.SyncState({ name:this.applicationDataPrefixUri,
+                                   type:'UPDATE',
+                                   seqno: { 
+                                     seq:this.usrseq,
+                                     session:this.session
+                                   }
+                                 });
+  }
+  else
+    content_t = new this.SyncState({ name:this.applicationDataPrefixUri,
+                                   type:'UPDATE',
+                                   seqno: {
+                                     seq:0,
+                                     session:this.session
+                                   }
+                                 });
+  var content_tt = new this.SyncStateMsg({ss:content_t});
+  this.broadcastSyncState(digest_t, content_tt);
+  
+  if (this.digest_tree.find(this.applicationDataPrefixUri, this.session) == -1) {
+    //the user haven't put himself in the digest tree
+    this.usrseq++;
+    var content = [new this.SyncState({ name:this.applicationDataPrefixUri,
+                                   type:'UPDATE',
+                                   seqno: { 
+                                     seq:this.usrseq,
+                                     session:this.session
+                                   }
+                                 })];
+    if (this.update(content)) {
+      this.onInitialized();
+    }
+  }
+};
+
+ChronoSync2013.prototype.contentCacheAdd = function(data)
+{
+  this.contentCache.add(data);
+  
+  var nowMilliseconds = (new Date()).getTime();
+  
+  for (var i = this.pendingInterestTable.length - 1; i >= 0; i--) {
+    if (this.pendingInterestTable[i].isTimedOut(nowMilliseconds)) {
+      this.pendingInterestTable.splice(i,1);
+      continue;
+    }
+    if (this.pendingInterestTable[i].getInterest().matchesName(data.getName())) {
+      try {
+        this.pendingInterestTable[i].getTransport().send(data.wireEncode().buf());
+      }
+      catch (e) {
+      }
+      this.pendingInterestTable.splice(i,1);
+    }
+  }
+};
+
+ChronoSync2013.prototype.dummyOnData = function(interest, data)
+{
+  console.log("*** dummyOnData called. ***");
+};
+},{"../data.js":125,"../interest.js":152,"../name.js":157,"../util/blob.js":185,"../util/memory-content-cache.js":188,"./digest-tree.js":180,"./sync-state.js":181}],180:[function(require,module,exports){
+(function (Buffer){
+/**
+ * This class represents the digest tree for chrono-sync2013.
+ * Copyright (C) 2014 Regents of the University of California.
+ * @author: Zhehao Wang, based on Jeff T.'s implementation in ndn-cpp
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
+ */
+
+var crypto = require("crypto");
+var DataUtils = require("../encoding/data-utils.js").DataUtils;
+
+var DigestTree = function DigestTree()
+{
+  this.root = "00";
+  this.digestnode = [];
+};
+
+exports.DigestTree = DigestTree;
+
+// The meaning of a session is explained here:
+// http://named-data.net/doc/ndn-ccl-api/chrono-sync2013.html
+// DigestTree.Node works with seqno_seq and seqno_session, without protobuf definition,
+DigestTree.Node = function DigestTreeNode(dataPrefix, seqno_session, seqno_seq)
+{
+  // In this context, this should mean DigestTree.Node instead
+  this.dataPrefix = dataPrefix;
+  this.seqno_session = seqno_session;
+  this.seqno_seq = seqno_seq;
+  
+  this.recomputeDigest();
+};
+
+DigestTree.Node.prototype.getDataPrefix = function()
+{
+  return this.dataPrefix;
+};
+
+DigestTree.Node.prototype.getSessionNo = function()
+{
+  return this.seqno_session;
+};
+
+DigestTree.Node.prototype.getSequenceNo = function()
+{
+  return this.seqno_seq;
+};
+
+DigestTree.Node.prototype.getDigest = function()
+{
+  return this.digest;
+};
+
+DigestTree.Node.prototype.setSequenceNo = function(sequenceNo)
+{
+  this.seqno_seq = sequenceNo;
+  this.recomputeDigest();
+};
+
+// Using Node.JS buffer, as documented here http://nodejs.org/api/buffer.html.
+DigestTree.Node.prototype.Int32ToBuffer = function(value) {
+  var result = new Buffer(4);
+  for (var i = 0; i < 4; i++) {
+	result[i] = value % 256;
+	value = Math.floor(value / 256);
+  }
+  return result;
+}
+
+DigestTree.Node.prototype.recomputeDigest = function()
+{
+  var seqHash = crypto.createHash('sha256');
+  
+  seqHash.update(this.Int32ToBuffer(this.seqno_session));
+  seqHash.update(this.Int32ToBuffer(this.seqno_seq));
+  
+  var digest_seq = seqHash.digest();
+  
+  var nameHash = crypto.createHash('sha256');
+  nameHash.update(this.dataPrefix);
+  var digest_name = nameHash.digest();
+  
+  var hash = crypto.createHash('sha256');
+  hash.update(digest_name);
+  hash.update(digest_seq);
+
+  this.digest = hash.digest('hex');
+};
+
+// Do the work of string and then sequence number compare
+DigestTree.Node.Compare = function(node1, node2)
+{
+  var nameComparison = strcmp(node1.dataPrefix, node2.dataPrefix);
+  if (nameComparison != 0)
+    return (nameComparison < 0);
+  return (node1.seqno_session < node2.seqno_session);
+};
+
+/** 
+ * Update the digest tree and recompute the root digest. If the combination of dataPrefix
+ * and sessionNo already exists in the tree then update its sequenceNo (only if the given
+ * sequenceNo is newer), otherwise add a new node.
+ * @param {string} The name prefix.
+ * @param {int} sessionNo The session number.
+ * @param {int} sequenceNo The sequence number.
+ * @return True if the digest tree is updated, false if not
+ */
+DigestTree.prototype.update = function(dataPrefix, sessionNo, sequenceNo)
+{
+  var n_index = this.find(dataPrefix, sessionNo);
+  if (n_index >= 0) {
+    if (this.digestnode[n_index].getSequenceNo() < sequenceNo)
+      this.digestnode[n_index].setSequenceNo(sequenceNo);
+    else
+      return false;
+  }
+  else {
+    var temp = new DigestTree.Node(dataPrefix, sessionNo, sequenceNo);
+    this.digestnode.push(temp);
+    this.digestnode.sort(this.sortNodes);
+  }
+  this.recomputeRoot();
+  return true;
+};
+
+// Need to confirm this sort works with the insertion in ndn-cpp.
+DigestTree.prototype.sortNodes = function()
+{
+  var temp;
+  for (var i = this.digestnode.length; i > 0; i--) {
+    for (var j = 0; j < i - 1; j++) {
+      if (this.digestnode[j].getDataPrefix() > this.digestnode[j + 1].getDataPrefix()) {
+        temp = this.digestnode[j];
+        this.digestnode[j] = this.digestnode[j + 1];
+        this.digestnode[j + 1] = temp;
+      }
+    }
+  }
+};
+
+DigestTree.prototype.sortNodes = function (node1, node2)
+{
+  if (node1.getDataPrefix() == node2.getDataPrefix() && 
+     node1.getSessionNo() == node2.getSessionNo())
+	return 0;
+  
+  if ((node1.getDataPrefix() > node2.getDataPrefix()) || 
+     ((node1.getDataPrefix() == node2.getDataPrefix()) && 
+     (node1.getSessionNo() >node2.getSessionNo())))
+    return 1;
+  else
+    return -1;
+}
+
+DigestTree.prototype.find = function(dataPrefix, sessionNo)
+{
+  for (var i = 0; i < this.digestnode.length; ++i) {
+    if (this.digestnode[i].getDataPrefix() == dataPrefix && 
+        this.digestnode[i].getSessionNo() == sessionNo)
+      return i;
+  }
+  return -1;
+};
+
+DigestTree.prototype.size = function()
+{
+  return this.digestnode.size();
+};
+
+// Not really used
+DigestTree.prototype.get = function(i)
+{
+  return this.digestnode[i];
+};
+
+DigestTree.prototype.getRoot = function()
+{
+  return this.root;
+};
+
+DigestTree.prototype.recomputeRoot = function()
+{
+  var md = crypto.createHash('sha256');
+  // The result of updateHex is related with the sequence of participants,
+  // I don't think that should be the case.
+  for (var i = 0; i < this.digestnode.length; i++) {
+    md.update(new Buffer(this.digestnode[i].digest, 'hex'));
+  }
+  this.root = md.digest('hex');
+};
+
+function fromHexChar(c)
+{
+  if (c >= '0' && c <= '9')
+    return (c - '0');
+  else if (c >= 'a' && c <= 'f')
+    return (c - 'a' + 10);
+  else if (c >= 'A' && c<= 'F')
+    return (c - 'A' + 10);
+  else
+    return -1;
+};
+
+function strcmp(component1, component2)
+{
+  return ( ( str1 == str2 ) ? 0 : ( ( str1 > str2 ) ? 1 : -1 ) );
+};
+}).call(this,require("buffer").Buffer)
+},{"../encoding/data-utils.js":130,"buffer":3,"crypto":9}],181:[function(require,module,exports){
+var ProtoBuf = require("protobufjs");
+
+var Sync = ProtoBuf.newBuilder().import({
+    "package": "Sync",
+    "messages": [
+        {
+            "name": "SyncState",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "string",
+                    "name": "name",
+                    "id": 1,
+                    "options": {}
+                },
+                {
+                    "rule": "required",
+                    "type": "ActionType",
+                    "name": "type",
+                    "id": 2,
+                    "options": {}
+                },
+                {
+                    "rule": "optional",
+                    "type": "SeqNo",
+                    "name": "seqno",
+                    "id": 3,
+                    "options": {}
+                }
+            ],
+            "enums": [
+                {
+                    "name": "ActionType",
+                    "values": [
+                        {
+                            "name": "UPDATE",
+                            "id": 0
+                        },
+                        {
+                            "name": "DELETE",
+                            "id": 1
+                        },
+                        {
+                            "name": "OTHER",
+                            "id": 2
+                        }
+                    ],
+                    "options": {}
+                }
+            ],
+            "messages": [
+                {
+                    "name": "SeqNo",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "uint32",
+                            "name": "seq",
+                            "id": 1,
+                            "options": {}
+                        },
+                        {
+                            "rule": "required",
+                            "type": "uint32",
+                            "name": "session",
+                            "id": 2,
+                            "options": {}
+                        }
+                    ],
+                    "enums": [],
+                    "messages": [],
+                    "options": {}
+                }
+            ],
+            "options": {}
+        },
+        {
+            "name": "SyncStateMsg",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "type": "SyncState",
+                    "name": "ss",
+                    "id": 1,
+                    "options": {}
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {}
+        }
+    ],
+    "enums": [],
+    "imports": [],
+    "options": {}
+}).build("Sync");
+
+exports.SyncStateMsg = Sync.SyncStateMsg;
+exports.SyncState = Sync.SyncState;
+},{"protobufjs":195}],182:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -19125,11 +32287,11 @@ exports.Signature = Signature;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -19148,7 +32310,8 @@ exports.Transport = Transport;
 Transport.ConnectionInfo = function TransportConnectionInfo()
 {
 };
-},{}],86:[function(require,module,exports){
+
+},{}],183:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2014 Regents of the University of California.
@@ -19162,11 +32325,11 @@ Transport.ConnectionInfo = function TransportConnectionInfo()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var ElementReader = require('../encoding/element-reader.js').ElementReader;
@@ -19316,7 +32479,7 @@ UnixTransport.prototype.close = function()
 };
 
 }).call(this,require("buffer").Buffer)
-},{"../encoding/element-reader.js":46,"../log.js":64,"./transport.js":85,"buffer":2,"net":1}],87:[function(require,module,exports){
+},{"../encoding/element-reader.js":136,"../log.js":155,"./transport.js":182,"buffer":3,"net":1}],184:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -19330,16 +32493,17 @@ UnixTransport.prototype.close = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var ElementReader = require('../encoding/element-reader.js').ElementReader;
 var LOG = require('../log.js').Log.LOG;
 var Transport = require('./transport.js').Transport;
+var Face;
 
 /**
  * @constructor
@@ -19355,10 +32519,21 @@ var WebSocketTransport = function WebSocketTransport()
   this.ws = null;
   this.connectionInfo = null; // Read by Face.
   this.elementReader = null;
+  this.defaultGetConnectionInfo = Face.makeShuffledHostGetConnectionInfo
+    (["A.ws.ndn.ucla.edu", "B.ws.ndn.ucla.edu", "C.ws.ndn.ucla.edu", "D.ws.ndn.ucla.edu",
+      "E.ws.ndn.ucla.edu", "F.ws.ndn.ucla.edu", "G.ws.ndn.ucla.edu", "H.ws.ndn.ucla.edu",
+      "I.ws.ndn.ucla.edu", "J.ws.ndn.ucla.edu", "K.ws.ndn.ucla.edu", "L.ws.ndn.ucla.edu",
+      "M.ws.ndn.ucla.edu", "N.ws.ndn.ucla.edu"],
+     9696,
+     function(host, port) { return new WebSocketTransport.ConnectionInfo(host, port); });
 };
 
 WebSocketTransport.prototype = new Transport();
 WebSocketTransport.prototype.name = "WebSocketTransport";
+
+WebSocketTransport.importFace = function(face){
+  Face = face;
+};
 
 exports.WebSocketTransport = WebSocketTransport;
 
@@ -19433,12 +32608,13 @@ WebSocketTransport.prototype.connect = function
   var self = this;
   this.ws.onmessage = function(ev) {
     var result = ev.data;
-    console.log('RecvHandle called.', ev);
+    //console.log('RecvHandle called.');
 
     if (result == null || result == undefined || result == "") {
       console.log('INVALID ANSWER');
     }
     else if (result instanceof ArrayBuffer) {
+      // The Buffer constructor expects an instantiated array.
       var bytearray = new Buffer(new Uint8Array(result));
 
       if (LOG > 3) console.log('BINARY RESPONSE IS ' + bytearray.toString('hex'));
@@ -19458,7 +32634,7 @@ WebSocketTransport.prototype.connect = function
     if (LOG > 3) console.log('ws.onopen: WebSocket connection opened.');
     if (LOG > 3) console.log('ws.onopen: ReadyState: ' + this.readyState);
     // Face.registerPrefix will fetch the ndndid when needed.
-    elementListener.readyStatus = 2;
+
     onopenCallback();
   }
 
@@ -19502,9 +32678,8 @@ WebSocketTransport.prototype.send = function(data)
     //    ---Wentao
     var bytearray = new Uint8Array(data.length);
     bytearray.set(data);
-
     this.ws.send(bytearray.buffer);
-     //console.log('ws.send() returned.', data, new Uint8Array(data.buffer));
+    if (LOG > 3) console.log('ws.send() returned.');
   }
   else
     console.log('WebSocket connection is not established.');
@@ -19519,8 +32694,9 @@ WebSocketTransport.prototype.close = function()
     delete this.ws;
 }
 
+
 }).call(this,require("buffer").Buffer)
-},{"../encoding/element-reader.js":46,"../log.js":64,"./transport.js":85,"buffer":2}],88:[function(require,module,exports){
+},{"../encoding/element-reader.js":136,"../log.js":155,"./transport.js":182,"buffer":3}],185:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2013 Regents of the University of California.
@@ -19534,11 +32710,11 @@ WebSocketTransport.prototype.close = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -19659,8 +32835,9 @@ Blob.prototype.equals = function(other)
     return true;
   }
 };
+
 }).call(this,require("buffer").Buffer)
-},{"buffer":2}],89:[function(require,module,exports){
+},{"buffer":3}],186:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -19673,11 +32850,11 @@ Blob.prototype.equals = function(other)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var WireFormat = require('../encoding/wire-format.js').WireFormat;
@@ -19742,7 +32919,7 @@ CommandInterestGenerator.prototype.generate = function
   this.lastTimestamp = timestamp;
 };
 
-},{"../encoding/tlv/tlv-encoder.js":52,"../encoding/wire-format.js":55,"./blob.js":88,"crypto":8}],90:[function(require,module,exports){
+},{"../encoding/tlv/tlv-encoder.js":143,"../encoding/wire-format.js":146,"./blob.js":185,"crypto":9}],187:[function(require,module,exports){
 (function (Buffer){
 /**
  * Encapsulate a Buffer and support dynamic reallocation.
@@ -19757,11 +32934,11 @@ CommandInterestGenerator.prototype.generate = function
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 /**
@@ -19805,6 +32982,7 @@ DynamicBuffer.prototype.ensureLength = function(length)
  * Copy the value to this.array at offset, reallocating if necessary.
  * @param {Buffer} value The buffer to copy.
  * @param {number} offset The offset in the buffer to start copying into.
+ * @returns {number} The new offset which is offset + value.length.
  */
 DynamicBuffer.prototype.copy = function(value, offset)
 {
@@ -19815,6 +32993,8 @@ DynamicBuffer.prototype.copy = function(value, offset)
   else
     // Need to make value a Buffer to copy.
     new Buffer(value).copy(this.array, offset);
+
+  return offset + value.length;
 };
 
 /**
@@ -19845,7 +33025,7 @@ DynamicBuffer.prototype.ensureLengthFromBack = function(length)
  * offsetFromBack bytes, then copy value into the array starting
  * offsetFromBack bytes from the back of the array.
  * @param {Buffer} value The buffer to copy.
- * @param {offsetFromBack} offset The offset from the back of the array to start
+ * @param {number} offsetFromBack The offset from the back of the array to start
  * copying.
  */
 DynamicBuffer.prototype.copyFromBack = function(value, offsetFromBack)
@@ -19862,16 +33042,19 @@ DynamicBuffer.prototype.copyFromBack = function(value, offsetFromBack)
 /**
  * Return this.array.slice(begin, end);
  * @param {number} begin The begin index for the slice.
- * @param {number} end The end index for the slice.
+ * @param {number} end (optional) The end index for the slice.
  * @returns {Buffer} The buffer slice.
  */
 DynamicBuffer.prototype.slice = function(begin, end)
 {
-  return this.array.slice(begin, end);
+  if (end == undefined)
+    return this.array.slice(begin);
+  else
+    return this.array.slice(begin, end);
 };
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":2}],91:[function(require,module,exports){
+},{"buffer":3}],188:[function(require,module,exports){
 /**
  * Copyright (C) 2014 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -19884,11 +33067,11 @@ DynamicBuffer.prototype.slice = function(begin, end)
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Name = require('../name.js').Name;
@@ -19919,7 +33102,8 @@ var MemoryContentCache = function MemoryContentCache
   this.nextCleanupTime = new Date().getTime() + cleanupIntervalMilliseconds;
 
   this.onDataNotFoundForPrefix = {}; /**< The map key is the prefix.toUri().
- *                                        The value is an OnInterest function. */
+                                          The value is an OnInterest function. */
+  this.registeredPrefixIdList = []; /**< elements are number */
   this.noStaleTimeCache = []; /**< elements are MemoryContentCache.Content */
   this.staleTimeCache = [];   /**< elements are MemoryContentCache.StaleTimeContent */
   //StaleTimeContent::Compare contentCompare_;
@@ -19947,12 +33131,29 @@ MemoryContentCache.prototype.registerPrefix = function
   if (onDataNotFound)
     this.onDataNotFoundForPrefix[prefix.toUri()] = onDataNotFound;
   var thisMemoryContentCache = this;
-  this.face.registerPrefix
+  var registeredPrefixId = this.face.registerPrefix
     (prefix,
      function(prefix, interest, transport)
        { thisMemoryContentCache.onInterest(prefix, interest, transport); },
      onRegisterFailed, flags, wireFormat);
+  this.registeredPrefixIdList.push(registeredPrefixId);
 };
+
+/**
+ * Call Face.removeRegisteredPrefix for all the prefixes given to the
+ * registerPrefix method on this MemoryContentCache object so that it will not
+ * receive interests any more. You can call this if you want to "shut down"
+ * this MemoryContentCache while your application is still running.
+ */
+MemoryContentCache.prototype.unregisterAll = function()
+{
+  for (var i = 0; i < this.registeredPrefixIdList.length; ++i)
+    this.face.removeRegisteredPrefix(this.registeredPrefixIdList[i]);
+  this.registeredPrefixIdList = [];
+
+  // Also clear each onDataNotFoundForPrefix given to registerPrefix.
+  this.onDataNotFoundForPrefix = {};
+}
 
 /**
  * Add the Data packet to the cache so that it is available to use to answer
@@ -20134,14 +33335,14 @@ MemoryContentCache.StaleTimeContent.prototype.name = "StaleTimeContent";
  * Check if this content is stale.
  * @param {number} nowMilliseconds The current time in milliseconds from
  * new Date().getTime().
- * @returns {boolean} true if this interest is stale, otherwise false.
+ * @returns {boolean} True if this content is stale, otherwise false.
  */
 MemoryContentCache.StaleTimeContent.prototype.isStale = function(nowMilliseconds)
 {
   return this.staleTimeMilliseconds <= nowMilliseconds;
 };
 
-},{"../name.js":66}],92:[function(require,module,exports){
+},{"../name.js":157}],189:[function(require,module,exports){
 (function (Buffer){
 /**
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -20155,11 +33356,11 @@ MemoryContentCache.StaleTimeContent.prototype.isStale = function(nowMilliseconds
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var DataUtils = require('../encoding/data-utils.js').DataUtils;
@@ -20226,8 +33427,8 @@ NameEnumeration.prototype.processData = function(data)
         // Save the content and check if we are finished.
         this.contentParts.push(data.getContent().buf());
 
-        if (data.getMetaInfo() != null && data.getMetaInfo().getFinalBlockID().getValue().size() > 0) {
-          var finalSegmentNumber = data.getMetaInfo().getFinalBlockID().toSegment();
+        if (data.getMetaInfo() != null && data.getMetaInfo().getFinalBlockId().getValue().size() > 0) {
+          var finalSegmentNumber = data.getMetaInfo().getFinalBlockId().toSegment();
           if (segmentNumber == finalSegmentNumber) {
             // We are finished.  Parse and return the result.
             this.onComponents(NameEnumeration.parseComponents(Buffer.concat(this.contentParts)));
@@ -20296,7 +33497,7 @@ NameEnumeration.endsWithSegmentNumber = function(name) {
 };
 
 }).call(this,require("buffer").Buffer)
-},{"../encoding/binary-xml-decoder.js":40,"../encoding/data-utils.js":44,"../name.js":66,"./ndn-protoco-id-tags.js":93,"buffer":2}],93:[function(require,module,exports){
+},{"../encoding/binary-xml-decoder.js":126,"../encoding/data-utils.js":130,"../name.js":157,"./ndn-protoco-id-tags.js":190,"buffer":3}],190:[function(require,module,exports){
 /**
  * This class contains all NDNx tags
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -20310,11 +33511,11 @@ NameEnumeration.endsWithSegmentNumber = function(name) {
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 
@@ -20467,7 +33668,7 @@ var NDNProtocolDTagsStrings = [
 
 exports.NDNProtocolDTagsStrings = NDNProtocolDTagsStrings;
 
-},{}],94:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 /**
  * This class represents NDNTime Objects
  * Copyright (C) 2013-2014 Regents of the University of California.
@@ -20481,11 +33682,11 @@ exports.NDNProtocolDTagsStrings = NDNProtocolDTagsStrings;
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var LOG = require('../log.js').Log.LOG;
@@ -20513,7 +33714,7 @@ NDNTime.prototype.getJavascriptDate = function()
   return d
 };
 
-},{"../log.js":64}],95:[function(require,module,exports){
+},{"../log.js":155}],192:[function(require,module,exports){
 /**
  * Copyright (C) 2013 Regents of the University of California.
  * @author: Jeff Thompson <jefft0@remap.ucla.edu>
@@ -20526,11 +33727,11 @@ NDNTime.prototype.getJavascriptDate = function()
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * A copy of the GNU General Public License is in the file COPYING.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
 var Blob = require('./blob.js').Blob;
@@ -20623,7 +33824,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
   return this.signedPortionEndOffset;
 };
 
-},{"./blob.js":88}],96:[function(require,module,exports){
+},{"./blob.js":185}],193:[function(require,module,exports){
 (function(){
 
     // Copyright (c) 2005  Tom Wu
@@ -21854,7 +35055,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
 }).call(this);
 
-},{}],97:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 /*
  Copyright 2013 Daniel Wirtz <dcode@dcode.io>
 
@@ -21895,7 +35096,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
          * @const
          * @expose
          */
-        ProtoBuf.VERSION = "3.6.0";
+        ProtoBuf.VERSION = "3.8.1";
 
         /**
          * Wire types.
@@ -22280,7 +35481,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Tokenizer.
              * @exports ProtoBuf.DotProto.Tokenizer
-             * @class proto tokenizer
+             * @class prototype tokenizer
              * @param {string} proto Proto to tokenize
              * @constructor
              */
@@ -22330,12 +35531,18 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             };
 
             /**
+             * @alias ProtoBuf.DotProto.Tokenizer.prototype
+             * @inner
+             */
+            var TokenizerPrototype = Tokenizer.prototype;
+
+            /**
              * Reads a string beginning at the current index.
              * @return {string} The string
              * @throws {Error} If it's not a valid string
              * @private
              */
-            Tokenizer.prototype._readString = function() {
+            TokenizerPrototype._readString = function() {
                 Lang.STRING.lastIndex = this.index-1; // Include the open quote
                 var match;
                 if ((match = Lang.STRING.exec(this.source)) !== null) {
@@ -22344,7 +35551,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     this.stack.push(this.stringEndsWith);
                     return s;
                 }
-                throw Error("Illegal string value at line "+this.line+", index "+this.index);
+                throw Error("Unterminated string at line "+this.line+", index "+this.index);
             };
 
             /**
@@ -22353,7 +35560,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If it's not a valid proto file
              * @expose
              */
-            Tokenizer.prototype.next = function() {
+            TokenizerPrototype.next = function() {
                 if (this.stack.length > 0)
                     return this.stack.shift();
                 if (this.index >= this.source.length)
@@ -22396,7 +35603,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                             this.index++;
                             repeat = true;
                         } else
-                            throw Error("Invalid comment at line "+this.line+": /"+this.source.charAt(this.index)+" ('/' or '*' expected)");
+                            throw Error("Unterminated comment at line "+this.line+": /"+this.source.charAt(this.index));
                     }
                 } while (repeat);
                 if (this.index === this.source.length) return null;
@@ -22427,7 +35634,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If it's not a valid proto file
              * @expose
              */
-            Tokenizer.prototype.peek = function() {
+            TokenizerPrototype.peek = function() {
                 if (this.stack.length === 0) {
                     var token = this.next();
                     if (token === null)
@@ -22442,7 +35649,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @return {string} String representation as of "Tokenizer(index/length)"
              * @expose
              */
-            Tokenizer.prototype.toString = function() {
+            TokenizerPrototype.toString = function() {
                 return "Tokenizer("+this.index+"/"+this.source.length+" at line "+this.line+")";
             };
 
@@ -22455,7 +35662,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Parser.
              * @exports ProtoBuf.DotProto.Parser
-             * @class proto parser
+             * @class prototype parser
              * @param {string} proto Protocol source
              * @constructor
              */
@@ -22470,12 +35677,18 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             };
 
             /**
+             * @alias ProtoBuf.DotProto.Parser.prototype
+             * @inner
+             */
+            var ParserPrototype = Parser.prototype;
+
+            /**
              * Runs the parser.
              * @return {{package: string|null, messages: Array.<object>, enums: Array.<object>, imports: Array.<string>, options: object<string,*>}}
              * @throws {Error} If the source cannot be parsed
              * @expose
              */
-            Parser.prototype.parse = function() {
+            ParserPrototype.parse = function() {
                 var topLevel = {
                     "name": "[ROOT]", // temporary
                     "package": null,
@@ -22490,12 +35703,12 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     switch (token) {
                         case 'package':
                             if (!head || topLevel["package"] !== null)
-                                throw Error("Illegal package at line "+this.tn.line);
+                                throw Error("Unexpected package at line "+this.tn.line);
                             topLevel["package"] = this._parsePackage(token);
                             break;
                         case 'import':
                             if (!head)
-                                throw Error("Illegal import at line "+this.tn.line);
+                                throw Error("Unexpected import at line "+this.tn.line);
                             topLevel.imports.push(this._parseImport(token));
                             break;
                         case 'message':
@@ -22508,7 +35721,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                             break;
                         case 'option':
                             if (!head)
-                                throw Error("Illegal option at line "+this.tn.line);
+                                throw Error("Unexpected option at line "+this.tn.line);
                             this._parseOption(topLevel, token);
                             break;
                         case 'service':
@@ -22521,7 +35734,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                             this._parseIgnoredStatement(topLevel, token);
                             break;
                         default:
-                            throw Error("Illegal token at line "+this.tn.line+": "+token);
+                            throw Error("Unexpected token at line "+this.tn.line+": "+token);
                     }
                 }
                 delete topLevel["name"];
@@ -22535,7 +35748,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the number value is invalid
              * @private
              */
-            Parser.prototype._parseNumber = function(val) {
+            ParserPrototype._parseNumber = function(val) {
                 var sign = 1;
                 if (val.charAt(0) == '-')
                     sign = -1,
@@ -22553,18 +35766,17 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
             /**
              * Parses a (possibly multiline) string.
-             * @param {string} context Context description
              * @returns {string}
              * @private
              */
-            Parser.prototype._parseString = function(context) {
+            ParserPrototype._parseString = function() {
                 var value = "", token;
                 do {
                     token = this.tn.next(); // Known to be = this.tn.stringEndsWith
                     value += this.tn.next();
                     token = this.tn.next();
                     if (token !== this.tn.stringEndsWith)
-                        throw Error("Illegal end of string in "+context+" at line "+this.tn.line+": "+token+" ('"+this.tn.stringEndsWith+"' expected)");
+                        throw Error("Illegal end of string at line "+this.tn.line+": "+token);
                     token = this.tn.peek();
                 } while (token === Lang.STRINGOPEN || token === Lang.STRINGOPEN_SQ);
                 return value;
@@ -22578,7 +35790,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the ID value is invalid
              * @private
              */
-            Parser.prototype._parseId = function(val, neg) {
+            ParserPrototype._parseId = function(val, neg) {
                 var id = -1;
                 var sign = 1;
                 if (val.charAt(0) == '-')
@@ -22591,10 +35803,10 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 else if (Lang.NUMBER_OCT.test(val))
                     id = parseInt(val.substring(1), 8);
                 else
-                    throw Error("Illegal ID at line "+this.tn.line+": "+(sign < 0 ? '-' : '')+val);
+                    throw Error("Illegal id at line "+this.tn.line+": "+(sign < 0 ? '-' : '')+val);
                 id = (sign*id)|0; // Force to 32bit
                 if (!neg && id < 0)
-                    throw Error("Illegal ID at line "+this.tn.line+": "+(sign < 0 ? '-' : '')+val);
+                    throw Error("Illegal id at line "+this.tn.line+": "+(sign < 0 ? '-' : '')+val);
                 return id;
             };
 
@@ -22605,14 +35817,14 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the package definition cannot be parsed
              * @private
              */
-            Parser.prototype._parsePackage = function(token) {
+            ParserPrototype._parsePackage = function(token) {
                 token = this.tn.next();
                 if (!Lang.TYPEREF.test(token))
-                    throw Error("Illegal package at line "+this.tn.line+": "+token);
+                    throw Error("Illegal package name at line "+this.tn.line+": "+token);
                 var pkg = token;
                 token = this.tn.next();
                 if (token != Lang.END)
-                    throw Error("Illegal end of package at line "+this.tn.line+": "+token+" ('"+Lang.END+"' expected)");
+                    throw Error("Illegal end of package at line "+this.tn.line+": "+token);
                 return pkg;
             };
 
@@ -22623,17 +35835,17 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the import definition cannot be parsed
              * @private
              */
-            Parser.prototype._parseImport = function(token) {
+            ParserPrototype._parseImport = function(token) {
                 token = this.tn.peek();
                 if (token === "public")
                     this.tn.next(),
                     token = this.tn.peek();
                 if (token !== Lang.STRINGOPEN && token !== Lang.STRINGOPEN_SQ)
-                    throw Error("Illegal import at line "+this.tn.line+": "+token+" ('"+Lang.STRINGOPEN+"' or '"+Lang.STRINGOPEN_SQ+"' expected)");
-                var imported = this._parseString("root");
+                    throw Error("Illegal start of import at line "+this.tn.line+": "+token);
+                var imported = this._parseString();
                 token = this.tn.next();
                 if (token !== Lang.END)
-                    throw Error("Illegal import at line "+this.tn.line+": "+token+" ('"+Lang.END+"' expected)");
+                    throw Error("Illegal end of import at line "+this.tn.line+": "+token);
                 return imported;
             };
 
@@ -22644,7 +35856,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the option cannot be parsed
              * @private
              */
-            Parser.prototype._parseOption = function(parent, token) {
+            ParserPrototype._parseOption = function(parent, token) {
                 token = this.tn.next();
                 var custom = false;
                 if (token == Lang.COPTOPEN)
@@ -22653,12 +35865,12 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 if (!Lang.TYPEREF.test(token))
                     // we can allow options of the form google.protobuf.* since they will just get ignored anyways
                     if (!/google\.protobuf\./.test(token))
-                        throw Error("Illegal option in message "+parent.name+" at line "+this.tn.line+": "+token);
+                        throw Error("Illegal option name in message "+parent.name+" at line "+this.tn.line+": "+token);
                 var name = token;
                 token = this.tn.next();
                 if (custom) { // (my_method_option).foo, (my_method_option), some_method_option, (foo.my_option).bar
                     if (token !== Lang.COPTCLOSE)
-                        throw Error("Illegal option in message "+parent.name+", option "+name+" at line "+this.tn.line+": "+token+" ('"+Lang.COPTCLOSE+"' expected)");
+                        throw Error("Illegal end in message "+parent.name+", option "+name+" at line "+this.tn.line+": "+token);
                     name = '('+name+')';
                     token = this.tn.next();
                     if (Lang.FQTYPEREF.test(token))
@@ -22666,11 +35878,11 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         token = this.tn.next();
                 }
                 if (token !== Lang.EQUAL)
-                    throw Error("Illegal option operator in message "+parent.name+", option "+name+" at line "+this.tn.line+": "+token+" ('"+Lang.EQUAL+"' expected)");
+                    throw Error("Illegal operator in message "+parent.name+", option "+name+" at line "+this.tn.line+": "+token);
                 var value;
                 token = this.tn.peek();
                 if (token === Lang.STRINGOPEN || token === Lang.STRINGOPEN_SQ)
-                    value = this._parseString("message "+parent.name+", option "+name);
+                    value = this._parseString();
                 else {
                     this.tn.next();
                     if (Lang.NUMBER.test(token))
@@ -22684,7 +35896,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 }
                 token = this.tn.next();
                 if (token !== Lang.END)
-                    throw Error("Illegal end of option in message "+parent.name+", option "+name+" at line "+this.tn.line+": "+token+" ('"+Lang.END+"' expected)");
+                    throw Error("Illegal end of option in message "+parent.name+", option "+name+" at line "+this.tn.line+": "+token);
                 parent["options"][name] = value;
             };
 
@@ -22695,12 +35907,12 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the directive cannot be parsed
              * @private
              */
-            Parser.prototype._parseIgnoredStatement = function(parent, keyword) {
+            ParserPrototype._parseIgnoredStatement = function(parent, keyword) {
                 var token;
                 do {
                     token = this.tn.next();
                     if (token === null)
-                        throw Error("Unexpected EOF in "+parent.name+", "+keyword+" (ignored) at line "+this.tn.line);
+                        throw Error("Unexpected EOF in "+parent.name+", "+keyword+" at line "+this.tn.line);
                     if (token === Lang.END)
                         break;
                 } while (true);
@@ -22713,7 +35925,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the service cannot be parsed
              * @private
              */
-            Parser.prototype._parseService = function(parent, token) {
+            ParserPrototype._parseService = function(parent, token) {
                 token = this.tn.next();
                 if (!Lang.NAME.test(token))
                     throw Error("Illegal service name at line "+this.tn.line+": "+token);
@@ -22725,7 +35937,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 };
                 token = this.tn.next();
                 if (token !== Lang.OPEN)
-                    throw Error("Illegal OPEN after service "+name+" at line "+this.tn.line+": "+token+" ('"+Lang.OPEN+"' expected)");
+                    throw Error("Illegal start of service "+name+" at line "+this.tn.line+": "+token);
                 do {
                     token = this.tn.next();
                     if (token === "option")
@@ -22733,7 +35945,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     else if (token === 'rpc')
                         this._parseServiceRPC(svc, token);
                     else if (token !== Lang.CLOSE)
-                        throw Error("Illegal type for service "+name+" at line "+this.tn.line+": "+token);
+                        throw Error("Illegal type of service "+name+" at line "+this.tn.line+": "+token);
                 } while (token !== Lang.CLOSE);
                 parent["services"].push(svc);
             };
@@ -22744,11 +35956,11 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @param {string} token Initial token
              * @private
              */
-            Parser.prototype._parseServiceRPC = function(svc, token) {
+            ParserPrototype._parseServiceRPC = function(svc, token) {
                 var type = token;
                 token = this.tn.next();
                 if (!Lang.NAME.test(token))
-                    throw Error("Illegal RPC method name in service "+svc["name"]+" at line "+this.tn.line+": "+token);
+                    throw Error("Illegal method name in service "+svc["name"]+" at line "+this.tn.line+": "+token);
                 var name = token;
                 var method = {
                     "request": null,
@@ -22757,25 +35969,25 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 };
                 token = this.tn.next();
                 if (token !== Lang.COPTOPEN)
-                    throw Error("Illegal start of request type in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token+" ('"+Lang.COPTOPEN+"' expected)");
+                    throw Error("Illegal start of request type in service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                 token = this.tn.next();
                 if (!Lang.TYPEREF.test(token))
-                    throw Error("Illegal request type in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
+                    throw Error("Illegal request type in service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                 method["request"] = token;
                 token = this.tn.next();
                 if (token != Lang.COPTCLOSE)
-                    throw Error("Illegal end of request type in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token+" ('"+Lang.COPTCLOSE+"' expected)");
+                    throw Error("Illegal end of request type in service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                 token = this.tn.next();
                 if (token.toLowerCase() !== "returns")
-                    throw Error("Illegal request/response delimiter in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token+" ('returns' expected)");
+                    throw Error("Illegal delimiter in service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                 token = this.tn.next();
                 if (token != Lang.COPTOPEN)
-                    throw Error("Illegal start of response type in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token+" ('"+Lang.COPTOPEN+"' expected)");
+                    throw Error("Illegal start of response type in service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                 token = this.tn.next();
                 method["response"] = token;
                 token = this.tn.next();
                 if (token !== Lang.COPTCLOSE)
-                    throw Error("Illegal end of response type in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token+" ('"+Lang.COPTCLOSE+"' expected)");
+                    throw Error("Illegal end of response type in service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                 token = this.tn.next();
                 if (token === Lang.OPEN) {
                     do {
@@ -22783,12 +35995,12 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         if (token === 'option')
                             this._parseOption(method, token); // <- will fail for the custom-options example
                         else if (token !== Lang.CLOSE)
-                            throw Error("Illegal start of option in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token+" ('option' expected)");
+                            throw Error("Illegal start of option inservice "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                     } while (token !== Lang.CLOSE);
                     if (this.tn.peek() === Lang.END)
                         this.tn.next();
                 } else if (token !== Lang.END)
-                    throw Error("Illegal method delimiter in RPC service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token+" ('"+Lang.END+"' or '"+Lang.OPEN+"' expected)");
+                    throw Error("Illegal delimiter in service "+svc["name"]+"#"+name+" at line "+this.tn.line+": "+token);
                 if (typeof svc[type] === 'undefined')
                     svc[type] = {};
                 svc[type][name] = method;
@@ -22803,7 +36015,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the message cannot be parsed
              * @private
              */
-            Parser.prototype._parseMessage = function(parent, fld, token) {
+            ParserPrototype._parseMessage = function(parent, fld, token) {
                 /** @dict */
                 var msg = {}; // Note: At some point we might want to exclude the parser, so we need a dict.
                 var isGroup = token === "group";
@@ -22814,7 +36026,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 if (isGroup) {
                     token = this.tn.next();
                     if (token !== Lang.EQUAL)
-                        throw Error("Illegal id assignment after group "+msg.name+" at line "+this.tn.line+": "+token+" ('"+Lang.EQUAL+"' expected)");
+                        throw Error("Illegal id assignment after group "+msg.name+" at line "+this.tn.line+": "+token);
                     token = this.tn.next();
                     try {
                         fld["id"] = this._parseId(token);
@@ -22827,12 +36039,13 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 msg["enums"] = [];
                 msg["messages"] = [];
                 msg["options"] = {};
+                msg["oneofs"] = {};
                 token = this.tn.next();
                 if (token === Lang.OPTOPEN && fld)
                     this._parseFieldOptions(msg, fld, token),
                     token = this.tn.next();
                 if (token !== Lang.OPEN)
-                    throw Error("Illegal OPEN after "+(isGroup ? "group" : "message")+" "+msg.name+" at line "+this.tn.line+": "+token+" ('"+Lang.OPEN+"' expected)");
+                    throw Error("Illegal start of "+(isGroup ? "group" : "message")+" "+msg.name+" at line "+this.tn.line+": "+token);
                 // msg["extensions"] = undefined
                 do {
                     token = this.tn.next();
@@ -22843,6 +36056,8 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         break;
                     } else if (Lang.RULE.test(token))
                         this._parseMessageField(msg, token);
+                    else if (token === "oneof")
+                        this._parseMessageOneOf(msg, token);
                     else if (token === "enum")
                         this._parseEnum(msg, token);
                     else if (token === "message")
@@ -22854,7 +36069,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     else if (token === "extend")
                         this._parseExtend(msg, token);
                     else
-                        throw Error("Illegal token in message "+msg.name+" at line "+this.tn.line+": "+token+" (type or '"+Lang.CLOSE+"' expected)");
+                        throw Error("Illegal token in message "+msg.name+" at line "+this.tn.line+": "+token);
                 } while (true);
                 parent["messages"].push(msg);
                 return msg;
@@ -22864,10 +36079,11 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * Parses a message field.
              * @param {Object} msg Message definition
              * @param {string} token Initial token
+             * @returns {!Object} Field descriptor
              * @throws {Error} If the message field cannot be parsed
              * @private
              */
-            Parser.prototype._parseMessageField = function(msg, token) {
+            ParserPrototype._parseMessageField = function(msg, token) {
                 /** @dict */
                 var fld = {}, grp = null;
                 fld["rule"] = token;
@@ -22896,21 +36112,48 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     fld["name"] = token;
                     token = this.tn.next();
                     if (token !== Lang.EQUAL)
-                        throw Error("Illegal field id assignment in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token+" ('"+Lang.EQUAL+"' expected)");
+                        throw Error("Illegal token in field "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
                     token = this.tn.next();
                     try {
                         fld["id"] = this._parseId(token);
                     } catch (e) {
-                        throw Error("Illegal field id value in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
+                        throw Error("Illegal field id in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
                     }
                     token = this.tn.next();
                     if (token === Lang.OPTOPEN)
                         this._parseFieldOptions(msg, fld, token),
                         token = this.tn.next();
                     if (token !== Lang.END)
-                        throw Error("Illegal field delimiter in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token+" ('"+Lang.END+"' expected)");
+                        throw Error("Illegal delimiter in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
                 }
                 msg["fields"].push(fld);
+                return fld;
+            };
+
+            /**
+             * Parses a message oneof.
+             * @param {Object} msg Message definition
+             * @param {string} token Initial token
+             * @throws {Error} If the message oneof cannot be parsed
+             * @private
+             */
+            ParserPrototype._parseMessageOneOf = function(msg, token) {
+                token = this.tn.next();
+                if (!Lang.NAME.test(token))
+                    throw Error("Illegal oneof name in message "+msg.name+" at line "+this.tn.line+": "+token);
+                var name = token,
+                    fld;
+                var fields = [];
+                token = this.tn.next();
+                if (token !== Lang.OPEN)
+                    throw Error("Illegal start of oneof "+name+" at line "+this.tn.line+": "+token);
+                while (this.tn.peek() !== Lang.CLOSE) {
+                    fld = this._parseMessageField(msg, "optional");
+                    fld["oneof"] = name;
+                    fields.push(fld["id"]);
+                }
+                this.tn.next();
+                msg["oneofs"][name] = fields;
             };
 
             /**
@@ -22921,7 +36164,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the message field options cannot be parsed
              * @private
              */
-            Parser.prototype._parseFieldOptions = function(msg, fld, token) {
+            ParserPrototype._parseFieldOptions = function(msg, fld, token) {
                 var first = true;
                 do {
                     token = this.tn.next();
@@ -22929,7 +36172,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         break;
                     else if (token === Lang.OPTEND) {
                         if (first)
-                            throw Error("Illegal start of message field options in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
+                            throw Error("Illegal start of options in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
                         token = this.tn.next();
                     }
                     this._parseFieldOption(msg, fld, token);
@@ -22945,18 +36188,18 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the mesage field option cannot be parsed
              * @private
              */
-            Parser.prototype._parseFieldOption = function(msg, fld, token) {
+            ParserPrototype._parseFieldOption = function(msg, fld, token) {
                 var custom = false;
                 if (token === Lang.COPTOPEN)
                     token = this.tn.next(),
                     custom = true;
                 if (!Lang.TYPEREF.test(token))
-                    throw Error("Illegal field option in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
+                    throw Error("Illegal field option in "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
                 var name = token;
                 token = this.tn.next();
                 if (custom) {
                     if (token !== Lang.COPTCLOSE)
-                        throw Error("Illegal custom field option name delimiter in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token+" (')' expected)");
+                        throw Error("Illegal delimiter in "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
                     name = '('+name+')';
                     token = this.tn.next();
                     if (Lang.FQTYPEREF.test(token))
@@ -22964,11 +36207,11 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         token = this.tn.next();
                 }
                 if (token !== Lang.EQUAL)
-                    throw Error("Illegal field option operation in message "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token+" ('=' expected)");
+                    throw Error("Illegal token in "+msg.name+"#"+fld.name+" at line "+this.tn.line+": "+token);
                 var value;
                 token = this.tn.peek();
                 if (token === Lang.STRINGOPEN || token === Lang.STRINGOPEN_SQ) {
-                    value = this._parseString("message "+msg.name+"#"+fld.name);
+                    value = this._parseString();
                 } else if (Lang.NUMBER.test(token, true))
                     value = this._parseNumber(this.tn.next(), true);
                 else if (Lang.BOOL.test(token))
@@ -22976,7 +36219,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 else if (Lang.TYPEREF.test(token))
                     value = this.tn.next(); // TODO: Resolve?
                 else
-                    throw Error("Illegal field option value in message "+msg.name+"#"+fld.name+", option "+name+" at line "+this.tn.line+": "+token);
+                    throw Error("Illegal value in message "+msg.name+"#"+fld.name+", option "+name+" at line "+this.tn.line+": "+token);
                 fld["options"][name] = value;
             };
 
@@ -22987,7 +36230,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the enum cannot be parsed
              * @private
              */
-            Parser.prototype._parseEnum = function(msg, token) {
+            ParserPrototype._parseEnum = function(msg, token) {
                 /** @dict */
                 var enm = {};
                 token = this.tn.next();
@@ -22996,7 +36239,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 enm["name"] = token;
                 token = this.tn.next();
                 if (token !== Lang.OPEN)
-                    throw Error("Illegal OPEN after enum "+enm.name+" at line "+this.tn.line+": "+token);
+                    throw Error("Illegal start of enum "+enm.name+" at line "+this.tn.line+": "+token);
                 enm["values"] = [];
                 enm["options"] = {};
                 do {
@@ -23011,7 +36254,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         this._parseOption(enm, token);
                     else {
                         if (!Lang.NAME.test(token))
-                            throw Error("Illegal enum value name in enum "+enm.name+" at line "+this.tn.line+": "+token);
+                            throw Error("Illegal name in enum "+enm.name+" at line "+this.tn.line+": "+token);
                         this._parseEnumValue(enm, token);
                     }
                 } while (true);
@@ -23025,18 +36268,18 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the enum value cannot be parsed
              * @private
              */
-            Parser.prototype._parseEnumValue = function(enm, token) {
+            ParserPrototype._parseEnumValue = function(enm, token) {
                 /** @dict */
                 var val = {};
                 val["name"] = token;
                 token = this.tn.next();
                 if (token !== Lang.EQUAL)
-                    throw Error("Illegal enum value operator in enum "+enm.name+" at line "+this.tn.line+": "+token+" ('"+Lang.EQUAL+"' expected)");
+                    throw Error("Illegal token in enum "+enm.name+" at line "+this.tn.line+": "+token);
                 token = this.tn.next();
                 try {
                     val["id"] = this._parseId(token, true);
                 } catch (e) {
-                    throw Error("Illegal enum value id in enum "+enm.name+" at line "+this.tn.line+": "+token);
+                    throw Error("Illegal id in enum "+enm.name+" at line "+this.tn.line+": "+token);
                 }
                 enm["values"].push(val);
                 token = this.tn.next();
@@ -23046,7 +36289,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     token = this.tn.next();
                 }
                 if (token !== Lang.END)
-                    throw Error("Illegal enum value delimiter in enum "+enm.name+" at line "+this.tn.line+": "+token+" ('"+Lang.END+"' expected)");
+                    throw Error("Illegal delimiter in enum "+enm.name+" at line "+this.tn.line+": "+token);
             };
 
             /**
@@ -23056,7 +36299,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the extensions statement cannot be parsed
              * @private
              */
-            Parser.prototype._parseExtensions = function(msg, token) {
+            ParserPrototype._parseExtensions = function(msg, token) {
                 /** @type {Array.<number>} */
                 var range = [];
                 token = this.tn.next();
@@ -23068,7 +36311,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     range.push(this._parseNumber(token));
                 token = this.tn.next();
                 if (token !== 'to')
-                    throw Error("Illegal extensions delimiter in message "+msg.name+" at line "+this.tn.line+" ('to' expected)");
+                    throw Error("Illegal extensions delimiter in message "+msg.name+" at line "+this.tn.line+": "+token);
                 token = this.tn.next();
                 if (token === "min")
                     range.push(ProtoBuf.ID_MIN);
@@ -23078,7 +36321,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     range.push(this._parseNumber(token));
                 token = this.tn.next();
                 if (token !== Lang.END)
-                    throw Error("Illegal extension delimiter in message "+msg.name+" at line "+this.tn.line+": "+token+" ('"+Lang.END+"' expected)");
+                    throw Error("Illegal extensions delimiter in message "+msg.name+" at line "+this.tn.line+": "+token);
                 return range;
             };
 
@@ -23089,17 +36332,17 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the extend block cannot be parsed
              * @private
              */
-            Parser.prototype._parseExtend = function(parent, token) {
+            ParserPrototype._parseExtend = function(parent, token) {
                 token = this.tn.next();
                 if (!Lang.TYPEREF.test(token))
-                    throw Error("Illegal extended message name at line "+this.tn.line+": "+token);
+                    throw Error("Illegal message name at line "+this.tn.line+": "+token);
                 /** @dict */
                 var ext = {};
                 ext["ref"] = token;
                 ext["fields"] = [];
                 token = this.tn.next();
                 if (token !== Lang.OPEN)
-                    throw Error("Illegal OPEN in extend "+ext.name+" at line "+this.tn.line+": "+token+" ('"+Lang.OPEN+"' expected)");
+                    throw Error("Illegal start of extend "+ext.name+" at line "+this.tn.line+": "+token);
                 do {
                     token = this.tn.next();
                     if (token === Lang.CLOSE) {
@@ -23110,7 +36353,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     } else if (Lang.RULE.test(token))
                         this._parseMessageField(ext, token);
                     else
-                        throw Error("Illegal token in extend "+ext.name+" at line "+this.tn.line+": "+token+" (rule or '"+Lang.CLOSE+"' expected)");
+                        throw Error("Illegal token in extend "+ext.name+" at line "+this.tn.line+": "+token);
                 } while (true);
                 parent["messages"].push(ext);
                 return ext;
@@ -23120,7 +36363,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * Returns a string representation of this object.
              * @returns {string} String representation as of "Parser"
              */
-            Parser.prototype.toString = function() {
+            ParserPrototype.toString = function() {
                 return "Parser";
             };
 
@@ -23153,14 +36396,22 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @exports ProtoBuf.Reflect.T
              * @constructor
              * @abstract
-             * @param {ProtoBuf.Reflect.T} parent Parent object
+             * @param {!ProtoBuf.Builder} builder Builder reference
+             * @param {?ProtoBuf.Reflect.T} parent Parent object
              * @param {string} name Object name
              */
-            var T = function(parent, name) {
+            var T = function(builder, parent, name) {
+
+                /**
+                 * Builder reference.
+                 * @type {!ProtoBuf.Builder}
+                 * @expose
+                 */
+                this.builder = builder;
 
                 /**
                  * Parent object.
-                 * @type {ProtoBuf.Reflect.T|null}
+                 * @type {?ProtoBuf.Reflect.T}
                  * @expose
                  */
                 this.parent = parent;
@@ -23181,11 +36432,17 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             };
 
             /**
+             * @alias ProtoBuf.Reflect.T.prototype
+             * @inner
+             */
+            var TPrototype = T.prototype;
+
+            /**
              * Returns the fully qualified name of this object.
              * @returns {string} Fully qualified name as of ".PATH.TO.THIS"
              * @expose
              */
-            T.prototype.fqn = function() {
+            TPrototype.fqn = function() {
                 var name = this.name,
                     ptr = this;
                 do {
@@ -23203,7 +36460,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @return String representation
              * @expose
              */
-            T.prototype.toString = function(includeClass) {
+            TPrototype.toString = function(includeClass) {
                 return (includeClass ? this.className + " " : "") + this.fqn();
             };
 
@@ -23212,7 +36469,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If this type cannot be built directly
              * @expose
              */
-            T.prototype.build = function() {
+            TPrototype.build = function() {
                 throw Error(this.toString(true)+" cannot be built directly");
             };
 
@@ -23225,14 +36482,15 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Namespace.
              * @exports ProtoBuf.Reflect.Namespace
-             * @param {ProtoBuf.Reflect.Namespace|null} parent Namespace parent
+             * @param {!ProtoBuf.Builder} builder Builder reference
+             * @param {?ProtoBuf.Reflect.Namespace} parent Namespace parent
              * @param {string} name Namespace name
-             * @param {Object.<string,*>} options Namespace options
+             * @param {Object.<string,*>=} options Namespace options
              * @constructor
              * @extends ProtoBuf.Reflect.T
              */
-            var Namespace = function(parent, name, options) {
-                T.call(this, parent, name);
+            var Namespace = function(builder, parent, name, options) {
+                T.call(this, builder, parent, name);
 
                 /**
                  * @override
@@ -23241,19 +36499,22 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
                 /**
                  * Children inside the namespace.
-                 * @type {Array.<ProtoBuf.Reflect.T>}
+                 * @type {!Array.<ProtoBuf.Reflect.T>}
                  */
                 this.children = [];
 
                 /**
                  * Options.
-                 * @type {Object.<string, *>}
+                 * @type {!Object.<string, *>}
                  */
                 this.options = options || {};
             };
 
-            // Extends T
-            Namespace.prototype = Object.create(T.prototype);
+            /**
+             * @alias ProtoBuf.Reflect.Namespace.prototype
+             * @inner
+             */
+            var NamespacePrototype = Namespace.prototype = Object.create(T.prototype);
 
             /**
              * Returns an array of the namespace's children.
@@ -23261,7 +36522,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @return {Array.<ProtoBuf.Reflect.T>}
              * @expose
              */
-            Namespace.prototype.getChildren = function(type) {
+            NamespacePrototype.getChildren = function(type) {
                 type = type || null;
                 if (type == null)
                     return this.children.slice();
@@ -23278,7 +36539,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the child cannot be added (duplicate)
              * @expose
              */
-            Namespace.prototype.addChild = function(child) {
+            NamespacePrototype.addChild = function(child) {
                 var other;
                 if (other = this.getChild(child.name)) {
                     // Try to revert camelcase transformation on collision
@@ -23298,7 +36559,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @return {?ProtoBuf.Reflect.T} The child or null if not found
              * @expose
              */
-            Namespace.prototype.getChild = function(nameOrId) {
+            NamespacePrototype.getChild = function(nameOrId) {
                 var key = typeof nameOrId === 'number' ? 'id' : 'name';
                 for (var i=0, k=this.children.length; i<k; ++i)
                     if (this.children[i][key] === nameOrId)
@@ -23313,7 +36574,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @return {?ProtoBuf.Reflect.Namespace} The resolved type or null if not found
              * @expose
              */
-            Namespace.prototype.resolve = function(qn, excludeFields) {
+            NamespacePrototype.resolve = function(qn, excludeFields) {
                 var part = qn.split("."),
                     ptr = this,
                     i = 0;
@@ -23347,7 +36608,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @return {Object.<string,Function|Object>} Runtime namespace
              * @expose
              */
-            Namespace.prototype.build = function() {
+            NamespacePrototype.build = function() {
                 /** @dict */
                 var ns = {};
                 var children = this.children;
@@ -23365,7 +36626,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * Builds the namespace's '$options' property.
              * @return {Object.<string,*>}
              */
-            Namespace.prototype.buildOpt = function() {
+            NamespacePrototype.buildOpt = function() {
                 var opt = {},
                     keys = Object.keys(this.options);
                 for (var i=0, k=keys.length; i<k; ++i) {
@@ -23386,7 +36647,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @param {string=} name Returns the option value if specified, otherwise all options are returned.
              * @return {*|Object.<string,*>}null} Option value or NULL if there is no such option
              */
-            Namespace.prototype.getOption = function(name) {
+            NamespacePrototype.getOption = function(name) {
                 if (typeof name === 'undefined')
                     return this.options;
                 return typeof this.options[name] !== 'undefined' ? this.options[name] : null;
@@ -23401,15 +36662,16 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Message.
              * @exports ProtoBuf.Reflect.Message
-             * @param {ProtoBuf.Reflect.Namespace} parent Parent message or namespace
+             * @param {!ProtoBuf.Builder} builder Builder reference
+             * @param {!ProtoBuf.Reflect.Namespace} parent Parent message or namespace
              * @param {string} name Message name
-             * @param {Object.<string,*>} options Message options
+             * @param {Object.<string,*>=} options Message options
              * @param {boolean=} isGroup `true` if this is a legacy group
              * @constructor
              * @extends ProtoBuf.Reflect.Namespace
              */
-            var Message = function(parent, name, options, isGroup) {
-                Namespace.call(this, parent, name, options);
+            var Message = function(builder, parent, name, options, isGroup) {
+                Namespace.call(this, builder, parent, name, options);
 
                 /**
                  * @override
@@ -23452,10 +36714,20 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                  * @private
                  */
                 this._fieldsById = null;
+
+                /**
+                 * Cached fields by name.
+                 * @type {?Object.<string,!ProtoBuf.Reflect.Message.Field>}
+                 * @private
+                 */
+                this._fieldsByName = null;
             };
 
-            // Extends Namespace
-            Message.prototype = Object.create(Namespace.prototype);
+            /**
+             * @alias ProtoBuf.Reflect.Message.prototype
+             * @inner
+             */
+            var MessagePrototype = Message.prototype = Object.create(Namespace.prototype);
 
             /**
              * Builds the message and returns the runtime counterpart, which is a fully functional class.
@@ -23465,14 +36737,15 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the message cannot be built
              * @expose
              */
-            Message.prototype.build = function(rebuild) {
+            MessagePrototype.build = function(rebuild) {
                 if (this.clazz && !rebuild)
                     return this.clazz;
 
                 // Create the runtime Message class in its own scope
                 var clazz = (function(ProtoBuf, T) {
 
-                    var fields = T.getChildren(ProtoBuf.Reflect.Message.Field);
+                    var fields = T.getChildren(ProtoBuf.Reflect.Message.Field),
+                        oneofs = T.getChildren(ProtoBuf.Reflect.Message.OneOf);
 
                     /**
                      * Constructs a new runtime Message.
@@ -23486,9 +36759,13 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     var Message = function(values, var_args) {
                         ProtoBuf.Builder.Message.call(this);
 
-                        // Create fields on the object itself and set default values
-                        for (var i=0, k=fields.length, field; i<k; ++i) {
-                            this[(field = fields[i]).name] = field.repeated ? [] : null;
+                        // Create virtual oneof properties
+                        for (var i=0, k=oneofs.length; i<k; ++i)
+                            this[oneofs[i].name] = null;
+                        // Create fields and set default values
+                        for (i=0, k=fields.length; i<k; ++i) {
+                            var field = fields[i];
+                            this[field.name] = field.repeated ? [] : null;
                             if (field.required && field.defaultValue !== null)
                                 this[field.name] = field.defaultValue;
                         }
@@ -23504,21 +36781,17 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                                 var keys = Object.keys(values);
                                 for (i=0, k=keys.length; i<k; ++i)
                                     this.$set(keys[i], values[keys[i]]); // May throw
-                            } else // set field values from arguments, in declaration order
+                            } else // Set field values from arguments, in declaration order
                                 for (i=0, k=arguments.length; i<k; ++i)
                                     this.$set(fields[i].name, arguments[i]); // May throw
                         }
                     };
 
                     /**
-                     * The message's reflection type.
-                     * @name ProtoBuf.Builder.Message#$type
-                     * @type {!ProtoBuf.Reflect.Message}
-                     * @expose
+                     * @alias ProtoBuf.Builder.Message.prototype
+                     * @inner
                      */
-
-                    // Extends ProtoBuf.Builder.Message
-                    Message.prototype = Object.create(ProtoBuf.Builder.Message.prototype);
+                    var MessagePrototype = Message.prototype = Object.create(ProtoBuf.Builder.Message.prototype);
 
                     /**
                      * Adds a value to a repeated field.
@@ -23530,14 +36803,16 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @throws {Error} If the value cannot be added
                      * @expose
                      */
-                    Message.prototype.add = function(key, value, noAssert) {
-                        var field = T.getChild(key);
-                        if (!field)
-                            throw Error(this+"#"+key+" is undefined");
-                        if (!(field instanceof ProtoBuf.Reflect.Message.Field))
-                            throw Error(this+"#"+key+" is not a field: "+field.toString(true)); // May throw if it's an enum or embedded message
-                        if (!field.repeated)
-                            throw Error(this+"#"+key+" is not a repeated field");
+                    MessagePrototype.add = function(key, value, noAssert) {
+                        var field = T._fieldsByName[key];
+                        if (!noAssert) {
+                            if (!field)
+                                throw Error(this+"#"+key+" is undefined");
+                            if (!(field instanceof ProtoBuf.Reflect.Message.Field))
+                                throw Error(this+"#"+key+" is not a field: "+field.toString(true)); // May throw if it's an enum or embedded message
+                            if (!field.repeated)
+                                throw Error(this+"#"+key+" is not a repeated field");
+                        }
                         if (this[field.name] === null)
                             this[field.name] = [];
                         this[field.name].push(noAssert ? value : field.verifyValue(value, true));
@@ -23553,7 +36828,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @throws {Error} If the value cannot be added
                      * @expose
                      */
-                    Message.prototype.$add = Message.prototype.add;
+                    MessagePrototype.$add = MessagePrototype.add;
 
                     /**
                      * Sets a field's value.
@@ -23566,23 +36841,31 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @throws {Error} If the value cannot be set
                      * @expose
                      */
-                    Message.prototype.set = function(key, value, noAssert) {
+                    MessagePrototype.set = function(key, value, noAssert) {
                         if (key && typeof key === 'object') {
                             for (var i in key)
                                 if (key.hasOwnProperty(i))
                                     this.$set(i, key[i], noAssert);
                             return this;
                         }
-                        if (noAssert) {
-                            this[key] = value;
-                            return this;
+                        var field = T._fieldsByName[key];
+                        if (!noAssert) {
+                            if (!field)
+                                throw Error(this+"#"+key+" is not a field: undefined");
+                            if (!(field instanceof ProtoBuf.Reflect.Message.Field))
+                                throw Error(this+"#"+key+" is not a field: "+field.toString(true));
+                            this[field.name] = (value = field.verifyValue(value)); // May throw
+                        } else {
+                            this[field.name] = value;
                         }
-                        var field = T.getChild(key);
-                        if (!field)
-                            throw Error(this+"#"+key+" is not a field: undefined");
-                        if (!(field instanceof ProtoBuf.Reflect.Message.Field))
-                            throw Error(this+"#"+key+" is not a field: "+field.toString(true));
-                        this[field.name] = field.verifyValue(value); // May throw
+                        if (field.oneof) {
+                            if (value !== null) {
+                                if (this[field.oneof.name] !== null)
+                                    this[this[field.oneof.name]] = null; // Unset the previous (field name is the oneof field's value)
+                                this[field.oneof.name] = field.name;
+                            } else if (field.oneof.name === key)
+                                this[field.oneof.name] = null;
+                        }
                         return this;
                     };
 
@@ -23592,26 +36875,26 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @function
                      * @param {string} key Key
                      * @param {*} value Value to set
-                     * @param {boolean=} noAssert Whether to assert the value or not (asserts by default)
+                     * @param {boolean=} noAssert Whether to not assert the value, defaults to `false`
                      * @throws {Error} If the value cannot be set
                      * @expose
                      */
-                    Message.prototype.$set = Message.prototype.set;
+                    MessagePrototype.$set = MessagePrototype.set;
 
                     /**
                      * Gets a field's value.
                      * @name ProtoBuf.Builder.Message#get
                      * @function
                      * @param {string} key Key
-                     * @param {boolean=} noAssert Whether to no assert for an actual field, defaults to `false`
+                     * @param {boolean=} noAssert Whether to not assert for an actual field, defaults to `false`
                      * @return {*} Value
                      * @throws {Error} If there is no such field
                      * @expose
                      */
-                    Message.prototype.get = function(key, noAssert) {
+                    MessagePrototype.get = function(key, noAssert) {
                         if (noAssert)
                             return this[key];
-                        var field = T.getChild(key);
+                        var field = T._fieldsByName[key];
                         if (!field || !(field instanceof ProtoBuf.Reflect.Message.Field))
                             throw Error(this+"#"+key+" is not a field: undefined");
                         if (!(field instanceof ProtoBuf.Reflect.Message.Field))
@@ -23628,7 +36911,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @throws {Error} If there is no such field
                      * @expose
                      */
-                    Message.prototype.$get = Message.prototype.get;
+                    MessagePrototype.$get = MessagePrototype.get;
 
                     // Getters and setters
 
@@ -23638,72 +36921,91 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         if (field instanceof ProtoBuf.Reflect.Message.ExtensionField)
                             continue;
 
-                        if (ProtoBuf.populateAccessors)
+                        if (T.builder.options['populateAccessors'])
                             (function(field) {
                                 // set/get[SomeValue]
                                 var Name = field.originalName.replace(/(_[a-zA-Z])/g, function(match) {
                                     return match.toUpperCase().replace('_','');
                                 });
-                                Name = Name.substring(0,1).toUpperCase()+Name.substring(1);
+                                Name = Name.substring(0,1).toUpperCase() + Name.substring(1);
 
-                                // set/get_[some_value]
+                                // set/get_[some_value] FIXME: Do we really need these?
                                 var name = field.originalName.replace(/([A-Z])/g, function(match) {
                                     return "_"+match;
                                 });
 
                                 /**
+                                 * The current field's unbound setter function.
+                                 * @function
+                                 * @param {*} value
+                                 * @param {boolean=} noAssert
+                                 * @returns {!ProtoBuf.Builder.Message}
+                                 * @inner
+                                 */
+                                var setter = function(value, noAssert) {
+                                    this[field.name] = noAssert ? value : field.verifyValue(value);
+                                    return this;
+                                };
+
+                                /**
+                                 * The current field's unbound getter function.
+                                 * @function
+                                 * @returns {*}
+                                 * @inner
+                                 */
+                                var getter = function() {
+                                    return this[field.name];
+                                };
+
+                                /**
                                  * Sets a value. This method is present for each field, but only if there is no name conflict with
-                                 * another field.
+                                 *  another field.
                                  * @name ProtoBuf.Builder.Message#set[SomeField]
                                  * @function
                                  * @param {*} value Value to set
+                                 * @param {boolean=} noAssert Whether to not assert the value, defaults to `false`
+                                 * @returns {!ProtoBuf.Builder.Message} this
                                  * @abstract
                                  * @throws {Error} If the value cannot be set
                                  */
                                 if (T.getChild("set"+Name) === null)
-                                    Message.prototype["set"+Name] = function(value) {
-                                        this.$set(field.name, value);
-                                    };
+                                    MessagePrototype["set"+Name] = setter;
 
                                 /**
                                  * Sets a value. This method is present for each field, but only if there is no name conflict with
-                                 * another field.
+                                 *  another field.
                                  * @name ProtoBuf.Builder.Message#set_[some_field]
                                  * @function
                                  * @param {*} value Value to set
+                                 * @param {boolean=} noAssert Whether to not assert the value, defaults to `false`
+                                 * @returns {!ProtoBuf.Builder.Message} this
                                  * @abstract
                                  * @throws {Error} If the value cannot be set
                                  */
                                 if (T.getChild("set_"+name) === null)
-                                    Message.prototype["set_"+name] = function(value) {
-                                        this.$set(field.name, value);
-                                    };
+                                    MessagePrototype["set_"+name] = setter;
 
                                 /**
                                  * Gets a value. This method is present for each field, but only if there is no name conflict with
-                                 * another field.
+                                 *  another field.
                                  * @name ProtoBuf.Builder.Message#get[SomeField]
                                  * @function
                                  * @abstract
                                  * @return {*} The value
                                  */
                                 if (T.getChild("get"+Name) === null)
-                                    Message.prototype["get"+Name] = function() {
-                                        return this.$get(field.name); // Does not throw, field exists
-                                    };
+                                    MessagePrototype["get"+Name] = getter;
 
                                 /**
                                  * Gets a value. This method is present for each field, but only if there is no name conflict with
-                                 * another field.
+                                 *  another field.
                                  * @name ProtoBuf.Builder.Message#get_[some_field]
                                  * @function
                                  * @return {*} The value
                                  * @abstract
                                  */
                                 if (T.getChild("get_"+name) === null)
-                                    Message.prototype["get_"+name] = function() {
-                                        return this.$get(field.name); // Does not throw, field exists
-                                    };
+                                    MessagePrototype["get_"+name] = getter;
 
                             })(field);
                     }
@@ -23724,7 +37026,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @see ProtoBuf.Builder.Message#encodeHex
                      * @see ProtoBuf.Builder.Message#encodeAB
                      */
-                    Message.prototype.encode = function(buffer, noVerify) {
+                    MessagePrototype.encode = function(buffer, noVerify) {
                         if (typeof buffer === 'boolean')
                             noVerify = buffer,
                             buffer = undefined;
@@ -23750,7 +37052,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @throws {Error} If the message cannot be calculated or if required fields are missing.
                      * @expose
                      */
-                    Message.prototype.calculate = function() {
+                    MessagePrototype.calculate = function() {
                         return T.calculate(this);
                     };
 
@@ -23764,7 +37066,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  returns the encoded ByteBuffer in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.encodeDelimited = function(buffer) {
+                    MessagePrototype.encodeDelimited = function(buffer) {
                         var isNew = false;
                         if (!buffer)
                             buffer = new ByteBuffer(),
@@ -23785,7 +37087,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  returns the encoded ArrayBuffer in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.encodeAB = function() {
+                    MessagePrototype.encodeAB = function() {
                         try {
                             return this.encode().toArrayBuffer();
                         } catch (e) {
@@ -23803,7 +37105,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  returns the encoded ArrayBuffer in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.toArrayBuffer = Message.prototype.encodeAB;
+                    MessagePrototype.toArrayBuffer = MessagePrototype.encodeAB;
 
                     /**
                      * Directly encodes the message to a node Buffer.
@@ -23814,7 +37116,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  missing. The later still returns the encoded node Buffer in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.encodeNB = function() {
+                    MessagePrototype.encodeNB = function() {
                         try {
                             return this.encode().toBuffer();
                         } catch (e) {
@@ -23832,7 +37134,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  returns the encoded node Buffer in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.toBuffer = Message.prototype.encodeNB;
+                    MessagePrototype.toBuffer = MessagePrototype.encodeNB;
 
                     /**
                      * Directly encodes the message to a base64 encoded string.
@@ -23843,7 +37145,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  still returns the encoded base64 string in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.encode64 = function() {
+                    MessagePrototype.encode64 = function() {
                         try {
                             return this.encode().toBase64();
                         } catch (e) {
@@ -23861,7 +37163,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  returns the encoded base64 string in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.toBase64 = Message.prototype.encode64;
+                    MessagePrototype.toBase64 = MessagePrototype.encode64;
 
                     /**
                      * Directly encodes the message to a hex encoded string.
@@ -23872,7 +37174,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  still returns the encoded hex string in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.encodeHex = function() {
+                    MessagePrototype.encodeHex = function() {
                         try {
                             return this.encode().toHex();
                         } catch (e) {
@@ -23890,38 +37192,38 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      *  returns the encoded hex string in the `encoded` property on the error.
                      * @expose
                      */
-                    Message.prototype.toHex = Message.prototype.encodeHex;
+                    MessagePrototype.toHex = MessagePrototype.encodeHex;
 
                     /**
                      * Clones a message object to a raw object.
                      * @param {*} obj Object to clone
-                     * @param {boolean} includeBuffers Whether to include native buffer data or not
+                     * @param {boolean} includeBinaryAsBase64 Whether to include binary data as base64 strings or not
                      * @returns {*} Cloned object
                      * @inner
                      */
-                    function cloneRaw(obj, includeBuffers) {
+                    function cloneRaw(obj, includeBinaryAsBase64) {
                         var clone = {};
                         for (var i in obj)
                             if (obj.hasOwnProperty(i)) {
                                 if (obj[i] === null || typeof obj[i] !== 'object')
                                     clone[i] = obj[i];
                                 else if (obj[i] instanceof ByteBuffer) {
-                                    if (includeBuffers)
-                                        clone[i] = obj.toBuffer();
+                                    if (includeBinaryAsBase64)
+                                        clone[i] = obj[i].toBase64();
                                 } else // is a non-null object
-                                    clone[i] = cloneRaw(obj[i], includeBuffers);
+                                    clone[i] = cloneRaw(obj[i], includeBinaryAsBase64);
                             }
                         return clone;
                     }
 
                     /**
                      * Returns the message's raw payload.
-                     * @param {boolean=} includeBuffers Whether to include native buffer data or not, defaults to `false`
+                     * @param {boolean=} includeBinaryAsBase64 Whether to include binary data as base64 strings or not, defaults to `false`
                      * @returns {Object.<string,*>} Raw payload
                      * @expose
                      */
-                    Message.prototype.toRaw = function(includeBuffers) {
-                        return cloneRaw(this, !!includeBuffers);
+                    MessagePrototype.toRaw = function(includeBinaryAsBase64) {
+                        return cloneRaw(this, !!includeBinaryAsBase64);
                     };
 
                     /**
@@ -24022,7 +37324,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                      * @return {string} String representation as of ".Fully.Qualified.MessageName"
                      * @expose
                      */
-                    Message.prototype.toString = function() {
+                    MessagePrototype.toString = function() {
                         return T.toString();
                     };
 
@@ -24046,7 +37348,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
                     if (Object.defineProperty)
                         Object.defineProperty(Message, '$options', { "value": T.buildOpt() }),
-                        Object.defineProperty(Message.prototype, "$type", {
+                        Object.defineProperty(MessagePrototype, "$type", {
                             get: function() { return T; }
                         });
 
@@ -24056,20 +37358,20 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
                 // Static enums and prototyped sub-messages / cached collections
                 this._fields = [];
-                this._fieldsById = [];
+                this._fieldsById = {};
+                this._fieldsByName = {};
                 for (var i=0, k=this.children.length, child; i<k; i++) {
                     child = this.children[i];
                     if (child instanceof Enum)
-                        clazz[child['name']] = child.build();
+                        clazz[child.name] = child.build();
                     else if (child instanceof Message)
-                        clazz[child['name']] = child.build();
+                        clazz[child.name] = child.build();
                     else if (child instanceof Message.Field)
                         child.build(),
                         this._fields.push(child),
-                        this._fieldsById[child.id] = child;
-                    else if (child instanceof Extension) {
-                        // Ignore
-                    } else
+                        this._fieldsById[child.id] = child,
+                        this._fieldsByName[child.name] = child;
+                    else if (!(child instanceof Message.OneOf) && !(child instanceof Extension)) // Not built
                         throw Error("Illegal reflect child of "+this.toString(true)+": "+children[i].toString(true));
                 }
 
@@ -24085,11 +37387,11 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If required fields are missing or the message cannot be encoded for another reason
              * @expose
              */
-            Message.prototype.encode = function(message, buffer, noVerify) {
+            MessagePrototype.encode = function(message, buffer, noVerify) {
                 var fieldMissing = null,
                     field;
                 for (var i=0, k=this._fields.length, val; i<k; ++i) {
-                    field = this.children[i];
+                    field = this._fields[i];
                     val = message[field.name];
                     if (field.required && val === null) {
                         if (fieldMissing === null)
@@ -24112,7 +37414,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If required fields are missing or the message cannot be calculated for another reason
              * @expose
              */
-            Message.prototype.calculate = function(message) {
+            MessagePrototype.calculate = function(message) {
                 for (var n=0, i=0, k=this._fields.length, field, val; i<k; ++i) {
                     field = this._fields[i];
                     val = message[field.name];
@@ -24174,7 +37476,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the message cannot be decoded
              * @expose
              */
-            Message.prototype.decode = function(buffer, length, expectedGroupEndId) {
+            MessagePrototype.decode = function(buffer, length, expectedGroupEndId) {
                 length = typeof length === 'number' ? length : -1;
                 var start = buffer.offset,
                     msg = new (this.clazz)(),
@@ -24214,8 +37516,14 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     }
                     if (field.repeated && !field.options["packed"])
                         msg[field.name].push(field.decode(wireType, buffer));
-                    else
+                    else {
                         msg[field.name] = field.decode(wireType, buffer);
+                        if (field.oneof) {
+                            if (this[field.oneof.name] !== null)
+                                this[this[field.oneof.name]] = null;
+                            msg[field.oneof.name] = field.name;
+                        }
+                    }
                 }
 
                 // Check if all required fields are present and set default values for optional fields that are not
@@ -24241,17 +37549,19 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Message Field.
              * @exports ProtoBuf.Reflect.Message.Field
-             * @param {ProtoBuf.Reflect.Message} message Message reference
+             * @param {!ProtoBuf.Builder} builder Builder reference
+             * @param {!ProtoBuf.Reflect.Message} message Message reference
              * @param {string} rule Rule, one of requried, optional, repeated
              * @param {string} type Data type, e.g. int32
              * @param {string} name Field name
              * @param {number} id Unique field id
              * @param {Object.<string,*>=} options Options
+             * @param {!ProtoBuf.Reflect.Message.OneOf=} oneof Enclosing OneOf
              * @constructor
              * @extends ProtoBuf.Reflect.T
              */
-            var Field = function(message, rule, type, name, id, options) {
-                T.call(this, message, name);
+            var Field = function(builder, message, rule, type, name, id, options, oneof) {
+                T.call(this, builder, message, name);
 
                 /**
                  * @override
@@ -24309,6 +37619,13 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 this.defaultValue = null;
 
                 /**
+                 * Enclosing OneOf.
+                 * @type {?ProtoBuf.Reflect.Message.OneOf}
+                 * @expose
+                 */
+                this.oneof = oneof || null;
+
+                /**
                  * Original field name.
                  * @type {string}
                  * @expose
@@ -24316,22 +37633,34 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 this.originalName = this.name; // Used to revert camelcase transformation on naming collisions
 
                 // Convert field names to camel case notation if the override is set
-                if (ProtoBuf.convertFieldsToCamelCase && !(this instanceof Message.ExtensionField)) {
-                    this.name = this.name.replace(/_([a-zA-Z])/g, function($0, $1) {
-                        return $1.toUpperCase();
-                    });
-                }
+                if (this.builder.options['convertFieldsToCamelCase'] && !(this instanceof Message.ExtensionField))
+                    this.name = Field._toCamelCase(this.name);
             };
 
-            // Extends T
-            Field.prototype = Object.create(T.prototype);
+            /**
+             * Converts a field name to camel case.
+             * @param {string} name Likely underscore notated name
+             * @returns {string} Camel case notated name
+             * @private
+             */
+            Field._toCamelCase = function(name) {
+                return name.replace(/_([a-zA-Z])/g, function($0, $1) {
+                    return $1.toUpperCase();
+                });
+            };
+
+            /**
+             * @alias ProtoBuf.Reflect.Message.Field.prototype
+             * @inner
+             */
+            var FieldPrototype = Field.prototype = Object.create(T.prototype);
 
             /**
              * Builds the field.
              * @override
              * @expose
              */
-            Field.prototype.build = function() {
+            FieldPrototype.build = function() {
                 this.defaultValue = typeof this.options['default'] !== 'undefined'
                     ? this.verifyValue(this.options['default']) : null;
             };
@@ -24364,7 +37693,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the value cannot be set for this field
              * @expose
              */
-            Field.prototype.verifyValue = function(value, skipRepeated) {
+            FieldPrototype.verifyValue = function(value, skipRepeated) {
                 skipRepeated = skipRepeated || false;
                 var fail = function(val, msg) {
                     throw Error("Illegal value for "+this.toString(true)+" of type "+this.type.name+": "+val+" ("+msg+")");
@@ -24452,20 +37781,18 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
                     // Length-delimited bytes
                     case ProtoBuf.TYPES["bytes"]:
-                        return value && value instanceof ByteBuffer
-                            ? value
-                            : ByteBuffer.wrap(value);
+                        if (ByteBuffer.isByteBuffer(value))
+                            return value;
+                        return ByteBuffer.wrap(value, "base64");
 
                     // Constant enum value
                     case ProtoBuf.TYPES["enum"]: {
                         var values = this.resolvedType.getChildren(Enum.Value);
-                        for (i=0; i<values.length; i++) {
-                            if (values[i].name == value) {
+                        for (i=0; i<values.length; i++)
+                            if (values[i].name == value)
                                 return values[i].id;
-                            } else if (values[i].id == value) {
+                            else if (values[i].id == value)
                                 return values[i].id;
-                            }
-                        }
                         fail(value, "not a valid enum value");
                     }
                     // Embedded message
@@ -24500,7 +37827,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the field cannot be encoded
              * @expose
              */
-            Field.prototype.encode = function(value, buffer) {
+            FieldPrototype.encode = function(value, buffer) {
                 if (this.type === null || typeof this.type !== 'object')
                     throw Error("[INTERNAL] Unresolved type in "+this.toString(true)+": "+this.type);
                 if (value === null || (this.repeated && value.length == 0))
@@ -24552,7 +37879,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the value cannot be encoded
              * @expose
              */
-            Field.prototype.encodeValue = function(value, buffer) {
+            FieldPrototype.encodeValue = function(value, buffer) {
                 if (value === null) return buffer; // Nothing to encode
                 // Tag has already been written
 
@@ -24673,7 +38000,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @returns {number} Byte length
              * @expose
              */
-            Field.prototype.calculate = function(value) {
+            FieldPrototype.calculate = function(value) {
                 value = this.verifyValue(value); // May throw
                 if (this.type === null || typeof this.type !== 'object')
                     throw Error("[INTERNAL] Unresolved type in "+this.toString(true)+": "+this.type);
@@ -24712,7 +38039,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the value cannot be calculated
              * @expose
              */
-            Field.prototype.calculateValue = function(value) {
+            FieldPrototype.calculateValue = function(value) {
                 if (value === null) return 0; // Nothing to encode
                 // Tag has already been written
                 var n;
@@ -24768,7 +38095,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the field cannot be decoded
              * @expose
              */
-            Field.prototype.decode = function(wireType, buffer, skipRepeated) {
+            FieldPrototype.decode = function(wireType, buffer, skipRepeated) {
                 var value, nBytes;
                 if (wireType != this.type.wireType && (skipRepeated || (wireType != ProtoBuf.WIRE_TYPES.LDELIM || !this.repeated)))
                     throw Error("Illegal wire type for field "+this.toString(true)+": "+wireType+" ("+this.type.wireType+" expected)");
@@ -24868,7 +38195,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
                 // We should never end here
                 throw Error("[INTERNAL] Illegal wire type for "+this.toString(true)+": "+wireType);
-            }
+            };
 
             /**
              * @alias ProtoBuf.Reflect.Message.Field
@@ -24879,7 +38206,8 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Message ExtensionField.
              * @exports ProtoBuf.Reflect.Message.ExtensionField
-             * @param {ProtoBuf.Reflect.Message} message Message reference
+             * @param {!ProtoBuf.Builder} builder Builder reference
+             * @param {!ProtoBuf.Reflect.Message} message Message reference
              * @param {string} rule Rule, one of requried, optional, repeated
              * @param {string} type Data type, e.g. int32
              * @param {string} name Field name
@@ -24888,8 +38216,8 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @constructor
              * @extends ProtoBuf.Reflect.Message.Field
              */
-            var ExtensionField = function(message, rule, type, name, id, options) {
-                Field.call(this, message, rule, type, name, id, options);
+            var ExtensionField = function(builder, message, rule, type, name, id, options) {
+                Field.call(this, builder, message, rule, type, name, id, options);
 
                 /**
                  * Extension reference.
@@ -24909,16 +38237,43 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             Reflect.Message.ExtensionField = ExtensionField;
 
             /**
+             * Constructs a new Message OneOf.
+             * @exports ProtoBuf.Reflect.Message.OneOf
+             * @param {!ProtoBuf.Builder} builder Builder reference
+             * @param {!ProtoBuf.Reflect.Message} message Message reference
+             * @param {string} name OneOf name
+             * @constructor
+             * @extends ProtoBuf.Reflect.T
+             */
+            var OneOf = function(builder, message, name) {
+                T.call(this, builder, message, name);
+
+                /**
+                 * Enclosed fields.
+                 * @type {!Array.<!ProtoBuf.Reflect.Message.Field>}
+                 * @expose
+                 */
+                this.fields = [];
+            };
+
+            /**
+             * @alias ProtoBuf.Reflect.Message.OneOf
+             * @expose
+             */
+            Reflect.Message.OneOf = OneOf;
+
+            /**
              * Constructs a new Enum.
              * @exports ProtoBuf.Reflect.Enum
+             * @param {!ProtoBuf.Builder} builder Builder reference
              * @param {!ProtoBuf.Reflect.T} parent Parent Reflect object
              * @param {string} name Enum name
              * @param {Object.<string,*>=} options Enum options
              * @constructor
              * @extends ProtoBuf.Reflect.Namespace
              */
-            var Enum = function(parent, name, options) {
-                Namespace.call(this, parent, name, options);
+            var Enum = function(builder, parent, name, options) {
+                Namespace.call(this, builder, parent, name, options);
 
                 /**
                  * @override
@@ -24933,15 +38288,18 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 this.object = null;
             };
 
-            // Extends Namespace
-            Enum.prototype = Object.create(Namespace.prototype);
+            /**
+             * @alias ProtoBuf.Reflect.Enum.prototype
+             * @inner
+             */
+            var EnumPrototype = Enum.prototype = Object.create(Namespace.prototype);
 
             /**
              * Builds this enum and returns the runtime counterpart.
              * @return {Object<string,*>}
              * @expose
              */
-            Enum.prototype.build = function() {
+            EnumPrototype.build = function() {
                 var enm = {},
                     values = this.getChildren(Enum.Value);
                 for (var i=0, k=values.length; i<k; ++i)
@@ -24960,14 +38318,15 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Enum Value.
              * @exports ProtoBuf.Reflect.Enum.Value
+             * @param {!ProtoBuf.Builder} builder Builder reference
              * @param {!ProtoBuf.Reflect.Enum} enm Enum reference
              * @param {string} name Field name
              * @param {number} id Unique field id
              * @constructor
              * @extends ProtoBuf.Reflect.T
              */
-            var Value = function(enm, name, id) {
-                T.call(this, enm, name);
+            var Value = function(builder, enm, name, id) {
+                T.call(this, builder, enm, name);
 
                 /**
                  * @override
@@ -24995,12 +38354,13 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * An extension (field).
              * @exports ProtoBuf.Reflect.Extension
              * @constructor
-             * @param {ProtoBuf.Reflect.T} parent Parent object
+             * @param {!ProtoBuf.Builder} builder Builder reference
+             * @param {!ProtoBuf.Reflect.T} parent Parent object
              * @param {string} name Object name
              * @param {!ProtoBuf.Reflect.Message.Field} field Extension field
              */
-            var Extension = function(parent, name, field) {
-                T.call(this, parent, name);
+            var Extension = function(builder, parent, name, field) {
+                T.call(this, builder, parent, name);
 
                 /**
                  * Extended message field.
@@ -25022,14 +38382,15 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Constructs a new Service.
              * @exports ProtoBuf.Reflect.Service
+             * @param {!ProtoBuf.Builder} builder Builder reference
              * @param {!ProtoBuf.Reflect.Namespace} root Root
              * @param {string} name Service name
              * @param {Object.<string,*>=} options Options
              * @constructor
              * @extends ProtoBuf.Reflect.Namespace
              */
-            var Service = function(root, name, options) {
-                Namespace.call(this, root, name, options);
+            var Service = function(builder, root, name, options) {
+                Namespace.call(this, builder, root, name, options);
 
                 /**
                  * @override
@@ -25043,8 +38404,11 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 this.clazz = null;
             };
 
-            // Extends Namespace
-            Service.prototype = Object.create(Namespace.prototype);
+            /**
+             * @alias ProtoBuf.Reflect.Service.prototype
+             * @inner
+             */
+            var ServicePrototype = Service.prototype = Object.create(Namespace.prototype);
 
             /**
              * Builds the service and returns the runtime counterpart, which is a fully functional class.
@@ -25054,7 +38418,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the message cannot be built
              * @expose
              */
-            Service.prototype.build = function(rebuild) {
+            ServicePrototype.build = function(rebuild) {
                 if (this.clazz && !rebuild)
                     return this.clazz;
 
@@ -25086,12 +38450,15 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         };
                     };
 
-                    // Extends ProtoBuf.Builder.Service
-                    Service.prototype = Object.create(ProtoBuf.Builder.Service.prototype);
+                    /**
+                     * @alias ProtoBuf.Builder.Service.prototype
+                     * @inner
+                     */
+                    var ServicePrototype = Service.prototype = Object.create(ProtoBuf.Builder.Service.prototype);
 
                     if (Object.defineProperty)
                         Object.defineProperty(Service, "$options", { "value": T.buildOpt() }),
-                        Object.defineProperty(Service.prototype, "$options", { "value": Service["$options"] });
+                        Object.defineProperty(ServicePrototype, "$options", { "value": Service["$options"] });
 
                     /**
                      * Asynchronously performs an RPC call using the given RPC implementation.
@@ -25119,7 +38486,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         (function(method) {
 
                             // service#Method(message, callback)
-                            Service.prototype[method.name] = function(req, callback) {
+                            ServicePrototype[method.name] = function(req, callback) {
                                 try {
                                     if (!req || !(req instanceof method.resolvedRequestType.clazz)) {
                                         setTimeout(callback.bind(this, Error("Illegal request type provided to service method "+T.name+"#"+method.name)), 0);
@@ -25149,7 +38516,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
                             if (Object.defineProperty)
                                 Object.defineProperty(Service[method.name], "$options", { "value": method.buildOpt() }),
-                                Object.defineProperty(Service.prototype[method.name], "$options", { "value": Service[method.name]["$options"] });
+                                Object.defineProperty(ServicePrototype[method.name], "$options", { "value": Service[method.name]["$options"] });
                         })(rpc[i]);
                     }
 
@@ -25167,14 +38534,15 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * Abstract service method.
              * @exports ProtoBuf.Reflect.Service.Method
+             * @param {!ProtoBuf.Builder} builder Builder reference
              * @param {!ProtoBuf.Reflect.Service} svc Service
              * @param {string} name Method name
              * @param {Object.<string,*>=} options Options
              * @constructor
              * @extends ProtoBuf.Reflect.T
              */
-            var Method = function(svc, name, options) {
-                T.call(this, svc, name);
+            var Method = function(builder, svc, name, options) {
+                T.call(this, builder, svc, name);
 
                 /**
                  * @override
@@ -25189,8 +38557,11 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 this.options = options || {};
             };
 
-            // Extends T
-            Method.prototype = Object.create(T.prototype);
+            /**
+             * @alias ProtoBuf.Reflect.Service.Method.prototype
+             * @inner
+             */
+            var MethodPrototype = Method.prototype = Object.create(T.prototype);
 
             /**
              * Builds the method's '$options' property.
@@ -25198,7 +38569,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @function
              * @return {Object.<string,*>}
              */
-            Method.prototype.buildOpt = Namespace.prototype.buildOpt;
+            MethodPrototype.buildOpt = NamespacePrototype.buildOpt;
 
             /**
              * @alias ProtoBuf.Reflect.Service.Method
@@ -25209,6 +38580,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             /**
              * RPC service method.
              * @exports ProtoBuf.Reflect.Service.RPCMethod
+             * @param {!ProtoBuf.Builder} builder Builder reference
              * @param {!ProtoBuf.Reflect.Service} svc Service
              * @param {string} name Method name
              * @param {string} request Request message name
@@ -25217,8 +38589,8 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @constructor
              * @extends ProtoBuf.Reflect.Service.Method
              */
-            var RPCMethod = function(svc, name, request, response, options) {
-                Method.call(this, svc, name, options);
+            var RPCMethod = function(builder, svc, name, request, response, options) {
+                Method.call(this, builder, svc, name, options);
 
                 /**
                  * @override
@@ -25264,6 +38636,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
             Reflect.Service.RPCMethod = RPCMethod;
 
             return Reflect;
+
         })(ProtoBuf);
 
         /**
@@ -25277,16 +38650,17 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * Constructs a new Builder.
              * @exports ProtoBuf.Builder
              * @class Provides the functionality to build protocol messages.
+             * @param {Object.<string,*>=} options Options
              * @constructor
              */
-            var Builder = function() {
+            var Builder = function(options) {
 
                 /**
                  * Namespace.
                  * @type {ProtoBuf.Reflect.Namespace}
                  * @expose
                  */
-                this.ns = new Reflect.Namespace(null, ""); // Global namespace
+                this.ns = new Reflect.Namespace(this, null, ""); // Global namespace
 
                 /**
                  * Namespace pointer.
@@ -25322,13 +38696,26 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                  * @expose
                  */
                 this.importRoot = null;
+
+                /**
+                 * Options.
+                 * @type {!Object.<string, *>}
+                 * @expose
+                 */
+                this.options = options || {};
             };
+
+            /**
+             * @alias ProtoBuf.Builder.prototype
+             * @inner
+             */
+            var BuilderPrototype = Builder.prototype;
 
             /**
              * Resets the pointer to the root namespace.
              * @expose
              */
-            Builder.prototype.reset = function() {
+            BuilderPrototype.reset = function() {
                 this.ptr = this.ns;
             };
 
@@ -25340,7 +38727,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the package name is invalid
              * @expose
              */
-            Builder.prototype.define = function(pkg, options) {
+            BuilderPrototype.define = function(pkg, options) {
                 if (typeof pkg !== 'string' || !Lang.TYPEREF.test(pkg))
                     throw Error("Illegal package: "+pkg);
                 var part = pkg.split("."), i;
@@ -25349,7 +38736,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         throw Error("Illegal package: "+part[i]);
                 for (i=0; i<part.length; i++) {
                     if (this.ptr.getChild(part[i]) === null) // Keep existing namespace
-                        this.ptr.addChild(new Reflect.Namespace(this.ptr, part[i], options));
+                        this.ptr.addChild(new Reflect.Namespace(this, this.ptr, part[i], options));
                     this.ptr = this.ptr.getChild(part[i]);
                 }
                 return this;
@@ -25463,7 +38850,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If a message definition is invalid
              * @expose
              */
-            Builder.prototype.create = function(defs) {
+            BuilderPrototype.create = function(defs) {
                 if (!defs)
                     return this; // Nothing to create
                 if (!ProtoBuf.Util.isArray(defs))
@@ -25472,35 +38859,51 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                     return this;
 
                 // It's quite hard to keep track of scopes and memory here, so let's do this iteratively.
-                var stack = [], def, obj, subObj, i, j;
+                var stack = [];
                 stack.push(defs); // One level [a, b, c]
                 while (stack.length > 0) {
                     defs = stack.pop();
                     if (ProtoBuf.Util.isArray(defs)) { // Stack always contains entire namespaces
                         while (defs.length > 0) {
-                            def = defs.shift(); // Namespace always contains an array of messages, enums and services
+                            var def = defs.shift(); // Namespace always contains an array of messages, enums and services
                             if (Builder.isValidMessage(def)) {
-                                obj = new Reflect.Message(this.ptr, def["name"], def["options"], def["isGroup"]);
+                                var obj = new Reflect.Message(this, this.ptr, def["name"], def["options"], def["isGroup"]);
+                                // Create OneOfs
+                                var oneofs = {};
+                                if (def["oneofs"]) {
+                                    var keys = Object.keys(def["oneofs"]);
+                                    for (var i=0, k=keys.length; i<k; ++i)
+                                        obj.addChild(oneofs[keys[i]] = new Reflect.Message.OneOf(this, obj, keys[i]));
+                                }
                                 // Create fields
                                 if (def["fields"] && def["fields"].length > 0) {
-                                    for (i=0; i<def["fields"].length; i++) { // i=Fields
-                                        if (obj.getChild(def['fields'][i]['id']) !== null)
-                                            throw Error("Duplicate field id in message "+obj.name+": "+def['fields'][i]['id']);
-                                        if (def["fields"][i]["options"]) {
-                                            subObj = Object.keys(def["fields"][i]["options"]);
-                                            for (j=0; j<subObj.length; j++) { // j=Option names
-                                                if (typeof subObj[j] !== 'string')
-                                                    throw Error("Illegal field option name in message "+obj.name+"#"+def["fields"][i]["name"]+": "+subObj[j]);
-                                                if (typeof def["fields"][i]["options"][subObj[j]] !== 'string' && typeof def["fields"][i]["options"][subObj[j]] !== 'number' && typeof def["fields"][i]["options"][subObj[j]] !== 'boolean')
-                                                    throw Error("Illegal field option value in message "+obj.name+"#"+def["fields"][i]["name"]+"#"+subObj[j]+": "+def["fields"][i]["options"][subObj[j]]);
+                                    for (i=0, k=def["fields"].length; i<k; ++i) { // i:k=Fields
+                                        var fld = def['fields'][i];
+                                        if (obj.getChild(fld['id']) !== null)
+                                            throw Error("Duplicate field id in message "+obj.name+": "+fld['id']);
+                                        if (fld["options"]) {
+                                            var opts = Object.keys(fld["options"]);
+                                            for (var j= 0,l=opts.length; j<l; ++j) { // j:l=Option names
+                                                if (typeof opts[j] !== 'string')
+                                                    throw Error("Illegal field option name in message "+obj.name+"#"+fld["name"]+": "+opts[j]);
+                                                if (typeof fld["options"][opts[j]] !== 'string' && typeof fld["options"][opts[j]] !== 'number' && typeof fld["options"][opts[j]] !== 'boolean')
+                                                    throw Error("Illegal field option value in message "+obj.name+"#"+fld["name"]+"#"+opts[j]+": "+fld["options"][opts[j]]);
                                             }
-                                            subObj = null;
                                         }
-                                        obj.addChild(new Reflect.Message.Field(obj, def["fields"][i]["rule"], def["fields"][i]["type"], def["fields"][i]["name"], def["fields"][i]["id"], def["fields"][i]["options"]));
+                                        var oneof = null;
+                                        if (typeof fld["oneof"] === 'string') {
+                                            oneof = oneofs[fld["oneof"]];
+                                            if (typeof oneof === 'undefined')
+                                                throw Error("Illegal oneof in message "+obj.name+"#"+fld["name"]+": "+fld["oneof"]);
+                                        }
+                                        fld = new Reflect.Message.Field(this, obj, fld["rule"], fld["type"], fld["name"], fld["id"], fld["options"], oneof);
+                                        if (oneof)
+                                            oneof.fields.push(fld);
+                                        obj.addChild(fld);
                                     }
                                 }
                                 // Push enums and messages to stack
-                                subObj = [];
+                                var subObj = [];
                                 if (typeof def["enums"] !== 'undefined' && def['enums'].length > 0)
                                     for (i=0; i<def["enums"].length; i++)
                                         subObj.push(def["enums"][i]);
@@ -25527,16 +38930,16 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                                 subObj = null;
                                 obj = null;
                             } else if (Builder.isValidEnum(def)) {
-                                obj = new Reflect.Enum(this.ptr, def["name"], def["options"]);
+                                obj = new Reflect.Enum(this, this.ptr, def["name"], def["options"]);
                                 for (i=0; i<def["values"].length; i++)
-                                    obj.addChild(new Reflect.Enum.Value(obj, def["values"][i]["name"], def["values"][i]["id"]));
+                                    obj.addChild(new Reflect.Enum.Value(this, obj, def["values"][i]["name"], def["values"][i]["id"]));
                                 this.ptr.addChild(obj);
                                 obj = null;
                             } else if (Builder.isValidService(def)) {
-                                obj = new Reflect.Service(this.ptr, def["name"], def["options"]);
+                                obj = new Reflect.Service(this, this.ptr, def["name"], def["options"]);
                                 for (i in def["rpc"])
                                     if (def["rpc"].hasOwnProperty(i))
-                                        obj.addChild(new Reflect.Service.RPCMethod(obj, i, def["rpc"][i]["request"], def["rpc"][i]["response"], def["rpc"][i]["options"]));
+                                        obj.addChild(new Reflect.Service.RPCMethod(this, obj, i, def["rpc"][i]["request"], def["rpc"][i]["response"], def["rpc"][i]["options"]));
                                 this.ptr.addChild(obj);
                                 obj = null;
                             } else if (Builder.isValidExtend(def)) {
@@ -25547,10 +38950,16 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                                             throw Error("Duplicate extended field id in message "+obj.name+": "+def['fields'][i]['id']);
                                         if (def['fields'][i]['id'] < obj.extensions[0] || def['fields'][i]['id'] > obj.extensions[1])
                                             throw Error("Illegal extended field id in message "+obj.name+": "+def['fields'][i]['id']+" ("+obj.extensions.join(' to ')+" expected)");
+                                        // Convert extension field names to camel case notation if the override is set
+                                        var name = def["fields"][i]["name"];
+                                        if (this.options['convertFieldsToCamelCase'])
+                                            name = Reflect.Message.Field._toCamelCase(def["fields"][i]["name"]);
                                         // see #161: Extensions use their fully qualified name as their runtime key and...
-                                        var fld = new Reflect.Message.ExtensionField(obj, def["fields"][i]["rule"], def["fields"][i]["type"], this.ptr.fqn()+'.'+def["fields"][i]["name"], def["fields"][i]["id"], def["fields"][i]["options"]);
-                                        // ...are added on top of the current namespace as an extension which is used for resolving their type later on
-                                        var ext = new Reflect.Extension(this.ptr, def["fields"][i]["name"], fld);
+                                        fld = new Reflect.Message.ExtensionField(this, obj, def["fields"][i]["rule"], def["fields"][i]["type"], this.ptr.fqn()+'.'+name, def["fields"][i]["id"], def["fields"][i]["options"]);
+                                        // ...are added on top of the current namespace as an extension which is used for
+                                        // resolving their type later on (the extension always keeps the original name to
+                                        // prevent naming collisions)
+                                        var ext = new Reflect.Extension(this, this.ptr, def["fields"][i]["name"], fld);
                                         fld.extension = ext;
                                         this.ptr.addChild(ext);
                                         obj.addChild(fld);
@@ -25580,7 +38989,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If the definition or file cannot be imported
              * @expose
              */
-            Builder.prototype["import"] = function(json, filename) {
+            BuilderPrototype["import"] = function(json, filename) {
                 if (typeof filename === 'string') {
                     if (ProtoBuf.Util.IS_NODE)
                         filename = require("path")['resolve'](filename);
@@ -25714,7 +39123,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If a type cannot be resolved
              * @expose
              */
-            Builder.prototype.resolveAll = function() {
+            BuilderPrototype.resolveAll = function() {
                 // Resolve all reflected objects
                 var res;
                 if (this.ptr == null || typeof this.ptr.type === 'object')
@@ -25757,9 +39166,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                         // Should not happen as nothing else is implemented
                         throw Error("Illegal service type in "+this.ptr.toString(true));
                     }
-                } else if (this.ptr instanceof ProtoBuf.Reflect.Extension) {
-                    // There are no runtime counterparts to extensions
-                } else
+                } else if (!(this.ptr instanceof ProtoBuf.Reflect.Message.OneOf) && !(this.ptr instanceof ProtoBuf.Reflect.Extension))
                     throw Error("Illegal object in namespace: "+typeof(this.ptr)+":"+this.ptr);
                 this.reset();
             };
@@ -25772,7 +39179,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @throws {Error} If a type could not be resolved
              * @expose
              */
-            Builder.prototype.build = function(path) {
+            BuilderPrototype.build = function(path) {
                 this.reset();
                 if (!this.resolved)
                     this.resolveAll(),
@@ -25801,7 +39208,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @param {string=} path Specifies what to return. If omitted, the entire namespace wiil be returned.
              * @return {ProtoBuf.Reflect.T} Reflection descriptor or `null` if not found
              */
-            Builder.prototype.lookup = function(path) {
+            BuilderPrototype.lookup = function(path) {
                 return path ? this.ns.resolve(path) : this.ns;
             };
 
@@ -25810,7 +39217,7 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
              * @return {string} String representation as of "Builder"
              * @expose
              */
-            Builder.prototype.toString = function() {
+            BuilderPrototype.toString = function() {
                 return "Builder";
             };
 
@@ -25834,10 +39241,9 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
          * @expose
          */
         ProtoBuf.loadProto = function(proto, builder, filename) {
-            if (typeof builder === 'string' || (builder && typeof builder["file"] === 'string' && typeof builder["root"] === 'string')) {
-                filename = builder;
-                builder = null;
-            }
+            if (typeof builder === 'string' || (builder && typeof builder["file"] === 'string' && typeof builder["root"] === 'string'))
+                filename = builder,
+                builder = undefined;
             return ProtoBuf.loadJson((new ProtoBuf.DotProto.Parser(proto)).parse(), builder, filename);
         };
 
@@ -25904,18 +39310,18 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
 
         /**
-         * Constructs a new Builder with the specified package defined.
-         * @param {string=} pkg Package name as fully qualified name, e.g. "My.Game". If no package is specified, the
-         * builder will only contain a global namespace.
-         * @param {Object.<string,*>=} options Top level options
-         * @return {ProtoBuf.Builder} New Builder
+         * Constructs a new empty Builder.
+         * @param {Object.<string,*>=} options Builder options, defaults to global options set on ProtoBuf
+         * @return {!ProtoBuf.Builder} Builder
          * @expose
          */
-        ProtoBuf.newBuilder = function(pkg, options) {
-            var builder = new ProtoBuf.Builder();
-            if (typeof pkg !== 'undefined' && pkg !== null)
-                builder.define(pkg, options);
-            return builder;
+        ProtoBuf.newBuilder = function(options) {
+            options = options || {};
+            if (typeof options['convertFieldsToCamelCase'] === 'undefined')
+                options['convertFieldsToCamelCase'] = ProtoBuf.convertFieldsToCamelCase;
+            if (typeof options['populateAccessors'] === 'undefined')
+                options['populateAccessors'] = ProtoBuf.populateAccessors;
+            return new ProtoBuf.Builder(options);
         };
 
         /**
@@ -25937,7 +39343,6 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
                 json = JSON.parse(json);
             builder["import"](json, filename);
             builder.resolveAll();
-            builder.build();
             return builder;
         };
 
@@ -25978,8 +39383,8 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
         return ProtoBuf;
     }
 
-    /* CommonJS */ if (typeof module !== 'undefined' && module["exports"])
-        module["exports"] = init(require("bytebuffer"));
+    /* CommonJS */ if (typeof require === 'function' && typeof module === 'object' && module && typeof exports === 'object' && exports)
+        module['exports'] = init(require("bytebuffer"));
     /* AMD */ else if (typeof define === 'function' && define["amd"])
         define(["ByteBuffer"], init);
     /* Global */ else
@@ -25987,97 +39392,3304 @@ SignedBlob.prototype.getSignedPortionEndOffset = function()
 
 })(this);
 
-},{"bytebuffer":98,"fs":1,"path":19}],98:[function(require,module,exports){
+},{"bytebuffer":196,"fs":1,"path":23}],195:[function(require,module,exports){
 /*
- ByteBuffer.js (c) 2013-2014 Daniel Wirtz <dcode@dcode.io>
- This version of ByteBuffer.js uses an ArrayBuffer (AB) as its backing buffer and is compatible with modern browsers.
- Released under the Apache License, Version 2.0
- see: https://github.com/dcodeIO/ByteBuffer.js for details
-*/
-(function(r){function t(k){function d(a,b,c){"undefined"===typeof a&&(a=d.DEFAULT_CAPACITY);"undefined"===typeof b&&(b=d.DEFAULT_ENDIAN);"undefined"===typeof c&&(c=d.DEFAULT_NOASSERT);if(!c){a|=0;if(0>a)throw new RangeError("Illegal capacity: 0 <= "+a);if("boolean"!==typeof b)throw new TypeError("Illegal littleEndian: Not a boolean");if("boolean"!==typeof c)throw new TypeError("Illegal noAssert: Not a boolean");}this.buffer=0===a?r:new ArrayBuffer(a);this.view=0===a?null:new DataView(this.buffer);
-this.offset=0;this.markedOffset=-1;this.limit=a;this.littleEndian="undefined"!==typeof b?!!b:!1;this.noAssert=!!c}function m(a){var b=0;return function(){return b<a.length?a.charCodeAt(b++):null}}function s(){var a=[],b=[];return function(){if(0===arguments.length)return b.join("")+t.apply(String,a);1024<a.length+arguments.length&&(b.push(t.apply(String,a)),a.length=0);Array.prototype.push.apply(a,arguments)}}d.VERSION="3.3.0";d.LITTLE_ENDIAN=!0;d.BIG_ENDIAN=!1;d.DEFAULT_CAPACITY=16;d.DEFAULT_ENDIAN=
-d.BIG_ENDIAN;d.DEFAULT_NOASSERT=!1;d.Long=k||null;var r=new ArrayBuffer(0),t=String.fromCharCode;d.allocate=function(a,b,c){return new d(a,b,c)};d.concat=function(a,b,c,e){if("boolean"===typeof b||"string"!==typeof b)e=c,c=b,b=void 0;for(var h=0,f=0,g=a.length,n;f<g;++f)d.isByteBuffer(a[f])||(a[f]=d.wrap(a[f],b)),n=a[f].limit-a[f].offset,0<n&&(h+=n);if(0===h)return new d(0,c,e);b=new d(h,c,e);e=new Uint8Array(b.buffer);for(f=0;f<g;)c=a[f++],n=c.limit-c.offset,0>=n||(e.set((new Uint8Array(c.buffer)).subarray(c.offset,
-c.limit),b.offset),b.offset+=n);b.limit=b.offset;b.offset=0;return b};d.isByteBuffer=function(a){return a&&a instanceof d};d.type=function(){return ArrayBuffer};d.wrap=function(a,b,c,e){"string"!==typeof b&&(e=c,c=b,b=void 0);if("string"===typeof a)switch("undefined"===typeof b&&(b="utf8"),b){case "base64":return d.fromBase64(a,c);case "hex":return d.fromHex(a,c);case "binary":return d.fromBinary(a,c);case "utf8":return d.fromUTF8(a,c);case "debug":return d.fromDebug(a,c);default:throw new TypeError("Unsupported encoding: "+
-b);}if(null===a||"object"!==typeof a)throw new TypeError("Illegal buffer: null or non-object");if(d.isByteBuffer(a))return b=d.prototype.clone.call(a),b.markedOffset=-1,b;if(a instanceof Uint8Array)b=new d(0,c,e),0<a.length&&(b.buffer=a.buffer,b.offset=a.byteOffset,b.limit=a.byteOffset+a.length,b.view=0<a.length?new DataView(a.buffer):null);else if(a instanceof ArrayBuffer)b=new d(0,c,e),0<a.byteLength&&(b.buffer=a,b.offset=0,b.limit=a.byteLength,b.view=0<a.byteLength?new DataView(a):null);else if("[object Array]"===
-Object.prototype.toString.call(a))for(b=new d(a.length,c,e),b.limit=a.length,i=0;i<a.length;++i)b.view.setUint8(i,a[i]);else throw new TypeError("Illegal buffer");return b};d.prototype.writeInt8=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a|=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+
-b+" (+0) <= "+this.buffer.byteLength);}b+=1;var e=this.buffer.byteLength;b>e&&this.resize((e*=2)>b?e:b);this.view.setInt8(b-1,a);c&&(this.offset+=1);return this};d.prototype.writeByte=d.prototype.writeInt8;d.prototype.readInt8=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+1>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+1) <= "+
-this.buffer.byteLength);}a=this.view.getInt8(a);b&&(this.offset+=1);return a};d.prototype.readByte=d.prototype.readInt8;d.prototype.writeUint8=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+
-b+" (+0) <= "+this.buffer.byteLength);}b+=1;var e=this.buffer.byteLength;b>e&&this.resize((e*=2)>b?e:b);this.view.setUint8(b-1,a);c&&(this.offset+=1);return this};d.prototype.readUint8=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+1>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+1) <= "+this.buffer.byteLength);}a=this.view.getUint8(a);
-b&&(this.offset+=1);return a};d.prototype.writeInt16=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a|=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}b+=2;var e=this.buffer.byteLength;b>e&&this.resize((e*=
-2)>b?e:b);this.view.setInt16(b-2,a,this.littleEndian);c&&(this.offset+=2);return this};d.prototype.writeShort=d.prototype.writeInt16;d.prototype.readInt16=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+2>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+2) <= "+this.buffer.byteLength);}a=this.view.getInt16(a,this.littleEndian);b&&(this.offset+=
-2);return a};d.prototype.readShort=d.prototype.readInt16;d.prototype.writeUint16=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}b+=2;var e=this.buffer.byteLength;
-b>e&&this.resize((e*=2)>b?e:b);this.view.setUint16(b-2,a,this.littleEndian);c&&(this.offset+=2);return this};d.prototype.readUint16=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+2>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+2) <= "+this.buffer.byteLength);}a=this.view.getUint16(a,this.littleEndian);b&&(this.offset+=2);return a};
-d.prototype.writeInt32=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a|=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}b+=4;var e=this.buffer.byteLength;b>e&&this.resize((e*=2)>b?e:b);this.view.setInt32(b-
-4,a,this.littleEndian);c&&(this.offset+=4);return this};d.prototype.writeInt=d.prototype.writeInt32;d.prototype.readInt32=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+4>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+4) <= "+this.buffer.byteLength);}a=this.view.getInt32(a,this.littleEndian);b&&(this.offset+=4);return a};d.prototype.readInt=
-d.prototype.readInt32;d.prototype.writeUint32=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}b+=4;var e=this.buffer.byteLength;b>e&&this.resize((e*=
-2)>b?e:b);this.view.setUint32(b-4,a,this.littleEndian);c&&(this.offset+=4);return this};d.prototype.readUint32=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+4>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+4) <= "+this.buffer.byteLength);}a=this.view.getUint32(a,this.littleEndian);b&&(this.offset+=4);return a};k&&(d.prototype.writeInt64=
-function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"===typeof a)a=k.fromNumber(a);else if(!(a&&a instanceof k))throw new TypeError("Illegal value: "+a+" (not an integer or Long)");if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}"number"===typeof a&&(a=k.fromNumber(a));b+=8;var e=this.buffer.byteLength;
-b>e&&this.resize((e*=2)>b?e:b);b-=8;this.littleEndian?(this.view.setInt32(b,a.low,!0),this.view.setInt32(b+4,a.high,!0)):(this.view.setInt32(b,a.high,!1),this.view.setInt32(b+4,a.low,!1));c&&(this.offset+=8);return this},d.prototype.writeLong=d.prototype.writeInt64,d.prototype.readInt64=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+8>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+
-a+" (+8) <= "+this.buffer.byteLength);}a=this.littleEndian?new k(this.view.getInt32(a,!0),this.view.getInt32(a+4,!0),!1):new k(this.view.getInt32(a+4,!1),this.view.getInt32(a,!1),!1);b&&(this.offset+=8);return a},d.prototype.readLong=d.prototype.readInt64,d.prototype.writeUint64=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"===typeof a)a=k.fromNumber(a);else if(!(a&&a instanceof k))throw new TypeError("Illegal value: "+a+" (not an integer or Long)");if("number"!==
-typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}"number"===typeof a&&(a=k.fromNumber(a));b+=8;var e=this.buffer.byteLength;b>e&&this.resize((e*=2)>b?e:b);b-=8;this.littleEndian?(this.view.setInt32(b,a.low,!0),this.view.setInt32(b+4,a.high,!0)):(this.view.setInt32(b,a.high,!1),this.view.setInt32(b+4,a.low,!1));c&&(this.offset+=8);return this},
-d.prototype.readUint64=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+8>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+8) <= "+this.buffer.byteLength);}a=this.littleEndian?new k(this.view.getInt32(a,!0),this.view.getInt32(a+4,!0),!0):new k(this.view.getInt32(a+4,!1),this.view.getInt32(a,!1),!0);b&&(this.offset+=8);return a});d.prototype.writeFloat32=
-function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a)throw new TypeError("Illegal value: "+a+" (not a number)");if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}b+=4;var e=this.buffer.byteLength;b>e&&this.resize((e*=2)>b?e:b);this.view.setFloat32(b-4,a,this.littleEndian);c&&(this.offset+=
-4);return this};d.prototype.writeFloat=d.prototype.writeFloat32;d.prototype.readFloat32=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+4>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+4) <= "+this.buffer.byteLength);}a=this.view.getFloat32(a,this.littleEndian);b&&(this.offset+=4);return a};d.prototype.readFloat=d.prototype.readFloat32;
-d.prototype.writeFloat64=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a)throw new TypeError("Illegal value: "+a+" (not a number)");if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}b+=8;var e=this.buffer.byteLength;b>e&&this.resize((e*=2)>b?e:b);this.view.setFloat64(b-8,a,this.littleEndian);
-c&&(this.offset+=8);return this};d.prototype.writeDouble=d.prototype.writeFloat64;d.prototype.readFloat64=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+8>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+8) <= "+this.buffer.byteLength);}a=this.view.getFloat64(a,this.littleEndian);b&&(this.offset+=8);return a};d.prototype.readDouble=
-d.prototype.readFloat64;d.MAX_VARINT32_BYTES=5;d.calculateVarint32=function(a){a>>>=0;return 128>a?1:16384>a?2:2097152>a?3:268435456>a?4:5};d.zigZagEncode32=function(a){return((a|=0)<<1^a>>31)>>>0};d.zigZagDecode32=function(a){return a>>>1^-(a&1)|0};d.prototype.writeVarint32=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a|=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+
-b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}var e=d.calculateVarint32(a);b+=e;var h=this.buffer.byteLength;b>h&&this.resize((h*=2)>b?h:b);b-=e;this.view.setUint8(b,e=a|128);a>>>=0;128<=a?(e=a>>7|128,this.view.setUint8(b+1,e),16384<=a?(e=a>>14|128,this.view.setUint8(b+2,e),2097152<=a?(e=a>>21|128,this.view.setUint8(b+3,e),268435456<=a?(this.view.setUint8(b+4,a>>28&15),e=5):(this.view.setUint8(b+
-3,e&127),e=4)):(this.view.setUint8(b+2,e&127),e=3)):(this.view.setUint8(b+1,e&127),e=2)):(this.view.setUint8(b,e&127),e=1);return c?(this.offset+=e,this):e};d.prototype.writeVarint32ZigZag=function(a,b){return this.writeVarint32(d.zigZagEncode32(a),b)};d.prototype.readVarint32=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+1>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+
-a+" (+1) <= "+this.buffer.byteLength);}var c=0,e=0,d;do d=this.view.getUint8(a+c),5>c&&(e|=(d&127)<<7*c>>>0),++c;while(128===(d&128));e|=0;return b?(this.offset+=c,e):{value:e,length:c}};d.prototype.readVarint32ZigZag=function(a){a=this.readVarint32(a);"object"===typeof a?a.value=d.zigZagDecode32(a.value):a=d.zigZagDecode32(a);return a};k&&(d.MAX_VARINT64_BYTES=10,d.calculateVarint64=function(a){"number"===typeof a&&(a=k.fromNumber(a));var b=a.toInt()>>>0,c=a.shiftRightUnsigned(28).toInt()>>>0;a=
-a.shiftRightUnsigned(56).toInt()>>>0;return 0==a?0==c?16384>b?128>b?1:2:2097152>b?3:4:16384>c?128>c?5:6:2097152>c?7:8:128>a?9:10},d.zigZagEncode64=function(a){"number"===typeof a?a=k.fromNumber(a,!1):!1!==a.unsigned&&(a=a.toSigned());return a.shiftLeft(1).xor(a.shiftRight(63)).toUnsigned()},d.zigZagDecode64=function(a){"number"===typeof a?a=k.fromNumber(a,!1):!1!==a.unsigned&&(a=a.toSigned());return a.shiftRightUnsigned(1).xor(a.and(k.ONE).toSigned().negate()).toSigned()},d.prototype.writeVarint64=
-function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"===typeof a)a=k.fromNumber(a);else if(!(a&&a instanceof k))throw new TypeError("Illegal value: "+a+" (not an integer or Long)");if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}"number"===typeof a?a=k.fromNumber(a,!1):!1!==a.unsigned&&(a=
-a.toSigned());var e=d.calculateVarint64(a),h=a.toInt()>>>0,f=a.shiftRightUnsigned(28).toInt()>>>0,g=a.shiftRightUnsigned(56).toInt()>>>0;b+=e;var n=this.buffer.byteLength;b>n&&this.resize((n*=2)>b?n:b);b-=e;switch(e){case 10:this.view.setUint8(b+9,g>>>7&1);case 9:this.view.setUint8(b+8,9!==e?g|128:g&127);case 8:this.view.setUint8(b+7,8!==e?f>>>21|128:f>>>21&127);case 7:this.view.setUint8(b+6,7!==e?f>>>14|128:f>>>14&127);case 6:this.view.setUint8(b+5,6!==e?f>>>7|128:f>>>7&127);case 5:this.view.setUint8(b+
-4,5!==e?f|128:f&127);case 4:this.view.setUint8(b+3,4!==e?h>>>21|128:h>>>21&127);case 3:this.view.setUint8(b+2,3!==e?h>>>14|128:h>>>14&127);case 2:this.view.setUint8(b+1,2!==e?h>>>7|128:h>>>7&127);case 1:this.view.setUint8(b,1!==e?h|128:h&127)}return c?(this.offset+=e,this):e},d.prototype.writeVarint64ZigZag=function(a,b){return this.writeVarint64(d.zigZagEncode64(a),b)},d.prototype.readVarint64=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||
-0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+1>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+1) <= "+this.buffer.byteLength);}var c=a,e=0,d=0,f=0,g=0,g=this.view.getUint8(a++),e=g&127;if(g&128&&(g=this.view.getUint8(a++),e|=(g&127)<<7,g&128&&(g=this.view.getUint8(a++),e|=(g&127)<<14,g&128&&(g=this.view.getUint8(a++),e|=(g&127)<<21,g&128&&(g=this.view.getUint8(a++),d=g&127,g&128&&(g=this.view.getUint8(a++),d|=(g&127)<<7,g&128&&(g=
-this.view.getUint8(a++),d|=(g&127)<<14,g&128&&(g=this.view.getUint8(a++),d|=(g&127)<<21,g&128&&(g=this.view.getUint8(a++),f=g&127,g&128&&(g=this.view.getUint8(a++),f|=(g&127)<<7,g&128))))))))))throw Error("Data must be corrupt: Buffer overrun");e=k.fromBits(e|d<<28,d>>>4|f<<24,!1);return b?(this.offset=a,e):{value:e,length:a-c}},d.prototype.readVarint64ZigZag=function(a){(a=this.readVarint64(a))&&a.value instanceof k?a.value=d.zigZagDecode64(a.value):a=d.zigZagDecode64(a);return a});d.prototype.writeCString=
-function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);var e,d=a.length;if(!this.noAssert){if("string"!==typeof a)throw new TypeError("Illegal str: Not a string");for(e=0;e<d;++e)if(0===a.charCodeAt(e))throw new RangeError("Illegal str: Contains NULL-characters");if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}e=b;d=l.a(m(a))[1];
-b+=d+1;var f=this.buffer.byteLength;b>f&&this.resize((f*=2)>b?f:b);b-=d+1;l.c(m(a),function(a){this.view.setUint8(b++,a)}.bind(this));this.view.setUint8(b++,0);return c?(this.offset=b-e,this):d};d.prototype.readCString=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+1>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+1) <= "+this.buffer.byteLength);
-}var c=a,e,d=-1;l.b(function(){if(0===d)return null;if(a>=this.limit)throw RangeError("Illegal range: Truncated data, "+a+" < "+this.limit);return 0===(d=this.view.getUint8(a++))?null:d}.bind(this),e=s(),!0);return b?(this.offset=a,e()):{string:e(),length:a-c}};d.prototype.writeIString=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("string"!==typeof a)throw new TypeError("Illegal str: Not a string");if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+
-b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}var e=b,d;d=l.a(m(a),this.noAssert)[1];b+=4+d;var f=this.buffer.byteLength;b>f&&this.resize((f*=2)>b?f:b);b-=4+d;this.view.setUint32(b,d,this.littleEndian);b+=4;l.c(m(a),function(a){this.view.setUint8(b++,a)}.bind(this));if(b!==e+4+d)throw new RangeError("Illegal range: Truncated data, "+b+" == "+(b+4+d));return c?(this.offset=b,this):b-e};d.prototype.readIString=
-function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+4>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+4) <= "+this.buffer.byteLength);}var c=0,e=a,c=this.view.getUint32(a,this.littleEndian);a+=4;var d=a+c;l.b(function(){return a<d?this.view.getUint8(a++):null}.bind(this),c=s(),this.noAssert);c=c();return b?(this.offset=a,c):{string:c,length:a-
-e}};d.METRICS_CHARS="c";d.METRICS_BYTES="b";d.prototype.writeUTF8String=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}var e,d=b;e=l.a(m(a))[1];b+=e;var f=this.buffer.byteLength;b>f&&this.resize((f*=2)>b?f:b);b-=e;l.c(m(a),function(a){this.view.setUint8(b++,
-a)}.bind(this));return c?(this.offset=b,this):b-d};d.prototype.writeString=d.prototype.writeUTF8String;d.calculateUTF8Chars=function(a){return l.a(m(a))[0]};d.calculateUTF8Bytes=function(a){return l.a(m(a))[1]};d.prototype.readUTF8String=function(a,b,c){"number"===typeof b&&(c=b,b=void 0);var e="undefined"===typeof c;e&&(c=this.offset);"undefined"===typeof b&&(b=d.METRICS_CHARS);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal length: "+a+" (not an integer)");a|=0;if("number"!==
-typeof c||0!==c%1)throw new TypeError("Illegal offset: "+c+" (not an integer)");c>>>=0;if(0>c||c+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+c+" (+0) <= "+this.buffer.byteLength);}var h=0,f=c,g;if(b===d.METRICS_CHARS){g=s();l.g(function(){return h<a&&c<this.limit?this.view.getUint8(c++):null}.bind(this),function(a){++h;l.e(a,g)}.bind(this));if(h!==a)throw new RangeError("Illegal range: Truncated data, "+h+" == "+a);return e?(this.offset=c,g()):{string:g(),length:c-f}}if(b===
-d.METRICS_BYTES){if(!this.noAssert){if("number"!==typeof c||0!==c%1)throw new TypeError("Illegal offset: "+c+" (not an integer)");c>>>=0;if(0>c||c+a>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+c+" (+"+a+") <= "+this.buffer.byteLength);}var n=c+a;l.b(function(){return c<n?this.view.getUint8(c++):null}.bind(this),g=s(),this.noAssert);if(c!==n)throw new RangeError("Illegal range: Truncated data, "+c+" == "+n);return e?(this.offset=c,g()):{string:g(),length:c-f}}throw new TypeError("Unsupported metrics: "+
-b);};d.prototype.readString=d.prototype.readUTF8String;d.prototype.writeVString=function(a,b){var c="undefined"===typeof b;c&&(b=this.offset);if(!this.noAssert){if("string"!==typeof a)throw new TypeError("Illegal str: Not a string");if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: "+b+" (not an integer)");b>>>=0;if(0>b||b+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+b+" (+0) <= "+this.buffer.byteLength);}var e=b,h,f;h=l.a(m(a),this.noAssert)[1];f=d.calculateVarint32(h);
-b+=f+h;var g=this.buffer.byteLength;b>g&&this.resize((g*=2)>b?g:b);b-=f+h;b+=this.writeVarint32(h,b);l.c(m(a),function(a){this.view.setUint8(b++,a)}.bind(this));if(b!==e+h+f)throw new RangeError("Illegal range: Truncated data, "+b+" == "+(b+h+f));return c?(this.offset=b,this):b-e};d.prototype.readVString=function(a){var b="undefined"===typeof a;b&&(a=this.offset);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+1>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+
-a+" (+1) <= "+this.buffer.byteLength);}var c=this.readVarint32(a),e=a;a+=c.length;var c=c.value,d=a+c,c=s();l.b(function(){return a<d?this.view.getUint8(a++):null}.bind(this),c,this.noAssert);c=c();return b?(this.offset=a,c):{string:c,length:a-e}};d.prototype.append=function(a,b,c){if("number"===typeof b||"string"!==typeof b)c=b,b=void 0;var e="undefined"===typeof c;e&&(c=this.offset);if(!this.noAssert){if("number"!==typeof c||0!==c%1)throw new TypeError("Illegal offset: "+c+" (not an integer)");
-c>>>=0;if(0>c||c+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+c+" (+0) <= "+this.buffer.byteLength);}a instanceof d||(a=d.wrap(a,b));b=a.limit-a.offset;if(0>=b)return this;c+=b;var h=this.buffer.byteLength;c>h&&this.resize((h*=2)>c?h:c);(new Uint8Array(this.buffer,c-b)).set((new Uint8Array(a.buffer)).subarray(a.offset,a.limit));a.offset+=b;e&&(this.offset+=b);return this};d.prototype.appendTo=function(a,b){a.append(this,b);return this};d.prototype.assert=function(a){this.noAssert=
-!a;return this};d.prototype.capacity=function(){return this.buffer.byteLength};d.prototype.clear=function(){this.offset=0;this.limit=this.buffer.byteLength;this.markedOffset=-1;return this};d.prototype.clone=function(a){var b=new d(0,this.littleEndian,this.noAssert);a?(a=new ArrayBuffer(this.buffer.byteLength),(new Uint8Array(a)).set(this.buffer),b.buffer=a,b.view=new DataView(a)):(b.buffer=this.buffer,b.view=this.view);b.offset=this.offset;b.markedOffset=this.markedOffset;b.limit=this.limit;return b};
-d.prototype.compact=function(a,b){"undefined"===typeof a&&(a=this.offset);"undefined"===typeof b&&(b=this.limit);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal end: Not an integer");b>>>=0;if(0>a||a>b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+" <= "+this.buffer.byteLength);}if(0===a&&b===this.buffer.byteLength)return this;var c=b-a;if(0===
-c)return this.buffer=r,this.view=null,0<=this.markedOffset&&(this.markedOffset-=a),this.limit=this.offset=0,this;var e=new ArrayBuffer(c);(new Uint8Array(e)).set((new Uint8Array(this.buffer)).subarray(a,b));this.buffer=e;this.view=new DataView(e);0<=this.markedOffset&&(this.markedOffset-=a);this.offset=0;this.limit=c;return this};d.prototype.copy=function(a,b){"undefined"===typeof a&&(a=this.offset);"undefined"===typeof b&&(b=this.limit);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");
-a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal end: Not an integer");b>>>=0;if(0>a||a>b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+" <= "+this.buffer.byteLength);}if(a===b)return new d(0,this.littleEndian,this.noAssert);var c=b-a,e=new d(c,this.littleEndian,this.noAssert);e.offset=0;e.limit=c;0<=e.markedOffset&&(e.markedOffset-=a);this.copyTo(e,0,a,b);return e};d.prototype.copyTo=function(a,b,c,e){var h,f;if(!this.noAssert&&!d.isByteBuffer(a))throw new TypeError("Illegal target: Not a ByteBuffer");
-b=(f="undefined"===typeof b)?a.offset:b|0;c=(h="undefined"===typeof c)?this.offset:c|0;e="undefined"===typeof e?this.limit:e|0;if(0>b||b>a.buffer.byteLength)throw new RangeError("Illegal target range: 0 <= "+b+" <= "+a.buffer.byteLength);if(0>c||e>this.buffer.byteLength)throw new RangeError("Illegal source range: 0 <= "+c+" <= "+this.buffer.byteLength);var g=e-c;if(0===g)return a;a.ensureCapacity(b+g);(new Uint8Array(a.buffer)).set((new Uint8Array(this.buffer)).subarray(c,e),b);h&&(this.offset+=g);
-f&&(a.offset+=g);return this};d.prototype.ensureCapacity=function(a){var b=this.buffer.byteLength;return b<a?this.resize((b*=2)>a?b:a):this};d.prototype.fill=function(a,b,c){var e="undefined"===typeof b;e&&(b=this.offset);"string"===typeof a&&0<a.length&&(a=a.charCodeAt(0));"undefined"===typeof b&&(b=this.offset);"undefined"===typeof c&&(c=this.limit);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal value: "+a+" (not an integer)");a|=0;if("number"!==typeof b||0!==b%
-1)throw new TypeError("Illegal begin: Not an integer");b>>>=0;if("number"!==typeof c||0!==c%1)throw new TypeError("Illegal end: Not an integer");c>>>=0;if(0>b||b>c||c>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+b+" <= "+c+" <= "+this.buffer.byteLength);}if(b>=c)return this;for(;b<c;)this.view.setUint8(b++,a);e&&(this.offset=b);return this};d.prototype.flip=function(){this.limit=this.offset;this.offset=0;return this};d.prototype.mark=function(a){a="undefined"===typeof a?this.offset:
-a;if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal offset: "+a+" (not an integer)");a>>>=0;if(0>a||a+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+a+" (+0) <= "+this.buffer.byteLength);}this.markedOffset=a;return this};d.prototype.order=function(a){if(!this.noAssert&&"boolean"!==typeof a)throw new TypeError("Illegal littleEndian: Not a boolean");this.littleEndian=!!a;return this};d.prototype.LE=function(a){this.littleEndian="undefined"!==typeof a?
-!!a:!0;return this};d.prototype.BE=function(a){this.littleEndian="undefined"!==typeof a?!a:!1;return this};d.prototype.prepend=function(a,b,c){if("number"===typeof b||"string"!==typeof b)c=b,b=void 0;var e="undefined"===typeof c;e&&(c=this.offset);if(!this.noAssert){if("number"!==typeof c||0!==c%1)throw new TypeError("Illegal offset: "+c+" (not an integer)");c>>>=0;if(0>c||c+0>this.buffer.byteLength)throw new RangeError("Illegal offset: 0 <= "+c+" (+0) <= "+this.buffer.byteLength);}a instanceof d||
-(a=d.wrap(a,b));b=a.limit-a.offset;if(0>=b)return this;var h=b-c,f;if(0<h){var g=new ArrayBuffer(this.buffer.byteLength+h);f=new Uint8Array(g);f.set((new Uint8Array(this.buffer)).subarray(c,this.buffer.byteLength),b);this.buffer=g;this.view=new DataView(g);this.offset+=h;0<=this.markedOffset&&(this.markedOffset+=h);this.limit+=h;c+=h}else f=new Uint8Array(this.buffer);f.set((new Uint8Array(a.buffer)).subarray(a.offset,a.limit),c-b);a.offset=a.limit;e&&(this.offset-=b);return this};d.prototype.prependTo=
-function(a,b){a.prepend(this,b);return this};d.prototype.printDebug=function(a){"function"!==typeof a&&(a=console.log.bind(console));a(this.toString()+"\n-------------------------------------------------------------------\n"+this.toDebug(!0))};d.prototype.remaining=function(){return this.limit-this.offset};d.prototype.reset=function(){0<=this.markedOffset?(this.offset=this.markedOffset,this.markedOffset=-1):this.offset=0;return this};d.prototype.resize=function(a){if(!this.noAssert){if("number"!==
-typeof a||0!==a%1)throw new TypeError("Illegal capacity: "+a+" (not an integer)");a|=0;if(0>a)throw new RangeError("Illegal capacity: 0 <= "+a);}this.buffer.byteLength<a&&(a=new ArrayBuffer(a),(new Uint8Array(a)).set(new Uint8Array(this.buffer)),this.buffer=a,this.view=new DataView(a));return this};d.prototype.reverse=function(a,b){"undefined"===typeof a&&(a=this.offset);"undefined"===typeof b&&(b=this.limit);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");
-a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal end: Not an integer");b>>>=0;if(0>a||a>b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+" <= "+this.buffer.byteLength);}if(a===b)return this;Array.prototype.reverse.call((new Uint8Array(this.buffer)).subarray(a,b));this.view=new DataView(this.buffer);return this};d.prototype.skip=function(a){if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal length: "+a+" (not an integer)");
-a|=0}var b=this.offset+a;if(!this.noAssert&&(0>b||b>this.buffer.byteLength))throw new RangeError("Illegal length: 0 <= "+this.offset+" + "+a+" <= "+this.buffer.byteLength);this.offset=b;return this};d.prototype.slice=function(a,b){"undefined"===typeof a&&(a=this.offset);"undefined"===typeof b&&(b=this.limit);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal end: Not an integer");
-b>>>=0;if(0>a||a>b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+" <= "+this.buffer.byteLength);}var c=this.clone();c.offset=a;c.limit=b;return c};d.prototype.toBuffer=function(a){var b=this.offset,c=this.limit;if(b>c)var e=b,b=c,c=e;if(!this.noAssert){if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal offset: Not an integer");b>>>=0;if("number"!==typeof c||0!==c%1)throw new TypeError("Illegal limit: Not an integer");c>>>=0;if(0>b||b>c||c>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+
-b+" <= "+c+" <= "+this.buffer.byteLength);}if(!a&&0===b&&c===this.buffer.byteLength)return this.buffer;if(b===c)return r;a=new ArrayBuffer(c-b);(new Uint8Array(a)).set((new Uint8Array(this.buffer)).subarray(b,c),0);return a};d.prototype.toArrayBuffer=d.prototype.toBuffer;d.prototype.toString=function(a){if("undefined"===typeof a)return"ByteBufferAB(offset="+this.offset+",markedOffset="+this.markedOffset+",limit="+this.limit+",capacity="+this.capacity()+")";switch(a){case "utf8":return this.toUTF8();
-case "base64":return this.toBase64();case "hex":return this.toHex();case "binary":return this.toBinary();case "debug":return this.toDebug();case "columns":return this.m();default:throw Error("Unsupported encoding: "+a);}};var u=function(){for(var a={},b=[65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,48,49,50,51,52,53,54,55,56,57,43,47],c=[],e=0,d=b.length;e<d;++e)c[b[e]]=
-e;a.i=function(a,c){for(var e,d;null!==(e=a());)c(b[e>>2&63]),d=(e&3)<<4,null!==(e=a())?(d|=e>>4&15,c(b[(d|e>>4&15)&63]),d=(e&15)<<2,null!==(e=a())?(c(b[(d|e>>6&3)&63]),c(b[e&63])):(c(b[d&63]),c(61))):(c(b[d&63]),c(61),c(61))};a.h=function(a,b){function e(a){throw Error("Illegal character code: "+a);}for(var d,h,k;null!==(d=a());)if(h=c[d],"undefined"===typeof h&&e(d),null!==(d=a())&&(k=c[d],"undefined"===typeof k&&e(d),b(h<<2>>>0|(k&48)>>4),null!==(d=a()))){h=c[d];if("undefined"===typeof h)if(61===
-d)break;else e(d);b((k&15)<<4>>>0|(h&60)>>2);if(null!==(d=a())){k=c[d];if("undefined"===typeof k)if(61===d)break;else e(d);b((h&3)<<6>>>0|k)}}};a.test=function(a){return/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(a)};return a}();d.prototype.toBase64=function(a,b){"undefined"===typeof a&&(a=this.offset);"undefined"===typeof b&&(b=this.limit);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");a>>>=0;if("number"!==typeof b||
-0!==b%1)throw new TypeError("Illegal end: Not an integer");b>>>=0;if(0>a||a>b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+" <= "+this.buffer.byteLength);}var c;u.i(function(){return a<b?this.view.getUint8(a++):null}.bind(this),c=s());return c()};d.fromBase64=function(a,b,c){if(!c){if("string"!==typeof a)throw new TypeError("Illegal str: Not a string");if(0!==a.length%4)throw new TypeError("Illegal str: Length not a multiple of 4");}var e=new d(a.length/4*3,b,c),
-h=0;u.h(m(a),function(a){e.view.setUint8(h++,a)});e.limit=h;return e};d.btoa=function(a){return d.fromBinary(a).toBase64()};d.atob=function(a){return d.fromBase64(a).toBinary()};d.prototype.toBinary=function(a,b){a="undefined"===typeof a?this.offset:a;b="undefined"===typeof b?this.limit:b;if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal end: Not an integer");b>>>=0;if(0>a||a>
-b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+" <= "+this.buffer.byteLength);}if(a===b)return"";for(var c=[];a<b;)c.push(this.view.getUint8(a++));return String.fromCharCode.apply(String,c)};d.fromBinary=function(a,b,c){if(!c&&"string"!==typeof a)throw new TypeError("Illegal str: Not a string");for(var e=0,h=a.length,f=new d(h,b,c);e<h;){b=a.charCodeAt(e);if(!c&&255<b)throw new TypeError("Illegal charCode at "+e+": 0 <= "+b+" <= 255");f.view.setUint8(e++,b)}f.limit=
-h;return f};d.prototype.toDebug=function(a){for(var b=-1,c=this.buffer.byteLength,e,d="",f="",g="";b<c;){-1!==b&&(e=this.view.getUint8(b),d=16>e?d+("0"+e.toString(16).toUpperCase()):d+e.toString(16).toUpperCase(),a&&(f+=32<e&&127>e?String.fromCharCode(e):"."));++b;if(a&&0<b&&0===b%16&&b!==c){for(;51>d.length;)d+=" ";g+=d+f+"\n";d=f=""}d=b===this.offset&&b===this.limit?d+(b===this.markedOffset?"!":"|"):b===this.offset?d+(b===this.markedOffset?"[":"<"):b===this.limit?d+(b===this.markedOffset?"]":">"):
-d+(b===this.markedOffset?"'":a||0!==b&&b!==c?" ":"")}if(a&&" "!==d){for(;51>d.length;)d+=" ";g+=d+f+"\n"}return a?g:d};d.fromDebug=function(a,b,c){var e=a.length;b=new d((e+1)/3|0,b,c);for(var h=0,f=0,g,k=!1,l=!1,m=!1,q=!1,p=!1;h<e;){switch(g=a.charAt(h++)){case "!":if(!c){if(l||m||q){p=!0;break}l=m=q=!0}b.offset=b.markedOffset=b.limit=f;k=!1;break;case "|":if(!c){if(l||q){p=!0;break}l=q=!0}b.offset=b.limit=f;k=!1;break;case "[":if(!c){if(l||m){p=!0;break}l=m=!0}b.offset=b.markedOffset=f;k=!1;break;
-case "<":if(!c){if(l){p=!0;break}l=!0}b.offset=f;k=!1;break;case "]":if(!c){if(q||m){p=!0;break}q=m=!0}b.limit=b.markedOffset=f;k=!1;break;case ">":if(!c){if(q){p=!0;break}q=!0}b.limit=f;k=!1;break;case "'":if(!c){if(m){p=!0;break}m=!0}b.markedOffset=f;k=!1;break;case " ":k=!1;break;default:if(!c&&k){p=!0;break}g=parseInt(g+a.charAt(h++),16);if(!c&&(isNaN(g)||0>g||255<g))throw new TypeError("Illegal str: Not a debug encoded string");b.view.setUint8(f++,g);k=!0}if(p)throw new TypeError("Illegal str: Invalid symbol at "+
-h);}if(!c){if(!l||!q)throw new TypeError("Illegal str: Missing offset or limit");if(f<b.buffer.byteLength)throw new TypeError("Illegal str: Not a debug encoded string (is it hex?) "+f+" < "+e);}return b};d.prototype.toHex=function(a,b){a="undefined"===typeof a?this.offset:a;b="undefined"===typeof b?this.limit:b;if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal end: Not an integer");
-b>>>=0;if(0>a||a>b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+" <= "+this.buffer.byteLength);}for(var c=Array(b-a),e;a<b;)e=this.view.getUint8(a++),16>e?c.push("0",e.toString(16)):c.push(e.toString(16));return c.join("")};d.fromHex=function(a,b,c){if(!c){if("string"!==typeof a)throw new TypeError("Illegal str: Not a string");if(0!==a.length%2)throw new TypeError("Illegal str: Length not a multiple of 2");}var e=a.length;b=new d(e/2|0,b);for(var h,f=0,g=0;f<e;f+=
-2){h=parseInt(a.substring(f,f+2),16);if(!c&&(!isFinite(h)||0>h||255<h))throw new TypeError("Illegal str: Contains non-hex characters");b.view.setUint8(g++,h)}b.limit=g;return b};var l=function(){var a={k:1114111,j:function(a,c){var e=null;"number"===typeof a&&(e=a,a=function(){return null});for(;null!==e||null!==(e=a());)128>e?c(e&127):(2048>e?c(e>>6&31|192):(65536>e?c(e>>12&15|224):(c(e>>18&7|240),c(e>>12&63|128)),c(e>>6&63|128)),c(e&63|128)),e=null},g:function(a,c){function e(a){a=a.slice(0,a.indexOf(null));
-var b=Error(a.toString());b.name="TruncatedError";b.bytes=a;throw b;}for(var d,f,g,k;null!==(d=a());)if(0===(d&128))c(d);else if(192===(d&224))null===(f=a())&&e([d,f]),c((d&31)<<6|f&63);else if(224===(d&240))null!==(f=a())&&null!==(g=a())||e([d,f,g]),c((d&15)<<12|(f&63)<<6|g&63);else if(240===(d&248))null!==(f=a())&&null!==(g=a())&&null!==(k=a())||e([d,f,g,k]),c((d&7)<<18|(f&63)<<12|(g&63)<<6|k&63);else throw RangeError("Illegal starting byte: "+d);},d:function(a,c){for(var e,d=null;null!==(e=null!==
-d?d:a());)55296<=e&&57343>=e&&null!==(d=a())&&56320<=d&&57343>=d?(c(1024*(e-55296)+d-56320+65536),d=null):c(e);null!==d&&c(d)},e:function(a,c){var d=null;"number"===typeof a&&(d=a,a=function(){return null});for(;null!==d||null!==(d=a());)65535>=d?c(d):(d-=65536,c((d>>10)+55296),c(d%1024+56320)),d=null},c:function(b,c){a.d(b,function(b){a.j(b,c)})},b:function(b,c){a.g(b,function(b){a.e(b,c)})},f:function(a){return 128>a?1:2048>a?2:65536>a?3:4},l:function(b){for(var c,d=0;null!==(c=b());)d+=a.f(c);
-return d},a:function(b){var c=0,d=0;a.d(b,function(b){++c;d+=a.f(b)});return[c,d]}};return a}();d.prototype.toUTF8=function(a,b){"undefined"===typeof a&&(a=this.offset);"undefined"===typeof b&&(b=this.limit);if(!this.noAssert){if("number"!==typeof a||0!==a%1)throw new TypeError("Illegal begin: Not an integer");a>>>=0;if("number"!==typeof b||0!==b%1)throw new TypeError("Illegal end: Not an integer");b>>>=0;if(0>a||a>b||b>this.buffer.byteLength)throw new RangeError("Illegal range: 0 <= "+a+" <= "+b+
-" <= "+this.buffer.byteLength);}var c=this,d;try{l.b(function(){return a<b?c.view.getUint8(a++):null},d=s())}catch(h){if(a!==b)throw new RangeError("Illegal range: Truncated data, "+a+" != "+b);}return d()};d.fromUTF8=function(a,b,c){if(!c&&"string"!==typeof a)throw new TypeError("Illegal str: Not a string");var e=new d(l.a(m(a),!0)[1],b,c),h=0;l.c(m(a),function(a){e.view.setUint8(h++,a)});e.limit=h;return e};return d}"undefined"!==typeof module&&module.exports?module.exports=t(require("long")):"function"===
-typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)}):(r.dcodeIO=r.dcodeIO||{}).ByteBuffer=t(r.dcodeIO.Long)})(this);
+ Copyright 2013 Daniel Wirtz <dcode@dcode.io>
 
-},{"long":100}],99:[function(require,module,exports){
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+var ProtoBuf = require("./dist/ProtoBuf.js");
+
+module.exports = ProtoBuf;
+
+},{"./dist/ProtoBuf.js":194}],196:[function(require,module,exports){
+/*
+ Copyright 2013-2014 Daniel Wirtz <dcode@dcode.io>
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
+/**
+ * @license ByteBuffer.js (c) 2013-2014 Daniel Wirtz <dcode@dcode.io>
+ * This version of ByteBuffer.js uses an ArrayBuffer (AB) as its backing buffer and is compatible with modern browsers.
+ * Released under the Apache License, Version 2.0
+ * see: https://github.com/dcodeIO/ByteBuffer.js for details
+ */ //
+(function(global) {
+    "use strict";
+
+    /**
+     * @param {function(new: Long, number, number, boolean=)=} Long
+     * @returns {function(new: ByteBuffer, number=, boolean=, boolean=)}}
+     * @inner
+     */
+    function loadByteBuffer(Long) {
+
+        /**
+         * Constructs a new ByteBuffer.
+         * @class The swiss army knife for binary data in JavaScript.
+         * @exports ByteBuffer
+         * @constructor
+         * @param {number=} capacity Initial capacity. Defaults to {@link ByteBuffer.DEFAULT_CAPACITY}.
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @expose
+         */
+        var ByteBuffer = function(capacity, littleEndian, noAssert) {
+            if (typeof capacity     === 'undefined') capacity     = ByteBuffer.DEFAULT_CAPACITY;
+            if (typeof littleEndian === 'undefined') littleEndian = ByteBuffer.DEFAULT_ENDIAN;
+            if (typeof noAssert     === 'undefined') noAssert     = ByteBuffer.DEFAULT_NOASSERT;
+            if (!noAssert) {
+                capacity = capacity | 0;
+                if (capacity < 0)
+                    throw RangeError("Illegal capacity");
+                littleEndian = !!littleEndian;
+                noAssert = !!noAssert;
+            }
+
+            /**
+             * Backing buffer.
+             * @type {!ArrayBuffer}
+             * @expose
+             */
+            this.buffer = capacity === 0 ? EMPTY_BUFFER : new ArrayBuffer(capacity);
+
+            /**
+             * Data view to manipulate the backing buffer. Becomes `null` if the backing buffer has a capacity of `0`.
+             * @type {?DataView}
+             * @expose
+             */
+            this.view = capacity === 0 ? null : new DataView(this.buffer);
+
+            /**
+             * Absolute read/write offset.
+             * @type {number}
+             * @expose
+             * @see ByteBuffer#flip
+             * @see ByteBuffer#clear
+             */
+            this.offset = 0;
+
+            /**
+             * Marked offset.
+             * @type {number}
+             * @expose
+             * @see ByteBuffer#mark
+             * @see ByteBuffer#reset
+             */
+            this.markedOffset = -1;
+
+            /**
+             * Absolute limit of the contained data. Set to the backing buffer's capacity upon allocation.
+             * @type {number}
+             * @expose
+             * @see ByteBuffer#flip
+             * @see ByteBuffer#clear
+             */
+            this.limit = capacity;
+
+            /**
+             * Whether to use little endian byte order, defaults to `false` for big endian.
+             * @type {boolean}
+             * @expose
+             */
+            this.littleEndian = typeof littleEndian !== 'undefined' ? !!littleEndian : false;
+
+            /**
+             * Whether to skip assertions of offsets and values, defaults to `false`.
+             * @type {boolean}
+             * @expose
+             */
+            this.noAssert = !!noAssert;
+        };
+
+        /**
+         * ByteBuffer version.
+         * @type {string}
+         * @const
+         * @expose
+         */
+        ByteBuffer.VERSION = "3.5.4";
+
+        /**
+         * Little endian constant that can be used instead of its boolean value. Evaluates to `true`.
+         * @type {boolean}
+         * @const
+         * @expose
+         */
+        ByteBuffer.LITTLE_ENDIAN = true;
+
+        /**
+         * Big endian constant that can be used instead of its boolean value. Evaluates to `false`.
+         * @type {boolean}
+         * @const
+         * @expose
+         */
+        ByteBuffer.BIG_ENDIAN = false;
+
+        /**
+         * Default initial capacity of `16`.
+         * @type {number}
+         * @expose
+         */
+        ByteBuffer.DEFAULT_CAPACITY = 16;
+
+        /**
+         * Default endianess of `false` for big endian.
+         * @type {boolean}
+         * @expose
+         */
+        ByteBuffer.DEFAULT_ENDIAN = ByteBuffer.BIG_ENDIAN;
+
+        /**
+         * Default no assertions flag of `false`.
+         * @type {boolean}
+         * @expose
+         */
+        ByteBuffer.DEFAULT_NOASSERT = false;
+
+        /**
+         * A `Long` class for representing a 64-bit two's-complement integer value. May be `null` if Long.js has not been loaded
+         *  and int64 support is not available.
+         * @type {?Long}
+         * @const
+         * @see https://github.com/dcodeIO/Long.js
+         * @expose
+         */
+        ByteBuffer.Long = Long || null;
+
+        /**
+         * @alias ByteBuffer.prototype
+         * @inner
+         */
+        var ByteBufferPrototype = ByteBuffer.prototype;
+
+        // helpers
+
+        /**
+         * @type {!ArrayBuffer}
+         * @inner
+         */
+        var EMPTY_BUFFER = new ArrayBuffer(0);
+
+        /**
+         * String.fromCharCode reference for compile-time renaming.
+         * @type {function(...number):string}
+         * @inner
+         */
+        var stringFromCharCode = String.fromCharCode;
+
+        /**
+         * Creates a source function for a string.
+         * @param {string} s String to read from
+         * @returns {function():number|null} Source function returning the next char code respectively `null` if there are
+         *  no more characters left.
+         * @throws {TypeError} If the argument is invalid
+         * @inner
+         */
+        function stringSource(s) {
+            var i=0; return function() {
+                return i < s.length ? s.charCodeAt(i++) : null;
+            };
+        }
+
+        /**
+         * Creates a destination function for a string.
+         * @returns {function(number=):undefined|string} Destination function successively called with the next char code.
+         *  Returns the final string when called without arguments.
+         * @inner
+         */
+        function stringDestination() {
+            var cs = [], ps = []; return function() {
+                if (arguments.length === 0)
+                    return ps.join('')+stringFromCharCode.apply(String, cs);
+                if (cs.length + arguments.length > 1024)
+                    ps.push(stringFromCharCode.apply(String, cs)),
+                        cs.length = 0;
+                Array.prototype.push.apply(cs, arguments);
+            };
+        }
+
+        /**
+         * Allocates a new ByteBuffer backed by a buffer of the specified capacity.
+         * @param {number=} capacity Initial capacity. Defaults to {@link ByteBuffer.DEFAULT_CAPACITY}.
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer}
+         * @expose
+         */
+        ByteBuffer.allocate = function(capacity, littleEndian, noAssert) {
+            return new ByteBuffer(capacity, littleEndian, noAssert);
+        };
+
+        /**
+         * Concatenates multiple ByteBuffers into one.
+         * @param {!Array.<!ByteBuffer|!ArrayBuffer|!Uint8Array|string>} buffers Buffers to concatenate
+         * @param {(string|boolean)=} encoding String encoding if `buffers` contains a string ("base64", "hex", "binary",
+         *  defaults to "utf8")
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order for the resulting ByteBuffer. Defaults
+         *  to {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values for the resulting ByteBuffer. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer} Concatenated ByteBuffer
+         * @expose
+         */
+        ByteBuffer.concat = function(buffers, encoding, littleEndian, noAssert) {
+            if (typeof encoding === 'boolean' || typeof encoding !== 'string') {
+                noAssert = littleEndian;
+                littleEndian = encoding;
+                encoding = undefined;
+            }
+            var capacity = 0;
+            for (var i=0, k=buffers.length, length; i<k; ++i) {
+                if (!ByteBuffer.isByteBuffer(buffers[i]))
+                    buffers[i] = ByteBuffer.wrap(buffers[i], encoding);
+                length = buffers[i].limit - buffers[i].offset;
+                if (length > 0) capacity += length;
+            }
+            if (capacity === 0)
+                return new ByteBuffer(0, littleEndian, noAssert);
+            var bb = new ByteBuffer(capacity, littleEndian, noAssert),
+                bi;
+            var view = new Uint8Array(bb.buffer);
+            i=0; while (i<k) {
+                bi = buffers[i++];
+                length = bi.limit - bi.offset;
+                if (length <= 0) continue;
+                view.set(new Uint8Array(bi.buffer).subarray(bi.offset, bi.limit), bb.offset);
+                bb.offset += length;
+            }
+            bb.limit = bb.offset;
+            bb.offset = 0;
+            return bb;
+        };
+
+        /**
+         * Tests if the specified type is a ByteBuffer.
+         * @param {*} bb ByteBuffer to test
+         * @returns {boolean} `true` if it is a ByteBuffer, otherwise `false`
+         * @expose
+         */
+        ByteBuffer.isByteBuffer = function(bb) {
+            return (bb && bb instanceof ByteBuffer) === true;
+        };
+        /**
+         * Gets the backing buffer type.
+         * @returns {Function} `Buffer` for NB builds, `ArrayBuffer` for AB builds (classes)
+         * @expose
+         */
+        ByteBuffer.type = function() {
+            return ArrayBuffer;
+        };
+
+        /**
+         * Wraps a buffer or a string. Sets the allocated ByteBuffer's {@link ByteBuffer#offset} to `0` and its
+         *  {@link ByteBuffer#limit} to the length of the wrapped data.
+         * @param {!ByteBuffer|!ArrayBuffer|!Uint8Array|string|!Array.<number>} buffer Anything that can be wrapped
+         * @param {(string|boolean)=} encoding String encoding if `buffer` is a string ("base64", "hex", "binary", defaults to
+         *  "utf8")
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer} A ByteBuffer wrapping `buffer`
+         * @expose
+         */
+        ByteBuffer.wrap = function(buffer, encoding, littleEndian, noAssert) {
+            if (typeof encoding !== 'string') {
+                noAssert = littleEndian;
+                littleEndian = encoding;
+                encoding = undefined;
+            }
+            if (typeof buffer === 'string') {
+                if (typeof encoding === 'undefined')
+                    encoding = "utf8";
+                switch (encoding) {
+                    case "base64":
+                        return ByteBuffer.fromBase64(buffer, littleEndian);
+                    case "hex":
+                        return ByteBuffer.fromHex(buffer, littleEndian);
+                    case "binary":
+                        return ByteBuffer.fromBinary(buffer, littleEndian);
+                    case "utf8":
+                        return ByteBuffer.fromUTF8(buffer, littleEndian);
+                    case "debug":
+                        return ByteBuffer.fromDebug(buffer, littleEndian);
+                    default:
+                        throw Error("Unsupported encoding: "+encoding);
+                }
+            }
+            if (buffer === null || typeof buffer !== 'object')
+                throw TypeError("Illegal buffer");
+            var bb;
+            if (ByteBuffer.isByteBuffer(buffer)) {
+                bb = ByteBufferPrototype.clone.call(buffer);
+                bb.markedOffset = -1;
+                return bb;
+            }
+            if (buffer instanceof Uint8Array) { // Extract ArrayBuffer from Uint8Array
+                bb = new ByteBuffer(0, littleEndian, noAssert);
+                if (buffer.length > 0) { // Avoid references to more than one EMPTY_BUFFER
+                    bb.buffer = buffer.buffer;
+                    bb.offset = buffer.byteOffset;
+                    bb.limit = buffer.byteOffset + buffer.length;
+                    bb.view = buffer.length > 0 ? new DataView(buffer.buffer) : null;
+                }
+            } else if (buffer instanceof ArrayBuffer) { // Reuse ArrayBuffer
+                bb = new ByteBuffer(0, littleEndian, noAssert);
+                if (buffer.byteLength > 0) {
+                    bb.buffer = buffer;
+                    bb.offset = 0;
+                    bb.limit = buffer.byteLength;
+                    bb.view = buffer.byteLength > 0 ? new DataView(buffer) : null;
+                }
+            } else if (Object.prototype.toString.call(buffer) === "[object Array]") { // Create from octets
+                bb = new ByteBuffer(buffer.length, littleEndian, noAssert);
+                bb.limit = buffer.length;
+                for (i=0; i<buffer.length; ++i)
+                    bb.view.setUint8(i, buffer[i]);
+            } else
+                throw TypeError("Illegal buffer"); // Otherwise fail
+            return bb;
+        };
+
+        // types/ints/int8
+
+        /**
+         * Writes an 8bit signed integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeInt8 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value |= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 1;
+            var capacity0 = this.buffer.byteLength;
+            if (offset > capacity0)
+                this.resize((capacity0 *= 2) > offset ? capacity0 : offset);
+            offset -= 1;
+            this.view.setInt8(offset, value);
+            if (relative) this.offset += 1;
+            return this;
+        };
+
+        /**
+         * Writes an 8bit signed integer. This is an alias of {@link ByteBuffer#writeInt8}.
+         * @function
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeByte = ByteBufferPrototype.writeInt8;
+
+        /**
+         * Reads an 8bit signed integer.
+         * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+         * @returns {number} Value read
+         * @expose
+         */
+        ByteBufferPrototype.readInt8 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getInt8(offset);
+            if (relative) this.offset += 1;
+            return value;
+        };
+
+        /**
+         * Reads an 8bit signed integer. This is an alias of {@link ByteBuffer#readInt8}.
+         * @function
+         * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+         * @returns {number} Value read
+         * @expose
+         */
+        ByteBufferPrototype.readByte = ByteBufferPrototype.readInt8;
+
+        /**
+         * Writes an 8bit unsigned integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeUint8 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value >>>= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 1;
+            var capacity1 = this.buffer.byteLength;
+            if (offset > capacity1)
+                this.resize((capacity1 *= 2) > offset ? capacity1 : offset);
+            offset -= 1;
+            this.view.setUint8(offset, value);
+            if (relative) this.offset += 1;
+            return this;
+        };
+
+        /**
+         * Reads an 8bit unsigned integer.
+         * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `1` if omitted.
+         * @returns {number} Value read
+         * @expose
+         */
+        ByteBufferPrototype.readUint8 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getUint8(offset);
+            if (relative) this.offset += 1;
+            return value;
+        };
+
+        // types/ints/int16
+
+        /**
+         * Writes a 16bit signed integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+         * @throws {TypeError} If `offset` or `value` is not a valid number
+         * @throws {RangeError} If `offset` is out of bounds
+         * @expose
+         */
+        ByteBufferPrototype.writeInt16 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value |= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 2;
+            var capacity2 = this.buffer.byteLength;
+            if (offset > capacity2)
+                this.resize((capacity2 *= 2) > offset ? capacity2 : offset);
+            offset -= 2;
+            this.view.setInt16(offset, value, this.littleEndian);
+            if (relative) this.offset += 2;
+            return this;
+        };
+
+        /**
+         * Writes a 16bit signed integer. This is an alias of {@link ByteBuffer#writeInt16}.
+         * @function
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+         * @throws {TypeError} If `offset` or `value` is not a valid number
+         * @throws {RangeError} If `offset` is out of bounds
+         * @expose
+         */
+        ByteBufferPrototype.writeShort = ByteBufferPrototype.writeInt16;
+
+        /**
+         * Reads a 16bit signed integer.
+         * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+         * @returns {number} Value read
+         * @throws {TypeError} If `offset` is not a valid number
+         * @throws {RangeError} If `offset` is out of bounds
+         * @expose
+         */
+        ByteBufferPrototype.readInt16 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 2 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+2+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getInt16(offset, this.littleEndian);
+            if (relative) this.offset += 2;
+            return value;
+        };
+
+        /**
+         * Reads a 16bit signed integer. This is an alias of {@link ByteBuffer#readInt16}.
+         * @function
+         * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+         * @returns {number} Value read
+         * @throws {TypeError} If `offset` is not a valid number
+         * @throws {RangeError} If `offset` is out of bounds
+         * @expose
+         */
+        ByteBufferPrototype.readShort = ByteBufferPrototype.readInt16;
+
+        /**
+         * Writes a 16bit unsigned integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+         * @throws {TypeError} If `offset` or `value` is not a valid number
+         * @throws {RangeError} If `offset` is out of bounds
+         * @expose
+         */
+        ByteBufferPrototype.writeUint16 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value >>>= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 2;
+            var capacity3 = this.buffer.byteLength;
+            if (offset > capacity3)
+                this.resize((capacity3 *= 2) > offset ? capacity3 : offset);
+            offset -= 2;
+            this.view.setUint16(offset, value, this.littleEndian);
+            if (relative) this.offset += 2;
+            return this;
+        };
+
+        /**
+         * Reads a 16bit unsigned integer.
+         * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `2` if omitted.
+         * @returns {number} Value read
+         * @throws {TypeError} If `offset` is not a valid number
+         * @throws {RangeError} If `offset` is out of bounds
+         * @expose
+         */
+        ByteBufferPrototype.readUint16 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 2 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+2+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getUint16(offset, this.littleEndian);
+            if (relative) this.offset += 2;
+            return value;
+        };
+
+        // types/ints/int32
+
+        /**
+         * Writes a 32bit signed integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @expose
+         */
+        ByteBufferPrototype.writeInt32 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value |= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 4;
+            var capacity4 = this.buffer.byteLength;
+            if (offset > capacity4)
+                this.resize((capacity4 *= 2) > offset ? capacity4 : offset);
+            offset -= 4;
+            this.view.setInt32(offset, value, this.littleEndian);
+            if (relative) this.offset += 4;
+            return this;
+        };
+
+        /**
+         * Writes a 32bit signed integer. This is an alias of {@link ByteBuffer#writeInt32}.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @expose
+         */
+        ByteBufferPrototype.writeInt = ByteBufferPrototype.writeInt32;
+
+        /**
+         * Reads a 32bit signed integer.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @returns {number} Value read
+         * @expose
+         */
+        ByteBufferPrototype.readInt32 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getInt32(offset, this.littleEndian);
+            if (relative) this.offset += 4;
+            return value;
+        };
+
+        /**
+         * Reads a 32bit signed integer. This is an alias of {@link ByteBuffer#readInt32}.
+         * @param {number=} offset Offset to read from. Will use and advance {@link ByteBuffer#offset} by `4` if omitted.
+         * @returns {number} Value read
+         * @expose
+         */
+        ByteBufferPrototype.readInt = ByteBufferPrototype.readInt32;
+
+        /**
+         * Writes a 32bit unsigned integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @expose
+         */
+        ByteBufferPrototype.writeUint32 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value >>>= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 4;
+            var capacity5 = this.buffer.byteLength;
+            if (offset > capacity5)
+                this.resize((capacity5 *= 2) > offset ? capacity5 : offset);
+            offset -= 4;
+            this.view.setUint32(offset, value, this.littleEndian);
+            if (relative) this.offset += 4;
+            return this;
+        };
+
+        /**
+         * Reads a 32bit unsigned integer.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @returns {number} Value read
+         * @expose
+         */
+        ByteBufferPrototype.readUint32 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getUint32(offset, this.littleEndian);
+            if (relative) this.offset += 4;
+            return value;
+        };
+
+        // types/ints/int64
+
+        if (Long) {
+
+            /**
+             * Writes a 64bit signed integer.
+             * @param {number|!Long} value Value to write
+             * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+             * @returns {!ByteBuffer} this
+             * @expose
+             */
+            ByteBufferPrototype.writeInt64 = function(value, offset) {
+                var relative = typeof offset === 'undefined';
+                if (relative) offset = this.offset;
+                if (!this.noAssert) {
+                    if (typeof value === 'number')
+                        value = Long.fromNumber(value);
+                    else if (!(value && value instanceof Long))
+                        throw TypeError("Illegal value: "+value+" (not an integer or Long)");
+                    if (typeof offset !== 'number' || offset % 1 !== 0)
+                        throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                    offset >>>= 0;
+                    if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                        throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+                }
+                if (typeof value === 'number')
+                    value = Long.fromNumber(value);
+                offset += 8;
+                var capacity6 = this.buffer.byteLength;
+                if (offset > capacity6)
+                    this.resize((capacity6 *= 2) > offset ? capacity6 : offset);
+                offset -= 8;
+                if (this.littleEndian) {
+                    this.view.setInt32(offset  , value.low , true);
+                    this.view.setInt32(offset+4, value.high, true);
+                } else {
+                    this.view.setInt32(offset  , value.high, false);
+                    this.view.setInt32(offset+4, value.low , false);
+                }
+                if (relative) this.offset += 8;
+                return this;
+            };
+
+            /**
+             * Writes a 64bit signed integer. This is an alias of {@link ByteBuffer#writeInt64}.
+             * @param {number|!Long} value Value to write
+             * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+             * @returns {!ByteBuffer} this
+             * @expose
+             */
+            ByteBufferPrototype.writeLong = ByteBufferPrototype.writeInt64;
+
+            /**
+             * Reads a 64bit signed integer.
+             * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+             * @returns {!Long}
+             * @expose
+             */
+            ByteBufferPrototype.readInt64 = function(offset) {
+                var relative = typeof offset === 'undefined';
+                if (relative) offset = this.offset;
+                if (!this.noAssert) {
+                    if (typeof offset !== 'number' || offset % 1 !== 0)
+                        throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                    offset >>>= 0;
+                    if (offset < 0 || offset + 8 > this.buffer.byteLength)
+                        throw RangeError("Illegal offset: 0 <= "+offset+" (+"+8+") <= "+this.buffer.byteLength);
+                }
+                var value = this.littleEndian
+                    ? new Long(this.view.getInt32(offset  , true ), this.view.getInt32(offset+4, true ), false)
+                    : new Long(this.view.getInt32(offset+4, false), this.view.getInt32(offset  , false), false);
+                if (relative) this.offset += 8;
+                return value;
+            };
+
+            /**
+             * Reads a 64bit signed integer. This is an alias of {@link ByteBuffer#readInt64}.
+             * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+             * @returns {!Long}
+             * @expose
+             */
+            ByteBufferPrototype.readLong = ByteBufferPrototype.readInt64;
+
+            /**
+             * Writes a 64bit unsigned integer.
+             * @param {number|!Long} value Value to write
+             * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+             * @returns {!ByteBuffer} this
+             * @expose
+             */
+            ByteBufferPrototype.writeUint64 = function(value, offset) {
+                var relative = typeof offset === 'undefined';
+                if (relative) offset = this.offset;
+                if (!this.noAssert) {
+                    if (typeof value === 'number')
+                        value = Long.fromNumber(value);
+                    else if (!(value && value instanceof Long))
+                        throw TypeError("Illegal value: "+value+" (not an integer or Long)");
+                    if (typeof offset !== 'number' || offset % 1 !== 0)
+                        throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                    offset >>>= 0;
+                    if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                        throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+                }
+                if (typeof value === 'number')
+                    value = Long.fromNumber(value);
+                offset += 8;
+                var capacity7 = this.buffer.byteLength;
+                if (offset > capacity7)
+                    this.resize((capacity7 *= 2) > offset ? capacity7 : offset);
+                offset -= 8;
+                if (this.littleEndian) {
+                    this.view.setInt32(offset  , value.low , true);
+                    this.view.setInt32(offset+4, value.high, true);
+                } else {
+                    this.view.setInt32(offset  , value.high, false);
+                    this.view.setInt32(offset+4, value.low , false);
+                }
+                if (relative) this.offset += 8;
+                return this;
+            };
+
+            /**
+             * Reads a 64bit unsigned integer.
+             * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+             * @returns {!Long}
+             * @expose
+             */
+            ByteBufferPrototype.readUint64 = function(offset) {
+                var relative = typeof offset === 'undefined';
+                if (relative) offset = this.offset;
+                if (!this.noAssert) {
+                    if (typeof offset !== 'number' || offset % 1 !== 0)
+                        throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                    offset >>>= 0;
+                    if (offset < 0 || offset + 8 > this.buffer.byteLength)
+                        throw RangeError("Illegal offset: 0 <= "+offset+" (+"+8+") <= "+this.buffer.byteLength);
+                }
+                var value = this.littleEndian
+                    ? new Long(this.view.getInt32(offset  , true ), this.view.getInt32(offset+4, true ), true)
+                    : new Long(this.view.getInt32(offset+4, false), this.view.getInt32(offset  , false), true);
+                if (relative) this.offset += 8;
+                return value;
+            };
+
+        } // Long
+
+
+        // types/floats/float32
+
+        /**
+         * Writes a 32bit float.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeFloat32 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number')
+                    throw TypeError("Illegal value: "+value+" (not a number)");
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 4;
+            var capacity8 = this.buffer.byteLength;
+            if (offset > capacity8)
+                this.resize((capacity8 *= 2) > offset ? capacity8 : offset);
+            offset -= 4;
+            this.view.setFloat32(offset, value, this.littleEndian);
+            if (relative) this.offset += 4;
+            return this;
+        };
+
+        /**
+         * Writes a 32bit float. This is an alias of {@link ByteBuffer#writeFloat32}.
+         * @function
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeFloat = ByteBufferPrototype.writeFloat32;
+
+        /**
+         * Reads a 32bit float.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @returns {number}
+         * @expose
+         */
+        ByteBufferPrototype.readFloat32 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getFloat32(offset, this.littleEndian);
+            if (relative) this.offset += 4;
+            return value;
+        };
+
+        /**
+         * Reads a 32bit float. This is an alias of {@link ByteBuffer#readFloat32}.
+         * @function
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `4` if omitted.
+         * @returns {number}
+         * @expose
+         */
+        ByteBufferPrototype.readFloat = ByteBufferPrototype.readFloat32;
+
+        // types/floats/float64
+
+        /**
+         * Writes a 64bit float.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeFloat64 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number')
+                    throw TypeError("Illegal value: "+value+" (not a number)");
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            offset += 8;
+            var capacity9 = this.buffer.byteLength;
+            if (offset > capacity9)
+                this.resize((capacity9 *= 2) > offset ? capacity9 : offset);
+            offset -= 8;
+            this.view.setFloat64(offset, value, this.littleEndian);
+            if (relative) this.offset += 8;
+            return this;
+        };
+
+        /**
+         * Writes a 64bit float. This is an alias of {@link ByteBuffer#writeFloat64}.
+         * @function
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.writeDouble = ByteBufferPrototype.writeFloat64;
+
+        /**
+         * Reads a 64bit float.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+         * @returns {number}
+         * @expose
+         */
+        ByteBufferPrototype.readFloat64 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 8 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+8+") <= "+this.buffer.byteLength);
+            }
+            var value = this.view.getFloat64(offset, this.littleEndian);
+            if (relative) this.offset += 8;
+            return value;
+        };
+
+        /**
+         * Reads a 64bit float. This is an alias of {@link ByteBuffer#readFloat64}.
+         * @function
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by `8` if omitted.
+         * @returns {number}
+         * @expose
+         */
+        ByteBufferPrototype.readDouble = ByteBufferPrototype.readFloat64;
+
+
+        // types/varints/varint32
+
+        /**
+         * Maximum number of bytes required to store a 32bit base 128 variable-length integer.
+         * @type {number}
+         * @const
+         * @expose
+         */
+        ByteBuffer.MAX_VARINT32_BYTES = 5;
+
+        /**
+         * Calculates the actual number of bytes required to store a 32bit base 128 variable-length integer.
+         * @param {number} value Value to encode
+         * @returns {number} Number of bytes required. Capped to {@link ByteBuffer.MAX_VARINT32_BYTES}
+         * @expose
+         */
+        ByteBuffer.calculateVarint32 = function(value) {
+            // ref: src/google/protobuf/io/coded_stream.cc
+            value = value >>> 0;
+                 if (value < 1 << 7 ) return 1;
+            else if (value < 1 << 14) return 2;
+            else if (value < 1 << 21) return 3;
+            else if (value < 1 << 28) return 4;
+            else                      return 5;
+        };
+
+        /**
+         * Zigzag encodes a signed 32bit integer so that it can be effectively used with varint encoding.
+         * @param {number} n Signed 32bit integer
+         * @returns {number} Unsigned zigzag encoded 32bit integer
+         * @expose
+         */
+        ByteBuffer.zigZagEncode32 = function(n) {
+            return (((n |= 0) << 1) ^ (n >> 31)) >>> 0; // ref: src/google/protobuf/wire_format_lite.h
+        };
+
+        /**
+         * Decodes a zigzag encoded signed 32bit integer.
+         * @param {number} n Unsigned zigzag encoded 32bit integer
+         * @returns {number} Signed 32bit integer
+         * @expose
+         */
+        ByteBuffer.zigZagDecode32 = function(n) {
+            return ((n >>> 1) ^ -(n & 1)) | 0; // // ref: src/google/protobuf/wire_format_lite.h
+        };
+
+        /**
+         * Writes a 32bit base 128 variable-length integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted.
+         * @returns {!ByteBuffer|number} this if `offset` is omitted, else the actual number of bytes written
+         * @expose
+         */
+        ByteBufferPrototype.writeVarint32 = function(value, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value |= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            var size = ByteBuffer.calculateVarint32(value),
+                b;
+            offset += size;
+            var capacity10 = this.buffer.byteLength;
+            if (offset > capacity10)
+                this.resize((capacity10 *= 2) > offset ? capacity10 : offset);
+            offset -= size;
+            // ref: http://code.google.com/searchframe#WTeibokF6gE/trunk/src/google/protobuf/io/coded_stream.cc
+            this.view.setUint8(offset, b = value | 0x80);
+            value >>>= 0;
+            if (value >= 1 << 7) {
+                b = (value >> 7) | 0x80;
+                this.view.setUint8(offset+1, b);
+                if (value >= 1 << 14) {
+                    b = (value >> 14) | 0x80;
+                    this.view.setUint8(offset+2, b);
+                    if (value >= 1 << 21) {
+                        b = (value >> 21) | 0x80;
+                        this.view.setUint8(offset+3, b);
+                        if (value >= 1 << 28) {
+                            this.view.setUint8(offset+4, (value >> 28) & 0x0F);
+                            size = 5;
+                        } else {
+                            this.view.setUint8(offset+3, b & 0x7F);
+                            size = 4;
+                        }
+                    } else {
+                        this.view.setUint8(offset+2, b & 0x7F);
+                        size = 3;
+                    }
+                } else {
+                    this.view.setUint8(offset+1, b & 0x7F);
+                    size = 2;
+                }
+            } else {
+                this.view.setUint8(offset, b & 0x7F);
+                size = 1;
+            }
+            if (relative) {
+                this.offset += size;
+                return this;
+            }
+            return size;
+        };
+
+        /**
+         * Writes a zig-zag encoded 32bit base 128 variable-length integer.
+         * @param {number} value Value to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted.
+         * @returns {!ByteBuffer|number} this if `offset` is omitted, else the actual number of bytes written
+         * @expose
+         */
+        ByteBufferPrototype.writeVarint32ZigZag = function(value, offset) {
+            return this.writeVarint32(ByteBuffer.zigZagEncode32(value), offset);
+        };
+
+        /**
+         * Reads a 32bit base 128 variable-length integer.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted.
+         * @returns {number|!{value: number, length: number}} The value read if offset is omitted, else the value read
+         *  and the actual number of bytes read.
+         * @throws {Error} If it's not a valid varint. Has a property `truncated = true` if there is not enough data available
+         *  to fully decode the varint.
+         * @expose
+         */
+        ByteBufferPrototype.readVarint32 = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+            }
+            // ref: src/google/protobuf/io/coded_stream.cc
+            var size = 0,
+                value = 0 >>> 0,
+                temp,
+                ioffset;
+            do {
+                ioffset = offset+size;
+                if (!this.noAssert && ioffset > this.limit) {
+                    var err = Error("Truncated");
+                    err['truncated'] = true;
+                    throw err;
+                }
+                temp = this.view.getUint8(ioffset);
+                if (size < 5)
+                    value |= ((temp&0x7F)<<(7*size)) >>> 0;
+                ++size;
+            } while ((temp & 0x80) === 0x80);
+            value = value | 0; // Make sure to discard the higher order bits
+            if (relative) {
+                this.offset += size;
+                return value;
+            }
+            return {
+                "value": value,
+                "length": size
+            };
+        };
+
+        /**
+         * Reads a zig-zag encoded 32bit base 128 variable-length integer.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted.
+         * @returns {number|!{value: number, length: number}} The value read if offset is omitted, else the value read
+         *  and the actual number of bytes read.
+         * @throws {Error} If it's not a valid varint
+         * @expose
+         */
+        ByteBufferPrototype.readVarint32ZigZag = function(offset) {
+            var val = this.readVarint32(offset);
+            if (typeof val === 'object')
+                val["value"] = ByteBuffer.zigZagDecode32(val["value"]);
+            else
+                val = ByteBuffer.zigZagDecode32(val);
+            return val;
+        };
+
+        // types/varints/varint64
+
+        if (Long) {
+
+            /**
+             * Maximum number of bytes required to store a 64bit base 128 variable-length integer.
+             * @type {number}
+             * @const
+             * @expose
+             */
+            ByteBuffer.MAX_VARINT64_BYTES = 10;
+
+            /**
+             * Calculates the actual number of bytes required to store a 64bit base 128 variable-length integer.
+             * @param {number|!Long} value Value to encode
+             * @returns {number} Number of bytes required. Capped to {@link ByteBuffer.MAX_VARINT64_BYTES}
+             * @expose
+             */
+            ByteBuffer.calculateVarint64 = function(value) {
+                if (typeof value === 'number')
+                    value = Long.fromNumber(value);
+                // ref: src/google/protobuf/io/coded_stream.cc
+                var part0 = value.toInt() >>> 0,
+                    part1 = value.shiftRightUnsigned(28).toInt() >>> 0,
+                    part2 = value.shiftRightUnsigned(56).toInt() >>> 0;
+                if (part2 == 0) {
+                    if (part1 == 0) {
+                        if (part0 < 1 << 14)
+                            return part0 < 1 << 7 ? 1 : 2;
+                        else
+                            return part0 < 1 << 21 ? 3 : 4;
+                    } else {
+                        if (part1 < 1 << 14)
+                            return part1 < 1 << 7 ? 5 : 6;
+                        else
+                            return part1 < 1 << 21 ? 7 : 8;
+                    }
+                } else
+                    return part2 < 1 << 7 ? 9 : 10;
+            };
+
+            /**
+             * Zigzag encodes a signed 64bit integer so that it can be effectively used with varint encoding.
+             * @param {number|!Long} value Signed long
+             * @returns {!Long} Unsigned zigzag encoded long
+             * @expose
+             */
+            ByteBuffer.zigZagEncode64 = function(value) {
+                if (typeof value === 'number')
+                    value = Long.fromNumber(value, false);
+                else if (value.unsigned !== false) value = value.toSigned();
+                // ref: src/google/protobuf/wire_format_lite.h
+                return value.shiftLeft(1).xor(value.shiftRight(63)).toUnsigned();
+            };
+
+            /**
+             * Decodes a zigzag encoded signed 64bit integer.
+             * @param {!Long|number} value Unsigned zigzag encoded long or JavaScript number
+             * @returns {!Long} Signed long
+             * @expose
+             */
+            ByteBuffer.zigZagDecode64 = function(value) {
+                if (typeof value === 'number')
+                    value = Long.fromNumber(value, false);
+                else if (value.unsigned !== false) value = value.toSigned();
+                // ref: src/google/protobuf/wire_format_lite.h
+                return value.shiftRightUnsigned(1).xor(value.and(Long.ONE).toSigned().negate()).toSigned();
+            };
+
+            /**
+             * Writes a 64bit base 128 variable-length integer.
+             * @param {number|Long} value Value to write
+             * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+             *  written if omitted.
+             * @returns {!ByteBuffer|number} `this` if offset is omitted, else the actual number of bytes written.
+             * @expose
+             */
+            ByteBufferPrototype.writeVarint64 = function(value, offset) {
+                var relative = typeof offset === 'undefined';
+                if (relative) offset = this.offset;
+                if (!this.noAssert) {
+                    if (typeof value === 'number')
+                        value = Long.fromNumber(value);
+                    else if (!(value && value instanceof Long))
+                        throw TypeError("Illegal value: "+value+" (not an integer or Long)");
+                    if (typeof offset !== 'number' || offset % 1 !== 0)
+                        throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                    offset >>>= 0;
+                    if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                        throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+                }
+                if (typeof value === 'number')
+                    value = Long.fromNumber(value, false);
+                else if (value.unsigned !== false) value = value.toSigned();
+                var size = ByteBuffer.calculateVarint64(value),
+                    part0 = value.toInt() >>> 0,
+                    part1 = value.shiftRightUnsigned(28).toInt() >>> 0,
+                    part2 = value.shiftRightUnsigned(56).toInt() >>> 0;
+                offset += size;
+                var capacity11 = this.buffer.byteLength;
+                if (offset > capacity11)
+                    this.resize((capacity11 *= 2) > offset ? capacity11 : offset);
+                offset -= size;
+                switch (size) {
+                    case 10: this.view.setUint8(offset+9, (part2 >>>  7) & 0x01);
+                    case 9 : this.view.setUint8(offset+8, size !== 9 ? (part2       ) | 0x80 : (part2       ) & 0x7F);
+                    case 8 : this.view.setUint8(offset+7, size !== 8 ? (part1 >>> 21) | 0x80 : (part1 >>> 21) & 0x7F);
+                    case 7 : this.view.setUint8(offset+6, size !== 7 ? (part1 >>> 14) | 0x80 : (part1 >>> 14) & 0x7F);
+                    case 6 : this.view.setUint8(offset+5, size !== 6 ? (part1 >>>  7) | 0x80 : (part1 >>>  7) & 0x7F);
+                    case 5 : this.view.setUint8(offset+4, size !== 5 ? (part1       ) | 0x80 : (part1       ) & 0x7F);
+                    case 4 : this.view.setUint8(offset+3, size !== 4 ? (part0 >>> 21) | 0x80 : (part0 >>> 21) & 0x7F);
+                    case 3 : this.view.setUint8(offset+2, size !== 3 ? (part0 >>> 14) | 0x80 : (part0 >>> 14) & 0x7F);
+                    case 2 : this.view.setUint8(offset+1, size !== 2 ? (part0 >>>  7) | 0x80 : (part0 >>>  7) & 0x7F);
+                    case 1 : this.view.setUint8(offset  , size !== 1 ? (part0       ) | 0x80 : (part0       ) & 0x7F);
+                }
+                if (relative) {
+                    this.offset += size;
+                    return this;
+                } else {
+                    return size;
+                }
+            };
+
+            /**
+             * Writes a zig-zag encoded 64bit base 128 variable-length integer.
+             * @param {number|Long} value Value to write
+             * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+             *  written if omitted.
+             * @returns {!ByteBuffer|number} `this` if offset is omitted, else the actual number of bytes written.
+             * @expose
+             */
+            ByteBufferPrototype.writeVarint64ZigZag = function(value, offset) {
+                return this.writeVarint64(ByteBuffer.zigZagEncode64(value), offset);
+            };
+
+            /**
+             * Reads a 64bit base 128 variable-length integer. Requires Long.js.
+             * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+             *  read if omitted.
+             * @returns {!Long|!{value: Long, length: number}} The value read if offset is omitted, else the value read and
+             *  the actual number of bytes read.
+             * @throws {Error} If it's not a valid varint
+             * @expose
+             */
+            ByteBufferPrototype.readVarint64 = function(offset) {
+                var relative = typeof offset === 'undefined';
+                if (relative) offset = this.offset;
+                if (!this.noAssert) {
+                    if (typeof offset !== 'number' || offset % 1 !== 0)
+                        throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                    offset >>>= 0;
+                    if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                        throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+                }
+                // ref: src/google/protobuf/io/coded_stream.cc
+                var start = offset,
+                    part0 = 0,
+                    part1 = 0,
+                    part2 = 0,
+                    b  = 0;
+                b = this.view.getUint8(offset++); part0  = (b & 0x7F)      ; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part0 |= (b & 0x7F) <<  7; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part0 |= (b & 0x7F) << 14; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part0 |= (b & 0x7F) << 21; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part1  = (b & 0x7F)      ; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part1 |= (b & 0x7F) <<  7; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part1 |= (b & 0x7F) << 14; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part1 |= (b & 0x7F) << 21; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part2  = (b & 0x7F)      ; if (b & 0x80) {
+                b = this.view.getUint8(offset++); part2 |= (b & 0x7F) <<  7; if (b & 0x80) {
+                throw Error("Buffer overrun"); }}}}}}}}}}
+                var value = Long.fromBits(part0 | (part1 << 28), (part1 >>> 4) | (part2) << 24, false);
+                if (relative) {
+                    this.offset = offset;
+                    return value;
+                } else {
+                    return {
+                        'value': value,
+                        'length': offset-start
+                    };
+                }
+            };
+
+            /**
+             * Reads a zig-zag encoded 64bit base 128 variable-length integer. Requires Long.js.
+             * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+             *  read if omitted.
+             * @returns {!Long|!{value: Long, length: number}} The value read if offset is omitted, else the value read and
+             *  the actual number of bytes read.
+             * @throws {Error} If it's not a valid varint
+             * @expose
+             */
+            ByteBufferPrototype.readVarint64ZigZag = function(offset) {
+                var val = this.readVarint64(offset);
+                if (val && val['value'] instanceof Long)
+                    val["value"] = ByteBuffer.zigZagDecode64(val["value"]);
+                else
+                    val = ByteBuffer.zigZagDecode64(val);
+                return val;
+            };
+
+        } // Long
+
+
+        // types/strings/cstring
+
+        /**
+         * Writes a NULL-terminated UTF8 encoded string. For this to work the specified string must not contain any NULL
+         *  characters itself.
+         * @param {string} str String to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  contained in `str` + 1 if omitted.
+         * @returns {!ByteBuffer|number} this if offset is omitted, else the actual number of bytes written
+         * @expose
+         */
+        ByteBufferPrototype.writeCString = function(str, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            var i,
+                k = str.length;
+            if (!this.noAssert) {
+                if (typeof str !== 'string')
+                    throw TypeError("Illegal str: Not a string");
+                for (i=0; i<k; ++i) {
+                    if (str.charCodeAt(i) === 0)
+                        throw RangeError("Illegal str: Contains NULL-characters");
+                }
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            var start = offset;
+            // UTF8 strings do not contain zero bytes in between except for the zero character, so:
+            k = utfx.calculateUTF16asUTF8(stringSource(str))[1];
+            offset += k+1;
+            var capacity12 = this.buffer.byteLength;
+            if (offset > capacity12)
+                this.resize((capacity12 *= 2) > offset ? capacity12 : offset);
+            offset -= k+1;
+            utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+                this.view.setUint8(offset++, b);
+            }.bind(this));
+            this.view.setUint8(offset++, 0);
+            if (relative) {
+                this.offset = offset - start;
+                return this;
+            }
+            return k;
+        };
+
+        /**
+         * Reads a NULL-terminated UTF8 encoded string. For this to work the string read must not contain any NULL characters
+         *  itself.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+         *  read and the actual number of bytes read.
+         * @expose
+         */
+        ByteBufferPrototype.readCString = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+            }
+            var start = offset,
+                temp;
+            // UTF8 strings do not contain zero bytes in between except for the zero character itself, so:
+            var sd, b = -1;
+            utfx.decodeUTF8toUTF16(function() {
+                if (b === 0) return null;
+                if (offset >= this.limit)
+                    throw RangeError("Illegal range: Truncated data, "+offset+" < "+this.limit);
+                return (b = this.view.getUint8(offset++)) === 0 ? null : b;
+            }.bind(this), sd = stringDestination(), true);
+            if (relative) {
+                this.offset = offset;
+                return sd();
+            } else {
+                return {
+                    "string": sd(),
+                    "length": offset - start
+                };
+            }
+        };
+
+        // types/strings/istring
+
+        /**
+         * Writes a length as uint32 prefixed UTF8 encoded string.
+         * @param {string} str String to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted.
+         * @returns {!ByteBuffer|number} `this` if `offset` is omitted, else the actual number of bytes written
+         * @expose
+         * @see ByteBuffer#writeVarint32
+         */
+        ByteBufferPrototype.writeIString = function(str, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof str !== 'string')
+                    throw TypeError("Illegal str: Not a string");
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            var start = offset,
+                k;
+            k = utfx.calculateUTF16asUTF8(stringSource(str), this.noAssert)[1];
+            offset += 4+k;
+            var capacity13 = this.buffer.byteLength;
+            if (offset > capacity13)
+                this.resize((capacity13 *= 2) > offset ? capacity13 : offset);
+            offset -= 4+k;
+            this.view.setUint32(offset, k, this.littleEndian);
+            offset += 4;
+            utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+                this.view.setUint8(offset++, b);
+            }.bind(this));
+            if (offset !== start + 4 + k)
+                throw RangeError("Illegal range: Truncated data, "+offset+" == "+(offset+4+k));
+            if (relative) {
+                this.offset = offset;
+                return this;
+            }
+            return offset - start;
+        };
+
+        /**
+         * Reads a length as uint32 prefixed UTF8 encoded string.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+         *  read and the actual number of bytes read.
+         * @expose
+         * @see ByteBuffer#readVarint32
+         */
+        ByteBufferPrototype.readIString = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 4 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+4+") <= "+this.buffer.byteLength);
+            }
+            var temp = 0,
+                start = offset,
+                str;
+            temp = this.view.getUint32(offset, this.littleEndian);
+            offset += 4;
+            var k = offset + temp,
+                sd;
+            utfx.decodeUTF8toUTF16(function() {
+                return offset < k ? this.view.getUint8(offset++) : null;
+            }.bind(this), sd = stringDestination(), this.noAssert);
+            str = sd();
+            if (relative) {
+                this.offset = offset;
+                return str;
+            } else {
+                return {
+                    'string': str,
+                    'length': offset - start
+                };
+            }
+        };
+
+        // types/strings/utf8string
+
+        /**
+         * Metrics representing number of UTF8 characters. Evaluates to `c`.
+         * @type {string}
+         * @const
+         * @expose
+         */
+        ByteBuffer.METRICS_CHARS = 'c';
+
+        /**
+         * Metrics representing number of bytes. Evaluates to `b`.
+         * @type {string}
+         * @const
+         * @expose
+         */
+        ByteBuffer.METRICS_BYTES = 'b';
+
+        /**
+         * Writes an UTF8 encoded string.
+         * @param {string} str String to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} if omitted.
+         * @returns {!ByteBuffer|number} this if offset is omitted, else the actual number of bytes written.
+         * @expose
+         */
+        ByteBufferPrototype.writeUTF8String = function(str, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            var k;
+            var start = offset;
+            k = utfx.calculateUTF16asUTF8(stringSource(str))[1];
+            offset += k;
+            var capacity14 = this.buffer.byteLength;
+            if (offset > capacity14)
+                this.resize((capacity14 *= 2) > offset ? capacity14 : offset);
+            offset -= k;
+            utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+                this.view.setUint8(offset++, b);
+            }.bind(this));
+            if (relative) {
+                this.offset = offset;
+                return this;
+            }
+            return offset - start;
+        };
+
+        /**
+         * Writes an UTF8 encoded string. This is an alias of {@link ByteBuffer#writeUTF8String}.
+         * @function
+         * @param {string} str String to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} if omitted.
+         * @returns {!ByteBuffer|number} this if offset is omitted, else the actual number of bytes written.
+         * @expose
+         */
+        ByteBufferPrototype.writeString = ByteBufferPrototype.writeUTF8String;
+
+        /**
+         * Calculates the number of UTF8 characters of a string. JavaScript itself uses UTF-16, so that a string's
+         *  `length` property does not reflect its actual UTF8 size if it contains code points larger than 0xFFFF.
+         * @function
+         * @param {string} str String to calculate
+         * @returns {number} Number of UTF8 characters
+         * @expose
+         */
+        ByteBuffer.calculateUTF8Chars = function(str) {
+            return utfx.calculateUTF16asUTF8(stringSource(str))[0];
+        };
+
+        /**
+         * Calculates the number of UTF8 bytes of a string.
+         * @function
+         * @param {string} str String to calculate
+         * @returns {number} Number of UTF8 bytes
+         * @expose
+         */
+        ByteBuffer.calculateUTF8Bytes = function(str) {
+            return utfx.calculateUTF16asUTF8(stringSource(str))[1];
+        };
+
+        /**
+         * Reads an UTF8 encoded string.
+         * @param {number} length Number of characters or bytes to read.
+         * @param {string=} metrics Metrics specifying what `length` is meant to count. Defaults to
+         *  {@link ByteBuffer.METRICS_CHARS}.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+         *  read and the actual number of bytes read.
+         * @expose
+         */
+        ByteBufferPrototype.readUTF8String = function(length, metrics, offset) {
+            if (typeof metrics === 'number') {
+                offset = metrics;
+                metrics = undefined;
+            }
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (typeof metrics === 'undefined') metrics = ByteBuffer.METRICS_CHARS;
+            if (!this.noAssert) {
+                if (typeof length !== 'number' || length % 1 !== 0)
+                    throw TypeError("Illegal length: "+length+" (not an integer)");
+                length |= 0;
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            var i = 0,
+                start = offset,
+                sd;
+            if (metrics === ByteBuffer.METRICS_CHARS) { // The same for node and the browser
+                sd = stringDestination();
+                utfx.decodeUTF8(function() {
+                    return i < length && offset < this.limit ? this.view.getUint8(offset++) : null;
+                }.bind(this), function(cp) {
+                    ++i; utfx.UTF8toUTF16(cp, sd);
+                }.bind(this));
+                if (i !== length)
+                    throw RangeError("Illegal range: Truncated data, "+i+" == "+length);
+                if (relative) {
+                    this.offset = offset;
+                    return sd();
+                } else {
+                    return {
+                        "string": sd(),
+                        "length": offset - start
+                    };
+                }
+            } else if (metrics === ByteBuffer.METRICS_BYTES) {
+                if (!this.noAssert) {
+                    if (typeof offset !== 'number' || offset % 1 !== 0)
+                        throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                    offset >>>= 0;
+                    if (offset < 0 || offset + length > this.buffer.byteLength)
+                        throw RangeError("Illegal offset: 0 <= "+offset+" (+"+length+") <= "+this.buffer.byteLength);
+                }
+                var k = offset + length;
+                utfx.decodeUTF8toUTF16(function() {
+                    return offset < k ? this.view.getUint8(offset++) : null;
+                }.bind(this), sd = stringDestination(), this.noAssert);
+                if (offset !== k)
+                    throw RangeError("Illegal range: Truncated data, "+offset+" == "+k);
+                if (relative) {
+                    this.offset = offset;
+                    return sd();
+                } else {
+                    return {
+                        'string': sd(),
+                        'length': offset - start
+                    };
+                }
+            } else
+                throw TypeError("Unsupported metrics: "+metrics);
+        };
+
+        /**
+         * Reads an UTF8 encoded string. This is an alias of {@link ByteBuffer#readUTF8String}.
+         * @function
+         * @param {number} length Number of characters or bytes to read
+         * @param {number=} metrics Metrics specifying what `n` is meant to count. Defaults to
+         *  {@link ByteBuffer.METRICS_CHARS}.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+         *  read and the actual number of bytes read.
+         * @expose
+         */
+        ByteBufferPrototype.readString = ByteBufferPrototype.readUTF8String;
+
+        // types/strings/vstring
+
+        /**
+         * Writes a length as varint32 prefixed UTF8 encoded string.
+         * @param {string} str String to write
+         * @param {number=} offset Offset to write to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted.
+         * @returns {!ByteBuffer|number} `this` if `offset` is omitted, else the actual number of bytes written
+         * @expose
+         * @see ByteBuffer#writeVarint32
+         */
+        ByteBufferPrototype.writeVString = function(str, offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof str !== 'string')
+                    throw TypeError("Illegal str: Not a string");
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            var start = offset,
+                k, l;
+            k = utfx.calculateUTF16asUTF8(stringSource(str), this.noAssert)[1];
+            l = ByteBuffer.calculateVarint32(k);
+            offset += l+k;
+            var capacity15 = this.buffer.byteLength;
+            if (offset > capacity15)
+                this.resize((capacity15 *= 2) > offset ? capacity15 : offset);
+            offset -= l+k;
+            offset += this.writeVarint32(k, offset);
+            utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+                this.view.setUint8(offset++, b);
+            }.bind(this));
+            if (offset !== start+k+l)
+                throw RangeError("Illegal range: Truncated data, "+offset+" == "+(offset+k+l));
+            if (relative) {
+                this.offset = offset;
+                return this;
+            }
+            return offset - start;
+        };
+
+        /**
+         * Reads a length as varint32 prefixed UTF8 encoded string.
+         * @param {number=} offset Offset to read from. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {string|!{string: string, length: number}} The string read if offset is omitted, else the string
+         *  read and the actual number of bytes read.
+         * @expose
+         * @see ByteBuffer#readVarint32
+         */
+        ByteBufferPrototype.readVString = function(offset) {
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 1 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+1+") <= "+this.buffer.byteLength);
+            }
+            var temp = this.readVarint32(offset),
+                start = offset,
+                str;
+            offset += temp['length'];
+            temp = temp['value'];
+            var k = offset + temp,
+                sd = stringDestination();
+            utfx.decodeUTF8toUTF16(function() {
+                return offset < k ? this.view.getUint8(offset++) : null;
+            }.bind(this), sd, this.noAssert);
+            str = sd();
+            if (relative) {
+                this.offset = offset;
+                return str;
+            } else {
+                return {
+                    'string': str,
+                    'length': offset - start
+                };
+            }
+        };
+
+
+        /**
+         * Appends some data to this ByteBuffer. This will overwrite any contents behind the specified offset up to the appended
+         *  data's length.
+         * @param {!ByteBuffer|!ArrayBuffer|!Uint8Array|string} source Data to append. If `source` is a ByteBuffer, its offsets
+         *  will be modified according to the performed read operation.
+         * @param {(string|number)=} encoding Encoding if `data` is a string ("base64", "hex", "binary", defaults to "utf8")
+         * @param {number=} offset Offset to append at. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         * @example A relative `<01 02>03.append(<04 05>)` will result in `<01 02 04 05>, 04 05|`
+         * @example An absolute `<01 02>03.append(04 05>, 1)` will result in `<01 04>05, 04 05|`
+         */
+        ByteBufferPrototype.append = function(source, encoding, offset) {
+            if (typeof encoding === 'number' || typeof encoding !== 'string') {
+                offset = encoding;
+                encoding = undefined;
+            }
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            if (!(source instanceof ByteBuffer))
+                source = ByteBuffer.wrap(source, encoding);
+            var length = source.limit - source.offset;
+            if (length <= 0) return this; // Nothing to append
+            offset += length;
+            var capacity16 = this.buffer.byteLength;
+            if (offset > capacity16)
+                this.resize((capacity16 *= 2) > offset ? capacity16 : offset);
+            offset -= length;
+            new Uint8Array(this.buffer, offset).set(new Uint8Array(source.buffer).subarray(source.offset, source.limit));
+            source.offset += length;
+            if (relative) this.offset += length;
+            return this;
+        };
+
+        /**
+         * Appends this ByteBuffer's contents to another ByteBuffer. This will overwrite any contents behind the specified
+         *  offset up to the length of this ByteBuffer's data.
+         * @param {!ByteBuffer} target Target ByteBuffer
+         * @param {number=} offset Offset to append to. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  read if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         * @see ByteBuffer#append
+         */
+        ByteBufferPrototype.appendTo = function(target, offset) {
+            target.append(this, offset);
+            return this;
+        };
+
+        /**
+         * Enables or disables assertions of argument types and offsets. Assertions are enabled by default but you can opt to
+         *  disable them if your code already makes sure that everything is valid.
+         * @param {boolean} assert `true` to enable assertions, otherwise `false`
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.assert = function(assert) {
+            this.noAssert = !assert;
+            return this;
+        };
+
+        /**
+         * Gets the capacity of this ByteBuffer's backing buffer.
+         * @returns {number} Capacity of the backing buffer
+         * @expose
+         */
+        ByteBufferPrototype.capacity = function() {
+            return this.buffer.byteLength;
+        };
+
+        /**
+         * Clears this ByteBuffer's offsets by setting {@link ByteBuffer#offset} to `0` and {@link ByteBuffer#limit} to the
+         *  backing buffer's capacity. Discards {@link ByteBuffer#markedOffset}.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.clear = function() {
+            this.offset = 0;
+            this.limit = this.buffer.byteLength;
+            this.markedOffset = -1;
+            return this;
+        };
+
+        /**
+         * Creates a cloned instance of this ByteBuffer, preset with this ByteBuffer's values for {@link ByteBuffer#offset},
+         *  {@link ByteBuffer#markedOffset} and {@link ByteBuffer#limit}.
+         * @param {boolean=} copy Whether to copy the backing buffer or to return another view on the same, defaults to `false`
+         * @returns {!ByteBuffer} Cloned instance
+         * @expose
+         */
+        ByteBufferPrototype.clone = function(copy) {
+            var bb = new ByteBuffer(0, this.littleEndian, this.noAssert);
+            if (copy) {
+                var buffer = new ArrayBuffer(this.buffer.byteLength);
+                new Uint8Array(buffer).set(this.buffer);
+                bb.buffer = buffer;
+                bb.view = new DataView(buffer);
+            } else {
+                bb.buffer = this.buffer;
+                bb.view = this.view;
+            }
+            bb.offset = this.offset;
+            bb.markedOffset = this.markedOffset;
+            bb.limit = this.limit;
+            return bb;
+        };
+
+        /**
+         * Compacts this ByteBuffer to be backed by a {@link ByteBuffer#buffer} of its contents' length. Contents are the bytes
+         *  between {@link ByteBuffer#offset} and {@link ByteBuffer#limit}. Will set `offset = 0` and `limit = capacity` and
+         *  adapt {@link ByteBuffer#markedOffset} to the same relative position if set.
+         * @param {number=} begin Offset to start at, defaults to {@link ByteBuffer#offset}
+         * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.compact = function(begin, end) {
+            if (typeof begin === 'undefined') begin = this.offset;
+            if (typeof end === 'undefined') end = this.limit;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            if (begin === 0 && end === this.buffer.byteLength)
+                return this; // Already compacted
+            var len = end - begin;
+            if (len === 0) {
+                this.buffer = EMPTY_BUFFER;
+                this.view = null;
+                if (this.markedOffset >= 0) this.markedOffset -= begin;
+                this.offset = 0;
+                this.limit = 0;
+                return this;
+            }
+            var buffer = new ArrayBuffer(len);
+            new Uint8Array(buffer).set(new Uint8Array(this.buffer).subarray(begin, end));
+            this.buffer = buffer;
+            this.view = new DataView(buffer);
+            if (this.markedOffset >= 0) this.markedOffset -= begin;
+            this.offset = 0;
+            this.limit = len;
+            return this;
+        };
+
+        /**
+         * Creates a copy of this ByteBuffer's contents. Contents are the bytes between {@link ByteBuffer#offset} and
+         *  {@link ByteBuffer#limit}.
+         * @param {number=} begin Begin offset, defaults to {@link ByteBuffer#offset}.
+         * @param {number=} end End offset, defaults to {@link ByteBuffer#limit}.
+         * @returns {!ByteBuffer} Copy
+         * @expose
+         */
+        ByteBufferPrototype.copy = function(begin, end) {
+            if (typeof begin === 'undefined') begin = this.offset;
+            if (typeof end === 'undefined') end = this.limit;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            if (begin === end)
+                return new ByteBuffer(0, this.littleEndian, this.noAssert);
+            var capacity = end - begin,
+                bb = new ByteBuffer(capacity, this.littleEndian, this.noAssert);
+            bb.offset = 0;
+            bb.limit = capacity;
+            if (bb.markedOffset >= 0) bb.markedOffset -= begin;
+            this.copyTo(bb, 0, begin, end);
+            return bb;
+        };
+
+        /**
+         * Copies this ByteBuffer's contents to another ByteBuffer. Contents are the bytes between {@link ByteBuffer#offset} and
+         *  {@link ByteBuffer#limit}.
+         * @param {!ByteBuffer} target Target ByteBuffer
+         * @param {number=} targetOffset Offset to copy to. Will use and increase the target's {@link ByteBuffer#offset}
+         *  by the number of bytes copied if omitted.
+         * @param {number=} sourceOffset Offset to start copying from. Will use and increase {@link ByteBuffer#offset} by the
+         *  number of bytes copied if omitted.
+         * @param {number=} sourceLimit Offset to end copying from, defaults to {@link ByteBuffer#limit}
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.copyTo = function(target, targetOffset, sourceOffset, sourceLimit) {
+            var relative,
+                targetRelative;
+            if (!this.noAssert) {
+                if (!ByteBuffer.isByteBuffer(target))
+                    throw TypeError("Illegal target: Not a ByteBuffer");
+            }
+            targetOffset = (targetRelative = typeof targetOffset === 'undefined') ? target.offset : targetOffset | 0;
+            sourceOffset = (relative = typeof sourceOffset === 'undefined') ? this.offset : sourceOffset | 0;
+            sourceLimit = typeof sourceLimit === 'undefined' ? this.limit : sourceLimit | 0;
+
+            if (targetOffset < 0 || targetOffset > target.buffer.byteLength)
+                throw RangeError("Illegal target range: 0 <= "+targetOffset+" <= "+target.buffer.byteLength);
+            if (sourceOffset < 0 || sourceLimit > this.buffer.byteLength)
+                throw RangeError("Illegal source range: 0 <= "+sourceOffset+" <= "+this.buffer.byteLength);
+
+            var len = sourceLimit - sourceOffset;
+            if (len === 0)
+                return target; // Nothing to copy
+
+            target.ensureCapacity(targetOffset + len);
+
+            new Uint8Array(target.buffer).set(new Uint8Array(this.buffer).subarray(sourceOffset, sourceLimit), targetOffset);
+
+            if (relative) this.offset += len;
+            if (targetRelative) target.offset += len;
+
+            return this;
+        };
+
+        /**
+         * Makes sure that this ByteBuffer is backed by a {@link ByteBuffer#buffer} of at least the specified capacity. If the
+         *  current capacity is exceeded, it will be doubled. If double the current capacity is less than the required capacity,
+         *  the required capacity will be used instead.
+         * @param {number} capacity Required capacity
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.ensureCapacity = function(capacity) {
+            var current = this.buffer.byteLength;
+            if (current < capacity)
+                return this.resize((current *= 2) > capacity ? current : capacity);
+            return this;
+        };
+
+        /**
+         * Overwrites this ByteBuffer's contents with the specified value. Contents are the bytes between
+         *  {@link ByteBuffer#offset} and {@link ByteBuffer#limit}.
+         * @param {number|string} value Byte value to fill with. If given as a string, the first character is used.
+         * @param {number=} begin Begin offset. Will use and increase {@link ByteBuffer#offset} by the number of bytes
+         *  written if omitted. defaults to {@link ByteBuffer#offset}.
+         * @param {number=} end End offset, defaults to {@link ByteBuffer#limit}.
+         * @returns {!ByteBuffer} this
+         * @expose
+         * @example `someByteBuffer.clear().fill(0)` fills the entire backing buffer with zeroes
+         */
+        ByteBufferPrototype.fill = function(value, begin, end) {
+            var relative = typeof begin === 'undefined';
+            if (relative) begin = this.offset;
+            if (typeof value === 'string' && value.length > 0)
+                value = value.charCodeAt(0);
+            if (typeof begin === 'undefined') begin = this.offset;
+            if (typeof end === 'undefined') end = this.limit;
+            if (!this.noAssert) {
+                if (typeof value !== 'number' || value % 1 !== 0)
+                    throw TypeError("Illegal value: "+value+" (not an integer)");
+                value |= 0;
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            if (begin >= end)
+                return this; // Nothing to fill
+            while (begin < end) this.view.setUint8(begin++, value);
+            if (relative) this.offset = begin;
+            return this;
+        };
+
+        /**
+         * Makes this ByteBuffer ready for a new sequence of write or relative read operations. Sets `limit = offset` and
+         *  `offset = 0`. Make sure always to flip a ByteBuffer when all relative read or write operations are complete.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.flip = function() {
+            this.limit = this.offset;
+            this.offset = 0;
+            return this;
+        };
+        /**
+         * Marks an offset on this ByteBuffer to be used later.
+         * @param {number=} offset Offset to mark. Defaults to {@link ByteBuffer#offset}.
+         * @returns {!ByteBuffer} this
+         * @throws {TypeError} If `offset` is not a valid number
+         * @throws {RangeError} If `offset` is out of bounds
+         * @see ByteBuffer#reset
+         * @expose
+         */
+        ByteBufferPrototype.mark = function(offset) {
+            offset = typeof offset === 'undefined' ? this.offset : offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            this.markedOffset = offset;
+            return this;
+        };
+        /**
+         * Sets the byte order.
+         * @param {boolean} littleEndian `true` for little endian byte order, `false` for big endian
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.order = function(littleEndian) {
+            if (!this.noAssert) {
+                if (typeof littleEndian !== 'boolean')
+                    throw TypeError("Illegal littleEndian: Not a boolean");
+            }
+            this.littleEndian = !!littleEndian;
+            return this;
+        };
+
+        /**
+         * Switches (to) little endian byte order.
+         * @param {boolean=} littleEndian Defaults to `true`, otherwise uses big endian
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.LE = function(littleEndian) {
+            this.littleEndian = typeof littleEndian !== 'undefined' ? !!littleEndian : true;
+            return this;
+        };
+
+        /**
+         * Switches (to) big endian byte order.
+         * @param {boolean=} bigEndian Defaults to `true`, otherwise uses little endian
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.BE = function(bigEndian) {
+            this.littleEndian = typeof bigEndian !== 'undefined' ? !bigEndian : false;
+            return this;
+        };
+        /**
+         * Prepends some data to this ByteBuffer. This will overwrite any contents before the specified offset up to the
+         *  prepended data's length. If there is not enough space available before the specified `offset`, the backing buffer
+         *  will be resized and its contents moved accordingly.
+         * @param {!ByteBuffer|string|!ArrayBuffer} source Data to prepend. If `source` is a ByteBuffer, its offset will be
+         *  modified according to the performed read operation.
+         * @param {(string|number)=} encoding Encoding if `data` is a string ("base64", "hex", "binary", defaults to "utf8")
+         * @param {number=} offset Offset to prepend at. Will use and decrease {@link ByteBuffer#offset} by the number of bytes
+         *  prepended if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         * @example A relative `00<01 02 03>.prepend(<04 05>)` results in `<04 05 01 02 03>, 04 05|`
+         * @example An absolute `00<01 02 03>.prepend(<04 05>, 2)` results in `04<05 02 03>, 04 05|`
+         */
+        ByteBufferPrototype.prepend = function(source, encoding, offset) {
+            if (typeof encoding === 'number' || typeof encoding !== 'string') {
+                offset = encoding;
+                encoding = undefined;
+            }
+            var relative = typeof offset === 'undefined';
+            if (relative) offset = this.offset;
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: "+offset+" (not an integer)");
+                offset >>>= 0;
+                if (offset < 0 || offset + 0 > this.buffer.byteLength)
+                    throw RangeError("Illegal offset: 0 <= "+offset+" (+"+0+") <= "+this.buffer.byteLength);
+            }
+            if (!(source instanceof ByteBuffer))
+                source = ByteBuffer.wrap(source, encoding);
+            var len = source.limit - source.offset;
+            if (len <= 0) return this; // Nothing to prepend
+            var diff = len - offset;
+            var arrayView;
+            if (diff > 0) { // Not enough space before offset, so resize + move
+                var buffer = new ArrayBuffer(this.buffer.byteLength + diff);
+                arrayView = new Uint8Array(buffer);
+                arrayView.set(new Uint8Array(this.buffer).subarray(offset, this.buffer.byteLength), len);
+                this.buffer = buffer;
+                this.view = new DataView(buffer);
+                this.offset += diff;
+                if (this.markedOffset >= 0) this.markedOffset += diff;
+                this.limit += diff;
+                offset += diff;
+            } else {
+                arrayView = new Uint8Array(this.buffer);
+            }
+            arrayView.set(new Uint8Array(source.buffer).subarray(source.offset, source.limit), offset - len);
+            source.offset = source.limit;
+            if (relative)
+                this.offset -= len;
+            return this;
+        };
+
+        /**
+         * Prepends this ByteBuffer to another ByteBuffer. This will overwrite any contents before the specified offset up to the
+         *  prepended data's length. If there is not enough space available before the specified `offset`, the backing buffer
+         *  will be resized and its contents moved accordingly.
+         * @param {!ByteBuffer} target Target ByteBuffer
+         * @param {number=} offset Offset to prepend at. Will use and decrease {@link ByteBuffer#offset} by the number of bytes
+         *  prepended if omitted.
+         * @returns {!ByteBuffer} this
+         * @expose
+         * @see ByteBuffer#prepend
+         */
+        ByteBufferPrototype.prependTo = function(target, offset) {
+            target.prepend(this, offset);
+            return this;
+        };
+        /**
+         * Prints debug information about this ByteBuffer's contents.
+         * @param {function(string)=} out Output function to call, defaults to console.log
+         * @expose
+         */
+        ByteBufferPrototype.printDebug = function(out) {
+            if (typeof out !== 'function') out = console.log.bind(console);
+            out(
+                this.toString()+"\n"+
+                "-------------------------------------------------------------------\n"+
+                this.toDebug(/* columns */ true)
+            );
+        };
+
+        /**
+         * Gets the number of remaining readable bytes. Contents are the bytes between {@link ByteBuffer#offset} and
+         *  {@link ByteBuffer#limit}, so this returns `limit - offset`.
+         * @returns {number} Remaining readable bytes. May be negative if `offset > limit`.
+         * @expose
+         */
+        ByteBufferPrototype.remaining = function() {
+            return this.limit - this.offset;
+        };
+        /**
+         * Resets this ByteBuffer's {@link ByteBuffer#offset}. If an offset has been marked through {@link ByteBuffer#mark}
+         *  before, `offset` will be set to {@link ByteBuffer#markedOffset}, which will then be discarded. If no offset has been
+         *  marked, sets `offset = 0`.
+         * @returns {!ByteBuffer} this
+         * @see ByteBuffer#mark
+         * @expose
+         */
+        ByteBufferPrototype.reset = function() {
+            if (this.markedOffset >= 0) {
+                this.offset = this.markedOffset;
+                this.markedOffset = -1;
+            } else {
+                this.offset = 0;
+            }
+            return this;
+        };
+        /**
+         * Resizes this ByteBuffer to be backed by a buffer of at least the given capacity. Will do nothing if already that
+         *  large or larger.
+         * @param {number} capacity Capacity required
+         * @returns {!ByteBuffer} this
+         * @throws {TypeError} If `capacity` is not a number
+         * @throws {RangeError} If `capacity < 0`
+         * @expose
+         */
+        ByteBufferPrototype.resize = function(capacity) {
+            if (!this.noAssert) {
+                if (typeof capacity !== 'number' || capacity % 1 !== 0)
+                    throw TypeError("Illegal capacity: "+capacity+" (not an integer)");
+                capacity |= 0;
+                if (capacity < 0)
+                    throw RangeError("Illegal capacity: 0 <= "+capacity);
+            }
+            if (this.buffer.byteLength < capacity) {
+                var buffer = new ArrayBuffer(capacity);
+                new Uint8Array(buffer).set(new Uint8Array(this.buffer));
+                this.buffer = buffer;
+                this.view = new DataView(buffer);
+            }
+            return this;
+        };
+        /**
+         * Reverses this ByteBuffer's contents.
+         * @param {number=} begin Offset to start at, defaults to {@link ByteBuffer#offset}
+         * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.reverse = function(begin, end) {
+            if (typeof begin === 'undefined') begin = this.offset;
+            if (typeof end === 'undefined') end = this.limit;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            if (begin === end)
+                return this; // Nothing to reverse
+            Array.prototype.reverse.call(new Uint8Array(this.buffer).subarray(begin, end));
+            this.view = new DataView(this.buffer); // FIXME: Why exactly is this necessary?
+            return this;
+        };
+        /**
+         * Skips the next `length` bytes. This will just advance
+         * @param {number} length Number of bytes to skip. May also be negative to move the offset back.
+         * @returns {!ByteBuffer} this
+         * @expose
+         */
+        ByteBufferPrototype.skip = function(length) {
+            if (!this.noAssert) {
+                if (typeof length !== 'number' || length % 1 !== 0)
+                    throw TypeError("Illegal length: "+length+" (not an integer)");
+                length |= 0;
+            }
+            var offset = this.offset + length;
+            if (!this.noAssert) {
+                if (offset < 0 || offset > this.buffer.byteLength)
+                    throw RangeError("Illegal length: 0 <= "+this.offset+" + "+length+" <= "+this.buffer.byteLength);
+            }
+            this.offset = offset;
+            return this;
+        };
+
+        /**
+         * Slices this ByteBuffer by creating a cloned instance with `offset = begin` and `limit = end`.
+         * @param {number=} begin Begin offset, defaults to {@link ByteBuffer#offset}.
+         * @param {number=} end End offset, defaults to {@link ByteBuffer#limit}.
+         * @returns {!ByteBuffer} Clone of this ByteBuffer with slicing applied, backed by the same {@link ByteBuffer#buffer}
+         * @expose
+         */
+        ByteBufferPrototype.slice = function(begin, end) {
+            if (typeof begin === 'undefined') begin = this.offset;
+            if (typeof end === 'undefined') end = this.limit;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            var bb = this.clone();
+            bb.offset = begin;
+            bb.limit = end;
+            return bb;
+        };
+        /**
+         * Returns a copy of the backing buffer that contains this ByteBuffer's contents. Contents are the bytes between
+         *  {@link ByteBuffer#offset} and {@link ByteBuffer#limit}. Will transparently {@link ByteBuffer#flip} this
+         *  ByteBuffer if `offset > limit` but the actual offsets remain untouched.
+         * @param {boolean=} forceCopy If `true` returns a copy, otherwise returns a view referencing the same memory if
+         *  possible. Defaults to `false`
+         * @returns {!ArrayBuffer} Contents as an ArrayBuffer
+         * @expose
+         */
+        ByteBufferPrototype.toBuffer = function(forceCopy) {
+            var offset = this.offset,
+                limit = this.limit;
+            if (offset > limit) {
+                var t = offset;
+                offset = limit;
+                limit = t;
+            }
+            if (!this.noAssert) {
+                if (typeof offset !== 'number' || offset % 1 !== 0)
+                    throw TypeError("Illegal offset: Not an integer");
+                offset >>>= 0;
+                if (typeof limit !== 'number' || limit % 1 !== 0)
+                    throw TypeError("Illegal limit: Not an integer");
+                limit >>>= 0;
+                if (offset < 0 || offset > limit || limit > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+offset+" <= "+limit+" <= "+this.buffer.byteLength);
+            }
+            // NOTE: It's not possible to have another ArrayBuffer reference the same memory as the backing buffer. This is
+            // possible with Uint8Array#subarray only, but we have to return an ArrayBuffer by contract. So:
+            if (!forceCopy && offset === 0 && limit === this.buffer.byteLength) {
+                return this.buffer;
+            }
+            if (offset === limit) {
+                return EMPTY_BUFFER;
+            }
+            var buffer = new ArrayBuffer(limit - offset);
+            new Uint8Array(buffer).set(new Uint8Array(this.buffer).subarray(offset, limit), 0);
+            return buffer;
+        };
+
+        /**
+         * Returns a raw buffer compacted to contain this ByteBuffer's contents. Contents are the bytes between
+         *  {@link ByteBuffer#offset} and {@link ByteBuffer#limit}. Will transparently {@link ByteBuffer#flip} this
+         *  ByteBuffer if `offset > limit` but the actual offsets remain untouched. This is an alias of
+         *  {@link ByteBuffer#toBuffer}.
+         * @function
+         * @param {boolean=} forceCopy If `true` returns a copy, otherwise returns a view referencing the same memory.
+         *  Defaults to `false`
+         * @returns {!ArrayBuffer} Contents as an ArrayBuffer
+         * @expose
+         */
+        ByteBufferPrototype.toArrayBuffer = ByteBufferPrototype.toBuffer;
+
+
+        /**
+         * Converts the ByteBuffer's contents to a string.
+         * @param {string=} encoding Output encoding. Returns an informative string representation if omitted but also allows
+         *  direct conversion to "utf8", "hex", "base64" and "binary" encoding. "debug" returns a hex representation with
+         *  highlighted offsets.
+         * @param {number=} begin Offset to begin at, defaults to {@link ByteBuffer#offset}
+         * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}
+         * @returns {string} String representation
+         * @throws {Error} If `encoding` is invalid
+         * @expose
+         */
+        ByteBufferPrototype.toString = function(encoding, begin, end) {
+            if (typeof encoding === 'undefined')
+                return "ByteBufferAB(offset="+this.offset+",markedOffset="+this.markedOffset+",limit="+this.limit+",capacity="+this.capacity()+")";
+            if (typeof encoding === 'number')
+                encoding = "utf8",
+                begin = encoding,
+                end = begin;
+            switch (encoding) {
+                case "utf8":
+                    return this.toUTF8(begin, end);
+                case "base64":
+                    return this.toBase64(begin, end);
+                case "hex":
+                    return this.toHex(begin, end);
+                case "binary":
+                    return this.toBinary(begin, end);
+                case "debug":
+                    return this.toDebug();
+                case "columns":
+                    return this.toColumns();
+                default:
+                    throw Error("Unsupported encoding: "+encoding);
+            }
+        };
+
+        // lxiv-embeddable
+
+        /**
+         * lxiv-embeddable (c) 2014 Daniel Wirtz <dcode@dcode.io>
+         * Released under the Apache License, Version 2.0
+         * see: https://github.com/dcodeIO/lxiv for details
+         */
+        var lxiv = function() {
+            "use strict";
+
+            /**
+             * lxiv namespace.
+             * @type {!Object.<string,*>}
+             * @exports lxiv
+             */
+            var lxiv = {};
+
+            /**
+             * Character codes for output.
+             * @type {!Array.<number>}
+             * @inner
+             */
+            var aout = [
+                65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+                81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102,
+                103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118,
+                119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47
+            ];
+
+            /**
+             * Character codes for input.
+             * @type {!Array.<number>}
+             * @inner
+             */
+            var ain = [];
+            for (var i=0, k=aout.length; i<k; ++i)
+                ain[aout[i]] = i;
+
+            /**
+             * Encodes bytes to base64 char codes.
+             * @param {!function():number|null} src Bytes source as a function returning the next byte respectively `null` if
+             *  there are no more bytes left.
+             * @param {!function(number)} dst Characters destination as a function successively called with each encoded char
+             *  code.
+             */
+            lxiv.encode = function(src, dst) {
+                var b, t;
+                while ((b = src()) !== null) {
+                    dst(aout[(b>>2)&0x3f]);
+                    t = (b&0x3)<<4;
+                    if ((b = src()) !== null) {
+                        t |= (b>>4)&0xf;
+                        dst(aout[(t|((b>>4)&0xf))&0x3f]);
+                        t = (b&0xf)<<2;
+                        if ((b = src()) !== null)
+                            dst(aout[(t|((b>>6)&0x3))&0x3f]),
+                            dst(aout[b&0x3f]);
+                        else
+                            dst(aout[t&0x3f]),
+                            dst(61);
+                    } else
+                        dst(aout[t&0x3f]),
+                        dst(61),
+                        dst(61);
+                }
+            };
+
+            /**
+             * Decodes base64 char codes to bytes.
+             * @param {!function():number|null} src Characters source as a function returning the next char code respectively
+             *  `null` if there are no more characters left.
+             * @param {!function(number)} dst Bytes destination as a function successively called with the next byte.
+             * @throws {Error} If a character code is invalid
+             */
+            lxiv.decode = function(src, dst) {
+                var c, t1, t2;
+                function fail(c) {
+                    throw Error("Illegal character code: "+c);
+                }
+                while ((c = src()) !== null) {
+                    t1 = ain[c];
+                    if (typeof t1 === 'undefined') fail(c);
+                    if ((c = src()) !== null) {
+                        t2 = ain[c];
+                        if (typeof t2 === 'undefined') fail(c);
+                        dst((t1<<2)>>>0|(t2&0x30)>>4);
+                        if ((c = src()) !== null) {
+                            t1 = ain[c];
+                            if (typeof t1 === 'undefined')
+                                if (c === 61) break; else fail(c);
+                            dst(((t2&0xf)<<4)>>>0|(t1&0x3c)>>2);
+                            if ((c = src()) !== null) {
+                                t2 = ain[c];
+                                if (typeof t2 === 'undefined')
+                                    if (c === 61) break; else fail(c);
+                                dst(((t1&0x3)<<6)>>>0|t2);
+                            }
+                        }
+                    }
+                }
+            };
+
+            /**
+             * Tests if a string is valid base64.
+             * @param {string} str String to test
+             * @returns {boolean} `true` if valid, otherwise `false`
+             */
+            lxiv.test = function(str) {
+                return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(str);
+            };
+
+            return lxiv;
+        }();
+
+        // encodings/base64
+
+        /**
+         * Encodes this ByteBuffer's contents to a base64 encoded string.
+         * @param {number=} begin Offset to begin at, defaults to {@link ByteBuffer#offset}.
+         * @param {number=} end Offset to end at, defaults to {@link ByteBuffer#limit}.
+         * @returns {string} Base64 encoded string
+         * @expose
+         */
+        ByteBufferPrototype.toBase64 = function(begin, end) {
+            if (typeof begin === 'undefined')
+                begin = this.offset;
+            if (typeof end === 'undefined')
+                end = this.limit;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            var sd; lxiv.encode(function() {
+                return begin < end ? this.view.getUint8(begin++) : null;
+            }.bind(this), sd = stringDestination());
+            return sd();
+        };
+
+        /**
+         * Decodes a base64 encoded string to a ByteBuffer.
+         * @param {string} str String to decode
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer} ByteBuffer
+         * @expose
+         */
+        ByteBuffer.fromBase64 = function(str, littleEndian, noAssert) {
+            if (!noAssert) {
+                if (typeof str !== 'string')
+                    throw TypeError("Illegal str: Not a string");
+                if (str.length % 4 !== 0)
+                    throw TypeError("Illegal str: Length not a multiple of 4");
+            }
+            var bb = new ByteBuffer(str.length/4*3, littleEndian, noAssert),
+                i = 0;
+            lxiv.decode(stringSource(str), function(b) {
+                bb.view.setUint8(i++, b);
+            });
+            bb.limit = i;
+            return bb;
+        };
+
+        /**
+         * Encodes a binary string to base64 like `window.btoa` does.
+         * @param {string} str Binary string
+         * @returns {string} Base64 encoded string
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window.btoa
+         * @expose
+         */
+        ByteBuffer.btoa = function(str) {
+            return ByteBuffer.fromBinary(str).toBase64();
+        };
+
+        /**
+         * Decodes a base64 encoded string to binary like `window.atob` does.
+         * @param {string} b64 Base64 encoded string
+         * @returns {string} Binary string
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window.atob
+         * @expose
+         */
+        ByteBuffer.atob = function(b64) {
+            return ByteBuffer.fromBase64(b64).toBinary();
+        };
+
+        // encodings/binary
+
+        /**
+         * Encodes this ByteBuffer to a binary encoded string, that is using only characters 0x00-0xFF as bytes.
+         * @param {number=} begin Offset to begin at. Defaults to {@link ByteBuffer#offset}.
+         * @param {number=} end Offset to end at. Defaults to {@link ByteBuffer#limit}.
+         * @returns {string} Binary encoded string
+         * @throws {RangeError} If `offset > limit`
+         * @expose
+         */
+        ByteBufferPrototype.toBinary = function(begin, end) {
+            begin = typeof begin === 'undefined' ? this.offset : begin;
+            end = typeof end === 'undefined' ? this.limit : end;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            if (begin === end)
+                return "";
+            var cc = [], pt = [];
+            while (begin < end) {
+                cc.push(this.view.getUint8(begin++));
+                if (cc.length >= 1024)
+                    pt.push(String.fromCharCode.apply(String, cc)),
+                    cc = [];
+            }
+            return pt.join('') + String.fromCharCode.apply(String, cc);
+        };
+
+        /**
+         * Decodes a binary encoded string, that is using only characters 0x00-0xFF as bytes, to a ByteBuffer.
+         * @param {string} str String to decode
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer} ByteBuffer
+         * @expose
+         */
+        ByteBuffer.fromBinary = function(str, littleEndian, noAssert) {
+            if (!noAssert) {
+                if (typeof str !== 'string')
+                    throw TypeError("Illegal str: Not a string");
+            }
+            var i = 0, k = str.length, charCode,
+                bb = new ByteBuffer(k, littleEndian, noAssert);
+            while (i<k) {
+                charCode = str.charCodeAt(i);
+                if (!noAssert && charCode > 255)
+                    throw RangeError("Illegal charCode at "+i+": 0 <= "+charCode+" <= 255");
+                bb.view.setUint8(i++, charCode);
+            }
+            bb.limit = k;
+            return bb;
+        };
+
+        // encodings/debug
+
+        /**
+         * Encodes this ByteBuffer to a hex encoded string with marked offsets. Offset symbols are:
+         * * `<` : offset,
+         * * `'` : markedOffset,
+         * * `>` : limit,
+         * * `|` : offset and limit,
+         * * `[` : offset and markedOffset,
+         * * `]` : markedOffset and limit,
+         * * `!` : offset, markedOffset and limit
+         * @param {boolean=} columns If `true` returns two columns hex + ascii, defaults to `false`
+         * @returns {string|!Array.<string>} Debug string or array of lines if `asArray = true`
+         * @expose
+         * @example `>00'01 02<03` contains four bytes with `limit=0, markedOffset=1, offset=3`
+         * @example `00[01 02 03>` contains four bytes with `offset=markedOffset=1, limit=4`
+         * @example `00|01 02 03` contains four bytes with `offset=limit=1, markedOffset=-1`
+         * @example `|` contains zero bytes with `offset=limit=0, markedOffset=-1`
+         */
+        ByteBufferPrototype.toDebug = function(columns) {
+            var i = -1,
+                k = this.buffer.byteLength,
+                b,
+                hex = "",
+                asc = "",
+                out = "";
+            while (i<k) {
+                if (i !== -1) {
+                    b = this.view.getUint8(i);
+                    if (b < 0x10) hex += "0"+b.toString(16).toUpperCase();
+                    else hex += b.toString(16).toUpperCase();
+                    if (columns) {
+                        asc += b > 32 && b < 127 ? String.fromCharCode(b) : '.';
+                    }
+                }
+                ++i;
+                if (columns) {
+                    if (i > 0 && i % 16 === 0 && i !== k) {
+                        while (hex.length < 3*16+3) hex += " ";
+                        out += hex+asc+"\n";
+                        hex = asc = "";
+                    }
+                }
+                if (i === this.offset && i === this.limit)
+                    hex += i === this.markedOffset ? "!" : "|";
+                else if (i === this.offset)
+                    hex += i === this.markedOffset ? "[" : "<";
+                else if (i === this.limit)
+                    hex += i === this.markedOffset ? "]" : ">";
+                else
+                    hex += i === this.markedOffset ? "'" : (columns || (i !== 0 && i !== k) ? " " : "");
+            }
+            if (columns && hex !== " ") {
+                while (hex.length < 3*16+3) hex += " ";
+                out += hex+asc+"\n";
+            }
+            return columns ? out : hex;
+        };
+
+        /**
+         * Decodes a hex encoded string with marked offsets to a ByteBuffer.
+         * @param {string} str Debug string to decode (not be generated with `columns = true`)
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer} ByteBuffer
+         * @expose
+         * @see ByteBuffer#toDebug
+         */
+        ByteBuffer.fromDebug = function(str, littleEndian, noAssert) {
+            var k = str.length,
+                bb = new ByteBuffer(((k+1)/3)|0, littleEndian, noAssert);
+            var i = 0, j = 0, ch, b,
+                rs = false, // Require symbol next
+                ho = false, hm = false, hl = false, // Already has offset, markedOffset, limit?
+                fail = false;
+            while (i<k) {
+                switch (ch = str.charAt(i++)) {
+                    case '!':
+                        if (!noAssert) {
+                            if (ho || hm || hl) {
+                                fail = true; break;
+                            }
+                            ho = hm = hl = true;
+                        }
+                        bb.offset = bb.markedOffset = bb.limit = j;
+                        rs = false;
+                        break;
+                    case '|':
+                        if (!noAssert) {
+                            if (ho || hl) {
+                                fail = true; break;
+                            }
+                            ho = hl = true;
+                        }
+                        bb.offset = bb.limit = j;
+                        rs = false;
+                        break;
+                    case '[':
+                        if (!noAssert) {
+                            if (ho || hm) {
+                                fail = true; break;
+                            }
+                            ho = hm = true;
+                        }
+                        bb.offset = bb.markedOffset = j;
+                        rs = false;
+                        break;
+                    case '<':
+                        if (!noAssert) {
+                            if (ho) {
+                                fail = true; break;
+                            }
+                            ho = true;
+                        }
+                        bb.offset = j;
+                        rs = false;
+                        break;
+                    case ']':
+                        if (!noAssert) {
+                            if (hl || hm) {
+                                fail = true; break;
+                            }
+                            hl = hm = true;
+                        }
+                        bb.limit = bb.markedOffset = j;
+                        rs = false;
+                        break;
+                    case '>':
+                        if (!noAssert) {
+                            if (hl) {
+                                fail = true; break;
+                            }
+                            hl = true;
+                        }
+                        bb.limit = j;
+                        rs = false;
+                        break;
+                    case "'":
+                        if (!noAssert) {
+                            if (hm) {
+                                fail = true; break;
+                            }
+                            hm = true;
+                        }
+                        bb.markedOffset = j;
+                        rs = false;
+                        break;
+                    case ' ':
+                        rs = false;
+                        break;
+                    default:
+                        if (!noAssert) {
+                            if (rs) {
+                                fail = true; break;
+                            }
+                        }
+                        b = parseInt(ch+str.charAt(i++), 16);
+                        if (!noAssert) {
+                            if (isNaN(b) || b < 0 || b > 255)
+                                throw TypeError("Illegal str: Not a debug encoded string");
+                        }
+                        bb.view.setUint8(j++, b);
+                        rs = true;
+                }
+                if (fail)
+                    throw TypeError("Illegal str: Invalid symbol at "+i);
+            }
+            if (!noAssert) {
+                if (!ho || !hl)
+                    throw TypeError("Illegal str: Missing offset or limit");
+                if (j<bb.buffer.byteLength)
+                    throw TypeError("Illegal str: Not a debug encoded string (is it hex?) "+j+" < "+k);
+            }
+            return bb;
+        };
+
+        // encodings/hex
+
+        /**
+         * Encodes this ByteBuffer's contents to a hex encoded string.
+         * @param {number=} begin Offset to begin at. Defaults to {@link ByteBuffer#offset}.
+         * @param {number=} end Offset to end at. Defaults to {@link ByteBuffer#limit}.
+         * @returns {string} Hex encoded string
+         * @expose
+         */
+        ByteBufferPrototype.toHex = function(begin, end) {
+            begin = typeof begin === 'undefined' ? this.offset : begin;
+            end = typeof end === 'undefined' ? this.limit : end;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            var out = new Array(end - begin),
+                b;
+            while (begin < end) {
+                b = this.view.getUint8(begin++);
+                if (b < 0x10)
+                    out.push("0", b.toString(16));
+                else out.push(b.toString(16));
+            }
+            return out.join('');
+        };
+
+        /**
+         * Decodes a hex encoded string to a ByteBuffer.
+         * @param {string} str String to decode
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer} ByteBuffer
+         * @expose
+         */
+        ByteBuffer.fromHex = function(str, littleEndian, noAssert) {
+            if (!noAssert) {
+                if (typeof str !== 'string')
+                    throw TypeError("Illegal str: Not a string");
+                if (str.length % 2 !== 0)
+                    throw TypeError("Illegal str: Length not a multiple of 2");
+            }
+            var k = str.length,
+                bb = new ByteBuffer((k / 2) | 0, littleEndian),
+                b;
+            for (var i=0, j=0; i<k; i+=2) {
+                b = parseInt(str.substring(i, i+2), 16);
+                if (!noAssert)
+                    if (!isFinite(b) || b < 0 || b > 255)
+                        throw TypeError("Illegal str: Contains non-hex characters");
+                bb.view.setUint8(j++, b);
+            }
+            bb.limit = j;
+            return bb;
+        };
+
+        // utfx-embeddable
+
+        /**
+         * utfx-embeddable (c) 2014 Daniel Wirtz <dcode@dcode.io>
+         * Released under the Apache License, Version 2.0
+         * see: https://github.com/dcodeIO/utfx for details
+         */
+        var utfx = function() {
+            "use strict";
+
+            /**
+             * utfx namespace.
+             * @inner
+             * @type {!Object.<string,*>}
+             */
+            var utfx = {};
+
+            /**
+             * Maximum valid code point.
+             * @type {number}
+             * @const
+             */
+            utfx.MAX_CODEPOINT = 0x10FFFF;
+
+            /**
+             * Encodes UTF8 code points to UTF8 bytes.
+             * @param {(!function():number|null) | number} src Code points source, either as a function returning the next code point
+             *  respectively `null` if there are no more code points left or a single numeric code point.
+             * @param {!function(number)} dst Bytes destination as a function successively called with the next byte
+             */
+            utfx.encodeUTF8 = function(src, dst) {
+                var cp = null;
+                if (typeof src === 'number')
+                    cp = src,
+                    src = function() { return null; };
+                while (cp !== null || (cp = src()) !== null) {
+                    if (cp < 0x80)
+                        dst(cp&0x7F);
+                    else if (cp < 0x800)
+                        dst(((cp>>6)&0x1F)|0xC0),
+                        dst((cp&0x3F)|0x80);
+                    else if (cp < 0x10000)
+                        dst(((cp>>12)&0x0F)|0xE0),
+                        dst(((cp>>6)&0x3F)|0x80),
+                        dst((cp&0x3F)|0x80);
+                    else
+                        dst(((cp>>18)&0x07)|0xF0),
+                        dst(((cp>>12)&0x3F)|0x80),
+                        dst(((cp>>6)&0x3F)|0x80),
+                        dst((cp&0x3F)|0x80);
+                    cp = null;
+                }
+            };
+
+            /**
+             * Decodes UTF8 bytes to UTF8 code points.
+             * @param {!function():number|null} src Bytes source as a function returning the next byte respectively `null` if there
+             *  are no more bytes left.
+             * @param {!function(number)} dst Code points destination as a function successively called with each decoded code point.
+             * @throws {RangeError} If a starting byte is invalid in UTF8
+             * @throws {Error} If the last sequence is truncated. Has an array property `bytes` holding the
+             *  remaining bytes.
+             */
+            utfx.decodeUTF8 = function(src, dst) {
+                var a, b, c, d, fail = function(b) {
+                    b = b.slice(0, b.indexOf(null));
+                    var err = Error(b.toString());
+                    err.name = "TruncatedError";
+                    err['bytes'] = b;
+                    throw err;
+                };
+                while ((a = src()) !== null) {
+                    if ((a&0x80) === 0)
+                        dst(a);
+                    else if ((a&0xE0) === 0xC0)
+                        ((b = src()) === null) && fail([a, b]),
+                        dst(((a&0x1F)<<6) | (b&0x3F));
+                    else if ((a&0xF0) === 0xE0)
+                        ((b=src()) === null || (c=src()) === null) && fail([a, b, c]),
+                        dst(((a&0x0F)<<12) | ((b&0x3F)<<6) | (c&0x3F));
+                    else if ((a&0xF8) === 0xF0)
+                        ((b=src()) === null || (c=src()) === null || (d=src()) === null) && fail([a, b, c ,d]),
+                        dst(((a&0x07)<<18) | ((b&0x3F)<<12) | ((c&0x3F)<<6) | (d&0x3F));
+                    else throw RangeError("Illegal starting byte: "+a);
+                }
+            };
+
+            /**
+             * Converts UTF16 characters to UTF8 code points.
+             * @param {!function():number|null} src Characters source as a function returning the next char code respectively
+             *  `null` if there are no more characters left.
+             * @param {!function(number)} dst Code points destination as a function successively called with each converted code
+             *  point.
+             */
+            utfx.UTF16toUTF8 = function(src, dst) {
+                var c1, c2 = null;
+                while (true) {
+                    if ((c1 = c2 !== null ? c2 : src()) === null)
+                        break;
+                    if (c1 >= 0xD800 && c1 <= 0xDFFF) {
+                        if ((c2 = src()) !== null) {
+                            if (c2 >= 0xDC00 && c2 <= 0xDFFF) {
+                                dst((c1-0xD800)*0x400+c2-0xDC00+0x10000);
+                                c2 = null; continue;
+                            }
+                        }
+                    }
+                    dst(c1);
+                }
+                if (c2 !== null) dst(c2);
+            };
+
+            /**
+             * Converts UTF8 code points to UTF16 characters.
+             * @param {(!function():number|null) | number} src Code points source, either as a function returning the next code point
+             *  respectively `null` if there are no more code points left or a single numeric code point.
+             * @param {!function(number)} dst Characters destination as a function successively called with each converted char code.
+             * @throws {RangeError} If a code point is out of range
+             */
+            utfx.UTF8toUTF16 = function(src, dst) {
+                var cp = null;
+                if (typeof src === 'number')
+                    cp = src, src = function() { return null; };
+                while (cp !== null || (cp = src()) !== null) {
+                    if (cp <= 0xFFFF)
+                        dst(cp);
+                    else
+                        cp -= 0x10000,
+                        dst((cp>>10)+0xD800),
+                        dst((cp%0x400)+0xDC00);
+                    cp = null;
+                }
+            };
+
+            /**
+             * Converts and encodes UTF16 characters to UTF8 bytes.
+             * @param {!function():number|null} src Characters source as a function returning the next char code respectively `null`
+             *  if there are no more characters left.
+             * @param {!function(number)} dst Bytes destination as a function successively called with the next byte.
+             */
+            utfx.encodeUTF16toUTF8 = function(src, dst) {
+                utfx.UTF16toUTF8(src, function(cp) {
+                    utfx.encodeUTF8(cp, dst);
+                });
+            };
+
+            /**
+             * Decodes and converts UTF8 bytes to UTF16 characters.
+             * @param {!function():number|null} src Bytes source as a function returning the next byte respectively `null` if there
+             *  are no more bytes left.
+             * @param {!function(number)} dst Characters destination as a function successively called with each converted char code.
+             * @throws {RangeError} If a starting byte is invalid in UTF8
+             * @throws {Error} If the last sequence is truncated. Has an array property `bytes` holding the remaining bytes.
+             */
+            utfx.decodeUTF8toUTF16 = function(src, dst) {
+                utfx.decodeUTF8(src, function(cp) {
+                    utfx.UTF8toUTF16(cp, dst);
+                });
+            };
+
+            /**
+             * Calculates the byte length of an UTF8 code point.
+             * @param {number} cp UTF8 code point
+             * @returns {number} Byte length
+             */
+            utfx.calculateCodePoint = function(cp) {
+                return (cp < 0x80) ? 1 : (cp < 0x800) ? 2 : (cp < 0x10000) ? 3 : 4;
+            };
+
+            /**
+             * Calculates the number of UTF8 bytes required to store UTF8 code points.
+             * @param {(!function():number|null)} src Code points source as a function returning the next code point respectively
+             *  `null` if there are no more code points left.
+             * @returns {number} The number of UTF8 bytes required
+             */
+            utfx.calculateUTF8 = function(src) {
+                var cp, l=0;
+                while ((cp = src()) !== null)
+                    l += utfx.calculateCodePoint(cp);
+                return l;
+            };
+
+            /**
+             * Calculates the number of UTF8 code points respectively UTF8 bytes required to store UTF16 char codes.
+             * @param {(!function():number|null)} src Characters source as a function returning the next char code respectively
+             *  `null` if there are no more characters left.
+             * @returns {!Array.<number>} The number of UTF8 code points at index 0 and the number of UTF8 bytes required at index 1.
+             */
+            utfx.calculateUTF16asUTF8 = function(src) {
+                var n=0, l=0;
+                utfx.UTF16toUTF8(src, function(cp) {
+                    ++n; l += utfx.calculateCodePoint(cp);
+                });
+                return [n,l];
+            };
+
+            return utfx;
+        }();
+
+        // encodings/utf8
+
+        /**
+         * Encodes this ByteBuffer's contents between {@link ByteBuffer#offset} and {@link ByteBuffer#limit} to an UTF8 encoded
+         *  string.
+         * @returns {string} Hex encoded string
+         * @throws {RangeError} If `offset > limit`
+         * @expose
+         */
+        ByteBufferPrototype.toUTF8 = function(begin, end) {
+            if (typeof begin === 'undefined') begin = this.offset;
+            if (typeof end === 'undefined') end = this.limit;
+            if (!this.noAssert) {
+                if (typeof begin !== 'number' || begin % 1 !== 0)
+                    throw TypeError("Illegal begin: Not an integer");
+                begin >>>= 0;
+                if (typeof end !== 'number' || end % 1 !== 0)
+                    throw TypeError("Illegal end: Not an integer");
+                end >>>= 0;
+                if (begin < 0 || begin > end || end > this.buffer.byteLength)
+                    throw RangeError("Illegal range: 0 <= "+begin+" <= "+end+" <= "+this.buffer.byteLength);
+            }
+            var sd; try {
+                utfx.decodeUTF8toUTF16(function() {
+                    return begin < end ? this.view.getUint8(begin++) : null;
+                }.bind(this), sd = stringDestination());
+            } catch (e) {
+                if (begin !== end)
+                    throw RangeError("Illegal range: Truncated data, "+begin+" != "+end);
+            }
+            return sd();
+        };
+
+        /**
+         * Decodes an UTF8 encoded string to a ByteBuffer.
+         * @param {string} str String to decode
+         * @param {boolean=} littleEndian Whether to use little or big endian byte order. Defaults to
+         *  {@link ByteBuffer.DEFAULT_ENDIAN}.
+         * @param {boolean=} noAssert Whether to skip assertions of offsets and values. Defaults to
+         *  {@link ByteBuffer.DEFAULT_NOASSERT}.
+         * @returns {!ByteBuffer} ByteBuffer
+         * @expose
+         */
+        ByteBuffer.fromUTF8 = function(str, littleEndian, noAssert) {
+            if (!noAssert)
+                if (typeof str !== 'string')
+                    throw TypeError("Illegal str: Not a string");
+            var bb = new ByteBuffer(utfx.calculateUTF16asUTF8(stringSource(str), true)[1], littleEndian, noAssert),
+                i = 0;
+            utfx.encodeUTF16toUTF8(stringSource(str), function(b) {
+                bb.view.setUint8(i++, b);
+            });
+            bb.limit = i;
+            return bb;
+        };
+
+
+        return ByteBuffer;
+    }
+
+    /* CommonJS */ if (typeof require === 'function' && typeof module === 'object' && module && typeof exports === 'object' && exports)
+        module['exports'] = (function() {
+            var Long; try { Long = require("long"); } catch (e) {}
+            return loadByteBuffer(Long);
+        })();
+    /* AMD */ else if (typeof define === 'function' && define["amd"])
+        define("ByteBuffer", ["Long"], function(Long) { return loadByteBuffer(Long); });
+    /* Global */ else
+        (global["dcodeIO"] = global["dcodeIO"] || {})["ByteBuffer"] = loadByteBuffer(global["dcodeIO"]["Long"]);
+
+})(this);
+
+},{"long":198}],197:[function(require,module,exports){
 /*
  Copyright 2013 Daniel Wirtz <dcode@dcode.io>
  Copyright 2009 The Closure Library Authors. All Rights Reserved.
@@ -26315,51 +42927,45 @@ typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)})
 
     /**
      * @type {number}
+     * @const
      * @inner
      */
     var TWO_PWR_16_DBL = 1 << 16;
 
     /**
      * @type {number}
+     * @const
      * @inner
      */
     var TWO_PWR_24_DBL = 1 << 24;
 
     /**
      * @type {number}
+     * @const
      * @inner
      */
     var TWO_PWR_32_DBL = TWO_PWR_16_DBL * TWO_PWR_16_DBL;
 
     /**
      * @type {number}
-     * @inner
-     */
-    var TWO_PWR_31_DBL = TWO_PWR_32_DBL / 2;
-
-    /**
-     * @type {number}
-     * @inner
-     */
-    var TWO_PWR_48_DBL = TWO_PWR_32_DBL * TWO_PWR_16_DBL;
-
-    /**
-     * @type {number}
+     * @const
      * @inner
      */
     var TWO_PWR_64_DBL = TWO_PWR_32_DBL * TWO_PWR_32_DBL;
 
     /**
      * @type {number}
+     * @const
      * @inner
      */
     var TWO_PWR_63_DBL = TWO_PWR_64_DBL / 2;
 
     /**
      * @type {!Long}
+     * @const
      * @inner
      */
-    var TWO_PWR_24 = Long.fromInt(1 << 24);
+    var TWO_PWR_24 = Long.fromInt(TWO_PWR_24_DBL);
 
     /**
      * Signed zero.
@@ -26575,6 +43181,7 @@ typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)})
     /**
      * Tests if this Long's value is even.
      * @returns {boolean}
+     * @expose
      */
     Long.prototype.isEven = function() {
         return (this.low & 1) === 0;
@@ -26589,7 +43196,7 @@ typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)})
     Long.prototype.equals = function(other) {
         if (!Long.isLong(other))
             other = Long.fromValue(other);
-        if (this.unsigned !== other.unsigned && (this.high >>> 31) !== (other.high >>> 31))
+        if (this.unsigned !== other.unsigned && (this.high >>> 31) === 1 && (other.high >>> 31) === 1)
             return false;
         return this.high === other.high && this.low === other.low;
     };
@@ -26660,13 +43267,14 @@ typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)})
      * @expose
      */
     Long.prototype.compare = function(other) {
-        if (this.equals(other)) {
+        if (this.equals(other))
             return 0;
-        }
-        var thisNeg = this.isNegative();
-        var otherNeg = other.isNegative();
-        if (thisNeg && !otherNeg) return -1;
-        if (!thisNeg && otherNeg) return 1;
+        var thisNeg = this.isNegative(),
+            otherNeg = other.isNegative();
+        if (thisNeg && !otherNeg)
+            return -1;
+        if (!thisNeg && otherNeg)
+            return 1;
         // At this point the sign bits are the same
         if (!this.unsigned)
             return this.subtract(other).isNegative() ? -1 : 1;
@@ -27016,7 +43624,7 @@ typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)})
         return new Long(this.low, this.high, true);
     };
 
-    /* CommonJS */ if (typeof module !== 'undefined' && module["exports"])
+    /* CommonJS */ if (typeof require === 'function' && typeof module === 'object' && module && typeof exports === 'object' && exports)
         module["exports"] = Long;
     /* AMD */ else if (typeof define === 'function' && define["amd"])
         define(function() { return Long; });
@@ -27025,7 +43633,7 @@ typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)})
 
 })(this);
 
-},{}],100:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
 /*
  Copyright 2013 Daniel Wirtz <dcode@dcode.io>
  Copyright 2009 The Closure Library Authors. All Rights Reserved.
@@ -27045,2196 +43653,160 @@ typeof define&&define.amd?define("ByteBuffer",["Long"],function(k){return t(k)})
 
 module.exports = require("./dist/Long.js");
 
-},{"./dist/Long.js":99}],101:[function(require,module,exports){
-var debug = false;
-
-function pubKeyMatch (ar1, ar2){
-  if (!ar1){
-    return true;
-  }
-  for(var i = 0; i < ar1.length; i++ ){
-    if (ar1[i] !== ar2[i]){
-      return false;
-    }
-  }
-  return true;
-}
-
-
-/** Default EntryClass for ContentStore
- *@constructor
- *@private
- *@param {Buffer} element the raw data packet.
- *@param {Data} data the ndn.Data object
- */
-function csEntry (element, data){
-  var freshnessPeriod = data.getMetaInfo().getFreshnessPeriod();
-  this.name = data.name;
-  this.element = element;
-  this.freshnessPeriod = freshnessPeriod;
-  this.uri = data.name.toUri();
-  this.publisherPublicKeyDigest = data.signedInfo.publisher.publisherPublicKeyDigest;
-  return this;
-}
-
-/**
- *@property {String} type a type string describing the type of entry
- */
-csEntry.type = "csEntry";
-
-/** sync/async getter for the element
- *@private
- *@param {function} callback Recieves element as only argument
- *@returns {Buffer} element the raw data packet
- */
-csEntry.prototype.getElement = function(callback){
-  callback = callback || function(e){return e;};
-  return callback(this.element);
-};
-
-/**
- *@private
- *@param {NameTreeNode} node the node to remove this entry from
- *@returns {csEntry} entry the csEntry in case you want to do something other than throw it away
- */
-csEntry.prototype.stale = function(node){
-  node.csEntry = null;
-  return this;
-};
-
-/**A ContentStore constructor for building cache's and database indexes
- *@constructor
- *@param {NameTree} nameTree the nameTree to build upon
- *@param {constructor} entryClass a constructor class conforming to the same API as {@link csEntry}.
- *@returns {ContentStore} - a new store
- */
-var ContentStore = function ContentStore(nameTree, entryClass){
-  this.nameTree = nameTree;
-  this.EntryClass = entryClass || csEntry;
-  return this;
-};
-
-/**check the ContentStore for data matching a given interest (including min/max suffix, exclude, publisherKey)
- *@param {ndn.Interest} interest the interest to match against
- *@param {function=} callback for asynchronous cases (like levelDB). recieves return value as only argument
- *@returns {Buffer | null}
- */
-ContentStore.prototype.check = function(interest, callback, node, suffixCount, childTracker, stack){
-  callback = callback || function(element){return element;};
-  node = node || this.nameTree.lookup(interest.name);
-  stack = stack || 1;
-  stack++;
-  if (stack++ > Object.keys(this.nameTree).length * 2){
-    console.log("stack over");
-    return callback(null);
-  }
-
-  var self = this;
-
-  if (node[this.EntryClass.type]
-      && interest.matchesName(node[this.EntryClass.type].name)
-      && pubKeyMatch(interest.publisherPublicKeyDigest, node[this.EntryClass.type].publisherPublicKeyDigest)
-     ){
-    return node[this.EntryClass.type].getElement(callback);
-  }
-
-
-
-  suffixCount = suffixCount || 0;
-  childTracker = childTracker || [];
-
-  var maxSuffix = interest.getMaxSuffixComponents()
-    , minSuffix = interest.getMinSuffixComponents()
-    , childSelector = interest.getChildSelector()
-    , atMaxSuffix = (maxSuffix && (suffixCount === maxSuffix))
-    , hasChildren = (node.children.length > 0)
-    , hasMoreSiblings = function(node){
-      if (debug) {console.log(childTracker.length, node.parent.children.length, childTracker[childTracker.length - 1] );}
-      return  (!!childTracker.length && !!node.parent && (node.parent.children.length > childTracker[childTracker.length - 1] + 1));
-    };
-
-  if (debug) {console.log(node.prefix.toUri(), interest.name.toUri(), childTracker, hasMoreSiblings(node));}
-
-  function toChild(node){
-    if (debug) {console.log("toChild", childTracker);}
-    suffixCount++;
-    childTracker.push(0);
-    if (!childSelector){ //leftmost == 0 == falsey
-
-      return self.check(interest, callback, node.children[0], suffixCount, childTracker , stack++);
-    } else {
-
-      return self.check(interest, callback, node.children[node.children.length - 1], suffixCount, childTracker, stack++);
-    }
-  }
-
-  function toSibling(node){
-    if (debug) {console.log("toSibling from ", node.prefix.toUri(), childTracker, node);}
-    childTracker[childTracker.length - 1]++;
-
-    if (!childSelector){
-      if (debug) {console.log(node.prefix.toUri(), childTracker, node.parent.children[childTracker[childTracker.length - 1]].prefix.toUri());}
-      return self.check(interest, callback, node.parent.children[childTracker[childTracker.length - 1]], suffixCount, childTracker, stack++);
-    } else {
-      if (debug) {console.log(node.prefix.toUri(), childTracker, node.parent.children[node.parent.children.length  + ~childTracker[childTracker.length - 1]].prefix.toUri());}
-      return self.check(interest, callback, node.parent.children[node.parent.children.length  + ~childTracker[childTracker.length - 1]], suffixCount, childTracker, stack++);
-    }
-  }
-
-  function toAncestorSibling(node, stack){
-    if (debug) {console.log("toAncestorSibling from ",node.prefix.toUri(), childTracker);}
-    suffixCount--;
-    childTracker.pop();
-    if (stack++ > 10000){
-      return callback(null);
-    }
-
-    var hasParentSibling = (node.parent && node.parent.parent && node.parent.parent.children.length > childTracker[childTracker.length - 1] + 1);
-
-    if (hasParentSibling){
-      return toSibling(node.parent);
-    } else if (childTracker.length >0) {
-      return toAncestorSibling(node.parent, stack++);
-    } else {
-      return callback(null);
-    }
-  }
-
-  if (childTracker.length === 1){
-    if (interest.exclude.matches(node.prefix.get(-1))){
-      if (hasMoreSiblings(node)){
-        return toSibling(node);
-      } else {
-        return callback(null);
-      }
-    }
-  }
-
-
-
-  if (!node.prefix.size() ||(!atMaxSuffix && hasChildren)){
-    return toChild(node);
-  } else if (hasMoreSiblings(node)){
-    return toSibling(node);
-  } else if (childTracker.length > 1){
-    return toAncestorSibling(node);
-  } else{
-    return callback(null);
-  }
-};
-
-/**Insert a new entry into the contentStore
- *@constructor
- *@param {Buffer} element the raw data packet
- *@param {ndn.Data} data the ndn.Data object
- *@returns {ContentStore} - for chaining
- */
-ContentStore.prototype.insert = function(element, data){
-  var Entry = this.EntryClass;
-  var freshness = data.getMetaInfo().getFreshnessPeriod();
-  var node = this.nameTree.lookup(data.name)
-  , entry = new Entry(element, data);
-  node[Entry.type] = entry;
-  node[Entry.type].nameTreeNode = node;
-  setTimeout(function(){
-    if (node[Entry.type]) {node[Entry.type].stale(node);}
-  }, freshness || 20 );
-  return this;
-};
-
-
-module.exports = ContentStore;
-
-},{}],102:[function(require,module,exports){
-var binarySearch = require("./../Utility/binarySearch.js")
-  , ndn;
-
-/**A Forwarding Entry
- *@constructor
- *@param {Object|string} prefix - the ndn.Name object representing the prefix for this forwarding entry
- *@param {Array} - an array of nextHop objects, each with a "faceID" integer property, or just an array of the faceIDs
- *@returns {FibEntry}
- */
-function FibEntry(prefix, nextHops){
-  this.prefix = (typeof prefix === "string") ? new ndn.Name(prefix) : prefix ;
-
-  this.nextHops = (function(){
-    var hops = [];
-    function recurse(){
-      if (nextHops && nextHops.length > 0){
-        var hop;
-        if (typeof nextHops[0].faceID !== "undefined" ){
-          hop = nextHops.shift();
-        } else {
-          hop = {
-            faceID: nextHops.shift()
-          };
-        }
-
-        var i = binarySearch(hops, hop, "faceID");
-        if (i < 0){
-          hops.splice(~i, 0, hop);
-        }
-        return recurse();
-      } else{
-        return hops;
-      }
-    }
-    return recurse();
-  })();
-  return this;
-}
-
-FibEntry.type = "FibEntry";
-
-/**get all nextHops, excluding a given faceID
- *@param {Number=} excludingFaceID the faceID to exclude
- *@returns {Array} an array of nextHops
- */
-FibEntry.prototype.getNextHops = function(excludingFaceID){
-  if(excludingFaceID !== undefined){
-    var q = {faceID: excludingFaceID }
-      , i = binarySearch(this.nextHops, q, "faceID");
-    if (i >= 0){
-      return this.nextHops.slice(0,i).concat(this.nextHops.slice(i + 1));
-    } else {
-      return this.nextHops;
-    }
-  } else {
-    console.log("returning nextHops")
-    return this.nextHops;
-  }
-};
-
-/**Remove a nextHop (will do nothing if a nextHop with the given faceID does not exist)
- *@param {Object} nextHop an object with faceID Number property
- *@returns {FIBEntry} for chaining
- */
-FibEntry.prototype.removeNextHop = function(nextHop){
-  var i = binarySearch(this.nextHops, nextHop, "faceID");
-
-  if (i < 0){
-    return this;
-  } else{
-    this.nextHops.splice(i,1);
-    return this;
-  }
-};
-
-/**Add a nextHop (will replace if a nextHop with the same faceID exists)
- *@param {Object} nextHop an object with faceID Number property
- *@returns {FIBEntry}
- */
-FibEntry.prototype.addNextHop = function(nextHop){
-  var i = binarySearch(this.nextHops, nextHop, "faceID");
-
-  if (i < 0){
-    this.nextHops.splice(~i, 0, nextHop);
-    return this;
-  } else{
-    this.nextHops.splice(i,1,nextHop);
-    return this;
-  }
-};
-
-/**Forwarding Interest Base
- *@constructor
- *@param {@link NameTree} nameTree the nameTree to build the FIB on.
- */
-function FIB (nameTree){
-  this.nameTree = nameTree; return this;
-}
-
-/**Install ndn-lib into the FIB scope. only necessary if you require("ndn-Classes/src/DataStructures/FIB.js"), done for you if require("ndn-Classes").FIB
- *@private
- *@param {Object} NDN ndn-js library as exported by npm
- */
-FIB.installNDN = function(NDN){
-  ndn = NDN;
-  return this;
-};
-
-/**find the exact match fibEntry for a given prefix, creating it if not found
- *@param {Object} prefix the ndn.Name object representing the prefix
- *@returns {FIBEntry}
- */
-FIB.prototype.lookup = function(prefix){
-  prefix = (typeof prefix === "string") ? new ndn.Name(prefix) : prefix;
-
-  var ent = this.nameTree.lookup(prefix)
-    , entry = ent.fibEntry;
-
-  if (entry){
-    return entry;
-  }else{
-    return (ent.fibEntry = new FibEntry({prefix: prefix, nextHops: []}));
-  }
-};
-
-/**Return an Iterator that progressively returns longest prefix FIBEntries with 1 or more nextHops
- *@param {Object} prefix the ndn.Name object representing the prefix
- *@returns {Object} Iterator object with .next() and .hasNext = Boolean
- */
-FIB.prototype.findAllFibEntries = function(prefix){
-
-  var inner =  this.nameTree.findAllMatches(prefix, function(match){
-    if (match.fibEntry && (match.fibEntry.nextHops.length > 0)){
-      return true;
-    }  else {
-      return false;
-    }
-  })
-  , iterouter = {
-    hasNext : inner.hasNext
-    , next : function(){
-      if (inner.hasNext){
-        var next = inner.next();
-
-        if (inner.hasNext){
-          this.hasNext = true;
-        } else {
-          this.hasNext = false;
-        }
-        return next.fibEntry;
-      } else {
-        return null;
-      }
-    }
-  };
-
-  return iterouter;
-};
-
-/**Convenience method to get a faceFlag representing all nextHop faces for all prefixes of a given prefix
- *@param {Object|String} prefix ndn.Name Object or NDN URI string to lookup
- *@param {Number=} excludingFaceID faceID to exclude from results
- *@returns {Number} - a faceFlag for use with {@link Interfaces.dispatch}
- */
-FIB.prototype.findAllNextHops = function(prefix, excludingFaceID){
-  prefix = (typeof prefix === "string") ? new ndn.Name(prefix) : prefix;
-  var faceFlag = 0
-    , iterator = this.findAllFibEntries(prefix);
-
-  while (iterator.hasNext){
-    var entry = iterator.next()
-      , nextHops = entry.getNextHops(excludingFaceID);
-    //console.log("nextHops", nextHops)
-    for (var i =0; i < nextHops.length; i ++){
-      faceFlag = faceFlag | (1 << nextHops[i].faceID);
-    }
-  }
-  //console.log("faceFlag")
-  return faceFlag;
-};
-
-/**Add a FIBEntry
- *@param {String} prefix the nameSpace for the fibEntry
- *@param {Number| Number_Array | nextHop | nextHop_Array} nextHops the nextHop info for the fibEntry
- *@returns {this} FIB for chaining
- */
-
-FIB.prototype.addEntry = function(prefix, nextHops){
-  var fibEntry;
-
-  if (
-    (typeof nextHops === "number")
-    || (
-      (typeof nextHops === "object")
-      && (nextHops.faceID)
-    )
-  ) {
-    fibEntry = new FibEntry(prefix, [nextHops]);
-  } else {
-    fibEntry = new FibEntry(prefix, nextHops);
-  }
-  var node = this.nameTree.lookup(fibEntry.prefix);
-  if (!node.fibEntry){
-    node.fibEntry = fibEntry;
-    return this;
-  } else {
-    for (var i = 0 ; i < fibEntry.nextHops.length; i++ ){
-      var j = binarySearch(node.fibEntry.nextHops, fibEntry.nextHops[i], "faceID");
-      if (j < 0){
-        node.fibEntry.nextHops.splice(~j, 0, fibEntry.nextHops[i]);
-      }
-    }
-    return this;
-  }
-};
-
-FIB.Entry = FibEntry;
-
-module.exports = FIB;
-
-},{"./../Utility/binarySearch.js":110}],103:[function(require,module,exports){
-var ndn
-  , Face
-  , ndn = require("ndn-lib")
-  , TlvDecoder = require("ndn-lib/js/encoding/tlv/tlv-decoder.js").TlvDecoder
-  , Tlv = require("ndn-lib/js/encoding/tlv/tlv.js").Tlv;
-
-/**Interface manager
- *@constructor
- *@param {Subject} Subject - a {@link Subject} instance
- *@returns {Interfaces} - a new Interface manager
- */
-var Interfaces = function Interfaces(Subject){
-
-  this.subject = Subject;
-  this.transports = {};
-  Face = ndn.Face;
-  this.Faces = [];
-
-  return this;
-};
-
-/**Class method to install ndn-lib. Only necessary if you require("ndn-classes/src/DataStructures/Interfaces.js"), done for you if require('ndn-classes').Interfaces
- *@private
- *@param {Object} - NDN the ndn-lib object
- */
-Interfaces.installNDN = function(NDN){
-  ndn = NDN;
-  return this;
-};
-
-Interfaces.prototype.transports = {};
-
-
-/**Install a transport Class to the Interfaces manager. If the Class has a Listener function, the Listener will be invoked
- *@param {Transport} Transport a Transport Class matching the Abstract Transport API
- *@returns {Interfaces} for chaining
- */
-Interfaces.prototype.installTransport = function(Transport){
-  this.transports[Transport.prototype.name] = Transport;
-
-  if (Transport.Listener){
-    Transport.Listener(this);
-  }
-
-  return this;
-};
-
-/**Create a new Face
- *@param {String} protocol a string matching the .protocolKey property of a previously installed {@link Transport}
- *@param {Object} connectionParameters the object expected by the transport class
- *@returns {Number} id the numerical faceID of the created Face.
- */
-Interfaces.prototype.newFace = function(protocol, connectionParameters, onopen, onclose) {
-  var Self = this;
-
-  if (!this.transports[protocol]){
-    return -1;
-  } else {
-    var Transport = new this.transports[protocol](connectionParameters)
-      , newFace =  new ndn.Face(Transport, Transport.connectionInfo);
-
-    this.Faces.push(newFace);
-    newFace.faceID = this.Faces.length - 1;
-    //console.log(Transport, protocol, connectionParameters)
-    var connectionInfo;
-
-    if (protocol === "WebSocketTransport"){
-      connectionInfo = new this.transports[protocol].ConnectionInfo(connectionParameters.host, connectionParameters.port);
-    } else {
-      connectionInfo = newFace.connectionInfo;
-    }
-    if (onclose){
-      newFace.onclose = onclose;
-    }
-    console.log("called NewFace")
-    newFace.transport.connect(connectionInfo, newFace, function(){
-      console.log("calling onOpen callback within transport.connect");
-      newFace.onReceivedElement = function(element){
-        //console.log("onReceivedElement")
-        var decoder = new TlvDecoder(element);
-        if (decoder.peekType(Tlv.Interest, element.length)) {
-          Self.subject.handleInterest(element, this.faceID);
-        }
-        else if (decoder.peekType(Tlv.Data, element.length)) {
-          Self.subject.handleData(element, this.faceID);
-        }
-      };
-
-      newFace.send = function(element){
-        this.transport.send(element);
-      };
-
-      if (onopen) {
-        onopen(newFace.faceID);
-      }
-    }, function(){
-      //onclose event TODO
-      if (onclose) {
-        onclose(newFace.faceID);
-      }
-    });
-    return newFace.faceID;
-  }
-};
-
-Interfaces.prototype.closeFace = function(){};
-
-/** Dispatch an element to one or more Faces
- *@param {Buffer} element the raw packet to dispatch
- *@param {Number} faceFlag an Integer representing the faces to send one
- *@param {Function} callback called per face sent, used for testing
- *@returns {Interfaces} for chaining
- */
-Interfaces.prototype.dispatch = function(element, faceFlag, callback){
-  if (faceFlag){
-    for (var i = 0; i < faceFlag.toString(2).length; i++){
-      if (faceFlag & (1<<i) ){
-        if (this.Faces[i]){
-          this.Faces[i].send(element);
-        }
-        if (callback){
-          callback(i);
-        }
-      }
-    }
-  }
-  return this;
-};
-
-module.exports = Interfaces;
-
-},{"ndn-lib":34,"ndn-lib/js/encoding/tlv/tlv-decoder.js":51,"ndn-lib/js/encoding/tlv/tlv.js":54}],104:[function(require,module,exports){
-var NameTreeNode = require("./NameTreeNode.js")
-  , binaryIndexOf = require("./../Utility/binarySearch.js")
-  , ndn
-  , debug = require("./../Utility/debug.js").NameTree;
-
-/**Creates an empty NameTree.
- *@constructor
- */
-var NameTree = function NameTree (){
-  this.addNode('/');
-  return this;
-};
-
-NameTree.Node = NameTreeNode;
-
-
-/**Install ndn-lib. Only necessary if you're using require("ndn-Classes/src/DataStructures/NameTree.js"), done for you if require("ndn-Classes").NameTree
- *@private
- *@param {Object} NDN ndn-lib object
- */
-NameTree.installNDN = function(NDN){
-  NameTree.Node.installNDN(NDN);
-  ndn = NDN;
-  return this;
-};
-
-/**
- * Add a node to the NameTree, recursively populating all parents
- * @param  {Name|String} prefix - the prefix for the new node.
- * @returns {NameTreeNode} node - the NameTree node created.
- */
-NameTree.prototype.addNode = function(prefix){
-  if (typeof prefix === "string"){
-    prefix = new ndn.Name(prefix);
-  }
-  var self = this[prefix.toUri()];
-  if(self){
-    return self;
-  } else {
-    self = this[prefix.toUri()] = new NameTree.Node(prefix);
-    while(prefix.size() > 0){
-      var parentPrefix = prefix.getPrefix(-1);
-
-      if(!this[parentPrefix.toUri()]){
-        this[parentPrefix.toUri()] = new NameTree.Node(parentPrefix);
-      }
-      this[prefix.toUri()].parent = this[parentPrefix.toUri()];
-      this[parentPrefix.toUri()].addChild(this[prefix.toUri()]);
-      prefix = parentPrefix;
-    }
-  }
-  return self;
-};
-
-/**
- * Delete a node (and all it's children, grandchildren, etc.).
- * @param   {Name|URI} prefix - the name of the node to delete.
- * @returns {NameTree} the nameTree.
- */
-NameTree.prototype.removeNode = function(prefix, cycleFinish){
-  if (typeof prefix === "string"){
-    prefix = new ndn.Name(prefix);
-  }
-  cycleFinish = cycleFinish || prefix;
-  var self = this[prefix.toUri()];
-
-  if (!self){
-    return this;
-  } else{
-    var child = self.children.shift();
-
-    if (child !== undefined){
-      return this.removeNode(child.prefix, cycleFinish);
-    } else {
-      delete this[self.prefix.toUri()];
-      if (cycleFinish.equals(prefix)){
-        self.parent.removeChild(self);
-        return this;
-      }
-      else{
-        return this.removeNode(prefix.getPrefix(-1), cycleFinish);
-      }
-    }
-  }
-};
-
-/**
- * Perform a lookup on the NameTree and return the proper node, creating it if necessary.
- * @param  {Name|URI} prefix the name of the node to lookup.
- * @returns {NameTreeNode} the resulting node.
- */
-NameTree.prototype.lookup = function (prefix) {
-  if (typeof prefix === "string"){
-    prefix = new ndn.Name(prefix);
-  }
-  var node = this[prefix.toUri()];
-
-  if (node){
-    return node;
-  } else{
-    return (this.addNode(prefix));
-  }
-};
-
-/**
- * Find the Longest Prefix Match in the NameTree that matches the selector
- * @param    {Name|URI} prefix the name to lookup
- * @param    {function} selector predicate function
- * @returns  {NameTreeNode} the longest prefix match.
- */
-NameTree.prototype.findLongestPrefixMatch = function(prefix, selector) {
-  if (typeof prefix === "string"){
-    prefix = new ndn.Name(prefix);
-  }
-  selector = selector || function(){return true;};
-
-  var match = this[prefix.toUri()];
-  if ( match && selector(match)){
-    return match;
-  } else if (prefix.size() > 0){
-    return this.findLongestPrefixMatch(prefix.getPrefix(-1), selector);
-  } else {
-    return null;
-  }
-};
-
-/**
- * Return an Iterator that provides a .next() method which returns the next longest Prefix matching the selector, returning null when depleted.
- * @param {Name} prefix - the prefix to begin iteration
- * @param {Function} selector - a selector function that returns a boolean when called with selector(node)
- * @returns {Object} Iterator - the .depleted property of the iterator will be true when there are no more matches.
- */
-NameTree.prototype.findAllMatches = function(prefix, selector){
-  if (typeof prefix === "string"){
-    prefix = new ndn.Name(prefix);
-  }
-  selector = selector || function(){return true;};
-
-  var self = this
-    , nextReturn = self[prefix.toUri()]
-    , thisReturn
-    , iterator = {
-      next: function(){
-        if (!this.hasNext){
-          return null;
-        }
-        prefix = nextReturn.prefix;
-        thisReturn = nextReturn;
-        nextReturn = (thisReturn && thisReturn.parent && selector(thisReturn.parent)) ?
-          thisReturn.parent
-        : (prefix.size() > 0) ?
-          self.findLongestPrefixMatch(prefix.getPrefix(-1), selector)
-        : null ;
-        if (!nextReturn){
-          this.hasNext = false;
-        } else {
-          this.hasNext = true;
-        }
-        return thisReturn;
-      }
-    };
-
-  if (nextReturn && selector(nextReturn)){
-    iterator.hasNext = true;
-    return iterator;
-  } else if (prefix.size() > 0){
-    return this.findAllMatches(prefix.getPrefix(-1), selector);
-  } else{
-    iterator.hasNext = false;
-    return iterator;
-  }
-};
-
-module.exports = NameTree;
-
-},{"./../Utility/binarySearch.js":110,"./../Utility/debug.js":111,"./NameTreeNode.js":105}],105:[function(require,module,exports){
-var binarySearch = require("./../Utility/binarySearch.js")
-  , ndn
-  , debug = require("./../Utility/debug.js");
-
-/**NameTreeNode constructor, NOTE: (typeof URI == "string") && (Name instanceof <a href="https://github.com/named-data/ndn-js/blob/master/js/name.js">ndn.Name</a> )
- *@constructor
- *@private
- *@param {Name|URI} prefix of the node
- *@returns {NameTreeNode}
- */
-var NameTreeNode = function NameTreeNode (prefix) {
-  this.prefix     = (typeof prefix === "string") ? new ndn.Name(prefix) : (prefix || null);
-  this.parent     = null;
-  this.children   = [];
-  this.fibEntry   = null;
-  this.pitEntries = [];
-  this.measurements  = null;
-  this.strategy = null;
-  return this;
-};
-
-/**Install ndn-lib. Only necessary if you're using require("ndn-Classes/src/DataStructures/NameTreeNode.js"), done for you if require("ndn-Classes").NameTree.Node
- *@private
- *@param {Object} NDN ndn-lib object
- */
-NameTreeNode.installNDN = function(NDN){
-  ndn = NDN;
-  return this;
-};
-
-/**Add a child node to this one, inserting at the properly sorted index according to canonical namespace rules
- *@private
- *@param {NameTreeNode | String} child - the node to insert, or the suffix for a new node.
- *@returns {NameTreeNode} the original node
- */
-NameTreeNode.prototype.addChild = function addChild(child){
-  var self  = this
-    , index = binarySearch(this.children, child.prefix.get(-1), "prefix");
-
-  child = (child.prefix) ? child : new NameTreeNode(new ndn.Name(self.prefix).append(child));
-  if ( index < 0){
-    if (debug.NameTree) {
-      console.log("adding child " + child.prefix.toUri()+ " to "+ self.prefix.toUri() + " at index " +~index);
-    }
-    this.children.splice(~index, 0, child);
-  }
-  return this;
-};
-
-/**Remove a child from this node. This won't derefrence the child node, just remove it from the index
- *@private
- *@param {NameTreeNode | String} child - the node to remove, or the suffix of that node.
- *@returns {NameTreeNode} the original node
- */
-NameTreeNode.prototype.removeChild = function(child){
-  child = (typeof child === "string") ? {prefix:  new ndn.Name(child)} : child;
-
-  var index = binarySearch(this.children, child.prefix.get(-1), "prefix");
-  if (index < 0){
-    return this;
-  } else {
-    this.children.splice(index, 1);
-    return this;
-  }
-};
-
-
-module.exports = NameTreeNode;
-
-},{"./../Utility/binarySearch.js":110,"./../Utility/debug.js":111}],106:[function(require,module,exports){
-var binarySearch = require("./../Utility/binarySearch.js")
-  , ndn;
-
-
-function pubKeyMatch (ar1, ar2){
-  if (!ar1){
-    return true;
-  }
-
-  for(var i = 0; i < ar1.length; i++ ){
-    if (ar1[i] !== ar2[i]){
-      return false;
-    }
-  }
-  return true;
-}
-
-/**PIT Entry
- *@constructor
- *@param {Buffer} element The raw interest data packet
- *@param {Object=} interest the ndn.Interest Object
- *@param {number|function} faceIDorCallback Either the faceID of the face this interest was received on, or a callback function to receive any matching data
- *@returns {PitEntry} - the entry
- */
-function PitEntry (element, interest, faceIDorCallback){
-  if (typeof interest !== "object"){
-    faceIDorCallback = interest;
-    interest = new ndn.Interest();
-    interest.wireDecode(element);
-  }
-  if (!interest.nonce){
-    interest.wireDecode(element);
-  }
-  this.nonce = interest.nonce;
-  this.uri = interest.name.toUri();
-  this.interest = interest;
-  this.element = element;
-  if (typeof faceIDorCallback === "function" ){
-    this.callback = faceIDorCallback;
-  } else {
-    this.faceID = faceIDorCallback;
-  }
-  return this;
-}
-
-/**Test whether the PitEntry is fulfilled by a data object
- *@param {Object} data the ndn.Data object
- *@returns {Boolean}
- */
-PitEntry.prototype.matches = function(data){
-  if (this.interest.matchesName(data.name)
-     && pubKeyMatch(this.interest.publisherPublicKeyDigest, data.signedInfo.publisher.publisherPublicKeyDigest)
-     ){
-    return true;
-  } else {
-    return false;
-  }
-};
-
-/**Consume the PitEntry (assuming it is attached to a the nameTree)
- *@returns {PitEntry} in case you want to do anything with it afterward
- */
-PitEntry.prototype.consume = function() {
-  if (this.nameTreeNode){
-    var i = binarySearch(this.nameTreeNode.pitEntries, this, "nonce");
-    if (i >= 0){
-      var removed = this.nameTreeNode.pitEntries.splice(~i, 1)[0];
-      if (removed.callback){
-        removed.callback(null, removed.interest);
-      }
-    }
-  }
-  return this;
-};
-
-
-
-
-/**Pending Interest Table
- *@constructor
- *@param {NameTree} nameTree the nameTree to build the table on top of
- *@returns {PIT} a new PIT
- */
-var PIT = function PIT(nameTree){
-  this.nameTree = nameTree;
-  return this;
-};
-
-/**Import ndn-lib into the PIT scope
- *@param {Object} NDN the NDN-js library in object form
- */
-PIT.installNDN = function(NDN){
-  ndn = NDN;
-  return this;
-};
-
-PIT.Entry = PitEntry;
-
-PIT.prototype.useNameTree = function(nameTree){
-  this.nameTree = nameTree;
-  return this;
-};
-
-/**Create and insert a new {@link PITEntry}
- *@param {Buffer} element The raw interest data packet
- *@param {Object=} interest the ndn.Interest object
- *@param {Number|function} faceIDorCallback either a numerical faceID or a callbackFunction
- *@returns {PIT} the PIT (for chaining)
- */
-PIT.prototype.insertPitEntry = function(element, interest, faceIDorCallback){
-  var pitEntry = new PIT.Entry(element, interest, faceIDorCallback);
-
-  setTimeout(function(){
-    pitEntry.consume();
-  }, pitEntry.interest.getInterestLifetimeMilliseconds() || 10);
-  var node = this.nameTree.lookup(pitEntry.interest.name);
-
-  var i = binarySearch(node.pitEntries, pitEntry, "nonce");
-  if (i < 0){
-    pitEntry.nameTreeNode = node;
-    node.pitEntries.splice(~i, 0 ,pitEntry);
-  }
-  return this;
-};
-
-/**Lookup the PIT for Entries matching a given data object
- *@param {Object} data The ndn.Data object
- *@returns {Object} results: an object with two properties, pitEntries and faces, which are
- * an array of matching {@link PITEntry}s and
- * an integer faceFlag for use with {@link Interfaces.dispatch}, respectively.
- */
-PIT.prototype.lookup = function(data, name, matches, faceFlag){
-  name = name || data.name;
-  matches = matches || [];
-  faceFlag = faceFlag || 0;
-
-  var pitEntries = this.nameTree.lookup(name).pitEntries;
-
-  for (var i = 0; i < pitEntries.length; i++){
-    if (pitEntries[i].matches(data)){
-      matches.push(pitEntries[i]);
-      if (pitEntries[i].faceID){
-        faceFlag = faceFlag | (1 << pitEntries[i].faceID);
-      } 
-    }
-  }
-
-  if (name.size() > 0){
-    return this.lookup(data, name.getPrefix(-1), matches, faceFlag);
-  } else{
-    return {pitEntries : matches, faces : faceFlag};
-  }
-};
-
-module.exports = PIT;
-
-},{"./../Utility/binarySearch.js":110}],107:[function(require,module,exports){
+},{"./dist/Long.js":197}],199:[function(require,module,exports){
+module.exports=require(126)
+},{"../log.js":207,"../util/ndn-protoco-id-tags.js":210,"../util/ndn-time.js":211,"./data-utils.js":201,"./decoding-exception.js":202,"buffer":3}],200:[function(require,module,exports){
+arguments[4][128][0].apply(exports,arguments)
+},{"../util/dynamic-buffer.js":209,"./binary-xml-decoder.js":199}],201:[function(require,module,exports){
+module.exports=require(130)
+},{"buffer":3}],202:[function(require,module,exports){
+module.exports=require(131)
+},{}],203:[function(require,module,exports){
+arguments[4][136][0].apply(exports,arguments)
+},{"../log.js":207,"./binary-xml-structure-decoder.js":200,"./data-utils.js":201,"./tlv/tlv-structure-decoder.js":205,"./tlv/tlv.js":206}],204:[function(require,module,exports){
+module.exports=require(142)
+},{"../decoding-exception.js":202}],205:[function(require,module,exports){
+module.exports=require(144)
+},{"./tlv-decoder.js":204,"buffer":3}],206:[function(require,module,exports){
+module.exports=require(145)
+},{}],207:[function(require,module,exports){
+module.exports=require(155)
+},{}],208:[function(require,module,exports){
+module.exports=require(182)
+},{}],209:[function(require,module,exports){
 (function (Buffer){
-var ElementReader = require("ndn-lib/js/encoding/element-reader.js").ElementReader;
-var Transport = require("ndn-lib/js/transport/transport.js").Transport;
-
-MessageChannelTransport.protocolKey = "messageChannel";
-
-/**Transport Class for HTML5 MessageChannels
- *@constructor
- *@param {MessageChannel_Port} port one end of an HTML MessageChannel
- *@returns {MessageChannelTransport}
- */
-function MessageChannelTransport (port) {
-  Transport.call(this);
-  this.connectionInfo = new MessageChannelTransport.ConnectionInfo(port);
-  return this;
-}
-
-
-MessageChannelTransport.prototype = new Transport();
-MessageChannelTransport.prototype.name = "MessageChannelTransport";
-
-MessageChannelTransport.ConnectionInfo = function MessageChannelTransportConnectionInfo(port){
-  console.log(Transport);
-  Transport.ConnectionInfo.call(this);
-  this.port = port;
-};
-
-MessageChannelTransport.ConnectionInfo.prototype = new Transport.ConnectionInfo();
-MessageChannelTransport.ConnectionInfo.prototype.name = "MessageChannelTransport.ConnectionInfo";
-
-MessageChannelTransport.ConnectionInfo.prototype.getPort = function()
-{
-  return this.port;
-};
-
-MessageChannelTransport.ConnectionInfo.prototype.equals = function(other)
-{
-  if (other === null || other.port === undefined){
-    return false;
-  }
-  return (this.port === other.port);
-};
-
-/**Set the event listener for incoming elements
- *@param {Object} face the ndn.Face object that this transport is attached to
- *@param {function} onopenCallback a callback to be performed once the transport is open
- */
-MessageChannelTransport.prototype.connect = function(connectionInfo, elementListener, onopenCallback, onclosedCallback)
-{
-  console.log("messageChannel connect");
-  this.elementReader = new ElementReader(elementListener);
-  var self = this;
-  connectionInfo.getPort().onmessage = function(ev) {
-    if (ev.data.buffer instanceof ArrayBuffer) {
-      try {
-        self.elementReader.onReceivedData(new Buffer(ev.data));
-      } catch (ex) {
-        console.log("NDN.ws.onmessage exception: ", ex);
-        return;
-      }
-    }
-  };
-  //elementListener.readyStatus = 2
-  onopenCallback();
-};
-
-/**Send the Uint8Array data.
- *@param {Buffer} element the data packet
- */
-MessageChannelTransport.prototype.send = function(element)
-{
-  this.connectionInfo.getPort().postMessage(element);
-};
-
-module.exports = MessageChannelTransport;
-
-}).call(this,require("buffer").Buffer)
-},{"buffer":2,"ndn-lib/js/encoding/element-reader.js":46,"ndn-lib/js/transport/transport.js":85}],108:[function(require,module,exports){
-(function (Buffer){
-var ElementReader = require("ndn-lib/js/encoding/element-reader.js").ElementReader;
-var Transport = require("ndn-lib/js/transport/transport.js").Transport;
-
-
-/**Transport Class for HTML5 DataChannels
- *@constructor
- *@param {DataChannel_Port} port one end of an HTML DataChannel
- *@returns {DataChannelTransport}
- */
-function DataChannelTransport (channel) {
-  Transport.call(this);
-  this.connectionInfo = new DataChannelTransport.ConnectionInfo(channel);
-  return this;
-}
-
-
-DataChannelTransport.prototype = new Transport();
-DataChannelTransport.prototype.name = "DataChannelTransport";
-
-DataChannelTransport.ConnectionInfo = function DataChannelTransportConnectionInfo(channel){
-  Transport.ConnectionInfo.call(this);
-
-  channel.binaryType = "arraybuffer";
-  this.channel = channel;
-};
-
-DataChannelTransport.ConnectionInfo.prototype = new Transport.ConnectionInfo();
-DataChannelTransport.ConnectionInfo.prototype.name = "DataChannelTransport.ConnectionInfo";
-
-DataChannelTransport.ConnectionInfo.prototype.getChannel = function()
-{
-  return this.channel;
-};
-
-DataChannelTransport.ConnectionInfo.prototype.equals = function(other)
-{
-  if (other === null || other.port === undefined){
-    return false;
-  }
-  return (this.port === other.port);
-};
-
-/**Set the event listener for incoming elements
- *@param {Object} face the ndn.Face object that this transport is attached to
- *@param {function} onopenCallback a callback to be performed once the transport is open
- */
-DataChannelTransport.prototype.connect = function(connectionInfo, elementListener, onopenCallback, onclosedCallback)
-{
-  console.log("DataChannel connect");
-  this.elementReader = new ElementReader(elementListener);
-  var self = this;
-  connectionInfo.getChannel().onmessage = function(ev) {
-    if (ev.data.buffer instanceof ArrayBuffer) {
-      try {
-        self.elementReader.onReceivedData(new Buffer(ev.data));
-      } catch (ex) {
-        console.log("NDN.ws.onmessage exception: ", ex);
-        return;
-      }
-    }
-  };
-
-  connectionInfo.getChannel().onmessage = function(ev) {
-    console.log('dc.onmessage called', ev)
-    if (ev.data instanceof ArrayBuffer) {
-
-      var result = ev.data;
-      console.log('RecvHandle called.', result);
-      var bytearray = new Buffer(new Uint8Array(result));
-      console.log(bytearray)
-
-      console.log('BINARY RESPONSE IS ' + bytearray.toString('hex'));
-
-      try {
-        //console.log(self, face)
-        // Find the end of the binary XML element and call face.onReceivedElement.
-        self.elementReader.onReceivedData(bytearray);
-      } catch (ex) {
-        //console.log("NDN.ws.onmessage exception: " + ex);
-        return;
-      }
-    }
-  };
-
-  connectionInfo.getChannel().onopen = function(ev) {
-    console.log('dc.onopen: ReadyState: ' + this.readyState);
-        // Face.registerPrefix will fetch the ndndid when needed.
-
-    onopenCallback();
-  }
-
-  connectionInfo.getChannel().onerror = function(ev) {
-    //console.log('dc.onerror: ReadyState: ' + this.readyState);
-    //console.log(ev);
-    //console.log('dc.onerror: WebRTC error: ' + ev.data);
-  }
-
-  connectionInfo.getChannel().onclose = function(ev) {
-    //console.log('dc.onclose: WebRTC connection closed.');
-    self.dc = null;
-
-    // Close Face when WebSocket is closed
-    self.face.readyStatus = ndn.Face.CLOSED;
-    self.face.onclose();
-    //console.log("NDN.onclose event fired.");
-  }
-
-};
-
-/**Send the Uint8Array data.
- *@param {Buffer} element the data packet
- */
-DataChannelTransport.prototype.send = function(element)
-{
-  console.log("attempting to send", element, this.connectionInfo.getChannel())
-  this.connectionInfo.getChannel().send(element.toArrayBuffer());
-};
-
-
-/**Define a connection listener for the {@link Interfaces} module. This Class method must be called before installing the class into Interfaces (if you want a Listener)
- *@param {Number=} - port the port for the listener to listen on, default 7575
- *//**))
-DataChannelTransport.defineListener = function(subject, namespace){
-
-  subject.contentStore.insert()
-
-  this.Listener = function (newFace) {
-    this.server = net.createServer(function(socket){
-      socket.on('end', function() {
-        console.log('server disconnected');
-      });
-      newFace("tcpServer", socket);
-    });
-    this.server.listen(port, function(){
-      //console.log('server awaiting connections');
-    });
-  };
-};
-*/
-module.exports = DataChannelTransport;
-
-}).call(this,require("buffer").Buffer)
-},{"buffer":2,"ndn-lib/js/encoding/element-reader.js":46,"ndn-lib/js/transport/transport.js":85}],109:[function(require,module,exports){
-exports.MessageChannel = require("./MessageChannel.js");
-exports.WebRTCDataChannel = require("./WebRTCDataChannel.js");
-exports.WebSocketTransport = require("ndn-lib").TcpTransport;
-module.exports = exports;
-
-},{"./MessageChannel.js":107,"./WebRTCDataChannel.js":108,"ndn-lib":34}],110:[function(require,module,exports){
-  /**
- * Modified from https://gist.github.com/Wolfy87/5734530
+/**
+ * Encapsulate a Buffer and support dynamic reallocation.
+ * Copyright (C) 2013-2014 Regents of the University of California.
+ * @author: Jeff Thompson <jefft0@remap.ucla.edu>
  *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- * Performs a binary search on the host array. This method can either be
- * injected into Array.prototype or called with a specified scope like this:
- * binaryIndexOf.call(someArray, searchElement);
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
  *
- * @param {*} searchElement The item to search for within the array.
- * @return {Number} The index of the element which defaults to -1 when not found.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * A copy of the GNU Lesser General Public License is in the file COPYING.
  */
 
-var debug = require("./debug.js").binaryIndexOf
-
-function compareArrays(query, comparator, i){
-  if (!(i >= 0))
-    i = -1
-
-  if (i >= 0 || (query.length == comparator.length)){
-    i++
-    if (comparator[i] > query[i]){
-      return 1;
-    } else if (comparator[i] < query[i]) {
-      return -1;
-    } else if (query[i] == comparator[i]){
-      if (i < query.length - 1)
-        return compareArrays(query, comparator, i);
-      else
-        return 0;
-    }
-  } else if (comparator.length > query.length){
-    return 1;
-  } else if (comparator.length < query.length){
-    return -1;
-  }
-
-}
-
-
-var binaryIndexOfPrefix = function(array, searchElement, prop) {
-	'use strict';
-  if (array.length == 0){
-    return -1;}
-
-	var minIndex = 0;
-	var maxIndex = array.length - 1;
-	var currentIndex;
-	var currentElement;
-	var resultIndex;
-  var res;
-
-  searchElement = (prop == "prefix") ?
-    searchElement.getValue().buffer
-  : (prop == "nonce") ?
-    searchElement.nonce
-  : (prop == "faceID") ?
-    searchElement.faceID
-  : searchElement
-
-	while (minIndex <= maxIndex) {
-		resultIndex = currentIndex = (minIndex + maxIndex) / 2 | 0;
-    currentElement = (prop == "prefix") ? array[currentIndex].prefix.get(-1).getValue().buffer : (prop == "nonce") ? array[currentIndex].nonce : (prop == "faceID") ? array[currentIndex].faceID : array[currentIndex]
-
-    res = (typeof searchElement !== "number") ? compareArrays(searchElement, currentElement) : (function(){
-      if (searchElement > currentElement)
-        return -1;
-      if (searchElement < currentElement)
-        return 1;
-      else
-        return 0
-    })()
-
-
-		if (res == 1) {
-			maxIndex = currentIndex - 1;
-		}
-		else if (res == -1) {
-      minIndex = currentIndex + 1;
-		}
-		else {
-			return currentIndex;
-		}
-	}
-  return ~(maxIndex + 1);
-}
-
-module.exports = binaryIndexOfPrefix
-
-},{"./debug.js":111}],111:[function(require,module,exports){
-module.exports = {
-  NameTree : false
-  ,binaryIndexOf : true
-}
-
-},{}],112:[function(require,module,exports){
-var contrib = require("ndn-contrib"), ndn = contrib.ndn;
-
-/**Main forwarder for Blanc
- *@constructor
- *@returns {forwarder} an NDN Subject
- *
+/**
+ * Create a DynamicBuffer where this.array is a Buffer of size length.
+ * To access the array, use this.array or call slice.
+ * @constructor
+ * @param {number} length the initial length of the array.  If null, use a default.
  */
-var Forwarder = function Forwarder (options){
-  options = options || {};
-  this.ndn = contrib.ndn;
-  this.nameTree = new contrib.NameTree();
-  this.fib = new contrib.FIB(this.nameTree);
-  this.listeners = new contrib.FIB(new contrib.NameTree());
-  this.listenerCallbacks = [];
-  this.pit = new contrib.PIT(this.nameTree);
-  this.cache = new contrib.ContentStore(this.nameTree);
-  this.interfaces = new contrib.Interfaces(this);
+var DynamicBuffer = function DynamicBuffer(length)
+{
+  if (!length)
+    length = 16;
 
-  var transports = Object.keys(contrib.Transports);
-
-  options.TCPServerTransport = options.tcp;
-  options.WebSocketServerTransport = options.ws;
-
-  this.remoteInfo = {
-    ipv4: options.ipv4 || "0.0.0.0",
-    domain : options.domain || "localhost",
-    iceServers : options.iceServers || []
-  };
-
-  for (var i = 0; i < transports.length; i++){
-    if (contrib.Transports[transports[i]].defineListener){
-      if (contrib.Transports[transports[i]].prototype.name === "TCPServerTransport"){
-        this.remoteInfo.tcp = {
-          port: options.tcp || 7474
-          , name : "TCPServerTransport"
-        };
-      } else if (contrib.Transports[transports[i]].prototype.name === "WebSocketServerTransport"){
-        this.remoteInfo.ws = {
-          port: options.ws || 7575
-          , name :  "WebSocketServerTransport"
-        };
-      } else if (contrib.Transports[transports[i]].prototype.name === "WebSocketTransport"){
-        this.remoteInfo.ws = {
-          name: "WebSocketTransport"
-        };
-      }
-      //console.log(options[contrib.Transports[transports[i]].prototype.name], contrib.Transports[transports[i]].prototype.name);
-      contrib.Transports[transports[i]].defineListener(this, options[contrib.Transports[transports[i]].prototype.name]);
-    }
-    this.interfaces.installTransport(contrib.Transports[transports[i]]);
-  }
-
-  return this;
+  this.array = new Buffer(length);
 };
 
+exports.DynamicBuffer = DynamicBuffer;
 
-Forwarder.ndn = contrib.ndn;
-
-require("./node/ConnectionListeners.js")(Forwarder);
-
-require("./node/createSuffix.js")(Forwarder);
-
-
-/**handle an incoming interest from the interfaces module
- *@param {Buffer} element the raw interest packet
- *@param {Number} faceID the Integer faceID of the face which recieved the Interest
- *@returns {this} for chaining
+/**
+ * Ensure that this.array has the length, reallocate and copy if necessary.
+ * Update the length of this.array which may be greater than length.
+ * @param {number} length The minimum length for the array.
  */
-Forwarder.prototype.handleInterest = function(element, faceID){
-  var override = {}
-    , Self = this
-    , interest = new ndn.Interest();
-
-  //console.log("problem/?");
-  interest.wireDecode(element);
-  //console.log("decode");
-
-  function Closure(skipListen, skipForward, listeners){
-    //console.log("closure start", listeners, interest.name.toUri());
-    listeners = listeners || Self.listeners.findAllFibEntries(interest.name);
-    //console.log("listeners: ", listeners);
-
-    function unblock(){
-      var Self = this;
-      return function unblock(skipListen){
-        console.log(Self);
-        Closure(skipListen, false, listeners);
-      };
-    }
-
-    function iterateListeners(){
-      if (listeners.hasNext){
-        var listener = listeners.next();
-        //console.log("iterate listeners, current =", listener.nextHops);
-        var blockingCallback, connectionCallback, nonBlockingCallbacks = [];
-
-        for (var i = 0; i < listener.nextHops.length; i++){
-          //console.log(listener.nextHops[i]);
-          if (Self.listenerCallbacks[listener.nextHops[i].faceID].blocking){
-
-            blockingCallback = Self.listenerCallbacks[listener.nextHops[i].faceID].callback;
-            block = true;
-          } else if (Self.listenerCallbacks[listener.nextHops[i].faceID].connection){
-            connectionCallback = Self.listenerCallbacks[listener.nextHops[i].faceID].callback;
-          } else{
-            nonBlockingCallbacks.push(Self.listenerCallbacks[listener.nextHops[i].faceID]);
-          }
-        }
-        //console.log("blocking", blockingCallback);
-        if (connectionCallback){
-          //console.log("connection Listener found", interest.name.toUri());
-          connectionCallback(interest, faceID, function(skip){
-            //console.log("connection listener unblocked");
-            if (!skip && nonBlockingCallbacks.length > 0){
-              //console.log("progressing to nonBlocks");
-              for (var p = 0; p < nonBlockingCallbacks.length; p++){
-                //console.log(nonBlockingCallbacks[p]);
-                nonBlockingCallbacks[p].callback(interest, faceID);
-              }
-            }
-            if (blockingCallback){
-              //console.log("executing non connection blocking callback");
-              blockingCallback(interest, faceID, new unblock());
-            } else {
-              //console.log("unblocking completely");
-              var un = new unblock();
-              un(skip);
-            }
-          });
-          return;
-
-        } else if (nonBlockingCallbacks.length > 0){
-          for (var j = 0; j < nonBlockingCallbacks.length; j++){
-            //console.log("nonBlocking", nonBlockingCallbacks[j]);
-            nonBlockingCallbacks[j].callback(interest, faceID);
-          }
-        }
-
-        if (blockingCallback){
-          blockingCallback(interest, faceID, new unblock());
-        } else if (listeners.hasNext) {
-          iterateListeners();
-        } else {
-          forward();
-        }
-      } else {
-        forward();
-      }
-    }
-
-    if (!skipListen){
-      iterateListeners();
-    }
-
-    function forward(){
-      //console.log("not skipping forward");
-      var cacheHit = Self.cache.check(interest);
-
-      if (cacheHit){
-        Self.interfaces.dispatch(cacheHit, 0 | (1<<faceID));
-      } else if (!override.skipForward){
-        var nextHopFlag = Self.fib.findAllNextHops(interest.name, faceID);
-        //console.log("nextHopFLag", nextHopFlag);
-        if (nextHopFlag){
-          Self.pit.insertPitEntry(element, interest, faceID);
-          Self.interfaces.dispatch(element, nextHopFlag);
-        }
-      }
-    }
-    //console.log("returning from CLosure");
-    return Self;
-  }
-
-
-
-
-  return Closure();
-};
-
-/** main algorithm for incoming data packets
- *@param {Buffer} element the raw data packet
- *@param {faceID} the numerical faceID that the packet arrived on
- *@returns {Forwarder} for chaining
- */
-Forwarder.prototype.handleData = function(element, faceID){
-  var data = new ndn.Data();
-  data.wireDecode(element);
-
-  var pitMatch = this.pit.lookup(data);
-
-    //console.log("pit matches for ", data.name.toUri(), pitMatch);
-  if (pitMatch.faces  ){
-    this.interfaces.dispatch(element, pitMatch.faces);
-
-  }
-  if (pitMatch.pitEntries.length > 0) {
-    this.cache.insert(element, data);
-    for (var i = 0; i < pitMatch.pitEntries.length; i++){
-      if (pitMatch.pitEntries[i].callback){
-        pitMatch.pitEntries[i].callback(data, pitMatch.pitEntries[i].interest);
-      }
-      pitMatch.pitEntries[i].consume();
-    }
-  }
-  return this;
-};
-
-
-/** add a nameSpace Listener to the Forwarder. the listener will be triggered via the same semantics as forwarding entries
- *@param {String | option} nameSpace the uri of the namespace to listen on, or an options object containing that uri under the .prefix property
- *so far only a boolean '.blocking' property, to tell whether to interupt normal forwarding
- *@param {function} callback
- */
-Forwarder.prototype.addListener = function(nameSpace, callback) {
-  this.listenerCallbacks = this.listenerCallbacks || [];
-  var prefix
-    , options
-    , Self = this;
-
-  if (typeof nameSpace === "string"){
-    prefix = nameSpace;
-    options = {};
-  } else {
-    prefix = nameSpace.prefix;
-    options = nameSpace;
-  }
-
-  prefix = new ndn.Name(prefix);
-  prefix = prefix.toUri();
-
-  var listenerID = this.listenerCallbacks.length
-    , isNew = true;
-
-  if(options.connection){
-    var connectionReplaced = false;
-
-    if (this.listenerCallbacks.length > 0){
-      for (var i = 0; i < this.listenerCallbacks.length; i++){
-        //console.log("loop", i, prefix, this.listenerCallbacks[i]);
-        if (this.listenerCallbacks[i].prefix === prefix && this.listenerCallbacks[i].connection){
-          this.listenerCallbacks[i].callback = callback;
-          connectionReplaced = true;
-          isNew = false;
-          //console.log("found");
-          break;
-        }
-      }
-    }
-
-    if (!connectionReplaced){
-      //console.log("not found");
-      this.listenerCallbacks.push({
-        connection : true
-        , callback : callback
-        , listenerID : listenerID
-        , prefix : prefix
-      });
-      //console.log("pushed");
-    }
-  } else if(options.blocking){
-    var blockingReplaced = false;
-
-    if (this.listenerCallbacks.length > 0){
-      for (var j = 0; j < this.listenerCallbacks.length; j++){
-        //console.log("loop", i, prefix, this.listenerCallbacks[i]);
-        if (this.listenerCallbacks[j].prefix === prefix && this.listenerCallbacks[j].blocking){
-          this.listenerCallbacks[j].callback = callback;
-          blockingReplaced = true;
-          isNew = false;
-          //console.log("found");
-          break;
-        }
-      }
-    }
-
-    if (!blockingReplaced){
-      //console.log("not found");
-      this.listenerCallbacks.push({
-        blocking : true
-        , callback : callback
-        , listenerID : listenerID
-        , prefix : prefix
-      });
-      console.log("pushed");
-    }
-  } else {
-    this.listenerCallbacks.push({
-      blocking: false
-      , callback: callback
-      , listenerID: listenerID
-      , prefix : prefix
-    });
-  }
-
-  if (isNew){
-    this.listeners.addEntry(prefix, listenerID);
-  }
-
-  return this;
-};
-
-/** Remove ALL listeners on a given namespace (but NOT all prefixes) ie, two listeners on /a/b and one on /a: .removeListeners("/a/b") will remove both on /a/b and leave the one on /a
- *@param {String} prefix the nameSpace uri to remove listeners on
- *@returns {this} for chaining
- */
-Forwarder.prototype.removeListeners = function(prefix){
-  prefix = new ndn.Name(prefix);
-
-  this.listenerCallbacks = this.listenerCallbacks || [];
-  if (this.listenerCallbacks.length === 0){
-    return this;
-  }
-
-  var listenerEntry = this.listeners.lookup(prefix);
-
-  while(listenerEntry.nextHops.length){
-    var hopEntry = listenerEntry.nextHops.pop();
-
-    this.listenerCallbacks[hopEntry.faceID].callback = null;
-  }
-
-  return this;
-};
-
-/** set maximum number of connections for the forwarder (default unset)
- *@param {Number} maximum the maximum number of simultaneous connections
- *@returns {this} for chaining
- */
-Forwarder.prototype.setMaxConnections = function(maximum){
-  this.maxConnections = maximum;
-  return this;
-};
-
-/** add a connection
- *@param {String} protocol the .name property of the underlying protocol
- *@param {Object} parameters the necessary parameters for the connection
- *@param {function} callback function recieves the numerical faceID of the new face
- */
-require("./node/addConnection.js")(Forwarder);
-
-
-/** remove a connection, and purge any registered Prefixes from the FIB
- *@param {Number} faceID Numerical faceID of the connection to remove
- *@returns {this} Forwarder for chaining
- */
-Forwarder.prototype.removeConnection = function(faceID) {
-  while ( this.interfaces.Faces[faceID].prefixes.length > 0){
-    this.fib
-    .lookup(this.interfaces.Faces[faceID].prefixes.pop())
-    .removeNextHop({
-      faceID: faceID
-    });
-  }
-
-  this.interfaces.Faces[faceID].close();
-  this.interfaces.Faces[faceID].closeByTransport();
-  this.interfaces.Faces[faceID].onclose();
-  this.connectionCount--;
-  return this;
-};
-
-Forwarder.prototype.requestConnection = function(prefix, onFace){
-  var Self = this;
-  Self.createConnectionRequestSuffix(function(suffix, responseCB){
-    var name = new ndn.Name(prefix);
-    name.append(suffix);
-    var interest = new ndn.Interest(name);
-    interest.setInterestLifetimeMilliseconds(16000);
-    var element = interest.wireEncode().buffer;
-    var inst = new ndn.Interest();
-    inst.wireDecode(element);
-
-    Self.pit.insertPitEntry(element, inst, function(data, interest){
-
-      if(data){
-        try{
-          console.log("PitEntry callback for .requestConnection");
-          var json = JSON.parse(data.content.toString());
-          responseCB(json);
-          console.log("no error?");
-        } catch(e){
-          console.log(e);
-        }
-      }
-    });
-    var faceFlag = Self.fib.findAllNextHops(prefix);
-    console.log("faceFlag from requestConnection", faceFlag);
-    try{
-      console.log(Self);
-      Self.interfaces.dispatch(element, faceFlag);
-
-    } catch(e){
-      console.log(e);
-    }
-  }, function(connectionInfo){
-    console.log("connectionInfo callback")
-    Self.addConnection(connectionInfo, function(id){
-      console.log("connection added in connectioninfoCallback")
-      Self.addRegisteredPrefix(prefix, id);
-      onFace(id);
-    }, function(){
-      Self.removeConnection(id);
-    } );
-
-  });
-  return this;
-};
-
-Forwarder.prototype.addRegisteredPrefix = function(prefix, faceID){
-  this.fib.addEntry(prefix, faceID);
-  this.interfaces.Faces[faceID].prefixes = this.interfaces.Faces[faceID].prefixes || [];
-  this.interfaces.Faces[faceID].prefixes.push(prefix);
-  return this;
-};
-
-Forwarder.prototype.registerPrefix = function(prefix, faceID){
-  var name = new ndn.Name("marx/fib/add-nexthop");
-  name.append(new ndn.Name(prefix));
-  var interest = new ndn.Interest(name);
-  this.interfaces.Faces[faceID].send(interest.wireEncode().buffer);
-  return this;
-};
-
-Forwarder.prototype.unregisterPrefix = function(prefix, faceID){
-  var name = new ndn.Name("marx/fib/remove-nexthop");
-  name.append(new ndn.Name(prefix));
-  var interest = new ndn.Interest(name);
-
-  this.interfaces.Faces[faceID].send(interest.wireEncode().buffer);
-  return this;
-};
-
-module.exports = Forwarder;
-
-},{"./node/ConnectionListeners.js":113,"./node/addConnection.js":115,"./node/createSuffix.js":116,"ndn-contrib":24}],113:[function(require,module,exports){
-var RTCPeerConnection = require("./adapter/adapter.js");
-
-module.exports = function(Forwarder){
-  var ndn = Forwarder.ndn;
-  console.log("running?", Forwarder.ndn);
-  Forwarder.prototype.addConnectionListener = function(prefix, max, onNewFace){
-    var Self = this;
-    var current = 0;
-
-
-    return Self.addListener({
-      connection: true
-      , prefix : prefix
-    }
-    , function(interest, faceID, unblock){
-      console.log("connection listener callback, max;current ", max, current);
-      if (current < max){
-        var json, d = new Self.ndn.Data();
-        try{
-          d.wireDecode(interest.name.get(-1).getValueAsBuffer());
-          console.log("decoded");
-          if (d.name.toUri() === "/connectionRequest"){
-            console.log("is connection request");
-            json = JSON.parse(d.content.toString());
-            //console.log("parsed", json, Self.remoteInfo);
-
-            if (json.ws){
-              Self.addConnection("ws://" + json.domain + ":" + json.ws.port, function(faceID){
-                Self.addRegisteredPrefix(prefix, faceID);
-
-                onNewFace(faceID);
-              }, function(){
-                current--;
-              });
-
-              current++;
-            } else if (json.candidates && json.config) {
-              var answer = {};
-              answer.candidates = [];
-              var answerMade = false;
-              var channel;
-
-              var pc = new RTCPeerConnection(json.config, {optional: [{RTPDataChannels: true}]});
-
-              pc.ondatachannel = function(evt){
-                //pc.ondatachannel = function(){};
-                console.log("got data channel in connection listener", evt.channel);
-                Self.addConnection(evt.channel, function(id){
-                  console.log("new rtc face in connection listener", id)
-                  Self.addRegisteredPrefix(prefix, id);
-
-                  onNewFace(id);
-                  current ++;
-                }, function(){
-                  current --;
-                });
-
-              };
-
-              var createResponse = function(){
-                //console.log("create response", interest.name instanceof ndn.Name);
-                var d = new ndn.Data(new ndn.Name(interest.name), new ndn.SignedInfo(), JSON.stringify(answer));
-                console.log("made data");
-                d.signedInfo.setFields();
-                d.sign();
-                console.log("signed data");
-                var element = d.wireEncode().buffer;
-                console.log("response created");
-                current++;
-                return element;
-              };
-
-              pc.onicecandidate = function(evt){
-                console.log("ICECAndidate in listener");
-                if (answer.candidates.length > 0 && answerMade === false ){
-                  answerMade = true;
-                  var response = createResponse();
-                  Self.interfaces.dispatch(response, 0 | (1 << faceID));
-                } else if (evt.candidate && evt.candidate.sdpMid === "data"){
-                  answer.candidates.push(evt.candidate);
-                }
-
-              };
-
-              pc.setRemoteDescription(new RTCSessionDescription(json.sdp));
-
-              for (var i = 0; i < json.candidates.length ; i++){
-                pc.addIceCandidate(new RTCIceCandidate(json.candidates[i]))
-              }
-
-              pc.createAnswer(function(description){
-                answer.sdp = description;
-                pc.setLocalDescription(description);
-              });
-
-            } else {
-              unblock();
-            }
-          } else {
-            console.log("not a connection request");
-            unblock();
-          }
-        } catch (e){
-          console.log(interest, interest.name.get(-1).getValueAsBuffer().toString());
-          console.log("err" + e.toString());
-          console.log("unblocking", unblock.toString());
-          unblock();
-        }
-        return;
-
-      } else {
-        console.log("max connections for this listener");
-        unblock();
-      }
-    });
-  };
-};
-
-},{"./adapter/adapter.js":114}],114:[function(require,module,exports){
-/*
- *  Copyright (c) 2014 The WebRTC project authors. All Rights Reserved.
- *
- *  Use of this source code is governed by a BSD-style license
- *  that can be found in the Adapter_LICENSE file in this folder.
- *
- *  THIS FILE HAS BEEN MODIFIED FROM IT'S ORIGINAL VERSION TO SUPPORT COMMON
- *
- */
-
-/* More information about these options at jshint.com/docs/options */
-
-/* jshint browser: true, camelcase: true, curly: true, devel: true,
-eqeqeq: true, forin: false, globalstrict: true, quotmark: single,
-undef: true, unused: strict */
-
-/* global mozRTCIceCandidate, mozRTCPeerConnection,
-mozRTCSessionDescription, webkitRTCPeerConnection */
-
-/* exported trace */
-
-'use strict';
-
-var RTCPeerConnection = null;
-var getUserMedia = null;
-var attachMediaStream = null;
-var reattachMediaStream = null;
-var webrtcDetectedBrowser = null;
-var webrtcDetectedVersion = null;
-
-function trace(text) {
-  // This function is used for logging.
-  if (text[text.length - 1] === '\n') {
-    text = text.substring(0, text.length - 1);
-  }
-  console.log((window.performance.now() / 1000).toFixed(3) + ': ' + text);
-}
-
-function maybeFixConfiguration(pcConfig) {
-  if (!pcConfig) {
+DynamicBuffer.prototype.ensureLength = function(length)
+{
+  if (this.array.length >= length)
     return;
-  }
-  for (var i = 0; i < pcConfig.iceServers.length; i++) {
-    if (pcConfig.iceServers[i].hasOwnProperty('urls')) {
-      pcConfig.iceServers[i].url = pcConfig.iceServers[i].urls;
-      delete pcConfig.iceServers[i].urls;
-    }
-  }
-}
 
-if (navigator.mozGetUserMedia) {
-  console.log('This appears to be Firefox');
+  // See if double is enough.
+  var newLength = this.array.length * 2;
+  if (length > newLength)
+    // The needed length is much greater, so use it.
+    newLength = length;
 
-  webrtcDetectedBrowser = 'firefox';
-
-  webrtcDetectedVersion =
-    parseInt(navigator.userAgent.match(/Firefox\/([0-9]+)\./)[1], 10);
-
-  // The RTCPeerConnection object.
-  RTCPeerConnection = function(pcConfig, pcConstraints) {
-    // .urls is not supported in FF yet.
-    maybeFixConfiguration(pcConfig);
-    return new mozRTCPeerConnection(pcConfig, pcConstraints);
-  };
-
-  // The RTCSessionDescription object.
-  window.RTCSessionDescription = mozRTCSessionDescription;
-
-  // The RTCIceCandidate object.
-  window.RTCIceCandidate = mozRTCIceCandidate;
-
-  // getUserMedia shim (only difference is the prefix).
-  // Code from Adam Barth.
-  getUserMedia = navigator.mozGetUserMedia.bind(navigator);
-  navigator.getUserMedia = getUserMedia;
-
-  // Creates ICE server from the URL for FF.
-  window.createIceServer = function(url, username, password) {
-    var iceServer = null;
-    var urlParts = url.split(':');
-    if (urlParts[0].indexOf('stun') === 0) {
-      // Create ICE server with STUN URL.
-      iceServer = {
-        'url': url
-      };
-    } else if (urlParts[0].indexOf('turn') === 0) {
-      if (webrtcDetectedVersion < 27) {
-        // Create iceServer with turn url.
-        // Ignore the transport parameter from TURN url for FF version <=27.
-        var turnUrlParts = url.split('?');
-        // Return null for createIceServer if transport=tcp.
-        if (turnUrlParts.length === 1 ||
-          turnUrlParts[1].indexOf('transport=udp') === 0) {
-          iceServer = {
-            'url': turnUrlParts[0],
-            'credential': password,
-            'username': username
-          };
-        }
-      } else {
-        // FF 27 and above supports transport parameters in TURN url,
-        // So passing in the full url to create iceServer.
-        iceServer = {
-          'url': url,
-          'credential': password,
-          'username': username
-        };
-      }
-    }
-    return iceServer;
-  };
-
-  window.createIceServers = function(urls, username, password) {
-    var iceServers = [];
-    // Use .url for FireFox.
-    for (var i = 0; i < urls.length; i++) {
-      var iceServer =
-        window.createIceServer(urls[i], username, password);
-      if (iceServer !== null) {
-        iceServers.push(iceServer);
-      }
-    }
-    return iceServers;
-  };
-
-  // Attach a media stream to an element.
-  attachMediaStream = function(element, stream) {
-    console.log('Attaching media stream');
-    element.mozSrcObject = stream;
-  };
-
-  reattachMediaStream = function(to, from) {
-    console.log('Reattaching media stream');
-    to.mozSrcObject = from.mozSrcObject;
-  };
-
-} else if (navigator.webkitGetUserMedia) {
-  console.log('This appears to be Chrome');
-
-  webrtcDetectedBrowser = 'chrome';
-  // Temporary fix until crbug/374263 is fixed.
-  // Setting Chrome version to 999, if version is unavailable.
-  var result = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
-  if (result !== null) {
-    webrtcDetectedVersion = parseInt(result[2], 10);
-  } else {
-    webrtcDetectedVersion = 999;
-  }
-
-  // Creates iceServer from the url for Chrome M33 and earlier.
-  window.createIceServer = function(url, username, password) {
-    var iceServer = null;
-    var urlParts = url.split(':');
-    if (urlParts[0].indexOf('stun') === 0) {
-      // Create iceServer with stun url.
-      iceServer = {
-        'url': url
-      };
-    } else if (urlParts[0].indexOf('turn') === 0) {
-      // Chrome M28 & above uses below TURN format.
-      iceServer = {
-        'url': url,
-        'credential': password,
-        'username': username
-      };
-    }
-    return iceServer;
-  };
-
-  // Creates iceServers from the urls for Chrome M34 and above.
-  window.createIceServers = function(urls, username, password) {
-    var iceServers = [];
-    if (webrtcDetectedVersion >= 34) {
-      // .urls is supported since Chrome M34.
-      iceServers = {
-        'urls': urls,
-        'credential': password,
-        'username': username
-      };
-    } else {
-      for (var i = 0; i < urls.length; i++) {
-        var iceServer =
-          window.createIceServer(urls[i], username, password);
-        if (iceServer !== null) {
-          iceServers.push(iceServer);
-        }
-      }
-    }
-    return iceServers;
-  };
-
-  // The RTCPeerConnection object.
-  RTCPeerConnection = function(pcConfig, pcConstraints) {
-    // .urls is supported since Chrome M34.
-    if (webrtcDetectedVersion < 34) {
-      maybeFixConfiguration(pcConfig);
-    }
-    return new webkitRTCPeerConnection(pcConfig, pcConstraints);
-  };
-
-  // Get UserMedia (only difference is the prefix).
-  // Code from Adam Barth.
-  getUserMedia = navigator.webkitGetUserMedia.bind(navigator);
-  navigator.getUserMedia = getUserMedia;
-
-  // Attach a media stream to an element.
-  attachMediaStream = function(element, stream) {
-    if (typeof element.srcObject !== 'undefined') {
-      element.srcObject = stream;
-    } else if (typeof element.mozSrcObject !== 'undefined') {
-      element.mozSrcObject = stream;
-    } else if (typeof element.src !== 'undefined') {
-      element.src = URL.createObjectURL(stream);
-    } else {
-      console.log('Error attaching stream to element.');
-    }
-  };
-
-  reattachMediaStream = function(to, from) {
-    to.src = from.src;
-  };
-} else {
-  console.log('Browser does not appear to be WebRTC-capable');
-}
-
-module.exports = RTCPeerConnection;
-
-},{}],115:[function(require,module,exports){
-module.exports = function(Forwarder){
-  Forwarder.prototype.addConnection = addConnection;
+  var newArray = new Buffer(newLength);
+  this.array.copy(newArray);
+  this.array = newArray;
 };
 
-function addConnection(objectOrURL, onOpen, onClosed){
-  var id;
-  console.log("addConnection ", objectOrURL);
-  this.connectionCount = this.connectionCount || 0;
-  if (!this.maxConnections || this.interfaces.Faces.length < this.maxConnections){
-    if (typeof objectOrURL === "string"){
-      var url = objectOrURL;
-      var protocol = url.split("://")[0];
-      console.log(this);
-      if (protocol === "ws"){
+/**
+ * Copy the value to this.array at offset, reallocating if necessary.
+ * @param {Buffer} value The buffer to copy.
+ * @param {number} offset The offset in the buffer to start copying into.
+ */
+DynamicBuffer.prototype.copy = function(value, offset)
+{
+  this.ensureLength(value.length + offset);
 
-          this.connectionCount++;
-          id = this.interfaces.newFace("WebSocketTransport",
-             {
-               host: url.split("://")[1].split(":")[0],
-               port: url.split("://")[1].split(":")[1] || 7575
-             }, onOpen, onClosed
-           );
-      }
-    } else if (objectOrURL instanceof MessagePort) {
-      this.connectionCount++;
-
-      id = this.interfaces.newFace("MessageChannelTransport", objectOrURL, onOpen, onClosed);
-    } else if (objectOrURL.binaryType && objectOrURL.readyState && objectOrURL.label) {
-      this.connectionCount++;
-      console.log("dataChanneltransport ducktype")
-
-
-      id = this.interfaces.newFace("DataChannelTransport",  objectOrURL, onOpen, onClosed);
-      if(objectOrURL.readyState === "open"){
-        onOpen(id);
-      }
-    }
-
-  } else {
-    console.log("maximum connections reached");
-  }
-
-  return this;
-}
-
-},{}],116:[function(require,module,exports){
-var RTCPeerConnection = require("./adapter/adapter.js");
-
-module.exports = function(Forwarder){
-  Forwarder.prototype.createConnectionRequestSuffix = createXSuffix;
+  if (Buffer.isBuffer(value))
+    value.copy(this.array, offset);
+  else
+    // Need to make value a Buffer to copy.
+    new Buffer(value).copy(this.array, offset);
 };
 
-function createXSuffix(suffixCallback, connectionInfoCallback){
-  var forwarder = this, suffixMade = false;
-  var ndn = forwarder.ndn;
+/**
+ * Ensure that this.array has the length. If necessary, reallocate the array
+ *   and shift existing data to the back of the new array.
+ * Update the length of this.array which may be greater than length.
+ * @param {number} length The minimum length for the array.
+ */
+DynamicBuffer.prototype.ensureLengthFromBack = function(length)
+{
+  if (this.array.length >= length)
+    return;
 
-  var config = {
-    "iceServers" : this.remoteInfo.iceServers
-  };
+  // See if double is enough.
+  var newLength = this.array.length * 2;
+  if (length > newLength)
+    // The needed length is much greater, so use it.
+    newLength = length;
 
-  var pc = new RTCPeerConnection( config, {optional: [{RTPDataChannels: true}]} );
+  var newArray = new Buffer(newLength);
+  // Copy to the back of newArray.
+  this.array.copy(newArray, newArray.length - this.array.length);
+  this.array = newArray;
+};
 
-  var offer = {};
-  offer.candidates = [];
+/**
+ * First call ensureLengthFromBack to make sure the bytearray has
+ * offsetFromBack bytes, then copy value into the array starting
+ * offsetFromBack bytes from the back of the array.
+ * @param {Buffer} value The buffer to copy.
+ * @param {offsetFromBack} offset The offset from the back of the array to start
+ * copying.
+ */
+DynamicBuffer.prototype.copyFromBack = function(value, offsetFromBack)
+{
+  this.ensureLengthFromBack(offsetFromBack);
 
-  function createSuffix(){
-    offer.config = config;
-    var string = JSON.stringify(offer);
-    var d = new ndn.Data(new ndn.Name("connectionRequest"), new ndn.SignedInfo(), string);
-    d.signedInfo.setFields();
-    d.sign();
+  if (Buffer.isBuffer(value))
+    value.copy(this.array, this.array.length - offsetFromBack);
+  else
+    // Need to make value a Buffer to copy.
+    new Buffer(value).copy(this.array, this.array.length - offsetFromBack);
+};
 
-    var enc = d.wireEncode();
-    var suffix = new ndn.Name.Component(enc.buffer);
-    return suffix;
-  }
+/**
+ * Return this.array.slice(begin, end);
+ * @param {number} begin The begin index for the slice.
+ * @param {number} end The end index for the slice.
+ * @returns {Buffer} The buffer slice.
+ */
+DynamicBuffer.prototype.slice = function(begin, end)
+{
+  return this.array.slice(begin, end);
+};
 
-
-  var datachannel = pc.createDataChannel("chan", {reliable: false});
-
-  datachannel.onopen = function(ev){
-    console.log("data channel onopen fired ", datachannel, ev)
-    connectionInfoCallback(datachannel);
-  };
-
-  var onAnswer = function(answer){
-    console.log("got answer from remote", answer)
-    var sdp = new RTCSessionDescription(answer.sdp);
-    pc.setRemoteDescription(sdp);
-    for (var i = 0; i < answer.candidates.length; i++){
-      //console.log(answer.candidates[i]);
-      var candidate = new RTCIceCandidate(answer.candidates[i]);
-      pc.addIceCandidate(candidate);
-    }
-  }
-
-
-  pc.onicecandidate = function (evt) {
-    console.log("ICECAndidate",evt, offer, suffixMade);
-    if (offer.candidates.length > 1 && suffixMade === false ){
-      suffixMade = true;
-      var suffix = createSuffix();
-      console.log("executing suffix callback")
-      suffixCallback(suffix, onAnswer);
-    } else if (evt.candidate && evt.candidate.sdpMid === "data" && suffixMade === false){
-      offer.candidates.push(evt.candidate);
-    }
-  };
-
-  var constraints = {
-      optional: [],
-      mandatory: {
-          OfferToReceiveVideo: false
-      }
-  };
-
-  pc.createOffer(function (description) {
-    //console.log(JSON.stringify(description));
-    pc.setLocalDescription(description, function(){
-      console.log("description set");
-    },function(er){console.log(er);});
-    offer.sdp = description;
-
-  }, null, constraints);
-
-}
-
-},{"./adapter/adapter.js":114}],117:[function(require,module,exports){
+}).call(this,require("buffer").Buffer)
+},{"buffer":3}],210:[function(require,module,exports){
+module.exports=require(190)
+},{}],211:[function(require,module,exports){
+module.exports=require(191)
+},{"../log.js":207}],212:[function(require,module,exports){
 (function (Buffer){
 var Forwarder = require("../../../index.js");
 
@@ -29310,7 +43882,7 @@ function onConnectionsMade(){
   for (var i = 0; i < interests.length; i++){
     f2.handleInterest(interests[i],1)
   }
-  return throughput;
+  return;
   }
   window.cache = function(){
   t1 = Date.now();
@@ -29318,7 +43890,7 @@ function onConnectionsMade(){
   for (var i = 0; i < interests.length; i++){
     f2.handleInterest(interests[i],1)
   }
-  return throughput
+  return;
 }
 }
 
@@ -29347,4 +43919,4 @@ f1.addConnection(f1f2.port1, function(id){
 })
 
 }).call(this,require("buffer").Buffer)
-},{"../../../index.js":23,"buffer":2}]},{},[117]);
+},{"../../../index.js":46,"buffer":3}]},{},[212]);

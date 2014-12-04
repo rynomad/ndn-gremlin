@@ -51,7 +51,7 @@ var Forwarder = function Forwarder (options){
           name: "WebSocketTransport"
         };
       }
-      //console.log(options[contrib.Transports[transports[i]].prototype.name], contrib.Transports[transports[i]].prototype.name);
+      console.log(options[contrib.Transports[transports[i]].prototype.name], contrib.Transports[transports[i]].prototype.name);
       contrib.Transports[transports[i]].defineListener(this, options[contrib.Transports[transports[i]].prototype.name]);
     }
     this.interfaces.installTransport(contrib.Transports[transports[i]]);
@@ -90,14 +90,29 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
 
 
   interest.wireDecode(element);
-  debug.debug("handleInterest %s from %s", interest.toUri(), faceID);
-
+  debug.debug("handleInterest %s ", interest.toUri());
   if(this.pit.checkDuplicate(interest)){
     debug.debug("interest is duplicate, discontinue forwarding");
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    if (typeof faceID === "function"){
+      setImmediate(function(){faceID(undefined, interest)})
+    }
     return this;
   } else {
     debug.debug("interest is not duplicate, insert into PIT");
-    Self.pit.insertPitEntry(element, interest, faceID);
+    var cacheHit = Self.cache.check(interest);
+
+    if (cacheHit){
+      if (typeof faceID === "function"){
+        faceID(cacheHit)
+      } else {
+        Self.interfaces.dispatch(cacheHit, 0 | (1<<faceID));
+      }
+    } else {
+
+      return Closure(skipListen);
+
+    }
   }
 
   function Closure(skipListen, skipForward, listeners){
@@ -178,14 +193,14 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
     }
 
     function forward(){
-      var cacheHit = Self.cache.check(interest);
 
-      if (cacheHit){
-        Self.interfaces.dispatch(cacheHit, 0 | (1<<faceID));
-      } else if (!override.skipForward){
-        var nextHopFlag = Self.fib.findAllNextHops(interest.name, faceID);
+      if (!override.skipForward){
+        var exclude = (typeof faceID === "number") ? faceID : undefined;
+
+        var nextHopFlag = Self.fib.findAllNextHops(interest.name, exclude );
         debug.debug("nextHopFLag for %s is %s", interest.name.toUri(),nextHopFlag);
         if (nextHopFlag){
+          Self.pit.insertPitEntry(element, interest, faceID)
           Self.interfaces.dispatch(element, nextHopFlag);
         }
       }
@@ -195,7 +210,6 @@ Forwarder.prototype.handleInterest = function(element, faceID, skipListen){
 
 
 
-  return Closure(skipListen);
    /*else {
     var inFace = this.interfaces.Faces[faceID], toCheck, matched;
     console.log("cleanup")
@@ -234,6 +248,7 @@ Forwarder.prototype.handleData = function(element, faceID){
 
   debug.debug("handle data % from face ID %s", data.name.toUri(), faceID);
   var pitMatch = this.pit.lookup(data);
+  debug.debug("got matches", pitMatch)
   if (pitMatch.faces){
     debug.debug("found matching pitEntries for faceFlag %s", pitMatch.faces);
     this.interfaces.dispatch(element, pitMatch.faces);
@@ -243,8 +258,9 @@ Forwarder.prototype.handleData = function(element, faceID){
     for (var i = 0; i < pitMatch.pitEntries.length; i++){
       if (pitMatch.pitEntries[i].callback){
         debug.debug("excecuting pitEntry callback for %s", pitMatch.pitEntries[i].interest.toUri());
+        debug.debug(pitMatch.pitEntries[i].callback.toString())
         debug.debug("with data %s", data.name.toUri());
-        pitMatch.pitEntries[i].callback(data, pitMatch.pitEntries[i].interest);
+        pitMatch.pitEntries[i].callback(element, pitMatch.pitEntries[i].interest);
       }
       debug.debug("consuming pitEntry for %s", pitMatch.pitEntries[i].interest.toUri());
       pitMatch.pitEntries[i].consume(true);
@@ -493,7 +509,11 @@ Forwarder.prototype.requestConnection = function(prefix, onFace, onFaceClosed){
  *@returns {this} for chaining
  */
 Forwarder.prototype.addRegisteredPrefix = function(prefix, faceID){
-  this.fib.addEntry(prefix, faceID);
+  this.fib
+  .lookup(prefix)
+  .addNextHop({
+    faceID: faceID
+  });
   this.interfaces.Faces[faceID].prefixes = this.interfaces.Faces[faceID].prefixes || [];
   this.interfaces.Faces[faceID].prefixes.push(prefix);
   return this;

@@ -1,1 +1,1 @@
-module.exports = require("./dist/src/Forwarder.js");
+module.exports = require("./src/Forwarder.js");
