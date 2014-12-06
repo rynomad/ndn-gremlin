@@ -1,6 +1,6 @@
 {
   "name": "ndn-gremlin",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "ndn forwarder for node and browser",
   "main": "index.js",
   "directories": {
@@ -40,5 +40,8 @@
     "grunt-remove-logging": "^0.2.0",
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-connect": "^0.9.0"
+  },
+  "bin":{
+    "ndn-gremlin":"gremlin.js"
   }
 }
